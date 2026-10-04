@@ -1,0 +1,7 @@
+# Portable software requirements; install .[cad,dev] for the full engineering workflow.
+numpy>=2,<3
+scipy>=1.14,<2
+matplotlib>=3.9,<4
+PyYAML>=6,<7
+pillow>=11,<13
+trimesh>=4,<6
