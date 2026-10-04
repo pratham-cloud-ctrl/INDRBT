@@ -1,0 +1,45 @@
+Reference,Value,Footprint,Population,Description,Datasheet
+J1,5V INPUT,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",
+F1,0.25A hold,Fuse:Fuse_1206_3216Metric,Fit,"Resettable fuse, conceptual 250 mA hold; select trip curve before fabrication",
+D1,SS14,Diode_SMD:D_SMA,Fit,Schottky diode,https://www.vishay.com/docs/88746/ss12.pdf
+C1,10uF / 10V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+U1,AP2112K-3.3,Package_TO_SOT_SMD:SOT-23-5,Fit,"600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5",https://www.diodes.com/assets/Datasheets/AP2112.pdf
+C2,4.7uF / 10V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+R1,1k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+D2,GREEN,LED_SMD:LED_0805_2012Metric,Fit,3.3 V rail status indicator,
+J2,MCU 3V3 I/O,Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x16, script generated (kicad-library-utils/schlib/autogen/connector/)",
+J3,ENCODER 3V3,Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)",
+R2,1k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+C3,100pF / 50V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+D3,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+D4,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+R3,1k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+C4,100pF / 50V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+D5,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+D6,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+R4,1k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+C5,100pF / 50V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+D7,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+D8,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+J4,NC LIMIT,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",
+R5,1k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+R6,10k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+C6,100nF / 50V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+D9,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+D10,BAT54H,Diode_SMD:D_SOD-123F,Fit,Schottky diode,https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf
+J7,E-STOP AUX NC,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",
+R7,10k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+R8,10k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+J5,3V3 DRIVE I/O,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)",
+R9,330,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+R10,330,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+R11,330,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+R12,10k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+U2,LTC2850IS8,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm,Fit,"RS-485, RS-422 Half-duplex 20Mbps transceiver, SOIC-8",https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf
+C7,100nF / 50V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
+R13,10k,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+J6,RS485 BUS,Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)",
+R14,330,Resistor_SMD:R_0805_2012Metric,DNP by default,Resistor,
+R15,330,Resistor_SMD:R_0805_2012Metric,DNP by default,Resistor,
+R16,120,Resistor_SMD:R_0805_2012Metric,Fit,Resistor,
+JP1,END TERM,Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,Fit,"Jumper, 2-pole, open",

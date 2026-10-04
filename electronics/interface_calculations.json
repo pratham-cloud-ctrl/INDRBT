@@ -1,0 +1,20 @@
+{
+  "status": "CALCULATED",
+  "no_measurements": true,
+  "limit_closed_v": 0.3,
+  "limit_release_tau_s": 0.001,
+  "limit_closure_tau_s": 9.09090909090909e-05,
+  "encoder_nominal_tau_s": {
+    "A": 1.0000000000000001e-07,
+    "B": 1.0000000000000001e-07,
+    "Z": 1.0000000000000001e-07
+  },
+  "optional_rs485_bias_nominal_v_two_terminators": 0.275,
+  "optional_rs485_bias_worst_v_1pct_resistors_3v_supply": 0.24545454545454543,
+  "optional_rs485_bias_idle_current_a": 0.004583333333333333,
+  "optional_bias_threshold_check": "PASS; ideal DC network, excludes leakage/cable effects",
+  "ldo_conservative_dissipation_bound_w": 0.29250000000000004,
+  "ldo_conditional_junction_estimate_c": 93.82000000000001,
+  "thermal_claim_boundary": "Datasheet theta_ja estimate only; PCB copper/airflow unspecified and no temperature verified",
+  "pcb_status": "NOT CREATED; DRC NOT APPLICABLE"
+}
