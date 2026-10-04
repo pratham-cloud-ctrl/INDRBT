@@ -33,10 +33,10 @@ poses_deg:
   place: [25, -45, 95, 0, 40, 0]
 mass:
   status: ASSUMED
-  base: 6.5
-  turret: 2.8
-  upper_arm: 3.2
-  forearm: 2.4
+  base: 8.5
+  turret: 4.2
+  upper_arm: 5.5
+  forearm: 2.7
   wrist_roll: 0.9
   wrist_pitch: 0.65
   flange_gripper: 1.2
@@ -74,3 +74,13 @@ targets:
   gravity: 9.80665
   ik_position_tolerance_m: 0.00001
   ik_orientation_tolerance_rad: 0.0001
+demo:
+  approach_clearance: 0.070
+  gripper_dwell_s: 0.5
+  object_width: 0.028
+  workspace_samples: 6000
+  workspace_seed: 260105
+  workspace_voxel_pitch: 0.025
+  trajectory_duration_s: 4.0
+  control_step_duration_s: 5.0
+  control_step_deg: [5, 5, -5, 5, 5, 5]

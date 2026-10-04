@@ -1,4 +1,5 @@
 """Bundle the authoritative SI configuration in wheels, without a source duplicate."""
+
 from pathlib import Path
 from shutil import copyfile
 

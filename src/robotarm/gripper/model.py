@@ -30,13 +30,27 @@ class ParallelGripper:
         Each opposed nut travels one lead per revolution. The full gap changes
         by TWO leads; summing both jaws' work prevents a factor-of-two mistake.
         """
-        force = self.parameters["total_normal_force_target"] if total_normal_force is None else total_normal_force
+        force = (
+            self.parameters["total_normal_force_target"]
+            if total_normal_force is None
+            else total_normal_force
+        )
         if not np.isfinite(force) or force < 0:
             raise ValueError("Normal force must be nonnegative and finite.")
-        return force * self.parameters["screw_lead"] / (2 * np.pi * self.parameters["screw_efficiency"])
+        return (
+            force
+            * self.parameters["screw_lead"]
+            / (2 * np.pi * self.parameters["screw_efficiency"])
+        )
 
     def ideal_total_normal_force(self) -> float:
-        return 2 * np.pi * self.parameters["screw_efficiency"] * self.parameters["motor_torque"] / self.parameters["screw_lead"]
+        return (
+            2
+            * np.pi
+            * self.parameters["screw_efficiency"]
+            * self.parameters["motor_torque"]
+            / self.parameters["screw_lead"]
+        )
 
     def metrics(self) -> dict:
         gravity = self.config["targets"]["gravity"]
@@ -48,6 +62,10 @@ class ParallelGripper:
             "target_total_normal_force_N": force,
             "required_motor_torque_Nm": self.required_torque(),
             "ideal_force_at_assumed_motor_torque_N": self.ideal_total_normal_force(),
-            "friction_limited_payload_kg_with_safety_factor": self.parameters["friction_coefficient"] * force / (gravity * self.parameters["grip_safety_factor"]),
+            "friction_limited_payload_kg_with_safety_factor": self.parameters[
+                "friction_coefficient"
+            ]
+            * force
+            / (gravity * self.parameters["grip_safety_factor"]),
             "status": "CALCULATED from assumed screw efficiency and friction; no contact simulation",
         }

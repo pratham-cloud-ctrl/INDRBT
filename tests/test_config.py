@@ -20,7 +20,11 @@ def test_loading_does_not_share_mutable_arrays():
 
 def test_bad_configuration_rejected(tmp_path):
     config = load_config()
-    clean = {key: value for key, value in config.items() if key not in ("home", "poses", "joint_limits", "velocity_limits", "acceleration_limits")}
+    clean = {
+        key: value
+        for key, value in config.items()
+        if key not in ("home", "poses", "joint_limits", "velocity_limits", "acceleration_limits")
+    }
     clean["velocity_limits_deg_s"][2] = -1
     path = tmp_path / "bad.yaml"
     path.write_text(yaml.safe_dump(clean), encoding="utf-8")

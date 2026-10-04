@@ -27,14 +27,22 @@ class Trajectory:
             "duration_s": self.duration,
             "peak_velocity_rad_s": np.max(np.abs(self.dq), axis=0).tolist(),
             "peak_acceleration_rad_s2": np.max(np.abs(self.ddq), axis=0).tolist(),
-            "max_velocity_limit_fraction": float(np.max(np.abs(self.dq) / robot.config["velocity_limits"])),
-            "max_acceleration_limit_fraction": float(np.max(np.abs(self.ddq) / robot.config["acceleration_limits"])),
+            "max_velocity_limit_fraction": float(
+                np.max(np.abs(self.dq) / robot.config["velocity_limits"])
+            ),
+            "max_acceleration_limit_fraction": float(
+                np.max(np.abs(self.ddq) / robot.config["acceleration_limits"])
+            ),
         }
 
 
 def joint_trajectory(
-    robot: RobotArm, start: np.ndarray, end: np.ndarray, duration: float | None = None,
-    kind: str = "quintic", samples: int = 201,
+    robot: RobotArm,
+    start: np.ndarray,
+    end: np.ndarray,
+    duration: float | None = None,
+    kind: str = "quintic",
+    samples: int = 201,
 ) -> Trajectory:
     """MOVE J with analytic derivatives and conservative minimum duration.
 
@@ -52,7 +60,11 @@ def joint_trajectory(
     velocity_factor, acceleration_factor = factors[kind]
     minimum = max(
         float(np.max(velocity_factor * np.abs(delta) / robot.config["velocity_limits"])),
-        float(np.sqrt(np.max(acceleration_factor * np.abs(delta) / robot.config["acceleration_limits"]))),
+        float(
+            np.sqrt(
+                np.max(acceleration_factor * np.abs(delta) / robot.config["acceleration_limits"])
+            )
+        ),
         0.02,
     )
     if duration is None:
@@ -71,12 +83,21 @@ def joint_trajectory(
         s = 10 * u**3 - 15 * u**4 + 6 * u**5
         ds = 30 * u**2 - 60 * u**3 + 30 * u**4
         dds = 60 * u - 180 * u**2 + 120 * u**3
-    return Trajectory(t, start + s[:, None] * delta, ds[:, None] * delta / duration, dds[:, None] * delta / duration**2, kind)
+    return Trajectory(
+        t,
+        start + s[:, None] * delta,
+        ds[:, None] * delta / duration,
+        dds[:, None] * delta / duration**2,
+        kind,
+    )
 
 
 def move_linear(
-    robot: RobotArm, start: np.ndarray, target: np.ndarray,
-    duration: float = 1.0, samples: int = 101,
+    robot: RobotArm,
+    start: np.ndarray,
+    target: np.ndarray,
+    duration: float = 1.0,
+    samples: int = 101,
 ) -> Trajectory:
     """MOVE L: straight TCP + shortest SO(3) SLERP, continuation numerical IK.
 
@@ -85,6 +106,7 @@ def move_linear(
     does not certify derivative bounds between samples or collision clearance.
     """
     start = robot.check_joints(start)
+    target = robot.check_pose(target)
     if samples < 21 or duration <= 0 or not np.isfinite(duration):
         raise ValueError("MOVE L requires at least 21 samples and a positive duration.")
     initial = robot.fk(start)
@@ -99,7 +121,9 @@ def move_linear(
         pose[:3, 3] = initial[:3, 3] + progress[index] * (target[:3, 3] - initial[:3, 3])
         solved = robot.ik(pose, q[-1], max_attempts=6)
         if np.max(np.abs(solved - q[-1])) > np.deg2rad(30):
-            raise ValueError("MOVE L encountered a discontinuous IK branch; choose another start/path.")
+            raise ValueError(
+                "MOVE L encountered a discontinuous IK branch; choose another start/path."
+            )
         q.append(solved)
     q = np.asarray(q)
     t = np.linspace(0, duration, samples)
@@ -108,10 +132,14 @@ def move_linear(
     # Exact endpoint values of a stop-to-stop quintic law away from singularities.
     dq[[0, -1]] = 0
     ddq[[0, -1]] = 0
-    scale = max(
-        1.0, float(np.max(np.abs(dq) / robot.config["velocity_limits"])),
-        float(np.sqrt(np.max(np.abs(ddq) / robot.config["acceleration_limits"]))),
-    ) * 1.01
+    scale = (
+        max(
+            1.0,
+            float(np.max(np.abs(dq) / robot.config["velocity_limits"])),
+            float(np.sqrt(np.max(np.abs(ddq) / robot.config["acceleration_limits"]))),
+        )
+        * 1.01
+    )
     return Trajectory(t * scale, q, dq / scale, ddq / scale**2, "MOVE L")
 
 
@@ -120,7 +148,13 @@ def stationary(q: np.ndarray, duration: float = 0.5, samples: int = 21) -> Traje
         raise ValueError("A dwell needs positive duration and at least two samples.")
     q = np.asarray(q, float)
     positions = np.tile(q, (samples, 1))
-    return Trajectory(np.linspace(0, duration, samples), positions, np.zeros_like(positions), np.zeros_like(positions), "dwell")
+    return Trajectory(
+        np.linspace(0, duration, samples),
+        positions,
+        np.zeros_like(positions),
+        np.zeros_like(positions),
+        "dwell",
+    )
 
 
 def concatenate(*segments: Trajectory) -> Trajectory:
@@ -132,8 +166,13 @@ def concatenate(*segments: Trajectory) -> Trajectory:
     for index, segment in enumerate(segments):
         if previous is not None and not np.allclose(previous.q[-1], segment.q[0], atol=1e-7):
             raise ValueError("Trajectory concatenation has a position discontinuity.")
-        if previous is not None and (not np.allclose(previous.dq[-1], segment.dq[0], atol=1e-7) or not np.allclose(previous.ddq[-1], segment.ddq[0], atol=1e-6)):
-            raise ValueError("Trajectory concatenation has a velocity or acceleration discontinuity.")
+        if previous is not None and (
+            not np.allclose(previous.dq[-1], segment.dq[0], atol=1e-7)
+            or not np.allclose(previous.ddq[-1], segment.ddq[0], atol=1e-6)
+        ):
+            raise ValueError(
+                "Trajectory concatenation has a velocity or acceleration discontinuity."
+            )
         selection = slice(None) if index == 0 else slice(1, None)
         times.append(segment.t[selection] - segment.t[0] + elapsed)
         positions.append(segment.q[selection])
@@ -141,4 +180,10 @@ def concatenate(*segments: Trajectory) -> Trajectory:
         accelerations.append(segment.ddq[selection])
         elapsed += segment.duration
         previous = segment
-    return Trajectory(np.concatenate(times), np.vstack(positions), np.vstack(velocities), np.vstack(accelerations), "concatenated motion")
+    return Trajectory(
+        np.concatenate(times),
+        np.vstack(positions),
+        np.vstack(velocities),
+        np.vstack(accelerations),
+        "concatenated motion",
+    )

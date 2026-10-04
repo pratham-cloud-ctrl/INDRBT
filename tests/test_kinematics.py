@@ -40,7 +40,9 @@ def test_jacobian_against_world_frame_finite_difference():
             increment[joint] = epsilon
             plus, minus = robot.fk(q + increment), robot.fk(q - increment)
             numerical[:3, joint] = (plus[:3, 3] - minus[:3, 3]) / (2 * epsilon)
-            numerical[3:, joint] = Rotation.from_matrix(plus[:3, :3] @ minus[:3, :3].T).as_rotvec() / (2 * epsilon)
+            numerical[3:, joint] = Rotation.from_matrix(
+                plus[:3, :3] @ minus[:3, :3].T
+            ).as_rotvec() / (2 * epsilon)
         np.testing.assert_allclose(analytical, numerical, atol=3e-9)
 
 

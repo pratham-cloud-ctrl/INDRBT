@@ -26,13 +26,15 @@ def load_config(path: str | Path | None = None) -> dict:
     cfg = deepcopy(cfg)
     cfg["joint_limits"] = np.deg2rad(np.asarray(cfg["joint_limits_deg"], float))
     cfg["velocity_limits"] = np.deg2rad(np.asarray(cfg["velocity_limits_deg_s"], float))
-    cfg["acceleration_limits"] = np.deg2rad(
-        np.asarray(cfg["acceleration_limits_deg_s2"], float)
-    )
+    cfg["acceleration_limits"] = np.deg2rad(np.asarray(cfg["acceleration_limits_deg_s2"], float))
     cfg["home"] = np.deg2rad(np.asarray(cfg["home_deg"], float))
     cfg["poses"] = {name: np.deg2rad(q) for name, q in cfg["poses_deg"].items()}
     limits = cfg["joint_limits"]
-    if limits.shape != (6, 2) or not np.all(np.isfinite(limits)) or np.any(limits[:, 0] >= limits[:, 1]):
+    if (
+        limits.shape != (6, 2)
+        or not np.all(np.isfinite(limits))
+        or np.any(limits[:, 0] >= limits[:, 1])
+    ):
         raise ValueError("Expected six ordered, finite joint bounds.")
     for field in ("velocity_limits", "acceleration_limits"):
         values = cfg[field]
@@ -42,10 +44,17 @@ def load_config(path: str | Path | None = None) -> dict:
         if q.shape != (6,) or np.any(q < limits[:, 0]) or np.any(q > limits[:, 1]):
             raise ValueError("A named pose violates configured joint bounds.")
     required_geometry = (
-        "shoulder_height", "upper_arm_length", "forearm_length", "wrist_roll_length",
-        "wrist_pitch_length", "tool_length",
+        "shoulder_height",
+        "upper_arm_length",
+        "forearm_length",
+        "wrist_roll_length",
+        "wrist_pitch_length",
+        "tool_length",
     )
-    if any(not np.isfinite(cfg["geometry"][key]) or cfg["geometry"][key] <= 0 for key in required_geometry):
+    if any(
+        not np.isfinite(cfg["geometry"][key]) or cfg["geometry"][key] <= 0
+        for key in required_geometry
+    ):
         raise ValueError("Kinematic dimensions must be positive finite SI values.")
     if cfg["gripper"]["max_opening"] <= 0 or not 0 < cfg["gripper"]["screw_efficiency"] <= 1:
         raise ValueError("Invalid gripper range or screw efficiency.")

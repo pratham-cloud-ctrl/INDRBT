@@ -30,8 +30,12 @@ class ControlResult:
 
 
 def simulate_pid(
-    robot: RobotArm, trajectory: Trajectory, initial: np.ndarray | None = None,
-    gain_scale: float = 1.0, mode: str = "PID", feedforward: bool = False,
+    robot: RobotArm,
+    trajectory: Trajectory,
+    initial: np.ndarray | None = None,
+    gain_scale: float = 1.0,
+    mode: str = "PID",
+    feedforward: bool = False,
 ) -> ControlResult:
     """Integrate I*qdd + b*qd = command with semi-implicit Euler.
 
@@ -57,21 +61,31 @@ def simulate_pid(
     t = np.linspace(trajectory.t[0], trajectory.t[-1], steps + 1)
     step = duration / steps
     desired = np.column_stack([np.interp(t, trajectory.t, trajectory.q[:, j]) for j in range(6)])
-    desired_velocity = np.column_stack([np.interp(t, trajectory.t, trajectory.dq[:, j]) for j in range(6)])
-    desired_acceleration = np.column_stack([np.interp(t, trajectory.t, trajectory.ddq[:, j]) for j in range(6)])
+    desired_velocity = np.column_stack(
+        [np.interp(t, trajectory.t, trajectory.dq[:, j]) for j in range(6)]
+    )
+    desired_acceleration = np.column_stack(
+        [np.interp(t, trajectory.t, trajectory.ddq[:, j]) for j in range(6)]
+    )
     actual, velocity, torque, integral_history = (np.zeros_like(desired) for _ in range(4))
     actual[0] = robot.check_joints(trajectory.q[0] if initial is None else initial)
     integral = np.zeros(6)
     for index in range(steps):
         error = desired[index] - actual[index]
         derivative = desired_velocity[index] - velocity[index]
-        feed = inertia * desired_acceleration[index] + damping * desired_velocity[index] if feedforward else 0.0
+        feed = (
+            inertia * desired_acceleration[index] + damping * desired_velocity[index]
+            if feedforward
+            else 0.0
+        )
         trial = integral + error * step
         raw = kp * error + ki * trial + kd * derivative + feed
         saturated = np.clip(raw, -limits, limits)
         integrate = (np.abs(raw) <= limits) | (error * (raw - saturated) < 0)
         integral = np.where(integrate, trial, integral)
-        torque[index] = np.clip(kp * error + ki * integral + kd * derivative + feed, -limits, limits)
+        torque[index] = np.clip(
+            kp * error + ki * integral + kd * derivative + feed, -limits, limits
+        )
         integral_history[index] = integral
         acceleration = (torque[index] - damping * velocity[index]) / inertia
         velocity[index + 1] = velocity[index] + acceleration * step

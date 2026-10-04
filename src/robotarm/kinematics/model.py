@@ -47,10 +47,16 @@ class RobotArm:
         self.config = load_config() if config is None else config
         geometry = self.config["geometry"]
         self.height = float(geometry["shoulder_height"])
-        self.lengths = np.array([
-            0.0, geometry["upper_arm_length"], geometry["forearm_length"],
-            geometry["wrist_roll_length"], geometry["wrist_pitch_length"], geometry["tool_length"],
-        ])
+        self.lengths = np.array(
+            [
+                0.0,
+                geometry["upper_arm_length"],
+                geometry["forearm_length"],
+                geometry["wrist_roll_length"],
+                geometry["wrist_pitch_length"],
+                geometry["tool_length"],
+            ]
+        )
         self.limits = np.asarray(self.config["joint_limits"], float)
         self.reach = float(self.lengths.sum())
         self.position_tolerance = self.config["targets"]["ik_position_tolerance_m"]
@@ -60,7 +66,9 @@ class RobotArm:
         q = np.asarray(q, float)
         if q.shape != (6,) or not np.all(np.isfinite(q)):
             raise ValueError("Expected six finite joint angles in radians.")
-        if enforce_limits and (np.any(q < self.limits[:, 0] - 1e-10) or np.any(q > self.limits[:, 1] + 1e-10)):
+        if enforce_limits and (
+            np.any(q < self.limits[:, 0] - 1e-10) or np.any(q > self.limits[:, 1] + 1e-10)
+        ):
             raise ValueError("Joint position exceeds configured limits.")
         return q
 
@@ -86,10 +94,14 @@ class RobotArm:
             segments.append([origin, transform[:3, 3].copy()])
         part_frames = np.asarray(rotated)
         return {
-            "joint_origins": np.asarray(origins), "joint_axes": np.asarray(axes),
-            "joint_transforms": part_frames, "link_transforms": part_frames,
-            "transforms": part_frames, "link_segments": np.asarray(segments),
-            "base": np.eye(4), "tcp": transform,
+            "joint_origins": np.asarray(origins),
+            "joint_axes": np.asarray(axes),
+            "joint_transforms": part_frames,
+            "link_transforms": part_frames,
+            "transforms": part_frames,
+            "link_segments": np.asarray(segments),
+            "base": np.eye(4),
+            "tcp": transform,
         }
 
     def fk(self, q: np.ndarray, enforce_limits: bool = True) -> np.ndarray:
@@ -115,24 +127,37 @@ class RobotArm:
             float(Rotation.from_matrix(target[:3, :3] @ actual[:3, :3].T).magnitude()),
         )
 
-    def solve_ik(self, target: np.ndarray, seed: np.ndarray | None = None, max_attempts: int = 14) -> IKResult:
-        """Bounded multiseed least squares with position and SO(3) log residuals.
-
-        Deterministic reseeding makes reports reproducible. This local numerical
-        solver can fail for a reachable target; exhaustion is not a reachability
-        proof. Every returned solution is verified against both pose tolerances.
-        """
+    @staticmethod
+    def check_pose(target: np.ndarray) -> np.ndarray:
+        """Validate a proper finite rigid transform before IK or interpolation."""
         target = np.asarray(target, float)
         if target.shape != (4, 4) or not np.all(np.isfinite(target)):
             raise ValueError("Target must be a finite 4x4 homogeneous transform.")
         if not np.allclose(target[3], [0, 0, 0, 1], atol=1e-9):
             raise ValueError("Target has invalid homogeneous last row.")
         orientation = target[:3, :3]
-        if not np.allclose(orientation.T @ orientation, np.eye(3), atol=1e-7) or not np.isclose(np.linalg.det(orientation), 1, atol=1e-7):
+        if not np.allclose(orientation.T @ orientation, np.eye(3), atol=1e-7) or not np.isclose(
+            np.linalg.det(orientation), 1, atol=1e-7
+        ):
             raise ValueError("Target rotation must belong to SO(3).")
+        return target
+
+    def solve_ik(
+        self, target: np.ndarray, seed: np.ndarray | None = None, max_attempts: int = 14
+    ) -> IKResult:
+        """Bounded multiseed least squares with position and SO(3) log residuals.
+
+        Deterministic reseeding makes reports reproducible. This local numerical
+        solver can fail for a reachable target; exhaustion is not a reachability
+        proof. Every returned solution is verified against both pose tolerances.
+        """
+        target = self.check_pose(target)
         if max_attempts < 1:
             raise ValueError("At least one IK attempt is required.")
-        if np.linalg.norm(target[:3, 3] - [0, 0, self.height]) > self.reach + self.position_tolerance:
+        if (
+            np.linalg.norm(target[:3, 3] - [0, 0, self.height])
+            > self.reach + self.position_tolerance
+        ):
             raise IKError("Target is outside the shoulder-centred geometric reach bound.")
         lower, upper = self.limits.T
         rng = np.random.default_rng(611)
@@ -151,20 +176,30 @@ class RobotArm:
 
         for attempt, start in enumerate(seeds[:max_attempts], 1):
             solution = least_squares(
-                residual, np.clip(start, lower + 1e-9, upper - 1e-9),
-                bounds=(lower, upper), ftol=1e-11, xtol=1e-11, gtol=1e-11,
-                max_nfev=350, x_scale="jac",
+                residual,
+                np.clip(start, lower + 1e-9, upper - 1e-9),
+                bounds=(lower, upper),
+                ftol=1e-11,
+                xtol=1e-11,
+                gtol=1e-11,
+                max_nfev=350,
+                x_scale="jac",
             )
             evaluations += solution.nfev
             position_error, orientation_error = self.pose_error(solution.x, target)
             if position_error + self.reach * orientation_error < best[0] + self.reach * best[1]:
                 best = position_error, orientation_error
-            if position_error <= self.position_tolerance and orientation_error <= self.orientation_tolerance:
+            if (
+                position_error <= self.position_tolerance
+                and orientation_error <= self.orientation_tolerance
+            ):
                 return IKResult(solution.x, position_error, orientation_error, attempt, evaluations)
         raise IKError(
             f"IK exhausted {max_attempts} starts; best errors {best[0]:.3g} m, "
             f"{best[1]:.3g} rad. Pose may be inaccessible or local search may have failed."
         )
 
-    def ik(self, target: np.ndarray, seed: np.ndarray | None = None, max_attempts: int = 14) -> np.ndarray:
+    def ik(
+        self, target: np.ndarray, seed: np.ndarray | None = None, max_attempts: int = 14
+    ) -> np.ndarray:
         return self.solve_ik(target, seed, max_attempts).q
