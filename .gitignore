@@ -12,3 +12,6 @@ dist/
 *.lck
 .DS_Store
 Thumbs.db
+*.FCBak
+*.blend1
+*.kicad_prl

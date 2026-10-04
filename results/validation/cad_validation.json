@@ -1,0 +1,2391 @@
+{
+  "status": "VERIFIED DIGITALLY",
+  "cad_kernel": "build123d 0.13 / OpenCascade",
+  "length_unit": "mm; source config m converted by x1000",
+  "component_count": 54,
+  "components": [
+    {
+      "name": "base_mounting_plate",
+      "group": "base",
+      "material": "steel",
+      "role": "structure",
+      "volume_mm3": 709823.2251245294,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 5.572112317227557,
+      "center_of_geometry_mm": [
+        -9.391910447599112e-16,
+        -1.8886324692716357e-15,
+        9.936907692733254
+      ],
+      "solids": 1,
+      "faces": 28,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -110.0,
+          -110.0,
+          0.0
+        ],
+        "max_mm": [
+          110.0,
+          110.0,
+          20.0
+        ],
+        "size_mm": [
+          220.0,
+          220.0,
+          20.0
+        ]
+      }
+    },
+    {
+      "name": "fixed_base_riser",
+      "group": "base",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 743595.3775665455,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 2.007707519429673,
+      "center_of_geometry_mm": [
+        -6.594978371178434e-15,
+        -9.002047628314776e-16,
+        67.99999999999999
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -76.0,
+          -76.0,
+          20.0
+        ],
+        "max_mm": [
+          76.0,
+          76.0,
+          116.0
+        ],
+        "size_mm": [
+          152.0,
+          152.0,
+          96.0
+        ]
+      }
+    },
+    {
+      "name": "j1_slew_bearing_envelope",
+      "group": "base",
+      "material": "steel",
+      "role": "bearing envelope",
+      "volume_mm3": 70327.69314326109,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.5520723911745996,
+      "center_of_geometry_mm": [
+        -6.290242195790573e-14,
+        -3.726720200937542e-15,
+        116.00000000000007
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -68.0,
+          -68.0,
+          109.0
+        ],
+        "max_mm": [
+          68.0,
+          68.0,
+          123.0
+        ],
+        "size_mm": [
+          136.0,
+          136.0,
+          14.0
+        ]
+      }
+    },
+    {
+      "name": "base_electronics_cover",
+      "group": "base",
+      "material": "polymer",
+      "role": "removable cover",
+      "volume_mm3": 97878.10983040277,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.11745373179648333,
+      "center_of_geometry_mm": [
+        2.85453788256399e-13,
+        -5.881910133388359e-14,
+        67.49999999999993
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -79.0,
+          -79.0,
+          24.0
+        ],
+        "max_mm": [
+          79.0,
+          79.0,
+          111.0
+        ],
+        "size_mm": [
+          158.0,
+          158.0,
+          87.0
+        ]
+      }
+    },
+    {
+      "name": "turret_neck",
+      "group": "j1",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 429769.8750110837,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 1.1603786625299262,
+      "center_of_geometry_mm": [
+        1.029337440021694e-14,
+        -3.131538189040155e-15,
+        -45.00000000000001
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -55.0,
+          -55.0,
+          -73.5
+        ],
+        "max_mm": [
+          55.0,
+          55.0,
+          -16.5
+        ],
+        "size_mm": [
+          110.0,
+          110.0,
+          57.0
+        ]
+      }
+    },
+    {
+      "name": "turret_bridge",
+      "group": "j1",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 192339.37979737192,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.5193163254529043,
+      "center_of_geometry_mm": [
+        1.2105198836512573e-15,
+        -7.565749272820358e-17,
+        -22.0
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -55.0,
+          -59.0,
+          -29.5
+        ],
+        "max_mm": [
+          55.0,
+          59.0,
+          -14.5
+        ],
+        "size_mm": [
+          110.0,
+          118.0,
+          15.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_fork_-1",
+      "group": "j1",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 122862.15947882645,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.3317278305928314,
+      "center_of_geometry_mm": [
+        -5.492700694649704e-15,
+        -60.00000000000002,
+        -1.880250642103807e-15
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -60.0,
+          -69.0,
+          -60.0
+        ],
+        "max_mm": [
+          60.0,
+          -51.0,
+          60.0
+        ],
+        "size_mm": [
+          120.0,
+          18.0,
+          120.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_bearing_-1",
+      "group": "j1",
+      "material": "steel",
+      "role": "bearing envelope",
+      "volume_mm3": 22053.98042820035,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.17312374636137276,
+      "center_of_geometry_mm": [
+        2.573343600054235e-14,
+        -54.00000000000001,
+        -1.9965036259414023e-15
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -37.0,
+          -60.0,
+          -37.0
+        ],
+        "max_mm": [
+          37.0,
+          -48.0,
+          37.0
+        ],
+        "size_mm": [
+          74.0,
+          12.0,
+          74.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_fork_+1",
+      "group": "j1",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 122862.15947882645,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.3317278305928314,
+      "center_of_geometry_mm": [
+        -5.492700694649704e-15,
+        60.00000000000002,
+        -1.880250642103807e-15
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -60.0,
+          51.0,
+          -60.0
+        ],
+        "max_mm": [
+          60.0,
+          69.0,
+          60.0
+        ],
+        "size_mm": [
+          120.0,
+          18.0,
+          120.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_bearing_+1",
+      "group": "j1",
+      "material": "steel",
+      "role": "bearing envelope",
+      "volume_mm3": 22053.98042820035,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.17312374636137276,
+      "center_of_geometry_mm": [
+        2.573343600054235e-14,
+        54.00000000000001,
+        -1.9965036259414023e-15
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -37.0,
+          48.0,
+          -37.0
+        ],
+        "max_mm": [
+          37.0,
+          60.0,
+          37.0
+        ],
+        "size_mm": [
+          74.0,
+          12.0,
+          74.0
+        ]
+      }
+    },
+    {
+      "name": "j2_gearbox_envelope",
+      "group": "j1",
+      "material": "steel",
+      "role": "gearbox envelope",
+      "volume_mm3": 119656.98098992804,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.9393073007709352,
+      "center_of_geometry_mm": [
+        -1.0215541701538551e-14,
+        -80.0,
+        2.2385610453597648e-15
+      ],
+      "solids": 1,
+      "faces": 3,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -46.0,
+          -89.0,
+          -46.0
+        ],
+        "max_mm": [
+          46.0,
+          -71.0,
+          46.0
+        ],
+        "size_mm": [
+          92.0,
+          18.0,
+          92.0
+        ]
+      }
+    },
+    {
+      "name": "j2_motor_envelope",
+      "group": "j1",
+      "material": "polymer",
+      "role": "motor envelope",
+      "volume_mm3": 235616.28240155394,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.28273953888186476,
+      "center_of_geometry_mm": [
+        3.1631064973871974e-16,
+        -119.0,
+        4.940886115354778e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -31.5,
+          -149.0,
+          -31.5
+        ],
+        "max_mm": [
+          31.5,
+          -89.0,
+          31.5
+        ],
+        "size_mm": [
+          63.0,
+          60.0,
+          63.0
+        ]
+      }
+    },
+    {
+      "name": "j2_motor_endcap",
+      "group": "j1",
+      "material": "steel",
+      "role": "motor end cap",
+      "volume_mm3": 13210.397108345082,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.10370161730050889,
+      "center_of_geometry_mm": [
+        -6.609301041756417e-15,
+        -151.5,
+        1.917286845086129e-16
+      ],
+      "solids": 1,
+      "faces": 3,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -29.0,
+          -154.0,
+          -29.0
+        ],
+        "max_mm": [
+          29.0,
+          -149.0,
+          29.0
+        ],
+        "size_mm": [
+          58.0,
+          5.0,
+          58.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_rotor",
+      "group": "j2",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 449675.00606422866,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 1.2141225163734175,
+      "center_of_geometry_mm": [
+        5.695529094687441e-15,
+        1.241851869367219e-15,
+        4.342844909495677e-17
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -46.0,
+          -48.0,
+          -46.0
+        ],
+        "max_mm": [
+          46.0,
+          48.0,
+          46.0
+        ],
+        "size_mm": [
+          92.0,
+          96.0,
+          92.0
+        ]
+      }
+    },
+    {
+      "name": "shoulder_output_shaft",
+      "group": "j2",
+      "material": "steel",
+      "role": "hollow output shaft",
+      "volume_mm3": 199051.3105314493,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 1.5625527876718772,
+      "center_of_geometry_mm": [
+        4.971231954650227e-15,
+        -7.310635227426803e-17,
+        -5.98276889934313e-17
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -28.0,
+          -64.0,
+          -28.0
+        ],
+        "max_mm": [
+          28.0,
+          64.0,
+          28.0
+        ],
+        "size_mm": [
+          56.0,
+          128.0,
+          56.0
+        ]
+      }
+    },
+    {
+      "name": "upper_arm_hollow_link",
+      "group": "j2",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 185978.70027366793,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.5021424907389034,
+      "center_of_geometry_mm": [
+        120.99999999999977,
+        -9.492104276154039e-15,
+        -4.99912601560972e-15
+      ],
+      "solids": 1,
+      "faces": 34,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          32.0,
+          -40.0,
+          -50.0
+        ],
+        "max_mm": [
+          210.0,
+          40.0,
+          50.0
+        ],
+        "size_mm": [
+          178.0,
+          80.0,
+          100.0
+        ]
+      }
+    },
+    {
+      "name": "elbow_fork_bridge_-1",
+      "group": "j2",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 99469.16802635077,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.2685667536711471,
+      "center_of_geometry_mm": [
+        243.0,
+        -45.0,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          191.0,
+          -51.0,
+          -40.0
+        ],
+        "max_mm": [
+          295.0,
+          -39.0,
+          40.0
+        ],
+        "size_mm": [
+          104.0,
+          12.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "name": "elbow_fork_bridge_+1",
+      "group": "j2",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 99469.16802635077,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.2685667536711471,
+      "center_of_geometry_mm": [
+        243.0,
+        45.0,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          191.0,
+          39.0,
+          -40.0
+        ],
+        "max_mm": [
+          295.0,
+          51.0,
+          40.0
+        ],
+        "size_mm": [
+          104.0,
+          12.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "name": "upper_service_cover_-1",
+      "group": "j2",
+      "material": "polymer",
+      "role": "service cover",
+      "volume_mm3": 21525.663706143598,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.025830796447372316,
+      "center_of_geometry_mm": [
+        121.0,
+        -41.25,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          44.0,
+          -42.5,
+          -28.000000000000004
+        ],
+        "max_mm": [
+          198.0,
+          -40.0,
+          28.000000000000004
+        ],
+        "size_mm": [
+          154.0,
+          2.5,
+          56.00000000000001
+        ]
+      }
+    },
+    {
+      "name": "elbow_fork_-1",
+      "group": "j2",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 68773.73575308948,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.18568908653334162,
+      "center_of_geometry_mm": [
+        319.99999999999994,
+        -47.000000000000014,
+        -1.8844838597679375e-15
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          268.0,
+          -53.0,
+          -52.0
+        ],
+        "max_mm": [
+          372.0,
+          -41.0,
+          52.0
+        ],
+        "size_mm": [
+          104.0,
+          12.0,
+          104.0
+        ]
+      }
+    },
+    {
+      "name": "elbow_bearing_-1",
+      "group": "j2",
+      "material": "steel",
+      "role": "bearing envelope",
+      "volume_mm3": 13854.42360233099,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.10875722527829827,
+      "center_of_geometry_mm": [
+        319.99999999999994,
+        -38.99999999999999,
+        6.704374810366856e-16
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          291.0,
+          -44.0,
+          -29.0
+        ],
+        "max_mm": [
+          349.0,
+          -34.0,
+          29.0
+        ],
+        "size_mm": [
+          58.0,
+          10.0,
+          58.0
+        ]
+      }
+    },
+    {
+      "name": "upper_service_cover_+1",
+      "group": "j2",
+      "material": "polymer",
+      "role": "service cover",
+      "volume_mm3": 21525.663706143598,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.025830796447372316,
+      "center_of_geometry_mm": [
+        121.0,
+        41.25,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          44.0,
+          40.0,
+          -28.000000000000004
+        ],
+        "max_mm": [
+          198.0,
+          42.5,
+          28.000000000000004
+        ],
+        "size_mm": [
+          154.0,
+          2.5,
+          56.00000000000001
+        ]
+      }
+    },
+    {
+      "name": "elbow_fork_+1",
+      "group": "j2",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 68773.73575308948,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.18568908653334162,
+      "center_of_geometry_mm": [
+        319.99999999999994,
+        47.000000000000014,
+        -1.8844838597679375e-15
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          268.0,
+          41.0,
+          -52.0
+        ],
+        "max_mm": [
+          372.0,
+          53.0,
+          52.0
+        ],
+        "size_mm": [
+          104.0,
+          12.0,
+          104.0
+        ]
+      }
+    },
+    {
+      "name": "elbow_bearing_+1",
+      "group": "j2",
+      "material": "steel",
+      "role": "bearing envelope",
+      "volume_mm3": 13854.42360233099,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.10875722527829827,
+      "center_of_geometry_mm": [
+        319.99999999999994,
+        38.99999999999999,
+        6.704374810366856e-16
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          291.0,
+          34.0,
+          -29.0
+        ],
+        "max_mm": [
+          349.0,
+          44.0,
+          29.0
+        ],
+        "size_mm": [
+          58.0,
+          10.0,
+          58.0
+        ]
+      }
+    },
+    {
+      "name": "j3_gearbox_envelope",
+      "group": "j2",
+      "material": "steel",
+      "role": "gearbox envelope",
+      "volume_mm3": 72583.35666853859,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.569779349848028,
+      "center_of_geometry_mm": [
+        320.0,
+        -61.0,
+        -1.0676770929777266e-15
+      ],
+      "solids": 1,
+      "faces": 3,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          282.0,
+          -69.0,
+          -38.0
+        ],
+        "max_mm": [
+          358.0,
+          -53.0,
+          38.0
+        ],
+        "size_mm": [
+          76.0,
+          16.0,
+          76.0
+        ]
+      }
+    },
+    {
+      "name": "j3_motor_envelope",
+      "group": "j2",
+      "material": "polymer",
+      "role": "motor envelope",
+      "volume_mm3": 136215.15878304932,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.1634581905396592,
+      "center_of_geometry_mm": [
+        320.0,
+        -95.5,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          294.5,
+          -122.0,
+          -25.5
+        ],
+        "max_mm": [
+          345.5,
+          -69.0,
+          25.5
+        ],
+        "size_mm": [
+          51.0,
+          53.0,
+          51.0
+        ]
+      }
+    },
+    {
+      "name": "elbow_rotor",
+      "group": "j3",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 217750.07000561568,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.5879251890151624,
+      "center_of_geometry_mm": [
+        -7.752108490468092e-15,
+        -5.346281717564202e-16,
+        -6.828671015136266e-16
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -38.0,
+          -32.0,
+          -38.0
+        ],
+        "max_mm": [
+          38.0,
+          32.0,
+          38.0
+        ],
+        "size_mm": [
+          76.0,
+          64.0,
+          76.0
+        ]
+      }
+    },
+    {
+      "name": "elbow_output_shaft",
+      "group": "j3",
+      "material": "steel",
+      "role": "hollow output shaft",
+      "volume_mm3": 84407.30610700141,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.662597352939961,
+      "center_of_geometry_mm": [
+        5.172033997834153e-16,
+        -2.6365251434271754e-16,
+        -4.147046505987524e-16
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -19.8,
+          -46.0,
+          -19.8
+        ],
+        "max_mm": [
+          19.8,
+          46.0,
+          19.8
+        ],
+        "size_mm": [
+          39.6,
+          92.0,
+          39.6
+        ]
+      }
+    },
+    {
+      "name": "forearm_hollow_link",
+      "group": "j3",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 186452.05051411683,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.5034205363881155,
+      "center_of_geometry_mm": [
+        140.99999999999983,
+        -3.0322254028887234e-15,
+        2.9572276702212567e-15
+      ],
+      "solids": 1,
+      "faces": 34,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          26.0,
+          -32.5,
+          -40.0
+        ],
+        "max_mm": [
+          256.0,
+          32.5,
+          40.0
+        ],
+        "size_mm": [
+          230.0,
+          65.0,
+          80.0
+        ]
+      }
+    },
+    {
+      "name": "forearm_service_cover_-1",
+      "group": "j3",
+      "material": "polymer",
+      "role": "service cover",
+      "volume_mm3": 22213.66370614359,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.026656396447372308,
+      "center_of_geometry_mm": [
+        141.0,
+        -33.75,
+        -3.275442408075678e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          38.0,
+          -35.0,
+          -21.6
+        ],
+        "max_mm": [
+          244.0,
+          -32.5,
+          21.6
+        ],
+        "size_mm": [
+          206.0,
+          2.5,
+          43.2
+        ]
+      }
+    },
+    {
+      "name": "forearm_service_cover_+1",
+      "group": "j3",
+      "material": "polymer",
+      "role": "service cover",
+      "volume_mm3": 22213.66370614359,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.026656396447372308,
+      "center_of_geometry_mm": [
+        141.0,
+        33.75,
+        -3.275442408075678e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          38.0,
+          32.5,
+          -21.6
+        ],
+        "max_mm": [
+          244.0,
+          35.0,
+          21.6
+        ],
+        "size_mm": [
+          206.0,
+          2.5,
+          43.2
+        ]
+      }
+    },
+    {
+      "name": "wrist_roll_stator",
+      "group": "j3",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 90510.28965957106,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.24437778208084188,
+      "center_of_geometry_mm": [
+        273.00000000000006,
+        -2.029801588848458e-15,
+        -2.172993037566728e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          252.0,
+          -38.0,
+          -38.0
+        ],
+        "max_mm": [
+          294.0,
+          38.0,
+          38.0
+        ],
+        "size_mm": [
+          42.0,
+          76.0,
+          76.0
+        ]
+      }
+    },
+    {
+      "name": "j4_bearing_envelope",
+      "group": "j3",
+      "material": "steel",
+      "role": "bearing envelope",
+      "volume_mm3": 5767.964111990857,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.04527851827912823,
+      "center_of_geometry_mm": [
+        286.0,
+        4.688527761119738e-16,
+        1.1352986470827512e-14
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          280.0,
+          -27.0,
+          -27.0
+        ],
+        "max_mm": [
+          292.0,
+          27.0,
+          27.0
+        ],
+        "size_mm": [
+          12.0,
+          54.0,
+          54.0
+        ]
+      }
+    },
+    {
+      "name": "wrist_roll_rotor",
+      "group": "j4",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 50128.03777884213,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.13534570200287377,
+      "center_of_geometry_mm": [
+        18.5,
+        -8.496125241441068e-16,
+        -3.2658179648161858e-15
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          0.0,
+          -23.5,
+          -23.5
+        ],
+        "max_mm": [
+          37.0,
+          23.5,
+          23.5
+        ],
+        "size_mm": [
+          37.0,
+          47.0,
+          47.0
+        ]
+      }
+    },
+    {
+      "name": "wrist_roll_cover",
+      "group": "j4",
+      "material": "polymer",
+      "role": "cover",
+      "volume_mm3": 10786.658376100553,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.012943990051320664,
+      "center_of_geometry_mm": [
+        10.000000000000004,
+        -5.932430281012031e-15,
+        1.2141594967490494e-14
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          1.0,
+          -29.0,
+          -29.0
+        ],
+        "max_mm": [
+          19.0,
+          29.0,
+          29.0
+        ],
+        "size_mm": [
+          18.0,
+          58.0,
+          58.0
+        ]
+      }
+    },
+    {
+      "name": "wrist_pitch_fork_-1",
+      "group": "j4",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 14867.524401260627,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.040142315883403695,
+      "center_of_geometry_mm": [
+        45.00000000000001,
+        -30.00000000000001,
+        -2.1410635491779256e-15
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          15.0,
+          -34.0,
+          -30.0
+        ],
+        "max_mm": [
+          75.0,
+          -26.0,
+          30.0
+        ],
+        "size_mm": [
+          60.0,
+          8.0,
+          60.0
+        ]
+      }
+    },
+    {
+      "name": "wrist_pitch_fork_+1",
+      "group": "j4",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 14867.524401260627,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.040142315883403695,
+      "center_of_geometry_mm": [
+        45.00000000000001,
+        30.00000000000001,
+        -2.1410635491779256e-15
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          15.0,
+          26.0,
+          -30.0
+        ],
+        "max_mm": [
+          75.0,
+          34.0,
+          30.0
+        ],
+        "size_mm": [
+          60.0,
+          8.0,
+          60.0
+        ]
+      }
+    },
+    {
+      "name": "wrist_pitch_rotor",
+      "group": "j5",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 65144.065264837955,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.17588897621506247,
+      "center_of_geometry_mm": [
+        -5.752048411579561e-15,
+        5.357642179474895e-16,
+        -1.4645814931096835e-15
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          -24.0,
+          -24.0,
+          -24.0
+        ],
+        "max_mm": [
+          24.0,
+          24.0,
+          24.0
+        ],
+        "size_mm": [
+          48.0,
+          48.0,
+          48.0
+        ]
+      }
+    },
+    {
+      "name": "wrist_pitch_neck",
+      "group": "j5",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 18858.98069949953,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.05091924788864874,
+      "center_of_geometry_mm": [
+        23.5,
+        2.5540746031405056e-16,
+        3.761634197980328e-15
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          12.0,
+          -19.0,
+          -19.0
+        ],
+        "max_mm": [
+          35.0,
+          19.0,
+          19.0
+        ],
+        "size_mm": [
+          23.0,
+          38.0,
+          38.0
+        ]
+      }
+    },
+    {
+      "name": "j6_stator_envelope",
+      "group": "j5",
+      "material": "steel",
+      "role": "gearbox envelope",
+      "volume_mm3": 13232.388256920209,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.10387424781682365,
+      "center_of_geometry_mm": [
+        29.0,
+        -1.9296076810782855e-15,
+        -5.9109922437143214e-15
+      ],
+      "solids": 1,
+      "faces": 4,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          23.0,
+          -24.0,
+          -24.0
+        ],
+        "max_mm": [
+          35.0,
+          24.0,
+          24.0
+        ],
+        "size_mm": [
+          12.0,
+          48.0,
+          48.0
+        ]
+      }
+    },
+    {
+      "name": "tool_flange_6xM5_PCD46",
+      "group": "j6",
+      "material": "steel",
+      "role": "structure",
+      "volume_mm3": 19870.573533955445,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.15598400224155026,
+      "center_of_geometry_mm": [
+        4.000000000000001,
+        -1.1442733399450649e-15,
+        1.2086387153169747e-15
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          0.0,
+          -30.0,
+          -30.0
+        ],
+        "max_mm": [
+          8.0,
+          30.0,
+          30.0
+        ],
+        "size_mm": [
+          8.0,
+          60.0,
+          60.0
+        ]
+      }
+    },
+    {
+      "name": "interchangeable_gripper_adapter",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 8935.027287513849,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.02412457367628739,
+      "center_of_geometry_mm": [
+        12.0,
+        4.947454100494152e-15,
+        -6.616337445085694e-16
+      ],
+      "solids": 1,
+      "faces": 15,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          8.0,
+          -24.922554347826093,
+          -25.0
+        ],
+        "max_mm": [
+          16.0,
+          24.922554347826093,
+          25.0
+        ],
+        "size_mm": [
+          8.0,
+          49.845108695652186,
+          50.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_pocketed_body",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 95866.37947044293,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.2588392245701959,
+      "center_of_geometry_mm": [
+        25.426275340508727,
+        -1.2672262183944858e-06,
+        1.125822000155258e-07
+      ],
+      "solids": 1,
+      "faces": 38,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          15.999999899999999,
+          -73.0000001,
+          -24.0000001
+        ],
+        "max_mm": [
+          41.00000010000005,
+          73.0000001,
+          24.0000001
+        ],
+        "size_mm": [
+          25.000000200000052,
+          146.0000002,
+          48.0000002
+        ]
+      }
+    },
+    {
+      "name": "gripper_rear_service_cover",
+      "group": "j6",
+      "material": "polymer",
+      "role": "service cover",
+      "volume_mm3": 8688.548667764617,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.01042625840131754,
+      "center_of_geometry_mm": [
+        15.0,
+        2.3552415452091555e-15,
+        1.3330012912121262e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          14.0,
+          -64.0,
+          -17.0
+        ],
+        "max_mm": [
+          16.0,
+          64.0,
+          17.0
+        ],
+        "size_mm": [
+          2.0,
+          128.0,
+          34.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_guide_rod_-14",
+      "group": "j6",
+      "material": "steel",
+      "role": "linear guide",
+      "volume_mm3": 5233.8933608805955,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.04108606288291268,
+      "center_of_geometry_mm": [
+        43.0,
+        -1.390161608672756e-15,
+        -14.0
+      ],
+      "solids": 1,
+      "faces": 3,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          39.5,
+          -68.0,
+          -17.5
+        ],
+        "max_mm": [
+          46.5,
+          68.0,
+          -10.5
+        ],
+        "size_mm": [
+          7.0,
+          136.0,
+          7.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_guide_rod_+14",
+      "group": "j6",
+      "material": "steel",
+      "role": "linear guide",
+      "volume_mm3": 5233.8933608805955,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.04108606288291268,
+      "center_of_geometry_mm": [
+        43.0,
+        -1.390161608672756e-15,
+        14.0
+      ],
+      "solids": 1,
+      "faces": 3,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          39.5,
+          -68.0,
+          10.5
+        ],
+        "max_mm": [
+          46.5,
+          68.0,
+          17.5
+        ],
+        "size_mm": [
+          7.0,
+          136.0,
+          7.0
+        ]
+      }
+    },
+    {
+      "name": "opposite_hand_screw_envelope",
+      "group": "j6",
+      "material": "steel",
+      "role": "opposite hand screw envelope",
+      "volume_mm3": 7740.884298445248,
+      "density_kg_m3": 7850,
+      "geometric_mass_kg": 0.06076594174279519,
+      "center_of_geometry_mm": [
+        28.0,
+        -1.87987762990975e-15,
+        -1.2662607542051768e-17
+      ],
+      "solids": 1,
+      "faces": 3,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          24.0,
+          -77.0,
+          -4.0
+        ],
+        "max_mm": [
+          32.0,
+          77.0,
+          4.0
+        ],
+        "size_mm": [
+          8.0,
+          154.0,
+          8.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_actuator_envelope",
+      "group": "j6",
+      "material": "polymer",
+      "role": "motor envelope",
+      "volume_mm3": 24815.433508808226,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.029778520210569873,
+      "center_of_geometry_mm": [
+        28.0,
+        92.0,
+        -5.864058438955603e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          13.0,
+          78.0,
+          -15.0
+        ],
+        "max_mm": [
+          43.0,
+          106.0,
+          15.0
+        ],
+        "size_mm": [
+          30.0,
+          28.0,
+          30.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_jaw_carriage_-1",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 4911.362890333117,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.013260679803899418,
+      "center_of_geometry_mm": [
+        45.33159871668748,
+        -51.49999999999999,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          37.0,
+          -56.5,
+          -18.0
+        ],
+        "max_mm": [
+          53.0,
+          -46.5,
+          18.0
+        ],
+        "size_mm": [
+          16.0,
+          10.0,
+          36.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_finger_-1",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 10357.263708555141,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.027964612013098886,
+      "center_of_geometry_mm": [
+        80.63115376585321,
+        -51.49999999999999,
+        -3.834550733278935e-17
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          50.0,
+          -56.5,
+          -9.0
+        ],
+        "max_mm": [
+          110.0,
+          -46.5,
+          9.0
+        ],
+        "size_mm": [
+          60.0,
+          10.0,
+          18.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_contact_pad_-1",
+      "group": "j6",
+      "material": "polymer",
+      "role": "replaceable contact pad",
+      "volume_mm3": 488.20141381643117,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.0005858416965797174,
+      "center_of_geometry_mm": [
+        99.0,
+        -45.75,
+        3.66133126096731e-18
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          88.0,
+          -46.5,
+          -7.5
+        ],
+        "max_mm": [
+          110.0,
+          -45.0,
+          7.5
+        ],
+        "size_mm": [
+          22.0,
+          1.5,
+          15.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_jaw_carriage_+1",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 4911.362890333117,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.013260679803899418,
+      "center_of_geometry_mm": [
+        45.33159871668748,
+        51.49999999999999,
+        0.0
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          37.0,
+          46.5,
+          -18.0
+        ],
+        "max_mm": [
+          53.0,
+          56.5,
+          18.0
+        ],
+        "size_mm": [
+          16.0,
+          10.0,
+          36.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_finger_+1",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 10357.263708555141,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.027964612013098886,
+      "center_of_geometry_mm": [
+        80.63115376585321,
+        51.49999999999999,
+        -3.834550733278935e-17
+      ],
+      "solids": 1,
+      "faces": 12,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          50.0,
+          46.5,
+          -9.0
+        ],
+        "max_mm": [
+          110.0,
+          56.5,
+          9.0
+        ],
+        "size_mm": [
+          60.0,
+          10.0,
+          18.0
+        ]
+      }
+    },
+    {
+      "name": "gripper_contact_pad_+1",
+      "group": "j6",
+      "material": "polymer",
+      "role": "replaceable contact pad",
+      "volume_mm3": 488.20141381643117,
+      "density_kg_m3": 1200,
+      "geometric_mass_kg": 0.0005858416965797174,
+      "center_of_geometry_mm": [
+        99.0,
+        45.75,
+        3.66133126096731e-18
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
+          88.0,
+          45.0,
+          -7.5
+        ],
+        "max_mm": [
+          110.0,
+          46.5,
+          7.5
+        ],
+        "size_mm": [
+          22.0,
+          1.5,
+          15.0
+        ]
+      }
+    }
+  ],
+  "poses": {
+    "home": {
+      "q_deg": [
+        0,
+        -50,
+        90,
+        0,
+        -40,
+        0
+      ],
+      "bbox": {
+        "min_mm": [
+          -110.0,
+          -154.0,
+          0.0
+        ],
+        "max_mm": [
+          599.6564791133604,
+          110.0,
+          487.134221798073
+        ],
+        "size_mm": [
+          709.6564791133604,
+          264.0,
+          487.134221798073
+        ]
+      },
+      "component_count": 54,
+      "step_reimport_valid": true,
+      "step_reimport_solids": 54,
+      "step_volume_relative_error": 2.576804590225529e-10,
+      "max_cad_fk_transform_error": 3.3306690738754696e-16
+    },
+    "extended": {
+      "q_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox": {
+        "min_mm": [
+          -110.0,
+          -154.0,
+          0.0
+        ],
+        "max_mm": [
+          790.0,
+          110.0,
+          250.0
+        ],
+        "size_mm": [
+          900.0,
+          264.0,
+          250.0
+        ]
+      },
+      "component_count": 54,
+      "step_reimport_valid": true,
+      "step_reimport_solids": 54,
+      "step_volume_relative_error": 2.576804590225529e-10,
+      "max_cad_fk_transform_error": 1.1102230246251565e-16
+    },
+    "folded": {
+      "q_deg": [
+        0,
+        -110,
+        130,
+        0,
+        -20,
+        0
+      ],
+      "bbox": {
+        "min_mm": [
+          -161.4464458642139,
+          -154.0,
+          0.0
+        ],
+        "max_mm": [
+          340.95365589120627,
+          110.0,
+          542.7016386514907
+        ],
+        "size_mm": [
+          502.40010175542017,
+          264.0,
+          542.7016386514907
+        ]
+      },
+      "component_count": 54,
+      "step_reimport_valid": true,
+      "step_reimport_solids": 54,
+      "step_volume_relative_error": 2.5768028584659357e-10,
+      "max_cad_fk_transform_error": 2.220446049250313e-16
+    },
+    "vertical": {
+      "q_deg": [
+        0,
+        -90,
+        0,
+        0,
+        0,
+        0
+      ],
+      "bbox": {
+        "min_mm": [
+          -110.0,
+          -154.0,
+          0.0
+        ],
+        "max_mm": [
+          110.0,
+          110.0,
+          980.0
+        ],
+        "size_mm": [
+          220.0,
+          264.0,
+          980.0
+        ]
+      },
+      "component_count": 54,
+      "step_reimport_valid": true,
+      "step_reimport_solids": 54,
+      "step_volume_relative_error": 2.576804590225529e-10,
+      "max_cad_fk_transform_error": 2.220446049250313e-16
+    },
+    "pick": {
+      "q_deg": [
+        -25,
+        -45,
+        95,
+        0,
+        40,
+        0
+      ],
+      "bbox": {
+        "min_mm": [
+          -110.0,
+          -260.21838246820056,
+          0.0
+        ],
+        "max_mm": [
+          452.7993050305314,
+          110.0,
+          468.2741699796953
+        ],
+        "size_mm": [
+          562.7993050305314,
+          370.21838246820056,
+          468.2741699796953
+        ]
+      },
+      "component_count": 54,
+      "step_reimport_valid": true,
+      "step_reimport_solids": 54,
+      "step_volume_relative_error": 2.576802858465936e-10,
+      "max_cad_fk_transform_error": 2.220446049250313e-16
+    },
+    "place": {
+      "q_deg": [
+        25,
+        -45,
+        95,
+        0,
+        40,
+        0
+      ],
+      "bbox": {
+        "min_mm": [
+          -110.0,
+          -151.82732879412436,
+          0.0
+        ],
+        "max_mm": [
+          447.0096725764182,
+          286.32297498474367,
+          468.2741699796953
+        ],
+        "size_mm": [
+          557.0096725764182,
+          438.150303778868,
+          468.2741699796953
+        ]
+      },
+      "component_count": 54,
+      "step_reimport_valid": true,
+      "step_reimport_solids": 54,
+      "step_volume_relative_error": 2.576802858465936e-10,
+      "max_cad_fk_transform_error": 2.220446049250313e-16
+    }
+  },
+  "geometric_mass_total_kg": 20.816117498480253,
+  "geometric_mass_by_group_kg": {
+    "base": 8.249345959628313,
+    "j1": 4.015146598844548,
+    "j2": 5.189743059032204,
+    "j3": 2.0969121715979537,
+    "j4": 0.22857432382100182,
+    "j5": 0.33068247192053485,
+    "j6": 0.7057129136356975
+  },
+  "structure_only_mass_by_group_kg": {
+    "base": 7.579819836657229,
+    "j1": 2.3431506491684932,
+    "j2": 4.1873294751931756,
+    "j3": 1.9983208604240807,
+    "j4": 0.21563033376968116,
+    "j5": 0.2268082241037112,
+    "j6": 0.604742193281015
+  },
+  "mass_warning": "Geometric envelope/material estimate: motor/gearbox/bearing interiors are not detailed, intersecting same-group seats are summed. Dynamic lumped masses in config remain ASSUMED independently.",
+  "interference_checks": [
+    {
+      "pose": "home",
+      "parts": [
+        "base_mounting_plate",
+        "upper_arm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "home",
+      "parts": [
+        "base_mounting_plate",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "home",
+      "parts": [
+        "fixed_base_riser",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "home",
+      "parts": [
+        "upper_arm_hollow_link",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "home",
+      "parts": [
+        "shoulder_fork_+1",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "home",
+      "parts": [
+        "upper_arm_hollow_link",
+        "gripper_pocketed_body"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "extended",
+      "parts": [
+        "base_mounting_plate",
+        "upper_arm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "extended",
+      "parts": [
+        "base_mounting_plate",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "extended",
+      "parts": [
+        "fixed_base_riser",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "extended",
+      "parts": [
+        "upper_arm_hollow_link",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "extended",
+      "parts": [
+        "shoulder_fork_+1",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "extended",
+      "parts": [
+        "upper_arm_hollow_link",
+        "gripper_pocketed_body"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "folded",
+      "parts": [
+        "base_mounting_plate",
+        "upper_arm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "folded",
+      "parts": [
+        "base_mounting_plate",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "folded",
+      "parts": [
+        "fixed_base_riser",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "folded",
+      "parts": [
+        "upper_arm_hollow_link",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "folded",
+      "parts": [
+        "shoulder_fork_+1",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "folded",
+      "parts": [
+        "upper_arm_hollow_link",
+        "gripper_pocketed_body"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "vertical",
+      "parts": [
+        "base_mounting_plate",
+        "upper_arm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "vertical",
+      "parts": [
+        "base_mounting_plate",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "vertical",
+      "parts": [
+        "fixed_base_riser",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "vertical",
+      "parts": [
+        "upper_arm_hollow_link",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "vertical",
+      "parts": [
+        "shoulder_fork_+1",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "vertical",
+      "parts": [
+        "upper_arm_hollow_link",
+        "gripper_pocketed_body"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "pick",
+      "parts": [
+        "base_mounting_plate",
+        "upper_arm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "pick",
+      "parts": [
+        "base_mounting_plate",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "pick",
+      "parts": [
+        "fixed_base_riser",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "pick",
+      "parts": [
+        "upper_arm_hollow_link",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "pick",
+      "parts": [
+        "shoulder_fork_+1",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "pick",
+      "parts": [
+        "upper_arm_hollow_link",
+        "gripper_pocketed_body"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "place",
+      "parts": [
+        "base_mounting_plate",
+        "upper_arm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "place",
+      "parts": [
+        "base_mounting_plate",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "place",
+      "parts": [
+        "fixed_base_riser",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "place",
+      "parts": [
+        "upper_arm_hollow_link",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "place",
+      "parts": [
+        "shoulder_fork_+1",
+        "forearm_hollow_link"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    },
+    {
+      "pose": "place",
+      "parts": [
+        "upper_arm_hollow_link",
+        "gripper_pocketed_body"
+      ],
+      "overlap_mm3": 0.0,
+      "result": "PASS"
+    }
+  ],
+  "interference_scope": "36 discrete nonadjacent primary structure checks; not an exhaustive swept collision proof. Bearing seats and adjacent joint envelopes excluded.",
+  "gripper": {
+    "opening_mm": 90.0,
+    "jaw_travel_each_mm": 45.0,
+    "finger_length_mm": 60.0,
+    "tool_length_mm": 110.0
+  }
+}
