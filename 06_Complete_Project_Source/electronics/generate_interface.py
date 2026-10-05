@@ -234,8 +234,11 @@ def build(libraries):
 
     s.text("1 | PROTECTED LOGIC SUPPLY", 16, 17, 2)
     connector("J1", 2, "5V INPUT", 30, 43, ["+5V_IN", "GND"])
-    s.add("F1", "Device:Polyfuse", "0.25A hold", 61, 40, {1: "+5V_IN", 2: "+5V_FUSED"}, 90,
-          "Fuse:Fuse_1206_3216Metric", "Resettable fuse, conceptual 250 mA hold; select trip curve before fabrication")
+    fuse = json.loads((ROOT / "fuse_selection.json").read_text(encoding="utf-8"))
+    s.add("F1", "Device:Polyfuse", fuse["manufacturer_part_number"], 61, 40,
+          {1: "+5V_IN", 2: "+5V_FUSED"}, 90, fuse["footprint"],
+          "Bourns PTC, 250 mA hold at 23 C; manufacturer nominal land pattern; trip/inrush unmeasured",
+          datasheet=fuse["datasheet_url"])
     diode("D1", "SS14", 96, 40, "+5V_PROTECTED", "+5V_FUSED", 180)
     capacitor("C1", "10uF / 10V", 123, 51, "+5V_PROTECTED", "GND")
     s.add("U1", "Regulator_Linear:AP2112K-3.3", "AP2112K-3.3", 161, 42,

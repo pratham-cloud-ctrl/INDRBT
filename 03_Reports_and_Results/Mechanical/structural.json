@@ -4,6 +4,7 @@
     "root_moment_nm": 70.16535491875,
     "bending_stress_mpa": 1.7589369434489934,
     "elastic_deflection_mm": 0.020820801602241836,
+    "tip_slope_rad": 0.00011529329817975597,
     "yield_safety_factor": 136.44605106161364,
     "second_moment_m4": 1.9945386666666683e-06
   },
@@ -11,6 +12,7 @@
     "root_moment_nm": 31.88019331875,
     "bending_stress_mpa": 1.274691057974501,
     "elastic_deflection_mm": 0.013543250196427629,
+    "tip_slope_rad": 8.170104783107624e-05,
     "yield_safety_factor": 188.28091599023438,
     "second_moment_m4": 1.0004053333333333e-06
   },
@@ -18,9 +20,17 @@
     "root_moment_nm": 6.0,
     "bending_stress_mpa": 19.999999999999996,
     "elastic_deflection_mm": 0.06956521739130433,
+    "tip_slope_rad": 0.0017391304347826083,
     "yield_safety_factor": 12.000000000000002,
     "second_moment_m4": 1.5000000000000002e-09
   },
-  "serial_tcp_beam_deflection_mm": 0.08855190194315476,
+  "serial_tcp_beam_deflection_mm": 0.10407510103105926,
+  "serial_tcp_deflection_terms_mm": {
+    "upper_arm_local": 0.020820801602241836,
+    "forearm_local": 0.013543250196427629,
+    "upper_arm_rotation": 0.05418785014448531,
+    "forearm_rotation": 0.015523199087904484
+  },
+  "serial_tcp_formula": "delta_upper + delta_forearm + theta_upper*(L2+lr+lp+lt) + theta_forearm*(lr+lp+lt); metres internally",
   "limitations": "Ideal clamped rectangular beams; no holes, welds, fastener contact, bearing/gear compliance, local stress, fatigue, shear deformation, transverse coupling or physical confirmation. Static deflection is not repeatability."
 }

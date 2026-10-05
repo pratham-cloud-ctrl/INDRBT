@@ -10,6 +10,7 @@ TEXT = {
     ".py",
     ".md",
     ".yaml",
+    ".yml",
     ".toml",
     ".json",
     ".xml",
@@ -24,10 +25,13 @@ TEXT = {
     ".kicad_sch",
     ".kicad_pro",
     ".kicad_pcb",
+    ".kicad_mod",
     ".kicad_dru",
     ".gbr",
     ".pos",
     ".step",
+    ".ps1",
+    ".cmd",
 }
 PATTERNS = {
     "credential": re.compile(

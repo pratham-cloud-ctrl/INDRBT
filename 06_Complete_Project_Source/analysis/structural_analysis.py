@@ -31,17 +31,22 @@ def beam_response(
     deflection = (
         end_force * length**3 / 3 + end_moment * length**2 / 2 + distributed_load * length**4 / 8
     ) / (young * inertia)
+    tip_slope = (
+        end_force * length**2 / 2 + end_moment * length + distributed_load * length**3 / 6
+    ) / (young * inertia)
     return {
         "root_moment_nm": moment,
         "bending_stress_mpa": stress / 1e6,
         "elastic_deflection_mm": deflection * 1000,
+        "tip_slope_rad": tip_slope,
         "yield_safety_factor": yield_strength / stress,
         "second_moment_m4": inertia,
     }
 
 
-def run_analysis():
-    c = load_config()
+def calculate(config: dict | None = None):
+    """Return extended-pose beam estimates without writing generated artifacts."""
+    c = load_config() if config is None else config
     g, m, material = c["geometry"], c["mass"], c["materials"]["aluminum"]
     grav = c["targets"]["gravity"]
     l1, l2, wr, wp, tool = [
@@ -95,25 +100,29 @@ def run_analysis():
         0,
         material["yield_strength"],
     )
-    # Serial deflection estimate includes upper tip rotation acting on distal reach.
-    f1 = (distal + m["forearm"]) * grav
-    w1 = m["upper_arm"] * grav / l1
-    upper_slope = (f1 * l1**2 / 2 + fore["root_moment_nm"] * l1 + w1 * l1**3 / 6) / (
-        material["young_modulus"] * upper_i
-    )
-    tcp_estimate = (
-        upper["elastic_deflection_mm"]
-        + fore["elastic_deflection_mm"]
-        + upper_slope * (l2 + wr + wp + tool) * 1000
-    )
+    # Distal sections follow both beam-end rotations. Wrist/tool sections are
+    # rigid in this model, but their offsets still amplify the forearm slope.
+    terms = {
+        "upper_arm_local": upper["elastic_deflection_mm"],
+        "forearm_local": fore["elastic_deflection_mm"],
+        "upper_arm_rotation": upper["tip_slope_rad"] * (l2 + wr + wp + tool) * 1000,
+        "forearm_rotation": fore["tip_slope_rad"] * (wr + wp + tool) * 1000,
+    }
     result = {
         "status": "CALCULATED linear-elastic cantilever model, not FEA",
         "upper_arm": upper,
         "forearm": fore,
         "finger": finger,
-        "serial_tcp_beam_deflection_mm": tcp_estimate,
+        "serial_tcp_beam_deflection_mm": sum(terms.values()),
+        "serial_tcp_deflection_terms_mm": terms,
+        "serial_tcp_formula": "delta_upper + delta_forearm + theta_upper*(L2+lr+lp+lt) + theta_forearm*(lr+lp+lt); metres internally",
         "limitations": "Ideal clamped rectangular beams; no holes, welds, fastener contact, bearing/gear compliance, local stress, fatigue, shear deformation, transverse coupling or physical confirmation. Static deflection is not repeatability.",
     }
+    return result
+
+
+def run_analysis():
+    result = calculate()
     out = ROOT / "results" / "mechanical"
     out.mkdir(parents=True, exist_ok=True)
     (out / "structural.json").write_text(json.dumps(result, indent=2) + "\n")

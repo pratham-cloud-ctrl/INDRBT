@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>final_review</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="final-independent-engineering-review">Final independent engineering review</h1>
+<p>The final review checks the project against its digital engineering brief and
+asks whether another student can inspect the models, understand the theory and
+reproduce the evidence. The result is supported by executed checks, rather than
+an assurance that every possible use has been proved.</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Finding and correction</th>
+<th>Retained evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAD and mechanical components</td>
+<td>All 54 components and six assemblies agree across STEP/STL/native data. Five jaw openings, drawing dimensions and hole patterns were checked. A role/material/native-object catalog makes every part traceable.</td>
+<td><a href="../../06_Complete_Project_Source/results/validation/final_cad_review.json">CAD review</a>, <a href="component_catalog.html">component catalog</a></td>
+</tr>
+<tr>
+<td>Structural theory</td>
+<td>The earlier serial TCP estimate omitted forearm slope acting over the rigid wrist/tool offset. Both link displacements and both downstream rotation terms are now included. A separate whole-arm unit-load/virtual-work integration checks the result.</td>
+<td><a href="../../06_Complete_Project_Source/results/validation/final_theory_review.json">Theory review</a>, <a href="03_mechanical_analysis.html">mechanical model</a>, <a href="../../06_Complete_Project_Source/results/mechanical/structural.json">structural data</a></td>
+</tr>
+<tr>
+<td>Electronics and PCB</td>
+<td>The generic fuse footprint differed from the manufacturer drawing. The exact Bourns MF-NSMF025X-2 selection now has project-local 1.0 × 1.6 mm pads with a 2.0 mm gap. Native schematic/board checks and fabrication exports were rerun; footprint assignments, BOM, physical pads and export hashes are audited.</td>
+<td><a href="../../06_Complete_Project_Source/results/validation/final_electronics_review.json">Electronics review</a>, <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">PCB evidence</a>, <a href="electronics_components.html">component guide</a></td>
+</tr>
+<tr>
+<td>Viewing and navigation</td>
+<td>All 54 components can be isolated and automatically framed in the offline viewer. Browser documents link to readable HTML counterparts. Native CAD/PCB data has explicit application launchers, and folder README indexes separate viewing from editing.</td>
+<td><a href="../../06_Complete_Project_Source/results/validation/viewer_validation.json">Executed browser checks</a>, project guide and organization manifest at the repository root</td>
+</tr>
+<tr>
+<td>Software and reproducibility</td>
+<td>Central parameters, numerical/analytical regressions, native checks, saved artifact consistency and a detached wheel installation establish their recorded scope. GitHub automation covers the software and saved-artifact subset; full CAD/native KiCad checks use local engineering tools.</td>
+<td><a href="../../06_Complete_Project_Source/results/validation/validation_report.md">Executed validation</a>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">wheel evidence</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml">GitHub workflow</a></td>
+</tr>
+</tbody>
+</table>
+<p>The readable <a href="theory_guide.html">theory guide</a> explains the equations, units and
+assumptions. The <a href="engineering_report.html">engineering report</a>, <a href="validation_matrix.html">requirements
+matrix</a> and <a href="project_journal.html">journal</a> expose design
+choices, actual corrections and limitations. Physical payload/repeatability,
+production qualification and continuous swept collision certification remain
+outside this digital brief. Assumed values are not certified component ratings.</p></main></html>

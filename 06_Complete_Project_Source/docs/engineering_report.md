@@ -1,6 +1,6 @@
 # ASTER-6 engineering report
 
-Version 1.0.0 · 2026-10-05 · digital engineering project
+Version 1.1.0 · 2026-10-05 · digital engineering project
 
 ## 1. Abstract
 
@@ -36,7 +36,7 @@ Two guided jaws use an opposed-hand screw concept. A 90 mm opening requires 45 m
 
 ## 9. Mechanical calculations
 
-The assumed manipulator mass is 23.65 kg; the separate summed CAD envelope/material estimate is 19.952 kg. Midpoint COM gravity loading at full extension with a 4 kg payload gives shoulder holding torque of 70.165 N·m and elbow torque of 31.880 N·m. A potential-energy gradient test checks torque signs and magnitudes independently. Ideal closed-section beam calculations estimate 0.08855 mm serial TCP deflection. Access cutouts, the terminal clevis, contacts, gearbox/bearing compliance and fatigue are omitted, so this cannot establish complete robot stiffness. [Mechanical analysis](03_mechanical_analysis.md) gives the formulas and tables.
+The assumed manipulator mass is 23.65 kg; the separate summed CAD envelope/material estimate is 19.952 kg. Midpoint COM gravity loading at full extension with a 4 kg payload gives shoulder holding torque of 70.165 N·m and elbow torque of 31.880 N·m. A potential-energy gradient test checks torque signs and magnitudes independently. Ideal closed-section beam calculations estimate 0.10408 mm serial TCP deflection. Access cutouts, the terminal clevis, contacts, gearbox/bearing compliance and fatigue are omitted, so this cannot establish complete robot stiffness. [Mechanical analysis](03_mechanical_analysis.md) gives the formulas and tables.
 
 ## 10. Actuator sizing
 
@@ -60,7 +60,7 @@ The ideal pick/place cycle lasts 9.24398 s, contains 1041 joint samples and trac
 
 ## 15. Verification
 
-Automated test evidence: 33 tests; 0 failures; 0 errors. An additional 60 randomly generated targets use perturbed initial joints for FK–IK–FK reconstruction. The maximum position residual is 2.700e-11 m and the orientation residual is 6.504e-12 rad. The Jacobian discrepancy against finite differences is 2.517e-10; independent planar FK discrepancy is 2.544e-16 m. Selected structure-pair checks cover 6 CAD poses and 75 task positions, including 5935 exact BRep pair intersections during the task. This is sampled clearance evidence. A fresh isolated wheel installation verifies packaged configuration and detached CLI execution. The evidence is retained under `results/validation`.
+Automated test evidence: 34 tests; 0 failures; 0 errors. An additional 60 randomly generated targets use perturbed initial joints for FK–IK–FK reconstruction. The maximum position residual is 2.700e-11 m and the orientation residual is 6.504e-12 rad. The Jacobian discrepancy against finite differences is 2.517e-10; independent planar FK discrepancy is 2.544e-16 m. Every component pair is classified across 6 CAD poses and 75 task positions, including 5935 exact BRep intersections during the task. Permitted rigid-family contacts are identified explicitly. This is sampled clearance evidence. A fresh isolated wheel installation verifies packaged configuration and detached CLI execution. The evidence is retained under `results/validation`.
 
 ## 16. Results and research questions
 
@@ -84,4 +84,4 @@ Possible extensions are continuous swept paths, CAD-derived inertia tensors/coup
 
 ## 19. Conclusion
 
-The project provides a reproducible original robot concept with consistent geometry, rigid-body kinematics, executed numerical experiments, CAD exports and a routed conceptual electronics design with native checks. Its version 1.0.0 workflow reports **DIGITAL SCOPE COMPLETE**. The documented targets and simplifications preserve the distinction between digital verification and hardware performance.
+The project provides a reproducible original robot concept with consistent geometry, rigid-body kinematics, executed numerical experiments, CAD exports and a routed conceptual electronics design with native checks. Its version 1.1.0 workflow reports **DIGITAL SCOPE COMPLETE**. The documented targets and simplifications preserve the distinction between digital verification and hardware performance.

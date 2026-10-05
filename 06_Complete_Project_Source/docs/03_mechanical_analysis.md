@@ -36,7 +36,7 @@ Configured joint speeds are 90 / 60 / 75 / 120 / 120 / 150 deg/s. Drive torque l
 
 ## Analytical stiffness and strength
 
-This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped rectangular hollow sections. I = [b·h³−(b−2t)(h−2t)³]/12. Root stress = M·h/(2I). Tip displacement = FL³/(3EI) + MtipL²/(2EI) + wL⁴/(8EI). Upper-arm loading includes the downstream elbow moment as an end couple; serial TCP displacement includes upper-tip rotation times the remaining reach.
+This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped rectangular hollow sections. I = [b·h³−(b−2t)(h−2t)³]/12. Root stress = M·h/(2I). Tip displacement = FL³/(3EI) + MtipL²/(2EI) + wL⁴/(8EI). Tip slope = [FL²/2 + Mtip·L + wL³/6]/(EI). Upper-arm loading includes the downstream elbow moment as an end couple. Serial TCP displacement = δupper + δforearm + θupper·(L2+lr+lp+lt) + θforearm·(lr+lp+lt), treating the wrist and tool as rigid offsets. An independent whole-arm virtual-work integral regression checks this combined estimate.
 
 | Member | Bending MPa | Local tip deflection mm | Yield / nominal stress |
 |---|---|---|---|
@@ -44,7 +44,7 @@ This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped recta
 | Forearm | 1.275 | 0.01354 | 188.28 |
 | Finger | 20.000 | 0.06957 | 12.00 |
 
-Combined serial TCP beam estimate is 0.08855 mm. The large ideal-section safety ratios are not real assembly factors of safety: covers, access windows, terminal side clevis, fasteners, bearings, gears and stress concentrations are omitted. Nominal section calculations cannot establish complete CAD stiffness or ±0.1 mm repeatability.
+Combined serial TCP beam estimate is 0.10408 mm. The large ideal-section safety ratios are not real assembly factors of safety: covers, access windows, terminal side clevis, fasteners, bearings, gears and stress concentrations are omitted. Nominal section calculations cannot establish complete CAD stiffness or ±0.1 mm repeatability.
 
 ## Gripper mechanism
 

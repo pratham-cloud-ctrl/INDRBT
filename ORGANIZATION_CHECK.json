@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "project_status": "DIGITAL SCOPE COMPLETE",
-  "artifact_copies_verified": 236,
-  "local_html_links_checked": 143,
+  "artifact_copies_verified": 241,
+  "local_html_links_checked": 350,
   "issues": [],
   "scope": "Exact copy hashes, file links, current version/status; browser interaction is checked separately"
 }

@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "scope": "Independent digital engineering theory/evidence review; no physical qualification or exhaustive continuous-motion certificate",
+  "checks": {
+    "units_and_parameters": {
+      "status": "PASS",
+      "scope": "Current authoritative SI configuration and degree-to-radian conversion"
+    },
+    "kinematics": {
+      "status": "PASS",
+      "seed": 202610051,
+      "independent_fk_and_perturbed_ik_trials": 40,
+      "max_fk_position_discrepancy_m": 3.4219371797089426e-16,
+      "max_fk_rotation_element_discrepancy": 5.551115123125783e-16,
+      "max_ik_position_error_m": 1.6460396263267862e-11,
+      "max_ik_orientation_error_rad": 3.2680671661697834e-12,
+      "max_jacobian_finite_difference_discrepancy": 2.828198786275493e-10,
+      "shoulder_reach_m": 0.7900000000000001,
+      "vertical_tcp_height_m": 0.9800000000000002,
+      "outside_radial_bound_rejected": true,
+      "scope": "Necessary radial bound, bounded local IK and geometric world Jacobian; no exhaustive reachability or collision proof"
+    },
+    "workspace": {
+      "status": "PASS",
+      "saved_samples_rechecked": 6000,
+      "scope": "Stored sample envelope, hull, above-floor count and dimensionless singularity threshold; no reachable-volume certificate"
+    },
+    "recorded_task": {
+      "status": "PASS",
+      "fk_samples_recomputed": 1041,
+      "duration_s": 9.243979567042027,
+      "path_length_m": 1.323599790764895,
+      "scope": "Stored FK/path/limits/events; finite-difference MOVE L limits remain sampled"
+    },
+    "quintic_analytic_limits": {
+      "status": "PASS",
+      "duration_s": 0.8782600579769633,
+      "max_exact_speed_fraction": 0.5693074567819126,
+      "max_exact_acceleration_fraction": 0.9980029960049941
+    },
+    "gravity_and_structure": {
+      "status": "PASS",
+      "gravity_gradient_trials": 12,
+      "max_gravity_gradient_discrepancy_Nm": 7.105427357601002e-09,
+      "gravity_bound_samples": 40,
+      "serial_tcp_deflection_mm": 0.10407510103105926,
+      "independent_virtual_work_deflection_mm": 0.10407510103105932,
+      "forearm_rotation_contribution_mm": 0.015523199087904484,
+      "correction": "Included forearm tip slope multiplied by rigid wrist/tool reach; earlier total omitted that term",
+      "scope": "Extended-pose ideal beam/load models with assumed COMs and materials; no complete CAD stiffness, physical repeatability or load rating"
+    },
+    "gripper_work_and_friction": {
+      "status": "PASS",
+      "opening_m": 0.09,
+      "travel_per_jaw_m": 0.045,
+      "full_stroke_screw_revolutions": 11.25,
+      "target_total_normal_force_N": 200.0,
+      "required_motor_torque_Nm": 0.3637827270671894,
+      "ideal_force_at_assumed_motor_torque_N": 247.40042147019622,
+      "friction_limited_payload_kg_with_safety_factor": 5.0985810648896415,
+      "model_evidence_class": "CALCULATED from assumed screw efficiency and friction; no contact simulation",
+      "scope": "Both-jaw work balance and static ideal friction capacity; no contact/acceleration or motor validation"
+    },
+    "pid_model": {
+      "status": "PASS",
+      "unsaturated_linear_routh_hurwitz_condition": true,
+      "first_feedback_command_agrees": true,
+      "coarse_dt_s": 0.002,
+      "fine_dt_s": 0.001,
+      "max_step_position_difference_on_time_refinement_rad": 0.0003822071823264238,
+      "scope": "Independent inertia/damping plant, conditional antiwindup and semi-implicit Euler; two-step-size comparison is a sensitivity check, not an error-bound proof"
+    },
+    "five_research_sweeps": {
+      "status": "PASS",
+      "RQ1_independent_FK_samples": 11000,
+      "RQ2_payload_points": 7,
+      "RQ3_durations": 3,
+      "RQ4_repeated_controller_cases": 3,
+      "RQ5_finger_lengths": 7,
+      "scope": "Rechecked stored data with independent FK, lever/beam relations and replayed controller cases; numerical sensitivity, no physical experiments"
+    }
+  },
+  "pytest": {
+    "status": "PASS",
+    "tests": 34,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_sha256": "52bc8c00eb9ebb228a7f53da87341d978e4ea4137d146a092bb85283329bff12",
+    "evidence_input": "Successful retained pytest JUnit supplied via --pytest-xml",
+    "note": "The JUnit hash binds the reviewed totals. Integrated execution output is retained in validation_report.json; this review does not rerun pytest."
+  },
+  "source_and_evidence_sha256": {
+    "config/robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+    "src/robotarm/config.py": "6c8b1c817d5c13cb02f6a6c64c6c5932dfeb9a9d5ed445e4dd0c1b7db7c8e11e",
+    "src/robotarm/kinematics/model.py": "edcb08fd4f21e8dbfe260b32cee26d277e28955826b710b8156eef41c9896741",
+    "src/robotarm/planning/trajectories.py": "c81e733d78340a0934db56f7e18fa790609d8ba5e154b447fe9afb1657a57605",
+    "src/robotarm/control/pid.py": "ceef19fda70f1ba3a340d2ba650014689751e4a45124e79101bd36bcf8ed5c65",
+    "src/robotarm/gripper/model.py": "0eba4e46e0e8d1454a4ce495e794b9a586a970f2d9dfaa17a529bce4e2a4b834",
+    "analysis/joint_torque_analysis.py": "7b3c439196462aed2630fbdacaf9f379903bf59b319a28c0a42ee68a8f5ec444",
+    "analysis/structural_analysis.py": "a03a6883ee9c3ca5c6bdfca71cde0de418bf0f858841085f2bbae9a3c0f6a8e0",
+    "analysis/research_experiments.py": "cc19bd4668ee7467037ae61d28e7e977e894f6a9d8c15188f3d443f408db2c93",
+    "tests/test_mechanical.py": "f969a6a157ffec7fffb437f0081177fdf9e661334269d20cad05238d0af05b37",
+    "scripts/review_theory.py": "4954cbddf86e5aed944b9c5ccdaec8e75da70bc21eaf0b7bf2a916bd6d7eb299",
+    "results/mechanical/structural.json": "e154259f6e835f55347676ebec23f77bf524f8b53a704c831320f36e41e6382d",
+    "results/research/experiments.json": "4713ee57cd533a569dfd001d36d3a6cd52b22f3b673a023c3051d39ba6d4208a"
+  },
+  "primary_formula_references": [
+    "https://www.ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/4e555db93fbd2b7473f14100fbaadcc8_lecture13.pdf",
+    "https://www.thomsonlinear.com/downloads/screws/Lead_Screws_cten.pdf"
+  ]
+}

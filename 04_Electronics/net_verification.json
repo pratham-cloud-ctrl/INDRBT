@@ -30,8 +30,11 @@
     "encoder_Z_positive_clamp_polarity": true,
     "encoder_Z_negative_clamp_polarity": true
   },
-  "schematic_sha256": "7f99b40fd1417a818cefd2027fa9560cf0b34d627be2756f42b23ae65d4229da",
-  "netlist_sha256": "e5210dd1b0bb75c1825913ad6e7c9f6cfb9fe2355b71ffafeae987535ac4672f",
+  "schematic_sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
+  "netlist_sha256": "f0a6ba84c3d5c3e01cbdbd0412356951fe4088ac153120c7375d507379b950da",
   "claim_boundary": "Native schematic/ERC and exported connectivity; routed PCB evidence is separate in pcb_verification.json. No physical measurements or hardware safety validation",
-  "stock_footprints_found": 44
+  "assigned_footprints_found": 44,
+  "stock_footprints_found": 43,
+  "project_local_footprints_found": 1,
+  "footprint_library_scope": "43 installed stock footprints and one project-local manufacturer land pattern; existence is checked for all 44 assignments"
 }

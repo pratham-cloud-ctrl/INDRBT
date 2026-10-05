@@ -1,6 +1,6 @@
 Reference,Value,Footprint,Population,Description,Datasheet
 J1,5V INPUT,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Fit,"Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)",
-F1,0.25A hold,Fuse:Fuse_1206_3216Metric,Fit,"Resettable fuse, conceptual 250 mA hold; select trip curve before fabrication",
+F1,MF-NSMF025X-2,ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206,Fit,"Bourns PTC, 250 mA hold at 23 C; manufacturer nominal land pattern; trip/inrush unmeasured",https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf
 D1,SS14,Diode_SMD:D_SMA,Fit,Schottky diode,https://www.vishay.com/docs/88746/ss12.pdf
 C1,10uF / 10V,Capacitor_SMD:C_0805_2012Metric,Fit,Unpolarized capacitor,
 U1,AP2112K-3.3,Package_TO_SOT_SMD:SOT-23-5,Fit,"600mA low dropout linear regulator, with enable pin, 3.8V-6V input voltage range, 3.3V fixed positive output, SOT-23-5",https://www.diodes.com/assets/Datasheets/AP2112.pdf

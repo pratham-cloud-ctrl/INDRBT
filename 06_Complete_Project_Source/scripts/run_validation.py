@@ -14,6 +14,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import tomllib
 import xml.etree.ElementTree as ET
 
 import numpy as np
@@ -93,6 +94,9 @@ def documentation_check() -> dict:
         "docs/03_mechanical_analysis.md",
         "docs/04_cad.md",
         "docs/05_electronics.md",
+        "docs/component_catalog.md",
+        "docs/electronics_components.md",
+        "docs/theory_guide.md",
         "docs/design_decisions.md",
         "docs/project_journal.md",
         "LICENSE",
@@ -123,6 +127,16 @@ def artifacts_check() -> dict:
     for field in ("native_drc_errors", "native_drc_warnings", "unconnected_items"):
         if pcb.get(field) != 0:
             raise ValueError(f"PCB evidence is missing or has unresolved {field}")
+    pcb_files = dict(pcb["source_sha256"])
+    pcb_files.update(pcb["fabrication_exports"]["file_sha256"])
+    pcb_files.update(pcb["review_export_sha256"])
+    for name, expected in pcb_files.items():
+        if sha256(ROOT / "electronics" / name) != expected:
+            raise ValueError(f"PCB source/export evidence is stale: {name}")
+    packaging = json.loads((ROOT / "results/validation/packaging_validation.json").read_text())
+    version = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"]
+    if packaging["status"] != "PASS" or packaging["package_version"] != version:
+        raise ValueError("A successful isolated wheel check is required for the current version")
     cad = json.loads((ROOT / "results/validation/cad_validation.json").read_text())
     if cad["component_count"] < 20 or any(
         not p["valid"] or p["volume_mm3"] <= 0 for p in cad["components"]
@@ -208,6 +222,9 @@ def run() -> int:
     out = ROOT / "results/validation"
     out.mkdir(parents=True, exist_ok=True)
     report = {
+        "project_version": tomllib.loads((ROOT / "pyproject.toml").read_text())["project"][
+            "version"
+        ],
         "project_status": "VALIDATION IN PROGRESS",
         "checks": [],
         "scope_limitations": [

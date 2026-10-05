@@ -1,13 +1,13 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>digital_scope_audit</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Audit of the requested digital scope</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>digital_scope_audit</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="audit-of-the-requested-digital-scope">Audit of the requested digital scope</h1>
 <p>This audit compares the supplied master brief with the implemented project. It
 separates required digital deliverables from optional extensions and performance
 claims that the brief explicitly excludes. The final integrated workflow reports
-<strong>DIGITAL SCOPE COMPLETE</strong>, with 33 passing tests, executed native schematic/PCB
-checks and a freshly verified v1.0.0 wheel. The subsequently requested PCB layout
+<strong>DIGITAL SCOPE COMPLETE</strong>, with 34 passing tests, executed native schematic/PCB
+checks and a freshly verified v1.1.0 wheel. The subsequently requested PCB layout
 and native DRC are completed and documented. Repository and release publication
 are verified separately through the <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin">private GitHub repository</a>
-and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.0.0">version 1.0.0 release</a>.</p>
-<h2>Numerical and software deliverables</h2>
+and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.1.0">version 1.1.0 release</a>.</p>
+<h2 id="numerical-and-software-deliverables">Numerical and software deliverables</h2>
 <table>
 <thead>
 <tr>
@@ -21,7 +21,7 @@ and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-
 <tr>
 <td>14–17, 35–36</td>
 <td>Six-axis FK, bounded numerical IK, Jacobian, singularities, joint limits, tests and measured reconstruction errors</td>
-<td><a href="../../06_Complete_Project_Source/docs/02_kinematics.md">Kinematic formulation</a>, <code>src/robotarm/kinematics</code>, <a href="../../06_Complete_Project_Source/results/validation/numerical_validation.json">60 perturbed-seed trials</a>, <code>tests/test_kinematics.py</code></td>
+<td><a href="02_kinematics.html">Kinematic formulation</a>, <code>src/robotarm/kinematics</code>, <a href="../../06_Complete_Project_Source/results/validation/numerical_validation.json">60 perturbed-seed trials</a>, <code>tests/test_kinematics.py</code></td>
 <td>Required digital work is present. IK is local numerical search, not exhaustive solution enumeration.</td>
 </tr>
 <tr>
@@ -39,13 +39,13 @@ and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-
 <tr>
 <td>22</td>
 <td>Symmetric gripper range, travel, force and actuator torque calculations</td>
-<td><code>src/robotarm/gripper</code>, <code>tests/test_gripper.py</code>, <a href="../../06_Complete_Project_Source/docs/03_mechanical_analysis.md">mechanical analysis</a></td>
+<td><code>src/robotarm/gripper</code>, <code>tests/test_gripper.py</code>, <a href="03_mechanical_analysis.html">mechanical analysis</a></td>
 <td>Required digital mechanism and calculations are present. Force is calculated from assumed efficiency and friction, not measured.</td>
 </tr>
 <tr>
 <td>23–25, 44–45</td>
 <td>Static load/torque, structure calculations, conceptual actuator sizing, numerical experiments and KPIs</td>
-<td><code>analysis/</code>, <a href="../../06_Complete_Project_Source/results/mechanical/joint_torque.json">mechanical results</a>, <a href="../../06_Complete_Project_Source/results/research/experiments.json">five research sweeps</a>, <a href="../../06_Complete_Project_Source/docs/kpis.md">KPIs</a></td>
+<td><code>analysis/</code>, <a href="../../06_Complete_Project_Source/results/mechanical/joint_torque.json">mechanical results</a>, <a href="../../06_Complete_Project_Source/results/research/experiments.json">five research sweeps</a>, <a href="kpis.html">KPIs</a></td>
 <td>Required analyses are present. Simplified analytical beams are an expressly permitted alternative to full FEA.</td>
 </tr>
 <tr>
@@ -58,20 +58,20 @@ and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-
 <td>30–31, 34–35, 57–60</td>
 <td>Organized Python package, central SI parameters, commands, meaningful tests and one validation workflow</td>
 <td><code>src/robotarm</code>, <a href="../../06_Complete_Project_Source/config/robot.yaml">SI configuration</a>, <code>python -m robotarm.demo</code>, <code>scripts/run_validation.py</code>, <a href="../../06_Complete_Project_Source/results/validation/validation_report.md">executed report</a></td>
-<td>Required structure and workflow are verified. The final integrated workflow passed 33 tests with no failures, errors or skips, regenerated CAD/results and executed native ERC/DRC/connectivity checks.</td>
+<td>Required structure and workflow are verified. The final integrated workflow passed 34 tests with no failures, errors or skips, regenerated CAD/results and executed native ERC/DRC/connectivity checks.</td>
 </tr>
 <tr>
 <td>56, 59</td>
 <td>Reproducible setup, clean installation and portable execution</td>
-<td><a href="../../06_Complete_Project_Source/README.md">Installation instructions</a>, <code>setup.py</code>, <code>MANIFEST.in</code>, <code>requirements-lock.txt</code>, <code>scripts/verify_wheel_install.py</code>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">isolated wheel evidence</a></td>
-<td>The v1.0.0 wheel was built, installed in a new isolated environment and executed outside the source tree. Bundled configuration, FK/IK, planner/gripper checks, trajectory CLI outputs and dependency consistency passed.</td>
+<td><a href="Project_Readme.html">Installation instructions</a>, <code>setup.py</code>, <code>MANIFEST.in</code>, <code>requirements-lock.txt</code>, <code>scripts/verify_wheel_install.py</code>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">isolated wheel evidence</a></td>
+<td>The v1.1.0 wheel was built, installed in a new isolated environment and executed outside the source tree. Bundled configuration, FK/IK, planner/gripper checks, trajectory CLI outputs and dependency consistency passed.</td>
 </tr>
 </tbody>
 </table>
-<h2>Executed integration gates and publication evidence</h2>
+<h2 id="executed-integration-gates-and-publication-evidence">Executed integration gates and publication evidence</h2>
 <p>The numerical/control/software audit found no additional missing required
 deliverable. The routed PCB, fabrication exports, updated descriptions and
-traceability, final integrated validation and fresh v1.0.0 installation check now
+traceability, final integrated validation and fresh v1.1.0 installation check now
 have executed evidence. The <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">PCB audit</a>
 records 44 schematic footprints plus four mechanical additions, all 119 physical
 pad-net assignments checked, and zero native DRC violations, unconnected items or
@@ -84,7 +84,7 @@ verification. Passing checks retain their exact enabled-rule and sampling scope;
 changing status text cannot replace evidence.</p>
 <p>The original section 11 asks to check <strong>obvious interference throughout
 representative configurations</strong>; the project's
-<a href="../../06_Complete_Project_Source/docs/01_requirements.md">SIM-003 requirement</a> also specifies representative screening.
+<a href="01_requirements.html">SIM-003 requirement</a> also specifies representative screening.
 The initial selected-pair checks missed genuine adjacent-joint overlaps. Those
 interfaces were repaired and the representative audit was expanded: six named
 poses classify 8,586 component pairs, and 75 task configurations classify 107,325
@@ -94,7 +94,7 @@ the stated representative screening, not every possible joint combination or the
 continuous sweep between samples. Its limitations remain explicit. A
 stronger collision-certification requirement would need to come from an additional
 user instruction or newly adopted requirement.</p>
-<h2>Limits that do not imply an unfinished digital brief</h2>
+<h2 id="limits-that-do-not-imply-an-unfinished-digital-brief">Limits that do not imply an unfinished digital brief</h2>
 <table>
 <thead>
 <tr>
@@ -142,7 +142,7 @@ user instruction or newly adopted requirement.</p>
 </tbody>
 </table>
 <p>The executed local status is <strong>DIGITAL SCOPE COMPLETE — digital educational
-engineering project</strong>. Version 1.0.0 records coherent, reproducible completion of
+engineering project</strong>. Version 1.1.0 records coherent, reproducible completion of
 that documented digital scope. The repository, tag and assets provide separate
 publication evidence. This status does not imply a manufactured,
 hardware-ready or safety-certified robot; intentionally excluded physical

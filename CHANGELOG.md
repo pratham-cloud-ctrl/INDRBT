@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.0 — 2026-10-05 — independent engineering review and accessibility
+
+- Corrected analytical TCP deflection to include forearm rotation across the rigid wrist/tool offset; added an independent whole-arm virtual-work regression.
+- Selected Bourns MF-NSMF025X-2 explicitly and replaced the generic fuse pads with a project-local manufacturer land pattern; removed the disclosed footprint-filter exception.
+- Added a linked 54-part CAD catalog, a theory guide and an electronics component/BOM guide.
+- Added automatic framing and individual component inspection to the offline viewer.
+- Kept browser documentation links in readable HTML, added folder indexes and improved GitHub navigation and PCB previews.
+- Added a GitHub workflow for numerical/analytical software, lint, documentation, organized artifacts and saved electronics connectivity. Native CAD and KiCad checks remain explicitly scoped to the local engineering workflow.
+
 ## 1.0.0 — 2026-10-05 — complete digital engineering release
 
 - Complete organized folder structure is the actual repository layout; original Git history is retained.

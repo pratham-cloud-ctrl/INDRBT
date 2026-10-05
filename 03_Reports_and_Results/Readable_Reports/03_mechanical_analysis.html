@@ -1,5 +1,5 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>03_mechanical_analysis</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Mechanical calculations and actuator concept</h1>
-<h2>Load model and mass basis</h2>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>03_mechanical_analysis</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="mechanical-calculations-and-actuator-concept">Mechanical calculations and actuator concept</h1>
+<h2 id="load-model-and-mass-basis">Load model and mass basis</h2>
 <p>The SI configuration assigns lumped drive and link masses to the frames used by CAD and FK. Each moving lump is placed at its segment midpoint; the payload is at the TCP. These are ASSUMED load properties. The separate CAD envelope sum is 19.952 kg; simplified gearbox/bearing interiors and overlapping seats prevent treating it as a complete physical BOM. The assumed manipulator mass is 23.65 kg, of which 15.15 kg moves, excluding the payload.</p>
 <table>
 <thead>
@@ -54,7 +54,7 @@
 </table>
 <p>For each COM, gravity force is F=[0,0,−mg]. External axis moment is τᵢ = aᵢ·[(pCOM−oᵢ)×F]; holding torque has the opposite sign. Summation includes downstream groups only. An independent potential-energy gradient test verifies the force/moment convention.</p>
 <p>The 6001-pose sample uses seed 412; it is not proof of a worst case. Closed-form triangle-inequality lever bounds size the conceptual actuators. Full extension gives shoulder 70.165 N·m and elbow 31.880 N·m. J1 and J6 gravity moments vanish for the assumed symmetric, centred lumps; acceleration/friction allowances still require drive torque.</p>
-<h2>Actuator sizing</h2>
+<h2 id="actuator-sizing">Actuator sizing</h2>
 <p>Output requirement = safety factor × (gravity bound + I·amax + b·vmax). Safety factor is 2.0. Motor torque = output / (ratio × efficiency). The diagonal inertias/damping are ASSUMED; simultaneous extrema form a conservative conceptual envelope. These are generic digital selections, not validated commercial actuator specifications.</p>
 <table>
 <thead>
@@ -119,8 +119,8 @@
 </tbody>
 </table>
 <p>Configured joint speeds are 90 / 60 / 75 / 120 / 120 / 150 deg/s. Drive torque limits are modelling assumptions. Continuous/RMS heating, reflected inertia, acceleration coupling, backlash, brake capacity, bearing loads and fatigue require further engineering.</p>
-<h2>Analytical stiffness and strength</h2>
-<p>This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped rectangular hollow sections. I = [b·h³−(b−2t)(h−2t)³]/12. Root stress = M·h/(2I). Tip displacement = FL³/(3EI) + MtipL²/(2EI) + wL⁴/(8EI). Upper-arm loading includes the downstream elbow moment as an end couple; serial TCP displacement includes upper-tip rotation times the remaining reach.</p>
+<h2 id="analytical-stiffness-and-strength">Analytical stiffness and strength</h2>
+<p>This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped rectangular hollow sections. I = [b·h³−(b−2t)(h−2t)³]/12. Root stress = M·h/(2I). Tip displacement = FL³/(3EI) + MtipL²/(2EI) + wL⁴/(8EI). Tip slope = [FL²/2 + Mtip·L + wL³/6]/(EI). Upper-arm loading includes the downstream elbow moment as an end couple. Serial TCP displacement = δupper + δforearm + θupper·(L2+lr+lp+lt) + θforearm·(lr+lp+lt), treating the wrist and tool as rigid offsets. An independent whole-arm virtual-work integral regression checks this combined estimate.</p>
 <table>
 <thead>
 <tr>
@@ -151,8 +151,8 @@
 </tr>
 </tbody>
 </table>
-<p>Combined serial TCP beam estimate is 0.08855 mm. The large ideal-section safety ratios are not real assembly factors of safety: covers, access windows, terminal side clevis, fasteners, bearings, gears and stress concentrations are omitted. Nominal section calculations cannot establish complete CAD stiffness or ±0.1 mm repeatability.</p>
-<h2>Gripper mechanism</h2>
+<p>Combined serial TCP beam estimate is 0.10408 mm. The large ideal-section safety ratios are not real assembly factors of safety: covers, access windows, terminal side clevis, fasteners, bearings, gears and stress concentrations are omitted. Nominal section calculations cannot establish complete CAD stiffness or ±0.1 mm repeatability.</p>
+<h2 id="gripper-mechanism">Gripper mechanism</h2>
 <p>A transverse opposed-hand screw with a 4 mm lead drives two guided nuts/carriages. The 90 mm opening requires 45 mm travel per jaw, or 11.25 screw revolutions. Threads and nut/bearing preload remain conceptual in CAD.</p>
 <p>The total normal-force target is 200 N, or 100 N per jaw. Energy balance gives T = Ftotal·lead/(2πη) = 0.363783 N·m at an assumed efficiency of 0.35. An assumed motor torque of 0.45 N·m gives an ideal total force of 247.400 N. With friction coefficient μ = 0.5 and safety factor 2, the target force supports an ideal friction-only payload of 5.099 kg. This is not a load rating: acceleration, contact pressure, object damage, guide friction, backlash and actual motor current limits are omitted.</p>
 <p>At 60 mm finger length and 100 N tip force, nominal stress is 20.000 MPa and elastic deflection is 0.06957 mm. Finger length changes guide moment and stiffness; it does not change ideal screw force conversion.</p>

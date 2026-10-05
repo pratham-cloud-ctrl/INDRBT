@@ -1,0 +1,593 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>component_catalog</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="cad-component-catalog">CAD component catalog</h1>
+<p>ASTER-6 has 54 original modeled components and six complete pose assemblies. This catalog connects each part to its assembly role, assumed material, individual models and saved FreeCAD object. All CAD lengths are in millimetres.</p>
+<h2 id="open-the-robot">Open the robot</h2>
+<table>
+<thead>
+<tr>
+<th>What you want</th>
+<th>Open this</th>
+<th>How to use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Move the assembled robot</td>
+<td><a href="../../06_Complete_Project_Source/simulations/aster6_twin.html">Interactive 3D viewer</a></td>
+<td>Download the repository and open the HTML in a browser; use the pose selector, joint controls, gripper slider and play button. GitHub displays HTML source.</td>
+</tr>
+<tr>
+<td>Inspect the solid home assembly</td>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/aster6_home.FCStd">FreeCAD native assembly</a></td>
+<td>Open with FreeCAD. Its 54 saved solid objects are cross-referenced below.</td>
+</tr>
+<tr>
+<td>Inspect the rendering scene</td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/aster6_home.blend">Blender native scene</a></td>
+<td>Open with Blender. Robot object names match the component filenames.</td>
+</tr>
+<tr>
+<td>See the mechanism quickly</td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/hero.png">Home render</a>, <a href="../../06_Complete_Project_Source/cad/renders/gripper.png">gripper close-up</a>, <a href="../../06_Complete_Project_Source/cad/renders/poses.png">six-pose sheet</a></td>
+<td>Ordinary image previews.</td>
+</tr>
+<tr>
+<td>Read interface dimensions</td>
+<td><a href="../../06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf">Three-page drawing PDF</a></td>
+<td>Concept dimensions for the base/flange, link sections and gripper.</td>
+</tr>
+<tr>
+<td>Change the design parameters</td>
+<td><a href="../../06_Complete_Project_Source/config/robot.yaml">SI configuration</a>, <a href="../../06_Complete_Project_Source/cad/build123d/geometry.py">parametric geometry source</a>, <a href="04_cad.html">CAD methodology</a></td>
+<td>Regenerate from the Python source after changing parameters. The saved FreeCAD assembly contains solid geometry; the Python source defines the parametric construction.</td>
+</tr>
+</tbody>
+</table>
+<p>In the organized project folder, double-click <code>OPEN_3D_VIEWER.cmd</code> or <code>OPEN_FREECAD_MODEL.cmd</code> to open the installed application. The same files are copied under <code>01_CAD_Models</code>; component STEP files are in <code>STEP/Individual_Parts</code>, and complete poses are in <code>STEP/Assemblies</code>.</p>
+<p>STEP files preserve solid geometry for CAD inspection and exchange. STL files contain triangles for mesh viewers and printing preparation. Component exports remain in their local assembly-group frame; open a complete pose to see all parts together.</p>
+<h2 id="complete-assemblies">Complete assemblies</h2>
+<table>
+<thead>
+<tr>
+<th>Pose</th>
+<th>Joint angles in degrees, J1 to J6</th>
+<th>Solid CAD</th>
+<th>Mesh</th>
+<th>Preview</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Home</td>
+<td>0, -50, 90, 0, -40, 0</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL/assembly_home.stl">STL</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/pose_home.png">Image</a></td>
+</tr>
+<tr>
+<td>Extended</td>
+<td>0, 0, 0, 0, 0, 0</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_extended.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL/assembly_extended.stl">STL</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/pose_extended.png">Image</a></td>
+</tr>
+<tr>
+<td>Folded</td>
+<td>0, -110, 130, 0, -20, 0</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_folded.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL/assembly_folded.stl">STL</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/pose_folded.png">Image</a></td>
+</tr>
+<tr>
+<td>Vertical</td>
+<td>0, -90, 0, 0, 0, 0</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_vertical.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL/assembly_vertical.stl">STL</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/pose_vertical.png">Image</a></td>
+</tr>
+<tr>
+<td>Pick</td>
+<td>-25, -45, 95, 0, 40, 0</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_pick.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL/assembly_pick.stl">STL</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/pose_pick.png">Image</a></td>
+</tr>
+<tr>
+<td>Place</td>
+<td>25, -45, 95, 0, 40, 0</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_place.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL/assembly_place.stl">STL</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/pose_place.png">Image</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="find-an-individual-component">Find an individual component</h2>
+<p>The group labels <code>base</code>, <code>j1</code> to <code>j6</code> identify moving coordinate frames. A motor name such as <code>j2_motor_envelope</code> identifies the actuator it represents; its housing belongs to the preceding support frame. Names ending <code>-1</code> and <code>+1</code> mark the two side instances. Gripper guide rods ending <code>-14</code> and <code>+14</code> are at local Z = -14 and +14 mm.</p>
+<p>An <strong>envelope</strong> is a simplified spatial placeholder for a motor, gearbox, bearing or screw. Its interior is not a detailed purchased component. Materials are assumed; the geometric mass estimate is separate from the conservative dynamic mass inputs.</p>
+<p>FreeCAD labels <code>Component01</code> to <code>Component54</code> below were checked against the individual part volumes and home-assembly positions. Blender and individual exports retain the descriptive part names.</p>
+<h3 id="fixed-base-base-4-parts">Fixed base (base; 4 parts)</h3>
+<p>Mounting plate, hollow riser and fixed covers.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>base_mounting_plate</code></td>
+<td>Structure</td>
+<td>Steel</td>
+<td><code>Component01</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/base_mounting_plate.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/base_mounting_plate.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>fixed_base_riser</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component02</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/fixed_base_riser.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/fixed_base_riser.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j1_slew_bearing_envelope</code></td>
+<td>Bearing envelope</td>
+<td>Steel</td>
+<td><code>Component03</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j1_slew_bearing_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j1_slew_bearing_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>base_electronics_cover</code></td>
+<td>Removable cover</td>
+<td>Polymer</td>
+<td><code>Component04</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/base_electronics_cover.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/base_electronics_cover.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="turret-and-shoulder-support-j1-9-parts">Turret and shoulder support (j1; 9 parts)</h3>
+<p>Rotates around J1; supports the shoulder bearing and J2 actuator housing.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>turret_neck</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component05</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/turret_neck.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/turret_neck.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>turret_bridge</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component06</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/turret_bridge.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/turret_bridge.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>shoulder_fork_-1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component07</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/shoulder_fork_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/shoulder_fork_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>shoulder_bearing_-1</code></td>
+<td>Bearing envelope</td>
+<td>Steel</td>
+<td><code>Component08</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/shoulder_bearing_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/shoulder_bearing_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>shoulder_fork_+1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component09</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/shoulder_fork_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/shoulder_fork_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>shoulder_bearing_+1</code></td>
+<td>Bearing envelope</td>
+<td>Steel</td>
+<td><code>Component10</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/shoulder_bearing_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/shoulder_bearing_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j2_gearbox_envelope</code></td>
+<td>Gearbox envelope</td>
+<td>Steel</td>
+<td><code>Component11</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j2_gearbox_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j2_gearbox_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j2_motor_envelope</code></td>
+<td>Motor envelope</td>
+<td>Polymer</td>
+<td><code>Component12</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j2_motor_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j2_motor_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j2_motor_endcap</code></td>
+<td>Motor end cap</td>
+<td>Steel</td>
+<td><code>Component13</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j2_motor_endcap.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j2_motor_endcap.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="upper-arm-and-elbow-support-j2-13-parts">Upper arm and elbow support (j2; 13 parts)</h3>
+<p>Rotates around J2; carries the upper link, elbow clevis, bearings and J3 actuator housing.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shoulder_rotor</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component14</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/shoulder_rotor.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/shoulder_rotor.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>shoulder_output_shaft</code></td>
+<td>Hollow output shaft</td>
+<td>Steel</td>
+<td><code>Component15</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/shoulder_output_shaft.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/shoulder_output_shaft.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>upper_arm_hollow_link</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component16</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/upper_arm_hollow_link.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/upper_arm_hollow_link.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_fork_bridge_-1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component17</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_fork_bridge_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_fork_bridge_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_fork_bridge_+1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component18</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_fork_bridge_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_fork_bridge_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>upper_service_cover_-1</code></td>
+<td>Service cover</td>
+<td>Polymer</td>
+<td><code>Component19</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/upper_service_cover_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/upper_service_cover_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_fork_-1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component20</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_fork_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_fork_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_bearing_-1</code></td>
+<td>Bearing envelope</td>
+<td>Steel</td>
+<td><code>Component21</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_bearing_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_bearing_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>upper_service_cover_+1</code></td>
+<td>Service cover</td>
+<td>Polymer</td>
+<td><code>Component22</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/upper_service_cover_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/upper_service_cover_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_fork_+1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component23</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_fork_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_fork_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_bearing_+1</code></td>
+<td>Bearing envelope</td>
+<td>Steel</td>
+<td><code>Component24</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_bearing_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_bearing_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j3_gearbox_envelope</code></td>
+<td>Gearbox envelope</td>
+<td>Steel</td>
+<td><code>Component25</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j3_gearbox_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j3_gearbox_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j3_motor_envelope</code></td>
+<td>Motor envelope</td>
+<td>Polymer</td>
+<td><code>Component26</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j3_motor_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j3_motor_envelope.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="forearm-and-wrist-roll-support-j3-8-parts">Forearm and wrist roll support (j3; 8 parts)</h3>
+<p>Rotates around J3; carries the forearm and stationary wrist roll housing/cover.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>elbow_rotor</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component27</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_rotor.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_rotor.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>elbow_output_shaft</code></td>
+<td>Hollow output shaft</td>
+<td>Steel</td>
+<td><code>Component28</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/elbow_output_shaft.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/elbow_output_shaft.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>forearm_hollow_link</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component29</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/forearm_hollow_link.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/forearm_hollow_link.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>forearm_service_cover_-1</code></td>
+<td>Service cover</td>
+<td>Polymer</td>
+<td><code>Component30</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/forearm_service_cover_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/forearm_service_cover_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>forearm_service_cover_+1</code></td>
+<td>Service cover</td>
+<td>Polymer</td>
+<td><code>Component31</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/forearm_service_cover_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/forearm_service_cover_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>wrist_roll_stator</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component32</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_roll_stator.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_roll_stator.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j4_bearing_envelope</code></td>
+<td>Bearing envelope</td>
+<td>Steel</td>
+<td><code>Component33</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j4_bearing_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j4_bearing_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>wrist_roll_cover</code></td>
+<td>Cover</td>
+<td>Polymer</td>
+<td><code>Component35</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_roll_cover.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_roll_cover.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="wrist-roll-rotor-and-pitch-supports-j4-3-parts">Wrist roll rotor and pitch supports (j4; 3 parts)</h3>
+<p>Rotates around J4; the roll output carries the pitch fork.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wrist_roll_rotor</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component34</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_roll_rotor.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_roll_rotor.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>wrist_pitch_fork_-1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component36</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_fork_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_pitch_fork_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>wrist_pitch_fork_+1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component37</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_fork_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_pitch_fork_%2B1.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="wrist-pitch-link-j5-3-parts">Wrist pitch link (j5; 3 parts)</h3>
+<p>Rotates around J5; carries the pitch neck and final roll stator.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wrist_pitch_rotor</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component38</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_rotor.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_pitch_rotor.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>wrist_pitch_neck</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component39</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_neck.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/wrist_pitch_neck.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>j6_stator_envelope</code></td>
+<td>Gearbox envelope</td>
+<td>Steel</td>
+<td><code>Component40</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/j6_stator_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/j6_stator_envelope.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tool-flange-and-parallel-gripper-j6-14-parts">Tool flange and parallel gripper (j6; 14 parts)</h3>
+<p>Rotates around J6; the two gripper jaw families additionally translate along local Y.</p>
+<table>
+<thead>
+<tr>
+<th>Component / filename</th>
+<th>Assembly role</th>
+<th>Assumed material</th>
+<th>FreeCAD object</th>
+<th>Individual model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tool_flange_6xM5_PCD46</code></td>
+<td>Structure</td>
+<td>Steel</td>
+<td><code>Component41</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/tool_flange_6xM5_PCD46.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/tool_flange_6xM5_PCD46.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>interchangeable_gripper_adapter</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component42</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/interchangeable_gripper_adapter.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/interchangeable_gripper_adapter.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_pocketed_body</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component43</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_pocketed_body.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_pocketed_body.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_rear_service_cover</code></td>
+<td>Service cover</td>
+<td>Polymer</td>
+<td><code>Component44</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_rear_service_cover.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_rear_service_cover.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_guide_rod_-14</code></td>
+<td>Linear guide</td>
+<td>Steel</td>
+<td><code>Component45</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_guide_rod_-14.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_guide_rod_-14.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_guide_rod_+14</code></td>
+<td>Linear guide</td>
+<td>Steel</td>
+<td><code>Component46</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_guide_rod_%2B14.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_guide_rod_%2B14.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>opposite_hand_screw_envelope</code></td>
+<td>Opposite hand screw envelope</td>
+<td>Steel</td>
+<td><code>Component47</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/opposite_hand_screw_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/opposite_hand_screw_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_actuator_envelope</code></td>
+<td>Motor envelope</td>
+<td>Polymer</td>
+<td><code>Component48</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_actuator_envelope.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_actuator_envelope.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_jaw_carriage_-1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component49</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_jaw_carriage_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_jaw_carriage_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_finger_-1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component50</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_finger_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_finger_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_contact_pad_-1</code></td>
+<td>Replaceable contact pad</td>
+<td>Polymer</td>
+<td><code>Component51</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_contact_pad_-1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_contact_pad_-1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_jaw_carriage_+1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component52</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_jaw_carriage_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_jaw_carriage_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_finger_+1</code></td>
+<td>Structure</td>
+<td>Aluminum</td>
+<td><code>Component53</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_finger_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_finger_%2B1.stl">STL</a></td>
+</tr>
+<tr>
+<td><code>gripper_contact_pad_+1</code></td>
+<td>Replaceable contact pad</td>
+<td>Polymer</td>
+<td><code>Component54</code></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_contact_pad_%2B1.step">STEP</a> / <a href="../../06_Complete_Project_Source/cad/exports/STL/gripper_contact_pad_%2B1.stl">STL</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="gripper-motion-and-checked-scope">Gripper motion and checked scope</h2>
+<p>The two contact pads have 90 mm clear separation at maximum opening and touch at zero opening. Each jaw moves 45 mm; its carriage, finger and contact pad move together along local Y. The guide rods, body, screw envelope and actuator remain fixed in the tool frame. The saved component files show maximum opening; the interactive viewer applies the symmetric jaw translation.</p>
+<p>The final review checked the pad gaps and jaw/body intersections at 0, 22.5, 45, 67.5 and 90 mm openings. The retained assembly screen checks every component pair at six poses and the closed/mid/open gripper. The trajectory screen checks 75 representative configurations. These finite digital checks do not certify every joint-angle combination or continuous physical motion.</p>
+<p>See <a href="../../06_Complete_Project_Source/results/validation/final_cad_review.json">final component review</a>, <a href="../../06_Complete_Project_Source/results/validation/cad_release_consistency.json">native release consistency</a>, <a href="../../06_Complete_Project_Source/results/validation/cad_validation.json">CAD properties</a>, <a href="../../06_Complete_Project_Source/results/validation/cad_assembly_clearance.json">assembly clearance</a> and <a href="../../06_Complete_Project_Source/results/validation/cad_motion_clearance.json">trajectory clearance</a> for the executed evidence. Drawings are concept interfaces without production tolerances.</p></main></html>

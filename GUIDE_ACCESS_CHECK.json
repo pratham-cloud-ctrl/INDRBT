@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "guide_navigation": [
+    {
+      "page": "theory_guide.html",
+      "route": "PASS",
+      "readable_chapter_links": "PASS"
+    },
+    {
+      "page": "component_catalog.html",
+      "route": "PASS",
+      "readable_chapter_links": "PASS"
+    },
+    {
+      "page": "electronics_components.html",
+      "route": "PASS",
+      "readable_chapter_links": "PASS"
+    }
+  ],
+  "mobile_home": {
+    "viewport": 390,
+    "width": 390
+  },
+  "component_options": 55,
+  "browser_errors": []
+}

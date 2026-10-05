@@ -137,7 +137,7 @@ Configured joint speeds are {" / ".join(str(value) for value in c["velocity_limi
 
 ## Analytical stiffness and strength
 
-This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped rectangular hollow sections. I = [b·h³−(b−2t)(h−2t)³]/12. Root stress = M·h/(2I). Tip displacement = FL³/(3EI) + MtipL²/(2EI) + wL⁴/(8EI). Upper-arm loading includes the downstream elbow moment as an end couple; serial TCP displacement includes upper-tip rotation times the remaining reach.
+This is an Euler–Bernoulli calculation, not FEA. Links are ideal clamped rectangular hollow sections. I = [b·h³−(b−2t)(h−2t)³]/12. Root stress = M·h/(2I). Tip displacement = FL³/(3EI) + MtipL²/(2EI) + wL⁴/(8EI). Tip slope = [FL²/2 + Mtip·L + wL³/6]/(EI). Upper-arm loading includes the downstream elbow moment as an end couple. Serial TCP displacement = δupper + δforearm + θupper·(L2+lr+lp+lt) + θforearm·(lr+lp+lt), treating the wrist and tool as rigid offsets. An independent whole-arm virtual-work integral regression checks this combined estimate.
 
 | Member | Bending MPa | Local tip deflection mm | Yield / nominal stress |
 |---|---|---|---|
@@ -255,7 +255,7 @@ The ideal pick/place cycle lasts {motion["duration_s"]:.5f} s, contains {motion[
 
 ## 15. Verification
 
-Automated test evidence: {test_text}. An additional {numeric["trials"]} randomly generated targets use perturbed initial joints for FK–IK–FK reconstruction. The maximum position residual is {numeric["ik_max_position_error_m"]:.3e} m and the orientation residual is {numeric["ik_max_orientation_error_rad"]:.3e} rad. The Jacobian discrepancy against finite differences is {numeric["jacobian_max_abs_error"]:.3e}; independent planar FK discrepancy is {numeric["independent_planar_fk_max_error_m"]:.3e} m. Selected structure-pair checks cover {len(cad["poses"])} CAD poses and {sweep["samples_checked"]} task positions, including {sweep["exact_brep_pair_checks"]} exact BRep pair intersections during the task. This is sampled clearance evidence. A fresh isolated wheel installation verifies packaged configuration and detached CLI execution. The evidence is retained under `results/validation`.
+Automated test evidence: {test_text}. An additional {numeric["trials"]} randomly generated targets use perturbed initial joints for FK–IK–FK reconstruction. The maximum position residual is {numeric["ik_max_position_error_m"]:.3e} m and the orientation residual is {numeric["ik_max_orientation_error_rad"]:.3e} rad. The Jacobian discrepancy against finite differences is {numeric["jacobian_max_abs_error"]:.3e}; independent planar FK discrepancy is {numeric["independent_planar_fk_max_error_m"]:.3e} m. Every component pair is classified across {len(cad["poses"])} CAD poses and {sweep["samples_checked"]} task positions, including {sweep["exact_brep_pair_checks"]} exact BRep intersections during the task. Permitted rigid-family contacts are identified explicitly. This is sampled clearance evidence. A fresh isolated wheel installation verifies packaged configuration and detached CLI execution. The evidence is retained under `results/validation`.
 
 ## 16. Results and research questions
 
@@ -297,6 +297,8 @@ Designed for robotics education and portfolio review. Every result is generated 
 ## See it move
 
 Open **[the offline interactive CAD twin](simulations/aster6_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
+
+The **CAD component** selector isolates and frames any of the 54 actual parts. Use the [component catalog](docs/component_catalog.md) to match part names, native objects, materials and STEP/STL files. The [theory guide](docs/theory_guide.md) connects the model equations to evidence, and the [electronics component guide](docs/electronics_components.md) explains references, selections and BOM population.
 
 ![FK pick-and-place animation](results/trajectories/pick_place_fk.gif)
 
@@ -373,7 +375,7 @@ Five [research experiments](results/research/experiments.json) vary link ratio, 
 
 ## Conceptual electronics
 
-The native [KiCad schematic](electronics/joint_interface.kicad_sch), [PCB](electronics/joint_interface.kicad_pcb) and [schematic PDF](electronics/exports/joint_interface.pdf) cover regulated logic power, encoder/limit inputs, external-drive commands and RS-485. All {net["stock_footprints_found"]} assigned stock footprint files were found, and {net["pin_assignments_checked"]} exported pin assignments were verified. Native ERC reports {net["erc_violations"]} violations under the enabled default rules. The [PCB verification](electronics/pcb_verification.json) retains actual DRC and schematic-board checks. [Electronics scope](docs/05_electronics.md) documents fabrication outputs, rules, circuit calculations and assumptions. No physical hardware or manufacturing suitability is claimed.
+The native [KiCad schematic](electronics/joint_interface.kicad_sch), [PCB](electronics/joint_interface.kicad_pcb) and [schematic PDF](electronics/exports/joint_interface.pdf) cover regulated logic power, encoder/limit inputs, external-drive commands and RS-485. All {net.get("assigned_footprints_found", net["stock_footprints_found"])} assigned footprint files were found ({net["stock_footprints_found"]} stock and {net.get("project_local_footprints_found", 0)} project-local), and {net["pin_assignments_checked"]} exported pin assignments were verified. Native ERC reports {net["erc_violations"]} violations under the enabled default rules. The [PCB verification](electronics/pcb_verification.json) retains actual DRC and schematic-board checks. [Electronics scope](docs/05_electronics.md) documents fabrication outputs, rules, circuit calculations and assumptions. No physical hardware or manufacturing suitability is claimed.
 
 ## Verification, report and limitations
 

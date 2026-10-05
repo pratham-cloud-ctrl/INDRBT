@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>joint_interface.kicad_sch</source>
-    <date>2026-10-05T11:14:47</date>
+    <date>2026-10-05T15:35:08</date>
     <tool>Eeschema 10.0.6</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -442,11 +442,12 @@
       </units>
     </comp>
     <comp ref="F1">
-      <value>0.25A hold</value>
-      <footprint>Fuse:Fuse_1206_3216Metric</footprint>
+      <value>MF-NSMF025X-2</value>
+      <footprint>ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206</footprint>
+      <datasheet>https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf</datasheet>
       <fields>
-        <field name="Footprint">Fuse:Fuse_1206_3216Metric</field>
-        <field name="Datasheet" />
+        <field name="Footprint">ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206</field>
+        <field name="Datasheet">https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf</field>
         <field name="Description" />
       </fields>
       <libsource lib="Device" part="Polyfuse" description="Resettable fuse, polymeric positive temperature coefficient" />

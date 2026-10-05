@@ -84,6 +84,62 @@ def local_track_distance(board, net, start, end):
     raise AssertionError(f"No explicit front-copper {net} path between reviewed pads")
 
 
+def verify_fuse_land_pattern(footprint):
+    """Compare both checked-in library and actual board pads with the drawing."""
+    selection = json.loads((ROOT / "fuse_selection.json").read_text(encoding="utf-8"))
+    library, name = selection["footprint"].split(":")
+    library_path = ROOT / f"{library}.pretty" / f"{name}.kicad_mod"
+    library_footprint = parse(library_path.read_text(encoding="utf-8"))
+    for label, source in [("library", library_footprint), ("board", footprint)]:
+        pads = {pad[1]: pad for pad in nodes(source, "pad")}
+        assert set(pads) == {"1", "2"}, f"F1 {label} must have two pads"
+        for index, number in enumerate(["1", "2"]):
+            pad = pads[number]
+            assert pad[2:4] == ["smd", "rect"], f"F1 {label} pad technology/shape changed"
+            assert [float(v) for v in item(pad, "size")[1:]] == selection[
+                "recommended_pad_size_mm"
+            ], f"F1 {label} pad size differs from manufacturer drawing"
+            assert [float(v) for v in item(pad, "at")[1:3]] == selection[
+                "recommended_pad_centres_mm"
+            ][index], f"F1 {label} pad location differs from manufacturer drawing"
+            assert set(item(pad, "layers")[1:]) == {"F.Cu", "F.Mask", "F.Paste"}
+        centres = selection["recommended_pad_centres_mm"]
+        gap = centres[1][0] - centres[0][0] - selection["recommended_pad_size_mm"][0]
+        assert gap == selection["recommended_inner_pad_gap_mm"]
+        courtyard = next(
+            rect for rect in nodes(source, "fp_rect") if item(rect, "layer")[1] == "F.CrtYd"
+        )
+        margin = selection["courtyard_margin_mm"]
+        half_x = (
+            max(
+                centres[1][0] + selection["recommended_pad_size_mm"][0] / 2,
+                selection["body_size_maximum_mm"][0] / 2,
+            )
+            + margin
+        )
+        half_y = (
+            max(selection["recommended_pad_size_mm"][1], selection["body_size_maximum_mm"][1]) / 2
+            + margin
+        )
+        assert [float(v) for v in item(courtyard, "start")[1:]] == [-half_x, -half_y]
+        assert [float(v) for v in item(courtyard, "end")[1:]] == [half_x, half_y]
+    assert footprint[1] == selection["footprint"]
+    assert prop(footprint, "Value") == selection["manufacturer_part_number"]
+    return {
+        "status": "PASS",
+        "manufacturer_part_number": selection["manufacturer_part_number"],
+        "footprint": selection["footprint"],
+        "actual_pad_size_mm": selection["recommended_pad_size_mm"],
+        "actual_inner_pad_gap_mm": gap,
+        "actual_pad_centres_mm": centres,
+        "library_and_board_dimensions_agree": True,
+        "courtyard_covers_maximum_body_and_pads": True,
+        "source": selection["datasheet_url"],
+        "drawing_page_one_based": selection["datasheet_pages_one_based"]["land_pattern"],
+        "scope": selection["claim_boundary"],
+    }
+
+
 def verify():
     board_path = ROOT / "joint_interface.kicad_pcb"
     board = parse(board_path.read_text(encoding="utf-8"))
@@ -183,8 +239,7 @@ def verify():
         )
     }
     assert not overrides, f"Non-default DRC severity overrides: {overrides}"
-    # Audit a factory-disabled wildcard rule honestly. The generic Polyfuse
-    # filter uses PTC/polyfuse names, while KiCad names its generic 1206 Fuse.
+    # Independently audit this factory-disabled lexical rule; no exceptions.
     wildcard_mismatches = []
     for ref, comp in expected.items():
         filters = next(
@@ -204,9 +259,8 @@ def verify():
             wildcard_mismatches.append(
                 {"reference": ref, "footprint": footprint, "symbol_filters": filters}
             )
-    assert {entry["reference"] for entry in wildcard_mismatches} <= {"F1"}, (
-        "Unreviewed footprint wildcard mismatch"
-    )
+    assert not wildcard_mismatches, "Footprint wildcard mismatch"
+    fuse_review = verify_fuse_land_pattern(footprints["F1"])
     drc_path = ROOT / "pcb_drc_report.json"
     drc = json.loads(drc_path.read_text())
     assert {entry["key"] for entry in drc["ignored_checks"]} == DEFAULT_IGNORES, (
@@ -244,6 +298,8 @@ def verify():
         "pcb_drc_report.json",
         "fp-lib-table",
         "bom.csv",
+        "fuse_selection.json",
+        "ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
     ]
     return {
         "status": "PASS" if not all_findings else "FAIL",
@@ -276,8 +332,9 @@ def verify():
         "independent_footprint_filter_review": {
             "wildcard_matches": len(expected) - len(wildcard_mismatches),
             "lexical_mismatches": wildcard_mismatches,
-            "review": "F1 uses the generic 1206 fuse land pattern; the generic Polyfuse symbol suggests PTC/polyfuse names. Manufacturer 1206 package-family review is documented; exact purchasing/land-pattern approval remains required before fabrication.",
+            "review": "All 44 assigned footprints match their stock symbol wildcards. F1 uses a project-local PTC land pattern independently compared against the manufacturer nominal pad drawing; wildcard matching alone does not prove physical suitability.",
         },
+        "fuse_manufacturer_land_pattern_review": fuse_review,
         "local_front_copper_paths": local_paths,
         "source_sha256": {name: digest(ROOT / name) for name in bound_files},
         "scope": "Native PCB geometry, enabled default DRC plus explicit fabrication constraints, schematic parity and independent pad/net audit. No fabricated board, measured EMC/thermal/timing/ESD performance or functional-safety qualification.",

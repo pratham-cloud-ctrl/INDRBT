@@ -435,7 +435,8 @@ def build(footprint_directory):
         if ref.startswith("#"):
             continue
         lib, name = comp.findtext("footprint").split(":")
-        fp = p.FootprintLoad(str(footprint_directory / f"{lib}.pretty"), name)
+        library_directory = ROOT if lib == "ASTER_Interface" else footprint_directory
+        fp = p.FootprintLoad(str(library_directory / f"{lib}.pretty"), name)
         assert fp is not None, f"Missing footprint {lib}:{name}"
         fp.SetReference(ref)
         fp.SetValue(comp.findtext("value"))
@@ -659,10 +660,61 @@ def build(footprint_directory):
     return board
 
 
+def update_fuse():
+    """Refresh F1 from the reviewed local library while preserving existing routing.
+
+    Both new pads cover the existing trace endpoints. Native DRC, not this
+    geometric expectation, must establish final connectivity after the save.
+    """
+    selection = json.loads((ROOT / "fuse_selection.json").read_text(encoding="utf-8"))
+    board = p.LoadBoard(str(ROOT / "joint_interface.kicad_pcb"))
+    old = next(fp for fp in board.GetFootprints() if fp.GetReference() == "F1")
+    library, name = selection["footprint"].split(":")
+    new = p.FootprintLoad(str(ROOT / f"{library}.pretty"), name)
+    assert new is not None, "Local fuse footprint is unavailable"
+    new.SetFPID(p.LIB_ID(library, name))
+    new.SetReference("F1")
+    new.SetValue(selection["manufacturer_part_number"])
+    new.GetField("Datasheet").SetText(selection["datasheet_url"])
+    new.SetPath(old.GetPath())
+    new.SetUuid(old.m_Uuid)
+    new.SetPosition(old.GetPosition())
+    new.SetOrientation(old.GetOrientation())
+    new.SetAttributes(old.GetAttributes())
+    new.Reference().SetPosition(old.Reference().GetPosition())
+    new.Reference().SetTextSize(old.Reference().GetTextSize())
+    new.Reference().SetTextThickness(old.Reference().GetTextThickness())
+    new.Value().SetVisible(False)
+    old_nets = {pad.GetNumber(): pad.GetNet() for pad in old.Pads()}
+    for pad in new.Pads():
+        pad.SetNet(old_nets[pad.GetNumber()])
+    board.Remove(old)
+    board.Add(new)
+    board.BuildConnectivity()
+    p.SaveBoard(str(ROOT / "joint_interface.kicad_pcb"), board)
+    manifest_path = ROOT / "pcb_routing_manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    manifest["footprint_refresh"] = {
+        "reference": "F1",
+        "footprint": selection["footprint"],
+        "method": "Native pcbnew replacement preserving placement, schematic UUID and existing tracks; connectivity requires a fresh native DRC",
+    }
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    print("F1 manufacturer land pattern updated; run native ERC/DRC and exports.", flush=True)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--footprints", type=Path, default=os.environ.get("KICAD10_FOOTPRINT_DIR"))
+    parser.add_argument(
+        "--update-fuse",
+        action="store_true",
+        help="Refresh the reviewed F1 footprint without rerouting the board",
+    )
     args = parser.parse_args()
+    if args.update_fuse:
+        update_fuse()
+        raise SystemExit(0)
     directory = (
         args.footprints
         or Path(sys.executable).resolve().parent.parent / "share" / "kicad" / "footprints"

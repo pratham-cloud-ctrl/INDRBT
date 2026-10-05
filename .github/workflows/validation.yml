@@ -1,0 +1,42 @@
+name: Software and artifact checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  software:
+    name: Python 3.12 · software and artifact checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: 06_Complete_Project_Source
+    steps:
+      - name: Check out project
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Install numerical and development dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Test numerical software and analytical models
+        run: python -m pytest --ignore=tests/test_cad.py -q
+      - name: Check code quality
+        run: python -m ruff check src analysis scripts tests cad/build123d electronics
+      - name: Check documentation links and coverage
+        run: python -c "from scripts.run_validation import documentation_check; documentation_check()"
+      - name: Check organized artifacts and readable pages
+        run: python scripts/verify_presentation.py
+      - name: Check saved schematic connectivity
+        run: python -c "import sys; sys.path.insert(0, 'electronics'); from verify_netlist import verify, ROOT; verify(ROOT / 'joint_interface.net.xml')"
+      - name: Check saved PCB and pad connectivity
+        run: python electronics/verify_pcb.py

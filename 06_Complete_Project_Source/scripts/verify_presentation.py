@@ -19,6 +19,8 @@ def verify():
     issues = []
     if manifest["version"] != version:
         issues.append({"issue": "stale presentation version"})
+    if validation.get("project_version") != version:
+        issues.append({"issue": "validation does not belong to this project version"})
     if (
         manifest["project_status"] != validation["project_status"]
         or validation["project_status"] != "DIGITAL SCOPE COMPLETE"
@@ -69,8 +71,8 @@ def verify():
         text = file.read_text(encoding="utf-8")
         if version not in text or "DIGITAL SCOPE COMPLETE" not in text:
             issues.append({"file": file.name, "issue": "stale version/status text"})
-    for path in (DEST / "README.md", DEST / "05_Reference_and_Project_Notes/README.md"):
-        for link in re.findall(r"\]\(([^)]+)\)", path.read_text()):
+    for path in [DEST / "README.md", *DEST.glob("0*/README.md")]:
+        for link in re.findall(r"\]\(([^)]+)\)", path.read_text(encoding="utf-8")):
             if (
                 not re.match(r"(?:[a-z]+:|#|//)", link, re.I)
                 and not (path.parent / unquote(link.split("#")[0])).exists()

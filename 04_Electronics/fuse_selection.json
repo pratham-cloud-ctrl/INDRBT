@@ -1,0 +1,22 @@
+{
+  "reference": "F1",
+  "manufacturer": "Bourns",
+  "manufacturer_part_number": "MF-NSMF025X-2",
+  "footprint": "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206",
+  "datasheet_url": "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf",
+  "datasheet_pages_one_based": {"electrical": 1, "temperature_derating": 3, "ordering": 7, "land_pattern": 8},
+  "maximum_voltage_v": 16.0,
+  "hold_current_at_23c_a": 0.25,
+  "hold_current_at_40c_a": 0.23,
+  "trip_current_at_23c_a": 0.50,
+  "minimum_initial_resistance_ohm": 0.45,
+  "maximum_post_reflow_resistance_ohm": 2.3,
+  "recommended_pad_size_mm": [1.0, 1.6],
+  "recommended_pad_centres_mm": [[-1.5, 0.0], [1.5, 0.0]],
+  "recommended_inner_pad_gap_mm": 2.0,
+  "body_size_nominal_mm": [3.2, 1.6],
+  "body_size_maximum_mm": [3.4, 1.8],
+  "body_height_maximum_mm": 0.85,
+  "courtyard_margin_mm": 0.25,
+  "claim_boundary": "Selected digital-design part and manufacturer nominal copper land pattern. No measured trip, inrush, solder-process, temperature, sourcing or production qualification. No manufacturer-specific 3D body model is supplied."
+}

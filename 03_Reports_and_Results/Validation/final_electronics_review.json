@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "scope": "Saved native KiCad evidence plus an independent file/content audit for the low-voltage external-drive interface. This script does not run fresh native checks or certify a physical product.",
+  "native_kicad_version": "10.0.6",
+  "native_erc_violations": 0,
+  "native_drc_errors": 0,
+  "native_drc_warnings": 0,
+  "native_unconnected_items": 0,
+  "native_schematic_parity_issues": 0,
+  "native_pcb_commands_reviewed": 13,
+  "native_pcb_command_exit_codes": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "component_count": 44,
+  "connected_nets": 28,
+  "physical_pad_nets_checked_including_nc": 119,
+  "stock_footprints": 43,
+  "local_manufacturer_footprints": 1,
+  "fuse_correction": {
+    "status": "PASS",
+    "manufacturer_part_number": "MF-NSMF025X-2",
+    "footprint": "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206",
+    "actual_pad_size_mm": [
+      1.0,
+      1.6
+    ],
+    "actual_inner_pad_gap_mm": 2.0,
+    "actual_pad_centres_mm": [
+      [
+        -1.5,
+        0.0
+      ],
+      [
+        1.5,
+        0.0
+      ]
+    ],
+    "library_and_board_dimensions_agree": true,
+    "courtyard_covers_maximum_body_and_pads": true,
+    "source": "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf",
+    "drawing_page_one_based": 8,
+    "scope": "Selected digital-design part and manufacturer nominal copper land pattern. No measured trip, inrush, solder-process, temperature, sourcing or production qualification. No manufacturer-specific 3D body model is supplied."
+  },
+  "footprint_wildcard_matches": 44,
+  "bom_values_and_footprints_match_native_design": true,
+  "assembly_position_count": 41,
+  "assembly_exclusions": {
+    "R14": "DNP optional bias",
+    "R15": "DNP optional bias",
+    "JP1": "bare copper solder jumper, no body",
+    "H1-H4": "board-only mechanical holes"
+  },
+  "gerber_layer_functions": [
+    "Copper,L1,Top",
+    "Copper,L2,Inr",
+    "Copper,L3,Inr",
+    "Copper,L4,Bot",
+    "Legend,Bot",
+    "Legend,Top",
+    "Profile",
+    "SolderMask,Bot",
+    "SolderMask,Top",
+    "SolderPaste,Top"
+  ],
+  "drill_counts": {
+    "joint_interface-PTH.drl": 68,
+    "joint_interface-NPTH.drl": 4
+  },
+  "ipc_d356_testpoint_count": 151,
+  "fabrication_zip_entries_checked": 19,
+  "file_hashes_recomputed": {
+    "source": 12,
+    "fabrication": 19,
+    "review_exports": 8
+  },
+  "file_hash_mismatches": 0,
+  "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
+  "pcb_verification_sha256": "db29c24de8faeedf82147b1f6c7ca74d90e8c23ea25f34d2dfe836b798911d3f",
+  "component_guide": "docs/electronics_components.md",
+  "component_guide_sha256": "53f4282427ded690b2225128fcf57bcd693aec6606774ab869de4768ea12ae5f",
+  "power_calculations": {
+    "status": "CALCULATED",
+    "no_measurements": true,
+    "limit_closed_v": 0.3,
+    "limit_release_tau_s": 0.001,
+    "limit_closure_tau_s": 9.09090909090909e-05,
+    "encoder_nominal_tau_s": {
+      "A": 1.0000000000000001e-07,
+      "B": 1.0000000000000001e-07,
+      "Z": 1.0000000000000001e-07
+    },
+    "optional_rs485_bias_nominal_v_two_terminators": 0.275,
+    "optional_rs485_bias_worst_v_1pct_resistors_3v_supply": 0.24545454545454543,
+    "optional_rs485_bias_idle_current_a": 0.004583333333333333,
+    "optional_bias_threshold_check": "PASS; ideal DC network, excludes leakage/cable effects",
+    "ldo_conservative_dissipation_bound_w": 0.29250000000000004,
+    "ldo_conditional_junction_estimate_c": 93.82000000000001,
+    "selected_fuse": "MF-NSMF025X-2",
+    "selected_fuse_hold_current_at_40c_a": 0.23,
+    "fuse_input_current_budget_including_ldo_iq_a": 0.15008,
+    "fuse_hold_current_margin_at_40c_a": 0.07992000000000002,
+    "fuse_resistance_drop_check_v": 0.34518399999999994,
+    "fuse_resistance_power_check_w": 0.05180521471999999,
+    "conditional_ldo_input_at_low_source_v": 3.9048160000000003,
+    "power_path_claim_boundary": "Conditional calculation using post-reflow 23 C fuse resistance and 25 C diode drop limit. It does not bound cold/hot resistance, diode drop, startup inrush or measured regulation over temperature.",
+    "thermal_claim_boundary": "Datasheet theta_ja estimate only; PCB copper/airflow unspecified and no temperature verified",
+    "pcb_status": "ROUTED PCB; actual DRC/parity/export evidence is recorded separately in pcb_verification.json"
+  },
+  "factory_disabled_erc_checks": [
+    "single_global_label",
+    "four_way_junction",
+    "simulation_model_issue",
+    "footprint_filter"
+  ],
+  "factory_disabled_drc_checks": [
+    "missing_courtyard",
+    "track_not_centered_on_via",
+    "tuning_profile_track_geometries",
+    "footprint_filters_mismatch",
+    "footprint_type_mismatch"
+  ],
+  "custom_rule_severity_overrides": {},
+  "drc_exclusions": [],
+  "remaining_physical_review": [
+    "Generic stock land patterns are package-compatible design selections, not a complete manufacturer soldering-process approval",
+    "Passive/LED/connector purchasing codes and effective capacitance under DC bias",
+    "Controller and encoder currents within the shared 150 mA budget, including terminated-bus loading",
+    "Fuse trip/inrush and cold/hot voltage-drop behaviour",
+    "Measured thermal, EMC, ESD, timing, cable grounding/isolation and safety qualification"
+  ],
+  "references": {
+    "fuse": "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf",
+    "regulator": "https://www.diodes.com/assets/Datasheets/AP2112.pdf",
+    "reverse_polarity_diode": "https://www.vishay.com/docs/88746/ss12.pdf",
+    "input_clamps": "https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf",
+    "rs485_transceiver": "https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf"
+  }
+}

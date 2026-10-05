@@ -15,6 +15,14 @@
   "optional_bias_threshold_check": "PASS; ideal DC network, excludes leakage/cable effects",
   "ldo_conservative_dissipation_bound_w": 0.29250000000000004,
   "ldo_conditional_junction_estimate_c": 93.82000000000001,
+  "selected_fuse": "MF-NSMF025X-2",
+  "selected_fuse_hold_current_at_40c_a": 0.23,
+  "fuse_input_current_budget_including_ldo_iq_a": 0.15008,
+  "fuse_hold_current_margin_at_40c_a": 0.07992000000000002,
+  "fuse_resistance_drop_check_v": 0.34518399999999994,
+  "fuse_resistance_power_check_w": 0.05180521471999999,
+  "conditional_ldo_input_at_low_source_v": 3.9048160000000003,
+  "power_path_claim_boundary": "Conditional calculation using post-reflow 23 C fuse resistance and 25 C diode drop limit. It does not bound cold/hot resistance, diode drop, startup inrush or measured regulation over temperature.",
   "thermal_claim_boundary": "Datasheet theta_ja estimate only; PCB copper/airflow unspecified and no temperature verified",
   "pcb_status": "ROUTED PCB; actual DRC/parity/export evidence is recorded separately in pcb_verification.json"
 }

@@ -4,9 +4,6 @@ Status: **DIGITAL SCOPE COMPLETE**. Physical performance is unverified.
 
 | Check | Result |
 |---|---|
-| CAD regeneration | PASS |
-| Results regeneration | PASS |
-| CAD trajectory clearance regeneration | PASS |
 | Automated numerical/CAD tests | PASS |
 | Configuration validation | PASS |
 | FK / IK / Jacobian random trials | PASS |

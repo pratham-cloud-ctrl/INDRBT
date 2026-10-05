@@ -1,10 +1,10 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>02_kinematics</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Kinematic formulation</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>02_kinematics</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="kinematic-formulation">Kinematic formulation</h1>
 <p>ASTER-6 uses an explicit sequence of rigid-body transformations. All calculations
 use metres, radians and seconds. A column vector represents a point; transforms
 map local coordinates into the base frame. The base frame has +Z up, +X along the
 zero-position arm and +Y completing a right-handed frame. This is a numerical
 model of an original design, not a reverse-engineered commercial arm.</p>
-<h2>Frames and joint definitions</h2>
+<h2 id="frames-and-joint-definitions">Frames and joint definitions</h2>
 <p>Let <code>h</code>, <code>L1</code>, <code>L2</code>, <code>lr</code>, <code>lp</code> and <code>lt</code> be the shoulder height, upper-arm,
 forearm, wrist-roll, wrist-pitch and tool lengths in <code>config/robot.yaml</code>.</p>
 <table>
@@ -64,7 +64,7 @@ The world joint axis is computed before applying that joint's rotation.</p>
 <p>The final TCP follows the configured tool length. CAD and motion software use the
 same transform convention. The gripper's full jaw opening is along tool-frame Y,
 with inner jaw faces at <code>±opening/2</code> and fingers extending toward +X.</p>
-<h2>Forward kinematics</h2>
+<h2 id="forward-kinematics">Forward kinematics</h2>
 <p>For translation <code>T(a)</code> and axis rotation <code>R_i(q)</code>, homogeneous matrices are</p>
 <pre><code class="language-text">T(a) = [ I3  a ]       R_i(q) = [ rotation_i(q)  0 ]
        [  0  1 ]                [       0        1 ]
@@ -82,7 +82,7 @@ about Y tips local +X downward. At all-zero angles the TCP is
 <code>(L1+L2+lr+lp+lt, 0, h)</code> with identity orientation. At <code>q2=-π/2</code> and all other
 angles zero it is <code>(0, 0, h+L1+L2+lr+lp+lt)</code>. Both cases are tested against exact
 positions. Configured joint bounds are enforced by FK unless explicitly disabled.</p>
-<h2>Inverse kinematics</h2>
+<h2 id="inverse-kinematics">Inverse kinematics</h2>
 <p>The solver uses <code>scipy.optimize.least_squares</code> with box constraints, a supplied
 seed, home seed, midrange seed and deterministic random restarts. There is no
 analytical IK claim. The residual is</p>
@@ -100,7 +100,7 @@ best residual. It is <strong>not a proof</strong> that a target within that boun
 Redundant branches and elbow/wrist alternatives can occur. Restarts can find an
 alternative branch but do not exhaustively enumerate every solution. The planner
 uses continuation from the preceding configuration to preserve local continuity.</p>
-<h2>Geometric Jacobian</h2>
+<h2 id="geometric-jacobian">Geometric Jacobian</h2>
 <p>For TCP position <code>p</code>, world joint origin <code>o_i</code> and world unit rotation axis <code>a_i</code>,
 the six columns are</p>
 <pre><code class="language-text">J_i = [ a_i × (p-o_i) ]
@@ -112,7 +112,7 @@ Singularity diagnostics divide the translational rows by the configured reach
 before computing singular values. This scale must be stated when comparing
 condition measures. Tests compare every Jacobian column with central differences
 of TCP position and world-frame SO(3) orientation across eight seeded poses.</p>
-<h2>Singularities and workspace</h2>
+<h2 id="singularities-and-workspace">Singularities and workspace</h2>
 <p>All-zero extension is singular: shoulder/elbow pitch axes become parallel and
 several wrist axes align. Wrist pitch near zero can align wrist-roll and tool-roll
 axes. Singularities reduce one or more instantaneous motion directions and can
@@ -129,7 +129,7 @@ reachable volume. Occupied voxels are a sampling proxy that depends on pitch,
 sample count and random seed. Orientation feasibility differs from position-only
 reachability. Results and their exact seeds are saved in
 <code>results/workspace/metrics.json</code> and <code>samples.csv</code>.</p>
-<h2>Motion planning and simulation limits</h2>
+<h2 id="motion-planning-and-simulation-limits">Motion planning and simulation limits</h2>
 <p>MOVE J uses monotonic linear, cubic or quintic scalar interpolation of all six
 joints. Polynomial velocity and acceleration maxima provide an analytic minimum
 duration. Linear interpolation describes a constant-velocity interior segment;

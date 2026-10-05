@@ -1,4 +1,5 @@
 (fp_lib_table
+  (lib (name "ASTER_Interface")(type "KiCad")(uri "${KIPRJMOD}/ASTER_Interface.pretty")(options "")(descr "Project-local manufacturer land patterns"))
   (lib (name "Capacitor_SMD")(type "KiCad")(uri "${KICAD10_FOOTPRINT_DIR}/Capacitor_SMD.pretty")(options "")(descr "Stock KiCad footprint library"))
   (lib (name "Connector_PinHeader_2.54mm")(type "KiCad")(uri "${KICAD10_FOOTPRINT_DIR}/Connector_PinHeader_2.54mm.pretty")(options "")(descr "Stock KiCad footprint library"))
   (lib (name "Diode_SMD")(type "KiCad")(uri "${KICAD10_FOOTPRINT_DIR}/Diode_SMD.pretty")(options "")(descr "Stock KiCad footprint library"))

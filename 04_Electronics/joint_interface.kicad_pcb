@@ -2594,16 +2594,16 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Fuse:Fuse_1206_3216Metric"
+	(footprint "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206"
 		(layer "F.Cu")
 		(uuid "39273422-da24-5137-a702-75042aa05670")
 		(at 35 32)
-		(descr "Fuse SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf)")
-		(tags "fuse")
+		(descr "Bourns MF-NSMF025X-2 PTC; manufacturer recommended nominal pads, mf-nsmf.pdf page 8. Body drawing is nominal; courtyard covers maximum body and pads.")
+		(tags "PTC polyfuse Bourns MF-NSMF025X 1206")
 		(property "Reference" "F1"
 			(at 0 -2.4 0)
 			(layer "F.SilkS")
-			(uuid "0e099e9a-e30f-48d7-97aa-3500622418bf")
+			(uuid "22d29f8e-5f6c-431a-a2e5-3b783b2019c0")
 			(effects
 				(font
 					(size 1 1)
@@ -2611,11 +2611,11 @@
 				)
 			)
 		)
-		(property "Value" "0.25A hold"
-			(at 0 1.83 0)
+		(property "Value" "MF-NSMF025X-2"
+			(at 0 1.8 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a4e41988-cdd5-4611-a440-9ceef7bcc95f")
+			(uuid "80e301c4-06db-46b3-b639-1292b2f1caae")
 			(effects
 				(font
 					(size 1 1)
@@ -2623,11 +2623,11 @@
 				)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf"
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "57d7300d-bdde-47a8-b736-afce3adffcc4")
+			(uuid "7909af01-ce85-4795-95d8-110236a8946e")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2638,22 +2638,10 @@
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "4812efab-0a4f-457d-9081-84243076e501")
+			(uuid "815a1d6b-880b-4bd3-b518-d1f30dc02de3")
 			(effects
 				(font
 					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "SMD_2terminal_chip_molded"
-			(at 0 0 0)
-			(layer "F.SilkS")
-			(hide yes)
-			(uuid "913f296f-5404-4fd9-bf8d-0b556708d8e2")
-			(effects
-				(font
-					(size 1 1)
-					(thickness 0.15)
 				)
 			)
 		)
@@ -2661,35 +2649,35 @@
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
-			(start -0.602064 -0.91)
-			(end 0.602064 -0.91)
+			(start -0.65 -1.03)
+			(end 0.65 -1.03)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "b9b1185e-8f22-4e73-9f98-e76caf0f1753")
+			(uuid "35d151ae-a484-4d45-a161-51e99645ff8e")
 		)
 		(fp_line
-			(start -0.602064 0.91)
-			(end 0.602064 0.91)
+			(start -0.65 1.03)
+			(end 0.65 1.03)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "F.SilkS")
-			(uuid "b2ec0894-82a2-4fb1-8b2c-27cb5d66feec")
+			(uuid "4c9e717c-31bb-4b8c-ac8d-8a375dffef72")
 		)
 		(fp_rect
-			(start -2.28 -1.13)
-			(end 2.28 1.13)
+			(start -2.25 -1.15)
+			(end 2.25 1.15)
 			(stroke
 				(width 0.05)
 				(type solid)
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "fe9b3f0d-3f12-40a6-8542-884dc759be6c")
+			(uuid "40dd6242-1094-4120-bfaa-61bcc334b12e")
 		)
 		(fp_rect
 			(start -1.6 -0.8)
@@ -2700,12 +2688,12 @@
 			)
 			(fill no)
 			(layer "F.Fab")
-			(uuid "a2abea98-28d4-464e-b099-ec86fd66ea34")
+			(uuid "abe05c7d-9887-423b-979a-ea480f2aba60")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
 			(layer "F.Fab")
-			(uuid "182465cb-5c43-427b-b04e-cb794710cfd5")
+			(uuid "ad7a9dfa-c18a-477b-869d-ac4e18c1980f")
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -2713,34 +2701,21 @@
 				)
 			)
 		)
-		(pad "1" smd roundrect
-			(at -1.4 0)
-			(size 1.25 1.75)
+		(pad "1" smd rect
+			(at -1.5 0)
+			(size 1 1.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.2)
 			(net "/+5V_IN")
-			(uuid "2c237e4b-de58-420f-b6b9-b27dd7eb1e5b")
+			(uuid "ea640c2e-ea9d-4cd2-a4d8-e6e0c5959d4a")
 		)
-		(pad "2" smd roundrect
-			(at 1.4 0)
-			(size 1.25 1.75)
+		(pad "2" smd rect
+			(at 1.5 0)
+			(size 1 1.6)
 			(layers "F.Cu" "F.Mask" "F.Paste")
-			(roundrect_rratio 0.2)
 			(net "/+5V_FUSED")
-			(uuid "cc0f3da2-5224-41dd-a9af-1e4f8792c009")
+			(uuid "392db5d2-51fa-47cd-b529-1d13d25cb257")
 		)
 		(embedded_fonts no)
-		(model "${KICAD10_3DMODEL_DIR}/Fuse.3dshapes/Fuse_1206_3216Metric.step"
-			(offset
-				(xyz 0 0 0)
-			)
-			(scale
-				(xyz 1 1 1)
-			)
-			(rotate
-				(xyz 0 0 0)
-			)
-		)
 	)
 	(footprint "Diode_SMD:D_SOD-123F"
 		(layer "F.Cu")

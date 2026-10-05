@@ -1,36 +1,13 @@
 {
+  "project_version": "1.1.0",
   "project_status": "DIGITAL SCOPE COMPLETE",
   "checks": [
-    {
-      "name": "CAD regeneration",
-      "result": "PASS",
-      "evidence": {
-        "exit_code": 0,
-        "output": "CAD pose home: 54 solids, reimport valid=True\nCAD pose extended: 54 solids, reimport valid=True\nCAD pose folded: 54 solids, reimport valid=True\nCAD pose vertical: 54 solids, reimport valid=True\nCAD pose pick: 54 solids, reimport valid=True\nCAD pose place: 54 solids, reimport valid=True\nGenerated 54 components, 6 assemblies; geometric envelope mass 19.952 kg\n"
-      }
-    },
-    {
-      "name": "Results regeneration",
-      "result": "PASS",
-      "evidence": {
-        "exit_code": 0,
-        "output": "-m robotarm.demo --all: generated\n-m analysis.joint_torque_analysis: generated\n-m analysis.structural_analysis: generated\n-m analysis.research_experiments: generated\nscripts/build_viewer.py: generated\n"
-      }
-    },
-    {
-      "name": "CAD trajectory clearance regeneration",
-      "result": "PASS",
-      "evidence": {
-        "exit_code": 0,
-        "output": "y sample 390/1040: PASS\nCAD trajectory sample 406/1040: PASS\nCAD trajectory sample 420/1040: PASS\nCAD trajectory sample 422/1040: PASS\nCAD trajectory sample 439/1040: PASS\nCAD trajectory sample 455/1040: PASS\nCAD trajectory sample 471/1040: PASS\nCAD trajectory sample 488/1040: PASS\nCAD trajectory sample 504/1040: PASS\nCAD trajectory sample 520/1040: PASS\nCAD trajectory sample 536/1040: PASS\nCAD trajectory sample 552/1040: PASS\nCAD trajectory sample 569/1040: PASS\nCAD trajectory sample 585/1040: PASS\nCAD trajectory sample 601/1040: PASS\nCAD trajectory sample 618/1040: PASS\nCAD trajectory sample 620/1040: PASS\nCAD trajectory sample 634/1040: PASS\nCAD trajectory sample 650/1040: PASS\nCAD trajectory sample 666/1040: PASS\nCAD trajectory sample 682/1040: PASS\nCAD trajectory sample 699/1040: PASS\nCAD trajectory sample 715/1040: PASS\nCAD trajectory sample 720/1040: PASS\nCAD trajectory sample 730/1040: PASS\nCAD trajectory sample 731/1040: PASS\nCAD trajectory sample 740/1040: PASS\nCAD trajectory sample 748/1040: PASS\nCAD trajectory sample 764/1040: PASS\nCAD trajectory sample 780/1040: PASS\nCAD trajectory sample 796/1040: PASS\nCAD trajectory sample 812/1040: PASS\nCAD trajectory sample 829/1040: PASS\nCAD trajectory sample 840/1040: PASS\nCAD trajectory sample 845/1040: PASS\nCAD trajectory sample 861/1040: PASS\nCAD trajectory sample 878/1040: PASS\nCAD trajectory sample 894/1040: PASS\nCAD trajectory sample 910/1040: PASS\nCAD trajectory sample 926/1040: PASS\nCAD trajectory sample 942/1040: PASS\nCAD trajectory sample 959/1040: PASS\nCAD trajectory sample 975/1040: PASS\nCAD trajectory sample 991/1040: PASS\nCAD trajectory sample 1008/1040: PASS\nCAD trajectory sample 1024/1040: PASS\nCAD trajectory sample 1040/1040: PASS\n{\n  \"status\": \"PASS\",\n  \"trajectory_sha256\": \"5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c\",\n  \"source_sha256\": {\n    \"robot.yaml\": \"bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96\",\n    \"geometry.py\": \"983a22b813ac271c5f6f9c878055c156863b9d1603d445a1753a05f25436ccfb\"\n  },\n  \"samples_checked\": 75,\n  \"trajectory_samples\": 1041,\n  \"all_component_pair_classifications\": 107325,\n  \"aabb_disjoint_pairs\": 87290,\n  \"same_rigid_family_pairs_excluded\": 14100,\n  \"exact_brep_pair_checks\": 5935,\n  \"minimum_moving_geometry_height_mm\": 22.3097259665834,\n  \"max_selected_pair_overlap_mm3\": 0.0,\n  \"max_all_pair_overlap_mm3\": 0.0,\n  \"failures\": [],\n  \"scope\": \"65 uniform samples plus every phase boundary and gripper event; every component pair is classified. Adjacent joints are included, and each moving jaw is distinct from the gripper body. Disjoint AABBs reject impossible intersections; all remaining pairs use exact BRep common volume. Ground height uses transformed BRep bounding boxes. Gripper event openings are checked, with additional closed/mid/open checks in cad_assembly_clearance.json. This finite task screening is not a continuous swept proof, validation of every joint-limit combination, or physical safety certification.\"\n}\n"
-      }
-    },
     {
       "name": "Automated numerical/CAD tests",
       "result": "PASS",
       "evidence": {
         "exit_code": 0,
-        "output": ".................................                                        [100%]\n33 passed in 38.17s\n"
+        "output": "..................................                                       [100%]\n34 passed in 47.13s\n"
       }
     },
     {
@@ -79,14 +56,14 @@
       "result": "PASS",
       "evidence": {
         "exit_code": 0,
-        "output": "Build Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 1.375 s\nRendering: 8 \nRendering: 15 \nRendering: 18 \nRendering: 21 \nRendering: 24 \nRendering: 27 \nRendering: 30 \nRendering: 33 \nRendering: 39 \nRendering: 43 \nRendering: 48 \nRendering: 53 \nRendering: 56 \nRendering: 59 \nRendering: 63 \nRendering: 68 \nRendering: 73 \nRendering: 78 \nRendering: 81 \nRendering: 84 \nRendering: 88 \nRendering: 92 \nRendering: 97 \nRendering: 100 \nRendering: Post processing shader\nRendering time 18.777 s\nSuccessfully created 3D render image\nLoading\u2026\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.284 s\nRendering: 82 \nRendering: 100 \nRendering time 0.927 s\nSuccessfully created 3D render image\nPASS: 44 schematic footprints + 4 mechanical, 28 connected nets, 265 tracks, 32 vias; 0 DRC violations, 0 unconnected items, 0 schematic parity issues\n"
+        "output": "r 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.398 s\nRendering: 5 \nRendering: 10 \nRendering: 15 \nRendering: 18 \nRendering: 21 \nRendering: 24 \nRendering: 27 \nRendering: 30 \nRendering: 33 \nRendering: 37 \nRendering: 42 \nRendering: 46 \nRendering: 51 \nRendering: 55 \nRendering: 58 \nRendering: 61 \nRendering: 66 \nRendering: 71 \nRendering: 76 \nRendering: 80 \nRendering: 83 \nRendering: 86 \nRendering: 90 \nRendering: 95 \nRendering: 100 \nRendering: Post processing shader\nRendering time 19.877 s\nSuccessfully created 3D render image\nLoading\u2026\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.401 s\nRendering: 50 \nRendering: 100 \nRendering time 1.472 s\nSuccessfully created 3D render image\nPASS: 44 schematic footprints + 4 mechanical, 28 connected nets, 265 tracks, 32 vias; 0 DRC violations, 0 unconnected items, 0 schematic parity issues\n"
       }
     },
     {
       "name": "Documentation links and coverage",
       "result": "PASS",
       "evidence": {
-        "required_documents": 13,
+        "required_documents": 16,
         "broken_local_links": []
       }
     }
@@ -98,7 +75,7 @@
     "The conceptual PCB has no physical thermal, EMC, ESD or functional-safety validation"
   ],
   "test_totals": {
-    "tests": 33,
+    "tests": 34,
     "failures": 0,
     "errors": 0,
     "skipped": 0

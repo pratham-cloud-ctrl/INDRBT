@@ -4,13 +4,15 @@ An original six-axis robot with parametric CAD, numerical kinematics and a repro
 
 ![ASTER-6 actual CAD assembly](cad/renders/hero.png)
 
-**Digital only · v1.0.0 · DIGITAL SCOPE COMPLETE**
+**Digital only · v1.1.0 · DIGITAL SCOPE COMPLETE**
 
 Designed for robotics education and portfolio review. Every result is generated from source; no physical robot was built. Payload and repeatability remain design targets. The conceptual electronics include a routed PCB, manufacturing exports and native DRC; collision evidence is representative and sampled.
 
 ## See it move
 
 Open **[the offline interactive CAD twin](simulations/aster6_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
+
+The **CAD component** selector isolates and frames any of the 54 actual parts. Use the [component catalog](docs/component_catalog.md) to match part names, native objects, materials and STEP/STL files. The [theory guide](docs/theory_guide.md) connects the model equations to evidence, and the [electronics component guide](docs/electronics_components.md) explains references, selections and BOM population.
 
 ![FK pick-and-place animation](results/trajectories/pick_place_fk.gif)
 
@@ -29,7 +31,7 @@ The 9.24 s task follows MOVE J and MOVE L segments: approach, grasp, lift, trans
 | FK / IK / Jacobian | Bounded numerical IK; 60 perturbed-seed pose trials |
 | Motion / control | Linear/cubic/quintic MOVE J, sampled MOVE L and saturated PID |
 | Electronics | Native 44-component KiCad interface; 0 ERC violations under enabled default rules; routed PCB/native DRC and connectivity evidence |
-| Tests | 33 tests; 0 failures; 0 errors |
+| Tests | 34 tests; 0 failures; 0 errors |
 
 ## Run
 
@@ -87,7 +89,7 @@ Five [research experiments](results/research/experiments.json) vary link ratio, 
 
 ## Conceptual electronics
 
-The native [KiCad schematic](electronics/joint_interface.kicad_sch), [PCB](electronics/joint_interface.kicad_pcb) and [schematic PDF](electronics/exports/joint_interface.pdf) cover regulated logic power, encoder/limit inputs, external-drive commands and RS-485. All 44 assigned stock footprint files were found, and 118 exported pin assignments were verified. Native ERC reports 0 violations under the enabled default rules. The [PCB verification](electronics/pcb_verification.json) retains actual DRC and schematic-board checks. [Electronics scope](docs/05_electronics.md) documents fabrication outputs, rules, circuit calculations and assumptions. No physical hardware or manufacturing suitability is claimed.
+The native [KiCad schematic](electronics/joint_interface.kicad_sch), [PCB](electronics/joint_interface.kicad_pcb) and [schematic PDF](electronics/exports/joint_interface.pdf) cover regulated logic power, encoder/limit inputs, external-drive commands and RS-485. All 44 assigned footprint files were found (43 stock and 1 project-local), and 118 exported pin assignments were verified. Native ERC reports 0 violations under the enabled default rules. The [PCB verification](electronics/pcb_verification.json) retains actual DRC and schematic-board checks. [Electronics scope](docs/05_electronics.md) documents fabrication outputs, rules, circuit calculations and assumptions. No physical hardware or manufacturing suitability is claimed.
 
 ## Verification, report and limitations
 

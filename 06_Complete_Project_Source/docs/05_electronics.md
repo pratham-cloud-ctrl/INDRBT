@@ -4,6 +4,8 @@ This is a digital design for one ASTER-6 joint/sensor interface. It connects an 
 
 ![Electrical architecture](diagrams/electronics_architecture.svg)
 
+New to schematics? Start with the [component guide](electronics_components.md). It explains reference letters, circuit blocks, default population and how to move between the BOM, schematic and board.
+
 ## Scope and evidence
 
 | Item | Status and evidence |
@@ -11,8 +13,8 @@ This is a digital design for one ASTER-6 joint/sensor interface. It connects an 
 | Native KiCad schematic | **VERIFIED DIGITALLY**: `electronics/joint_interface.kicad_sch`, generated from real stock KiCad symbols and real pin/wire connectivity |
 | Electrical rules | **VERIFIED DIGITALLY**: KiCad **10.0.6**, default ERC rules, all report severities, **0 violations** in `electronics/erc_report.json` |
 | Connectivity | **VERIFIED DIGITALLY**: **44 components, 28 connected nets, 118 pin assignments and 22 independent topology checks** in `electronics/net_verification.json` |
-| Footprint references | **VERIFIED DIGITALLY**: all **44** assigned stock footprint files were found; this is not a land-pattern manufacturing review |
-| BOM | `electronics/bom.csv`; values, footprints, datasheets and population options; manufacturer ordering suffixes and passive part selections remain conceptual |
+| Footprint references | **VERIFIED DIGITALLY**: **43 stock assignments plus one project-local F1 land pattern**; all 44 exist and match the symbol wildcards. F1's library and board copper dimensions match the manufacturer nominal drawing |
+| BOM | [BOM CSV](../electronics/bom.csv) and [component guide](electronics_components.md); exact F1 part selected, with other ordering suffixes and passive purchasing choices still open |
 | Readable schematic | Native CLI exports in `electronics/exports/joint_interface.pdf` and `.svg`, visually inspected after generation |
 | Routed PCB | **VERIFIED DIGITALLY**: `electronics/joint_interface.kicad_pcb`; 100 × 100 mm, four copper layers, 44 schematic footprints plus four mechanical mounting holes, 265 track segments and 32 vias |
 | PCB DRC / parity | **VERIFIED DIGITALLY**: **0 errors, 0 warnings, 0 unconnected items and 0 schematic parity issues**; `electronics/pcb_drc_report.json` and `electronics/pcb_verification.json` |
@@ -26,19 +28,21 @@ The `.kicad_pro` retains KiCad factory ERC severities and contains explicit PCB 
 | `single_global_label` | This single-sheet design uses local labels, so no global-label singleton is being hidden |
 | `four_way_junction` | Generated wires are short two-endpoint connections to labels, with no four-way junctions |
 | `simulation_model_issue` | This schematic does not run SPICE; the robot control simulation is separate Python software |
-| `footprint_filter` | Stock wildcard filter matching is not covered by this ERC run. The runner independently checks all assigned footprint files exist; package families were reviewed against the component datasheets, but neither check proves a manufacturing-ready land pattern |
+| `footprint_filter` | This native ERC rule is disabled by the factory. Independent parsing checks all 44 footprint wildcard assignments without exceptions, and checks F1's actual land dimensions. Other stock patterns were reviewed for package/pin compatibility; manufacturing-process acceptance remains open |
 
 The initial run found off-grid placements and a stock inherited-symbol mismatch. Placements were snapped to 1.27 mm, the RS-485 part was changed to a directly defined stock symbol, and ERC was rerun successfully.
 
 ## Power and component choices
 
-J1 accepts an **ASSUMED** regulated 5.0 V ±5% source. F1 is a conceptual 250 mA hold resettable fuse, followed by an SS14 reverse-polarity diode. The protected rail feeds U1, an AP2112K-3.3 regulator, with 10 µF input and 4.7 µF output ceramic capacitors. The regulator requires a minimum effective output capacitance of 1 µF; select X7R/X5R components with DC-bias margin. J2 and J3 share a **TARGET** total 3.3 V load budget of 150 mA. This budget includes the external controller, encoder, RS-485 driver and status LED; it is not a measured current. The AP2112 pinout and capacitor requirement were checked against the [Diodes Incorporated datasheet](https://www.diodes.com/assets/Datasheets/AP2112.pdf).
+J1 accepts an **ASSUMED** regulated 5.0 V ±5% source. F1 is the selected **Bourns MF-NSMF025X-2** resettable fuse, followed by an SS14 reverse-polarity diode. The protected rail feeds U1, an AP2112K-3.3 regulator, with 10 µF input and 4.7 µF output ceramic capacitors. The regulator requires a minimum effective output capacitance of 1 µF; select X7R/X5R components with DC-bias margin. J2 and J3 share a **TARGET** total 3.3 V load budget of 150 mA. This budget includes the external controller, encoder, RS-485 driver and status LED; it is not a measured current. The AP2112 pinout and capacitor requirement were checked against the [Diodes Incorporated datasheet](https://www.diodes.com/assets/Datasheets/AP2112.pdf).
 
 At the upper input bound, ignoring diode drop gives a conservative regulator dissipation bound:
 
 `P = (5.25 − 3.3) × 0.15 = 0.2925 W`.
 
-With the datasheet's 184 °C/W package estimate and an **ASSUMED** 40 °C ambient, the conditional junction estimate is **93.82 °C**. This is a calculation using a reference thermal resistance; it does not measure this PCB's copper, airflow, hot spots or usable continuous current. F1's resistance, derating and trip curve also need selection. There is no input overvoltage limiter, so this interface must not receive the proposed 24/48 V drive supply.
+With the datasheet's 184 °C/W package estimate and an **ASSUMED** 40 °C ambient, the conditional junction estimate is **93.82 °C**. This is a calculation using a reference thermal resistance; it does not measure this PCB's copper, airflow, hot spots or usable continuous current. F1's 40 °C hold rating is 230 mA. Including the regulator's 80 µA maximum quiescent allowance gives a 150.08 mA input budget, leaving a calculated 79.92 mA hold-current margin at that ambient. This does not establish startup or fault-trip behaviour.
+
+Using F1's 2.3 Ω post-reflow resistance limit at 23 °C gives a calculated 0.345 V drop and 51.8 mW dissipation at that budget. At the low 4.75 V source bound, subtracting this drop and the SS14's 0.50 V test-condition forward-drop limit gives a conditional regulator input of **3.905 V**. These temperature-specific reference values are not a cold/hot operating guarantee. The [saved calculations](../electronics/interface_calculations.json) retain the assumptions and limitations. There is no input overvoltage limiter, so this interface must not receive the proposed 24/48 V drive supply.
 
 D1 uses the SMA stock footprint, consistent with the [Vishay SS14 family](https://www.vishay.com/docs/88746/ss12.pdf). Input clamps D3–D10 use SOD-123F footprints, consistent with the [Nexperia BAT54H datasheet](https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf). Stock footprint existence is checked automatically; exact assembly and fabrication choices remain open.
 
@@ -66,7 +70,7 @@ Drive STEP, DIR and ENABLE commands each pass through 330 Ω. R8 pulls ENABLE_DR
 
 ## RS-485 network
 
-U2 is an LTC2850IS8 half-duplex 3.3 V transceiver. Its `/RE` and `DE` are tied to RS485_DIR: low selects receive, high selects transmit. A 10 kΩ pull-down selects receive by default. C7 is its 100 nF local decoupling capacitor. Its supply, pinout, internal failsafe and ±200 mV receiver threshold were checked against the [Analog Devices datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf).
+U2 is an LTC2850IS8 half-duplex 3.3 V transceiver. Its `/RE` and `DE` are tied to RS485_DIR: low selects receive, high selects transmit. A 10 kΩ pull-down selects receive by default. C7 is its 100 nF local decoupling capacitor. Its supply, pinout, internal failsafe and ±200 mV receiver threshold were checked against the [Analog Devices datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf). A terminated bus draws substantially more current than an unloaded receiver: the datasheet's 2 V differential example across two 120 Ω terminators consumes about 33 mA. Account for that load within the shared 150 mA budget when selecting the external controller and encoder.
 
 JP1 closes a 120 Ω termination path only on the two physical bus endpoints. R14/R15 are **DNP by default** because U2 already provides receiver failsafe. If external bias is desired, populate the pair at exactly one bus node. The optional 330 Ω / 330 Ω pair gives **275 mV** nominal idle differential voltage with two 120 Ω terminators; the ideal worst case at 3.0 V and 1% resistor extremes is **245.45 mV**, above the 200 mV threshold. This calculation excludes cable loss, leakage and common-mode effects. An earlier 680 Ω choice was rejected during the design review because 3.3 V with two terminators would provide only 139 mV.
 
@@ -90,9 +94,11 @@ KiCad 10 disables five DRC checks by default, as shown in its [board settings co
 | `track_not_centered_on_via` | Plane fanouts and layer transitions terminate at via centres; this factory rule itself is not enabled |
 | `tuning_profile_track_geometries` | No tuning profiles are used; A/B path lengths are measured independently |
 | `footprint_type_mismatch` | Ordinary SMD/THT components use their stock pad technology; the solder jumper is bare copper and mounting holes are nonplated board features |
-| `footprint_filters_mismatch` | 43 of 44 schematic footprints match the stock symbol wildcards. F1 is a disclosed lexical exception: generic `Device:Polyfuse` suggests `*polyfuse*`/`*PTC*` names, while the stock assigned footprint is named `Fuse_1206_3216Metric` |
+| `footprint_filters_mismatch` | Independent parsing confirms all 44 schematic assignments match their stock symbol wildcards, with no exception. Matching names alone cannot prove a suitable land pattern |
 
-F1's 1206 package family was checked against the [Bourns MF-NSMF resettable-fuse datasheet](https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf). The MF-NSMF025X family is 250 mA hold at 23 °C, derated to 230 mA at 40 °C, in a standard 1206 body. Its recommended land pattern differs from the stock generic IPC pattern: the Bourns drawing uses 1.0 × 1.6 mm pads with a 2.0 mm gap; the assigned generic KiCad pattern has 1.25 × 1.75 mm pads with a 1.55 mm gap. That is an explicit manufacturer land-pattern review item, not a claimed wildcard or manufacturing-approval pass. Exact fuse ordering suffix, resistance/drop, trip behaviour, passive ordering choices, solder process and assembly acceptance require review before a physical build.
+F1 uses the selected MF-NSMF025X-2 and the project-local [PTC footprint](../electronics/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod). The [Bourns drawing](https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf), page 8, specifies nominal **1.0 × 1.6 mm copper pads with a 2.0 mm inner gap**. Pad centres are ±1.5 mm; the courtyard covers the maximum body and pads with a 0.25 mm margin. Both the local library and saved board pad sizes/positions are checked against [fuse_selection.json](../electronics/fuse_selection.json), and the native IPC-D-356 export reflects the corrected pad sizes. Copper, mask, paste, fabrication and courtyard geometry are present. A manufacturer-specific 3D fuse body is not included; the rendered view shows its lands.
+
+The generic stock land patterns for the other devices agree with their package families and pin counts, but are not asserted to reproduce every manufacturer's suggested soldering pattern exactly. Passive ordering choices, effective capacitance, solder process, fuse inrush/trip behaviour and assembly acceptance remain physical-build review items.
 
 The [fabrication ZIP](../electronics/fabrication/joint_interface_fabrication.zip) contains ten separate Gerber layers, separate plated/nonplated Excellon drill files, drill maps/report, assembly positions, IPC-D-356 netlist and BOM. The position file contains 41 component bodies. Optional R14/R15 bias resistors are DNP and are excluded; JP1 is a bare copper solder jumper with no body to place, and the four mounting footprints are mechanical exclusions. Native [six-page layer PDF](../electronics/exports/pcb_layers.pdf), individual layer SVGs and [3D board view](../electronics/exports/pcb_3d.png) were generated and visually reviewed. `pcb_verification.json` binds board, schematic, project constraints, netlist, pin contract, routing manifest, native DRC and exported files with SHA-256 hashes. This proves file consistency and executed digital checks; it does not substitute for manufacturer CAM approval, production testing, EMC/ESD tests or measured thermal performance.
 
@@ -108,7 +114,15 @@ Enter `06_Complete_Project_Source` from the organized repository root. With KiCa
 python electronics/run_checks.py --kicad-cli /path/to/kicad-cli
 ```
 
-`KICAD_CLI` or PATH may supply the executable. The runner also discovers Windows installations through their registry entry. It exports the native netlist, normalizes source/library paths, executes ERC with violation-sensitive exit codes, verifies all pins plus 22 independent circuit statements, checks assigned stock footprints, recalculates electrical values from the BOM, and refreshes schematic PDF/SVG exports. It then runs PCB DRC with schematic parity, all report severities, all track errors and violation-sensitive exit codes, refills/saves the planes, audits physical board pad nets, and regenerates fabrication files, PCB layer views and native 3D images. If stock footprints are elsewhere, set `KICAD10_FOOTPRINT_DIR` or provide `--footprints`.
+`KICAD_CLI` or PATH may supply the executable. The runner also discovers Windows installations through their registry entry. It exports the native netlist, normalizes source/library paths, executes ERC with violation-sensitive exit codes, verifies all pins plus 22 independent circuit statements, checks stock and local footprint assignments, recalculates electrical values from the BOM, and refreshes schematic PDF/SVG exports. It then runs PCB DRC with schematic parity, all report severities, all track errors and violation-sensitive exit codes, refills/saves the planes, audits physical board pad nets, and regenerates fabrication files, PCB layer views and native 3D images. If stock footprints are elsewhere, set `KICAD10_FOOTPRINT_DIR` or provide `--footprints`.
+
+The assigned-footprint check resolves stock libraries and the portable `${KIPRJMOD}/ASTER_Interface.pretty` local library. Saved-evidence checks require no installed KiCad libraries. To cross-check the exported BOM, populated positions, Gerber job, drills, ZIP and all source/export hashes, run:
+
+```text
+python electronics/review_electronics.py
+```
+
+It writes [final_electronics_review.json](../results/validation/final_electronics_review.json). This is an offline consistency audit of saved native results, not a replacement for a fresh ERC/DRC run after an edit.
 
 To rebuild the schematic itself, use:
 
@@ -127,5 +141,7 @@ python electronics/run_pcb_checks.py --kicad-cli /path/to/kicad-cli
 ```
 
 The stock footprint directory can also come from `KICAD10_FOOTPRINT_DIR`; the generator discovers it relative to KiCad Python when possible. The board generator preserves the existing schematic contract. `generate_interface.py` preserves reviewed project settings when refreshing the schematic. `verify_pcb.py` provides an offline saved-evidence audit; a fresh native DRC run is provided by the runners. `--skip-pcb-render` (full runner) or `--skip-render` (PCB runner) skips only refreshing 3D images, while retaining native electrical/fabrication checks.
+
+For a reviewed change to the local fuse land pattern, `generate_pcb.py --update-fuse` refreshes F1 while preserving existing routing. Rebuild the schematic and rerun the complete native checks/exports afterward; preserved tracks must still pass real connectivity and DRC.
 
 ELEC-001 and ELEC-002 now have executed digital schematic and routed-board evidence within the documented low-voltage interface scope. No physical board was built, and these results are not product qualification or a hardware safety claim.
