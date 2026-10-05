@@ -10,8 +10,11 @@ dist/
 *.bak
 *-backups/
 *.lck
-.DS_Store
-Thumbs.db
 *.FCBak
 *.blend1
 *.kicad_prl
+.DS_Store
+Thumbs.db
+07_Original_Release_Archive/*.zip
+07_Releases/*.zip
+LOCAL_APP_PATHS.json

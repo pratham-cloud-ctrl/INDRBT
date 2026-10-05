@@ -1,0 +1,17 @@
+flowchart LR
+  U[User command] --> P[Trajectory planner]
+  P -->|Cartesian waypoints| IK[Bounded numerical IK]
+  P -->|MOVE J| C[Joint PID controller]
+  IK --> C
+  C --> D[Virtual inertia + damping drive]
+  D --> Q[Joint positions]
+  Q --> FK[Forward kinematics]
+  Q --> E[Virtual encoders]
+  E --> C
+  FK --> V[CAD mesh / TCP visualization]
+  P --> G[Gripper opening + task state]
+  G --> V
+  CFG[Authoritative SI configuration] -.-> P
+  CFG -.-> IK
+  CFG -.-> D
+  CFG -.-> V

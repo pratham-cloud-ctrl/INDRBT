@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>validation_matrix</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Requirement traceability</h1>
+<p>Results refer to executed digital evidence, not physical performance. The exact command report is <a href="../../06_Complete_Project_Source/results/validation/validation_report.md">validation report</a>; <a href="../../06_Complete_Project_Source/results/validation/numerical_validation.json">numerical trials</a> and <a href="../../06_Complete_Project_Source/results/validation/cad_validation.json">CAD manifest</a> retain details.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Result</th>
+<th>Evidence and scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MECH-001</td>
+<td>PASS</td>
+<td>54 valid BRep components; 6 assemblies, STEP reimport and actual mesh renders</td>
+</tr>
+<tr>
+<td>MECH-002</td>
+<td>PASS</td>
+<td>790 mm nominal reach; independent FK and CAD match</td>
+</tr>
+<tr>
+<td>MECH-003</td>
+<td>PASS for calculation / TARGET for payload</td>
+<td>Static gravity and conceptual actuator envelope; no load rating</td>
+</tr>
+<tr>
+<td>MECH-004</td>
+<td>PASS for digital range / TARGET for force</td>
+<td>90 mm maximum jaw opening; closure tests and gripper energy calculation</td>
+</tr>
+<tr>
+<td>MECH-005</td>
+<td>PASS for concept</td>
+<td>Volumes, material assumptions, covers and cable bores; no production tolerances</td>
+</tr>
+<tr>
+<td>KIN-001</td>
+<td>PASS</td>
+<td>SE(3), known poses, independent planar discrepancy 2.544e-16 m</td>
+</tr>
+<tr>
+<td>KIN-002</td>
+<td>PASS for tested cases</td>
+<td>60 perturbed-seed FK–IK–FK trials, max position 2.700e-11 m; unreachable and malformed targets tested</td>
+</tr>
+<tr>
+<td>KIN-003</td>
+<td>PASS</td>
+<td>Finite-difference max discrepancy 2.517e-10</td>
+</tr>
+<tr>
+<td>KIN-004</td>
+<td>PASS</td>
+<td>Configuration/planning tests and every task joint sample</td>
+</tr>
+<tr>
+<td>CTRL-001</td>
+<td>PASS with interpolation caveat</td>
+<td>Analytic cubic/quintic limits; linear interior only, unbounded instantaneous start/stop acceleration</td>
+</tr>
+<tr>
+<td>CTRL-002</td>
+<td>PASS at samples</td>
+<td>MOVE J and MOVE L reconstruction, branch continuity and sampled derivatives</td>
+</tr>
+<tr>
+<td>CTRL-003</td>
+<td>PASS for model</td>
+<td>PID response/tracking saturation and antiwindup; independent inertia/damping plant only</td>
+</tr>
+<tr>
+<td>ELEC-001</td>
+<td>PASS for schematic concept</td>
+<td>44 components, 28 connected nets, 118 pin assignments and 22 topology checks</td>
+</tr>
+<tr>
+<td>ELEC-002</td>
+<td>PASS for digital design</td>
+<td>Native ERC: 0 violations under enabled default rules; routed PCB, actual DRC and schematic-board connectivity checks in <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">PCB verification</a></td>
+</tr>
+<tr>
+<td>SIM-001</td>
+<td>PASS for geometric sampling</td>
+<td>6000 seeded FK samples; hull/voxel limitations explicit</td>
+</tr>
+<tr>
+<td>SIM-002</td>
+<td>PASS for ideal task</td>
+<td>9.24398 s, close/open events, home return; no contact dynamics</td>
+</tr>
+<tr>
+<td>SIM-003</td>
+<td>PASS for required representative screening</td>
+<td>Every component pair classified across representative CAD poses and 75 task samples, including 5935 exact BRep intersections; continuous swept collision proof is outside this evidence</td>
+</tr>
+<tr>
+<td>VAL-001</td>
+<td>PASS</td>
+<td>33 tests; 0 failures; 0 errors; details in pytest.xml</td>
+</tr>
+<tr>
+<td>VAL-002</td>
+<td>PASS</td>
+<td>Single executed validation workflow and artifact consistency audit</td>
+</tr>
+<tr>
+<td>DOC-001</td>
+<td>PASS</td>
+<td>Setup, decisions, architecture, report, figures and portable commands</td>
+</tr>
+<tr>
+<td>DOC-002</td>
+<td>PASS</td>
+<td>Claims vocabulary and limitations audited throughout</td>
+</tr>
+<tr>
+<td>RESEARCH-001</td>
+<td>PASS</td>
+<td>Five actual numerical sweeps with data/plots</td>
+</tr>
+<tr>
+<td>PERF-001</td>
+<td>NOT VERIFIED</td>
+<td>±0.1 mm repeatability remains TARGET</td>
+</tr>
+</tbody>
+</table>
+<p>Version 1.0.0: <strong>DIGITAL SCOPE COMPLETE</strong> within the documented digital engineering brief. See the <a href="../../06_Complete_Project_Source/docs/digital_scope_audit.md">scope audit</a>. Physical repeatability remains a target as requested; numerical IK residuals do not establish it.</p></main></html>

@@ -1,0 +1,3 @@
+# Native exports and copy manifests use exact-byte SHA-256 evidence.
+# Disable automatic newline conversion so a clone retains valid hashes.
+* -text

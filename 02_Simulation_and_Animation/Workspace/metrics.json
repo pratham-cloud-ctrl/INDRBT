@@ -1,0 +1,26 @@
+{
+  "status": "SIMULATED joint-limit-only sampling; obstacles and self-collision excluded",
+  "seed": 260105,
+  "samples": 6000,
+  "kinematic_max_reach_from_shoulder_m": 0.7900000000000001,
+  "sampled_max_radius_from_shoulder_m": 0.7897443362186529,
+  "coordinate_min_m": [
+    -0.7765138538515832,
+    -0.7768462112956958,
+    -0.579097312685109
+  ],
+  "coordinate_max_m": [
+    0.7729787015115375,
+    0.7736730639070584,
+    0.978913839537583
+  ],
+  "convex_hull_envelope_volume_m3": 1.9025058539949296,
+  "volume_caveat": "Convex hull fills inaccessible holes; sampled voxels depend on pitch and density. Neither is certified reachable volume.",
+  "voxel_pitch_m": 0.025,
+  "occupied_voxel_proxy_volume_m3": 0.09017187500000003,
+  "fraction_scaled_sigma_min_below_0_01": 0.0805,
+  "below_base_plane_fraction": 0.2845,
+  "above_floor_samples": 4293,
+  "above_floor_caveat": "Filtering TCP z>=0 alone does not ensure that links clear the floor or each other.",
+  "smallest_dimensionless_singular_value": 1.0127473330231746e-05
+}

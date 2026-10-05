@@ -1,0 +1,1336 @@
+{
+  "status": "VERIFIED COPIES",
+  "version": "1.0.0",
+  "project_status": "DIGITAL SCOPE COMPLETE",
+  "copied_artifacts": 236,
+  "artifact_copies": [
+    {
+      "source": "cad/exports/STEP/assembly_extended.step",
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_extended.step",
+      "sha256": "b7ea92f01dcfa10c4fef194627999625b5158e1a4a1054856705dcd45ca7455a"
+    },
+    {
+      "source": "cad/exports/STEP/assembly_folded.step",
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_folded.step",
+      "sha256": "415dd865f398769f625c844ad8ba30769aada9cdbabc80616d496cf2d9f784cf"
+    },
+    {
+      "source": "cad/exports/STEP/assembly_home.step",
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_home.step",
+      "sha256": "fdf5df8074a5812237fb4e46dc99765747887d20250ffc2bfa49d8779bcb01e6"
+    },
+    {
+      "source": "cad/exports/STEP/assembly_pick.step",
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_pick.step",
+      "sha256": "d87309a9ed618389997d5d20fc695968a2fb1b5f0617304ef618b5a79765c613"
+    },
+    {
+      "source": "cad/exports/STEP/assembly_place.step",
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_place.step",
+      "sha256": "85ca8455216f6249586f8c364173f8272e3a9e87c4abaf2e1eb3319bb312dfd4"
+    },
+    {
+      "source": "cad/exports/STEP/assembly_vertical.step",
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_vertical.step",
+      "sha256": "655046b80dcb0a26bc6df75fdef0c7da03d0ccb42c3b4f105d4494eb868fd8a5"
+    },
+    {
+      "source": "cad/exports/STEP/base_electronics_cover.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/base_electronics_cover.step",
+      "sha256": "5e414fbffcba61d6fb4b196f5e38a326b087146abd14bf1c65cd81c9e1f7c5e5"
+    },
+    {
+      "source": "cad/exports/STEP/base_mounting_plate.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/base_mounting_plate.step",
+      "sha256": "c1685f94fbe6f197c2653d627e17ddecd71d0da21e7c362dd028930109dc98bd"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_bearing_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_bearing_+1.step",
+      "sha256": "eebb93f3b76b4d40973427b9b5f666df28047ae0d743f51d0a1206f0f9308741"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_bearing_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_bearing_-1.step",
+      "sha256": "401e53c75f754a63e9be0af588d78b0cc9d02d2bc561e64485db0863069be5e5"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_fork_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_fork_+1.step",
+      "sha256": "81ec950d5a6285bae05e9199e1b03d7848b8814bdcc48714fdf68ade1249dffd"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_fork_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_fork_-1.step",
+      "sha256": "912765b4aff72b8c9df3be2782f008edb45a56d8245240ee08baff1e95fdd8b4"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_fork_bridge_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_fork_bridge_+1.step",
+      "sha256": "5161d27baecae4f0478712d9038652ee4bfe484a4c0a752b09e13c9083c132c9"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_fork_bridge_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_fork_bridge_-1.step",
+      "sha256": "e5b4adcaca41821a8dd9349fef35833ade318e9ef6b2e9ef80e56ddae6233d25"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_output_shaft.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_output_shaft.step",
+      "sha256": "d0542b17e8435d263c6cb010e50581c44a8a7b46ed2ed2f278dea7942b58a712"
+    },
+    {
+      "source": "cad/exports/STEP/elbow_rotor.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/elbow_rotor.step",
+      "sha256": "9e4a20e3ae923f810b01d1ff228117e72796f193563a64a3cbd58f31dc7d8854"
+    },
+    {
+      "source": "cad/exports/STEP/fixed_base_riser.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/fixed_base_riser.step",
+      "sha256": "c2765134e71a3e911b3b6ab6381da24aab85cc873aac52bff9acacc9ace5e19d"
+    },
+    {
+      "source": "cad/exports/STEP/forearm_hollow_link.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/forearm_hollow_link.step",
+      "sha256": "67d1bcde28676151bcfd0161860b941005e511a07befc2091896ecddac421c59"
+    },
+    {
+      "source": "cad/exports/STEP/forearm_service_cover_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/forearm_service_cover_+1.step",
+      "sha256": "1dffa87bf2b3c18780262c7122aa535e5f900af06bce0787554e061de25a1a34"
+    },
+    {
+      "source": "cad/exports/STEP/forearm_service_cover_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/forearm_service_cover_-1.step",
+      "sha256": "520f50016ff4c25780dddd3fae60e91e81038821adca5c90d4bbd1511ab576b4"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_actuator_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_actuator_envelope.step",
+      "sha256": "5c8e9c4374243ee69024169ee429624d695c253b49a774b807541dcb35ac41e7"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_contact_pad_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_contact_pad_+1.step",
+      "sha256": "7894dd097524e40374fd9401e549317b1e73563838dbab8f9112e17c7e637844"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_contact_pad_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_contact_pad_-1.step",
+      "sha256": "b9817c3ba6d7a1289a14a459f02bb8c9212e2df6e70bd9c14c17150e941088cb"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_finger_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_finger_+1.step",
+      "sha256": "726743124449efde4e586e3c90de60a255bf8e6d143620a4f6af65884f45ab48"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_finger_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_finger_-1.step",
+      "sha256": "80aa8373e54cb7353814c5df2e1c8ceb8cede57cd22e8c979d4dd67abfdd7900"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_guide_rod_+14.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_guide_rod_+14.step",
+      "sha256": "20c58550f9209772875ff9b46ee1e7cefd00b8a8fafdc9b769d0ac6281507d90"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_guide_rod_-14.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_guide_rod_-14.step",
+      "sha256": "c0b6a54c5ca63cebba7fe4451a55ee1b962624631e480bc9c2e3cd7feb6ce068"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_jaw_carriage_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_jaw_carriage_+1.step",
+      "sha256": "c098cf430be10f5d6e54340fa2cb0ac38f47ebb356ecdcc1e57c006b9bc72622"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_jaw_carriage_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_jaw_carriage_-1.step",
+      "sha256": "247fa3c6409d33d811b9cfd4bfee883c4ee094ef955116be20196fa417bca7c2"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_pocketed_body.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_pocketed_body.step",
+      "sha256": "c5eab18735207ce1a28b08722852cf56b488ef2baa967773bcd5081c97d8c023"
+    },
+    {
+      "source": "cad/exports/STEP/gripper_rear_service_cover.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/gripper_rear_service_cover.step",
+      "sha256": "4bec28bc26cf7b3101bf3744149faba304b5c76091ac30562b6e837f765a4e4f"
+    },
+    {
+      "source": "cad/exports/STEP/interchangeable_gripper_adapter.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/interchangeable_gripper_adapter.step",
+      "sha256": "d43117d020a7768d1cad1721bd3d27d46c01d80f3c3b4122d343d59a208b33f9"
+    },
+    {
+      "source": "cad/exports/STEP/j1_slew_bearing_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j1_slew_bearing_envelope.step",
+      "sha256": "464101e3a62d077874d8820f78b37f922f3130368530331690d55ad3168ac3f4"
+    },
+    {
+      "source": "cad/exports/STEP/j2_gearbox_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j2_gearbox_envelope.step",
+      "sha256": "4fc4ed85db9a9cf71b3a7032aeea7275cb5d8b6560874a1b744a059704057721"
+    },
+    {
+      "source": "cad/exports/STEP/j2_motor_endcap.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j2_motor_endcap.step",
+      "sha256": "bb7cb784a9c740a05ab55e6d37b3094d38a2e84c81fd0ca918c66d575da47c10"
+    },
+    {
+      "source": "cad/exports/STEP/j2_motor_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j2_motor_envelope.step",
+      "sha256": "f4aa722b2a73cba3c7d285c26b9c9278a4ab14da5fc65aad4e58a2d9bea7e1a3"
+    },
+    {
+      "source": "cad/exports/STEP/j3_gearbox_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j3_gearbox_envelope.step",
+      "sha256": "ebd59ae529f221017e645869475b9216cb9155fd9cf3e9270a900439bd3a1f23"
+    },
+    {
+      "source": "cad/exports/STEP/j3_motor_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j3_motor_envelope.step",
+      "sha256": "34bf091dfc9db7da05849e1d4206aaab9b2a7f2b6df1a92feecf4a026a0ada3d"
+    },
+    {
+      "source": "cad/exports/STEP/j4_bearing_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j4_bearing_envelope.step",
+      "sha256": "6a0f10f1a45588e044a2f44379ea1e66ef1e9ae779da945b1607466300f0c5c3"
+    },
+    {
+      "source": "cad/exports/STEP/j6_stator_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/j6_stator_envelope.step",
+      "sha256": "9a4c8ae6974eee0ed481fd30b49226b190f597015cf8b9df3253f8bb3cd6759c"
+    },
+    {
+      "source": "cad/exports/STEP/opposite_hand_screw_envelope.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/opposite_hand_screw_envelope.step",
+      "sha256": "6268f3784ab0988e11d9a75da5f912747cab9dbb2dd04417339633a42efc49db"
+    },
+    {
+      "source": "cad/exports/STEP/shoulder_bearing_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/shoulder_bearing_+1.step",
+      "sha256": "abed5cb7492e25a84bac7109802bd809a547f488308b3257eb32d735bd7f35f8"
+    },
+    {
+      "source": "cad/exports/STEP/shoulder_bearing_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/shoulder_bearing_-1.step",
+      "sha256": "b224de046053ea4a6881155c3ff3e3851a5bc99950ad42b69d3e7b65659c1439"
+    },
+    {
+      "source": "cad/exports/STEP/shoulder_fork_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/shoulder_fork_+1.step",
+      "sha256": "c57390a16529a957a4bf2da307b53d19ebabf5b5865cfa11ed9d4d7c7fef1a37"
+    },
+    {
+      "source": "cad/exports/STEP/shoulder_fork_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/shoulder_fork_-1.step",
+      "sha256": "8c4498475f7e643c4bdf687d39451531976f37fa9a30d4c9e5a827797cd1d555"
+    },
+    {
+      "source": "cad/exports/STEP/shoulder_output_shaft.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/shoulder_output_shaft.step",
+      "sha256": "db5445a032f69aac38271338006e396de173c5ed1d4c50d10f568fc8a75013dd"
+    },
+    {
+      "source": "cad/exports/STEP/shoulder_rotor.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/shoulder_rotor.step",
+      "sha256": "6ef4764e9d295c3688dd1d2c110071a9446750cfd4b486b7217591cc465673b4"
+    },
+    {
+      "source": "cad/exports/STEP/tool_flange_6xM5_PCD46.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/tool_flange_6xM5_PCD46.step",
+      "sha256": "7bf35caed8889640fd305b871ca6c3722af433d8dddad8bbe77a5f9e0fdfabec"
+    },
+    {
+      "source": "cad/exports/STEP/turret_bridge.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/turret_bridge.step",
+      "sha256": "3919ae7858a19ec8f3bef2fcfb26487bbf7c884632c24d56cf83957617e5cfd8"
+    },
+    {
+      "source": "cad/exports/STEP/turret_neck.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/turret_neck.step",
+      "sha256": "60ff52ae5c3f58bcb125deac0b85edd4a661cb358e2f5b01a02e7ef3f57e0488"
+    },
+    {
+      "source": "cad/exports/STEP/upper_arm_hollow_link.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/upper_arm_hollow_link.step",
+      "sha256": "70f34cc05fff3f6100eb104b355fc8afe935d67ceeb51d4bfb4b0b823876a26b"
+    },
+    {
+      "source": "cad/exports/STEP/upper_service_cover_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/upper_service_cover_+1.step",
+      "sha256": "cc51db39364dfd42f23e2df5027262083f1b74b21850b917f690da011985ca7f"
+    },
+    {
+      "source": "cad/exports/STEP/upper_service_cover_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/upper_service_cover_-1.step",
+      "sha256": "e5c27eb12b97c04cd4bbd8168a9f0cb76eaeb18d647297387973fb7762726b6a"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_pitch_fork_+1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_pitch_fork_+1.step",
+      "sha256": "fc091720b820c5e93a69b4d157437f0be893d08b2fe296764c293b306c18f791"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_pitch_fork_-1.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_pitch_fork_-1.step",
+      "sha256": "3d80e82d5bde746526729551ebebc0493f7453613d2c23acb5d339314d63beda"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_pitch_neck.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_pitch_neck.step",
+      "sha256": "44ec3e6f7dec2857c740870a0405b13c078d514fbc8ef93a3773b2f05dc15b95"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_pitch_rotor.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_pitch_rotor.step",
+      "sha256": "73126fd7440b5626c6c098b156ae7e8b66ee7fe27e880997798ccfc03bb3ef15"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_roll_cover.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_roll_cover.step",
+      "sha256": "cb4102bfe8b1f9c9426ff908ba7381825e6229a4d319ad8bb0a5dff8d08845a9"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_roll_rotor.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_roll_rotor.step",
+      "sha256": "cb364155a43dec863ff17a77f4bbaa06093f6b5d95a0aa4690ab451a92fa77e5"
+    },
+    {
+      "source": "cad/exports/STEP/wrist_roll_stator.step",
+      "file": "01_CAD_Models/STEP/Individual_Parts/wrist_roll_stator.step",
+      "sha256": "79e067def770f73bf6812abb118dd612f4ab668477593c10fdde1a7fc1ea2391"
+    },
+    {
+      "source": "cad/exports/STL/assembly_extended.stl",
+      "file": "01_CAD_Models/STL/Assemblies/assembly_extended.stl",
+      "sha256": "0577aa399141d84d622c3f3c88a455d0fabadec99d738415f5f8aba81cfc40f6"
+    },
+    {
+      "source": "cad/exports/STL/assembly_folded.stl",
+      "file": "01_CAD_Models/STL/Assemblies/assembly_folded.stl",
+      "sha256": "ef086c40dc59ebe87de7ca6636775fd3e34227aa404e3d98a8d8417654233fb7"
+    },
+    {
+      "source": "cad/exports/STL/assembly_home.stl",
+      "file": "01_CAD_Models/STL/Assemblies/assembly_home.stl",
+      "sha256": "d84ab43f6b92f780977cd84925e8c10c1eba3dbcda7be500f5a256f70a5d0335"
+    },
+    {
+      "source": "cad/exports/STL/assembly_pick.stl",
+      "file": "01_CAD_Models/STL/Assemblies/assembly_pick.stl",
+      "sha256": "e6405796bd5b6697489ddeb2547a014bf3ec0ce8d08c8281c8881463481c8c89"
+    },
+    {
+      "source": "cad/exports/STL/assembly_place.stl",
+      "file": "01_CAD_Models/STL/Assemblies/assembly_place.stl",
+      "sha256": "f39dbd16c4bcdda8355387779df7972cf3c3bc324004f0c1fb04d95566a8d802"
+    },
+    {
+      "source": "cad/exports/STL/assembly_vertical.stl",
+      "file": "01_CAD_Models/STL/Assemblies/assembly_vertical.stl",
+      "sha256": "11fea559ec1a17421e62eb1382ea9d12ea3326566743b07671c95b2f2fea39ec"
+    },
+    {
+      "source": "cad/exports/STL/base_electronics_cover.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/base_electronics_cover.stl",
+      "sha256": "eaa6dbce4c08be37bd0f3f9764166352899d6f0607dbdf09cf539e5789ca2266"
+    },
+    {
+      "source": "cad/exports/STL/base_mounting_plate.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/base_mounting_plate.stl",
+      "sha256": "5d3877ec4687d2aff5101fe72daa77859bd89435b0babb1617c8846441860bf6"
+    },
+    {
+      "source": "cad/exports/STL/elbow_bearing_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_bearing_+1.stl",
+      "sha256": "c5d14ea54c6b73e80655b950131ec01276c4481354f6d23c9d400d77eaab7e07"
+    },
+    {
+      "source": "cad/exports/STL/elbow_bearing_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_bearing_-1.stl",
+      "sha256": "c161f4df9b133b31dfb31930255b3588a0253bfc1c9f515e2f1e5631aa2b2fe1"
+    },
+    {
+      "source": "cad/exports/STL/elbow_fork_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_fork_+1.stl",
+      "sha256": "aba834df20657032a4bd2e5f9d9e1d5a7722bda6a74bd18ae15bb3e0b4d84900"
+    },
+    {
+      "source": "cad/exports/STL/elbow_fork_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_fork_-1.stl",
+      "sha256": "89e4b662e69ff378f5b8deb3dde24c7ef98159618afaad0c6951c54713b17376"
+    },
+    {
+      "source": "cad/exports/STL/elbow_fork_bridge_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_fork_bridge_+1.stl",
+      "sha256": "4d895114c7b6b79464bf5b8dee890e910b1d986c064191c529b7c7d619854e0d"
+    },
+    {
+      "source": "cad/exports/STL/elbow_fork_bridge_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_fork_bridge_-1.stl",
+      "sha256": "2a5f02f52ae751d5b5aef17c3af6a36d91f7e6aafa20ae59baafa2659e8381be"
+    },
+    {
+      "source": "cad/exports/STL/elbow_output_shaft.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_output_shaft.stl",
+      "sha256": "02c8817b8eb1717032f018ea336de7f56d011ad5cd8d6b1ca1dba353793e0de7"
+    },
+    {
+      "source": "cad/exports/STL/elbow_rotor.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/elbow_rotor.stl",
+      "sha256": "347b523676fe12feb163901737c1e3d415830101b8848ff261ee97135d5c056d"
+    },
+    {
+      "source": "cad/exports/STL/fixed_base_riser.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/fixed_base_riser.stl",
+      "sha256": "8785cbb0ba78242dd179b3922ddf1b6cd1cd4869b9f5344a14c6c8bff8b3fe04"
+    },
+    {
+      "source": "cad/exports/STL/forearm_hollow_link.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/forearm_hollow_link.stl",
+      "sha256": "5429d1f363be10a0ae15f94afee2b584671b5a7cb969cc5868f587cf87cb0481"
+    },
+    {
+      "source": "cad/exports/STL/forearm_service_cover_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/forearm_service_cover_+1.stl",
+      "sha256": "960fe86725d7614ac1f4a820e3b17343dff5a339315eec2a8681d313bb04c351"
+    },
+    {
+      "source": "cad/exports/STL/forearm_service_cover_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/forearm_service_cover_-1.stl",
+      "sha256": "65a67ae27073a26a8b1736db50bf8e5836d8803ceeceb2cc9c6dde9f170c3feb"
+    },
+    {
+      "source": "cad/exports/STL/gripper_actuator_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_actuator_envelope.stl",
+      "sha256": "f25d488d223543f314e3ffae5f5ec6a1d389e0c757c436ca89b8f88be975b584"
+    },
+    {
+      "source": "cad/exports/STL/gripper_contact_pad_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_contact_pad_+1.stl",
+      "sha256": "58aaf29790b9105b9d90104cce3fc6df69791535120d7a4e1ed7be1da8fd44f4"
+    },
+    {
+      "source": "cad/exports/STL/gripper_contact_pad_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_contact_pad_-1.stl",
+      "sha256": "45d463c26c2aa1da11f4bc0f0ced3271d4a536f6ca39cff641ff14f826e93800"
+    },
+    {
+      "source": "cad/exports/STL/gripper_finger_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_finger_+1.stl",
+      "sha256": "aaa8d4683719a8523b12ff9292763d02631bdd428a5bc46d6cde4a165ffd2e48"
+    },
+    {
+      "source": "cad/exports/STL/gripper_finger_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_finger_-1.stl",
+      "sha256": "f42c1d20ccb788c3efc2a215964ab8492c13d9a1fddef352e41d1eff035c37a1"
+    },
+    {
+      "source": "cad/exports/STL/gripper_guide_rod_+14.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_guide_rod_+14.stl",
+      "sha256": "ed71f55d9f49244d56c3f8b48e4e753e4deb359f64ac788e7078a9587b2ecaf1"
+    },
+    {
+      "source": "cad/exports/STL/gripper_guide_rod_-14.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_guide_rod_-14.stl",
+      "sha256": "1ea9ec01c6a34fd6b4b5abe8772f301921a4e6df83643a2fa3746fd9dfe4668b"
+    },
+    {
+      "source": "cad/exports/STL/gripper_jaw_carriage_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_jaw_carriage_+1.stl",
+      "sha256": "c5c605064d3b9b102739c059cf010fae6fe53d679a090565736b8d3048786df7"
+    },
+    {
+      "source": "cad/exports/STL/gripper_jaw_carriage_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_jaw_carriage_-1.stl",
+      "sha256": "aadec0e1ef2665226d5257481228c33008af7521a9ae1052a7d054d11f156bc1"
+    },
+    {
+      "source": "cad/exports/STL/gripper_pocketed_body.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_pocketed_body.stl",
+      "sha256": "81c53a537b8d0c317dc85fe1e4478b92597b221a9a46d8e2a480e8364fa25530"
+    },
+    {
+      "source": "cad/exports/STL/gripper_rear_service_cover.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/gripper_rear_service_cover.stl",
+      "sha256": "b0c034c370241adeae28d86a93cd5c964d6d34375d91e07ff7ddf85a24459537"
+    },
+    {
+      "source": "cad/exports/STL/interchangeable_gripper_adapter.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/interchangeable_gripper_adapter.stl",
+      "sha256": "6295634ff6843a43e31b4e707d1896299839126924feee0881bf157c33d08a6a"
+    },
+    {
+      "source": "cad/exports/STL/j1_slew_bearing_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j1_slew_bearing_envelope.stl",
+      "sha256": "08e111063af211f5942578963789be71f0e48e733619f443518add94f7818000"
+    },
+    {
+      "source": "cad/exports/STL/j2_gearbox_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j2_gearbox_envelope.stl",
+      "sha256": "5d60727a33cf17b705a1e6c4a012ccc091e67f36c8c50f1b8e366ddd85f6f5d8"
+    },
+    {
+      "source": "cad/exports/STL/j2_motor_endcap.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j2_motor_endcap.stl",
+      "sha256": "5d1bfce24b790d49c99a5c1b27e4efd236560e6f774f9e9f4ff88cc4138a3d14"
+    },
+    {
+      "source": "cad/exports/STL/j2_motor_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j2_motor_envelope.stl",
+      "sha256": "268004718e8e3a817dd1a8a6f06e168f9ce049a394261726ef7879ad09e87fef"
+    },
+    {
+      "source": "cad/exports/STL/j3_gearbox_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j3_gearbox_envelope.stl",
+      "sha256": "2dc2f7e71371cbb84fdf626bd82bd72941a34b335bfd9cab433d73f13c3f27fa"
+    },
+    {
+      "source": "cad/exports/STL/j3_motor_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j3_motor_envelope.stl",
+      "sha256": "1cc037b29784b2817047c24e4a7493f656f41a431d7f1ac77839e0da725c9149"
+    },
+    {
+      "source": "cad/exports/STL/j4_bearing_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j4_bearing_envelope.stl",
+      "sha256": "09b3aa304eda96fca6552831adfcf66e49bf0b5bc32940ac5c9669dc8d5bfc5c"
+    },
+    {
+      "source": "cad/exports/STL/j6_stator_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/j6_stator_envelope.stl",
+      "sha256": "3029cab25407ceba9419e093010c9767e622a943cd4198710ccaacf26f077539"
+    },
+    {
+      "source": "cad/exports/STL/opposite_hand_screw_envelope.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/opposite_hand_screw_envelope.stl",
+      "sha256": "356a3bb2c174ce92ffc72d6c21d19b6b351bb5f1117b074fe363665f2257a7e5"
+    },
+    {
+      "source": "cad/exports/STL/shoulder_bearing_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/shoulder_bearing_+1.stl",
+      "sha256": "ca26332ae5969560edf2c3c0328ad5440cd99df4cdc5150565f0ea29f209bfa8"
+    },
+    {
+      "source": "cad/exports/STL/shoulder_bearing_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/shoulder_bearing_-1.stl",
+      "sha256": "f519a3303f088391b0b3f54840a3c8c45b4f78f3f716fa8eb52a456516f66645"
+    },
+    {
+      "source": "cad/exports/STL/shoulder_fork_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/shoulder_fork_+1.stl",
+      "sha256": "88c441ba8b4f005cae234bd19eac574e5e7f6c43fcdb388a15e7bb8e3c3d5389"
+    },
+    {
+      "source": "cad/exports/STL/shoulder_fork_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/shoulder_fork_-1.stl",
+      "sha256": "ab35e42dde2007bc26ba8e1eab0aa0b22700f346f65bd2cc0cf63a645b20ab85"
+    },
+    {
+      "source": "cad/exports/STL/shoulder_output_shaft.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/shoulder_output_shaft.stl",
+      "sha256": "397c2507424e1dfc4c1b04d703bd7ece007e64b7bba54fac8cc796aad22b74de"
+    },
+    {
+      "source": "cad/exports/STL/shoulder_rotor.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/shoulder_rotor.stl",
+      "sha256": "c077b98e32efd412445876852e9dbcc051f5810a9f755d8033d722483fc9023a"
+    },
+    {
+      "source": "cad/exports/STL/tool_flange_6xM5_PCD46.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/tool_flange_6xM5_PCD46.stl",
+      "sha256": "3c300b7edffd14a5944bd4298ab2ff01c36acd5a124b35a3c7420d4528bc43ed"
+    },
+    {
+      "source": "cad/exports/STL/turret_bridge.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/turret_bridge.stl",
+      "sha256": "547d2ef4c13a00d0f4fab155cd835cdc52a4fa449693a3bf549c23bd108122f2"
+    },
+    {
+      "source": "cad/exports/STL/turret_neck.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/turret_neck.stl",
+      "sha256": "aaffd7acc9bb2cac4359b25bae9762a7e3f1c8adefd7f946e32d67488bc83709"
+    },
+    {
+      "source": "cad/exports/STL/upper_arm_hollow_link.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/upper_arm_hollow_link.stl",
+      "sha256": "d4eed65640b5b89201fe996b2ca260312fcd04ae0d95de8daef2c90e4fecd2ce"
+    },
+    {
+      "source": "cad/exports/STL/upper_service_cover_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/upper_service_cover_+1.stl",
+      "sha256": "5b8b9c13ae08f7cbdc6d56b87a8f64963e2a957bd629eaeda62b78e70df236dd"
+    },
+    {
+      "source": "cad/exports/STL/upper_service_cover_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/upper_service_cover_-1.stl",
+      "sha256": "606cb96bead653c110b48a8c6c0718cc4a4927b3ed5b5e1ef518c14e1879ff21"
+    },
+    {
+      "source": "cad/exports/STL/wrist_pitch_fork_+1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_pitch_fork_+1.stl",
+      "sha256": "2fc676a568abc3f6b502b4841c6c8115e5bfe07fe9613e1e63ad207b906a27ac"
+    },
+    {
+      "source": "cad/exports/STL/wrist_pitch_fork_-1.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_pitch_fork_-1.stl",
+      "sha256": "1348d70c614e63e91bd21a47a61465f6db6250393b24cbe4bd5d6d92f87d06ec"
+    },
+    {
+      "source": "cad/exports/STL/wrist_pitch_neck.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_pitch_neck.stl",
+      "sha256": "922ffc38cb214bf263db3e221cfaa3012180acb43fad623b63ec7b9044d4eb56"
+    },
+    {
+      "source": "cad/exports/STL/wrist_pitch_rotor.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_pitch_rotor.stl",
+      "sha256": "c87c80ae24e637d2472567b7de711ca6ee0ffe62cea0955c88ac02d03103a606"
+    },
+    {
+      "source": "cad/exports/STL/wrist_roll_cover.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_roll_cover.stl",
+      "sha256": "03f92ff647312ddc4c131e78ed4db421026b2ded5a61d5c98f8c210a0fa5d217"
+    },
+    {
+      "source": "cad/exports/STL/wrist_roll_rotor.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_roll_rotor.stl",
+      "sha256": "a549609c113f2b2531586dae004dcd438493ce5e1bf440928ac712a2bb7fb3c5"
+    },
+    {
+      "source": "cad/exports/STL/wrist_roll_stator.stl",
+      "file": "01_CAD_Models/STL/Individual_Parts/wrist_roll_stator.stl",
+      "sha256": "e35bdf77180493caf1ec956fe1c88c7333eaf87d304b8b6208b16f3a232039c5"
+    },
+    {
+      "source": "cad/freecad/aster6_home.FCStd",
+      "file": "01_CAD_Models/FreeCAD/aster6_home.FCStd",
+      "sha256": "a79c3ee62109d0335772469b53c0f00d171c843df3ec67143acb08f2f9879961"
+    },
+    {
+      "source": "cad/renders/aster6_home.blend",
+      "file": "01_CAD_Models/Blender/aster6_home.blend",
+      "sha256": "3e475a49e8d809f9e06cf18c02e38854c5417493dc981bf23e16181582552326"
+    },
+    {
+      "source": "docs/drawings/01_base_tool_interfaces.svg",
+      "file": "01_CAD_Models/Drawings/01_base_tool_interfaces.svg",
+      "sha256": "20da6be9c2daccc7dce2541ce8a518a22e9080964799058393c35ebd55ea3916"
+    },
+    {
+      "source": "docs/drawings/02_link_sections.svg",
+      "file": "01_CAD_Models/Drawings/02_link_sections.svg",
+      "sha256": "632f161b2f0dee0fc01e63042dc36c74fa760c07f9594f8e27b5d7adbc137f03"
+    },
+    {
+      "source": "docs/drawings/03_gripper_layout.svg",
+      "file": "01_CAD_Models/Drawings/03_gripper_layout.svg",
+      "sha256": "9c88a048a9c455cfda3dcdbf242026ece515ba64a38ea71112286c9e1df17134"
+    },
+    {
+      "source": "docs/drawings/engineering_interfaces.pdf",
+      "file": "01_CAD_Models/Drawings/engineering_interfaces.pdf",
+      "sha256": "64e2513a93cd173ea1fe8f70d4f41e48443f078a78ee78d49ef4233e48d7eed5"
+    },
+    {
+      "source": "cad/renders/gripper.png",
+      "file": "01_CAD_Models/Preview_Images/gripper.png",
+      "sha256": "c6f98fc379adf35d17c45cf62ff99b07dacc3308144faa89d422e8db5d0d2d8f"
+    },
+    {
+      "source": "cad/renders/hero.png",
+      "file": "01_CAD_Models/Preview_Images/hero.png",
+      "sha256": "503700a75acd6c408cbfc76cc55ae185400473efd9a2375955a152a8bb50eebe"
+    },
+    {
+      "source": "cad/renders/poses.png",
+      "file": "01_CAD_Models/Preview_Images/poses.png",
+      "sha256": "d05f6473b15210e1b2e7decb9046e12b5cf5e9b762da9fee1b059b8e7c650cf6"
+    },
+    {
+      "source": "cad/renders/pose_extended.png",
+      "file": "01_CAD_Models/Preview_Images/pose_extended.png",
+      "sha256": "db492a9eeb9c420797e6a5ff6541924c01b6777395eb0a4e21ff52e5adc9fbaa"
+    },
+    {
+      "source": "cad/renders/pose_folded.png",
+      "file": "01_CAD_Models/Preview_Images/pose_folded.png",
+      "sha256": "51e52a8d3c4ff228d7de80ae3def8128015d8c0b09ed35ac86cfb807bb9fbb9f"
+    },
+    {
+      "source": "cad/renders/pose_home.png",
+      "file": "01_CAD_Models/Preview_Images/pose_home.png",
+      "sha256": "d87d1672df8dc6e155344ad53a77f5f54c6c58d1d5a8c03b8b8cd2441db516f2"
+    },
+    {
+      "source": "cad/renders/pose_pick.png",
+      "file": "01_CAD_Models/Preview_Images/pose_pick.png",
+      "sha256": "6a6417221166c45276c39bec9013a7b19477d905b594d8b7987709ebf473af74"
+    },
+    {
+      "source": "cad/renders/pose_place.png",
+      "file": "01_CAD_Models/Preview_Images/pose_place.png",
+      "sha256": "30d01b3800bc44d373cc4ee2791cd36d174512be6698534b09a1975e1d8b879d"
+    },
+    {
+      "source": "cad/renders/pose_vertical.png",
+      "file": "01_CAD_Models/Preview_Images/pose_vertical.png",
+      "sha256": "abbdfc96b79c7abfc965f040cff3aea92d5fdc9695fb5081c1f652e3cc72fefb"
+    },
+    {
+      "source": "simulations/aster6_twin.html",
+      "file": "02_Simulation_and_Animation/Interactive_3D_Viewer.html",
+      "sha256": "cffeb3ed03fab9f756d684bc0c23deae813e20ee7df4f79fe9c3b8e6cd03ea73"
+    },
+    {
+      "source": "simulations/viewer_preview.png",
+      "file": "02_Simulation_and_Animation/viewer_preview.png",
+      "sha256": "017f3146f5949121ac924af6943f8b01413a2996673db5eef5037bbf75d65d8e"
+    },
+    {
+      "source": "results/trajectories/interpolation_comparison.png",
+      "file": "02_Simulation_and_Animation/Trajectories/interpolation_comparison.png",
+      "sha256": "3a78cbfef68f72610d2f6e3424e5baf3497506b7d055e6f6541819ab3f824195"
+    },
+    {
+      "source": "results/trajectories/move_j.csv",
+      "file": "02_Simulation_and_Animation/Trajectories/move_j.csv",
+      "sha256": "1c23cb081ab3681fcd7b17f9887f734b1063a19d38aa403dd07432ccacf37688"
+    },
+    {
+      "source": "results/trajectories/move_j_joints.png",
+      "file": "02_Simulation_and_Animation/Trajectories/move_j_joints.png",
+      "sha256": "115efae8de3d8d6a728c8eb0b084050feddf05684d9de3cb3904f7f68ad6e990"
+    },
+    {
+      "source": "results/trajectories/move_j_tcp.png",
+      "file": "02_Simulation_and_Animation/Trajectories/move_j_tcp.png",
+      "sha256": "48aed24fdfaed5029db30fd4f7ac32dd1680de2b47ac815ceb53f1a703e662d6"
+    },
+    {
+      "source": "results/trajectories/move_l.csv",
+      "file": "02_Simulation_and_Animation/Trajectories/move_l.csv",
+      "sha256": "2a3172a3c835a24add1481f22951f66f039b90b8571b5f184e2980c2f6777c55"
+    },
+    {
+      "source": "results/trajectories/move_l_joints.png",
+      "file": "02_Simulation_and_Animation/Trajectories/move_l_joints.png",
+      "sha256": "6be0a8411e85db9aa5bcff1aa459d483a6654ba45a406608cf65dbe18add43a8"
+    },
+    {
+      "source": "results/trajectories/move_l_tcp.png",
+      "file": "02_Simulation_and_Animation/Trajectories/move_l_tcp.png",
+      "sha256": "cce7782b980bc6532532f05f8abd407aa4cdb322068b830a1b2d04b4aad04586"
+    },
+    {
+      "source": "results/trajectories/pick_place.csv",
+      "file": "02_Simulation_and_Animation/Trajectories/pick_place.csv",
+      "sha256": "7c0e55e0117feebe73bca0396edd277bdef4f101a4f48e4e91660bd66aacbf6b"
+    },
+    {
+      "source": "results/trajectories/pick_place_fk.gif",
+      "file": "02_Simulation_and_Animation/Trajectories/pick_place_fk.gif",
+      "sha256": "4fc7505665ef5088db67556647b209936cd2927c8135fd988663d4326bdc6a75"
+    },
+    {
+      "source": "results/trajectories/pick_place_joints.png",
+      "file": "02_Simulation_and_Animation/Trajectories/pick_place_joints.png",
+      "sha256": "4ba35f8ba743655b27701ad4e7d4cd07be8f32c0e810f7b8f3372bff40283ae0"
+    },
+    {
+      "source": "results/trajectories/pick_place_metrics.json",
+      "file": "02_Simulation_and_Animation/Trajectories/pick_place_metrics.json",
+      "sha256": "29a3698a1cca9f906cc8d278413e1709b6b06a742f92801db2825f5058710412"
+    },
+    {
+      "source": "results/trajectories/pick_place_samples.json",
+      "file": "02_Simulation_and_Animation/Trajectories/pick_place_samples.json",
+      "sha256": "5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c"
+    },
+    {
+      "source": "results/trajectories/pick_place_tcp.png",
+      "file": "02_Simulation_and_Animation/Trajectories/pick_place_tcp.png",
+      "sha256": "2debadea953c3bd5d22e1dad06e5f5ffc23724056e969a0057167e97760456d9"
+    },
+    {
+      "source": "results/trajectories/trajectory_metrics.json",
+      "file": "02_Simulation_and_Animation/Trajectories/trajectory_metrics.json",
+      "sha256": "03d12f728aa9c44376e1108a30444b9576810432aaff6544921de096f84863c5"
+    },
+    {
+      "source": "results/control/metrics.json",
+      "file": "02_Simulation_and_Animation/Control/metrics.json",
+      "sha256": "f404b9ab3f5c8f645c8ba62e8efd07b2169d8e4d143e626eef3d39430fb336f8"
+    },
+    {
+      "source": "results/control/pid_step_response.png",
+      "file": "02_Simulation_and_Animation/Control/pid_step_response.png",
+      "sha256": "1be33e2e999286e92b3f6aaf59380216f5bb739159d861e01ef9246f90b8447f"
+    },
+    {
+      "source": "results/control/pid_tracking.png",
+      "file": "02_Simulation_and_Animation/Control/pid_tracking.png",
+      "sha256": "0c839ddf7ebcec58afc3d3b7fc454121c626136fd46f28b598cdfcc12b55a476"
+    },
+    {
+      "source": "results/control/tracking.csv",
+      "file": "02_Simulation_and_Animation/Control/tracking.csv",
+      "sha256": "ec5ce1e3e71cf8d52cb12c0d6688eeb10dad449db0dc521b5ad5bcea4f91cd16"
+    },
+    {
+      "source": "results/workspace/coordinate_frames.png",
+      "file": "02_Simulation_and_Animation/Workspace/coordinate_frames.png",
+      "sha256": "6bf48effab02b10d4bfaed2a2155a68f26870684d3ac9bc1d72284180dc86a4d"
+    },
+    {
+      "source": "results/workspace/metrics.json",
+      "file": "02_Simulation_and_Animation/Workspace/metrics.json",
+      "sha256": "c4a01ed8047b94e12feda4dde961a4abc2e1c3ebfc4ed4e3f9c63a2c2e5a3ad6"
+    },
+    {
+      "source": "results/workspace/representative_poses.png",
+      "file": "02_Simulation_and_Animation/Workspace/representative_poses.png",
+      "sha256": "ffdaf78996fa89b3e1de1d2ac2e1312bc1c567a08df765056a23cc947e767576"
+    },
+    {
+      "source": "results/workspace/samples.csv",
+      "file": "02_Simulation_and_Animation/Workspace/samples.csv",
+      "sha256": "aef61590da8c2f6b4a720532cafa42b6f4f2a2edc7637a70a1299baa6bd40f6e"
+    },
+    {
+      "source": "results/workspace/singularity_analysis.png",
+      "file": "02_Simulation_and_Animation/Workspace/singularity_analysis.png",
+      "sha256": "892eb6abef8e46d350ce94ec74baa4108f378f9aeb96374ae4413836813fd886"
+    },
+    {
+      "source": "results/workspace/workspace_3d.png",
+      "file": "02_Simulation_and_Animation/Workspace/workspace_3d.png",
+      "sha256": "1b155b88dff09cb4d52d1dd50ba6b29ee112a94fdf2f3b7f9cde66c65d579137"
+    },
+    {
+      "source": "results/workspace/workspace_above_floor.png",
+      "file": "02_Simulation_and_Animation/Workspace/workspace_above_floor.png",
+      "sha256": "b0fd4ebffae950c46b89d94258c90caddfcd01e5d0d568e01a4955cde74889fc"
+    },
+    {
+      "source": "results/workspace/workspace_projections.png",
+      "file": "02_Simulation_and_Animation/Workspace/workspace_projections.png",
+      "sha256": "d51715a2cfb46b5d1e532c755c1db3e3a80de5480d12899d61b517c933768472"
+    },
+    {
+      "source": "results/mechanical/joint_torque.json",
+      "file": "03_Reports_and_Results/Mechanical/joint_torque.json",
+      "sha256": "0c78a37e3d37a73204d60f8c49e2817832e885a75bc7a4fa5799b290a4c088bd"
+    },
+    {
+      "source": "results/mechanical/joint_torque.png",
+      "file": "03_Reports_and_Results/Mechanical/joint_torque.png",
+      "sha256": "07e5714c971331f5f71e6da0e3a37da9f58c113e19a8e99487e5f78cf8e991da"
+    },
+    {
+      "source": "results/mechanical/structural.json",
+      "file": "03_Reports_and_Results/Mechanical/structural.json",
+      "sha256": "d9f5e9033c0e05da658f5ea541426460ea78832adb7356f5b4b45ae886635abf"
+    },
+    {
+      "source": "results/research/duration.png",
+      "file": "03_Reports_and_Results/Research/duration.png",
+      "sha256": "3f10d5fe29839c3021339b3684c824ba54fe1147068a45fcc0cd75e6583e54f5"
+    },
+    {
+      "source": "results/research/experiments.json",
+      "file": "03_Reports_and_Results/Research/experiments.json",
+      "sha256": "4713ee57cd533a569dfd001d36d3a6cd52b22f3b673a023c3051d39ba6d4208a"
+    },
+    {
+      "source": "results/research/finger_length.png",
+      "file": "03_Reports_and_Results/Research/finger_length.png",
+      "sha256": "2c44b4ee31a4c06775e958f29d9a259e152d54a648a5245b29b81729bf52e035"
+    },
+    {
+      "source": "results/research/link_ratio.png",
+      "file": "03_Reports_and_Results/Research/link_ratio.png",
+      "sha256": "9ee0ab8a044d623e198369685abb5632abf750fa14d8570ae2e5ed2c1a5fc807"
+    },
+    {
+      "source": "results/research/payload.png",
+      "file": "03_Reports_and_Results/Research/payload.png",
+      "sha256": "c411ef682374aa628c33b6c92da26f8861617bb4d2eb1c548cc68cca190551bc"
+    },
+    {
+      "source": "results/research/pid_tuning.png",
+      "file": "03_Reports_and_Results/Research/pid_tuning.png",
+      "sha256": "e487888a6cdae9547deac4520aa1944b5bf89976fdc49d5b278276b9661fbba7"
+    },
+    {
+      "source": "results/validation/cad_assembly_clearance.json",
+      "file": "03_Reports_and_Results/Validation/cad_assembly_clearance.json",
+      "sha256": "066c79b267181a797ca05517d9a430f521d800c1e7b59138989c453290898ff7"
+    },
+    {
+      "source": "results/validation/cad_freecad_inspection.json",
+      "file": "03_Reports_and_Results/Validation/cad_freecad_inspection.json",
+      "sha256": "a387a37143747307a9f1aceabe247b00ab0c74e8f4e5247c6fe69fc903fad991"
+    },
+    {
+      "source": "results/validation/cad_motion_clearance.json",
+      "file": "03_Reports_and_Results/Validation/cad_motion_clearance.json",
+      "sha256": "05afb1b0815c8072b0fa0cab2fb9d6da69d9a070f4510132f8278392448ef86d"
+    },
+    {
+      "source": "results/validation/cad_release_consistency.json",
+      "file": "03_Reports_and_Results/Validation/cad_release_consistency.json",
+      "sha256": "bfdb0816a61f38c112acf2717a8411008de76a20bcdb1e9162e7b332832d63e6"
+    },
+    {
+      "source": "results/validation/cad_validation.json",
+      "file": "03_Reports_and_Results/Validation/cad_validation.json",
+      "sha256": "62519ec80bf4d27dce4918d63c2e53c467753351e0166cedfa8d4b72dd559146"
+    },
+    {
+      "source": "results/validation/numerical_validation.json",
+      "file": "03_Reports_and_Results/Validation/numerical_validation.json",
+      "sha256": "d136e869e81ff9f0a88cb2a9c7641f1f1c7c76d99fa187f4e0a67f5bd1b234e6"
+    },
+    {
+      "source": "results/validation/packaging_validation.json",
+      "file": "03_Reports_and_Results/Validation/packaging_validation.json",
+      "sha256": "d3ec6742d3689f55c0716bc82eaf0ce582eda943991f02d1c4f068d354eac70e"
+    },
+    {
+      "source": "results/validation/pytest.xml",
+      "file": "03_Reports_and_Results/Validation/pytest.xml",
+      "sha256": "6e2f0e0e729e5e5e72340e1c495fa3dd400418e965f44586454ba83e7c69062e"
+    },
+    {
+      "source": "results/validation/repository_audit.json",
+      "file": "03_Reports_and_Results/Validation/repository_audit.json",
+      "sha256": "c8796ad7cafec88ed1275e7f840f018dbbee176ab75d54228c231c3ceb8f61fa"
+    },
+    {
+      "source": "results/validation/validation_report.json",
+      "file": "03_Reports_and_Results/Validation/validation_report.json",
+      "sha256": "f6fc6cca38a540f210bb666383beb5cb4f77802eab2815385a2ded0da8c0ae86"
+    },
+    {
+      "source": "results/validation/validation_report.md",
+      "file": "03_Reports_and_Results/Validation/validation_report.md",
+      "sha256": "7cfad7925f4560599b2c6167a15685449a3f7b20b87a8a1c1d8694cd7a5dbb72"
+    },
+    {
+      "source": "results/validation/viewer_reference.json",
+      "file": "03_Reports_and_Results/Validation/viewer_reference.json",
+      "sha256": "5a62ed811d9e321b230d3e4de69d8293721066fb7dba5e4792c1362dbe2ca927"
+    },
+    {
+      "source": "results/validation/viewer_validation.json",
+      "file": "03_Reports_and_Results/Validation/viewer_validation.json",
+      "sha256": "c38e54080d2f08b31e72ec103a5b47bb8e5cb71f532a338cdfe42ec5b37c7a0e"
+    },
+    {
+      "source": "electronics/bom.csv",
+      "file": "04_Electronics/bom.csv",
+      "sha256": "e86ea0673a8ac099fec46d80b3b05a9a6d9734c253bee90698eb21249dc72396"
+    },
+    {
+      "source": "electronics/electrical_assumptions.json",
+      "file": "04_Electronics/electrical_assumptions.json",
+      "sha256": "dabd5694de3c7612e107b19bb0313fa9dcc4b295c73abf04fb4fd63fe3000175"
+    },
+    {
+      "source": "electronics/erc_report.json",
+      "file": "04_Electronics/erc_report.json",
+      "sha256": "16b4fe7ff50987a83a0aa0a65082f2b5f0aedfd9eb1aee48406814b24e88ffff"
+    },
+    {
+      "source": "electronics/fp-lib-table",
+      "file": "04_Electronics/fp-lib-table",
+      "sha256": "e1f42b22b641d6bd10c025611770ace751b8eb40d6004d24a1731d5069ba2f97"
+    },
+    {
+      "source": "electronics/interface_calculations.json",
+      "file": "04_Electronics/interface_calculations.json",
+      "sha256": "90b36be02bc6e9e71385123550e6a79a874a58f035d2c8fa5a17363342fd8b3d"
+    },
+    {
+      "source": "electronics/joint_interface.kicad_dru",
+      "file": "04_Electronics/joint_interface.kicad_dru",
+      "sha256": "72afecaf275113ea1933885f575e19720a433f4028c2282d8bdac265d51b80cd"
+    },
+    {
+      "source": "electronics/joint_interface.kicad_pcb",
+      "file": "04_Electronics/joint_interface.kicad_pcb",
+      "sha256": "ce9293102ce394bf62b4e174e0157465b29dc67145abab6e553891fbd9d1fb12"
+    },
+    {
+      "source": "electronics/joint_interface.kicad_pro",
+      "file": "04_Electronics/joint_interface.kicad_pro",
+      "sha256": "bc41665c0ea688b123185d24c5e0d5be3fbe04e953cc8b8692368e6923af9a08"
+    },
+    {
+      "source": "electronics/joint_interface.kicad_sch",
+      "file": "04_Electronics/joint_interface.kicad_sch",
+      "sha256": "7f99b40fd1417a818cefd2027fa9560cf0b34d627be2756f42b23ae65d4229da"
+    },
+    {
+      "source": "electronics/joint_interface.net.xml",
+      "file": "04_Electronics/joint_interface.net.xml",
+      "sha256": "e5210dd1b0bb75c1825913ad6e7c9f6cfb9fe2355b71ffafeae987535ac4672f"
+    },
+    {
+      "source": "electronics/net_verification.json",
+      "file": "04_Electronics/net_verification.json",
+      "sha256": "51dde98689174f13f2b6dcf1cff3b4dbe4d002a05f1cdcc217db57dc7cca021e"
+    },
+    {
+      "source": "electronics/pcb_command_log.json",
+      "file": "04_Electronics/pcb_command_log.json",
+      "sha256": "20e2aa73d7d90cffb7106eef97197b17537e39774243acc0635c307d11481ac0"
+    },
+    {
+      "source": "electronics/pcb_drc_report.json",
+      "file": "04_Electronics/pcb_drc_report.json",
+      "sha256": "66c44b360ae974204b703b71150ff28f16a0ae69007c85395af57104aa42d106"
+    },
+    {
+      "source": "electronics/pcb_routing_manifest.json",
+      "file": "04_Electronics/pcb_routing_manifest.json",
+      "sha256": "b33b8a70af7216561cab2965dc638c5e02ae46cf865ca56ccd74ed324a71256e"
+    },
+    {
+      "source": "electronics/pcb_verification.json",
+      "file": "04_Electronics/pcb_verification.json",
+      "sha256": "20ab6ceb1262c6286622afe797789f3f3fa043e4c183d20c74475eca45bebdfe"
+    },
+    {
+      "source": "electronics/pin_contract.json",
+      "file": "04_Electronics/pin_contract.json",
+      "sha256": "9319a0ab030ed6c6f23250f0a20d1630e8c1ca1e46b8c14651aaf8f937aa55af"
+    },
+    {
+      "source": "electronics/sym-lib-table",
+      "file": "04_Electronics/sym-lib-table",
+      "sha256": "89a5cbb999d73aea2f3e187cc3ed73015b38cfae78b3c5fc6f38ae8d82b29e72"
+    },
+    {
+      "source": "electronics/exports/joint_interface.pdf",
+      "file": "04_Electronics/exports/joint_interface.pdf",
+      "sha256": "7c6121fd04f117ca5beffd6908b521422da4166132f9b005276d5247ba47661d"
+    },
+    {
+      "source": "electronics/exports/joint_interface.svg",
+      "file": "04_Electronics/exports/joint_interface.svg",
+      "sha256": "9d7842565dfa39d7deccf820aef4112e0d6c230b01e18d8215744c46b83cf27a"
+    },
+    {
+      "source": "electronics/exports/pcb_3d.png",
+      "file": "04_Electronics/exports/pcb_3d.png",
+      "sha256": "429fa7432c29f78d089cd422953a43b54b7bf84cb22267628c91996287388745"
+    },
+    {
+      "source": "electronics/exports/pcb_assembly.svg",
+      "file": "04_Electronics/exports/pcb_assembly.svg",
+      "sha256": "98428e3774cb50ec6c89a35b60041866f26e30e5ff32e93422bb5ff46a652263"
+    },
+    {
+      "source": "electronics/exports/pcb_bottom.svg",
+      "file": "04_Electronics/exports/pcb_bottom.svg",
+      "sha256": "83567e95bb8ff98e04d40d519a00523769e84625a37d86ef15d7fa9b115ca67a"
+    },
+    {
+      "source": "electronics/exports/pcb_ground_plane.svg",
+      "file": "04_Electronics/exports/pcb_ground_plane.svg",
+      "sha256": "90fe8258d724735dd05ba877827b03ac1c48f33d9f0990c6d83b685df106e1ba"
+    },
+    {
+      "source": "electronics/exports/pcb_layers.pdf",
+      "file": "04_Electronics/exports/pcb_layers.pdf",
+      "sha256": "0569a638af9b6b0d43b7f4a1a66d451e1ad945f4ef4bda029932e43c52f175f4"
+    },
+    {
+      "source": "electronics/exports/pcb_power_plane.svg",
+      "file": "04_Electronics/exports/pcb_power_plane.svg",
+      "sha256": "6b031fd1fd7a0b6a14d793d5ed5954386eaab7925540c87fcc92329687d99a75"
+    },
+    {
+      "source": "electronics/exports/pcb_top.png",
+      "file": "04_Electronics/exports/pcb_top.png",
+      "sha256": "bd245906a70b7589f6f4dfa727bc2a474784f803b695d9666b5f36438ee16038"
+    },
+    {
+      "source": "electronics/exports/pcb_top.svg",
+      "file": "04_Electronics/exports/pcb_top.svg",
+      "sha256": "24f07d30de698cb51278bb391a96bfd7aa388a104a09ecb89caa758aa15fb7d6"
+    },
+    {
+      "source": "electronics/fabrication/assembly_positions.csv",
+      "file": "04_Electronics/fabrication/assembly_positions.csv",
+      "sha256": "d9c3612008b2cbb500ca962d9203fe9f429281f48ef61c01054e2187d5ec8139"
+    },
+    {
+      "source": "electronics/fabrication/drill_report.txt",
+      "file": "04_Electronics/fabrication/drill_report.txt",
+      "sha256": "beb241796ad58c84b88fa4a73b4e390075b0214030840e07b87b4f28093593b6"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-B_Cu.gbl",
+      "file": "04_Electronics/fabrication/joint_interface-B_Cu.gbl",
+      "sha256": "1f0d09668b219bb04702838c6213c6d4e5f80503d141e96e0f38bed5c77d4416"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-B_Mask.gbs",
+      "file": "04_Electronics/fabrication/joint_interface-B_Mask.gbs",
+      "sha256": "074cb3a23db204a07d65096992bed950bfbd7dd13a0055c57622c68925f5cabf"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-B_Silkscreen.gbo",
+      "file": "04_Electronics/fabrication/joint_interface-B_Silkscreen.gbo",
+      "sha256": "fe5fe642cb3460463b0b54de1fa3fdc25ac6fac8df00da75890c885679278d6e"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-Edge_Cuts.gm1",
+      "file": "04_Electronics/fabrication/joint_interface-Edge_Cuts.gm1",
+      "sha256": "c95aec8382fd9021bc2d04397416784eae8c935fdce22ae1e98052daf94ad9f2"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-F_Cu.gtl",
+      "file": "04_Electronics/fabrication/joint_interface-F_Cu.gtl",
+      "sha256": "042cbfc4faba13b4275dff057aab84a8d35b42bac821b3316c1d990b0d0c4466"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-F_Mask.gts",
+      "file": "04_Electronics/fabrication/joint_interface-F_Mask.gts",
+      "sha256": "f88b835c354444ed5346a8792fc1c463ffb63f55377da361ea67c023f7b8e7c4"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-F_Paste.gtp",
+      "file": "04_Electronics/fabrication/joint_interface-F_Paste.gtp",
+      "sha256": "720444a417ab15c7c97aee586cc2e8dbd64832e0c7e0fbb3edde0feb1809960c"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-F_Silkscreen.gto",
+      "file": "04_Electronics/fabrication/joint_interface-F_Silkscreen.gto",
+      "sha256": "546d087e995c861d2c4dad479f262434ed6d68bd378230dffe805807b3c28ab6"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-In1_Cu.g1",
+      "file": "04_Electronics/fabrication/joint_interface-In1_Cu.g1",
+      "sha256": "da0601859ed3a9f99e522e929205fdc31b0a721517ccc2267a37fa1d65b021a8"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-In2_Cu.g2",
+      "file": "04_Electronics/fabrication/joint_interface-In2_Cu.g2",
+      "sha256": "ac8438e0f2beb201a95cd94d48f864319a6fc7dee5e66824b79b1f35f0f419ab"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-job.gbrjob",
+      "file": "04_Electronics/fabrication/joint_interface-job.gbrjob",
+      "sha256": "64d38c0e0a32c0719a5ba632fe168515fb70678bb8fd717a4ca77802adcb5e04"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-NPTH-drl_map.pdf",
+      "file": "04_Electronics/fabrication/joint_interface-NPTH-drl_map.pdf",
+      "sha256": "4655e5d0783345f7c49007bc1d028c4b21f71d0caa58da084f06cc9ab8e310d0"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-NPTH.drl",
+      "file": "04_Electronics/fabrication/joint_interface-NPTH.drl",
+      "sha256": "244011c3ace4b5bb219c8f372a3913da85ecac5679f0de08f62229c82d91858b"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-PTH-drl_map.pdf",
+      "file": "04_Electronics/fabrication/joint_interface-PTH-drl_map.pdf",
+      "sha256": "efdc59f8ea5977ebab511778fc87eedaca962a6ab67d76e405f24f358a1286e9"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface-PTH.drl",
+      "file": "04_Electronics/fabrication/joint_interface-PTH.drl",
+      "sha256": "a162c66937033294df3a6fded1c611d88f2b9c84598e7f522feced88936b2915"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface.d356",
+      "file": "04_Electronics/fabrication/joint_interface.d356",
+      "sha256": "90c6bec228df53644c5a443833588194d053076a7b5c8c86d7453992539aa07b"
+    },
+    {
+      "source": "electronics/fabrication/joint_interface_fabrication.zip",
+      "file": "04_Electronics/fabrication/joint_interface_fabrication.zip",
+      "sha256": "de2ca03ca74f4b61152d633697ba470f73a03589983ce5ae3d639708f46d1f7a"
+    },
+    {
+      "source": "LICENSE",
+      "file": "LICENSE",
+      "sha256": "73c7042665f956bf31168dcdc657a334c571723dc93eafae519a0841aee51557"
+    },
+    {
+      "source": "NOTICE.md",
+      "file": "NOTICE.md",
+      "sha256": "19f8cb2914ed9511f3f8bff85cbfa48e32ce1e74dc8e8ae71f7785a0ab99483f"
+    },
+    {
+      "source": "CITATION.cff",
+      "file": "CITATION.cff",
+      "sha256": "7a0acb494468956d8425a07902fddc709fde4d824d25a2ba0d41615aa872b7f9"
+    },
+    {
+      "source": "CONTRIBUTING.md",
+      "file": "CONTRIBUTING.md",
+      "sha256": "7d736a7f5e02c349da45dad3d9a255597181f4ae960582e2359d76b1f3105e99"
+    },
+    {
+      "source": "CHANGELOG.md",
+      "file": "CHANGELOG.md",
+      "sha256": "bb9670ed300e4348fa2c908c4e7d8fd20454d598b0499d73ce7d5c7b67f7cb26"
+    }
+  ],
+  "derived_documents": [
+    {
+      "source": "README.md",
+      "source_sha256": "8da2a4ed8cb493d10758e8761b5c95d94818887060f5c19dfcec9f06fb77701e",
+      "file": "03_Reports_and_Results/Readable_Reports/Project_Readme.html",
+      "sha256": "30967cdc0dbc5a9720a1beb724d1fed9dac249dda707a95342eb4ce158000b35"
+    },
+    {
+      "source": "docs/00_environment.md",
+      "source_sha256": "90b68cb0d3cf6b1bf45b2d3459f627871bd447a0b5436fba039f8fe8554b9fa2",
+      "file": "03_Reports_and_Results/Readable_Reports/00_environment.html",
+      "sha256": "5bf1203aadd7daba7201b106b4ef49a12611a69d890c4fc990d16127875e4dfa"
+    },
+    {
+      "source": "docs/01_requirements.md",
+      "source_sha256": "029d7d3e972dca7a8386bb070294b4394bf63e70d0bdbb7e12ba81914a70986f",
+      "file": "03_Reports_and_Results/Readable_Reports/01_requirements.html",
+      "sha256": "812079202c52f141fa781bc48fdd4bdfce71b88df0aa5f2ede551706ea9361c3"
+    },
+    {
+      "source": "docs/02_kinematics.md",
+      "source_sha256": "c470b03de42f5a74b81784530d65e59aced9d73dc49c44c32c6f21c39830d13a",
+      "file": "03_Reports_and_Results/Readable_Reports/02_kinematics.html",
+      "sha256": "304aae4e2ee801fb129c5c863228dc89d4b51d80388590b41da0549e606c92dc"
+    },
+    {
+      "source": "docs/03_mechanical_analysis.md",
+      "source_sha256": "3ec41405bb76d2075603751344e453b2c910bd03358f90940c23264a9ffe434f",
+      "file": "03_Reports_and_Results/Readable_Reports/03_mechanical_analysis.html",
+      "sha256": "da175cfe533015951d69c867ad9aec54dedf8cf984862f751c2f80a4cce2fdc9"
+    },
+    {
+      "source": "docs/04_cad.md",
+      "source_sha256": "5181d79f1e0bcb37ef066eda1b7858c665549b88ddc3f346bba520a92123148a",
+      "file": "03_Reports_and_Results/Readable_Reports/04_cad.html",
+      "sha256": "f40724aaac3ca1ff08f264d10c6c5565a8a04646c187d997fb109849a88daa7a"
+    },
+    {
+      "source": "docs/05_electronics.md",
+      "source_sha256": "38c6fab1e18ddef1dd21d0f2c1f4e150cde23b4b7429d2f53d20b3724c64daf8",
+      "file": "03_Reports_and_Results/Readable_Reports/05_electronics.html",
+      "sha256": "c8d5022b97957e0def5b103ab9ce1aaef75699ed3aa25c74895c9221e57c9db9"
+    },
+    {
+      "source": "docs/architecture.md",
+      "source_sha256": "be65d3c9209507288cd8ab4246ee63256c03d4cfd2691bd39c7945f81e85cd0e",
+      "file": "03_Reports_and_Results/Readable_Reports/architecture.html",
+      "sha256": "c32e6b92ab4886ad54d49d8a8fff79ab0506880d99ee50bde98548f2023f5e53"
+    },
+    {
+      "source": "docs/completion_checklist.md",
+      "source_sha256": "73126224ef32bce66a01ae972d3baef9381e6e47b1b0366d59a123c41a4300f6",
+      "file": "03_Reports_and_Results/Readable_Reports/completion_checklist.html",
+      "sha256": "0fafc13db1b6f4164267d1c37a97303175d54094f16b8939b90e006c9028dfac"
+    },
+    {
+      "source": "docs/design_decisions.md",
+      "source_sha256": "3e95c3428e72daf524192f38b30727a32aea8869c6b83979c1350d78338ed8c5",
+      "file": "03_Reports_and_Results/Readable_Reports/design_decisions.html",
+      "sha256": "7e1dd40da88cf4494b8c1ed751028e5c8f578cf1626313ffa413faa55db78ad8"
+    },
+    {
+      "source": "docs/digital_scope_audit.md",
+      "source_sha256": "9fd7ed88bf864abe8c52e746a780d9624d28042f8c9023b28f8d177ed777e3eb",
+      "file": "03_Reports_and_Results/Readable_Reports/digital_scope_audit.html",
+      "sha256": "23dce8bd4c815d6d6f31bec21ba08099e99f9713ffc3635b746a5cfb268934ec"
+    },
+    {
+      "source": "docs/engineering_report.md",
+      "source_sha256": "5cf4cbf5bc56b55077f721388c45373e7cec2a8db8109b34347a4ef8567af334",
+      "file": "03_Reports_and_Results/Readable_Reports/engineering_report.html",
+      "sha256": "cfeeebc421965572dcdec3d6696282cf51f9efe29400e185221e4d13ef6d7514"
+    },
+    {
+      "source": "docs/kpis.md",
+      "source_sha256": "1c1344361a212bcabbae57e05f294c353634687caf89859a1e01146941bc0510",
+      "file": "03_Reports_and_Results/Readable_Reports/kpis.html",
+      "sha256": "c0b220713d6fb53befbc62ec419bf2101971d1bed309607895433754689bed82"
+    },
+    {
+      "source": "docs/project_journal.md",
+      "source_sha256": "ae506b68d288dc9a8585724d6bee09355c0da277e33ae9a0140558d6a303036a",
+      "file": "03_Reports_and_Results/Readable_Reports/project_journal.html",
+      "sha256": "317d7393d2f59b40233d5fa6fe24b6fe750f729cf587526676f2527ee2fab923"
+    },
+    {
+      "source": "docs/release_notes.md",
+      "source_sha256": "671baa5c33608b7d34cb5bcf59a7bec28a1f2cff77da0ea5dc340612636c104a",
+      "file": "03_Reports_and_Results/Readable_Reports/release_notes.html",
+      "sha256": "1f91744df88a3a6dc5ede904e9d9da6f18ec34c0a87eacf7397ca30a3fd8b9a1"
+    },
+    {
+      "source": "docs/validation_matrix.md",
+      "source_sha256": "c8b41e0198cd83def5236981143c00cade4ef6003dc41c357f4e6d2ac9c0d102",
+      "file": "03_Reports_and_Results/Readable_Reports/validation_matrix.html",
+      "sha256": "9b95315b3d049006c894c6a37c7406f64088e3a6c69f8f068617c425195e697c"
+    }
+  ],
+  "generated_files": [
+    {
+      "file": "START_HERE.html",
+      "sha256": "d72ee8a05fada1af2c629c962304684f37e0f74c2e6e56bbde291a475aeb7ff8"
+    },
+    {
+      "file": "START_HERE.txt",
+      "sha256": "165865594e16c73715658cbadc25e9055ff00f42fab0f4746a3a772d76fc9bc7"
+    },
+    {
+      "file": "README.md",
+      "sha256": "d4232a89b50d0c5b36198ce82ab292286097be4ca688579bbf8649cc8e32d888"
+    },
+    {
+      "file": "OPEN_PROJECT_HOME.cmd",
+      "sha256": "9cdb56b0d1451860e0e930e8b0f5d255325509187d3f40e871bff90ec2abfb72"
+    },
+    {
+      "file": "OPEN_3D_VIEWER.cmd",
+      "sha256": "ac79dcc84fdb4584db321ea117527b2e2a26520628709cc77d047257140d8249"
+    },
+    {
+      "file": "OPEN_FREECAD_MODEL.cmd",
+      "sha256": "78da7dca9fb9e3180aa62e58d65eab62f2544d34ddb13159821f8f11b5e8be30"
+    },
+    {
+      "file": "OPEN_PCB_LAYOUT.cmd",
+      "sha256": "a91881bd0e2d117dadd71593d654aad4fe5ce52658473d034eb4229b6b151a0d"
+    },
+    {
+      "file": "05_Reference_and_Project_Notes/README.md",
+      "sha256": "e13940561d3ce3b9d99f42e5aa085b718098acfac8a63f9f7f5c52f0b6bb4d59"
+    }
+  ],
+  "generation_inputs": [
+    {
+      "source": "scripts/sync_presentation.py",
+      "sha256": "fe6503c5ac2d4ad5894bdd41c833dee017e1356a9c4cd02cd8570d8236d8bd8d"
+    },
+    {
+      "source": "pyproject.toml",
+      "sha256": "9f05b5b7fc172b6b79b761f45831e5cdf28d4c4a2ef2d36553f87d37ecc7f854"
+    },
+    {
+      "source": "results/validation/validation_report.json",
+      "sha256": "f6fc6cca38a540f210bb666383beb5cb4f77802eab2815385a2ded0da8c0ae86"
+    }
+  ],
+  "source_repository": "06_Complete_Project_Source",
+  "format": "SHA-256 exact bytes for copies, generated pages and their source inputs"
+}

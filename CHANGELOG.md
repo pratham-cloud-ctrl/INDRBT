@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0 — 2026-10-05 — complete digital engineering release
+
+- Complete organized folder structure is the actual repository layout; original Git history is retained.
+- Browser-readable project guide/reports and portable Chrome/Edge, FreeCAD and PCB-editor launchers.
+- Reproducible presentation synchronization with exact artifact-copy SHA-256 checks.
+- Corrected shoulder, wrist and gripper interfaces found by broader all-pair CAD review.
+- Routed native KiCad joint/sensor PCB with fabrication exports and actual DRC/connectivity review.
+- Refreshed digital-scope traceability and independent clean-wheel verification.
+
+The full validation workflow passed all 33 tests and native KiCad ERC/PCB DRC/connectivity checks. Digital scope is complete; physical performance and manufacturing qualification remain outside the validated scope.
+
 ## 0.9.0 — 2026-10-05 — engineering preview
 
 - Original ASTER-6 six-axis architecture and centralized SI configuration.
@@ -12,4 +23,4 @@
 - Saturated PID joint simulation and conceptual native KiCad interface schematic with ERC/net checks.
 - Validation runner, packaging verification and evidence-linked engineering documentation.
 
-PCB layout and DRC, exhaustive swept collision checking, full coupled dynamics and physical performance remain unresolved. A v1.0.0 release is deferred; this preview must not be described as a hardware-ready product.
+At the 0.9.0 handover, PCB layout and DRC were unfinished. Version 1.0.0 completes that digital work. Continuous swept collision certification, full coupled dynamics and physical performance remain documented extensions or outside scope; neither release establishes a hardware-ready product.

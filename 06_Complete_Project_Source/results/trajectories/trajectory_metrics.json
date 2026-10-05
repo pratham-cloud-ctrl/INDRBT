@@ -1,0 +1,47 @@
+{
+  "MOVE_J": {
+    "duration_s": 4.0,
+    "peak_velocity_rad_s": [
+      0.20453077171808548,
+      0.04090615434361711,
+      0.040906154343617156,
+      0.0,
+      0.6544984694978736,
+      0.0
+    ],
+    "peak_acceleration_rad_s2": [
+      0.15744287933006132,
+      0.03148857586601227,
+      0.03148857586601231,
+      0.0,
+      0.5038172138561962,
+      0.0
+    ],
+    "max_velocity_limit_fraction": 0.31250000000000006,
+    "max_acceleration_limit_fraction": 0.12027750000000026
+  },
+  "MOVE_L": {
+    "duration_s": 1.01,
+    "peak_velocity_rad_s": [
+      4.31250195070239e-12,
+      0.2912707587211496,
+      0.032307819176330466,
+      1.4077900660799662e-12,
+      0.30640157186859013,
+      4.96958099525201e-12
+    ],
+    "peak_acceleration_rad_s2": [
+      3.3608162925619843e-10,
+      0.9288644672248921,
+      0.1654698687426125,
+      1.139872002771625e-10,
+      0.9686478284727674,
+      3.908575219364839e-10
+    ],
+    "max_velocity_limit_fraction": 0.2781430861715865,
+    "max_acceleration_limit_fraction": 0.4435001142637842
+  },
+  "move_l_max_xy_drift_m": 5.9423850372475314e-12,
+  "linear_caveat": "Constant-velocity interior only; instantaneous boundary acceleration unbounded.",
+  "move_l_caveat": "Derivative limits verified at sampled points; no continuous-path or collision certificate."
+}

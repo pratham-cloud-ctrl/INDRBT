@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>02_kinematics</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Kinematic formulation</h1>
+<p>ASTER-6 uses an explicit sequence of rigid-body transformations. All calculations
+use metres, radians and seconds. A column vector represents a point; transforms
+map local coordinates into the base frame. The base frame has +Z up, +X along the
+zero-position arm and +Y completing a right-handed frame. This is a numerical
+model of an original design, not a reverse-engineered commercial arm.</p>
+<h2>Frames and joint definitions</h2>
+<p>Let <code>h</code>, <code>L1</code>, <code>L2</code>, <code>lr</code>, <code>lp</code> and <code>lt</code> be the shoulder height, upper-arm,
+forearm, wrist-roll, wrist-pitch and tool lengths in <code>config/robot.yaml</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Joint</th>
+<th>Axis in its parent frame before rotation</th>
+<th>Part frame origin</th>
+<th>Zero convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1</td>
+<td>Z</td>
+<td>(0,0,h)</td>
+<td>Turret aligned with base X</td>
+</tr>
+<tr>
+<td>J2</td>
+<td>Y</td>
+<td>Shoulder</td>
+<td>Upper arm points along local +X</td>
+</tr>
+<tr>
+<td>J3</td>
+<td>Y</td>
+<td>Upper-arm end</td>
+<td>Forearm points along local +X</td>
+</tr>
+<tr>
+<td>J4</td>
+<td>X</td>
+<td>Forearm end</td>
+<td>Wrist-roll reference aligned</td>
+</tr>
+<tr>
+<td>J5</td>
+<td>Y</td>
+<td>Roll-section end</td>
+<td>Wrist pitch reference aligned</td>
+</tr>
+<tr>
+<td>J6</td>
+<td>X</td>
+<td>Pitch-section end</td>
+<td>Tool roll reference aligned</td>
+</tr>
+</tbody>
+</table>
+<p>Each CAD part is authored in the frame <strong>after</strong> its joint rotation and <strong>before</strong>
+the following +X translation. <code>RobotArm.frames(q)</code> returns these six transforms
+as <code>joint_transforms</code> and <code>link_transforms</code> (aliases), alongside joint origins,
+world-frame axes, link segments, identity base frame, and the final TCP transform.
+<code>transforms</code> is also an alias for those six part frames; it does not include TCP.
+The world joint axis is computed before applying that joint's rotation.</p>
+<p>The final TCP follows the configured tool length. CAD and motion software use the
+same transform convention. The gripper's full jaw opening is along tool-frame Y,
+with inner jaw faces at <code>±opening/2</code> and fingers extending toward +X.</p>
+<h2>Forward kinematics</h2>
+<p>For translation <code>T(a)</code> and axis rotation <code>R_i(q)</code>, homogeneous matrices are</p>
+<pre><code class="language-text">T(a) = [ I3  a ]       R_i(q) = [ rotation_i(q)  0 ]
+       [  0  1 ]                [       0        1 ]
+</code></pre>
+<p>The complete transformation is</p>
+<pre><code class="language-text">T_base_tcp(q) = Tz(h) Rz(q1)
+               Ry(q2) Tx(L1)
+               Ry(q3) Tx(L2)
+               Rx(q4) Tx(lr)
+               Ry(q5) Tx(lp)
+               Rx(q6) Tx(lt).
+</code></pre>
+<p>Positive rotation follows the right-hand rule. In particular, positive rotation
+about Y tips local +X downward. At all-zero angles the TCP is
+<code>(L1+L2+lr+lp+lt, 0, h)</code> with identity orientation. At <code>q2=-π/2</code> and all other
+angles zero it is <code>(0, 0, h+L1+L2+lr+lp+lt)</code>. Both cases are tested against exact
+positions. Configured joint bounds are enforced by FK unless explicitly disabled.</p>
+<h2>Inverse kinematics</h2>
+<p>The solver uses <code>scipy.optimize.least_squares</code> with box constraints, a supplied
+seed, home seed, midrange seed and deterministic random restarts. There is no
+analytical IK claim. The residual is</p>
+<pre><code class="language-text">r(q) = [ (p(q)-p_target)/reach,
+         log_SO3(R_target R(q)^T) ].
+</code></pre>
+<p>The SO(3) logarithm is represented as an axis-angle rotation vector. Dividing
+translation by the reach provides a documented dimensionless balance between
+position and orientation. A returned candidate is accepted only if its separate
+position and orientation errors satisfy the configured tolerances. These are
+numerical solver tolerances; they are unrelated to physical repeatability.</p>
+<p>Targets outside the shoulder-centred maximum length bound are rejected before
+optimization. A failed bounded numerical search produces a useful error with the
+best residual. It is <strong>not a proof</strong> that a target within that bound is unreachable.
+Redundant branches and elbow/wrist alternatives can occur. Restarts can find an
+alternative branch but do not exhaustively enumerate every solution. The planner
+uses continuation from the preceding configuration to preserve local continuity.</p>
+<h2>Geometric Jacobian</h2>
+<p>For TCP position <code>p</code>, world joint origin <code>o_i</code> and world unit rotation axis <code>a_i</code>,
+the six columns are</p>
+<pre><code class="language-text">J_i = [ a_i × (p-o_i) ]
+      [      a_i      ].
+</code></pre>
+<p><code>J(q) qdot</code> gives world-frame linear velocity followed by angular velocity.
+The translational rows have metre units; rotational rows are dimensionless.
+Singularity diagnostics divide the translational rows by the configured reach
+before computing singular values. This scale must be stated when comparing
+condition measures. Tests compare every Jacobian column with central differences
+of TCP position and world-frame SO(3) orientation across eight seeded poses.</p>
+<h2>Singularities and workspace</h2>
+<p>All-zero extension is singular: shoulder/elbow pitch axes become parallel and
+several wrist axes align. Wrist pitch near zero can align wrist-roll and tool-roll
+axes. Singularities reduce one or more instantaneous motion directions and can
+produce large joint speeds or unstable IK branches. The plotted diagnostic
+threshold on the smallest scaled singular value is an educational indicator,
+not a safety criterion or drive acceptance limit.</p>
+<p>The workspace demonstration samples independent valid joint configurations.
+It produces three projections, a 3D cloud, a separate TCP-above-floor cloud,
+and singularity plots. The full cloud includes below-base positions allowed by
+the joint-limit model. TCP <code>z&gt;=0</code> filtering alone does not verify link clearance.
+All workspace plots omit obstacles and self-collision filtering.</p>
+<p>The convex-hull envelope fills inaccessible holes and cannot be called actual
+reachable volume. Occupied voxels are a sampling proxy that depends on pitch,
+sample count and random seed. Orientation feasibility differs from position-only
+reachability. Results and their exact seeds are saved in
+<code>results/workspace/metrics.json</code> and <code>samples.csv</code>.</p>
+<h2>Motion planning and simulation limits</h2>
+<p>MOVE J uses monotonic linear, cubic or quintic scalar interpolation of all six
+joints. Polynomial velocity and acceleration maxima provide an analytic minimum
+duration. Linear interpolation describes a constant-velocity interior segment;
+instantaneous starts and stops have unbounded acceleration. It is not used in the
+stop-to-stop pick-and-place sequence. Quintic segments have zero endpoint velocity
+and acceleration, permitting continuous concatenation with dwell segments.</p>
+<p>MOVE L follows a straight TCP line, shortest-path SO(3) SLERP and a quintic time
+law. Bounded IK is solved at every sample, seeded from the previous result. Large
+configuration jumps are rejected. Finite-difference joint velocity and acceleration
+are uniformly time-scaled to satisfy limits at returned samples. This is sampled
+verification; no between-sample bound or collision-free certificate is claimed.</p>
+<p>The FK animation evaluates the transform chain at each interpolated joint pose.
+It uses stick geometry and a scripted object-attachment event. It is an ideal
+kinematic simulation, without contact, rigid-body payload dynamics or collision
+physics. The PID simulation separately tests assumed independent inertia/damping
+joint plants with torque saturation and conditional-integration antiwindup.</p></main></html>

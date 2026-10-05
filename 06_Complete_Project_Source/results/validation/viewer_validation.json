@@ -1,0 +1,15 @@
+{
+  "status": "VERIFIED DIGITALLY",
+  "browser": "Chromium / headless WebGL",
+  "mesh_count": 54,
+  "random_fk_comparisons": 20,
+  "maximum_js_python_matrix_difference": 5.551115123125783e-16,
+  "play_pause_interaction": "PASS",
+  "gripper_closed_m": 0.028,
+  "gripper_open_m": 0.09,
+  "vertical_tcp_z_m": 0.9800000000000001,
+  "page_errors": [],
+  "html_sha256": "52cfaab10e69384a5c6d88ccdc607981a8f23b2af47d705b669c6e115c98669d",
+  "hash_convention": "UTF-8 HTML with LF line endings",
+  "scope": "Actual browser render, playback interactions and transform checks; not collision or contact validation"
+}

@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "Built wheel, new isolated venv, installed runtime dependencies, detached import and actual CLI results",
+  "python_version": "3.12.14",
+  "package_version": "1.0.0",
+  "wheel_name": "aster_arm-1.0.0-py3-none-any.whl",
+  "wheel_sha256": "a47814a2e97d8d19c7ae3fc72967d041670540abbdd6efbbd8a2c2975fa510d1",
+  "authoritative_config_sha256": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+  "bundled_config_sha256": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+  "installed_import_relative_to_venv": "Lib/site-packages/robotarm/__init__.py",
+  "import_from_repository_source": false,
+  "config_bundled_identical_to_authoritative": true,
+  "current_upper_arm_mass_kg": 5.5,
+  "known_zero_tcp_m": [
+    0.7900000000000001,
+    0.0,
+    0.19
+  ],
+  "known_vertical_tcp_m": [
+    0.0,
+    0.0,
+    0.9800000000000001
+  ],
+  "ik_from_perturbed_seed_position_error_m": 5.691977770623849e-14,
+  "ik_from_perturbed_seed_orientation_error_rad": 1.7455697395838756e-14,
+  "trajectory_velocity_limit_fraction": 0.9001541261743586,
+  "trajectory_acceleration_limit_fraction": 0.9979714160318762,
+  "invalid_move_l_target_rejected": true,
+  "cli_exit_code": 0,
+  "cli_generated_plot_count": 5,
+  "cli_move_l_xy_drift_m": 5.9423850372475314e-12,
+  "dependency_check": "No broken requirements found.",
+  "runtime_versions": {
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2",
+    "PyYAML": "6.0.3",
+    "pillow": "12.3.0",
+    "trimesh": "5.1.1"
+  },
+  "commands_normalized": [
+    "python -m venv work/release1-env",
+    "work/release1-env/Scripts/python -m pip install 'setuptools>=75' wheel",
+    "work/release1-env/Scripts/python -m pip wheel --no-deps --no-build-isolation --wheel-dir OUTPUT_DIRECTORY REPOSITORY",
+    "work/release1-env/Scripts/python -m pip install OUTPUT_DIRECTORY/aster_arm-1.0.0-py3-none-any.whl",
+    "cd work/release1-check",
+    "../release1-env/Scripts/python -I REPOSITORY/scripts/verify_wheel_install.py REPOSITORY WHEEL",
+    "python -I -m robotarm.demo --trajectory --output-dir generated-results",
+    "python -m pip check"
+  ],
+  "environment_note": "Build helpers and runtime dependencies installed in an isolated verification env; no shared or system packages modified."
+}

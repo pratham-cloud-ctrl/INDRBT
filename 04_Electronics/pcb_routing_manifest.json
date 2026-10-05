@@ -1,0 +1,785 @@
+{
+  "generator": "generate_pcb.py / KiCad pcbnew",
+  "kicad_version": "10.0.6",
+  "board_size_mm": [
+    100,
+    100
+  ],
+  "copper_layers": 4,
+  "nominal_thickness_mm": 1.6,
+  "stackup_materials": "FR4 / 35 um copper / ENIG target; manufacturer stackup approval required",
+  "stackup_intent": [
+    "F.Cu signals/components",
+    "In1.Cu GND plane",
+    "In2.Cu +3V3 plane",
+    "B.Cu signals"
+  ],
+  "signal_track_width_mm": 0.25,
+  "power_5V_track_width_mm": 0.4,
+  "clearance_mm": 0.2,
+  "via_diameter_mm": 0.6,
+  "via_drill_mm": 0.3,
+  "placements_mm": {
+    "J1": [
+      27,
+      32,
+      0
+    ],
+    "F1": [
+      35,
+      32,
+      0
+    ],
+    "D1": [
+      43,
+      32,
+      180
+    ],
+    "C1": [
+      50,
+      30,
+      0
+    ],
+    "U1": [
+      55,
+      32,
+      0
+    ],
+    "C2": [
+      60,
+      30,
+      180
+    ],
+    "R1": [
+      66,
+      30,
+      90
+    ],
+    "D2": [
+      66,
+      35,
+      90
+    ],
+    "J2": [
+      27,
+      43,
+      0
+    ],
+    "J3": [
+      113,
+      32,
+      0
+    ],
+    "J4": [
+      113,
+      61,
+      0
+    ],
+    "J5": [
+      113,
+      77,
+      0
+    ],
+    "J6": [
+      97,
+      112,
+      90
+    ],
+    "J7": [
+      27,
+      98,
+      0
+    ],
+    "R7": [
+      35,
+      98,
+      180
+    ],
+    "R2": [
+      92,
+      38,
+      180
+    ],
+    "C3": [
+      74,
+      38,
+      0
+    ],
+    "D3": [
+      81,
+      35,
+      180
+    ],
+    "D4": [
+      81,
+      41,
+      0
+    ],
+    "R3": [
+      92,
+      47,
+      180
+    ],
+    "C4": [
+      74,
+      47,
+      0
+    ],
+    "D5": [
+      81,
+      44,
+      180
+    ],
+    "D6": [
+      81,
+      50,
+      0
+    ],
+    "R4": [
+      92,
+      56,
+      180
+    ],
+    "C5": [
+      74,
+      56,
+      0
+    ],
+    "D7": [
+      81,
+      53,
+      180
+    ],
+    "D8": [
+      81,
+      59,
+      0
+    ],
+    "R5": [
+      92,
+      66,
+      180
+    ],
+    "R6": [
+      83,
+      63,
+      0
+    ],
+    "C6": [
+      74,
+      66,
+      0
+    ],
+    "D9": [
+      83,
+      69,
+      180
+    ],
+    "D10": [
+      83,
+      74,
+      0
+    ],
+    "R9": [
+      89,
+      80,
+      0
+    ],
+    "R10": [
+      89,
+      85,
+      0
+    ],
+    "R11": [
+      89,
+      90,
+      0
+    ],
+    "R8": [
+      100,
+      90,
+      0
+    ],
+    "R12": [
+      102,
+      95,
+      0
+    ],
+    "U2": [
+      76,
+      98,
+      0
+    ],
+    "C7": [
+      82.5,
+      95,
+      0
+    ],
+    "R13": [
+      70,
+      103,
+      0
+    ],
+    "R14": [
+      88,
+      94,
+      0
+    ],
+    "R15": [
+      90,
+      106,
+      180
+    ],
+    "R16": [
+      94,
+      116,
+      0
+    ],
+    "JP1": [
+      99,
+      116,
+      0
+    ]
+  },
+  "router_connections": [
+    {
+      "net": "/+3V3",
+      "from": "U2.8",
+      "to": "C7.1",
+      "maze_cells": 13
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C1.2",
+      "via_mm": [
+        52.25,
+        30.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "C2.1",
+      "via_mm": [
+        62.25,
+        30.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C2.2",
+      "via_mm": [
+        57.75,
+        30.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C3.2",
+      "via_mm": [
+        76.25,
+        38.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C4.2",
+      "via_mm": [
+        76.25,
+        47.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C5.2",
+      "via_mm": [
+        76.25,
+        56.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C6.2",
+      "via_mm": [
+        76.25,
+        66.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "C7.1",
+      "via_mm": [
+        80.25,
+        95.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "C7.2",
+      "via_mm": [
+        84.75,
+        95.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "D10.2",
+      "via_mm": [
+        85.75,
+        74.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "D2.1",
+      "via_mm": [
+        67.25,
+        36.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "D3.1",
+      "via_mm": [
+        83.75,
+        35.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "D4.2",
+      "via_mm": [
+        83.75,
+        41.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "D5.1",
+      "via_mm": [
+        83.75,
+        44.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "D6.2",
+      "via_mm": [
+        83.75,
+        50.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "D7.1",
+      "via_mm": [
+        83.75,
+        53.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "D8.2",
+      "via_mm": [
+        83.75,
+        59.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "D9.1",
+      "via_mm": [
+        85.75,
+        69.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "R1.1",
+      "via_mm": [
+        67.25,
+        31.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "R12.1",
+      "via_mm": [
+        99.75,
+        95.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "R13.2",
+      "via_mm": [
+        72.25,
+        103.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "R14.1",
+      "via_mm": [
+        85.75,
+        94.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "R15.2",
+      "via_mm": [
+        87.75,
+        106.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "R6.1",
+      "via_mm": [
+        80.75,
+        63.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "R7.1",
+      "via_mm": [
+        37.25,
+        98.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "R8.2",
+      "via_mm": [
+        102.25,
+        90.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "U1.2",
+      "via_mm": [
+        52.5,
+        32.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "U1.5",
+      "via_mm": [
+        57.5,
+        31.0
+      ]
+    },
+    {
+      "net": "/GND",
+      "plane_fanout": "U2.5",
+      "via_mm": [
+        79.75,
+        100.0
+      ]
+    },
+    {
+      "net": "/+3V3",
+      "plane_fanout": "U2.8",
+      "via_mm": [
+        79.75,
+        96.0
+      ]
+    },
+    {
+      "net": "/+5V_FUSED",
+      "from": "D1.2",
+      "to": "F1.2",
+      "maze_cells": 19
+    },
+    {
+      "net": "/+5V_IN",
+      "from": "F1.1",
+      "to": "J1.1",
+      "maze_cells": 27
+    },
+    {
+      "net": "/+5V_PROTECTED",
+      "from": "C1.1",
+      "to": "D1.1",
+      "maze_cells": 17
+    },
+    {
+      "net": "/+5V_PROTECTED",
+      "from": "C1.1",
+      "to": "U1.1",
+      "maze_cells": 21
+    },
+    {
+      "net": "/+5V_PROTECTED",
+      "from": "U1.1",
+      "to": "U1.3",
+      "maze_cells": 17
+    },
+    {
+      "net": "/DIR_CMD",
+      "from": "J2.8",
+      "to": "R10.1",
+      "maze_cells": 245
+    },
+    {
+      "net": "/DIR_DRV",
+      "from": "J5.2",
+      "to": "R10.2",
+      "maze_cells": 93
+    },
+    {
+      "net": "/DRIVE_FAULT_N",
+      "from": "J2.10",
+      "to": "R12.2",
+      "maze_cells": 307
+    },
+    {
+      "net": "/DRIVE_FAULT_N",
+      "from": "R12.2",
+      "to": "J5.4",
+      "maze_cells": 44
+    },
+    {
+      "net": "/ENABLE_CMD",
+      "from": "J2.9",
+      "to": "R11.1",
+      "maze_cells": 245
+    },
+    {
+      "net": "/ENABLE_DRV",
+      "from": "J5.3",
+      "to": "R8.1",
+      "maze_cells": 59
+    },
+    {
+      "net": "/ENABLE_DRV",
+      "from": "R8.1",
+      "to": "R11.2",
+      "maze_cells": 37
+    },
+    {
+      "net": "/ENC_A",
+      "from": "C3.1",
+      "to": "D3.2",
+      "maze_cells": 28
+    },
+    {
+      "net": "/ENC_A",
+      "from": "D3.2",
+      "to": "D4.1",
+      "maze_cells": 25
+    },
+    {
+      "net": "/ENC_A",
+      "from": "D3.2",
+      "to": "R2.2",
+      "maze_cells": 47
+    },
+    {
+      "net": "/ENC_A",
+      "from": "C3.1",
+      "to": "J2.3",
+      "maze_cells": 185
+    },
+    {
+      "net": "/ENC_A_RAW",
+      "from": "J3.3",
+      "to": "R2.1",
+      "maze_cells": 81
+    },
+    {
+      "net": "/ENC_B",
+      "from": "C4.1",
+      "to": "D5.2",
+      "maze_cells": 28
+    },
+    {
+      "net": "/ENC_B",
+      "from": "D5.2",
+      "to": "D6.1",
+      "maze_cells": 25
+    },
+    {
+      "net": "/ENC_B",
+      "from": "D5.2",
+      "to": "R3.2",
+      "maze_cells": 47
+    },
+    {
+      "net": "/ENC_B",
+      "from": "C4.1",
+      "to": "J2.4",
+      "maze_cells": 185
+    },
+    {
+      "net": "/ENC_B_RAW",
+      "from": "J3.4",
+      "to": "R3.1",
+      "maze_cells": 81
+    },
+    {
+      "net": "/ENC_Z",
+      "from": "C5.1",
+      "to": "D7.2",
+      "maze_cells": 28
+    },
+    {
+      "net": "/ENC_Z",
+      "from": "D7.2",
+      "to": "D8.1",
+      "maze_cells": 25
+    },
+    {
+      "net": "/ENC_Z",
+      "from": "D7.2",
+      "to": "R4.2",
+      "maze_cells": 47
+    },
+    {
+      "net": "/ENC_Z",
+      "from": "C5.1",
+      "to": "J2.5",
+      "maze_cells": 185
+    },
+    {
+      "net": "/ENC_Z_RAW",
+      "from": "J3.5",
+      "to": "R4.1",
+      "maze_cells": 81
+    },
+    {
+      "net": "/ESTOP_MON_N",
+      "from": "J2.14",
+      "to": "J7.1",
+      "maze_cells": 89
+    },
+    {
+      "net": "/ESTOP_MON_N",
+      "from": "J7.1",
+      "to": "R7.2",
+      "maze_cells": 29
+    },
+    {
+      "net": "/LED_A",
+      "from": "D2.2",
+      "to": "R1.2",
+      "maze_cells": 23
+    },
+    {
+      "net": "/LIMIT_N",
+      "from": "C6.1",
+      "to": "D9.2",
+      "maze_cells": 36
+    },
+    {
+      "net": "/LIMIT_N",
+      "from": "D9.2",
+      "to": "D10.1",
+      "maze_cells": 21
+    },
+    {
+      "net": "/LIMIT_N",
+      "from": "D9.2",
+      "to": "R6.2",
+      "maze_cells": 25
+    },
+    {
+      "net": "/LIMIT_N",
+      "from": "R6.2",
+      "to": "R5.2",
+      "maze_cells": 29
+    },
+    {
+      "net": "/LIMIT_N",
+      "from": "C6.1",
+      "to": "J2.6",
+      "maze_cells": 185
+    },
+    {
+      "net": "/LIMIT_RAW",
+      "from": "J4.1",
+      "to": "R5.1",
+      "maze_cells": 81
+    },
+    {
+      "net": "/RS485_A",
+      "from": "J6.1",
+      "to": "R16.1",
+      "maze_cells": 19
+    },
+    {
+      "net": "/RS485_A",
+      "from": "U2.6",
+      "to": "R14.2",
+      "maze_cells": 79
+    },
+    {
+      "net": "/RS485_B",
+      "from": "J6.2",
+      "to": "JP1.2",
+      "maze_cells": 17
+    },
+    {
+      "net": "/RS485_B",
+      "from": "J6.2",
+      "to": "R15.1",
+      "maze_cells": 38
+    },
+    {
+      "net": "/RS485_DIR",
+      "from": "J2.13",
+      "to": "R13.1",
+      "maze_cells": 169
+    },
+    {
+      "net": "/RS485_DIR",
+      "from": "R13.1",
+      "to": "U2.3",
+      "maze_cells": 23
+    },
+    {
+      "net": "/RS485_DIR",
+      "from": "U2.3",
+      "to": "U2.2",
+      "maze_cells": 7
+    },
+    {
+      "net": "/STEP_CMD",
+      "from": "J2.7",
+      "to": "R9.1",
+      "maze_cells": 246
+    },
+    {
+      "net": "/STEP_DRV",
+      "from": "J5.1",
+      "to": "R9.2",
+      "maze_cells": 93
+    },
+    {
+      "net": "/TERM_LINK",
+      "from": "JP1.1",
+      "to": "R16.2",
+      "maze_cells": 14
+    },
+    {
+      "net": "/UART_RX",
+      "from": "J2.12",
+      "to": "U2.1",
+      "maze_cells": 187
+    },
+    {
+      "net": "/UART_TX",
+      "from": "J2.11",
+      "to": "U2.4",
+      "maze_cells": 216
+    }
+  ],
+  "paired_bus_main_route_lengths_mm": {
+    "RS485_A": 28.961067811865476,
+    "RS485_B": 31.417901140947343
+  },
+  "authority": "Native KiCad DRC and schematic parity, not this generation manifest"
+}

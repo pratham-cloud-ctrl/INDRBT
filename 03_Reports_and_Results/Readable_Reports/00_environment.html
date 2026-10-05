@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>00_environment</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Environment audit — 2026-10-05</h1>
+<p>Audit performed before geometry implementation. No system CAD application was installed or replaced.</p>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Observed availability</th>
+<th>Project use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td>3.12.14, working isolated virtual environment</td>
+<td>Numerical software, analyses and Build123d</td>
+</tr>
+<tr>
+<td>Git</td>
+<td>2.53.0.windows.3</td>
+<td>Coherent development milestones</td>
+</tr>
+<tr>
+<td>GitHub CLI</td>
+<td>Authenticated account; repository scope available</td>
+<td>Private project publication</td>
+</tr>
+<tr>
+<td>Build123d</td>
+<td>Initially absent from discovered Python environments; 0.13.0 installed in project environment</td>
+<td>Reproducible BRep, STEP and STL</td>
+</tr>
+<tr>
+<td>OpenSCAD</td>
+<td>2021.01 command line verified</td>
+<td>Available; unnecessary duplicate geometry avoided</td>
+</tr>
+<tr>
+<td>FreeCAD</td>
+<td>1.1.4 installation found, command-line executable available</td>
+<td>Independent STEP inspection</td>
+</tr>
+<tr>
+<td>KiCad</td>
+<td>CLI 10.0.6 verified</td>
+<td>Native conceptual schematic/PCB, netlist, ERC/DRC and fabrication exports</td>
+</tr>
+<tr>
+<td>Blender</td>
+<td>Existing executable found</td>
+<td>Available for CAD visualization</td>
+</tr>
+<tr>
+<td>NumPy/SciPy</td>
+<td>2.5.3 / 1.18.1</td>
+<td>Transforms, bounded least-squares IK and analysis</td>
+</tr>
+<tr>
+<td>Matplotlib</td>
+<td>3.11.2</td>
+<td>Reproducible scientific plots</td>
+</tr>
+<tr>
+<td>pytest / Ruff</td>
+<td>9.1.1 / 0.16.10</td>
+<td>Numerical tests and code checks</td>
+</tr>
+</tbody>
+</table>
+<p><code>pip check</code> returned <strong>No broken requirements found</strong> after dependency installation. The final dependency snapshot is <code>requirements-lock.txt</code>. The bundled Python was selected instead of the Windows Store alias. Existing application paths were discovered from installation records; scripts expose command-line overrides instead of requiring another machine to reproduce those paths.</p>
+<p>The selected toolchain is Python + Build123d/OpenCascade + SciPy + Matplotlib + KiCad CLI. Analytical beam calculations are used in place of unsupported FEA. Tests and reports distinguish available software from actions actually performed.</p></main></html>

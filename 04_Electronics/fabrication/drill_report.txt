@@ -1,0 +1,26 @@
+Drill report for joint_interface.kicad_pcb
+Created on 2026-10-05T11:16:00
+
+Copper Layer Stackup:
+    =============================================================
+    L1 :  F.Cu                      front
+    L2 :  In1.Cu                    in1
+    L3 :  In2.Cu                    in2
+    L4 :  B.Cu                      back
+
+
+Drill file 'joint_interface-PTH.drl' contains
+    plated through holes:
+    =============================================================
+    T1  0.300mm  0.0118"  (32 holes))
+    T2  1.000mm  0.0394"  (36 holes))
+
+    Total plated holes count 68
+
+
+Drill file 'joint_interface-NPTH.drl' contains
+    unplated through holes:
+    =============================================================
+    T1  3.200mm  0.1260"  (4 holes))
+
+    Total unplated holes count 4

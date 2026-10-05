@@ -1,0 +1,696 @@
+{
+  "status": "PASS",
+  "trajectory_sha256": "5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c",
+  "source_sha256": {
+    "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+    "geometry.py": "983a22b813ac271c5f6f9c878055c156863b9d1603d445a1753a05f25436ccfb"
+  },
+  "samples_checked": 75,
+  "trajectory_samples": 1041,
+  "all_component_pair_classifications": 107325,
+  "aabb_disjoint_pairs": 87290,
+  "same_rigid_family_pairs_excluded": 14100,
+  "exact_brep_pair_checks": 5935,
+  "minimum_moving_geometry_height_mm": 22.3097259665834,
+  "max_selected_pair_overlap_mm3": 0.0,
+  "max_all_pair_overlap_mm3": 0.0,
+  "failures": [],
+  "samples": [
+    {
+      "sample": 0,
+      "time_s": 0.0,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 37,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 16,
+      "time_s": 0.11745281459254825,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 41,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 32,
+      "time_s": 0.2349056291850965,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 43,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 49,
+      "time_s": 0.359699244689679,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 60,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 65,
+      "time_s": 0.47715205928222726,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 77,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 81,
+      "time_s": 0.5946048738747756,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 97,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 98,
+      "time_s": 0.719398489379358,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 110,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 114,
+      "time_s": 0.8368513039719063,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 107.26011955841913,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 109,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 130,
+      "time_s": 0.9543041185644545,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 96.34159316380196,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 101,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 146,
+      "time_s": 1.0717569331570027,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.0340488770073,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 94,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 162,
+      "time_s": 1.1892097477495511,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 91.52111113843972,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 88,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 179,
+      "time_s": 1.3140033632541335,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.08489431875743,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 89,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 195,
+      "time_s": 1.4314561778466819,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.30602504321257,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 89,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 200,
+      "time_s": 1.468160182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.30972596597215,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 211,
+      "time_s": 1.579260182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 91.52499232397037,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 228,
+      "time_s": 1.7509601824068532,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 82.67437850866952,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 244,
+      "time_s": 1.9125601824068532,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 65.1094525579936,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 260,
+      "time_s": 2.074160182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 44.53052596600991,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 86,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 276,
+      "time_s": 2.235760182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 28.837308173137767,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 85,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 292,
+      "time_s": 2.397360182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.626494222025904,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 84,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 300,
+      "time_s": 2.478160182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.3097259665834,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 84,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 309,
+      "time_s": 2.703160182406853,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.3097259665834,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 84,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 310,
+      "time_s": 2.728160182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 22.309725966583514,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 84,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 320,
+      "time_s": 2.978160182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 22.309725966583514,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 84,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 325,
+      "time_s": 3.028660182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 22.390794716582793,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 84,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 341,
+      "time_s": 3.190260182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 26.921907707197512,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 85,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 358,
+      "time_s": 3.361960182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 42.15407502242583,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 86,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 374,
+      "time_s": 3.523560182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 62.537368974263764,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 390,
+      "time_s": 3.685160182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 80.89412595848181,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 406,
+      "time_s": 3.846760182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 90.76970535794223,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 420,
+      "time_s": 3.988160182406853,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596533292,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 422,
+      "time_s": 4.00083677442914,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596533292,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 87,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 439,
+      "time_s": 4.108587806618584,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596533769,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 86,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 455,
+      "time_s": 4.210000542796884,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596535884,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 85,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 471,
+      "time_s": 4.311413278975183,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596540238,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 83,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 488,
+      "time_s": 4.419164311164628,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596547305,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 77,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 504,
+      "time_s": 4.520577047342927,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596555758,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 64,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 520,
+      "time_s": 4.621989783521227,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.3097259656517,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 39,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 536,
+      "time_s": 4.723402519699527,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596574551,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 62,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 552,
+      "time_s": 4.824815255877827,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596583024,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 71,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 569,
+      "time_s": 4.93256628806727,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596590095,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 75,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 585,
+      "time_s": 5.03397902424557,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596594448,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 77,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 601,
+      "time_s": 5.13539176042387,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596596561,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 618,
+      "time_s": 5.243142792613313,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.3097259659703,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 620,
+      "time_s": 5.255819384635601,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 92.30972596597032,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 634,
+      "time_s": 5.397219384635601,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 90.76970535795573,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 650,
+      "time_s": 5.558819384635601,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 80.89412596597953,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 666,
+      "time_s": 5.720419384635601,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 62.53736897399442,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 682,
+      "time_s": 5.882019384635601,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 42.154075022011114,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 80,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 699,
+      "time_s": 6.053719384635602,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 26.921907707605612,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 715,
+      "time_s": 6.215319384635602,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 22.39079471602753,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 720,
+      "time_s": 6.265819384635601,
+      "gripper_opening_mm": 28.0,
+      "moving_geometry_min_z_mm": 22.30972596658367,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 730,
+      "time_s": 6.515819384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.309725966583557,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 731,
+      "time_s": 6.5408193846356015,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.309725966583557,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 740,
+      "time_s": 6.765819384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.309725966583557,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 748,
+      "time_s": 6.846619384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 22.626494222579908,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 78,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 764,
+      "time_s": 7.008219384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 28.83730817160599,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 780,
+      "time_s": 7.169819384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 44.53052596640693,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 80,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 796,
+      "time_s": 7.331419384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 65.10945255824345,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 812,
+      "time_s": 7.493019384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 82.67437850462714,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 829,
+      "time_s": 7.664719384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 91.52499232401456,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 840,
+      "time_s": 7.775819384635601,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.30972596532149,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 79,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 845,
+      "time_s": 7.8125233891957615,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.30602504256555,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 81,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 861,
+      "time_s": 7.929976203788276,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.08489431811593,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 81,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 878,
+      "time_s": 8.054769819292822,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 91.52111113782139,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 80,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 894,
+      "time_s": 8.172222633885337,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 92.03404887643234,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 86,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 910,
+      "time_s": 8.28967544847785,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 96.34159316329189,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 93,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 926,
+      "time_s": 8.407128263070364,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 107.26011955799254,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 101,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 942,
+      "time_s": 8.524581077662878,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 104,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 959,
+      "time_s": 8.649374693167424,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 95,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 975,
+      "time_s": 8.766827507759938,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 75,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 991,
+      "time_s": 8.884280322352453,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 60,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 1008,
+      "time_s": 9.009073937856998,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 43,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 1024,
+      "time_s": 9.126526752449513,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 41,
+      "max_selected_pair_overlap_mm3": 0.0
+    },
+    {
+      "sample": 1040,
+      "time_s": 9.243979567042027,
+      "gripper_opening_mm": 90.0,
+      "moving_geometry_min_z_mm": 110.0,
+      "component_pairs_classified": 1431,
+      "exact_brep_pair_checks": 37,
+      "max_selected_pair_overlap_mm3": 0.0
+    }
+  ],
+  "scope": "65 uniform samples plus every phase boundary and gripper event; every component pair is classified. Adjacent joints are included, and each moving jaw is distinct from the gripper body. Disjoint AABBs reject impossible intersections; all remaining pairs use exact BRep common volume. Ground height uses transformed BRep bounding boxes. Gripper event openings are checked, with additional closed/mid/open checks in cad_assembly_clearance.json. This finite task screening is not a continuous swept proof, validation of every joint-limit combination, or physical safety certification."
+}

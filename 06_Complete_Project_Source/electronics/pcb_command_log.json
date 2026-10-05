@@ -1,0 +1,256 @@
+[
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "drc",
+      "joint_interface.kicad_pcb",
+      "--format",
+      "json",
+      "--all-track-errors",
+      "--schematic-parity",
+      "--severity-all",
+      "--exit-code-violations",
+      "--refill-zones",
+      "--save-board",
+      "-o",
+      "pcb_drc_report.json"
+    ],
+    "exit_code": 0,
+    "output": "Found 0 violations\nFound 0 unconnected items\nFound 0 schematic parity issues\nSaved DRC Report to pcb_drc_report.json\nSaved board"
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "gerbers",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Mask,B.Mask,F.Silkscreen,B.Silkscreen,F.Paste,Edge.Cuts",
+      "--check-zones",
+      "-o",
+      "fabrication/"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'fabrication\\joint_interface-F_Cu.gtl'.\nPlotted to 'fabrication\\joint_interface-In1_Cu.g1'.\nPlotted to 'fabrication\\joint_interface-In2_Cu.g2'.\nPlotted to 'fabrication\\joint_interface-B_Cu.gbl'.\nPlotted to 'fabrication\\joint_interface-F_Paste.gtp'.\nPlotted to 'fabrication\\joint_interface-F_Silkscreen.gto'.\nPlotted to 'fabrication\\joint_interface-B_Silkscreen.gbo'.\nPlotted to 'fabrication\\joint_interface-F_Mask.gts'.\nPlotted to 'fabrication\\joint_interface-B_Mask.gbs'.\nPlotted to 'fabrication\\joint_interface-Edge_Cuts.gm1'."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "drill",
+      "joint_interface.kicad_pcb",
+      "--format",
+      "excellon",
+      "--excellon-units",
+      "mm",
+      "--excellon-separate-th",
+      "--generate-map",
+      "--map-format",
+      "pdf",
+      "--generate-report",
+      "--report-path",
+      "fabrication/drill_report.txt",
+      "-o",
+      "fabrication/"
+    ],
+    "exit_code": 0,
+    "output": "Created file 'fabrication\\joint_interface-PTH.drl'\nCreated file 'fabrication\\joint_interface-NPTH.drl'\nCreated file 'fabrication\\joint_interface-PTH-drl_map.pdf'.\nCreated file 'fabrication\\joint_interface-NPTH-drl_map.pdf'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "pos",
+      "joint_interface.kicad_pcb",
+      "--format",
+      "csv",
+      "--units",
+      "mm",
+      "--side",
+      "both",
+      "--exclude-dnp",
+      "-o",
+      "fabrication/assembly_positions.csv"
+    ],
+    "exit_code": 0,
+    "output": "Wrote position data to 'fabrication\\assembly_positions.csv'."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "ipcd356",
+      "joint_interface.kicad_pcb",
+      "-o",
+      "fabrication/joint_interface.d356"
+    ],
+    "exit_code": 0,
+    "output": "Successfully created IPC-D-356 file"
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "svg",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "F.Cu,F.Silkscreen,Edge.Cuts",
+      "--mode-single",
+      "--fit-page-to-board",
+      "--exclude-drawing-sheet",
+      "-o",
+      "exports/pcb_top.svg"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'exports\\pcb_top.svg'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "svg",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "B.Cu,B.Silkscreen,Edge.Cuts",
+      "--mode-single",
+      "--fit-page-to-board",
+      "--exclude-drawing-sheet",
+      "-o",
+      "exports/pcb_bottom.svg"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'exports\\pcb_bottom.svg'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "svg",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "In1.Cu,Edge.Cuts",
+      "--mode-single",
+      "--fit-page-to-board",
+      "--exclude-drawing-sheet",
+      "-o",
+      "exports/pcb_ground_plane.svg"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'exports\\pcb_ground_plane.svg'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "svg",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "In2.Cu,Edge.Cuts",
+      "--mode-single",
+      "--fit-page-to-board",
+      "--exclude-drawing-sheet",
+      "-o",
+      "exports/pcb_power_plane.svg"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'exports\\pcb_power_plane.svg'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "svg",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "F.Fab,F.Silkscreen,Edge.Cuts",
+      "--mode-single",
+      "--fit-page-to-board",
+      "--exclude-drawing-sheet",
+      "-o",
+      "exports/pcb_assembly.svg"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'exports\\pcb_assembly.svg'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "export",
+      "pdf",
+      "joint_interface.kicad_pcb",
+      "--layers",
+      "F.Cu,In1.Cu,In2.Cu,B.Cu,F.Fab,F.Silkscreen",
+      "--common-layers",
+      "Edge.Cuts",
+      "--mode-multipage",
+      "--exclude-value",
+      "--no-property-popups",
+      "--black-and-white",
+      "-o",
+      "exports/pcb_layers.pdf"
+    ],
+    "exit_code": 0,
+    "output": "Plotted to 'exports\\pcb_layers.pdf'.\nDone."
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "render",
+      "joint_interface.kicad_pcb",
+      "--width",
+      "1800",
+      "--height",
+      "1500",
+      "--quality",
+      "high",
+      "--background",
+      "opaque",
+      "--rotate",
+      "30,0,15",
+      "--side",
+      "top",
+      "--zoom",
+      "0.72",
+      "-o",
+      "exports/pcb_3d.png"
+    ],
+    "exit_code": 0,
+    "output": "Loading\u00e2\u20ac\u00a6\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 1.375 s\nRendering: 8 \nRendering: 15 \nRendering: 18 \nRendering: 21 \nRendering: 24 \nRendering: 27 \nRendering: 30 \nRendering: 33 \nRendering: 39 \nRendering: 43 \nRendering: 48 \nRendering: 53 \nRendering: 56 \nRendering: 59 \nRendering: 63 \nRendering: 68 \nRendering: 73 \nRendering: 78 \nRendering: 81 \nRendering: 84 \nRendering: 88 \nRendering: 92 \nRendering: 97 \nRendering: 100 \nRendering: Post processing shader\nRendering time 18.777 s\nSuccessfully created 3D render image"
+  },
+  {
+    "command": [
+      "<kicad-cli>",
+      "pcb",
+      "render",
+      "joint_interface.kicad_pcb",
+      "--width",
+      "1800",
+      "--height",
+      "1800",
+      "--quality",
+      "basic",
+      "--background",
+      "opaque",
+      "--side",
+      "top",
+      "--zoom",
+      "0.80",
+      "-o",
+      "exports/pcb_top.png"
+    ],
+    "exit_code": 0,
+    "output": "Loading\u00e2\u20ac\u00a6\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.284 s\nRendering: 82 \nRendering: 100 \nRendering time 0.927 s\nSuccessfully created 3D render image"
+  }
+]

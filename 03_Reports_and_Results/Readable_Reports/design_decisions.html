@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>design_decisions</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Design decisions</h1>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Reason</th>
+<th>Alternative / tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python and Build123d primary CAD</td>
+<td>Same language as analysis; explicit parametric BRep export</td>
+<td>Manual CAD harder to regenerate; OpenSCAD duplicates geometry</td>
+</tr>
+<tr>
+<td>Original Z-Y-Y-X-Y-X chain</td>
+<td>Two positioning links and three wrist rotations; all transforms inspectable</td>
+<td>Offset wrist gives orientation-dependent reach and numerical IK complexity</td>
+</tr>
+<tr>
+<td>320/280 mm link lengths</td>
+<td>Near-balanced position workspace with reduced distal span</td>
+<td>Longer forearm increases elbow torque and inertia</td>
+</tr>
+<tr>
+<td>Hollow aluminum links and service covers</td>
+<td>Lower structural mass with accessible cabling and actuator interfaces</td>
+<td>Simplified exterior does not specify complete manufacturing tolerances</td>
+</tr>
+<tr>
+<td>Numerical bounded IK with SO(3) residual</td>
+<td>Handles this non-spherical offset wrist and joint limits</td>
+<td>Local convergence; multiple starts improve robustness without completeness proof</td>
+</tr>
+<tr>
+<td>Quintic default joint motion</td>
+<td>Rest-to-rest velocity and acceleration endpoints</td>
+<td>Linear interpolation has endpoint velocity discontinuity; educational comparison only</td>
+</tr>
+<tr>
+<td>Opposed lead-screw nuts for gripper</td>
+<td>Symmetric positive jaw travel, simple force/lead calculation</td>
+<td>Backlash, efficiency, wear and actual threads remain conceptual</td>
+</tr>
+<tr>
+<td>Explicit lumped drive masses</td>
+<td>Exterior CAD does not model copper, magnet, bearing and gear internals</td>
+<td>CAD material volume is reported separately, not silently substituted</td>
+</tr>
+<tr>
+<td>Analytical beam model</td>
+<td>Transparent calculations reproducible without pretending FEA</td>
+<td>Does not resolve contact, holes, bearings, fasteners or fatigue</td>
+</tr>
+<tr>
+<td>Diagonal inertia/damping PID model</td>
+<td>Clear feedback and saturation experiment</td>
+<td>No claim of full manipulator dynamics or physically tuned gains</td>
+</tr>
+<tr>
+<td>Low-voltage joint/sensor interface</td>
+<td>Useful meaningful electronics scope without fictional power inverter</td>
+<td>External controller and certified drive still required</td>
+</tr>
+<tr>
+<td>Four-layer conceptual interface PCB</td>
+<td>Separate inner ground/3.3 V planes and outer signal layers simplify returns and routing</td>
+<td>Greater fabrication complexity than a two-layer board; no EMC or physical qualification claim</td>
+</tr>
+<tr>
+<td>Full-pair representative CAD screening</td>
+<td>Selected pairs missed adjacent shoulder/wrist interfaces; broader classifications and exact intersections found the real defects</td>
+<td>Sampled configurations still do not certify every continuous joint motion</td>
+</tr>
+<tr>
+<td>Numbered presentation folders and retained source subtree</td>
+<td>User can find models, reports and electronics together while reproduction scripts retain their source-relative paths</td>
+<td>Presentation copies must be refreshed and hash-checked after regeneration</td>
+</tr>
+<tr>
+<td>Private GitHub publication</td>
+<td>Publication authorized; public visibility not specified</td>
+<td>User may later choose public visibility</td>
+</tr>
+</tbody>
+</table>
+<p>The journal records actual iterations and failures. The validation matrix marks partial evidence explicitly.</p></main></html>

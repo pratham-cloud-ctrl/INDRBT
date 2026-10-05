@@ -1,0 +1,181 @@
+{
+  "status": "PASS",
+  "kicad_version": "10.0.6",
+  "footprint_count": 48,
+  "schematic_footprint_count": 44,
+  "mechanical_footprint_count": 4,
+  "net_count": 28,
+  "total_net_count_including_nc": 29,
+  "pin_assignments_checked": 118,
+  "physical_pad_nets_checked_including_nc": 119,
+  "track_count": 265,
+  "via_count": 32,
+  "board_dimensions_mm": [
+    100.0,
+    100.0
+  ],
+  "copper_layers": 4,
+  "copper_layer_names": [
+    "F.Cu",
+    "In1.Cu",
+    "In2.Cu",
+    "B.Cu"
+  ],
+  "filled_plane_count": 2,
+  "footprints_with_courtyard": 48,
+  "native_drc_errors": 0,
+  "native_drc_warnings": 0,
+  "native_drc_violations": 0,
+  "unconnected_items": 0,
+  "schematic_parity": "PASS",
+  "schematic_parity_issues": 0,
+  "native_drc_included_severities": [
+    "error",
+    "warning",
+    "exclusion"
+  ],
+  "native_drc_factory_ignored_checks": [
+    {
+      "description": "Footprint has no courtyard defined",
+      "key": "missing_courtyard"
+    },
+    {
+      "description": "Track endpoint not centered on via",
+      "key": "track_not_centered_on_via"
+    },
+    {
+      "description": "Tuning profile track geometries",
+      "key": "tuning_profile_track_geometries"
+    },
+    {
+      "description": "Footprint doesn't match symbol's footprint filters",
+      "key": "footprint_filters_mismatch"
+    },
+    {
+      "description": "Footprint component type doesn't match footprint pads",
+      "key": "footprint_type_mismatch"
+    }
+  ],
+  "drc_exclusions": [],
+  "rule_severity_overrides": {},
+  "fabrication_rules_mm": {
+    "max_error": 0.005,
+    "min_clearance": 0.2,
+    "min_connection": 0.0,
+    "min_copper_edge_clearance": 0.5,
+    "min_groove_width": 0.0,
+    "min_hole_clearance": 0.25,
+    "min_hole_to_hole": 0.25,
+    "min_microvia_diameter": 0.2,
+    "min_microvia_drill": 0.1,
+    "min_resolved_spokes": 2,
+    "min_silk_clearance": 0.15,
+    "min_text_height": 0.8,
+    "min_text_thickness": 0.12,
+    "min_through_hole_diameter": 0.3,
+    "min_track_width": 0.2,
+    "min_via_annular_width": 0.15,
+    "min_via_diameter": 0.6,
+    "solder_mask_to_copper_clearance": 0.0,
+    "use_height_for_length_calcs": true
+  },
+  "independent_footprint_filter_review": {
+    "wildcard_matches": 43,
+    "lexical_mismatches": [
+      {
+        "reference": "F1",
+        "footprint": "Fuse:Fuse_1206_3216Metric",
+        "symbol_filters": [
+          "*polyfuse*",
+          "*PTC*"
+        ]
+      }
+    ],
+    "review": "F1 uses the generic 1206 fuse land pattern; the generic Polyfuse symbol suggests PTC/polyfuse names. Manufacturer 1206 package-family review is documented; exact purchasing/land-pattern approval remains required before fabrication."
+  },
+  "local_front_copper_paths": {
+    "U2_supply_to_C7_mm": 3.5624479758950356,
+    "RS485_A_main_mm": 28.961067811865476,
+    "RS485_B_main_mm": 31.417901140947343,
+    "RS485_main_length_difference_mm": 2.456833329081867
+  },
+  "source_sha256": {
+    "joint_interface.kicad_pcb": "ce9293102ce394bf62b4e174e0157465b29dc67145abab6e553891fbd9d1fb12",
+    "joint_interface.kicad_sch": "7f99b40fd1417a818cefd2027fa9560cf0b34d627be2756f42b23ae65d4229da",
+    "joint_interface.kicad_pro": "bc41665c0ea688b123185d24c5e0d5be3fbe04e953cc8b8692368e6923af9a08",
+    "joint_interface.kicad_dru": "72afecaf275113ea1933885f575e19720a433f4028c2282d8bdac265d51b80cd",
+    "joint_interface.net.xml": "e5210dd1b0bb75c1825913ad6e7c9f6cfb9fe2355b71ffafeae987535ac4672f",
+    "pin_contract.json": "9319a0ab030ed6c6f23250f0a20d1630e8c1ca1e46b8c14651aaf8f937aa55af",
+    "pcb_routing_manifest.json": "b33b8a70af7216561cab2965dc638c5e02ae46cf865ca56ccd74ed324a71256e",
+    "pcb_drc_report.json": "66c44b360ae974204b703b71150ff28f16a0ae69007c85395af57104aa42d106",
+    "fp-lib-table": "e1f42b22b641d6bd10c025611770ace751b8eb40d6004d24a1731d5069ba2f97",
+    "bom.csv": "e86ea0673a8ac099fec46d80b3b05a9a6d9734c253bee90698eb21249dc72396"
+  },
+  "scope": "Native PCB geometry, enabled default DRC plus explicit fabrication constraints, schematic parity and independent pad/net audit. No fabricated board, measured EMC/thermal/timing/ESD performance or functional-safety qualification.",
+  "native_drc_exit_code": 0,
+  "drc_command": [
+    "<kicad-cli>",
+    "pcb",
+    "drc",
+    "joint_interface.kicad_pcb",
+    "--format",
+    "json",
+    "--all-track-errors",
+    "--schematic-parity",
+    "--severity-all",
+    "--exit-code-violations",
+    "--refill-zones",
+    "--save-board",
+    "-o",
+    "pcb_drc_report.json"
+  ],
+  "fabrication_exports": {
+    "status": "PASS",
+    "gerber_layer_file_count": 10,
+    "excellon_file_count": 2,
+    "file_sha256": {
+      "fabrication/assembly_positions.csv": "d9c3612008b2cbb500ca962d9203fe9f429281f48ef61c01054e2187d5ec8139",
+      "fabrication/drill_report.txt": "beb241796ad58c84b88fa4a73b4e390075b0214030840e07b87b4f28093593b6",
+      "fabrication/joint_interface-B_Cu.gbl": "1f0d09668b219bb04702838c6213c6d4e5f80503d141e96e0f38bed5c77d4416",
+      "fabrication/joint_interface-B_Mask.gbs": "074cb3a23db204a07d65096992bed950bfbd7dd13a0055c57622c68925f5cabf",
+      "fabrication/joint_interface-B_Silkscreen.gbo": "fe5fe642cb3460463b0b54de1fa3fdc25ac6fac8df00da75890c885679278d6e",
+      "fabrication/joint_interface-Edge_Cuts.gm1": "c95aec8382fd9021bc2d04397416784eae8c935fdce22ae1e98052daf94ad9f2",
+      "fabrication/joint_interface-F_Cu.gtl": "042cbfc4faba13b4275dff057aab84a8d35b42bac821b3316c1d990b0d0c4466",
+      "fabrication/joint_interface-F_Mask.gts": "f88b835c354444ed5346a8792fc1c463ffb63f55377da361ea67c023f7b8e7c4",
+      "fabrication/joint_interface-F_Paste.gtp": "720444a417ab15c7c97aee586cc2e8dbd64832e0c7e0fbb3edde0feb1809960c",
+      "fabrication/joint_interface-F_Silkscreen.gto": "546d087e995c861d2c4dad479f262434ed6d68bd378230dffe805807b3c28ab6",
+      "fabrication/joint_interface-In1_Cu.g1": "da0601859ed3a9f99e522e929205fdc31b0a721517ccc2267a37fa1d65b021a8",
+      "fabrication/joint_interface-In2_Cu.g2": "ac8438e0f2beb201a95cd94d48f864319a6fc7dee5e66824b79b1f35f0f419ab",
+      "fabrication/joint_interface-job.gbrjob": "64d38c0e0a32c0719a5ba632fe168515fb70678bb8fd717a4ca77802adcb5e04",
+      "fabrication/joint_interface-NPTH-drl_map.pdf": "4655e5d0783345f7c49007bc1d028c4b21f71d0caa58da084f06cc9ab8e310d0",
+      "fabrication/joint_interface-NPTH.drl": "244011c3ace4b5bb219c8f372a3913da85ecac5679f0de08f62229c82d91858b",
+      "fabrication/joint_interface-PTH-drl_map.pdf": "efdc59f8ea5977ebab511778fc87eedaca962a6ab67d76e405f24f358a1286e9",
+      "fabrication/joint_interface-PTH.drl": "a162c66937033294df3a6fded1c611d88f2b9c84598e7f522feced88936b2915",
+      "fabrication/joint_interface.d356": "90c6bec228df53644c5a443833588194d053076a7b5c8c86d7453992539aa07b",
+      "fabrication/joint_interface_fabrication.zip": "de2ca03ca74f4b61152d633697ba470f73a03589983ce5ae3d639708f46d1f7a"
+    },
+    "scope": "Native export success and nonempty layer/drill checks; manufacturer CAM approval and assembly qualification are not performed."
+  },
+  "review_exports": [
+    "exports/pcb_3d.png",
+    "exports/pcb_assembly.svg",
+    "exports/pcb_bottom.svg",
+    "exports/pcb_ground_plane.svg",
+    "exports/pcb_layers.pdf",
+    "exports/pcb_power_plane.svg",
+    "exports/pcb_top.png",
+    "exports/pcb_top.svg"
+  ],
+  "review_export_sha256": {
+    "exports/pcb_3d.png": "429fa7432c29f78d089cd422953a43b54b7bf84cb22267628c91996287388745",
+    "exports/pcb_assembly.svg": "98428e3774cb50ec6c89a35b60041866f26e30e5ff32e93422bb5ff46a652263",
+    "exports/pcb_bottom.svg": "83567e95bb8ff98e04d40d519a00523769e84625a37d86ef15d7fa9b115ca67a",
+    "exports/pcb_ground_plane.svg": "90fe8258d724735dd05ba877827b03ac1c48f33d9f0990c6d83b685df106e1ba",
+    "exports/pcb_layers.pdf": "0569a638af9b6b0d43b7f4a1a66d451e1ad945f4ef4bda029932e43c52f175f4",
+    "exports/pcb_power_plane.svg": "6b031fd1fd7a0b6a14d793d5ed5954386eaab7925540c87fcc92329687d99a75",
+    "exports/pcb_top.png": "bd245906a70b7589f6f4dfa727bc2a474784f803b695d9666b5f36438ee16038",
+    "exports/pcb_top.svg": "24f07d30de698cb51278bb391a96bfd7aa388a104a09ecb89caa758aa15fb7d6"
+  },
+  "review_render_refreshed": true,
+  "export_source_board_sha256": "ce9293102ce394bf62b4e174e0157465b29dc67145abab6e553891fbd9d1fb12"
+}

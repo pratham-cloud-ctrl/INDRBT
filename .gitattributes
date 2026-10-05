@@ -1,12 +1,3 @@
-* text=auto
-*.py text eol=lf
-*.md text eol=lf
-*.yaml text eol=lf
-*.toml text eol=lf
-*.json text eol=lf
-*.svg text eol=lf
-*.step -text
-*.stl -text
-*.png -text
-*.gif -text
-*.pdf -text
+# Validation and presentation manifests hash exact exported bytes.
+# Preserve these bytes across checkout platforms, including native KiCad files.
+* -text

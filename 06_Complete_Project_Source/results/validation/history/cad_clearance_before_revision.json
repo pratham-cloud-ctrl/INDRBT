@@ -1,0 +1,801 @@
+{
+  "status": "FAIL",
+  "source_sha256": {
+    "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+    "geometry.py": "37721aff7ed5022ba22354800e855f85784891aa74cf4b06866bbd4062e7bf41"
+  },
+  "component_count": 54,
+  "poses": {
+    "home": {
+      "status": "FAIL",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 184,
+      "aabb_disjoint_pairs": 1208,
+      "exact_brep_pair_checks": 39,
+      "interferences": [
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 107890.37108227865
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 22732.495823345736
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 86692.80186710226
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 50027.82621116337
+        },
+        {
+          "parts": [
+            "wrist_roll_stator",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 4574.158903626767
+        },
+        {
+          "parts": [
+            "j4_bearing_envelope",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 2721.404636172201
+        },
+        {
+          "parts": [
+            "wrist_roll_rotor",
+            "wrist_pitch_rotor"
+          ],
+          "motion_families": [
+            "j4",
+            "j5"
+          ],
+          "overlap_mm3": 14707.578460409377
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.070214850671
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.070214850671
+        }
+      ]
+    },
+    "extended": {
+      "status": "FAIL",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 184,
+      "aabb_disjoint_pairs": 1217,
+      "exact_brep_pair_checks": 30,
+      "interferences": [
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 107890.37113050507
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 22732.48630535088
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "upper_arm_hollow_link"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 7318.627665754511
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 86692.80186710226
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 50027.82621159459
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "upper_arm_hollow_link"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 2434.496907524778
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "upper_service_cover_-1"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 362.665926535898
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "upper_service_cover_+1"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 362.665926535898
+        },
+        {
+          "parts": [
+            "wrist_roll_stator",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 4574.158903626742
+        },
+        {
+          "parts": [
+            "j4_bearing_envelope",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 2721.4046361721576
+        },
+        {
+          "parts": [
+            "wrist_roll_rotor",
+            "wrist_pitch_rotor"
+          ],
+          "motion_families": [
+            "j4",
+            "j5"
+          ],
+          "overlap_mm3": 14707.602212230051
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.07021485067091
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.07021485067091
+        }
+      ]
+    },
+    "folded": {
+      "status": "FAIL",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 184,
+      "aabb_disjoint_pairs": 1210,
+      "exact_brep_pair_checks": 37,
+      "interferences": [
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 107890.33923609406
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 22732.486092516447
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 86692.80186710226
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 50027.82621115719
+        },
+        {
+          "parts": [
+            "wrist_roll_stator",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 4574.158903626761
+        },
+        {
+          "parts": [
+            "j4_bearing_envelope",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 2721.4046361721284
+        },
+        {
+          "parts": [
+            "wrist_roll_rotor",
+            "wrist_pitch_rotor"
+          ],
+          "motion_families": [
+            "j4",
+            "j5"
+          ],
+          "overlap_mm3": 14707.612138024879
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.0702148506715
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.0702148506715
+        }
+      ]
+    },
+    "vertical": {
+      "status": "FAIL",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 184,
+      "aabb_disjoint_pairs": 1223,
+      "exact_brep_pair_checks": 24,
+      "interferences": [
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 107890.36068206624
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 22732.48383771964
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 86692.80186710223
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 50027.82621158826
+        },
+        {
+          "parts": [
+            "wrist_roll_stator",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 4574.1589036267405
+        },
+        {
+          "parts": [
+            "j4_bearing_envelope",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 2721.404636172161
+        },
+        {
+          "parts": [
+            "wrist_roll_rotor",
+            "wrist_pitch_rotor"
+          ],
+          "motion_families": [
+            "j4",
+            "j5"
+          ],
+          "overlap_mm3": 14707.602177123266
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.07021485067096
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.07021485067096
+        }
+      ]
+    },
+    "pick": {
+      "status": "FAIL",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 184,
+      "aabb_disjoint_pairs": 1160,
+      "exact_brep_pair_checks": 87,
+      "interferences": [
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 107890.37109106185
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 22732.473260654577
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 86692.80186710227
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 50027.82621131368
+        },
+        {
+          "parts": [
+            "wrist_roll_stator",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 4574.158903626737
+        },
+        {
+          "parts": [
+            "j4_bearing_envelope",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 2721.4046361721375
+        },
+        {
+          "parts": [
+            "wrist_roll_rotor",
+            "wrist_pitch_rotor"
+          ],
+          "motion_families": [
+            "j4",
+            "j5"
+          ],
+          "overlap_mm3": 14707.553414485621
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.07021485067153
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.07021485067085
+        }
+      ]
+    },
+    "place": {
+      "status": "FAIL",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 184,
+      "aabb_disjoint_pairs": 1166,
+      "exact_brep_pair_checks": 81,
+      "interferences": [
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 107890.37113567311
+        },
+        {
+          "parts": [
+            "turret_neck",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 22732.473256679532
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_rotor"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 86692.80186710221
+        },
+        {
+          "parts": [
+            "turret_bridge",
+            "shoulder_output_shaft"
+          ],
+          "motion_families": [
+            "j1",
+            "j2"
+          ],
+          "overlap_mm3": 50027.8262119166
+        },
+        {
+          "parts": [
+            "wrist_roll_stator",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 4574.158903626631
+        },
+        {
+          "parts": [
+            "j4_bearing_envelope",
+            "wrist_roll_cover"
+          ],
+          "motion_families": [
+            "j3",
+            "j4"
+          ],
+          "overlap_mm3": 2721.4046361721375
+        },
+        {
+          "parts": [
+            "wrist_roll_rotor",
+            "wrist_pitch_rotor"
+          ],
+          "motion_families": [
+            "j4",
+            "j5"
+          ],
+          "overlap_mm3": 14707.553429765421
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.07021485067176
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.07021485067122
+        }
+      ]
+    }
+  },
+  "gripper_openings": {
+    "0_mm": {
+      "status": "FAIL",
+      "component_pairs": 91,
+      "same_rigid_family_pairs_excluded": 34,
+      "aabb_disjoint_pairs": 51,
+      "exact_brep_pair_checks": 6,
+      "interferences": [
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.070214850671
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.070214850671
+        }
+      ]
+    },
+    "45_mm": {
+      "status": "FAIL",
+      "component_pairs": 91,
+      "same_rigid_family_pairs_excluded": 34,
+      "aabb_disjoint_pairs": 51,
+      "exact_brep_pair_checks": 6,
+      "interferences": [
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.070214850671
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.070214850671
+        }
+      ]
+    },
+    "90_mm": {
+      "status": "FAIL",
+      "component_pairs": 91,
+      "same_rigid_family_pairs_excluded": 34,
+      "aabb_disjoint_pairs": 51,
+      "exact_brep_pair_checks": 6,
+      "interferences": [
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_-1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_negative"
+          ],
+          "overlap_mm3": 77.070214850671
+        },
+        {
+          "parts": [
+            "gripper_pocketed_body",
+            "gripper_jaw_carriage_+1"
+          ],
+          "motion_families": [
+            "j6",
+            "j6_jaw_positive"
+          ],
+          "overlap_mm3": 77.070214850671
+        }
+      ]
+    }
+  },
+  "all_component_pose_pair_classifications": 8586,
+  "exact_brep_pair_checks": 316,
+  "scope": "Every component pair at all six named poses, plus gripper closed/mid/open. Same rigid-motion families are excluded as assembled interfaces; no adjacent robot joint is excluded wholesale. All other pairs receive conservative AABB rejection or exact BRep common-volume testing. Finite pose screening does not certify all configurations, continuous motion, tolerance/preload, or physical safety.",
+  "penetration_threshold_mm3": 0.001
+}

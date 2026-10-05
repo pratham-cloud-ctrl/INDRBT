@@ -1,0 +1,19 @@
+ASTER-6 PROJECT
+
+Double-click OPEN_PROJECT_HOME.cmd for the visual project guide.
+Double-click OPEN_3D_VIEWER.cmd to see the robot in a browser.
+Double-click OPEN_FREECAD_MODEL.cmd to edit the assembly in FreeCAD.
+Double-click OPEN_PCB_LAYOUT.cmd to edit the routed board in KiCad.
+
+CAD files are not Word/text documents. The launchers explicitly select the correct installed applications.
+If you move the folder to another computer, open START_HERE.html in a web browser and open the FCStd file through FreeCAD File > Open.
+
+01_CAD_Models: assemblies, individual parts, drawings, renders and native models
+02_Simulation_and_Animation: interactive 3D viewer, trajectories, workspace and control results
+03_Reports_and_Results: readable reports, numerical data and validation
+04_Electronics: native schematic/PCB, views, fabrication exports and actual checks
+05_Reference_and_Project_Notes: index to authoritative documents and readable reports
+06_Complete_Project_Source: complete reproducible source; Git history belongs to the parent repository
+07_Releases: downloadable release ZIP; original preview retained in 07_Original_Release_Archive
+
+Presentation files are copies. Use 06_Complete_Project_Source for regeneration.

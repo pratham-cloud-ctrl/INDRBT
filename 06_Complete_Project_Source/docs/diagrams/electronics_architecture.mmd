@@ -1,0 +1,15 @@
+flowchart LR
+  Host[Trajectory planner / host] <-->|RS-485 conceptual| Bus[Shared A/B + GND bus]
+  Bus <-->|six joint nodes + gripper| Node[3.3 V MCU + joint interface]
+  Encoder[3.3 V quadrature encoder] -->|A/B/Z series RC + clamps| Node
+  Limit[NC limit switch] -->|filtered, open = fault| Node
+  Node -->|STEP / DIR / active-high ENABLE| Drive[External drive]
+  Drive --> Motor[Joint motor + gearbox]
+  Drive -->|open-drain fault| Node
+  Node --> Gripper[Gripper drive / symmetric lead screw]
+  Logic[Regulated 5 V supply] -->|fuse + reverse diode + 3.3 V LDO| Node
+  MotorPower[External 24/48 V actuator supply assumption] --> Contactor[Safety contactor / STO]
+  Contactor --> Drive
+  Estop[Independent E-stop] --> Relay[Independent safety relay concept]
+  Relay --> Contactor
+  Estop -. auxiliary NC monitor only .-> Node

@@ -1,0 +1,183 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>kpis</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1>Project KPIs</h1>
+<p>All figures are digital. Reconstruction error is an algorithm residual, not physical accuracy or repeatability.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Evidence class</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revolute DOF</td>
+<td>6</td>
+<td>VERIFIED DIGITALLY</td>
+<td>Transform model and tests</td>
+</tr>
+<tr>
+<td>Nominal shoulder-centred reach</td>
+<td>790 mm</td>
+<td>CALCULATED</td>
+<td>Geometry/FK</td>
+</tr>
+<tr>
+<td>Nominal TCP height at straight-up pose</td>
+<td>980 mm</td>
+<td>CALCULATED</td>
+<td>Geometry/FK; agrees with vertical CAD assembly</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>4.0 kg</td>
+<td>TARGET</td>
+<td>Design load assumption</td>
+</tr>
+<tr>
+<td>Repeatability</td>
+<td>±0.1 mm</td>
+<td>TARGET — NOT VERIFIED</td>
+<td>No physical measurement/no compliance model</td>
+</tr>
+<tr>
+<td>Manipulator mass</td>
+<td>23.65 kg</td>
+<td>ASSUMED</td>
+<td>Lumped load model</td>
+</tr>
+<tr>
+<td>Sum of CAD envelope material volumes × density</td>
+<td>19.952 kg</td>
+<td>CALCULATED</td>
+<td>Exterior geometry, overlaps/placeholder internals caveat</td>
+</tr>
+<tr>
+<td>Maximum FK closed-form discrepancy</td>
+<td>2.544e-16 m</td>
+<td>VERIFIED DIGITALLY</td>
+<td>60 independent planar trials</td>
+</tr>
+<tr>
+<td>Maximum FK–IK–FK position error</td>
+<td>2.700e-11 m</td>
+<td>VERIFIED DIGITALLY</td>
+<td>60 perturbed-seed trials</td>
+</tr>
+<tr>
+<td>Maximum IK orientation error</td>
+<td>6.504e-12 rad</td>
+<td>VERIFIED DIGITALLY</td>
+<td>SO(3) residual</td>
+</tr>
+<tr>
+<td>Maximum Jacobian finite-difference discrepancy</td>
+<td>2.517e-10</td>
+<td>VERIFIED DIGITALLY</td>
+<td>World linear/angular Jacobian; units by block</td>
+</tr>
+<tr>
+<td>Workspace samples</td>
+<td>6000</td>
+<td>SIMULATED</td>
+<td>Seed 260105</td>
+</tr>
+<tr>
+<td>Convex-hull envelope volume</td>
+<td>1.902506 m³</td>
+<td>SIMULATED — ENVELOPE ONLY</td>
+<td>Fills inaccessible holes; not reachable volume</td>
+</tr>
+<tr>
+<td>Pick/place duration</td>
+<td>9.24398 s</td>
+<td>SIMULATED</td>
+<td>1041 samples</td>
+</tr>
+<tr>
+<td>TCP path length</td>
+<td>1.32360 m</td>
+<td>SIMULATED</td>
+<td>Sum of sampled segments</td>
+</tr>
+<tr>
+<td>Peak task speed / assumed limit</td>
+<td>0.951694</td>
+<td>VERIFIED DIGITALLY AT SAMPLES</td>
+<td>Motion report</td>
+</tr>
+<tr>
+<td>Peak task acceleration / assumed limit</td>
+<td>0.997971</td>
+<td>VERIFIED DIGITALLY AT SAMPLES</td>
+<td>Motion report</td>
+</tr>
+<tr>
+<td>PID joint tracking overall RMSE</td>
+<td>0.006383 rad</td>
+<td>SIMULATED</td>
+<td>Independent inertia/damping plants</td>
+</tr>
+<tr>
+<td>Shoulder static holding torque at full extension, 4.0 kg payload</td>
+<td>70.165 N·m</td>
+<td>CALCULATED</td>
+<td>Assumed masses/COM</td>
+</tr>
+<tr>
+<td>Elbow static holding torque at full extension, 4.0 kg payload</td>
+<td>31.880 N·m</td>
+<td>CALCULATED</td>
+<td>Assumed masses/COM</td>
+</tr>
+<tr>
+<td>Serial TCP beam deflection estimate</td>
+<td>0.08855 mm</td>
+<td>CALCULATED</td>
+<td>Idealized closed-section cantilevers only</td>
+</tr>
+<tr>
+<td>Gripper opening / each jaw travel</td>
+<td>90 / 45 mm</td>
+<td>VERIFIED DIGITALLY / CALCULATED</td>
+<td>CAD gap and model</td>
+</tr>
+<tr>
+<td>Gripper total normal force</td>
+<td>200 N</td>
+<td>TARGET</td>
+<td>100 N per jaw</td>
+</tr>
+<tr>
+<td>Screw torque at force target</td>
+<td>0.363783 N·m</td>
+<td>CALCULATED</td>
+<td>Assumed efficiency 0.35</td>
+</tr>
+<tr>
+<td>Native schematic ERC violations</td>
+<td>0</td>
+<td>VERIFIED DIGITALLY</td>
+<td>All report severities under enabled KiCad default rules; see electronics scope</td>
+</tr>
+<tr>
+<td>Native PCB DRC errors / warnings / unconnected</td>
+<td>0 / 0 / 0</td>
+<td>VERIFIED DIGITALLY</td>
+<td>Executed KiCad DRC and schematic-board checks</td>
+</tr>
+<tr>
+<td>PCB footprints / copper layers</td>
+<td>48 / 4</td>
+<td>VERIFIED DIGITALLY</td>
+<td>Native board and manufacturing exports</td>
+</tr>
+<tr>
+<td>Automated tests</td>
+<td>33 tests; 0 failures; 0 errors</td>
+<td>VERIFIED DIGITALLY</td>
+<td>results/validation/pytest.xml</td>
+</tr>
+</tbody>
+</table>
+<p>PCB results are retained in <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">PCB verification</a>. Continuous collision freedom, hardware performance and functional safety are outside the verified scope.</p></main></html>
