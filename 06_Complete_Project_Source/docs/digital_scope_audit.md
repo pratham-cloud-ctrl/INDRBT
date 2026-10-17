@@ -3,11 +3,11 @@
 This audit compares the supplied master brief with the implemented project. It
 separates required digital deliverables from optional extensions and performance
 claims that the brief explicitly excludes. The final integrated workflow reports
-**DIGITAL SCOPE COMPLETE**, with 34 passing tests, executed native schematic/PCB
-checks and a freshly verified v1.1.0 wheel. The subsequently requested PCB layout
+**DIGITAL SCOPE COMPLETE** only after its recorded tests, executed native schematic/PCB
+checks and a freshly verified versioned wheel pass on the current source revision. The subsequently requested PCB layout
 and native DRC are completed and documented. Repository and release publication
 are verified separately through the [private GitHub repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin)
-and [version 1.1.0 release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.1.0).
+and [latest versioned release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest). The [project-purpose guide](project_alignment.md) connects the artifacts to the original goals.
 
 ## Numerical and software deliverables
 
@@ -19,14 +19,14 @@ and [version 1.1.0 release](https://github.com/pratham-cloud-ctrl/industrial-rob
 | 22 | Symmetric gripper range, travel, force and actuator torque calculations | `src/robotarm/gripper`, `tests/test_gripper.py`, [mechanical analysis](03_mechanical_analysis.md) | Required digital mechanism and calculations are present. Force is calculated from assumed efficiency and friction, not measured. |
 | 23–25, 44–45 | Static load/torque, structure calculations, conceptual actuator sizing, numerical experiments and KPIs | `analysis/`, [mechanical results](../results/mechanical/joint_torque.json), [five research sweeps](../results/research/experiments.json), [KPIs](kpis.md) | Required analyses are present. Simplified analytical beams are an expressly permitted alternative to full FEA. |
 | 26–27 | PID step response, tracking, error curves and optional controller comparison | `src/robotarm/control`, `tests/test_control.py`, [step/tracking metrics](../results/control/metrics.json), two control figures | Required PID work is present, including saturation and antiwindup. P/PI/PD/PID modes exist; a comparative controller study is optional. |
-| 30–31, 34–35, 57–60 | Organized Python package, central SI parameters, commands, meaningful tests and one validation workflow | `src/robotarm`, [SI configuration](../config/robot.yaml), `python -m robotarm.demo`, `scripts/run_validation.py`, [executed report](../results/validation/validation_report.md) | Required structure and workflow are verified. The final integrated workflow passed 34 tests with no failures, errors or skips, regenerated CAD/results and executed native ERC/DRC/connectivity checks. |
-| 56, 59 | Reproducible setup, clean installation and portable execution | [Installation instructions](../README.md), `setup.py`, `MANIFEST.in`, `requirements-lock.txt`, `scripts/verify_wheel_install.py`, [isolated wheel evidence](../results/validation/packaging_validation.json) | The v1.1.0 wheel was built, installed in a new isolated environment and executed outside the source tree. Bundled configuration, FK/IK, planner/gripper checks, trajectory CLI outputs and dependency consistency passed. |
+| 30–31, 34–35, 57–60 | Organized Python package, central SI parameters, commands, meaningful tests and one validation workflow | `src/robotarm`, [SI configuration](../config/robot.yaml), `python -m robotarm.demo`, `scripts/run_validation.py`, [executed report](../results/validation/validation_report.md) | The report records actual totals without failures, errors or skips. Current source and authoritative-input hashes bind its revision. Full regeneration refreshes CAD, numerical results, native CAD/render/clearance proof and native ERC/DRC/connectivity before acceptance. |
+| 56, 59 | Reproducible setup, clean installation and portable execution | [Installation instructions](../README.md), `setup.py`, `MANIFEST.in`, `requirements-lock.txt`, `scripts/verify_wheel_install.py`, [isolated wheel evidence](../results/validation/packaging_validation.json) | The versioned wheel is installed in a new isolated environment and executed outside the source tree. Every installed/wheel module and the bundled configuration are compared with source; FK/IK, planner/gripper, fresh CLI outputs and dependencies are checked. |
 
 ## Executed integration gates and publication evidence
 
 The numerical/control/software audit found no additional missing required
 deliverable. The routed PCB, fabrication exports, updated descriptions and
-traceability, final integrated validation and fresh v1.1.0 installation check now
+traceability, integrated validation and fresh versioned installation checks now
 have executed evidence. The [PCB audit](../electronics/pcb_verification.json)
 records 44 schematic footprints plus four mechanical additions, all 119 physical
 pad-net assignments checked, and zero native DRC violations, unconnected items or
@@ -45,7 +45,7 @@ representative configurations**; the project's
 The initial selected-pair checks missed genuine adjacent-joint overlaps. Those
 interfaces were repaired and the representative audit was expanded: six named
 poses classify 8,586 component pairs, and 75 task configurations classify 107,325
-pairs with 5,935 exact BRep intersection tests. Rigid-family contacts are explicitly
+pairs; exact BRep intersection counts are retained in the current [clearance report](../results/validation/cad_motion_clearance.json). Rigid-family contacts are explicitly
 classified, and open/mid/closed gripper states are checked separately. This verifies
 the stated representative screening, not every possible joint combination or the
 continuous sweep between samples. Its limitations remain explicit. A
@@ -65,7 +65,7 @@ user instruction or newly adopted requirement.
 | Extra controller comparisons or circular Cartesian motion | Sections 20 and 27 make these conditional enhancements | Their absence is not a missing required deliverable. |
 
 The executed local status is **DIGITAL SCOPE COMPLETE — digital educational
-engineering project**. Version 1.1.0 records coherent, reproducible completion of
+engineering project**. The current release records coherent, reproducible completion of
 that documented digital scope. The repository, tag and assets provide separate
 publication evidence. This status does not imply a manufactured,
 hardware-ready or safety-certified robot; intentionally excluded physical

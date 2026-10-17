@@ -3,15 +3,18 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 
-from robotarm.config import load_config
+from robotarm.config import load_config, validate_config
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def hollow_section(width: float, depth: float, wall: float) -> float:
-    if not 0 < 2 * wall < min(width, depth):
+    if not all(
+        math.isfinite(value) and value > 0 for value in (width, depth, wall)
+    ) or not 0 < 2 * wall < min(width, depth):
         raise ValueError("Wall leaves no hollow section")
     return (width * depth**3 - (width - 2 * wall) * (depth - 2 * wall) ** 3) / 12
 
@@ -26,8 +29,25 @@ def beam_response(
     distributed_load: float,
     yield_strength: float,
 ):
+    """Signed deflection and nominal root stress for superposed beam loads.
+
+    Geometry/material properties are positive, loads may have either sign.
+    With zero root stress the ideal yield ratio is undefined; None serializes
+    as JSON null rather than raising or emitting nonstandard JSON Infinity.
+    This root-section response does not locate interior stress maxima for
+    opposing loads.
+    """
+    if not all(
+        math.isfinite(value) and value > 0
+        for value in (length, inertia, depth, young, yield_strength)
+    ):
+        raise ValueError(
+            "Beam dimensions, second moment, modulus and yield strength must be positive and finite."
+        )
+    if not all(math.isfinite(value) for value in (end_force, end_moment, distributed_load)):
+        raise ValueError("Beam loads must be finite.")
     moment = end_force * length + end_moment + distributed_load * length**2 / 2
-    stress = moment * depth / (2 * inertia)
+    stress = abs(moment) * depth / (2 * inertia)
     deflection = (
         end_force * length**3 / 3 + end_moment * length**2 / 2 + distributed_load * length**4 / 8
     ) / (young * inertia)
@@ -39,7 +59,7 @@ def beam_response(
         "bending_stress_mpa": stress / 1e6,
         "elastic_deflection_mm": deflection * 1000,
         "tip_slope_rad": tip_slope,
-        "yield_safety_factor": yield_strength / stress,
+        "yield_safety_factor": yield_strength / stress if stress > 0 else None,
         "second_moment_m4": inertia,
     }
 
@@ -47,6 +67,8 @@ def beam_response(
 def calculate(config: dict | None = None):
     """Return extended-pose beam estimates without writing generated artifacts."""
     c = load_config() if config is None else config
+    if config is not None:
+        validate_config(config)
     g, m, material = c["geometry"], c["mass"], c["materials"]["aluminum"]
     grav = c["targets"]["gravity"]
     l1, l2, wr, wp, tool = [

@@ -18,6 +18,32 @@ class Trajectory:
     ddq: np.ndarray
     label: str = "joint motion"
 
+    def __post_init__(self) -> None:
+        self.t = np.asarray(self.t, dtype=float)
+        self.q = np.asarray(self.q, dtype=float)
+        self.dq = np.asarray(self.dq, dtype=float)
+        self.ddq = np.asarray(self.ddq, dtype=float)
+        self.validate()
+
+    def validate(self) -> None:
+        """Reject malformed records before interpolation or numerical integration."""
+        if (
+            self.t.ndim != 1
+            or len(self.t) < 2
+            or not np.all(np.isfinite(self.t))
+            or np.any(np.diff(self.t) <= 0)
+        ):
+            raise ValueError(
+                "Trajectory times must be finite and strictly increasing, with at least two samples."
+            )
+        if any(
+            values.shape != (len(self.t), 6) or not np.all(np.isfinite(values))
+            for values in (self.q, self.dq, self.ddq)
+        ):
+            raise ValueError(
+                "Trajectory position, velocity and acceleration need finite (samples, 6) arrays."
+            )
+
     @property
     def duration(self) -> float:
         return float(self.t[-1] - self.t[0])
@@ -51,7 +77,7 @@ def joint_trajectory(
     commands. Cubic has finite endpoint acceleration but an acceleration jump.
     """
     start, end = robot.check_joints(start), robot.check_joints(end)
-    if samples < 3:
+    if isinstance(samples, bool) or not isinstance(samples, (int, np.integer)) or samples < 3:
         raise ValueError("At least three trajectory samples are required.")
     delta = end - start
     factors = {"linear": (1.0, 0.0), "cubic": (1.5, 6.0), "quintic": (1.875, 10 / np.sqrt(3))}
@@ -98,17 +124,43 @@ def move_linear(
     target: np.ndarray,
     duration: float = 1.0,
     samples: int = 101,
+    min_scaled_singular_value: float = 1e-3,
 ) -> Trajectory:
     """MOVE L: straight TCP + shortest SO(3) SLERP, continuation numerical IK.
 
     Quintic Cartesian time law; joint derivatives are finite differences. A
     single uniform time scaling enforces limits at the returned samples. This
     does not certify derivative bounds between samples or collision clearance.
+    Continuation requires the dimensionless Jacobian's smallest singular value
+    to exceed min_scaled_singular_value at the start and every solved sample.
+    Translational rows are divided by robot reach. The default 1e-3 is a
+    conservative numerical regularity guard, not a mechanical safety threshold.
+    Singular paths need a different Cartesian path or MOVE J. In particular,
+    Cartesian quintic endpoint derivatives do not imply finite joint acceleration
+    at full extension: a radial approach can produce q ~ (1-u)**(3/2).
     """
     start = robot.check_joints(start)
     target = robot.check_pose(target)
-    if samples < 21 or duration <= 0 or not np.isfinite(duration):
+    if (
+        isinstance(samples, bool)
+        or not isinstance(samples, (int, np.integer))
+        or samples < 21
+        or duration <= 0
+        or not np.isfinite(duration)
+    ):
         raise ValueError("MOVE L requires at least 21 samples and a positive duration.")
+    if not np.isfinite(min_scaled_singular_value) or min_scaled_singular_value <= 0:
+        raise ValueError("MOVE L singular-value threshold must be positive and finite.")
+
+    def require_regular(joints: np.ndarray) -> None:
+        sigma = robot.singular_values(joints)[-1]
+        if sigma <= min_scaled_singular_value:
+            raise ValueError(
+                f"MOVE L encounters a singular or near-singular Jacobian (scaled sigma_min={sigma:.3g}, "
+                f"required > {min_scaled_singular_value:.3g}); choose another Cartesian path or use MOVE J."
+            )
+
+    require_regular(start)
     initial = robot.fk(start)
     u = np.linspace(0, 1, samples)
     progress = 10 * u**3 - 15 * u**4 + 6 * u**5
@@ -120,6 +172,7 @@ def move_linear(
         pose[:3, :3] = orientation[index]
         pose[:3, 3] = initial[:3, 3] + progress[index] * (target[:3, 3] - initial[:3, 3])
         solved = robot.ik(pose, q[-1], max_attempts=6)
+        require_regular(solved)
         if np.max(np.abs(solved - q[-1])) > np.deg2rad(30):
             raise ValueError(
                 "MOVE L encountered a discontinuous IK branch; choose another start/path."
@@ -144,9 +197,17 @@ def move_linear(
 
 
 def stationary(q: np.ndarray, duration: float = 0.5, samples: int = 21) -> Trajectory:
-    if duration <= 0 or samples < 2:
+    if (
+        not np.isfinite(duration)
+        or duration <= 0
+        or isinstance(samples, bool)
+        or not isinstance(samples, (int, np.integer))
+        or samples < 2
+    ):
         raise ValueError("A dwell needs positive duration and at least two samples.")
     q = np.asarray(q, float)
+    if q.shape != (6,) or not np.all(np.isfinite(q)):
+        raise ValueError("A dwell needs six finite joint angles.")
     positions = np.tile(q, (samples, 1))
     return Trajectory(
         np.linspace(0, duration, samples),
@@ -164,11 +225,14 @@ def concatenate(*segments: Trajectory) -> Trajectory:
     elapsed = 0.0
     previous = None
     for index, segment in enumerate(segments):
-        if previous is not None and not np.allclose(previous.q[-1], segment.q[0], atol=1e-7):
+        segment.validate()
+        if previous is not None and not np.allclose(
+            previous.q[-1], segment.q[0], atol=1e-7, rtol=0
+        ):
             raise ValueError("Trajectory concatenation has a position discontinuity.")
         if previous is not None and (
-            not np.allclose(previous.dq[-1], segment.dq[0], atol=1e-7)
-            or not np.allclose(previous.ddq[-1], segment.ddq[0], atol=1e-6)
+            not np.allclose(previous.dq[-1], segment.dq[0], atol=1e-7, rtol=0)
+            or not np.allclose(previous.ddq[-1], segment.ddq[0], atol=1e-6, rtol=0)
         ):
             raise ValueError(
                 "Trajectory concatenation has a velocity or acceleration discontinuity."

@@ -141,6 +141,15 @@ law. Bounded IK is solved at every sample, seeded from the previous result. Larg
 configuration jumps are rejected. Finite-difference joint velocity and acceleration
 are uniformly time-scaled to satisfy limits at returned samples. This is sampled
 verification; no between-sample bound or collision-free certificate is claimed.</p>
+<p>The start and every solved MOVE L sample must have a smallest scaled Jacobian
+singular value greater than 0.001 by default; translational rows are divided by
+nominal reach. This numerical regularity guard rejects singular/near-singular
+continuation with an instruction to choose another path or use MOVE J. The
+threshold is configurable and is not a mechanical safety limit. A Cartesian
+quintic law does not guarantee bounded joint acceleration at a singular endpoint:
+a radial approach to full extension can have <code>q ~ (1-u)^(3/2)</code> and divergent
+joint acceleration. Endpoint derivative assignments therefore require a regular
+Jacobian. Between-sample singularity and collision certification remain absent.</p>
 <p>The FK animation evaluates the transform chain at each interpolated joint pose.
 It uses stick geometry and a scripted object-attachment event. It is an ideal
 kinematic simulation, without contact, rigid-body payload dynamics or collision

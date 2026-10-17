@@ -18,5 +18,5 @@ Thumbs.db
 07_Original_Release_Archive/*.zip
 07_Releases/*.zip
 07_Releases/*.whl
-07_Releases/Review_Evidence/*.json
+07_Releases/Review_Evidence/
 LOCAL_APP_PATHS.json

@@ -31,7 +31,7 @@
     "encoder_Z_negative_clamp_polarity": true
   },
   "schematic_sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
-  "netlist_sha256": "f0a6ba84c3d5c3e01cbdbd0412356951fe4088ac153120c7375d507379b950da",
+  "netlist_sha256": "f30d6df8158eba6c005d9a91535d5d22aa8023cd6376432ea29ac7cfc04fc720",
   "claim_boundary": "Native schematic/ERC and exported connectivity; routed PCB evidence is separate in pcb_verification.json. No physical measurements or hardware safety validation",
   "assigned_footprints_found": 44,
   "stock_footprints_found": 43,

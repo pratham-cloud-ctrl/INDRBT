@@ -64,7 +64,10 @@ def check_board(cli, render=True):
     drc = json.loads(path.read_text(encoding="utf-8"))
     drc["source"] = "joint_interface.kicad_pcb"
     path.write_text(json.dumps(drc, indent=2) + "\n", encoding="utf-8")
-    report = verify()
+    # The previous saved manifest is deliberately stale after this fresh DRC
+    # run. Audit the newly written native report, then bind it below; offline
+    # verify() callers retain strict saved-source binding by default.
+    report = verify(fresh_native_report=True)
     report["native_drc_exit_code"] = drc_exit
     report["drc_command"] = log[0]["command"]
     if drc_exit or report["status"] != "PASS":

@@ -14,6 +14,20 @@ import xml.etree.ElementTree as ET
 from generate_interface import item, nodes, parse
 
 ROOT = Path(__file__).resolve().parent
+BOUND_SOURCE_FILES = (
+    "joint_interface.kicad_pcb",
+    "joint_interface.kicad_sch",
+    "joint_interface.kicad_pro",
+    "joint_interface.kicad_dru",
+    "joint_interface.net.xml",
+    "pin_contract.json",
+    "pcb_routing_manifest.json",
+    "pcb_drc_report.json",
+    "fp-lib-table",
+    "bom.csv",
+    "fuse_selection.json",
+    "ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
+)
 
 # KiCad 10 constructor defaults from pcbnew/board_design_settings.cpp:
 # every rule starts at ERROR, then the following WARNING/IGNORE sets apply.
@@ -35,6 +49,22 @@ tuning_profile_track_geometries track_not_centered_on_via""".split()
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def verify_saved_source_binding():
+    """Refuse a clean but stale native report after source or routing edits."""
+    path = ROOT / "pcb_verification.json"
+    assert path.is_file(), "Saved PCB evidence is missing; run the native PCB checks"
+    report = json.loads(path.read_text(encoding="utf-8"))
+    assert report.get("status") == "PASS" and report.get("native_drc_exit_code") == 0, (
+        "Saved native PCB validation did not pass"
+    )
+    hashes = report.get("source_sha256", {})
+    assert set(BOUND_SOURCE_FILES) <= set(hashes), "Saved PCB source binding is incomplete"
+    for name in BOUND_SOURCE_FILES:
+        assert digest(ROOT / name) == hashes[name], (
+            f"Stale native PCB evidence for {name}; rerun the native PCB checks"
+        )
 
 
 def net_name(node):
@@ -140,7 +170,15 @@ def verify_fuse_land_pattern(footprint):
     }
 
 
-def verify():
+def verify(*, fresh_native_report=False):
+    """Audit saved evidence, or audit a report just produced by the native runner.
+
+    Only run_pcb_checks opts out of saved-manifest binding: its native command
+    has just completed and it will bind the resulting report to the checked
+    sources. Ordinary/offline callers must prove that existing binding first.
+    """
+    if not fresh_native_report:
+        verify_saved_source_binding()
     board_path = ROOT / "joint_interface.kicad_pcb"
     board = parse(board_path.read_text(encoding="utf-8"))
     xml = ET.parse(ROOT / "joint_interface.net.xml")
@@ -287,20 +325,6 @@ def verify():
     assert local_paths["RS485_main_length_difference_mm"] < 5.0, (
         "Reviewed low-rate paired bus corridor changed"
     )
-    bound_files = [
-        "joint_interface.kicad_pcb",
-        "joint_interface.kicad_sch",
-        "joint_interface.kicad_pro",
-        "joint_interface.kicad_dru",
-        "joint_interface.net.xml",
-        "pin_contract.json",
-        "pcb_routing_manifest.json",
-        "pcb_drc_report.json",
-        "fp-lib-table",
-        "bom.csv",
-        "fuse_selection.json",
-        "ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
-    ]
     return {
         "status": "PASS" if not all_findings else "FAIL",
         "kicad_version": drc["kicad_version"],
@@ -336,7 +360,7 @@ def verify():
         },
         "fuse_manufacturer_land_pattern_review": fuse_review,
         "local_front_copper_paths": local_paths,
-        "source_sha256": {name: digest(ROOT / name) for name in bound_files},
+        "source_sha256": {name: digest(ROOT / name) for name in BOUND_SOURCE_FILES},
         "scope": "Native PCB geometry, enabled default DRC plus explicit fabrication constraints, schematic parity and independent pad/net audit. No fabricated board, measured EMC/thermal/timing/ESD performance or functional-safety qualification.",
     }
 

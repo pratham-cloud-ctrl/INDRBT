@@ -34,7 +34,7 @@ The group labels `base`, `j1` to `j6` identify moving coordinate frames. A motor
 
 An **envelope** is a simplified spatial placeholder for a motor, gearbox, bearing or screw. Its interior is not a detailed purchased component. Materials are assumed; the geometric mass estimate is separate from the conservative dynamic mass inputs.
 
-FreeCAD labels `Component01` to `Component54` below were checked against the individual part volumes and home-assembly positions. Blender and individual exports retain the descriptive part names.
+FreeCAD objects retain `Component01` to `Component54` internal names and display the descriptive component label. The mapping below was checked against the individual part volumes and home-assembly positions. Blender and individual exports retain the descriptive part names.
 
 ### Fixed base (base; 4 parts)
 
@@ -127,7 +127,7 @@ Rotates around J6; the two gripper jaw families additionally translate along loc
 | `tool_flange_6xM5_PCD46` | Structure | Steel | `Component41` | [STEP](../cad/exports/STEP/tool_flange_6xM5_PCD46.step) / [STL](../cad/exports/STL/tool_flange_6xM5_PCD46.stl) |
 | `interchangeable_gripper_adapter` | Structure | Aluminum | `Component42` | [STEP](../cad/exports/STEP/interchangeable_gripper_adapter.step) / [STL](../cad/exports/STL/interchangeable_gripper_adapter.stl) |
 | `gripper_pocketed_body` | Structure | Aluminum | `Component43` | [STEP](../cad/exports/STEP/gripper_pocketed_body.step) / [STL](../cad/exports/STL/gripper_pocketed_body.stl) |
-| `gripper_rear_service_cover` | Service cover | Polymer | `Component44` | [STEP](../cad/exports/STEP/gripper_rear_service_cover.step) / [STL](../cad/exports/STL/gripper_rear_service_cover.stl) |
+| `gripper_top_service_cover` | Service cover | Polymer | `Component44` | [STEP](../cad/exports/STEP/gripper_top_service_cover.step) / [STL](../cad/exports/STL/gripper_top_service_cover.stl) |
 | `gripper_guide_rod_-14` | Linear guide | Steel | `Component45` | [STEP](../cad/exports/STEP/gripper_guide_rod_-14.step) / [STL](../cad/exports/STL/gripper_guide_rod_-14.stl) |
 | `gripper_guide_rod_+14` | Linear guide | Steel | `Component46` | [STEP](../cad/exports/STEP/gripper_guide_rod_+14.step) / [STL](../cad/exports/STL/gripper_guide_rod_+14.stl) |
 | `opposite_hand_screw_envelope` | Opposite hand screw envelope | Steel | `Component47` | [STEP](../cad/exports/STEP/opposite_hand_screw_envelope.step) / [STL](../cad/exports/STL/opposite_hand_screw_envelope.stl) |

@@ -4,11 +4,13 @@ An original six-axis robot with parametric CAD, numerical kinematics and a repro
 
 ![ASTER-6 actual CAD assembly](cad/renders/hero.png)
 
-**Digital only · v1.1.0 · DIGITAL SCOPE COMPLETE**
+**Digital only · v1.2.0 · DIGITAL SCOPE COMPLETE**
 
 Designed for robotics education and portfolio review. Every result is generated from source; no physical robot was built. Payload and repeatability remain design targets. The conceptual electronics include a routed PCB, manufacturing exports and native DRC; collision evidence is representative and sampled.
 
 ## See it move
+
+Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
 
 Open **[the offline interactive CAD twin](simulations/aster6_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
 
@@ -26,12 +28,12 @@ The 9.24 s task follows MOVE J and MOVE L segments: approach, grasp, lift, trans
 | DOF / link lengths | Six revolute joints / 320 mm upper arm + 280 mm forearm |
 | Nominal reach | 790 mm from shoulder; nominal straight-up TCP height 980 mm above base |
 | Payload / repeatability | 4 kg / ±0.1 mm **TARGET**, physically unverified |
-| Mass basis | 23.65 kg assumed; separate 19.952 kg CAD envelope sum with stated limitations |
+| Mass basis | 23.65 kg assumed; separate 19.908 kg CAD envelope sum with stated limitations |
 | Gripper | 90 mm opening; 200 N total force target; calculated screw torque 0.364 N·m |
 | FK / IK / Jacobian | Bounded numerical IK; 60 perturbed-seed pose trials |
 | Motion / control | Linear/cubic/quintic MOVE J, sampled MOVE L and saturated PID |
 | Electronics | Native 44-component KiCad interface; 0 ERC violations under enabled default rules; routed PCB/native DRC and connectivity evidence |
-| Tests | 34 tests; 0 failures; 0 errors |
+| Tests | 91 tests; 0 failures; 0 errors |
 
 ## Run
 
@@ -83,7 +85,7 @@ The workspace plot comes from 6000 seeded FK samples. Its 1.9025 m³ convex hull
 | Shoulder / elbow gravity holding torque | 70.17 / 31.88 N·m | Calculated with assumed masses and 4 kg payload |
 | Task peak velocity / acceleration fractions | 0.9517 / 0.9980 | Fractions of configured limits at tested samples |
 | PID tracking RMSE | 0.006383 rad | Independent inertia/damping plant simulation |
-| Sampled CAD task clearance | 75 poses / 5935 exact BRep checks; maximum prohibited overlap 0 mm³ | All component pairs classified; continuous motion not verified |
+| Sampled CAD task clearance | 75 poses / 6126 exact BRep checks; maximum prohibited overlap 0 mm³ | All component pairs classified; continuous motion not verified |
 
 Five [research experiments](results/research/experiments.json) vary link ratio, payload, motion duration, PID gains and finger length. [Mechanical calculations](docs/03_mechanical_analysis.md), [control curves](results/control/pid_tracking.png) and [complete KPIs](docs/kpis.md) keep assumed/target/calculated/simulated/verified claims separate.
 

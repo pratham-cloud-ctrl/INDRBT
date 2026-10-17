@@ -4,12 +4,14 @@ from __future__ import annotations
 
 import numpy as np
 
-from robotarm.config import load_config
+from robotarm.config import load_config, validate_config
 
 
 class ParallelGripper:
     def __init__(self, config: dict | None = None):
         self.config = load_config() if config is None else config
+        if config is not None:
+            validate_config(config)
         self.parameters = self.config["gripper"]
         self.max_opening = self.parameters["max_opening"]
 

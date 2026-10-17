@@ -1,8 +1,62 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>final_review</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="final-independent-engineering-review">Final independent engineering review</h1>
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>final_review</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="independent-engineering-review-current-revision">Independent engineering review — current revision</h1>
 <p>The final review checks the project against its digital engineering brief and
 asks whether another student can inspect the models, understand the theory and
 reproduce the evidence. The result is supported by executed checks, rather than
-an assurance that every possible use has been proved.</p>
+an assurance that every possible use has been proved. The 17–18 October 2026 review
+revisited the original goals and deliberately probed beyond the earlier passing
+file/hash tests. <a href="project_alignment.html">Project purpose and goals</a> explains the
+intended connected demonstration; the <a href="project_journal.html">journal</a> preserves
+the findings in context.</p>
+<h2 id="additional-corrections-in-version-120">Additional corrections in version 1.2.0</h2>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Demonstrated issue and resulting behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native CAD access</td>
+<td>The saved assembly opened with all 54 parts hidden. Visible named parts, camera state and a native GUI check now make the model inspectable immediately. Material colours are shown in the browser and Blender renders.</td>
+</tr>
+<tr>
+<td>Mechanical interfaces</td>
+<td>Adapter holes broke the outer edge; the rear cover overlapped the adapter; screw/carriage and removable-finger attachments lacked coherent support. The revised 54-part geometry includes a wider adapter, locating pilot, matching rear fasteners, nut bridges, supported finger holes and a top service hatch. Counterbore depth now matches the drawing.</td>
+</tr>
+<tr>
+<td>Motion and model inputs</td>
+<td>NaN/nonphysical configurations, small invalid transform/segment errors and malformed trajectories could pass. Domain/finite checks and explicit absolute tolerances reject them. Sampled singular MOVE L continuation now raises a useful error instead of reporting misleading endpoint accelerations.</td>
+</tr>
+<tr>
+<td>Loads and control</td>
+<td>Actuator sizing reused control inertia below the same assumed mass model. Separate mass-derived point-inertia bounds now inform sizing; default PID plants are unchanged. Zero-load/signed beam and invalid controller/payload cases have explicit behavior and regressions.</td>
+</tr>
+<tr>
+<td>Electronics and proof freshness</td>
+<td>Regulator heat omitted a small quiescent allowance. A scratch disconnected board could reuse old clean DRC evidence. The heat balance and source binding are corrected; fresh native checks of the design remain clean.</td>
+</tr>
+<tr>
+<td>Browser demonstration</td>
+<td>The attached object translated with the TCP but did not rotate. Its ideal attachment now follows the complete tool pose, checked in the actual browser.</td>
+</tr>
+<tr>
+<td>Acceptance and reproduction</td>
+<td>Residual limits, nonfinite saved values, native CAD source/artifact freshness, complete wheel module comparison, fresh CLI output directories and source/input revision binding now prevent the reproduced false passes.</td>
+</tr>
+</tbody>
+</table>
+<p>The current <a href="validation_report.html">executed report</a>,
+<a href="../../06_Complete_Project_Source/results/validation/final_cad_review.json">native CAD review</a>,
+<a href="../../06_Complete_Project_Source/results/validation/final_theory_review.json">theory audit</a> and
+<a href="../../06_Complete_Project_Source/results/validation/final_electronics_review.json">electronics audit</a>
+record the actual results and exact revision. Earlier beam and fuse corrections
+remain part of the engineering history and are summarized below.</p>
+<p>The <a href="../../06_Complete_Project_Source/results/validation/software_boundary_review.json">software boundary review</a>
+retains reproduced failure cases, focused regression evidence and an unchanged
+nominal-task comparison. The <a href="../../06_Complete_Project_Source/results/validation/electronics_circuit_review.json">circuit review</a>
+records native/library inspection and explains generic power-audit notices
+without concealing them or treating heuristics as native rule violations.</p>
 <table>
 <thead>
 <tr>
@@ -35,7 +89,7 @@ an assurance that every possible use has been proved.</p>
 <tr>
 <td>Software and reproducibility</td>
 <td>Central parameters, numerical/analytical regressions, native checks, saved artifact consistency and a detached wheel installation establish their recorded scope. GitHub automation covers the software and saved-artifact subset; full CAD/native KiCad checks use local engineering tools.</td>
-<td><a href="../../06_Complete_Project_Source/results/validation/validation_report.md">Executed validation</a>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">wheel evidence</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml">GitHub workflow</a></td>
+<td><a href="validation_report.html">Executed validation</a>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">wheel evidence</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml">GitHub workflow</a></td>
 </tr>
 </tbody>
 </table>

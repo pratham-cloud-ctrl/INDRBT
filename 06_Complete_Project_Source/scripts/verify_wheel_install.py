@@ -9,6 +9,8 @@ import subprocess
 import sys
 import tomllib
 import zipfile
+from datetime import datetime, timezone
+from tempfile import TemporaryDirectory
 
 import numpy as np
 import robotarm
@@ -66,30 +68,31 @@ except ValueError:
 else:
     raise AssertionError("Wheel lacks invalid MOVE L target regression fix.")
 
-cli = subprocess.run(
-    [
-        sys.executable,
-        "-I",
-        "-m",
-        "robotarm.demo",
-        "--trajectory",
-        "--output-dir",
-        "generated-results",
-    ],
-    check=True,
-    capture_output=True,
-    text=True,
-)
-cli_summary = json.loads(cli.stdout)
-generated = Path("generated-results") / "trajectories"
-assert (generated / "trajectory_metrics.json").is_file()
-metrics = json.loads((generated / "trajectory_metrics.json").read_text())
-assert metrics["move_l_max_xy_drift_m"] < config["targets"]["ik_position_tolerance_m"]
-images = list(generated.glob("*.png"))
-assert len(images) == 5
-for image in images:
-    assert image.stat().st_size > 1000
-assert (generated / "move_j.csv").is_file() and (generated / "move_l.csv").is_file()
+with TemporaryDirectory(prefix="aster-wheel-cli-") as cli_directory:
+    cli = subprocess.run(
+        [
+            sys.executable,
+            "-I",
+            "-m",
+            "robotarm.demo",
+            "--trajectory",
+            "--output-dir",
+            cli_directory,
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    cli_summary = json.loads(cli.stdout)
+    generated = Path(cli_directory) / "trajectories"
+    assert (generated / "trajectory_metrics.json").is_file()
+    metrics = json.loads((generated / "trajectory_metrics.json").read_text())
+    assert metrics["move_l_max_xy_drift_m"] < config["targets"]["ik_position_tolerance_m"]
+    images = list(generated.glob("*.png"))
+    assert len(images) == 5
+    for image in images:
+        assert image.stat().st_size > 1000
+    assert (generated / "move_j.csv").is_file() and (generated / "move_l.csv").is_file()
 
 pip_check = subprocess.run(
     [sys.executable, "-m", "pip", "check"], check=True, capture_output=True, text=True
@@ -101,13 +104,34 @@ with zipfile.ZipFile(wheel) as archive:
 source_module = repo / "src" / "robotarm" / "kinematics" / "model.py"
 installed_module = Path(robotarm.__file__).parent / "kinematics" / "model.py"
 assert installed_module.read_bytes() == source_module.read_bytes()
+source_hashes = {}
+with zipfile.ZipFile(wheel) as archive:
+    expected_modules = {
+        path.relative_to(repo / "src").as_posix(): path
+        for path in (repo / "src/robotarm").rglob("*.py")
+    }
+    actual_modules = {
+        name for name in archive.namelist() if name.startswith("robotarm/") and name.endswith(".py")
+    }
+    assert actual_modules == set(expected_modules), "Wheel module inventory differs from source"
+    for name, source_file in expected_modules.items():
+        installed_file = Path(robotarm.__file__).parent.parent / name
+        assert archive.read(name) == source_file.read_bytes() == installed_file.read_bytes(), name
+        source_hashes[source_file.relative_to(repo).as_posix()] = hashlib.sha256(
+            source_file.read_bytes()
+        ).hexdigest()
+for name in ("config/robot.yaml", "pyproject.toml", "setup.py", "MANIFEST.in"):
+    source_hashes[name] = hashlib.sha256((repo / name).read_bytes()).hexdigest()
 report = {
+    "executed_utc": datetime.now(timezone.utc).isoformat(),
     "status": "PASS",
     "scope": "Built wheel, new isolated venv, installed runtime dependencies, detached import and actual CLI results",
     "python_version": sys.version.split()[0],
     "package_version": robotarm.__version__,
     "wheel_name": wheel.name,
     "wheel_sha256": hashlib.sha256(wheel.read_bytes()).hexdigest(),
+    "source_sha256": source_hashes,
+    "package_modules_compared": len(expected_modules),
     "authoritative_config_sha256": hashlib.sha256(config_source.read_bytes()).hexdigest(),
     "bundled_config_sha256": hashlib.sha256(config_bundled.read_bytes()).hexdigest(),
     "installed_import_relative_to_venv": Path(robotarm.__file__).relative_to(sys.prefix).as_posix(),
@@ -124,6 +148,7 @@ report = {
     ],
     "invalid_move_l_target_rejected": True,
     "cli_exit_code": cli.returncode,
+    "cli_unique_output_directory": True,
     "cli_generated_plot_count": len(images),
     "cli_move_l_xy_drift_m": metrics["move_l_max_xy_drift_m"],
     "dependency_check": pip_check.stdout.strip(),
@@ -138,7 +163,7 @@ report = {
         f"work/{Path(sys.prefix).name}/Scripts/python -m pip install OUTPUT_DIRECTORY/{wheel.name}",
         f"cd work/{Path.cwd().name}",
         f"../{Path(sys.prefix).name}/Scripts/python -I REPOSITORY/scripts/verify_wheel_install.py REPOSITORY WHEEL",
-        "python -I -m robotarm.demo --trajectory --output-dir generated-results",
+        "python -I -m robotarm.demo --trajectory --output-dir TEMPORARY_NEW_DIRECTORY",
         "python -m pip check",
     ],
     "environment_note": "Build helpers and runtime dependencies installed in an isolated verification env; no shared or system packages modified.",

@@ -6,6 +6,7 @@ from dataclasses import dataclass
 
 import numpy as np
 
+from robotarm.config import validate_control
 from robotarm.kinematics import RobotArm
 from robotarm.planning import Trajectory
 
@@ -44,18 +45,20 @@ def simulate_pid(
     is represented. Optional inertia/damping feedforward is explicitly selected.
     """
     cfg = robot.config["control"]
+    validate_control(cfg)
+    trajectory.validate()
     dt = float(cfg["dt"])
-    if dt <= 0 or gain_scale <= 0 or mode not in ("P", "PI", "PD", "PID"):
+    if not np.isfinite(gain_scale) or gain_scale <= 0 or mode not in ("P", "PI", "PD", "PID"):
         raise ValueError("Invalid integration step, gain scale, or controller mode.")
-    if np.any(np.diff(trajectory.t) <= 0):
-        raise ValueError("Trajectory times must be strictly increasing.")
-    inertia, damping = np.asarray(cfg["inertia"]), np.asarray(cfg["viscous_damping"])
-    kp = np.asarray(cfg["kp"]) * gain_scale
-    ki = np.asarray(cfg["ki"]) * gain_scale if "I" in mode else np.zeros(6)
-    kd = np.asarray(cfg["kd"]) * gain_scale if "D" in mode else np.zeros(6)
-    limits = np.asarray(cfg["torque_limits"])
-    if np.any(inertia <= 0) or np.any(limits <= 0):
-        raise ValueError("Inertias and torque limits must be positive.")
+    if np.any(trajectory.q < robot.limits[:, 0] - 1e-10) or np.any(
+        trajectory.q > robot.limits[:, 1] + 1e-10
+    ):
+        raise ValueError("Reference trajectory exceeds configured joint position limits.")
+    inertia, damping = np.asarray(cfg["inertia"], float), np.asarray(cfg["viscous_damping"], float)
+    kp = np.asarray(cfg["kp"], float) * gain_scale
+    ki = np.asarray(cfg["ki"], float) * gain_scale if "I" in mode else np.zeros(6)
+    kd = np.asarray(cfg["kd"], float) * gain_scale if "D" in mode else np.zeros(6)
+    limits = np.asarray(cfg["torque_limits"], float)
     duration = trajectory.duration
     steps = int(np.ceil(duration / dt))
     t = np.linspace(trajectory.t[0], trajectory.t[-1], steps + 1)
@@ -81,7 +84,7 @@ def simulate_pid(
         trial = integral + error * step
         raw = kp * error + ki * trial + kd * derivative + feed
         saturated = np.clip(raw, -limits, limits)
-        integrate = (np.abs(raw) <= limits) | (error * (raw - saturated) < 0)
+        integrate = (ki > 0) & ((np.abs(raw) <= limits) | (error * (raw - saturated) < 0))
         integral = np.where(integrate, trial, integral)
         torque[index] = np.clip(
             kp * error + ki * integral + kd * derivative + feed, -limits, limits

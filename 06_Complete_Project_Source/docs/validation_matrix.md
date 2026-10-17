@@ -20,12 +20,12 @@ Results refer to executed digital evidence, not physical performance. The exact 
 | ELEC-002 | PASS for digital design | Native ERC: 0 violations under enabled default rules; routed PCB, actual DRC and schematic-board connectivity checks in [PCB verification](../electronics/pcb_verification.json) |
 | SIM-001 | PASS for geometric sampling | 6000 seeded FK samples; hull/voxel limitations explicit |
 | SIM-002 | PASS for ideal task | 9.24398 s, close/open events, home return; no contact dynamics |
-| SIM-003 | PASS for required representative screening | Every component pair classified across representative CAD poses and 75 task samples, including 5935 exact BRep intersections; continuous swept collision proof is outside this evidence |
-| VAL-001 | PASS | 34 tests; 0 failures; 0 errors; details in pytest.xml |
+| SIM-003 | PASS for required representative screening | Every component pair classified across representative CAD poses and 75 task samples, including 6126 exact BRep intersections; continuous swept collision proof is outside this evidence |
+| VAL-001 | PASS | 91 tests; 0 failures; 0 errors; details in pytest.xml |
 | VAL-002 | PASS | Single executed validation workflow and artifact consistency audit |
 | DOC-001 | PASS | Setup, decisions, architecture, report, figures and portable commands |
 | DOC-002 | PASS | Claims vocabulary and limitations audited throughout |
 | RESEARCH-001 | PASS | Five actual numerical sweeps with data/plots |
 | PERF-001 | NOT VERIFIED | ±0.1 mm repeatability remains TARGET |
 
-Version 1.1.0: **DIGITAL SCOPE COMPLETE** within the documented digital engineering brief. See the [scope audit](digital_scope_audit.md). Physical repeatability remains a target as requested; numerical IK residuals do not establish it.
+Version 1.2.0: **DIGITAL SCOPE COMPLETE** within the documented digital engineering brief. See the [scope audit](digital_scope_audit.md). Physical repeatability remains a target as requested; numerical IK residuals do not establish it.

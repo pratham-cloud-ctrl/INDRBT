@@ -8,15 +8,22 @@ import re
 import tomllib
 from urllib.parse import unquote
 
+try:
+    from scripts.evidence import read_json, validation_sources
+except ModuleNotFoundError:
+    from evidence import read_json, validation_sources
+
 SOURCE = Path(__file__).resolve().parents[1]
 DEST = SOURCE.parent
 
 
 def verify():
-    manifest = json.loads((DEST / "ORGANIZATION_MANIFEST.json").read_text())
+    manifest = read_json(DEST / "ORGANIZATION_MANIFEST.json")
     version = tomllib.loads((SOURCE / "pyproject.toml").read_text())["project"]["version"]
-    validation = json.loads((SOURCE / "results/validation/validation_report.json").read_text())
+    validation = read_json(SOURCE / "results/validation/validation_report.json")
     issues = []
+    if validation.get("source_sha256") != validation_sources(SOURCE):
+        issues.append({"issue": "validation evidence is stale for current engineering sources"})
     if manifest["version"] != version:
         issues.append({"issue": "stale presentation version"})
     if validation.get("project_version") != version:
@@ -57,6 +64,14 @@ def verify():
         for link in re.findall(r'(?:href|src)="([^"]+)"', path.read_text(encoding="utf-8")):
             if re.match(r"(?:[a-z]+:|#|//)", link, re.I):
                 continue
+            if path.parent.name == "Readable_Reports" and link.split("#")[0].endswith(".md"):
+                issues.append(
+                    {
+                        "file": str(path.relative_to(DEST)),
+                        "issue": "raw Markdown link in browser report",
+                        "link": link,
+                    }
+                )
             links += 1
             link = unquote(html.unescape(link.split("#")[0]))
             if link and not (path.parent / link).exists():

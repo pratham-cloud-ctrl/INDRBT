@@ -1,5 +1,5 @@
 {
-  "status": "CALCULATED with ASSUMED lumped masses and diagonal inertia",
+  "status": "CALCULATED with ASSUMED lumped masses and mass-consistent equivalent diagonal sizing inertia",
   "sample_count": 6001,
   "seed": 412,
   "extended_gravity_torque_nm": [
@@ -76,32 +76,57 @@
     6.858525843750001,
     0.0
   ],
+  "point_mass_inertia_bound_kg_m2": [
+    4.490834687500001,
+    4.490834687500001,
+    1.3017946875,
+    0.09401906250000001,
+    0.09401906250000001,
+    0.0
+  ],
+  "configured_control_inertia_kg_m2": [
+    1.2,
+    1.8,
+    0.8,
+    0.08,
+    0.05,
+    0.03
+  ],
+  "sizing_inertia_kg_m2": [
+    4.490834687500001,
+    4.490834687500001,
+    1.3017946875,
+    0.09401906250000001,
+    0.09401906250000001,
+    0.03
+  ],
+  "sizing_inertia_policy": "Per joint max(configured independent-axis plant inertia, all-angle point-COM lever bound). This preserves the educational control plant while preventing actuator sizing below the same assumed point-mass model.",
   "dynamic_allowance_nm": [
-    6.911503837897545,
-    6.911503837897545,
-    4.057890510886816,
-    0.6492624817418905,
-    0.41887902047863906,
+    17.249965916326012,
+    12.547174828747272,
+    5.371585930770471,
+    0.7079853934221787,
+    0.603265638302519,
     0.3665191429188092
   ],
   "safety_factor": 2.0,
   "concept_output_torque_nm": [
-    13.82300767579509,
-    154.15371751329508,
-    71.87616765927362,
-    15.015576650983782,
-    14.554809728457279,
+    34.499931832652024,
+    165.42505949499454,
+    74.50355849904093,
+    15.133022474344358,
+    14.923582964105039,
     0.7330382858376184
   ],
   "concept_motor_torque_nm": [
-    0.2303834612632515,
-    1.8351633037297035,
-    0.9982801063788003,
-    0.3336794811329729,
-    0.32344021618793956,
+    0.5749988638775337,
+    1.9693459463689829,
+    1.034771645820013,
+    0.3362893883187635,
+    0.33163517698011197,
     0.018795853483015858
   ],
   "assumed_total_manipulator_mass_kg": 23.65,
   "moving_mass_kg": 15.15,
-  "limitations": "COM midpoint, no inertia tensor coupling, friction/backlash/cable/thermal/fatigue modelling; sampling is not a proof of a maximum. Closed-form gravity bounds size the conceptual actuators."
+  "limitations": "COM midpoint point masses; no centroidal body rotation tensors, inertia coupling, Coriolis/centrifugal torque, reflected drive inertia, friction/backlash/cable/thermal/fatigue modelling. Gravity and diagonal point-mass bounds cover their stated model only, not full manipulator dynamics; sampling is not proof of a maximum."
 }

@@ -37,3 +37,61 @@ The user requested a comprehensive final cross-check and a polished student engi
 All 54 individual STEP components, six assemblies, native correspondence, drawing dimensions and five gripper openings were independently checked. The numerical review compared independent spatial FK, Jacobian finite differences, energy-gradient torques, complete task/workspace records, controller behavior and all research sweeps. The integrated validation passed 34 tests, artifact/configuration consistency, lint, documentation and actual native ERC/PCB DRC/connectivity. A fresh v1.1.0 wheel reproduced its detached CLI demonstration.
 
 The viewer now isolates and automatically frames every CAD part; all 54 inspections produced visible geometry and no WebGL errors. Component, theory and electronic/BOM guides plus folder indexes make the project easier to navigate. Browser Markdown references are redirected to readable HTML. Repository metadata, README previews and an explicitly scoped software/artifact GitHub workflow complete the portfolio improvements. Physical construction and qualification remain outside this digital project.
+
+## Reassessment against the original goals — 2026-10-17, version 1.2.0
+
+The user requested another complete review and reflection on the original intent.
+The brief still calls for an original, reproducible digital arm and interchangeable
+gripper, model-driven motion, transparent engineering calculations, meaningful
+conceptual electronics and a coherent student portfolio. The new project-purpose
+guide follows those connections rather than treating the outputs as isolated files.
+The organized folder had been moved; repairing the editable environment's source
+link and restoring the local page made the existing tools usable again.
+
+Native GUI inspection exposed an important omission in the earlier file-level
+checks: all 54 saved FreeCAD parts were hidden, leaving a blank initial viewport.
+The exporter now saves visible, named parts. Detailed interface probes
+also found edge-breaking adapter holes, an overlapping rear cover, an unconnected
+screw-to-carriage representation, finger mounting holes outside their support and
+a counterbore shallower than its description. The repaired adapter, pilot,
+fastening, nut/carriage bridges, finger tabs and top hatch preserve the original
+kinematic dimensions and 90 mm opening. New exact interface tests complement
+the representative collision screening; renders and native files are refreshed
+from the actual revised solids.
+
+Boundary tests reproduced acceptance of NaN poses, malformed near-homogeneous
+matrices and small trajectory discontinuities through unintended relative
+tolerances. A radial MOVE L into singular full extension produced increasing
+joint acceleration under sample refinement while its endpoint acceleration was
+overwritten with zero. Strict input checks, absolute tolerances and a documented
+sampled Jacobian regularity guard now reject these cases. PID state/input, payload
+and zero-load/signed beam cases received targeted regressions.
+
+The actuator model also reused educational control inertias smaller than the
+same assumed point-COM load model. Sizing now uses the greater of those inertias
+and all-angle point-mass lever bounds, verified by independent kinetic-energy
+differences. The independent PID plants remain unchanged. The nominal task is
+byte-identical: 1,041 samples, 9.243979567 s and the original motion-limit fractions.
+
+Electronics review found a small omitted regulator quiescent-current heat term.
+More significantly, deleting the two input-power route segments in a scratch
+board still passed the old saved-data verifier while fresh native DRC reported an
+unconnected net. Source binding now rejects that stale proof. Fresh checks of the
+original board and library geometry found no circuit/layout violations. The PCB
+and schematic design bytes remain unchanged.
+
+The browser's ideal grasp now carries full tool orientation as well as position.
+Validation independently recomputes residuals, enforces finite acceptance limits,
+binds source and authoritative inputs, and rejects stale native/wheel evidence.
+The installed wheel's complete module set is compared with source, and every CLI
+verification uses a new temporary output directory. The full CAD refresh sequence
+is now a reproducible script; a successful application exit alone cannot stand
+in for current native proof.
+
+## Executed v1.2.0 integration outcome
+
+The single --full workflow regenerated primary CAD and numerical results, refreshed native FreeCAD/Blender/renders and sampled clearance, executed native KiCad checks, and passed all 90 tests with zero failures/errors/skips. All named gates passed, including current source/input revision consistency (76 bindings). The versioned wheel and browser evidence match the current package/artifact. Publication, clean-clone and download verification are recorded separately from this local engineering acceptance.
+
+The final repository audit found a local user-profile path in an installed FreeCAD add-on startup diagnostic captured by the full native refresh. A log-redaction helper and regression now retain the error details without publishing the account path. The full regeneration report retains its original executed source revision; the final integrated run verifies this small logging change and the enlarged suite before publication.
+
+Final acceptance on 18 October 2026 passed all 91 tests with zero failures, errors or skips, fresh native electronics checks and all source/configuration/numerical/artifact gates. The source revision was frozen throughout this successful run.

@@ -38,7 +38,8 @@ PATTERNS = {
         r"(?:gh[pousr]_[A-Za-z0-9]{32,}|github_pat_[A-Za-z0-9_]{40,}|sk-[A-Za-z0-9]{32,}|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----)"
     ),
     "personal_absolute_path": re.compile(
-        r"(?:C:(?:\\+|/)Users(?:\\+|/)|E:(?:\\+|/)project workspace assests)", re.I
+        r"(?:C:(?:\\+|/)Users(?:\\+|/)|E:(?:\\+|/)(?:project workspace assests|gripper projects))",
+        re.I,
     ),
 }
 

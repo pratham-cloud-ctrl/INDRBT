@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.2.0 — 2026-10-18 — mechanical interfaces and rigorous review gates
+
+- Repaired the gripper adapter edge ligaments, mating fastening pattern, locating pilot, carriage/nut bridges, finger attachment and service-cover interference. Corrected base counterbore depth; refreshed actual solids, drawings, native models and renders.
+- Fixed native FreeCAD saved visibility so the complete assembly opens visibly, with semantic component labels. Added reproducible native/render refresh and independent CAD review scripts.
+- Rejected nonfinite/nonphysical configurations, malformed poses/trajectories, segment discontinuities and singular MOVE L continuation. Corrected PID input/state checks and zero-load/signed beam and payload edge cases.
+- Separated educational control inertia from actuator sizing: conceptual sizing now uses the greater of the control inertia and mass-derived point-COM inertia bounds. Added independent kinetic-energy regressions and clarified the model limits.
+- Fixed rigid grasp orientation in the browser, regulator quiescent heat accounting, stale PCB/wheel/native proof acceptance, numerical residual acceptance and nonfinite saved-evidence handling.
+- Bound current validation to source and authoritative inputs; compare every packaged module and use a new output directory for each detached CLI check. Added a project-purpose guide linking the deliverables to the original brief.
+
+The nominal SI specification and pick/place trajectory remain unchanged. This release records a new executed review; earlier releases and their evidence remain historical.
+
 ## 1.1.0 — 2026-10-05 — independent engineering review and accessibility
 
 - Corrected analytical TCP deflection to include forearm rotation across the rigid wrist/tool offset; added an independent whole-arm virtual-work regression.

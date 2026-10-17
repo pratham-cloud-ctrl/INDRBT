@@ -10,7 +10,7 @@ All figures are digital. Reconstruction error is an algorithm residual, not phys
 | Payload | 4.0 kg | TARGET | Design load assumption |
 | Repeatability | ±0.1 mm | TARGET — NOT VERIFIED | No physical measurement/no compliance model |
 | Manipulator mass | 23.65 kg | ASSUMED | Lumped load model |
-| Sum of CAD envelope material volumes × density | 19.952 kg | CALCULATED | Exterior geometry, overlaps/placeholder internals caveat |
+| Sum of CAD envelope material volumes × density | 19.908 kg | CALCULATED | Exterior geometry, overlaps/placeholder internals caveat |
 | Maximum FK closed-form discrepancy | 2.544e-16 m | VERIFIED DIGITALLY | 60 independent planar trials |
 | Maximum FK–IK–FK position error | 2.700e-11 m | VERIFIED DIGITALLY | 60 perturbed-seed trials |
 | Maximum IK orientation error | 6.504e-12 rad | VERIFIED DIGITALLY | SO(3) residual |
@@ -31,6 +31,6 @@ All figures are digital. Reconstruction error is an algorithm residual, not phys
 | Native schematic ERC violations | 0 | VERIFIED DIGITALLY | All report severities under enabled KiCad default rules; see electronics scope |
 | Native PCB DRC errors / warnings / unconnected | 0 / 0 / 0 | VERIFIED DIGITALLY | Executed KiCad DRC and schematic-board checks |
 | PCB footprints / copper layers | 48 / 4 | VERIFIED DIGITALLY | Native board and manufacturing exports |
-| Automated tests | 34 tests; 0 failures; 0 errors | VERIFIED DIGITALLY | results/validation/pytest.xml |
+| Automated tests | 91 tests; 0 failures; 0 errors | VERIFIED DIGITALLY | results/validation/pytest.xml |
 
 PCB results are retained in [PCB verification](../electronics/pcb_verification.json). Continuous collision freedom, hardware performance and functional safety are outside the verified scope.

@@ -1,22 +1,48 @@
-# ASTER-6 v1.1.0 — reviewed engineering project and component access
+# ASTER-6 v1.2.0 — original goals, repaired mechanics and rigorous validation
 
-ASTER-6 is an original six-axis robot and parallel gripper with reproducible CAD, numerical motion/control, engineering calculations and a routed conceptual joint/sensor PCB. This release incorporates the final independent engineering review and improves access to the project's components and theory. No physical robot or electronics were built.
+ASTER-6 connects an original six-axis arm and interchangeable parallel gripper
+to kinematics, motion planning, analytical mechanics, simplified feedback control
+and a routed conceptual joint/sensor interface. The 17 October review revisited
+the original digital brief and fixed defects beyond the earlier passing checks.
+No physical robot or electronics were built.
 
-- Corrected the serial TCP beam calculation to include forearm rotation acting over the rigid wrist/tool offset. An independent whole-arm virtual-work regression verifies the resulting 0.104075 mm ideal estimate.
-- Selected Bourns MF-NSMF025X-2 explicitly and added a project-local footprint matching its manufacturer drawing. All 44 footprint assignments now match their symbol filters; the former F1 land-pattern discrepancy is resolved.
-- Added a 54-part CAD catalog, theory guide, electronics component/BOM guide, folder indexes and individual-part inspection with automatic camera fitting in the offline viewer.
-- Improved the GitHub README, native PCB previews and readable browser-to-browser document navigation. Added automated software and saved-artifact checks on GitHub, with native CAD/KiCad scope explicitly distinguished.
+- Mechanical interfaces: wider tool adapter with retained bolt ligaments, a real locating pilot and matching rear fasteners; connected nut/carriage bridges and finger supports; a nonintersecting top service hatch; actual 7 mm counterbores. The design still contains 54 parts and retains the original SI dimensions and 90 mm opening.
+- Native CAD access: all 54 named FreeCAD solids open visibly. STEP/STL, native FreeCAD/Blender, actual renders and three drawing pages were regenerated. New refresh/review scripts execute native applications and require current source/artifact proof.
+- Numerical behavior: reject nonfinite/nonphysical inputs, malformed rigid poses and trajectories, segment discontinuities and singular MOVE L continuation. PID, beam zero/signed-load and payload edge cases have explicit regressions.
+- Actuator sizing: distinguish educational controller inertia from mass-consistent sizing inertia. A separate kinetic-energy regression checks the point-COM bounds. Coupled rigid-body dynamics remain outside this model.
+- Demonstration: ideal grasp attachment now follows the complete TCP position and orientation. All 54 components remain individually inspectable in the offline browser viewer.
+- Electronics: include quiescent-current heat in the regulator estimate and reject stale native PCB reports after routing/design changes. The original board/schematic geometry is unchanged. Current native ERC/DRC/connectivity/parity and manufacturing export audits pass within their enabled-rule scope.
+- Reproducibility: enforce measured numerical acceptance limits, reject nonfinite saved evidence, bind validation to 76 current source/input files, compare all 15 wheel modules with source and use fresh CLI output directories. The new project-purpose guide explains how each subsystem answers the original engineering question.
 
-- CAD: original six-axis design, 54 parametric components, STEP/STL assemblies, native FreeCAD assembly, actual renders and three interface drawing pages.
-- Gripper: symmetric guide/carriage motion, opposed screw concept, 90 mm measured digital gap, calculations for travel and 200 N target force.
-- Kinematics: explicit rigid transform chain, FK, bounded numerical IK, Jacobian and independent numerical checks.
-- Simulation: seeded workspace/singularities, MOVE J/MOVE L, recorded pick/place, offline interactive CAD twin and FK animation.
-- Control: saturated PID, antiwindup, inertia/damping plants, step and tracking metrics.
-- Electronics: native 100 × 100 mm four-layer joint/sensor PCB, 44 schematic components plus four mechanical mounts, 265 track segments, 32 vias, two filled planes, 28 connected nets and 118 checked interface pins. Native enabled-rule ERC/DRC, unconnected-item and schematic-parity counts are all zero.
-- Manufacturing exports: ten Gerber layers, separate PTH/NPTH drills and maps, applicable component positions, IPC-D-356, BOM, fabrication ZIP and six-page layer PDF.
-- Verification: 34 automated tests, including the new independent beam regression, alongside randomized reconstruction/Jacobian checks, CAD round trips and corrected shoulder/wrist/gripper interfaces. Six poses classify 8,586 pairs; 75 task configurations classify 107,325 pairs with 5,935 exact intersections and no prohibited overlap. Independent final reviews cover every CAD component, five exact gripper openings, electronics/fabrication data and numerical theory. The versioned wheel is exercised in a fresh isolated environment with detached imports and actual CLI output.
-- Organization/documentation: numbered CAD/simulation/report/electronics/reference/source folders, browser-readable guide/reports, portable explicit app launchers, source/generated copy hashes, exact-byte checkout rules, requirements, traceability, KPIs and authentic failure/fix journal.
+## Executed verification
 
-The [executed validation](../results/validation/validation_report.md), [PCB evidence](../electronics/pcb_verification.json), [requirements matrix](validation_matrix.md), [final review](final_review.md) and [scope audit](digital_scope_audit.md) define acceptance. Physical payload/repeatability, EMC, functional safety, manufacturer CAM approval, complete tolerances and continuous swept collision certification are outside the verified digital scope. Five KiCad factory-disabled DRC checks are explicitly disclosed and independently reviewed; no custom severity suppression or DRC exclusions were added.
+The complete CAD/results/native regeneration passed. The latest integrated
+validation passed **91 automated tests**,
+with zero failures, errors or skips, and all named integration gates.
+All 54 STEP/STL component pairs and six assemblies agree with native data; all saved
+FreeCAD parts are visible. Six named poses and closed/mid/open gripper checks use
+312 exact intersections. The task review screens 75 configurations with 107,325
+pair classifications and 6,126 exact intersections, with zero prohibited overlap.
+The CAD geometric envelope/material sum is 19.907949 kg;
+the separate assumed load model is 23.65 kg.
 
-Release assets are the complete organized project ZIP and installable Python wheel. The private repository retains the authentic earlier preview history.
+The unchanged nominal task contains 1,041 samples and lasts 9.243979567 s.
+Its peak velocity/acceleration fractions are 0.951694 and 0.997971.
+The ideal serial beam estimate remains 0.104075 mm. These are generated digital
+results, rather than physical performance measurements.
+
+See the [original goals](project_alignment.md), [current independent review](final_review.md),
+[executed validation](../results/validation/validation_report.md),
+[CAD proof](../results/validation/cad_release_consistency.json),
+[theory review](../results/validation/final_theory_review.json) and
+[electronics evidence](../electronics/pcb_verification.json).
+
+Physical payload/repeatability, production tolerances, EMC, thermal qualification,
+functional safety, detailed thread/preload/contact physics, complete coupled
+dynamics and continuous swept collision certification remain unverified. Five
+KiCad factory-disabled DRC checks remain disclosed; no custom suppression or
+exclusions were added. This is a completed digital educational engineering project
+within the [documented scope](digital_scope_audit.md).
+
+Release assets are the complete organized ZIP and installable Python wheel.
+The repository remains private and retains the authentic earlier history.

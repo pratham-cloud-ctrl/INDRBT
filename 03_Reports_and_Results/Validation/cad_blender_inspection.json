@@ -1,0 +1,402 @@
+{
+  "status": "PASS",
+  "application": "Blender",
+  "version": "5.2.2 LTS",
+  "mesh_sha256": "604539d0a4cb2578d351a1b7de666498aac3018c10c57520082c3ccc9a1e3991",
+  "native_sha256": "e7d3fac2846ca6f5b3863797169b3caaa53515b5dc9cfe88459efa5931357ab5",
+  "components_checked": 54,
+  "float_comparison_tolerance": 1e-06,
+  "components": [
+    {
+      "name": "base_mounting_plate",
+      "vertices": 3708,
+      "triangles": 3704,
+      "maximum_local_vertex_error_m": 3.7246513373556667e-09,
+      "maximum_home_matrix_error": 0.0
+    },
+    {
+      "name": "fixed_base_riser",
+      "vertices": 1648,
+      "triangles": 1656,
+      "maximum_local_vertex_error_m": 3.7210845932333925e-09,
+      "maximum_home_matrix_error": 0.0
+    },
+    {
+      "name": "j1_slew_bearing_envelope",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 3.6954879711892374e-09,
+      "maximum_home_matrix_error": 0.0
+    },
+    {
+      "name": "base_electronics_cover",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 3.724613187316983e-09,
+      "maximum_home_matrix_error": 0.0
+    },
+    {
+      "name": "turret_neck",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.7881393449270533e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "turret_bridge",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 2.2931671145309807e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "shoulder_fork_-1",
+      "vertices": 2060,
+      "triangles": 2072,
+      "maximum_local_vertex_error_m": 1.8587017064364275e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "shoulder_bearing_-1",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.8253326350414767e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "shoulder_fork_+1",
+      "vertices": 2060,
+      "triangles": 2072,
+      "maximum_local_vertex_error_m": 1.8587017064364275e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "shoulder_bearing_+1",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.8253326350414767e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "j2_gearbox_envelope",
+      "vertices": 206,
+      "triangles": 200,
+      "maximum_local_vertex_error_m": 2.324581138690718e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "j2_motor_envelope",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 3.933906561615075e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "j2_motor_endcap",
+      "vertices": 206,
+      "triangles": 200,
+      "maximum_local_vertex_error_m": 3.933906561615075e-09,
+      "maximum_home_matrix_error": 1.2516975400611585e-08
+    },
+    {
+      "name": "shoulder_rotor",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.72603607795363e-09,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "shoulder_output_shaft",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 3.0398368822126542e-09,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "upper_arm_hollow_link",
+      "vertices": 2288,
+      "triangles": 2264,
+      "maximum_local_vertex_error_m": 7.397041312806607e-09,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_fork_bridge_-1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 1.3113021835042815e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_fork_bridge_+1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 1.3113021835042815e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "upper_service_cover_-1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 6.009826664099549e-09,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_fork_-1",
+      "vertices": 2060,
+      "triangles": 2072,
+      "maximum_local_vertex_error_m": 1.4811096238354082e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_bearing_-1",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.4363021882957128e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "upper_service_cover_+1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 6.009826664099549e-09,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_fork_+1",
+      "vertices": 2060,
+      "triangles": 2072,
+      "maximum_local_vertex_error_m": 1.4811096238354082e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_bearing_+1",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.4363021882957128e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "j3_gearbox_envelope",
+      "vertices": 206,
+      "triangles": 200,
+      "maximum_local_vertex_error_m": 1.4658889768703887e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "j3_motor_envelope",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 1.3566741952075745e-08,
+      "maximum_home_matrix_error": 5.437095118576707e-08
+    },
+    {
+      "name": "elbow_rotor",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 1.6839694985670839e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "elbow_output_shaft",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 9.037446971338348e-10,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "forearm_hollow_link",
+      "vertices": 2288,
+      "triangles": 2264,
+      "maximum_local_vertex_error_m": 1.2159347528850617e-08,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "forearm_service_cover_-1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 6.8859481727745475e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "forearm_service_cover_+1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 6.8859481727745475e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "wrist_roll_stator",
+      "vertices": 1648,
+      "triangles": 1656,
+      "maximum_local_vertex_error_m": 4.053115842950206e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "j4_bearing_envelope",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 4.291534405620467e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "wrist_roll_rotor",
+      "vertices": 618,
+      "triangles": 612,
+      "maximum_local_vertex_error_m": 1.7346763608871996e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "wrist_roll_cover",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 4.053115842950206e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "wrist_pitch_fork_-1",
+      "vertices": 1648,
+      "triangles": 1656,
+      "maximum_local_vertex_error_m": 3.4024047884662068e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "wrist_pitch_fork_+1",
+      "vertices": 1648,
+      "triangles": 1656,
+      "maximum_local_vertex_error_m": 3.4024047884662068e-09,
+      "maximum_home_matrix_error": 2.5639846135128153e-08
+    },
+    {
+      "name": "wrist_pitch_rotor",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 9.235811247731984e-10,
+      "maximum_home_matrix_error": 3.243182084000651e-08
+    },
+    {
+      "name": "wrist_pitch_neck",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 9.30705068569182e-10,
+      "maximum_home_matrix_error": 3.243182084000651e-08
+    },
+    {
+      "name": "j6_stator_envelope",
+      "vertices": 412,
+      "triangles": 408,
+      "maximum_local_vertex_error_m": 9.235811247731984e-10,
+      "maximum_home_matrix_error": 3.243182084000651e-08
+    },
+    {
+      "name": "tool_flange_6xM5_PCD46",
+      "vertices": 1854,
+      "triangles": 1860,
+      "maximum_local_vertex_error_m": 9.302282312495525e-10,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "interchangeable_gripper_adapter",
+      "vertices": 1648,
+      "triangles": 1656,
+      "maximum_local_vertex_error_m": 9.302282312495525e-10,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_pocketed_body",
+      "vertices": 5394,
+      "triangles": 5308,
+      "maximum_local_vertex_error_m": 3.713283527884137e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_top_service_cover",
+      "vertices": 1064,
+      "triangles": 1052,
+      "maximum_local_vertex_error_m": 1.8336391433004806e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_guide_rod_-14",
+      "vertices": 206,
+      "triangles": 200,
+      "maximum_local_vertex_error_m": 3.6954879711892374e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_guide_rod_+14",
+      "vertices": 206,
+      "triangles": 200,
+      "maximum_local_vertex_error_m": 3.6954879711892374e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "opposite_hand_screw_envelope",
+      "vertices": 206,
+      "triangles": 200,
+      "maximum_local_vertex_error_m": 1.8290424383393677e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_actuator_envelope",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 1.8461322817686643e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_jaw_carriage_-1",
+      "vertices": 1556,
+      "triangles": 1524,
+      "maximum_local_vertex_error_m": 3.6954879711892374e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_finger_-1",
+      "vertices": 652,
+      "triangles": 636,
+      "maximum_local_vertex_error_m": 3.5643768353521565e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_contact_pad_-1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 1.7881393449270533e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_jaw_carriage_+1",
+      "vertices": 1556,
+      "triangles": 1524,
+      "maximum_local_vertex_error_m": 3.6954879711892374e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_finger_+1",
+      "vertices": 652,
+      "triangles": 636,
+      "maximum_local_vertex_error_m": 3.5643768353521565e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    },
+    {
+      "name": "gripper_contact_pad_+1",
+      "vertices": 240,
+      "triangles": 220,
+      "maximum_local_vertex_error_m": 1.7881393449270533e-09,
+      "maximum_home_matrix_error": 2.8855542122396827e-08
+    }
+  ],
+  "render_sha256": {
+    "gripper.png": "42ed92a3665e71f529071b860d1377d6955efbb3390fe9ca8d1db1b4a1be88b3",
+    "hero.png": "126f2d594a27690e827db1cd89a0752bba431b3297343a65121ed3c5ba1b2443",
+    "pose_extended.png": "739f1e72050a1806f6219bd3736a38ab9a2eef7036cce60568c32efd57657686",
+    "pose_folded.png": "805bcc6ac5726ef6004abb93e85167c3bddc54dfcd1ed96fcc7ebaaf896e8843",
+    "pose_home.png": "ee396bf8063eff63fa5564daf944e3ec82bab3b377714866f92f81661e45f902",
+    "pose_pick.png": "ede709bd6489fb94c280fb344ba3536dbe470b973f97df1e9b4c102badc97181",
+    "pose_place.png": "71f30c24dde8d80aa48889a06246770b67bcae74cc89b999c122317b0b2ccf0a",
+    "pose_vertical.png": "cca7f380fae3d14881d1f73291d23eaed303597a154954d914b1c6a9f8e9493e",
+    "poses.png": "7deec980dca23fe4a30aca844b4fe2a8c0d60417ad3eb7a92ed8264f62903ceb"
+  },
+  "errors": [],
+  "scope": "Saved native object names/counts, local CAD mesh vertices and home transforms are compared directly. PNG hashes bind the outputs from the rendering workflow; readability is checked by review_cad.py."
+}

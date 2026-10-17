@@ -2,6 +2,11 @@
   "status": "PASS",
   "guide_navigation": [
     {
+      "page": "project_alignment.html",
+      "route": "PASS",
+      "readable_chapter_links": "PASS"
+    },
+    {
       "page": "theory_guide.html",
       "route": "PASS",
       "readable_chapter_links": "PASS"

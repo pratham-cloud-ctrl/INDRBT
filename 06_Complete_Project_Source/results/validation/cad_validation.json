@@ -9,13 +9,13 @@
       "group": "base",
       "material": "steel",
       "role": "structure",
-      "volume_mm3": 709823.2251245294,
+      "volume_mm3": 708138.5460640414,
       "density_kg_m3": 7850,
-      "geometric_mass_kg": 5.572112317227557,
+      "geometric_mass_kg": 5.558887586602726,
       "center_of_geometry_mm": [
-        -9.391910447599112e-16,
-        -1.8886324692716357e-15,
-        9.936907692733254
+        -2.178892492343205e-15,
+        -2.4864932892286736e-15,
+        9.92783625212116
       ],
       "solids": 1,
       "faces": 28,
@@ -1369,16 +1369,16 @@
       "group": "j6",
       "material": "steel",
       "role": "structure",
-      "volume_mm3": 19870.573533955445,
+      "volume_mm3": 21893.759202867266,
       "density_kg_m3": 7850,
-      "geometric_mass_kg": 0.15598400224155026,
+      "geometric_mass_kg": 0.17186600974250807,
       "center_of_geometry_mm": [
-        4.000000000000001,
-        -1.1442733399450649e-15,
-        1.2086387153169747e-15
+        4.554455445544555,
+        -3.868359588046629e-16,
+        -6.231191455146394e-16
       ],
       "solids": 1,
-      "faces": 10,
+      "faces": 12,
       "valid": true,
       "bbox": {
         "min_mm": [
@@ -1387,7 +1387,41 @@
           -30.0
         ],
         "max_mm": [
+          12.0,
+          30.0,
+          30.0
+        ],
+        "size_mm": [
+          12.0,
+          60.0,
+          60.0
+        ]
+      }
+    },
+    {
+      "name": "interchangeable_gripper_adapter",
+      "group": "j6",
+      "material": "aluminum",
+      "role": "structure",
+      "volume_mm3": 15748.552645033353,
+      "density_kg_m3": 2700,
+      "geometric_mass_kg": 0.04252109214159005,
+      "center_of_geometry_mm": [
+        12.000000000000004,
+        -2.1367870892066397e-15,
+        -9.240160385758443e-16
+      ],
+      "solids": 1,
+      "faces": 10,
+      "valid": true,
+      "bbox": {
+        "min_mm": [
           8.0,
+          -30.0,
+          -30.0
+        ],
+        "max_mm": [
+          16.0,
           30.0,
           30.0
         ],
@@ -1399,54 +1433,20 @@
       }
     },
     {
-      "name": "interchangeable_gripper_adapter",
-      "group": "j6",
-      "material": "aluminum",
-      "role": "structure",
-      "volume_mm3": 8935.027287513849,
-      "density_kg_m3": 2700,
-      "geometric_mass_kg": 0.02412457367628739,
-      "center_of_geometry_mm": [
-        12.0,
-        4.947454100494152e-15,
-        -6.616337445085694e-16
-      ],
-      "solids": 1,
-      "faces": 15,
-      "valid": true,
-      "bbox": {
-        "min_mm": [
-          8.0,
-          -24.922554347826093,
-          -25.0
-        ],
-        "max_mm": [
-          16.0,
-          24.922554347826093,
-          25.0
-        ],
-        "size_mm": [
-          8.0,
-          49.845108695652186,
-          50.0
-        ]
-      }
-    },
-    {
       "name": "gripper_pocketed_body",
       "group": "j6",
       "material": "aluminum",
       "role": "structure",
-      "volume_mm3": 87434.82395670042,
+      "volume_mm3": 63389.35522762575,
       "density_kg_m3": 2700,
-      "geometric_mass_kg": 0.23607402468309116,
+      "geometric_mass_kg": 0.17115125911458953,
       "center_of_geometry_mm": [
-        24.733164080063556,
-        -1.1498805445431958e-06,
-        4.4358823243591355e-07
+        25.067546552616623,
+        -1.5896754276925067e-06,
+        -1.5559460039516164
       ],
       "solids": 1,
-      "faces": 32,
+      "faces": 57,
       "valid": true,
       "bbox": {
         "min_mm": [
@@ -1467,36 +1467,36 @@
       }
     },
     {
-      "name": "gripper_rear_service_cover",
+      "name": "gripper_top_service_cover",
       "group": "j6",
       "material": "polymer",
       "role": "service cover",
-      "volume_mm3": 8688.548667764617,
+      "volume_mm3": 3120.4991190777228,
       "density_kg_m3": 1200,
-      "geometric_mass_kg": 0.01042625840131754,
+      "geometric_mass_kg": 0.0037445989428932674,
       "center_of_geometry_mm": [
-        15.0,
-        2.3552415452091555e-15,
-        1.3330012912121262e-16
+        28.999999999999996,
+        8.379419983204429e-16,
+        25.000000000000004
       ],
       "solids": 1,
-      "faces": 10,
+      "faces": 14,
       "valid": true,
       "bbox": {
         "min_mm": [
-          14.0,
-          -64.0,
-          -17.0
+          21.0,
+          -50.0,
+          24.0
         ],
         "max_mm": [
-          16.0,
-          64.0,
-          17.0
+          37.0,
+          50.0,
+          26.0
         ],
         "size_mm": [
-          2.0,
-          128.0,
-          34.0
+          16.0,
+          100.0,
+          2.0
         ]
       }
     },
@@ -1641,30 +1641,30 @@
       "group": "j6",
       "material": "aluminum",
       "role": "structure",
-      "volume_mm3": 4911.362890333117,
+      "volume_mm3": 6120.990150676418,
       "density_kg_m3": 2700,
-      "geometric_mass_kg": 0.013260679803899418,
+      "geometric_mass_kg": 0.01652667340682633,
       "center_of_geometry_mm": [
-        45.33159871668748,
-        -51.49999999999999,
-        0.0
+        44.47864226972531,
+        -51.50000000000001,
+        -2.4477231113728632
       ],
       "solids": 1,
-      "faces": 12,
+      "faces": 26,
       "valid": true,
       "bbox": {
         "min_mm": [
-          37.0,
+          22.0,
           -56.5,
           -18.0
         ],
         "max_mm": [
-          53.0,
+          69.0,
           -46.5,
           18.0
         ],
         "size_mm": [
-          16.0,
+          47.0,
           10.0,
           36.0
         ]
@@ -1743,30 +1743,30 @@
       "group": "j6",
       "material": "aluminum",
       "role": "structure",
-      "volume_mm3": 4911.362890333117,
+      "volume_mm3": 6120.990150676418,
       "density_kg_m3": 2700,
-      "geometric_mass_kg": 0.013260679803899418,
+      "geometric_mass_kg": 0.01652667340682633,
       "center_of_geometry_mm": [
-        45.33159871668748,
-        51.49999999999999,
-        0.0
+        44.47864226972531,
+        51.50000000000001,
+        -2.4477231113728632
       ],
       "solids": 1,
-      "faces": 12,
+      "faces": 26,
       "valid": true,
       "bbox": {
         "min_mm": [
-          37.0,
+          22.0,
           46.5,
           -18.0
         ],
         "max_mm": [
-          53.0,
+          69.0,
           56.5,
           18.0
         ],
         "size_mm": [
-          16.0,
+          47.0,
           10.0,
           36.0
         ]
@@ -1871,7 +1871,7 @@
       "component_count": 54,
       "step_reimport_valid": true,
       "step_reimport_solids": 54,
-      "step_volume_relative_error": 2.159251950829099e-10,
+      "step_volume_relative_error": 1.1603100379299372e-09,
       "max_cad_fk_transform_error": 3.3306690738754696e-16
     },
     "extended": {
@@ -1903,7 +1903,7 @@
       "component_count": 54,
       "step_reimport_valid": true,
       "step_reimport_solids": 54,
-      "step_volume_relative_error": 2.159251950829099e-10,
+      "step_volume_relative_error": 1.1603102226382699e-09,
       "max_cad_fk_transform_error": 1.1102230246251565e-16
     },
     "folded": {
@@ -1935,7 +1935,7 @@
       "component_count": 54,
       "step_reimport_valid": true,
       "step_reimport_solids": 54,
-      "step_volume_relative_error": 2.159251950829099e-10,
+      "step_volume_relative_error": 1.1603102226382699e-09,
       "max_cad_fk_transform_error": 2.220446049250313e-16
     },
     "vertical": {
@@ -1967,7 +1967,7 @@
       "component_count": 54,
       "step_reimport_valid": true,
       "step_reimport_solids": 54,
-      "step_volume_relative_error": 2.1592537905994154e-10,
+      "step_volume_relative_error": 1.1603102226382699e-09,
       "max_cad_fk_transform_error": 2.220446049250313e-16
     },
     "pick": {
@@ -1999,7 +1999,7 @@
       "component_count": 54,
       "step_reimport_valid": true,
       "step_reimport_solids": 54,
-      "step_volume_relative_error": 2.1592519508290996e-10,
+      "step_volume_relative_error": 1.1603102226382699e-09,
       "max_cad_fk_transform_error": 2.220446049250313e-16
     },
     "place": {
@@ -2031,28 +2031,28 @@
       "component_count": 54,
       "step_reimport_valid": true,
       "step_reimport_solids": 54,
-      "step_volume_relative_error": 2.1592519508290996e-10,
+      "step_volume_relative_error": 1.1603102226382699e-09,
       "max_cad_fk_transform_error": 2.220446049250313e-16
     }
   },
-  "geometric_mass_total_kg": 19.95196733024857,
+  "geometric_mass_total_kg": 19.90794868776893,
   "geometric_mass_by_group_kg": {
-    "base": 8.249345959628313,
+    "base": 8.236121229003482,
     "j1": 3.3626500710094316,
     "j2": 5.0557010017416415,
     "j3": 2.098027763715614,
     "j4": 0.17261234848444343,
     "j5": 0.33068247192053485,
-    "j6": 0.6829477137485929
+    "j6": 0.6521538018937812
   },
   "structure_only_mass_by_group_kg": {
-    "base": 7.579819836657229,
+    "base": 7.566595106032398,
     "j1": 1.6906541213333774,
     "j2": 4.053287417902613,
     "j3": 1.9771490392130087,
     "j4": 0.17261234848444343,
     "j5": 0.2268082241037112,
-    "j6": 0.5819769933939102
+    "j6": 0.5578647409975229
   },
   "mass_warning": "Geometric envelope/material estimate: motor/gearbox/bearing interiors are not detailed, intersecting same-group seats are summed. Dynamic lumped masses in config remain ASSUMED independently.",
   "interference_checks": [
@@ -2393,11 +2393,29 @@
     "status": "PASS",
     "source_sha256": {
       "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-      "geometry.py": "983a22b813ac271c5f6f9c878055c156863b9d1603d445a1753a05f25436ccfb"
+      "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250"
     },
     "component_count": 54,
     "poses": {
       "home": {
+        "status": "PASS",
+        "component_pairs": 1431,
+        "same_rigid_family_pairs_excluded": 188,
+        "aabb_disjoint_pairs": 1204,
+        "exact_brep_pair_checks": 39,
+        "moving_geometry_min_z_mm": 110.0,
+        "interferences": []
+      },
+      "extended": {
+        "status": "PASS",
+        "component_pairs": 1431,
+        "same_rigid_family_pairs_excluded": 188,
+        "aabb_disjoint_pairs": 1221,
+        "exact_brep_pair_checks": 22,
+        "moving_geometry_min_z_mm": 110.0,
+        "interferences": []
+      },
+      "folded": {
         "status": "PASS",
         "component_pairs": 1431,
         "same_rigid_family_pairs_excluded": 188,
@@ -2406,30 +2424,12 @@
         "moving_geometry_min_z_mm": 110.0,
         "interferences": []
       },
-      "extended": {
-        "status": "PASS",
-        "component_pairs": 1431,
-        "same_rigid_family_pairs_excluded": 188,
-        "aabb_disjoint_pairs": 1223,
-        "exact_brep_pair_checks": 20,
-        "moving_geometry_min_z_mm": 110.0,
-        "interferences": []
-      },
-      "folded": {
-        "status": "PASS",
-        "component_pairs": 1431,
-        "same_rigid_family_pairs_excluded": 188,
-        "aabb_disjoint_pairs": 1208,
-        "exact_brep_pair_checks": 35,
-        "moving_geometry_min_z_mm": 110.0,
-        "interferences": []
-      },
       "vertical": {
         "status": "PASS",
         "component_pairs": 1431,
         "same_rigid_family_pairs_excluded": 188,
-        "aabb_disjoint_pairs": 1223,
-        "exact_brep_pair_checks": 20,
+        "aabb_disjoint_pairs": 1221,
+        "exact_brep_pair_checks": 22,
         "moving_geometry_min_z_mm": 110.0,
         "interferences": []
       },
@@ -2437,8 +2437,8 @@
         "status": "PASS",
         "component_pairs": 1431,
         "same_rigid_family_pairs_excluded": 188,
-        "aabb_disjoint_pairs": 1159,
-        "exact_brep_pair_checks": 84,
+        "aabb_disjoint_pairs": 1156,
+        "exact_brep_pair_checks": 87,
         "moving_geometry_min_z_mm": 22.309725966027337,
         "interferences": []
       },
@@ -2446,8 +2446,8 @@
         "status": "PASS",
         "component_pairs": 1431,
         "same_rigid_family_pairs_excluded": 188,
-        "aabb_disjoint_pairs": 1165,
-        "exact_brep_pair_checks": 78,
+        "aabb_disjoint_pairs": 1162,
+        "exact_brep_pair_checks": 81,
         "moving_geometry_min_z_mm": 22.309725966027337,
         "interferences": []
       }
@@ -2457,8 +2457,8 @@
         "status": "PASS",
         "component_pairs": 91,
         "same_rigid_family_pairs_excluded": 34,
-        "aabb_disjoint_pairs": 51,
-        "exact_brep_pair_checks": 6,
+        "aabb_disjoint_pairs": 49,
+        "exact_brep_pair_checks": 8,
         "moving_geometry_min_z_mm": 196.2282486499477,
         "interferences": []
       },
@@ -2466,8 +2466,8 @@
         "status": "PASS",
         "component_pairs": 91,
         "same_rigid_family_pairs_excluded": 34,
-        "aabb_disjoint_pairs": 51,
-        "exact_brep_pair_checks": 6,
+        "aabb_disjoint_pairs": 49,
+        "exact_brep_pair_checks": 8,
         "moving_geometry_min_z_mm": 196.2282486499477,
         "interferences": []
       },
@@ -2475,20 +2475,20 @@
         "status": "PASS",
         "component_pairs": 91,
         "same_rigid_family_pairs_excluded": 34,
-        "aabb_disjoint_pairs": 51,
-        "exact_brep_pair_checks": 6,
+        "aabb_disjoint_pairs": 49,
+        "exact_brep_pair_checks": 8,
         "moving_geometry_min_z_mm": 196.2282486499477,
         "interferences": []
       }
     },
     "all_component_pose_pair_classifications": 8586,
-    "exact_brep_pair_checks": 292,
+    "exact_brep_pair_checks": 312,
     "scope": "Every component pair at all six named poses, plus gripper closed/mid/open. Same rigid-motion families are excluded as assembled interfaces; no adjacent robot joint is excluded wholesale. All other pairs receive conservative AABB rejection or exact BRep common-volume testing. Finite pose screening does not certify all configurations, continuous motion, tolerance/preload, or physical safety.",
     "penetration_threshold_mm3": 0.001
   },
   "source_sha256": {
     "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-    "geometry.py": "983a22b813ac271c5f6f9c878055c156863b9d1603d445a1753a05f25436ccfb"
+    "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250"
   },
   "interference_scope": "36 legacy selected structure checks plus acceptance of all component pairs at six named poses and gripper closed/mid/open. Adjacent joints are included. Same rigid-motion families are assembled interfaces. See full_pair_screening counts and exclusions; finite screening is not an exhaustive swept proof or physical certification.",
   "gripper": {

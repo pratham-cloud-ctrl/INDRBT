@@ -4,13 +4,14 @@ Status: **DIGITAL SCOPE COMPLETE**. Physical performance is unverified.
 
 | Check | Result |
 |---|---|
+| KiCad ERC / PCB DRC / connectivity | PASS |
 | Automated numerical/CAD tests | PASS |
 | Configuration validation | PASS |
 | FK / IK / Jacobian random trials | PASS |
 | CAD / task / parameter consistency | PASS |
 | Code lint | PASS |
-| KiCad ERC / PCB DRC / connectivity | PASS |
 | Documentation links and coverage | PASS |
+| Validation source revision consistency | PASS |
 
 ## Verified scope limitations
 

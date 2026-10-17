@@ -1,6 +1,6 @@
 # ASTER-6 · Six-axis robot arm and parallel gripper
 
-**Version 1.1.0 · DIGITAL SCOPE COMPLETE · Digital engineering design**
+**Version 1.2.0 · DIGITAL SCOPE COMPLETE · Digital engineering design**
 
 An educational mechatronics project connecting original parametric CAD, robot kinematics, motion planning, PID control, analytical mechanics and a routed KiCad joint/sensor interface. The models, results and engineering decisions are reproducible from versioned source.
 
@@ -8,7 +8,9 @@ An educational mechatronics project connecting original parametric CAD, robot ki
 
 ## Start here
 
-[Download the complete v1.1.0 release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.1.0) or clone this repository. Double-click **OPEN_PROJECT_HOME.cmd** for the project guide or **OPEN_3D_VIEWER.cmd** to view and move the robot. The viewer can isolate any of the 54 components and automatically fit it on screen. Use **OPEN_FREECAD_MODEL.cmd** for CAD editing and **OPEN_PCB_LAYOUT.cmd** for the KiCad board. These Windows launchers locate installed Chrome/Edge, FreeCAD and KiCad; they avoid incorrect file associations. On other systems, open [START_HERE.html](START_HERE.html) or [the interactive viewer](02_Simulation_and_Animation/Interactive_3D_Viewer.html) in a browser.
+[The project purpose and original goals](06_Complete_Project_Source/docs/project_alignment.md) explain how the mechanics, mathematics, motion, control and electronics connect into one digital engineering project.
+
+[Download the complete v1.2.0 release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.2.0) or clone this repository. Double-click **OPEN_PROJECT_HOME.cmd** for the project guide or **OPEN_3D_VIEWER.cmd** to view and move the robot. The viewer can isolate any of the 54 components and automatically fit it on screen. Use **OPEN_FREECAD_MODEL.cmd** for CAD editing and **OPEN_PCB_LAYOUT.cmd** for the KiCad board. These Windows launchers locate installed Chrome/Edge, FreeCAD and KiCad; they avoid incorrect file associations. On other systems, open [START_HERE.html](START_HERE.html) or [the interactive viewer](02_Simulation_and_Animation/Interactive_3D_Viewer.html) in a browser.
 
 GitHub displays HTML source. Download the project to run its offline viewer.
 

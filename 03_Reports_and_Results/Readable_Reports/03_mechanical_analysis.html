@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>03_mechanical_analysis</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="mechanical-calculations-and-actuator-concept">Mechanical calculations and actuator concept</h1>
 <h2 id="load-model-and-mass-basis">Load model and mass basis</h2>
-<p>The SI configuration assigns lumped drive and link masses to the frames used by CAD and FK. Each moving lump is placed at its segment midpoint; the payload is at the TCP. These are ASSUMED load properties. The separate CAD envelope sum is 19.952 kg; simplified gearbox/bearing interiors and overlapping seats prevent treating it as a complete physical BOM. The assumed manipulator mass is 23.65 kg, of which 15.15 kg moves, excluding the payload.</p>
+<p>The SI configuration assigns lumped drive and link masses to the frames used by CAD and FK. Each moving lump is placed at its segment midpoint; the payload is at the TCP. These are ASSUMED load properties. The separate CAD envelope sum is 19.908 kg; simplified gearbox/bearing interiors and overlapping seats prevent treating it as a complete physical BOM. The assumed manipulator mass is 23.65 kg, of which 15.15 kg moves, excluding the payload.</p>
 <table>
 <thead>
 <tr>
@@ -55,7 +55,7 @@
 <p>For each COM, gravity force is F=[0,0,−mg]. External axis moment is τᵢ = aᵢ·[(pCOM−oᵢ)×F]; holding torque has the opposite sign. Summation includes downstream groups only. An independent potential-energy gradient test verifies the force/moment convention.</p>
 <p>The 6001-pose sample uses seed 412; it is not proof of a worst case. Closed-form triangle-inequality lever bounds size the conceptual actuators. Full extension gives shoulder 70.165 N·m and elbow 31.880 N·m. J1 and J6 gravity moments vanish for the assumed symmetric, centred lumps; acceleration/friction allowances still require drive torque.</p>
 <h2 id="actuator-sizing">Actuator sizing</h2>
-<p>Output requirement = safety factor × (gravity bound + I·amax + b·vmax). Safety factor is 2.0. Motor torque = output / (ratio × efficiency). The diagonal inertias/damping are ASSUMED; simultaneous extrema form a conservative conceptual envelope. These are generic digital selections, not validated commercial actuator specifications.</p>
+<p>Output requirement = safety factor × (gravity bound + Isizing·amax + b·vmax). Safety factor is 2.0. Motor torque = output / (ratio × efficiency). Isizing is the per-joint maximum of the educational control-plant inertia and a downstream point-COM lever-square bound: 4.49083 / 4.49083 / 1.30179 / 0.09402 / 0.09402 / 0.03000 kg·m². This prevents sizing below the same assumed load model while preserving the independent PID plants. Damping and masses are ASSUMED; simultaneous extrema define an envelope for the diagonal point-mass model. Centroidal body inertia, coupling, Coriolis/centrifugal and reflected-drive effects remain absent. These are generic digital selections, not validated commercial actuator specifications.</p>
 <table>
 <thead>
 <tr>
@@ -71,42 +71,42 @@
 <tr>
 <td>J1</td>
 <td>0.000</td>
-<td>13.823</td>
+<td>34.500</td>
 <td>80</td>
 <td>0.75</td>
-<td>0.230</td>
+<td>0.575</td>
 </tr>
 <tr>
 <td>J2</td>
 <td>70.165</td>
-<td>154.154</td>
+<td>165.425</td>
 <td>120</td>
 <td>0.70</td>
-<td>1.835</td>
+<td>1.969</td>
 </tr>
 <tr>
 <td>J3</td>
 <td>31.880</td>
-<td>71.876</td>
+<td>74.504</td>
 <td>100</td>
 <td>0.72</td>
-<td>0.998</td>
+<td>1.035</td>
 </tr>
 <tr>
 <td>J4</td>
 <td>6.859</td>
-<td>15.016</td>
+<td>15.133</td>
 <td>60</td>
 <td>0.75</td>
-<td>0.334</td>
+<td>0.336</td>
 </tr>
 <tr>
 <td>J5</td>
 <td>6.859</td>
-<td>14.555</td>
+<td>14.924</td>
 <td>60</td>
 <td>0.75</td>
-<td>0.323</td>
+<td>0.332</td>
 </tr>
 <tr>
 <td>J6</td>

@@ -43,8 +43,11 @@ def calculate() -> dict:
     assert bias_worst > assumptions["receiver_guaranteed_threshold_v"]
     assert bom["R14"]["Population"] == bom["R15"]["Population"] == "DNP by default"
     worst_input = assumptions["input_nominal_v"] * (1 + assumptions["input_tolerance_fraction"])
-    # Ignore diode drop for a conservative regulator dissipation bound.
-    p_ldo = (worst_input - rail) * assumptions["logic_budget_a"]
+    # Conditional reference estimate: neglect the input fuse/diode drop, but
+    # include both load-path loss and input power consumed by regulator IQ.
+    load_loss = (worst_input - rail) * assumptions["logic_budget_a"]
+    quiescent_loss = worst_input * assumptions["ldo_max_quiescent_a"]
+    p_ldo = load_loss + quiescent_loss
     junction = (
         assumptions["ambient_design_c"] + p_ldo * assumptions["ldo_datasheet_theta_ja_c_per_w"]
     )
@@ -74,6 +77,8 @@ def calculate() -> dict:
         "optional_rs485_bias_idle_current_a": rail / (rp + rt),
         "optional_bias_threshold_check": "PASS; ideal DC network, excludes leakage/cable effects",
         "ldo_conservative_dissipation_bound_w": p_ldo,
+        "ldo_load_path_dissipation_bound_w": load_loss,
+        "ldo_quiescent_power_allowance_w": quiescent_loss,
         "ldo_conditional_junction_estimate_c": junction,
         "selected_fuse": fuse["manufacturer_part_number"],
         "selected_fuse_hold_current_at_40c_a": fuse["hold_current_at_40c_a"],
@@ -84,7 +89,7 @@ def calculate() -> dict:
         * fuse["maximum_post_reflow_resistance_ohm"],
         "conditional_ldo_input_at_low_source_v": conditional_input,
         "power_path_claim_boundary": "Conditional calculation using post-reflow 23 C fuse resistance and 25 C diode drop limit. It does not bound cold/hot resistance, diode drop, startup inrush or measured regulation over temperature.",
-        "thermal_claim_boundary": "Datasheet theta_ja estimate only; PCB copper/airflow unspecified and no temperature verified",
+        "thermal_claim_boundary": "Conditional estimate using nominal output, configured load and datasheet reference IQ/theta_ja. Input fuse/diode drops are neglected and regulator quiescent power is included. This is not a full temperature/tolerance bound; PCB copper/airflow and temperature are unverified.",
         "pcb_status": assumptions["pcb_status"],
     }
 

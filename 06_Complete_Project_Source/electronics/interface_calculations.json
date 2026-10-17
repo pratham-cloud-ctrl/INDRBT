@@ -13,8 +13,10 @@
   "optional_rs485_bias_worst_v_1pct_resistors_3v_supply": 0.24545454545454543,
   "optional_rs485_bias_idle_current_a": 0.004583333333333333,
   "optional_bias_threshold_check": "PASS; ideal DC network, excludes leakage/cable effects",
-  "ldo_conservative_dissipation_bound_w": 0.29250000000000004,
-  "ldo_conditional_junction_estimate_c": 93.82000000000001,
+  "ldo_conservative_dissipation_bound_w": 0.29292,
+  "ldo_load_path_dissipation_bound_w": 0.29250000000000004,
+  "ldo_quiescent_power_allowance_w": 0.00042,
+  "ldo_conditional_junction_estimate_c": 93.89728,
   "selected_fuse": "MF-NSMF025X-2",
   "selected_fuse_hold_current_at_40c_a": 0.23,
   "fuse_input_current_budget_including_ldo_iq_a": 0.15008,
@@ -23,6 +25,6 @@
   "fuse_resistance_power_check_w": 0.05180521471999999,
   "conditional_ldo_input_at_low_source_v": 3.9048160000000003,
   "power_path_claim_boundary": "Conditional calculation using post-reflow 23 C fuse resistance and 25 C diode drop limit. It does not bound cold/hot resistance, diode drop, startup inrush or measured regulation over temperature.",
-  "thermal_claim_boundary": "Datasheet theta_ja estimate only; PCB copper/airflow unspecified and no temperature verified",
+  "thermal_claim_boundary": "Conditional estimate using nominal output, configured load and datasheet reference IQ/theta_ja. Input fuse/diode drops are neglected and regulator quiescent power is included. This is not a full temperature/tolerance bound; PCB copper/airflow and temperature are unverified.",
   "pcb_status": "ROUTED PCB; actual DRC/parity/export evidence is recorded separately in pcb_verification.json"
 }

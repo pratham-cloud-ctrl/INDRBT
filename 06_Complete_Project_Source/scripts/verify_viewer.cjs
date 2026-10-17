@@ -26,6 +26,17 @@ const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation
     await page.getByRole('button', { name: 'Pause demo', exact: true }).click();
     await page.evaluate(() => window.asterDebug.sample(3.4));
     const closed = await page.evaluate(() => window.asterDebug.opening);
+    const attachedPoseError = await page.evaluate(() => {
+      const debug=window.asterDebug, pose=debug.fk(debug.q).tcp, object=debug.objectPose;
+      return Math.max(...pose.map((value,index)=>Math.abs(value-object[index])));
+    });
+    await page.evaluate(() => window.asterDebug.sample(4.8));
+    const attachedRotationError = await page.evaluate(() => {
+      const debug=window.asterDebug, pose=debug.fk(debug.q).tcp, model=debug.objectModel, scale=[.018,.014,.018];
+      let error=0;
+      for(let row=0;row<3;row++)for(let column=0;column<3;column++)error=Math.max(error,Math.abs(model[4*row+column]/scale[column]-pose[4*row+column]));
+      return error;
+    });
     await page.evaluate(() => window.asterDebug.sample(7));
     const opened = await page.evaluate(() => window.asterDebug.opening);
     await page.getByRole('button', { name: 'Vertical', exact: true }).click();
@@ -62,7 +73,7 @@ const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation
     for (let i = 0; i < transforms.length; i++) {
       for (let j = 0; j < 16; j++) maxError = Math.max(maxError, Math.abs(transforms[i][j] - reference.matrices[i][j]));
     }
-    if (errors.length || maxError > 1e-9 || Math.abs(closed - .028) > 1e-12 || Math.abs(opened - .09) > 1e-12 || Math.abs(vertical[11] - .98) > 1e-9 || baseline.meshes !== 54 || components.length !== 54) {
+    if (errors.length || attachedPoseError > 1e-12 || attachedRotationError > 1e-12 || maxError > 1e-9 || Math.abs(closed - .028) > 1e-12 || Math.abs(opened - .09) > 1e-12 || Math.abs(vertical[11] - .98) > 1e-9 || baseline.meshes !== 54 || components.length !== 54) {
       throw Error(JSON.stringify({ errors, maxError, closed, opened, vertical, baseline }));
     }
     const report = {
@@ -72,6 +83,8 @@ const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation
       random_fk_comparisons: transforms.length,
       maximum_js_python_matrix_difference: maxError,
       play_pause_interaction: 'PASS',
+      ideal_grasp_pose_max_error: attachedPoseError,
+      ideal_grasp_rotation_max_error: attachedRotationError,
       label_encoding: 'PASS',
       individual_components_inspected: components.length,
       minimum_component_visible_pixels_in_64px_thumbnail: minimumVisiblePixels,

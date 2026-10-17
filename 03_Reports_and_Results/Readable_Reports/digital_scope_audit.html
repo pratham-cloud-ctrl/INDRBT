@@ -2,11 +2,11 @@
 <p>This audit compares the supplied master brief with the implemented project. It
 separates required digital deliverables from optional extensions and performance
 claims that the brief explicitly excludes. The final integrated workflow reports
-<strong>DIGITAL SCOPE COMPLETE</strong>, with 34 passing tests, executed native schematic/PCB
-checks and a freshly verified v1.1.0 wheel. The subsequently requested PCB layout
+<strong>DIGITAL SCOPE COMPLETE</strong> only after its recorded tests, executed native schematic/PCB
+checks and a freshly verified versioned wheel pass on the current source revision. The subsequently requested PCB layout
 and native DRC are completed and documented. Repository and release publication
 are verified separately through the <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin">private GitHub repository</a>
-and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.1.0">version 1.1.0 release</a>.</p>
+and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest">latest versioned release</a>. The <a href="project_alignment.html">project-purpose guide</a> connects the artifacts to the original goals.</p>
 <h2 id="numerical-and-software-deliverables">Numerical and software deliverables</h2>
 <table>
 <thead>
@@ -57,21 +57,21 @@ and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-
 <tr>
 <td>30–31, 34–35, 57–60</td>
 <td>Organized Python package, central SI parameters, commands, meaningful tests and one validation workflow</td>
-<td><code>src/robotarm</code>, <a href="../../06_Complete_Project_Source/config/robot.yaml">SI configuration</a>, <code>python -m robotarm.demo</code>, <code>scripts/run_validation.py</code>, <a href="../../06_Complete_Project_Source/results/validation/validation_report.md">executed report</a></td>
-<td>Required structure and workflow are verified. The final integrated workflow passed 34 tests with no failures, errors or skips, regenerated CAD/results and executed native ERC/DRC/connectivity checks.</td>
+<td><code>src/robotarm</code>, <a href="../../06_Complete_Project_Source/config/robot.yaml">SI configuration</a>, <code>python -m robotarm.demo</code>, <code>scripts/run_validation.py</code>, <a href="validation_report.html">executed report</a></td>
+<td>The report records actual totals without failures, errors or skips. Current source and authoritative-input hashes bind its revision. Full regeneration refreshes CAD, numerical results, native CAD/render/clearance proof and native ERC/DRC/connectivity before acceptance.</td>
 </tr>
 <tr>
 <td>56, 59</td>
 <td>Reproducible setup, clean installation and portable execution</td>
 <td><a href="Project_Readme.html">Installation instructions</a>, <code>setup.py</code>, <code>MANIFEST.in</code>, <code>requirements-lock.txt</code>, <code>scripts/verify_wheel_install.py</code>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">isolated wheel evidence</a></td>
-<td>The v1.1.0 wheel was built, installed in a new isolated environment and executed outside the source tree. Bundled configuration, FK/IK, planner/gripper checks, trajectory CLI outputs and dependency consistency passed.</td>
+<td>The versioned wheel is installed in a new isolated environment and executed outside the source tree. Every installed/wheel module and the bundled configuration are compared with source; FK/IK, planner/gripper, fresh CLI outputs and dependencies are checked.</td>
 </tr>
 </tbody>
 </table>
 <h2 id="executed-integration-gates-and-publication-evidence">Executed integration gates and publication evidence</h2>
 <p>The numerical/control/software audit found no additional missing required
 deliverable. The routed PCB, fabrication exports, updated descriptions and
-traceability, final integrated validation and fresh v1.1.0 installation check now
+traceability, integrated validation and fresh versioned installation checks now
 have executed evidence. The <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">PCB audit</a>
 records 44 schematic footprints plus four mechanical additions, all 119 physical
 pad-net assignments checked, and zero native DRC violations, unconnected items or
@@ -88,7 +88,7 @@ representative configurations</strong>; the project's
 The initial selected-pair checks missed genuine adjacent-joint overlaps. Those
 interfaces were repaired and the representative audit was expanded: six named
 poses classify 8,586 component pairs, and 75 task configurations classify 107,325
-pairs with 5,935 exact BRep intersection tests. Rigid-family contacts are explicitly
+pairs; exact BRep intersection counts are retained in the current <a href="../../06_Complete_Project_Source/results/validation/cad_motion_clearance.json">clearance report</a>. Rigid-family contacts are explicitly
 classified, and open/mid/closed gripper states are checked separately. This verifies
 the stated representative screening, not every possible joint combination or the
 continuous sweep between samples. Its limitations remain explicit. A
@@ -142,7 +142,7 @@ user instruction or newly adopted requirement.</p>
 </tbody>
 </table>
 <p>The executed local status is <strong>DIGITAL SCOPE COMPLETE — digital educational
-engineering project</strong>. Version 1.1.0 records coherent, reproducible completion of
+engineering project</strong>. The current release records coherent, reproducible completion of
 that documented digital scope. The repository, tag and assets provide separate
 publication evidence. This status does not imply a manufactured,
 hardware-ready or safety-certified robot; intentionally excluded physical

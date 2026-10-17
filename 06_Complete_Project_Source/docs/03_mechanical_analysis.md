@@ -2,7 +2,7 @@
 
 ## Load model and mass basis
 
-The SI configuration assigns lumped drive and link masses to the frames used by CAD and FK. Each moving lump is placed at its segment midpoint; the payload is at the TCP. These are ASSUMED load properties. The separate CAD envelope sum is 19.952 kg; simplified gearbox/bearing interiors and overlapping seats prevent treating it as a complete physical BOM. The assumed manipulator mass is 23.65 kg, of which 15.15 kg moves, excluding the payload.
+The SI configuration assigns lumped drive and link masses to the frames used by CAD and FK. Each moving lump is placed at its segment midpoint; the payload is at the TCP. These are ASSUMED load properties. The separate CAD envelope sum is 19.908 kg; simplified gearbox/bearing interiors and overlapping seats prevent treating it as a complete physical BOM. The assumed manipulator mass is 23.65 kg, of which 15.15 kg moves, excluding the payload.
 
 | Group | kg | Status |
 |---|---|---|
@@ -21,15 +21,15 @@ The 6001-pose sample uses seed 412; it is not proof of a worst case. Closed-form
 
 ## Actuator sizing
 
-Output requirement = safety factor × (gravity bound + I·amax + b·vmax). Safety factor is 2.0. Motor torque = output / (ratio × efficiency). The diagonal inertias/damping are ASSUMED; simultaneous extrema form a conservative conceptual envelope. These are generic digital selections, not validated commercial actuator specifications.
+Output requirement = safety factor × (gravity bound + Isizing·amax + b·vmax). Safety factor is 2.0. Motor torque = output / (ratio × efficiency). Isizing is the per-joint maximum of the educational control-plant inertia and a downstream point-COM lever-square bound: 4.49083 / 4.49083 / 1.30179 / 0.09402 / 0.09402 / 0.03000 kg·m². This prevents sizing below the same assumed load model while preserving the independent PID plants. Damping and masses are ASSUMED; simultaneous extrema define an envelope for the diagonal point-mass model. Centroidal body inertia, coupling, Coriolis/centrifugal and reflected-drive effects remain absent. These are generic digital selections, not validated commercial actuator specifications.
 
 | Joint | Gravity bound N·m | Concept output N·m | Ratio | Efficiency | Motor N·m |
 |---|---|---|---|---|---|
-| J1 | 0.000 | 13.823 | 80 | 0.75 | 0.230 |
-| J2 | 70.165 | 154.154 | 120 | 0.70 | 1.835 |
-| J3 | 31.880 | 71.876 | 100 | 0.72 | 0.998 |
-| J4 | 6.859 | 15.016 | 60 | 0.75 | 0.334 |
-| J5 | 6.859 | 14.555 | 60 | 0.75 | 0.323 |
+| J1 | 0.000 | 34.500 | 80 | 0.75 | 0.575 |
+| J2 | 70.165 | 165.425 | 120 | 0.70 | 1.969 |
+| J3 | 31.880 | 74.504 | 100 | 0.72 | 1.035 |
+| J4 | 6.859 | 15.133 | 60 | 0.75 | 0.336 |
+| J5 | 6.859 | 14.924 | 60 | 0.75 | 0.332 |
 | J6 | 0.000 | 0.733 | 50 | 0.78 | 0.019 |
 
 Configured joint speeds are 90 / 60 / 75 / 120 / 120 / 150 deg/s. Drive torque limits are modelling assumptions. Continuous/RMS heating, reflected inertia, acceleration coupling, backlash, brake capacity, bearing loads and fatigue require further engineering.

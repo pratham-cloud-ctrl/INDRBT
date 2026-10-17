@@ -2,11 +2,29 @@
   "status": "PASS",
   "source_sha256": {
     "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-    "geometry.py": "983a22b813ac271c5f6f9c878055c156863b9d1603d445a1753a05f25436ccfb"
+    "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250"
   },
   "component_count": 54,
   "poses": {
     "home": {
+      "status": "PASS",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 188,
+      "aabb_disjoint_pairs": 1204,
+      "exact_brep_pair_checks": 39,
+      "moving_geometry_min_z_mm": 110.0,
+      "interferences": []
+    },
+    "extended": {
+      "status": "PASS",
+      "component_pairs": 1431,
+      "same_rigid_family_pairs_excluded": 188,
+      "aabb_disjoint_pairs": 1221,
+      "exact_brep_pair_checks": 22,
+      "moving_geometry_min_z_mm": 110.0,
+      "interferences": []
+    },
+    "folded": {
       "status": "PASS",
       "component_pairs": 1431,
       "same_rigid_family_pairs_excluded": 188,
@@ -15,30 +33,12 @@
       "moving_geometry_min_z_mm": 110.0,
       "interferences": []
     },
-    "extended": {
-      "status": "PASS",
-      "component_pairs": 1431,
-      "same_rigid_family_pairs_excluded": 188,
-      "aabb_disjoint_pairs": 1223,
-      "exact_brep_pair_checks": 20,
-      "moving_geometry_min_z_mm": 110.0,
-      "interferences": []
-    },
-    "folded": {
-      "status": "PASS",
-      "component_pairs": 1431,
-      "same_rigid_family_pairs_excluded": 188,
-      "aabb_disjoint_pairs": 1208,
-      "exact_brep_pair_checks": 35,
-      "moving_geometry_min_z_mm": 110.0,
-      "interferences": []
-    },
     "vertical": {
       "status": "PASS",
       "component_pairs": 1431,
       "same_rigid_family_pairs_excluded": 188,
-      "aabb_disjoint_pairs": 1223,
-      "exact_brep_pair_checks": 20,
+      "aabb_disjoint_pairs": 1221,
+      "exact_brep_pair_checks": 22,
       "moving_geometry_min_z_mm": 110.0,
       "interferences": []
     },
@@ -46,8 +46,8 @@
       "status": "PASS",
       "component_pairs": 1431,
       "same_rigid_family_pairs_excluded": 188,
-      "aabb_disjoint_pairs": 1159,
-      "exact_brep_pair_checks": 84,
+      "aabb_disjoint_pairs": 1156,
+      "exact_brep_pair_checks": 87,
       "moving_geometry_min_z_mm": 22.309725966027337,
       "interferences": []
     },
@@ -55,8 +55,8 @@
       "status": "PASS",
       "component_pairs": 1431,
       "same_rigid_family_pairs_excluded": 188,
-      "aabb_disjoint_pairs": 1165,
-      "exact_brep_pair_checks": 78,
+      "aabb_disjoint_pairs": 1162,
+      "exact_brep_pair_checks": 81,
       "moving_geometry_min_z_mm": 22.309725966027337,
       "interferences": []
     }
@@ -66,8 +66,8 @@
       "status": "PASS",
       "component_pairs": 91,
       "same_rigid_family_pairs_excluded": 34,
-      "aabb_disjoint_pairs": 51,
-      "exact_brep_pair_checks": 6,
+      "aabb_disjoint_pairs": 49,
+      "exact_brep_pair_checks": 8,
       "moving_geometry_min_z_mm": 196.2282486499477,
       "interferences": []
     },
@@ -75,8 +75,8 @@
       "status": "PASS",
       "component_pairs": 91,
       "same_rigid_family_pairs_excluded": 34,
-      "aabb_disjoint_pairs": 51,
-      "exact_brep_pair_checks": 6,
+      "aabb_disjoint_pairs": 49,
+      "exact_brep_pair_checks": 8,
       "moving_geometry_min_z_mm": 196.2282486499477,
       "interferences": []
     },
@@ -84,14 +84,14 @@
       "status": "PASS",
       "component_pairs": 91,
       "same_rigid_family_pairs_excluded": 34,
-      "aabb_disjoint_pairs": 51,
-      "exact_brep_pair_checks": 6,
+      "aabb_disjoint_pairs": 49,
+      "exact_brep_pair_checks": 8,
       "moving_geometry_min_z_mm": 196.2282486499477,
       "interferences": []
     }
   },
   "all_component_pose_pair_classifications": 8586,
-  "exact_brep_pair_checks": 292,
+  "exact_brep_pair_checks": 312,
   "scope": "Every component pair at all six named poses, plus gripper closed/mid/open. Same rigid-motion families are excluded as assembled interfaces; no adjacent robot joint is excluded wholesale. All other pairs receive conservative AABB rejection or exact BRep common-volume testing. Finite pose screening does not certify all configurations, continuous motion, tolerance/preload, or physical safety.",
   "penetration_threshold_mm3": 0.001
 }

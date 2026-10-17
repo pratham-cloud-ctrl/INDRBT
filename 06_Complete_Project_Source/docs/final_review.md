@@ -1,9 +1,38 @@
-# Final independent engineering review
+# Independent engineering review — current revision
 
 The final review checks the project against its digital engineering brief and
 asks whether another student can inspect the models, understand the theory and
 reproduce the evidence. The result is supported by executed checks, rather than
-an assurance that every possible use has been proved.
+an assurance that every possible use has been proved. The 17–18 October 2026 review
+revisited the original goals and deliberately probed beyond the earlier passing
+file/hash tests. [Project purpose and goals](project_alignment.md) explains the
+intended connected demonstration; the [journal](project_journal.md) preserves
+the findings in context.
+
+## Additional corrections in version 1.2.0
+
+| Area | Demonstrated issue and resulting behavior |
+|---|---|
+| Native CAD access | The saved assembly opened with all 54 parts hidden. Visible named parts, camera state and a native GUI check now make the model inspectable immediately. Material colours are shown in the browser and Blender renders. |
+| Mechanical interfaces | Adapter holes broke the outer edge; the rear cover overlapped the adapter; screw/carriage and removable-finger attachments lacked coherent support. The revised 54-part geometry includes a wider adapter, locating pilot, matching rear fasteners, nut bridges, supported finger holes and a top service hatch. Counterbore depth now matches the drawing. |
+| Motion and model inputs | NaN/nonphysical configurations, small invalid transform/segment errors and malformed trajectories could pass. Domain/finite checks and explicit absolute tolerances reject them. Sampled singular MOVE L continuation now raises a useful error instead of reporting misleading endpoint accelerations. |
+| Loads and control | Actuator sizing reused control inertia below the same assumed mass model. Separate mass-derived point-inertia bounds now inform sizing; default PID plants are unchanged. Zero-load/signed beam and invalid controller/payload cases have explicit behavior and regressions. |
+| Electronics and proof freshness | Regulator heat omitted a small quiescent allowance. A scratch disconnected board could reuse old clean DRC evidence. The heat balance and source binding are corrected; fresh native checks of the design remain clean. |
+| Browser demonstration | The attached object translated with the TCP but did not rotate. Its ideal attachment now follows the complete tool pose, checked in the actual browser. |
+| Acceptance and reproduction | Residual limits, nonfinite saved values, native CAD source/artifact freshness, complete wheel module comparison, fresh CLI output directories and source/input revision binding now prevent the reproduced false passes. |
+
+The current [executed report](../results/validation/validation_report.md),
+[native CAD review](../results/validation/final_cad_review.json),
+[theory audit](../results/validation/final_theory_review.json) and
+[electronics audit](../results/validation/final_electronics_review.json)
+record the actual results and exact revision. Earlier beam and fuse corrections
+remain part of the engineering history and are summarized below.
+
+The [software boundary review](../results/validation/software_boundary_review.json)
+retains reproduced failure cases, focused regression evidence and an unchanged
+nominal-task comparison. The [circuit review](../results/validation/electronics_circuit_review.json)
+records native/library inspection and explains generic power-audit notices
+without concealing them or treating heuristics as native rule violations.
 
 | Area | Finding and correction | Retained evidence |
 |---|---|---|

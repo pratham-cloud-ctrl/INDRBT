@@ -112,7 +112,7 @@ def generate_drawings(p, qa_dir=None):
     ax.text(
         172,
         78,
-        "TOOL: 6 × Ø5.5 THRU\nPCD 46 / cable bore Ø16\nFlange thickness 8\nAdapter pilot bore Ø30.2",
+        "TOOL: 6 × Ø5.5 THRU\nPCD 46 / cable bore Ø16\nFlange plate 8 + Ø30 × 4 pilot\nAdapter Ø60 × 8 / bore Ø30.2",
         fontsize=10,
         color=INK,
     )
@@ -222,12 +222,14 @@ def generate_drawings(p, qa_dir=None):
             lw=1.2,
         )
     )
-    ax.add_patch(Rectangle((24, -width / 2 + 10), 17, width - 20, fc="white", ec=INK, lw=0.8))
+    ax.add_patch(Rectangle((20.5, -width / 2 + 10), 20.5, width - 20, fc="white", ec=INK, lw=0.8))
+    ax.add_patch(Rectangle((21, -50), 16, 100, fc="none", ec=BLUE, lw=0.8, ls="--"))
     ax.plot([28, 28], [-width / 2 - 4, width / 2 + 4], color=INK, lw=2.5)
     ax.plot([43, 43], [-width / 2 + 5, width / 2 - 5], color="#81909B", lw=3)
     for side in (-1, 1):
         y = side * (gap / 2 + th / 2 + 1.5)
-        ax.add_patch(Rectangle((37, y - 5), 16, 10, fc="#CBDDE4", ec=INK, lw=1))
+        ax.add_patch(Rectangle((22, y - 5), 28, 10, fc="#CBDDE4", ec=INK, lw=1))
+        ax.add_patch(Rectangle((49, y - 5), 20, 10, fc="none", ec=INK, lw=0.8, ls="--"))
         ax.add_patch(
             FancyBboxPatch(
                 (start, y - th / 2),
@@ -267,7 +269,7 @@ def generate_drawings(p, qa_dir=None):
     ax.text(
         60,
         92,
-        "Each jaw: 45 mm travel\n2 guides: Ø7, Z = ±14\nScrew envelope: Ø8\n4 mm/rev opposed lead",
+        "Each jaw: 45 mm travel\n2 guides: Ø7, Z = ±14\nØ12 nut boss / Ø8.4 bore\n4 mm/rev opposed lead",
         fontsize=10,
         color=INK,
     )
@@ -275,7 +277,7 @@ def generate_drawings(p, qa_dir=None):
         0,
         -117,
         "Finger section 10 × 18; replaceable 1.5-thick pads. TCP at X=110, jaw mid-plane.\n"
-        "Selected positions are visualized at maximum opening; no screw thread/gear tooth detail.",
+        "Ø8 screw envelope; connected nut bridges; top service hatch (dashed); no thread/preload detail.",
         fontsize=9,
         color=INK,
     )

@@ -36,11 +36,11 @@ The initial run found off-grid placements and a stock inherited-symbol mismatch.
 
 J1 accepts an **ASSUMED** regulated 5.0 V ±5% source. F1 is the selected **Bourns MF-NSMF025X-2** resettable fuse, followed by an SS14 reverse-polarity diode. The protected rail feeds U1, an AP2112K-3.3 regulator, with 10 µF input and 4.7 µF output ceramic capacitors. The regulator requires a minimum effective output capacitance of 1 µF; select X7R/X5R components with DC-bias margin. J2 and J3 share a **TARGET** total 3.3 V load budget of 150 mA. This budget includes the external controller, encoder, RS-485 driver and status LED; it is not a measured current. The AP2112 pinout and capacitor requirement were checked against the [Diodes Incorporated datasheet](https://www.diodes.com/assets/Datasheets/AP2112.pdf).
 
-At the upper input bound, ignoring diode drop gives a conservative regulator dissipation bound:
+At the upper input bound, neglecting upstream fuse/diode drop and including the configured regulator quiescent allowance gives this conditional dissipation estimate:
 
-`P = (5.25 − 3.3) × 0.15 = 0.2925 W`.
+`P = (5.25 − 3.3) × 0.15 + 5.25 × 0.00008 = 0.29292 W`.
 
-With the datasheet's 184 °C/W package estimate and an **ASSUMED** 40 °C ambient, the conditional junction estimate is **93.82 °C**. This is a calculation using a reference thermal resistance; it does not measure this PCB's copper, airflow, hot spots or usable continuous current. F1's 40 °C hold rating is 230 mA. Including the regulator's 80 µA maximum quiescent allowance gives a 150.08 mA input budget, leaving a calculated 79.92 mA hold-current margin at that ambient. This does not establish startup or fault-trip behaviour.
+With the datasheet's 184 °C/W package estimate and an **ASSUMED** 40 °C ambient, the conditional junction estimate is **93.90 °C**. The 80 µA reference quiescent allowance contributes 0.42 mW of heat even with no external load. These calculations use nominal output voltage and reference datasheet values; they do not form a complete temperature/tolerance bound or measure this PCB's copper, airflow, hot spots or usable continuous current. F1's 40 °C hold rating is 230 mA. Including the same regulator quiescent allowance gives a 150.08 mA input budget, leaving a calculated 79.92 mA hold-current margin at that ambient. This does not establish startup or fault-trip behaviour.
 
 Using F1's 2.3 Ω post-reflow resistance limit at 23 °C gives a calculated 0.345 V drop and 51.8 mW dissipation at that budget. At the low 4.75 V source bound, subtracting this drop and the SS14's 0.50 V test-condition forward-drop limit gives a conditional regulator input of **3.905 V**. These temperature-specific reference values are not a cold/hot operating guarantee. The [saved calculations](../electronics/interface_calculations.json) retain the assumptions and limitations. There is no input overvoltage limiter, so this interface must not receive the proposed 24/48 V drive supply.
 
@@ -116,7 +116,7 @@ python electronics/run_checks.py --kicad-cli /path/to/kicad-cli
 
 `KICAD_CLI` or PATH may supply the executable. The runner also discovers Windows installations through their registry entry. It exports the native netlist, normalizes source/library paths, executes ERC with violation-sensitive exit codes, verifies all pins plus 22 independent circuit statements, checks stock and local footprint assignments, recalculates electrical values from the BOM, and refreshes schematic PDF/SVG exports. It then runs PCB DRC with schematic parity, all report severities, all track errors and violation-sensitive exit codes, refills/saves the planes, audits physical board pad nets, and regenerates fabrication files, PCB layer views and native 3D images. If stock footprints are elsewhere, set `KICAD10_FOOTPRINT_DIR` or provide `--footprints`.
 
-The assigned-footprint check resolves stock libraries and the portable `${KIPRJMOD}/ASTER_Interface.pretty` local library. Saved-evidence checks require no installed KiCad libraries. To cross-check the exported BOM, populated positions, Gerber job, drills, ZIP and all source/export hashes, run:
+The assigned-footprint check resolves stock libraries and the portable `${KIPRJMOD}/ASTER_Interface.pretty` local library. Saved-evidence checks require no installed KiCad libraries. Standalone `verify_pcb.py` verifies the source hashes bound to the saved native DRC; a routing or design edit invalidates that evidence until a fresh native run. The native runner audits its newly generated report before replacing the old binding, so an expected stale manifest cannot block regeneration. To cross-check the exported BOM, populated positions, Gerber job, drills, ZIP and all source/export hashes, run:
 
 ```text
 python electronics/review_electronics.py
@@ -145,3 +145,21 @@ The stock footprint directory can also come from `KICAD10_FOOTPRINT_DIR`; the ge
 For a reviewed change to the local fuse land pattern, `generate_pcb.py --update-fuse` refreshes F1 while preserving existing routing. Rebuild the schematic and rerun the complete native checks/exports afterward; preserved tracks must still pass real connectivity and DRC.
 
 ELEC-001 and ELEC-002 now have executed digital schematic and routed-board evidence within the documented low-voltage interface scope. No physical board was built, and these results are not product qualification or a hardware safety claim.
+
+## Independent circuit review, 17 October 2026
+
+The [saved-file circuit review](../results/validation/electronics_circuit_review.json)
+checked the power path, conditioned inputs, drive commands, RS-485 topology and
+fuse pads through native MCP tools. All 48 footprint pad contracts and 14 embedded
+symbol pin contracts agreed with the installed libraries. This is documented
+digital evidence on the exact saved design; it does not establish production
+qualification or capture unsaved editor state.
+
+Generic power-audit notices were assessed explicitly. Its universal 10 µF output
+threshold is more restrictive than the selected regulator's minimum effective
+capacitance; the nominal 4.7 µF part still requires DC-bias and transient selection
+checks. The short pre-diode fuse/input rails feed no IC, while C1 bypasses the
+regulator's protected input. Dedicated production test points are an optional
+physical-debug improvement; headers and component lands are available in this
+concept. These dispositions retain the notices and their scope. The native
+ERC/DRC findings are recorded separately.

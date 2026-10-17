@@ -67,8 +67,12 @@ def update():
         f"| J{j + 1} | {torque['conservative_gravity_bound_nm'][j]:.3f} | {torque['concept_output_torque_nm'][j]:.3f} | {c['actuators']['gear_ratios'][j]} | {c['actuators']['efficiencies'][j]:.2f} | {torque['concept_motor_torque_nm'][j]:.3f} |"
         for j in range(6)
     )
+
+    def safety_factor(value):
+        return "N/A (zero root stress)" if value is None else f"{value:.2f}"
+
     beam_table = "\n".join(
-        f"| {name.replace('_', ' ').title()} | {beam[name]['bending_stress_mpa']:.3f} | {beam[name]['elastic_deflection_mm']:.5f} | {beam[name]['yield_safety_factor']:.2f} |"
+        f"| {name.replace('_', ' ').title()} | {beam[name]['bending_stress_mpa']:.3f} | {beam[name]['elastic_deflection_mm']:.5f} | {safety_factor(beam[name]['yield_safety_factor'])} |"
         for name in ["upper_arm", "forearm", "finger"]
     )
     kpi = f"""# Project KPIs
@@ -127,7 +131,7 @@ The {torque["sample_count"]}-pose sample uses seed {torque["seed"]}; it is not p
 
 ## Actuator sizing
 
-Output requirement = safety factor × (gravity bound + I·amax + b·vmax). Safety factor is {c["actuators"]["safety_factor"]:.1f}. Motor torque = output / (ratio × efficiency). The diagonal inertias/damping are ASSUMED; simultaneous extrema form a conservative conceptual envelope. These are generic digital selections, not validated commercial actuator specifications.
+Output requirement = safety factor × (gravity bound + Isizing·amax + b·vmax). Safety factor is {c["actuators"]["safety_factor"]:.1f}. Motor torque = output / (ratio × efficiency). Isizing is the per-joint maximum of the educational control-plant inertia and a downstream point-COM lever-square bound: {" / ".join(f"{value:.5f}" for value in torque["sizing_inertia_kg_m2"])} kg·m². This prevents sizing below the same assumed load model while preserving the independent PID plants. Damping and masses are ASSUMED; simultaneous extrema define an envelope for the diagonal point-mass model. Centroidal body inertia, coupling, Coriolis/centrifugal and reflected-drive effects remain absent. These are generic digital selections, not validated commercial actuator specifications.
 
 | Joint | Gravity bound N·m | Concept output N·m | Ratio | Efficiency | Motor N·m |
 |---|---|---|---|---|---|
@@ -295,6 +299,8 @@ An original six-axis robot with parametric CAD, numerical kinematics and a repro
 Designed for robotics education and portfolio review. Every result is generated from source; no physical robot was built. Payload and repeatability remain design targets. The conceptual electronics include a routed PCB, manufacturing exports and native DRC; collision evidence is representative and sampled.
 
 ## See it move
+
+Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
 
 Open **[the offline interactive CAD twin](simulations/aster6_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
 

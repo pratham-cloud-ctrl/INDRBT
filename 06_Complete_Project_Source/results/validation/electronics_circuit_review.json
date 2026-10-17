@@ -1,0 +1,57 @@
+{
+  "scope": "17 October read-only native MCP inspection of the exact saved ASTER-6 joint-interface source; no KiCad editor/IPC listener was running. Native reports operate on saved files and do not prove physical performance.",
+  "source_revision": "9feee7ce62f2ca74bd6c4bc27d77c9de391e7020",
+  "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
+  "schematic_sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
+  "power_audit_dispositions": [
+    {
+      "finding": "No >=10 uF bulk on +3V3",
+      "disposition": "Advisory heuristic, not a circuit failure: AP2112 minimum effective output requirement is 1 uF; C2 is 4.7 uF nominal and C7 adds 100 nF. Effective capacitance/load transient performance remain physical selection checks."
+    },
+    {
+      "finding": "No bypass capacitor on +5V_IN / +5V_FUSED",
+      "disposition": "These are the short source/fuse segments before the reverse-polarity diode; they feed no IC. C1 provides 10 uF at U1 VIN on the protected rail. Duplicating caps ahead of reverse protection is not required by this architecture."
+    },
+    {
+      "finding": "No dedicated test points on four supply rails",
+      "disposition": "Optional physical-debug recommendation. J1/J2/J3 expose input/logic supply and ground, and intermediate pad lands can be probed. Dedicated production fixtures/test points were not part of the digital interface brief."
+    }
+  ],
+  "circuit_review": [
+    {
+      "area": "Power path",
+      "result": "No required circuit edit found",
+      "evidence": "Fuse then correctly oriented SS14 then U1 input and EN; 10 uF input and 4.7 uF output. Shared 150 mA budget explicit. LDO heat calculation corrected separately to include quiescent current; temperature/headroom claims remain conditional."
+    },
+    {
+      "area": "Input conditioning",
+      "result": "Matches declared low-voltage short-cable contract",
+      "evidence": "3 channels with 1 kOhm / 100 pF and correctly oriented upper/lower BAT54H clamps; 1 kOhm / 10 kOhm / 100 nF NC limit filter. External Schmitt inputs and power sequencing are required; no field transient or 5 V immunity claim."
+    },
+    {
+      "area": "External drive",
+      "result": "Matches external-drive interface scope",
+      "evidence": "330 Ohm STEP/DIR/ENABLE paths, pull-down disabling ENABLE when disconnected, 10 kOhm pull-up for a 3.3 V open-drain fault. No motor current/power stage implemented."
+    },
+    {
+      "area": "RS485",
+      "result": "Pinout and declared topology coherent",
+      "evidence": "LTC2850IS8 /RE and DE tied to pulled-low direction input; 100 nF decoupling has 3.562 mm local copper path. Switchable 120 Ohm endpoint termination and optional single-node 330/330 Ohm bias. Manufacturer confirms internal failsafe for open, shorted and terminated-undriven input. No cable EMC/isolation qualification."
+    },
+    {
+      "area": "F1 land pattern",
+      "result": "Manufacturer nominal drawing agrees",
+      "evidence": "Native MCP saved-board pad readback shows 1.0 x 1.6 mm pads at board x=33.5/36.5 mm, giving 2.0 mm inner gap. MF-NSMF025X-2 selected; no manufacturer-specific 3D body or solder-process approval asserted."
+    }
+  ],
+  "primary_sources": {
+    "regulator": "https://www.diodes.com/assets/Datasheets/AP2112.pdf",
+    "rs485": "https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf",
+    "fuse": "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf"
+  },
+  "library_comparison_summary": {
+    "footprint_pad_contracts": 48,
+    "embedded_symbol_pin_contracts": 14,
+    "mismatches": 0
+  }
+}

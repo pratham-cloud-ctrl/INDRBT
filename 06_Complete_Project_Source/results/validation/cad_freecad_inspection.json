@@ -5,7 +5,7 @@
     "home": {
       "valid": true,
       "solids": 54,
-      "volume_mm3": 5062167.62924243,
+      "volume_mm3": 5042125.406007141,
       "bbox_mm": [
         709.65647911336,
         264.0,
@@ -15,7 +15,7 @@
     "extended": {
       "valid": true,
       "solids": 54,
-      "volume_mm3": 5062167.627429875,
+      "volume_mm3": 5042125.401241601,
       "bbox_mm": [
         900.0,
         264.0,
@@ -25,7 +25,7 @@
     "folded": {
       "valid": true,
       "solids": 54,
-      "volume_mm3": 5062167.628628152,
+      "volume_mm3": 5042125.400500784,
       "bbox_mm": [
         502.4001017554982,
         264.0,
@@ -35,7 +35,7 @@
     "vertical": {
       "valid": true,
       "solids": 54,
-      "volume_mm3": 5062167.627424719,
+      "volume_mm3": 5042125.40197698,
       "bbox_mm": [
         220.0,
         264.0,
@@ -45,7 +45,7 @@
     "pick": {
       "valid": true,
       "solids": 54,
-      "volume_mm3": 5062167.626891633,
+      "volume_mm3": 5042125.38923836,
       "bbox_mm": [
         562.7993050305304,
         370.2183823681511,
@@ -55,12 +55,299 @@
     "place": {
       "valid": true,
       "solids": 54,
-      "volume_mm3": 5062167.626845445,
+      "volume_mm3": 5042125.389124512,
       "bbox_mm": [
         557.0096724764177,
         438.15030377881965,
         468.27416997964536
       ]
     }
+  },
+  "step_sha256": {
+    "home": "5ba464523d92164682b233a14a36a52155f7721e10a4f5dddb2ec0253015777b",
+    "extended": "c2ec4369332e349ff0ae33909484e52a702ece28a54cf3cfd210a4601f94a75b",
+    "folded": "e11311ac44df3c3552737e027151e3f8749b1f53564fdf27af1159cbdfbfc06c",
+    "vertical": "d1254a6ac8e9e96db8936cb9dde709beba82018ef21f378ce61ddd7af963cabc",
+    "pick": "2c720f279a93f33de82fb357cbc660481c9aba2b9346b9c3ed9ed8322923d7e7",
+    "place": "c055ba5586d0e14a282ff7e7c8bb1df06213cffbe90cf7c78549cebada129b29"
+  },
+  "native_components": [
+    {
+      "object": "Component01",
+      "component": "base_mounting_plate",
+      "matching_score_mm": 4.462872607124233e-11
+    },
+    {
+      "object": "Component02",
+      "component": "fixed_base_riser",
+      "matching_score_mm": 4.6875622184229256e-11
+    },
+    {
+      "object": "Component03",
+      "component": "j1_slew_bearing_envelope",
+      "matching_score_mm": 2.3522487348314092e-11
+    },
+    {
+      "object": "Component04",
+      "component": "base_electronics_cover",
+      "matching_score_mm": 2.5635193824210623e-11
+    },
+    {
+      "object": "Component05",
+      "component": "turret_neck",
+      "matching_score_mm": 2.31099123957966e-11
+    },
+    {
+      "object": "Component06",
+      "component": "turret_bridge",
+      "matching_score_mm": 2.2645444267383323e-12
+    },
+    {
+      "object": "Component07",
+      "component": "shoulder_fork_-1",
+      "matching_score_mm": 4.530414431453685e-11
+    },
+    {
+      "object": "Component08",
+      "component": "shoulder_bearing_-1",
+      "matching_score_mm": 2.298061818017662e-11
+    },
+    {
+      "object": "Component09",
+      "component": "shoulder_fork_+1",
+      "matching_score_mm": 4.530414431453685e-11
+    },
+    {
+      "object": "Component10",
+      "component": "shoulder_bearing_+1",
+      "matching_score_mm": 2.298061818017662e-11
+    },
+    {
+      "object": "Component11",
+      "component": "j2_gearbox_envelope",
+      "matching_score_mm": 0.0
+    },
+    {
+      "object": "Component12",
+      "component": "j2_motor_envelope",
+      "matching_score_mm": 7.905541306720529e-12
+    },
+    {
+      "object": "Component13",
+      "component": "j2_motor_endcap",
+      "matching_score_mm": 1.4678156063567376e-13
+    },
+    {
+      "object": "Component14",
+      "component": "shoulder_rotor",
+      "matching_score_mm": 2.2965458621536036e-11
+    },
+    {
+      "object": "Component15",
+      "component": "shoulder_output_shaft",
+      "matching_score_mm": 2.2597573503792717e-11
+    },
+    {
+      "object": "Component16",
+      "component": "upper_arm_hollow_link",
+      "matching_score_mm": 8.898255802999391e-11
+    },
+    {
+      "object": "Component17",
+      "component": "elbow_fork_bridge_-1",
+      "matching_score_mm": 1.3457743144948598e-11
+    },
+    {
+      "object": "Component18",
+      "component": "elbow_fork_bridge_+1",
+      "matching_score_mm": 1.3457743144948598e-11
+    },
+    {
+      "object": "Component19",
+      "component": "upper_service_cover_-1",
+      "matching_score_mm": 7.892658807550288e-12
+    },
+    {
+      "object": "Component20",
+      "component": "elbow_fork_-1",
+      "matching_score_mm": 1.510053315445226e-10
+    },
+    {
+      "object": "Component21",
+      "component": "elbow_bearing_-1",
+      "matching_score_mm": 1.3035463730013543e-10
+    },
+    {
+      "object": "Component22",
+      "component": "upper_service_cover_+1",
+      "matching_score_mm": 7.892658807550288e-12
+    },
+    {
+      "object": "Component23",
+      "component": "elbow_fork_+1",
+      "matching_score_mm": 1.510053315445226e-10
+    },
+    {
+      "object": "Component24",
+      "component": "elbow_bearing_+1",
+      "matching_score_mm": 1.3035463730013543e-10
+    },
+    {
+      "object": "Component25",
+      "component": "j3_gearbox_envelope",
+      "matching_score_mm": 3.970605375266e-12
+    },
+    {
+      "object": "Component26",
+      "component": "j3_motor_envelope",
+      "matching_score_mm": 1.2303373900833804e-11
+    },
+    {
+      "object": "Component27",
+      "component": "elbow_rotor",
+      "matching_score_mm": 2.6086130286527357e-11
+    },
+    {
+      "object": "Component28",
+      "component": "elbow_output_shaft",
+      "matching_score_mm": 2.6058546529491906e-11
+    },
+    {
+      "object": "Component29",
+      "component": "forearm_hollow_link",
+      "matching_score_mm": 1.0442519187746098e-10
+    },
+    {
+      "object": "Component30",
+      "component": "forearm_service_cover_-1",
+      "matching_score_mm": 1.0048831102514633e-11
+    },
+    {
+      "object": "Component31",
+      "component": "forearm_service_cover_+1",
+      "matching_score_mm": 1.0048831102514633e-11
+    },
+    {
+      "object": "Component32",
+      "component": "wrist_roll_stator",
+      "matching_score_mm": 1.4313562579192732e-10
+    },
+    {
+      "object": "Component33",
+      "component": "j4_bearing_envelope",
+      "matching_score_mm": 1.229762383123293e-10
+    },
+    {
+      "object": "Component34",
+      "component": "wrist_roll_rotor",
+      "matching_score_mm": 2.8137505386368296e-11
+    },
+    {
+      "object": "Component35",
+      "component": "wrist_roll_cover",
+      "matching_score_mm": 1.2026940825853443e-10
+    },
+    {
+      "object": "Component36",
+      "component": "wrist_pitch_fork_-1",
+      "matching_score_mm": 6.357652551643303e-11
+    },
+    {
+      "object": "Component37",
+      "component": "wrist_pitch_fork_+1",
+      "matching_score_mm": 6.357652551643303e-11
+    },
+    {
+      "object": "Component38",
+      "component": "wrist_pitch_rotor",
+      "matching_score_mm": 2.967705340039473e-11
+    },
+    {
+      "object": "Component39",
+      "component": "wrist_pitch_neck",
+      "matching_score_mm": 2.9826000250576905e-11
+    },
+    {
+      "object": "Component40",
+      "component": "j6_stator_envelope",
+      "matching_score_mm": 3.054810371805754e-11
+    },
+    {
+      "object": "Component41",
+      "component": "tool_flange_6xM5_PCD46",
+      "matching_score_mm": 4.8803228143705885e-11
+    },
+    {
+      "object": "Component42",
+      "component": "interchangeable_gripper_adapter",
+      "matching_score_mm": 5.349729222500656e-11
+    },
+    {
+      "object": "Component43",
+      "component": "gripper_pocketed_body",
+      "matching_score_mm": 9.476029684083679e-05
+    },
+    {
+      "object": "Component44",
+      "component": "gripper_top_service_cover",
+      "matching_score_mm": 1.5702421114257204e-11
+    },
+    {
+      "object": "Component45",
+      "component": "gripper_guide_rod_-14",
+      "matching_score_mm": 8.382404537829375e-12
+    },
+    {
+      "object": "Component46",
+      "component": "gripper_guide_rod_+14",
+      "matching_score_mm": 8.382404537829375e-12
+    },
+    {
+      "object": "Component47",
+      "component": "opposite_hand_screw_envelope",
+      "matching_score_mm": 1.015466335260456e-11
+    },
+    {
+      "object": "Component48",
+      "component": "gripper_actuator_envelope",
+      "matching_score_mm": 1.6923215774848068e-11
+    },
+    {
+      "object": "Component49",
+      "component": "gripper_jaw_carriage_-1",
+      "matching_score_mm": 1.5020198324219385e-11
+    },
+    {
+      "object": "Component50",
+      "component": "gripper_finger_-1",
+      "matching_score_mm": 3.018405615900667e-11
+    },
+    {
+      "object": "Component51",
+      "component": "gripper_contact_pad_-1",
+      "matching_score_mm": 3.528226690397113e-11
+    },
+    {
+      "object": "Component52",
+      "component": "gripper_jaw_carriage_+1",
+      "matching_score_mm": 1.5020198324219385e-11
+    },
+    {
+      "object": "Component53",
+      "component": "gripper_finger_+1",
+      "matching_score_mm": 3.018405615900667e-11
+    },
+    {
+      "object": "Component54",
+      "component": "gripper_contact_pad_+1",
+      "matching_score_mm": 3.528226690397113e-11
+    }
+  ],
+  "native_sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4",
+  "mesh_sha256": "604539d0a4cb2578d351a1b7de666498aac3018c10c57520082c3ccc9a1e3991",
+  "saved_visibility_count": 54,
+  "source_sha256": {
+    "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250",
+    "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96"
   }
 }

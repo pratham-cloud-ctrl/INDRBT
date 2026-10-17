@@ -1,6 +1,6 @@
 # ASTER-6 engineering report
 
-Version 1.1.0 · 2026-10-05 · digital engineering project
+Version 1.2.0 · 2026-10-05 · digital engineering project
 
 ## 1. Abstract
 
@@ -20,7 +20,7 @@ A rotating turret, shoulder clevis, hollow upper arm, elbow clevis, hollow forea
 
 ## 5. CAD methodology
 
-Build123d 0.13.0 creates 54 valid BRep components from centralized SI inputs, converted explicitly to millimetres. The 6 configured assemblies export STEP/STL. STEP reimports preserve the reported component counts; the maximum relative volume discrepancy is 2.159e-10. CAD joint placements match the software transforms, with maximum matrix-entry discrepancy 3.331e-16. FreeCAD independently imports the exports, and Blender renders their tessellated geometry. Dimension sheets describe interfaces and nominal sections; manufacturing tolerances remain open. See [CAD methodology](04_cad.md).
+Build123d 0.13.0 creates 54 valid BRep components from centralized SI inputs, converted explicitly to millimetres. The 6 configured assemblies export STEP/STL. STEP reimports preserve the reported component counts; the maximum relative volume discrepancy is 1.160e-09. CAD joint placements match the software transforms, with maximum matrix-entry discrepancy 3.331e-16. FreeCAD independently imports the exports, and Blender renders their tessellated geometry. Dimension sheets describe interfaces and nominal sections; manufacturing tolerances remain open. See [CAD methodology](04_cad.md).
 
 ## 6. Kinematic model
 
@@ -36,11 +36,11 @@ Two guided jaws use an opposed-hand screw concept. A 90 mm opening requires 45 m
 
 ## 9. Mechanical calculations
 
-The assumed manipulator mass is 23.65 kg; the separate summed CAD envelope/material estimate is 19.952 kg. Midpoint COM gravity loading at full extension with a 4 kg payload gives shoulder holding torque of 70.165 N·m and elbow torque of 31.880 N·m. A potential-energy gradient test checks torque signs and magnitudes independently. Ideal closed-section beam calculations estimate 0.10408 mm serial TCP deflection. Access cutouts, the terminal clevis, contacts, gearbox/bearing compliance and fatigue are omitted, so this cannot establish complete robot stiffness. [Mechanical analysis](03_mechanical_analysis.md) gives the formulas and tables.
+The assumed manipulator mass is 23.65 kg; the separate summed CAD envelope/material estimate is 19.908 kg. Midpoint COM gravity loading at full extension with a 4 kg payload gives shoulder holding torque of 70.165 N·m and elbow torque of 31.880 N·m. A potential-energy gradient test checks torque signs and magnitudes independently. Ideal closed-section beam calculations estimate 0.10408 mm serial TCP deflection. Access cutouts, the terminal clevis, contacts, gearbox/bearing compliance and fatigue are omitted, so this cannot establish complete robot stiffness. [Mechanical analysis](03_mechanical_analysis.md) gives the formulas and tables.
 
 ## 10. Actuator sizing
 
-Conceptual output requirements combine all-angle gravity lever bounds, assumed diagonal inertia/damping allowances and safety factor 2. The shoulder requires 154.154 N·m output torque; a 120:1 reduction at 0.70 efficiency implies 1.835 N·m motor torque. The elbow output requirement is 71.876 N·m, using 100:1 reduction and 0.72 efficiency. Commercial actuator, continuous-duty, brake, thermal and bearing ratings are unverified.
+Conceptual output requirements combine all-angle gravity lever bounds, assumed diagonal inertia/damping allowances and safety factor 2. The shoulder requires 165.425 N·m output torque; a 120:1 reduction at 0.70 efficiency implies 1.969 N·m motor torque. The elbow output requirement is 74.504 N·m, using 100:1 reduction and 0.72 efficiency. Commercial actuator, continuous-duty, brake, thermal and bearing ratings are unverified.
 
 ## 11. Motion planning
 
@@ -60,7 +60,7 @@ The ideal pick/place cycle lasts 9.24398 s, contains 1041 joint samples and trac
 
 ## 15. Verification
 
-Automated test evidence: 34 tests; 0 failures; 0 errors. An additional 60 randomly generated targets use perturbed initial joints for FK–IK–FK reconstruction. The maximum position residual is 2.700e-11 m and the orientation residual is 6.504e-12 rad. The Jacobian discrepancy against finite differences is 2.517e-10; independent planar FK discrepancy is 2.544e-16 m. Every component pair is classified across 6 CAD poses and 75 task positions, including 5935 exact BRep intersections during the task. Permitted rigid-family contacts are identified explicitly. This is sampled clearance evidence. A fresh isolated wheel installation verifies packaged configuration and detached CLI execution. The evidence is retained under `results/validation`.
+Automated test evidence: 91 tests; 0 failures; 0 errors. An additional 60 randomly generated targets use perturbed initial joints for FK–IK–FK reconstruction. The maximum position residual is 2.700e-11 m and the orientation residual is 6.504e-12 rad. The Jacobian discrepancy against finite differences is 2.517e-10; independent planar FK discrepancy is 2.544e-16 m. Every component pair is classified across 6 CAD poses and 75 task positions, including 6126 exact BRep intersections during the task. Permitted rigid-family contacts are identified explicitly. This is sampled clearance evidence. A fresh isolated wheel installation verifies packaged configuration and detached CLI execution. The evidence is retained under `results/validation`.
 
 ## 16. Results and research questions
 
@@ -84,4 +84,4 @@ Possible extensions are continuous swept paths, CAD-derived inertia tensors/coup
 
 ## 19. Conclusion
 
-The project provides a reproducible original robot concept with consistent geometry, rigid-body kinematics, executed numerical experiments, CAD exports and a routed conceptual electronics design with native checks. Its version 1.1.0 workflow reports **DIGITAL SCOPE COMPLETE**. The documented targets and simplifications preserve the distinction between digital verification and hardware performance.
+The project provides a reproducible original robot concept with consistent geometry, rigid-body kinematics, executed numerical experiments, CAD exports and a routed conceptual electronics design with native checks. Its version 1.2.0 workflow reports **DIGITAL SCOPE COMPLETE**. The documented targets and simplifications preserve the distinction between digital verification and hardware performance.

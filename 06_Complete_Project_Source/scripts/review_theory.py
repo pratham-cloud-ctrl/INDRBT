@@ -40,6 +40,50 @@ def independent_fk(arm, q):
     return position, orientation
 
 
+def independent_point_inertia_bounds(config):
+    """Reconstruct extended COM abscissas and squared downstream lever bounds."""
+    g, mass = config["geometry"], config["mass"]
+    l1, l2, roll, pitch, tool = [
+        g[key]
+        for key in (
+            "upper_arm_length",
+            "forearm_length",
+            "wrist_roll_length",
+            "wrist_pitch_length",
+            "tool_length",
+        )
+    ]
+    com_x = np.array(
+        [
+            l1 / 2,
+            l1 + l2 / 2,
+            l1 + l2 + roll / 2,
+            l1 + l2 + roll + pitch / 2,
+            l1 + l2 + roll + pitch + tool / 2,
+            l1 + l2 + roll + pitch + tool,
+        ]
+    )
+    masses = np.array(
+        [
+            mass[key]
+            for key in (
+                "upper_arm",
+                "forearm",
+                "wrist_roll",
+                "wrist_pitch",
+                "flange_gripper",
+                "payload",
+            )
+        ]
+    )
+    # Negative distances belong to upstream COMs and contribute zero. For J4,
+    # pitch can rotate only the portion downstream of J5 away from the roll axis.
+    shoulder = np.dot(masses, com_x**2)
+    elbow = np.dot(masses, np.maximum(com_x - l1, 0) ** 2)
+    wrist = np.dot(masses, np.maximum(com_x - (l1 + l2 + roll), 0) ** 2)
+    return np.array([shoulder, shoulder, elbow, wrist, wrist, 0.0])
+
+
 def virtual_work_deflection(config):
     """Apply a unit TCP force to the whole extended arm and integrate M*m/(EI)."""
     g, mass = config["geometry"], config["mass"]
@@ -263,10 +307,24 @@ def review(pytest_xml=None):
     np.testing.assert_allclose(
         gravity_torques(arm, np.zeros(6)), torque["extended_gravity_torque_nm"], atol=1e-12
     )
-    output = cfg["actuators"]["safety_factor"] * (
-        np.asarray(torque["conservative_gravity_bound_nm"])
-        + np.asarray(cfg["control"]["inertia"]) * cfg["acceleration_limits"]
+    point_inertia_bounds = independent_point_inertia_bounds(cfg)
+    equivalent_sizing_inertia = np.maximum(cfg["control"]["inertia"], point_inertia_bounds)
+    np.testing.assert_allclose(
+        point_inertia_bounds, torque["point_mass_inertia_bound_kg_m2"], atol=1e-12
+    )
+    np.testing.assert_allclose(
+        cfg["control"]["inertia"], torque["configured_control_inertia_kg_m2"], atol=1e-12
+    )
+    np.testing.assert_allclose(
+        equivalent_sizing_inertia, torque["sizing_inertia_kg_m2"], atol=1e-12
+    )
+    dynamic_allowance = (
+        equivalent_sizing_inertia * cfg["acceleration_limits"]
         + np.asarray(cfg["control"]["viscous_damping"]) * cfg["velocity_limits"]
+    )
+    np.testing.assert_allclose(dynamic_allowance, torque["dynamic_allowance_nm"], atol=1e-12)
+    output = cfg["actuators"]["safety_factor"] * (
+        np.asarray(torque["conservative_gravity_bound_nm"]) + dynamic_allowance
     )
     np.testing.assert_allclose(output, torque["concept_output_torque_nm"], atol=1e-12)
     np.testing.assert_allclose(
@@ -274,6 +332,12 @@ def review(pytest_xml=None):
         torque["concept_motor_torque_nm"],
         atol=1e-12,
     )
+    unloaded_config = deepcopy(cfg)
+    unloaded_config["gripper"]["total_normal_force_target"] = 0
+    unloaded_finger = calculate(unloaded_config)["finger"]
+    assert unloaded_finger["elastic_deflection_mm"] == 0
+    assert unloaded_finger["bending_stress_mpa"] == 0
+    assert unloaded_finger["yield_safety_factor"] is None
     assert np.all(output <= cfg["control"]["torque_limits"])
     structure = calculate(cfg)
     integral = virtual_work_deflection(cfg)
@@ -288,6 +352,10 @@ def review(pytest_xml=None):
         "gravity_gradient_trials": len(gravity_errors),
         "max_gravity_gradient_discrepancy_Nm": max(gravity_errors),
         "gravity_bound_samples": len(sampled),
+        "independent_point_mass_inertia_bound_kg_m2": point_inertia_bounds.tolist(),
+        "equivalent_sizing_inertia_kg_m2": equivalent_sizing_inertia.tolist(),
+        "sizing_inertia_correction": "Use max(educational control inertia, all-angle point-COM inertia bound), avoiding inertia below the same assumed load model; complete coupled dynamics remain excluded",
+        "unloaded_finger_yield_ratio": "N/A (zero root stress), represented by JSON null",
         "serial_tcp_deflection_mm": structure["serial_tcp_beam_deflection_mm"],
         "independent_virtual_work_deflection_mm": integral,
         "forearm_rotation_contribution_mm": structure["serial_tcp_deflection_terms_mm"][
@@ -330,6 +398,16 @@ def review(pytest_xml=None):
         np.asarray(control[key]) for key in ("inertia", "viscous_damping", "kp", "ki", "kd")
     ]
     assert np.all((damping + kd) * kp > inertia * ki)
+    h = control["dt"]
+    spectral_radii = []
+    for j in range(6):
+        # Exact unsaturated, constant-reference state update [error, qdot, integral].
+        a = (kp[j] + h * ki[j]) / inertia[j]
+        b = 1 - h * (damping[j] + kd[j]) / inertia[j]
+        c = ki[j] / inertia[j]
+        transition = np.array([[1 - h * h * a, -h * b, -h * h * c], [h * a, b, h * c], [h, 0, 1]])
+        spectral_radii.append(float(np.max(np.abs(np.linalg.eigvals(transition)))))
+    assert max(spectral_radii) < 1
     target = cfg["home"] + np.deg2rad(cfg["demo"]["control_step_deg"])
     command = stationary(target, cfg["demo"]["control_step_duration_s"], 501)
     coarse = simulate_pid(arm, command, initial=cfg["home"])
@@ -353,6 +431,7 @@ def review(pytest_xml=None):
     checks["pid_model"] = {
         "status": "PASS",
         "unsaturated_linear_routh_hurwitz_condition": True,
+        "default_discrete_unsaturated_state_spectral_radii": spectral_radii,
         "first_feedback_command_agrees": True,
         "coarse_dt_s": control["dt"],
         "fine_dt_s": fine_config["control"]["dt"],

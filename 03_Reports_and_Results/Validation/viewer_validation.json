@@ -5,6 +5,8 @@
   "random_fk_comparisons": 20,
   "maximum_js_python_matrix_difference": 5.551115123125783e-16,
   "play_pause_interaction": "PASS",
+  "ideal_grasp_pose_max_error": 0,
+  "ideal_grasp_rotation_max_error": 6.310887241768095e-30,
   "label_encoding": "PASS",
   "individual_components_inspected": 54,
   "minimum_component_visible_pixels_in_64px_thumbnail": 76,
@@ -13,7 +15,7 @@
   "gripper_open_m": 0.09,
   "vertical_tcp_z_m": 0.9800000000000001,
   "page_errors": [],
-  "html_sha256": "ce48280366ab32688a9aa52f8d2879a27f18ef04bfda8a729c3622e249001738",
+  "html_sha256": "81bb35e90639300ac868b8d3faf7c3e9f026d8ec9f4c498c1357a0f036052937",
   "hash_convention": "UTF-8 HTML with LF line endings",
   "scope": "Actual browser render, playback interactions and transform checks; not collision or contact validation"
 }

@@ -8,7 +8,7 @@ import numpy as np
 from scipy.optimize import least_squares
 from scipy.spatial.transform import Rotation
 
-from robotarm.config import load_config
+from robotarm.config import load_config, validate_config
 
 
 def translation(vector: np.ndarray | list[float]) -> np.ndarray:
@@ -45,6 +45,8 @@ class RobotArm:
 
     def __init__(self, config: dict | None = None):
         self.config = load_config() if config is None else config
+        if config is not None:
+            validate_config(config)
         geometry = self.config["geometry"]
         self.height = float(geometry["shoulder_height"])
         self.lengths = np.array(
@@ -133,12 +135,12 @@ class RobotArm:
         target = np.asarray(target, float)
         if target.shape != (4, 4) or not np.all(np.isfinite(target)):
             raise ValueError("Target must be a finite 4x4 homogeneous transform.")
-        if not np.allclose(target[3], [0, 0, 0, 1], atol=1e-9):
+        if not np.allclose(target[3], [0, 0, 0, 1], atol=1e-9, rtol=0):
             raise ValueError("Target has invalid homogeneous last row.")
         orientation = target[:3, :3]
-        if not np.allclose(orientation.T @ orientation, np.eye(3), atol=1e-7) or not np.isclose(
-            np.linalg.det(orientation), 1, atol=1e-7
-        ):
+        if not np.allclose(
+            orientation.T @ orientation, np.eye(3), atol=1e-7, rtol=0
+        ) or not np.isclose(np.linalg.det(orientation), 1, atol=1e-7, rtol=0):
             raise ValueError("Target rotation must belong to SO(3).")
         return target
 
@@ -152,7 +154,11 @@ class RobotArm:
         proof. Every returned solution is verified against both pose tolerances.
         """
         target = self.check_pose(target)
-        if max_attempts < 1:
+        if (
+            isinstance(max_attempts, bool)
+            or not isinstance(max_attempts, (int, np.integer))
+            or max_attempts < 1
+        ):
             raise ValueError("At least one IK attempt is required.")
         if (
             np.linalg.norm(target[:3, 3] - [0, 0, self.height])

@@ -1,13 +1,22 @@
 {
-  "project_version": "1.1.0",
+  "executed_utc": "2026-10-17T18:36:33.122445+00:00",
+  "project_version": "1.2.0",
   "project_status": "DIGITAL SCOPE COMPLETE",
   "checks": [
+    {
+      "name": "KiCad ERC / PCB DRC / connectivity",
+      "result": "PASS",
+      "evidence": {
+        "exit_code": 0,
+        "output": "Found 0 violations\nSaved ERC Report to erc_report.json\n\nPlotted to '<electronics>\\exports\\joint_interface.svg'.\nDone.\nPlotted to 'exports\\joint_interface.pdf'.\nDone.\nPASS: 44 components, 28 nets, 118 pin assignments, 22 topology checks, 0 ERC violations\nFound 0 violations\nFound 0 unconnected items\nFound 0 schematic parity issues\nSaved DRC Report to pcb_drc_report.json\nSaved board\nPlotted to 'fabrication\\joint_interface-F_Cu.gtl'.\nPlotted to 'fabrication\\joint_interface-In1_Cu.g1'.\nPlotted to 'fabrication\\joint_interface-In2_Cu.g2'.\nPlotted to 'fabrication\\joint_interface-B_Cu.gbl'.\nPlotted to 'fabrication\\joint_interface-F_Paste.gtp'.\nPlotted to 'fabrication\\joint_interface-F_Silkscreen.gto'.\nPlotted to 'fabrication\\joint_interface-B_Silkscreen.gbo'.\nPlotted to 'fabrication\\joint_interface-F_Mask.gts'.\nPlotted to 'fabrication\\joint_interface-B_Mask.gbs'.\nPlotted to 'fabrication\\joint_interface-Edge_Cuts.gm1'.\nCreated file 'fabrication\\joint_interface-PTH.drl'\nCreated file 'fabrication\\joint_interface-NPTH.drl'\nCreated file 'fabrication\\joint_interface-PTH-drl_map.pdf'.\nCreated file 'fabrication\\joint_interface-NPTH-drl_map.pdf'.\nDone.\nWrote position data to 'fabrication\\assembly_positions.csv'.\nSuccessfully created IPC-D-356 file\nPlotted to 'exports\\pcb_top.svg'.\nDone.\nPlotted to 'exports\\pcb_bottom.svg'.\nDone.\nPlotted to 'exports\\pcb_ground_plane.svg'.\nDone.\nPlotted to 'exports\\pcb_power_plane.svg'.\nDone.\nPlotted to 'exports\\pcb_assembly.svg'.\nDone.\nPlotted to 'exports\\pcb_layers.pdf'.\nDone.\nPASS: 44 schematic footprints + 4 mechanical, 28 connected nets, 265 tracks, 32 vias; 0 DRC violations, 0 unconnected items, 0 schematic parity issues\n"
+      }
+    },
     {
       "name": "Automated numerical/CAD tests",
       "result": "PASS",
       "evidence": {
         "exit_code": 0,
-        "output": "..................................                                       [100%]\n34 passed in 47.13s\n"
+        "output": "........................................................................ [ 79%]\n...................                                                      [100%]\n91 passed in 51.41s\n"
       }
     },
     {
@@ -29,7 +38,14 @@
         "ik_max_orientation_error_rad": 6.50370020913975e-12,
         "ik_max_matrix_error": 1.885938627488315e-11,
         "jacobian_max_abs_error": 2.51663800909796e-10,
-        "independent_planar_fk_max_error_m": 2.5438405243138006e-16
+        "independent_planar_fk_max_error_m": 2.5438405243138006e-16,
+        "acceptance_limits": {
+          "ik_max_position_error_m": 1e-05,
+          "ik_max_orientation_error_rad": 0.0001,
+          "ik_max_matrix_error": 0.0001,
+          "jacobian_max_abs_error": 1e-06,
+          "independent_planar_fk_max_error_m": 1e-10
+        }
       }
     },
     {
@@ -52,19 +68,18 @@
       }
     },
     {
-      "name": "KiCad ERC / PCB DRC / connectivity",
-      "result": "PASS",
-      "evidence": {
-        "exit_code": 0,
-        "output": "r 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.398 s\nRendering: 5 \nRendering: 10 \nRendering: 15 \nRendering: 18 \nRendering: 21 \nRendering: 24 \nRendering: 27 \nRendering: 30 \nRendering: 33 \nRendering: 37 \nRendering: 42 \nRendering: 46 \nRendering: 51 \nRendering: 55 \nRendering: 58 \nRendering: 61 \nRendering: 66 \nRendering: 71 \nRendering: 76 \nRendering: 80 \nRendering: 83 \nRendering: 86 \nRendering: 90 \nRendering: 95 \nRendering: 100 \nRendering: Post processing shader\nRendering time 19.877 s\nSuccessfully created 3D render image\nLoading\u2026\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.401 s\nRendering: 50 \nRendering: 100 \nRendering time 1.472 s\nSuccessfully created 3D render image\nPASS: 44 schematic footprints + 4 mechanical, 28 connected nets, 265 tracks, 32 vias; 0 DRC violations, 0 unconnected items, 0 schematic parity issues\n"
-      }
-    },
-    {
       "name": "Documentation links and coverage",
       "result": "PASS",
       "evidence": {
-        "required_documents": 16,
+        "required_documents": 17,
         "broken_local_links": []
+      }
+    },
+    {
+      "name": "Validation source revision consistency",
+      "result": "PASS",
+      "evidence": {
+        "files_bound": 76
       }
     }
   ],
@@ -74,8 +89,86 @@
     "Analytical structure and independent-axis control are the documented educational models",
     "The conceptual PCB has no physical thermal, EMC, ESD or functional-safety validation"
   ],
+  "source_sha256": {
+    "analysis/__init__.py": "cdfe798bb4eb801809e84f07441eb56869f44e4758dc94cc69748958791937da",
+    "analysis/joint_torque_analysis.py": "374b6361c028d2b96d508c32b2cfc918f2138d3e57fc28694516a3c10997ef7e",
+    "analysis/research_experiments.py": "cc19bd4668ee7467037ae61d28e7e977e894f6a9d8c15188f3d443f408db2c93",
+    "analysis/structural_analysis.py": "d276cbad4885a10c1850a1f3b2bbf646f40e3425c2b53835ac2c7dfc390779f8",
+    "cad/build123d/assembly.py": "ab331015a96668f5c9eb73fdccd46cc386fd6b050448eed1cc2901cc0866f84f",
+    "cad/build123d/check_assembly.py": "16aad10d458771f8787ae8b28494dcd62169b18a0643d2107e0eb1d5eb166ae6",
+    "cad/build123d/check_motion.py": "513d7217ba978a62ff2bb44506814af85be71d05e59e2ea1b90693d4696cc17d",
+    "cad/build123d/compose_poses.py": "41ebf54793c63fd44eff5d236ae0288eb63de77e5d6d1900be5ea9cc0fa81955",
+    "cad/build123d/drawings.py": "14f0980e103e54a895ce121c24fa8d982fd6c6c7253e9318b959cc0bbb10f513",
+    "cad/build123d/export_all.py": "d29e0471cd2822c09003df9b2ad74bba482068acda58268e0ae059c55e535d97",
+    "cad/build123d/geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250",
+    "cad/build123d/inspect_blender.py": "f26cb3e95b5f8a86ec76e2837ad583214211a29cf67571403019030e2354fe54",
+    "cad/build123d/parameters.py": "78db1770d9ed6471f7226bf11b3b180eaca02c2740a672997efa137453a3ccbe",
+    "cad/build123d/render_blender.py": "bf84f37edbc38beb844a402a91c8dafaf4ca72d409f777eca4fd781eeab3491a",
+    "cad/freecad/inspect_step.py": "31d8b3b5bc1f24abb53e8e0f61fa0c52622519aea601fc85946f2d5a9755c8ee",
+    "config/robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+    "electronics/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod": "9acc77d33b95c382fade04f49c573996e7b85eb81b4c761ceacf350d77f2757b",
+    "electronics/electrical_assumptions.json": "9202510ae922c7257e5023e94fbe6bca7f1c2884ba05142f2dd61fadc04a01c0",
+    "electronics/fp-lib-table": "ea0ff7a7a8fe778f9398c1d644beee9d99ae59331c1402ae7729d85883aad122",
+    "electronics/fuse_selection.json": "ce41aa3e09b473d2f89efe06adc6acb6d9b2b5db99cf0cd0da4a2fe8d03399d6",
+    "electronics/generate_interface.py": "b9e9524872e02b0d346adc02183530644ea3a6a5efdb7d4b89c368dfd84437af",
+    "electronics/generate_pcb.py": "d568da783e672122f5e188c7affb3aa3cfda051909464cf6f89bf366482cd41d",
+    "electronics/interface_analysis.py": "5a08ee6a9a19fb78dcdf82b3d5d5c213dd04727658894885126889f4df8fe868",
+    "electronics/joint_interface.kicad_dru": "72afecaf275113ea1933885f575e19720a433f4028c2282d8bdac265d51b80cd",
+    "electronics/joint_interface.kicad_pcb": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
+    "electronics/joint_interface.kicad_pro": "1cbe4d95a46fe4c8e8a28a635cd5d81d293c97451c79740726e6cffe839bdd1a",
+    "electronics/joint_interface.kicad_sch": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
+    "electronics/review_electronics.py": "c8fa38fe86e92728627c7d8187e95de7f93b5fb4d169df563ebe979b13e99cab",
+    "electronics/run_checks.py": "a98b148bf35e2fd1604077077b54bd8a7192878aa5a4cb044b16314740224a11",
+    "electronics/run_pcb_checks.py": "9b5b8a242ca7109bfee9c042db36c1b0c2393f00df30e0592f00383f3732b813",
+    "electronics/verify_netlist.py": "381317b0341f5a650c2fad1a1b5540d7ef2a42ea1167a8eb1d2d417477cafd47",
+    "electronics/verify_pcb.py": "71e66acac341e638481fa7b5600a61959060237a7f7db5b7684e404827f6d691",
+    "MANIFEST.in": "e3886bccab05728479229c775b1e2b960e2bd847ad699d8bded6dc9bf043cd67",
+    "pyproject.toml": "c84ee24de876ff17eb7b0fea2d8132a249b6a1b44c313383aa47edc20024af1a",
+    "requirements-lock.txt": "4a2622f1d02cdf2ab4cf8539b5b92b7151630fa1f4ca00e5dc506945ea9aa1fe",
+    "scripts/audit_repository.py": "1baa8a11feb28f35481848a349044635aef5f8d5a105cbb64a56d1ea87213180",
+    "scripts/build_viewer.py": "7f6c2205af10bc31f8d7a3fee398d33b79775625856dbc6347db490cefdcdbc2",
+    "scripts/evidence.py": "d1a3006bb0aba935e573b698a86663911b10bdeba6a57e0cd333c36574ef7f4c",
+    "scripts/generate_cad.py": "429f6142bd3ddf60ef3178eea4237d3f8973e1555882ccba9020bf64bc131be5",
+    "scripts/generate_results.py": "7d956c93547bbddc1461798a188d18d1a997873dd1476ac2820ae36d01d87933",
+    "scripts/open_project.ps1": "4ba596102701dffe336b9a4001c73fd4c5a73cf41bcd920322bded649dad7205",
+    "scripts/refresh_cad.py": "41c7d03c6a7536e6ea39e891841f22b96662e6ade6701cdf8505b8dab04f85ea",
+    "scripts/review_cad.py": "d6da1c9ebae3e354cd92e4a355f278bce622831e173b83378c2ac688f81a2cdf",
+    "scripts/review_theory.py": "a9d653050edc926727931d32449e874e99ed09af42223b6899d4c3ca8788acdc",
+    "scripts/run_validation.py": "2c7835e61dc50a2a2b970f7b11d54b6f9a24f564edd960f2b46a1ee2b931410f",
+    "scripts/sync_presentation.py": "9d5a89653826f8a2174c14ababea1b252d28e56c18c2b03faa86de0945b57dd5",
+    "scripts/update_report.py": "d9a51e3e43a508461f4d02aa1184a2e7c35fbe7e072152432b943c1cbed03b79",
+    "scripts/verify_presentation.py": "a0fdc5a2a8779c8909a99a17317541d1cb7ca7172766e84c5fb3b19e8fafcd4a",
+    "scripts/verify_viewer.cjs": "dbed5cbcef9139f427b8990576d329b131be698c416e0ab6e21653424c26631b",
+    "scripts/verify_wheel_install.py": "83939c621266f045d42d708664d1ad4bf0f06e90df0f2124adc46a9960ce6583",
+    "setup.py": "b6611d11260d4d714e7c792749e6f1d5a339bf3aa4818dfa5cd620e494465f65",
+    "simulations/viewer.js": "cf785e348742ca98cf03a5b8f2c58e6abbb827ce9eb55b1aaa38f12807762ff0",
+    "src/robotarm/__init__.py": "96ac3b0cf1f1556b93f410b7ff9731f36119de28ca475acfc3b808f49c4d0cea",
+    "src/robotarm/config.py": "0ef8974921d8cdfb4fbd822c5cd0d4002496cf0d5e3d136c848b75733ee3ae51",
+    "src/robotarm/control/__init__.py": "09295050f5dbdb15796e85b7e06a392c60a516717eb82cbba0578ec719085be6",
+    "src/robotarm/control/pid.py": "e379778f8ca9161877d42fb637baf1b4b26de0fb98118ef15de53c917178fa6c",
+    "src/robotarm/demo.py": "cae6f39de28577bf251724fd8860ce25d3be94010de5c10292e9e0e3cd50c584",
+    "src/robotarm/gripper/__init__.py": "7ad75d79c06c3682fbe2f3ee9481f44609954b26266bd4b7ebda183b20540854",
+    "src/robotarm/gripper/model.py": "4152eb1ea321ec2a6ce6a8cca6941ec8c32afceecfcba61a1f15b0164409b160",
+    "src/robotarm/kinematics/__init__.py": "8af5ce84125e2f79044b727d3854f3a51b2ff84a92327b9cd8821b03e635c3f7",
+    "src/robotarm/kinematics/model.py": "6a8d563ef7230e96ed517df15bd8ce59358417b1bbfe5653f7fdefff49e3e1f3",
+    "src/robotarm/planning/__init__.py": "ab7934d1672e5422fcff5aec0c83b984bb8945bc5726623b535239ab839bda74",
+    "src/robotarm/planning/trajectories.py": "986cd32bf077d8deba937a2cbbc77f266da6044c9a84b1e53d278e8e6d64642c",
+    "src/robotarm/simulation/__init__.py": "49bdb29c40b42fb72a486c244a0d7a0fb45a8c6be9d524e043b2218e771cf248",
+    "src/robotarm/simulation/tasks.py": "84078daff0f28ffb8348259e5d2717c069a272a2eec5d753fbad61014a9ef97e",
+    "src/robotarm/visualization/__init__.py": "4a7ccc94c44c682fa4d86d475c1b887c949f07106e0a4754b40a8efcd8803b79",
+    "src/robotarm/visualization/plots.py": "d1deaff49c3286e077d92fe8a7c3a3b26a32ce7b057e4452716c7396b20107b4",
+    "tests/test_cad.py": "c800a999a61ff3ea0a02472802f8badda1d5833b81a32aafaab6eaa605022bdc",
+    "tests/test_config.py": "3104f66c14a44c61bf4a7f4f33bf6d8724d12aaebb7feb3e9b0984c8ce8f0e00",
+    "tests/test_control.py": "cb5c1930e1ca74680868a9a7a9809952a934e7ad549e4353ed1c8c189f24df44",
+    "tests/test_electronics.py": "8c10cbc3ece3680635fc3d64678ce752df115b48eaf9218911d8a5f0101d95a7",
+    "tests/test_gripper.py": "e4a0a8214d711dcabcc66f2a088242d43adce3bb62621cb7c551754dfc959f59",
+    "tests/test_kinematics.py": "35575c0b826f4b54be97a050e8eec206b73b9bc72e8b8fae35151bc7f0e438f2",
+    "tests/test_mechanical.py": "2fc6c83978b9940772180b4d6056e9e4cb3eed4a71acc1950c88aefed1c162c7",
+    "tests/test_planning.py": "29f4397aaeaa9513ff58b6644221cc0b483a2dab3645d23134c0fddd6d0e42e4",
+    "tests/test_validation.py": "ec793f4e34ecd7357e5cd57473af03c4ec47705a48958296b07c71a3817bbe83"
+  },
   "test_totals": {
-    "tests": 34,
+    "tests": 91,
     "failures": 0,
     "errors": 0,
     "skipped": 0

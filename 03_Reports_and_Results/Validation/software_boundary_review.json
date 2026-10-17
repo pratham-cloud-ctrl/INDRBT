@@ -1,0 +1,206 @@
+{
+  "status": "PASS",
+  "review_date": "2026-10-17",
+  "scope": "Re-review original numerical/control/engineering requirements and fix demonstrated software/analytical defects; no CAD/PCB/physical qualification claim",
+  "issues_found_and_corrected": [
+    {
+      "id": "SW-001",
+      "brief_sections": [
+        10,
+        30,
+        35,
+        57,
+        58
+      ],
+      "problem": "NaN named poses, invalid SI declarations and nonphysical model/control/gripper parameters could pass configuration loading or explicit-config construction.",
+      "correction": "Shared finite/domain/shape/unit validation now covers file loading and model constructors; runtime controller edits are checked before integration."
+    },
+    {
+      "id": "SW-002",
+      "brief_sections": [
+        14,
+        16,
+        20
+      ],
+      "problem": "Default relative allclose tolerance admitted nonrigid last-row/rotation scaling errors.",
+      "correction": "Rigid-transform checks use absolute tolerances with rtol=0 before IK and SLERP."
+    },
+    {
+      "id": "SW-003",
+      "brief_sections": [
+        19,
+        20
+      ],
+      "problem": "Trajectory concatenation admitted position/velocity/acceleration jumps larger than its stated absolute tolerance.",
+      "correction": "Continuity checks use rtol=0; all trajectory records require finite (samples,6) arrays and strictly increasing finite times."
+    },
+    {
+      "id": "SW-004",
+      "brief_sections": [
+        17,
+        19,
+        20
+      ],
+      "problem": "A radial quintic TCP approach to full extension can require divergent joint acceleration, although sampled output forced the endpoint acceleration to zero.",
+      "correction": "MOVE L requires scaled sigma_min > 1e-3 by default at its start and every solved sample; failure recommends another path or MOVE J. The guard is a conservative numerical policy, not a continuous-motion certificate.",
+      "before_fixed_one_second_peak_acceleration_rad_s2": [
+        11.08796218108545,
+        18.086644078177677,
+        28.95629929979359
+      ],
+      "tested_resolutions": [
+        41,
+        81,
+        161
+      ]
+    },
+    {
+      "id": "SW-005",
+      "brief_sections": [
+        26,
+        27,
+        35
+      ],
+      "problem": "Nonfinite gain scaling or out-of-limit/malformed references entered the controller, and disabled integral modes accumulated an unused integrator.",
+      "correction": "Reject inadmissible inputs and leave the integral state zero when integral action is disabled."
+    },
+    {
+      "id": "AN-001",
+      "brief_sections": [
+        24,
+        35,
+        58
+      ],
+      "problem": "A valid unloaded beam divided by zero in its yield ratio; reversing the load produced a negative strength ratio.",
+      "correction": "Keep signed deflection, use absolute nominal root stress and positive strength ratios, represent zero-stress ratio as JSON null; reject nonphysical section/material/load inputs."
+    },
+    {
+      "id": "AN-002",
+      "brief_sections": [
+        23,
+        25,
+        35
+      ],
+      "problem": "Negative or nonfinite payload override was accepted by gravity loading.",
+      "correction": "Validate payload override as finite nonnegative kg."
+    },
+    {
+      "id": "AN-003",
+      "brief_sections": [
+        13,
+        23,
+        25,
+        57,
+        58
+      ],
+      "problem": "Conceptual drive sizing reused control inertia assumptions below the same assumed COM point-mass inertia, undermining its conservative-model wording.",
+      "correction": "Use max(control inertia, all-angle sum(m*lever_bound^2)) for sizing while keeping the educational controller unchanged; test via independently differentiated COM kinetic energy.",
+      "point_mass_inertia_bound_kg_m2": [
+        4.490834687500001,
+        4.490834687500001,
+        1.3017946875,
+        0.09401906250000001,
+        0.09401906250000001,
+        0.0
+      ],
+      "sizing_inertia_kg_m2": [
+        4.490834687500001,
+        4.490834687500001,
+        1.3017946875,
+        0.09401906250000001,
+        0.09401906250000001,
+        0.03
+      ]
+    }
+  ],
+  "focused_regression_runs": [
+    {
+      "report": "motion-tests.xml",
+      "tests": 60,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "aeb6014d085ce329fba0adae06c095fa7554090412262d70fd13bcdbc3d65cd5"
+    },
+    {
+      "report": "mechanical-edge-tests.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "8170635006c7fa7e504fbd01ee8c225f649466f338a29c4f20375353ea9dfb79"
+    },
+    {
+      "report": "inertia-tests.xml",
+      "tests": 10,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "sha256": "47829acc2ff10cf878234d0aa3c6bbcc6adf2ec1af773e8fb8accd200dab69d7"
+    }
+  ],
+  "unique_focused_test_cases": 71,
+  "nominal_comparison": {
+    "status": "PASS",
+    "task_payload_exactly_unchanged": true,
+    "task_file_bytes_exactly_unchanged": true,
+    "task_file_sha256_before": "5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c",
+    "task_file_sha256_preview": "5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c",
+    "task_samples": 1041,
+    "task_duration_s": 9.243979567042027,
+    "max_velocity_limit_fraction": 0.9516936720540675,
+    "max_acceleration_limit_fraction": 0.9979714160318779,
+    "structure_results_exactly_unchanged": true,
+    "configuration_sha256": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96"
+  },
+  "default_discrete_unsaturated_pid_spectral_radii": [
+    0.9998093683413861,
+    0.9998234863734055,
+    0.9998310499283998,
+    0.9998310499283997,
+    0.999796961204562,
+    0.999831279555964
+  ],
+  "boundary_ik_trials": [
+    {
+      "pose": "all_lower_bounds",
+      "position_error_m": 2.7312351047262694e-07,
+      "orientation_error_rad": 4.633477915335753e-07,
+      "attempts": 1
+    },
+    {
+      "pose": "all_upper_bounds",
+      "position_error_m": 4.744435991680738e-10,
+      "orientation_error_rad": 5.984324557505072e-10,
+      "attempts": 1
+    },
+    {
+      "pose": "full_extension",
+      "position_error_m": 1.5549083598962904e-13,
+      "orientation_error_rad": 9.76159133774881e-13,
+      "attempts": 1
+    }
+  ],
+  "source_sha256": {
+    "src/robotarm/config.py": "0ef8974921d8cdfb4fbd822c5cd0d4002496cf0d5e3d136c848b75733ee3ae51",
+    "src/robotarm/kinematics/model.py": "6a8d563ef7230e96ed517df15bd8ce59358417b1bbfe5653f7fdefff49e3e1f3",
+    "src/robotarm/planning/trajectories.py": "986cd32bf077d8deba937a2cbbc77f266da6044c9a84b1e53d278e8e6d64642c",
+    "src/robotarm/control/pid.py": "e379778f8ca9161877d42fb637baf1b4b26de0fb98118ef15de53c917178fa6c",
+    "src/robotarm/gripper/model.py": "4152eb1ea321ec2a6ce6a8cca6941ec8c32afceecfcba61a1f15b0164409b160",
+    "analysis/joint_torque_analysis.py": "374b6361c028d2b96d508c32b2cfc918f2138d3e57fc28694516a3c10997ef7e",
+    "analysis/structural_analysis.py": "d276cbad4885a10c1850a1f3b2bbf646f40e3425c2b53835ac2c7dfc390779f8",
+    "scripts/review_theory.py": "a9d653050edc926727931d32449e874e99ed09af42223b6899d4c3ca8788acdc",
+    "tests/test_config.py": "3104f66c14a44c61bf4a7f4f33bf6d8724d12aaebb7feb3e9b0984c8ce8f0e00",
+    "tests/test_kinematics.py": "35575c0b826f4b54be97a050e8eec206b73b9bc72e8b8fae35151bc7f0e438f2",
+    "tests/test_planning.py": "29f4397aaeaa9513ff58b6644221cc0b483a2dab3645d23134c0fddd6d0e42e4",
+    "tests/test_control.py": "cb5c1930e1ca74680868a9a7a9809952a934e7ad549e4353ed1c8c189f24df44",
+    "tests/test_mechanical.py": "2fc6c83978b9940772180b4d6056e9e4cb3eed4a71acc1950c88aefed1c162c7"
+  },
+  "remaining_model_limits": [
+    "Local numerical IK exhaustion is not a complete reachability proof.",
+    "MOVE L singularity/derivative checks are sampled; no continuous collision or derivative certificate.",
+    "Control is an independent inertia/damping model, with no coupled rigid-body, gravity, drive-delay or contact dynamics.",
+    "Actuator diagonal inertia bounds cover assumed COM point masses; centroidal rotation tensors, coupling, Coriolis/centrifugal and reflected-drive inertias remain outside that model.",
+    "Payload and repeatability remain targets without physical hardware tests."
+  ]
+}

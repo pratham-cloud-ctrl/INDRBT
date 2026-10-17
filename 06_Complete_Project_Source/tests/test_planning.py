@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from robotarm.kinematics import RobotArm
-from robotarm.planning import concatenate, joint_trajectory, move_linear, stationary
+from robotarm.planning import Trajectory, concatenate, joint_trajectory, move_linear, stationary
 from robotarm.simulation import pick_and_place
 
 
@@ -87,3 +87,82 @@ def test_pick_place_returns_home_with_valid_events_and_segment_limits():
         np.testing.assert_allclose(actual, robot.fk(robot.config["poses"][pose_name]), atol=1e-5)
     assert all(phase["max_velocity_limit_fraction"] <= 1 for phase in phases)
     assert all(phase["max_acceleration_limit_fraction"] <= 1 for phase in phases)
+
+
+@pytest.mark.parametrize(
+    "field,offset,message",
+    [
+        ("q", 1e-5, "position discontinuity"),
+        ("dq", 1e-6, "velocity or acceleration discontinuity"),
+        ("ddq", 2e-6, "velocity or acceleration discontinuity"),
+    ],
+)
+def test_concatenation_uses_absolute_continuity_tolerances(field, offset, message):
+    home = RobotArm().config["home"]
+    first, second = stationary(home), stationary(home)
+    if field != "q":
+        getattr(first, field)[:, 2] = 1.0
+        getattr(second, field)[:, 2] = 1.0
+    getattr(second, field)[:, 2] += offset
+    with pytest.raises(ValueError, match=message):
+        concatenate(first, second)
+
+
+@pytest.mark.parametrize("samples", [41, 81])
+def test_cartesian_move_rejects_singular_full_extension_endpoint(samples):
+    """A radial quintic TCP approach has divergent joint acceleration here."""
+    robot = RobotArm()
+    start = np.zeros(6)
+    start[1] = -0.4
+    beta = np.arcsin(robot.lengths[1] * np.sin(0.4) / sum(robot.lengths[2:4]))
+    start[2], start[4] = 0.4 + beta, -beta
+    initial, target = robot.fk(start), robot.fk(np.zeros(6))
+    np.testing.assert_allclose(initial[1:, 3], target[1:, 3], atol=1e-12)
+    assert initial[0, 3] < target[0, 3]
+    with pytest.raises(ValueError, match="singular.*MOVE J"):
+        move_linear(robot, start, target, samples=samples)
+    # The same joint endpoints have a regular bounded joint-space quintic law.
+    joint_move = joint_trajectory(robot, start, np.zeros(6))
+    assert joint_move.metrics(robot)["max_acceleration_limit_fraction"] <= 1
+
+
+def test_cartesian_move_rejects_singular_start():
+    robot = RobotArm()
+    with pytest.raises(ValueError, match="singular.*MOVE J"):
+        move_linear(robot, np.zeros(6), robot.fk(robot.config["home"]))
+
+
+def test_cartesian_move_retains_tiny_legitimate_orientation_change():
+    robot = RobotArm()
+    start = robot.config["poses"]["pick"].copy()
+    end = start.copy()
+    end[5] += 1e-6
+    target = robot.fk(end)
+    path = move_linear(robot, start, target, samples=21)
+    position_error, orientation_error = robot.pose_error(path.q[-1], target)
+    assert position_error < 1e-8
+    assert orientation_error < 1e-8
+
+
+@pytest.mark.parametrize(
+    "invalid", ["nonfinite_time", "duplicate_time", "nonfinite_q", "wrong_shape"]
+)
+def test_malformed_trajectory_records_are_rejected(invalid):
+    t = np.array([0.0, 1.0])
+    q, dq, ddq = (np.zeros((2, 6)) for _ in range(3))
+    if invalid == "nonfinite_time":
+        t[-1] = np.nan
+    elif invalid == "duplicate_time":
+        t[-1] = 0
+    elif invalid == "nonfinite_q":
+        q[1, 0] = np.nan
+    else:
+        dq = dq[:, :5]
+    with pytest.raises(ValueError):
+        Trajectory(t, q, dq, ddq)
+
+
+@pytest.mark.parametrize("duration", [float("nan"), float("inf"), 0.0])
+def test_dwell_rejects_nonfinite_or_zero_duration(duration):
+    with pytest.raises(ValueError):
+        stationary(np.zeros(6), duration)

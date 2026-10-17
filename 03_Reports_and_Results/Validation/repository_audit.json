@@ -1,41 +1,41 @@
 {
   "status": "PASS",
   "scope": "Tracked-file pattern scan and size/junk audit; not an exhaustive security proof",
-  "tracked_files": 616,
-  "tracked_bytes": 112068714,
+  "tracked_files": 631,
+  "tracked_bytes": 125230468,
   "issues": [],
   "largest_files": [
     {
-      "file": "06_Complete_Project_Source/cad/exports/STL/assembly_vertical.stl",
-      "bytes": 2094284
+      "file": "06_Complete_Project_Source/cad/exports/STEP/assembly_pick.step",
+      "bytes": 2488822
     },
     {
-      "file": "06_Complete_Project_Source/cad/exports/STL/assembly_place.stl",
-      "bytes": 2094284
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_pick.step",
+      "bytes": 2488822
     },
     {
-      "file": "06_Complete_Project_Source/cad/exports/STL/assembly_pick.stl",
-      "bytes": 2094284
+      "file": "06_Complete_Project_Source/cad/exports/STEP/assembly_place.step",
+      "bytes": 2488788
     },
     {
-      "file": "06_Complete_Project_Source/cad/exports/STL/assembly_home.stl",
-      "bytes": 2094284
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_place.step",
+      "bytes": 2488788
     },
     {
-      "file": "06_Complete_Project_Source/cad/exports/STL/assembly_folded.stl",
-      "bytes": 2094284
+      "file": "06_Complete_Project_Source/cad/exports/STEP/assembly_folded.step",
+      "bytes": 2485997
     },
     {
-      "file": "06_Complete_Project_Source/cad/exports/STL/assembly_extended.stl",
-      "bytes": 2094284
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_folded.step",
+      "bytes": 2485997
     },
     {
-      "file": "01_CAD_Models/STL/Assemblies/assembly_vertical.stl",
-      "bytes": 2094284
+      "file": "06_Complete_Project_Source/cad/exports/STEP/assembly_home.step",
+      "bytes": 2485945
     },
     {
-      "file": "01_CAD_Models/STL/Assemblies/assembly_place.stl",
-      "bytes": 2094284
+      "file": "01_CAD_Models/STEP/Assemblies/assembly_home.step",
+      "bytes": 2485945
     }
   ]
 }

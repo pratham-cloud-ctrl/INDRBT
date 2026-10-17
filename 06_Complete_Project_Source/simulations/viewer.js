@@ -51,13 +51,15 @@
   function scaledCube(center,sizes){let m=tx(...center);m[0]=sizes[0];m[5]=sizes[1];m[10]=sizes[2];return m;}
   const pick=fk(DATA.config.poses_deg.pick.map(x=>x*Math.PI/180)).tcp,place=fk(DATA.config.poses_deg.place.map(x=>x*Math.PI/180)).tcp;
   const xyz=t=>[t[3],t[7],t[11]];
+  function objectPose(tcp){const released=DATA.trajectory.events.some(e=>e.action==='open'&&e.time_s<=clock),grasped=DATA.trajectory.events.some(e=>e.action==='close'&&e.time_s<=clock);return released?place:grasped?tcp:pick;}
+  function objectModel(pose){const scale=[.018,DATA.config.demo.object_width/2,.018],m=pose.slice();for(let row=0;row<3;row++)for(let column=0;column<3;column++)m[4*row+column]*=scale[column];return m;}
   function render(timestamp){if(last!==null&&playing){sample(Math.min(total,clock+(timestamp-last)/1000));if(clock>=total){playing=false;updateControls();}}last=timestamp;const ratio=Math.min(2,window.devicePixelRatio||1),w=Math.floor(canvas.clientWidth*ratio),h=Math.floor(canvas.clientHeight*ratio);if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}gl.viewport(0,0,w,h);gl.clearColor(.043,.082,.122,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.enable(gl.DEPTH_TEST);let model=fk(q);const target=selected?point(componentModel(model,selected),selected.center):[.25,0,.36],eye=[target[0]+distance*Math.cos(pitch)*Math.cos(yaw),target[1]+distance*Math.cos(pitch)*Math.sin(yaw),target[2]+distance*Math.sin(pitch)];gl.uniformMatrix4fv(loc.vp,false,transpose(mul(perspective(w/h),lookAt(eye,target))));gl.uniform3fv(loc.eye,eye);if(!selected){draw(gridMesh,I(),gridMesh.color,1,gl.LINES);if(pathVisible)draw(path,I(),path.color,1,gl.LINE_STRIP);}
     for(let mesh of meshes){if(!selected||mesh===selected)draw(mesh,componentModel(model,mesh));}
     if(!selected){
-    let closed=DATA.trajectory.events.some(e=>e.action==='close'&&e.time_s<=clock)&&!DATA.trajectory.events.some(e=>e.action==='open'&&e.time_s<=clock);let object=closed?xyz(model.tcp):clock>=(DATA.trajectory.events.find(e=>e.action==='open')?.time_s||Infinity)?xyz(place):xyz(pick);draw(cube,scaledCube(object,[.018,DATA.config.demo.object_width/2,.018]));
+    draw(cube,objectModel(objectPose(model.tcp)));
     for(let pose of [pick,place]){let p=xyz(pose),height=Math.max(.001,p[2]-.018);draw(cube,scaledCube([p[0],p[1],height/2],[.06,.06,height/2]),[.15,.32,.4]);}
     }
     document.getElementById('tcp').textContent=xyz(model.tcp).map(x=>(x*1000).toFixed(1)).join(' / ')+' mm';document.getElementById('time').textContent=clock.toFixed(2)+' / '+total.toFixed(2)+' s';if(playing){let phase=DATA.trajectory.phases.find(p=>clock>=p.start_s&&clock<=p.end_s);status.textContent=phase?.name||'Pick-and-place';}requestAnimationFrame(render);
   }
-  window.asterDebug={fk,get q(){return q;},get opening(){return opening;},get selectedComponent(){return selected?.name||null;},get renderedComponentCount(){return selected?1:meshes.length;},sample,meshCount:meshes.length};updateControls();requestAnimationFrame(render);
+  window.asterDebug={fk,get q(){return q;},get opening(){return opening;},get selectedComponent(){return selected?.name||null;},get renderedComponentCount(){return selected?1:meshes.length;},get objectPose(){return objectPose(fk(q).tcp).slice();},get objectModel(){return objectModel(objectPose(fk(q).tcp));},sample,meshCount:meshes.length};updateControls();requestAnimationFrame(render);
 })();

@@ -99,7 +99,7 @@ def build_components(p, opening=None):
     # Steel base, fixed hollow riser and slew-bearing seat.
     plate = ring(B, 22, 20, (0, 0, 10))
     plate = bolt_pattern(plate, 8, B - 20, 5.25, 24, (0, 0, 10))
-    plate = bolt_pattern(plate, 8, B - 20, 8.5, 7, (0, 0, 18))
+    plate = bolt_pattern(plate, 8, B - 20, 8.5, 7, (0, 0, 16.5))
     add("base_mounting_plate", "base", plate, "steel")
     riser = ring(76, 57, h - 94, (0, 0, (20 + h - 74) / 2))
     riser = bolt_pattern(riser, 6, 66, 3.2, h - 90, (0, 0, (20 + h - 74) / 2))
@@ -261,8 +261,11 @@ def build_components(p, opening=None):
     # Original interface: six M5 holes on 46-mm pitch circle, 30-mm pilot.
     flange = ring(p["tool_flange_diameter"] / 2, 8, 8, (4, 0, 0), "X")
     flange = bolt_pattern(flange, 6, 23, 2.75, 12, (4, 0, 0), "X")
+    # The pilot is a real locating spigot, with 0.1-mm radial adapter clearance.
+    flange += ring(15, 8, 4, (10, 0, 0), "X")
     add("tool_flange_6xM5_PCD46", "j6", flange, "steel")
-    adapter = ring(25, 15.1, 8, (12, 0, 0), "X")
+    # OD60 leaves 4.25 mm of material outside each PCD46 clearance hole.
+    adapter = ring(30, 15.1, 8, (12, 0, 0), "X")
     adapter = bolt_pattern(adapter, 6, 23, 2.75, 12, (12, 0, 0), "X")
     add("interchangeable_gripper_adapter", "j6", adapter)
     # Opposite-hand 4-mm lead screw + two transverse guides; body pocket exposes
@@ -272,18 +275,28 @@ def build_components(p, opening=None):
     # Carriages are 36 mm tall; the 38-mm pocket gives 1-mm top/bottom clearance.
     # Extend the cutting tool beyond the front face: an internal fillet at the
     # cutter's front would otherwise leave a small lip in the carriage path.
-    body -= block(30, body_width - 20, 38, (39, 0, 0), radius=4, long_axis="Y")
+    body -= block(34, body_width - 20, 38, (37.5, 0, 0), radius=4, long_axis="Y")
+    body = bolt_pattern(body, 6, 23, 2.75, 30, (28, 0, 0), "X")
+    # Rear entrance reaches the pocket; the internal cable bend is conceptual.
+    body -= cyl(8, 30, (28, 0, 0), "X")
     body -= cyl(4.3, body_width + 2, (28, 0, 0), "Y")
     for z in (-14, 14):
         body -= cyl(3.7, body_width + 2, (43, 0, z), "Y")
     for y in (-body_width / 2 + 10, body_width / 2 - 10):
         for z in (-18, 18):
             body -= cyl(2.25, 30, (28, y, z), "X")
+    # A removable top hatch replaces the rear plate that crossed the adapter.
+    body -= block(12, 80, 9, (29, 0, 22), radius=2, long_axis="Z")
+    cover = block(16, 100, 2, (29, 0, 25), radius=2, long_axis="Z")
+    for x in (24, 34):
+        for y in (-44, 44):
+            body -= cyl(1.7, 10, (x, y, 22), "Z")
+            cover -= cyl(1.7, 4, (x, y, 25), "Z")
     add("gripper_pocketed_body", "j6", body)
     add(
-        "gripper_rear_service_cover",
+        "gripper_top_service_cover",
         "j6",
-        block(2, body_width - 18, 34, (15, 0, 0), radius=3, long_axis="X"),
+        cover,
         "polymer",
         "service cover",
     )
@@ -311,11 +324,21 @@ def build_components(p, opening=None):
     )
     for side in (-1, 1):
         yc = side * (opening / 2 + p["finger_thickness"] / 2 + 1.5)
-        jaw = block(16, 10, 36, (45, yc, 0), radius=2, long_axis="Y")
+        jaw = block(13, 10, 36, (43.5, yc, 0), radius=2, long_axis="Y")
+        # An integrated nut boss and bridge connect the transverse screw to
+        # each guided carriage. The smooth bore represents the threaded nut;
+        # screw teeth, preload and contact forces remain conceptual.
+        jaw += cyl(6, 10, (28, yc, 0), "Y")
+        jaw += block(16, 10, 12, (36, yc, 0), radius=1, long_axis="Y")
+        jaw -= cyl(4.2, 12, (28, yc, 0), "Y")
+        # A lower mounting tab supports the finger without overlapping it.
+        start = p["tool_length"] - p["finger_length"]
+        jaw += block(20, 10, 7, (start + 9, yc, -12.5), radius=1, long_axis="Y")
         for z in (-14, 14):
             jaw -= cyl(3.6, 20, (43, yc, z), "Y")
+        for x in (start + 6, start + 14):
+            jaw -= cyl(1.7, 10, (x, yc, -12.5), "Z")
         add(f"gripper_jaw_carriage_{side:+}", "j6", jaw)
-        start = p["tool_length"] - p["finger_length"]
         finger = block(
             p["finger_length"],
             p["finger_thickness"],

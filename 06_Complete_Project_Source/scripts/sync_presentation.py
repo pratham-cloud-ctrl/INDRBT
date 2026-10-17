@@ -99,7 +99,11 @@ def page(title, body):
 # Markdown documents link to their readable HTML counterparts. Data and native
 # engineering files retain their source-relative targets.
 reports = []
-report_sources = [SOURCE / "README.md", *(SOURCE / "docs").glob("*.md")]
+report_sources = [
+    SOURCE / "README.md",
+    *(SOURCE / "docs").glob("*.md"),
+    SOURCE / "results/validation/validation_report.md",
+]
 report_targets = {
     p.resolve(): (
         DEST
@@ -188,7 +192,8 @@ for title, desc, url, label in cards:
     body += f'<div class="card"><h3>{title}</h3><p>{desc}</p><a href="{url}">{label} →</a></div>'
 body = body.replace(
     '<h2 id="open-cad">',
-    '<nav aria-label="Engineering guides"><p><a class="button" href="03_Reports_and_Results/Readable_Reports/component_catalog.html">CAD component catalog</a>'
+    '<nav aria-label="Engineering guides"><p><a class="button" href="03_Reports_and_Results/Readable_Reports/project_alignment.html">Project purpose and goals</a>'
+    '<a class="button" href="03_Reports_and_Results/Readable_Reports/component_catalog.html">CAD component catalog</a>'
     '<a class="button" href="03_Reports_and_Results/Readable_Reports/theory_guide.html">Theory guide</a>'
     '<a class="button" href="03_Reports_and_Results/Readable_Reports/electronics_components.html">Electronics components</a></p></nav><h2 id="open-cad">',
 )
@@ -228,6 +233,8 @@ An educational mechatronics project connecting original parametric CAD, robot ki
 ![Actual ASTER-6 CAD assembly](01_CAD_Models/Preview_Images/hero.png)
 
 ## Start here
+
+[The project purpose and original goals](06_Complete_Project_Source/docs/project_alignment.md) explain how the mechanics, mathematics, motion, control and electronics connect into one digital engineering project.
 
 [Download the complete v{version} release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v{version}) or clone this repository. Double-click **OPEN_PROJECT_HOME.cmd** for the project guide or **OPEN_3D_VIEWER.cmd** to view and move the robot. The viewer can isolate any of the 54 components and automatically fit it on screen. Use **OPEN_FREECAD_MODEL.cmd** for CAD editing and **OPEN_PCB_LAYOUT.cmd** for the KiCad board. These Windows launchers locate installed Chrome/Edge, FreeCAD and KiCad; they avoid incorrect file associations. On other systems, open [START_HERE.html](START_HERE.html) or [the interactive viewer](02_Simulation_and_Animation/Interactive_3D_Viewer.html) in a browser.
 
@@ -336,6 +343,7 @@ The viewer isolates individual CAD parts and animates the planner's recorded joi
 For browser reading, open the [project guide](../START_HERE.html) and [readable reports](Readable_Reports). Document links within readable reports stay in readable HTML.
 
 - [Engineering report](../06_Complete_Project_Source/docs/engineering_report.md)
+- [Project purpose and original goals](../06_Complete_Project_Source/docs/project_alignment.md)
 - [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md)
 - [Mechanical calculations](Mechanical) and [research experiments](Research)
 - [Executed validation](Validation/validation_report.md), [numerical checks](Validation/numerical_validation.json) and [requirements matrix](../06_Complete_Project_Source/docs/validation_matrix.md)

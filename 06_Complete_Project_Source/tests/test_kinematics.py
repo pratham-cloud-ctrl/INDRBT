@@ -78,3 +78,15 @@ def test_joint_bound_enforcement_and_extension_singularity():
     with pytest.raises(ValueError, match="limits"):
         robot.fk(robot.limits[:, 1] + 0.1)
     assert robot.singular_values(np.zeros(6))[-1] < 1e-12
+
+
+@pytest.mark.parametrize("part", ["last_row", "rotation"])
+def test_rigid_pose_absolute_tolerances_do_not_admit_relative_scale_error(part):
+    robot = RobotArm()
+    target = robot.fk(robot.config["home"])
+    if part == "last_row":
+        target[3, 3] += 1e-6
+    else:
+        target[:3, :3] *= 1 + 1e-6
+    with pytest.raises(ValueError):
+        robot.solve_ik(target)

@@ -7,6 +7,7 @@ scope limitations; absence of a tool never becomes a fabricated passing result.
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
@@ -24,13 +25,22 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from robotarm import RobotArm  # noqa: E402 — repository bootstrap precedes imports
 from robotarm.config import load_config  # noqa: E402
+from scripts.evidence import read_json, validation_sources, verify_packaging  # noqa: E402
 
 
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def public_output(text: str) -> str:
+    """Keep diagnostics useful without publishing local account/install paths."""
+    text = text.replace(str(ROOT), "<repo>").replace(ROOT.as_posix(), "<repo>")
+    return re.sub(r"[A-Za-z]:[\\/]Users[\\/][^\\/\r\n\"' ]+", "<user-profile>", text)
+
+
 def numeric_validation(trials: int = 60) -> dict:
+    if not isinstance(trials, int) or trials < 1:
+        raise ValueError("Numerical validation needs at least one trial")
     arm = RobotArm()
     rng = np.random.default_rng(1052026)
     margin = 0.06
@@ -40,8 +50,10 @@ def numeric_validation(trials: int = 60) -> dict:
         target = arm.fk(q)
         seed = np.clip(q + rng.normal(0, 0.28, 6), arm.limits[:, 0] + 1e-6, arm.limits[:, 1] - 1e-6)
         solution = arm.solve_ik(target, seed)
-        positions.append(solution.position_error_m)
-        orientations.append(solution.orientation_error_rad)
+        arm.check_joints(solution.q)
+        position_error, orientation_error = arm.pose_error(solution.q, target)
+        positions.append(position_error)
+        orientations.append(orientation_error)
         matrix_errors.append(float(np.max(np.abs(arm.fk(solution.q) - target))))
         eps = 1e-6
         numerical = np.zeros((6, 6))
@@ -71,16 +83,30 @@ def numeric_validation(trials: int = 60) -> dict:
         )
         expected = [radial * np.cos(q[0]), radial * np.sin(q[0]), z]
         planar_errors.append(float(np.linalg.norm(arm.fk(q)[:3, 3] - expected)))
+    measurements = {
+        "ik_max_position_error_m": float(np.max(positions)),
+        "ik_max_orientation_error_rad": float(np.max(orientations)),
+        "ik_max_matrix_error": float(np.max(matrix_errors)),
+        "jacobian_max_abs_error": float(np.max(jacobian_errors)),
+        "independent_planar_fk_max_error_m": float(np.max(planar_errors)),
+    }
+    limits = {
+        "ik_max_position_error_m": arm.position_tolerance,
+        "ik_max_orientation_error_rad": arm.orientation_tolerance,
+        "ik_max_matrix_error": max(arm.position_tolerance, arm.orientation_tolerance),
+        "jacobian_max_abs_error": 1e-6,
+        "independent_planar_fk_max_error_m": 1e-10,
+    }
+    for name, value in measurements.items():
+        if not np.isfinite(value) or value > limits[name]:
+            raise ValueError(f"Numerical acceptance failed: {name}={value}, limit={limits[name]}")
     return {
         "status": "VERIFIED DIGITALLY",
         "trials": trials,
         "seed": 1052026,
         "seeds": "Targets sampled within limits; seeds perturbed by Gaussian sigma .28 rad, not copied target joints",
-        "ik_max_position_error_m": max(positions),
-        "ik_max_orientation_error_rad": max(orientations),
-        "ik_max_matrix_error": max(matrix_errors),
-        "jacobian_max_abs_error": max(jacobian_errors),
-        "independent_planar_fk_max_error_m": max(planar_errors),
+        **measurements,
+        "acceptance_limits": limits,
     }
 
 
@@ -97,6 +123,7 @@ def documentation_check() -> dict:
         "docs/component_catalog.md",
         "docs/electronics_components.md",
         "docs/theory_guide.md",
+        "docs/project_alignment.md",
         "docs/design_decisions.md",
         "docs/project_journal.md",
         "LICENSE",
@@ -121,7 +148,7 @@ def documentation_check() -> dict:
 
 def artifacts_check() -> dict:
     c = load_config()
-    pcb = json.loads((ROOT / "electronics/pcb_verification.json").read_text())
+    pcb = read_json(ROOT / "electronics/pcb_verification.json")
     if not (ROOT / "electronics/joint_interface.kicad_pcb").is_file():
         raise ValueError("Native routed PCB is missing")
     for field in ("native_drc_errors", "native_drc_warnings", "unconnected_items"):
@@ -133,11 +160,12 @@ def artifacts_check() -> dict:
     for name, expected in pcb_files.items():
         if sha256(ROOT / "electronics" / name) != expected:
             raise ValueError(f"PCB source/export evidence is stale: {name}")
-    packaging = json.loads((ROOT / "results/validation/packaging_validation.json").read_text())
+    packaging = read_json(ROOT / "results/validation/packaging_validation.json")
     version = tomllib.loads((ROOT / "pyproject.toml").read_text())["project"]["version"]
     if packaging["status"] != "PASS" or packaging["package_version"] != version:
         raise ValueError("A successful isolated wheel check is required for the current version")
-    cad = json.loads((ROOT / "results/validation/cad_validation.json").read_text())
+    verify_packaging(ROOT, packaging)
+    cad = read_json(ROOT / "results/validation/cad_validation.json")
     if cad["component_count"] < 20 or any(
         not p["valid"] or p["volume_mm3"] <= 0 for p in cad["components"]
     ):
@@ -152,7 +180,7 @@ def artifacts_check() -> dict:
             raise ValueError(f"CAD pose verification failed: {name}")
     if any(check["result"] != "PASS" for check in cad["interference_checks"]):
         raise ValueError("Selected CAD poses still have interference")
-    clearance = json.loads((ROOT / "results/validation/cad_motion_clearance.json").read_text())
+    clearance = read_json(ROOT / "results/validation/cad_motion_clearance.json")
     for field in ("robot.yaml", "geometry.py"):
         source = ROOT / (
             "config/robot.yaml" if field == "robot.yaml" else "cad/build123d/geometry.py"
@@ -167,36 +195,58 @@ def artifacts_check() -> dict:
         != sha256(ROOT / "results/trajectories/pick_place_samples.json")
     ):
         raise ValueError("Trajectory clearance evidence is stale or failed")
-    trajectory = json.loads((ROOT / "results/trajectories/pick_place_samples.json").read_text())
+    trajectory = read_json(ROOT / "results/trajectories/pick_place_samples.json")
     arm = RobotArm(c)
     q = np.asarray(trajectory["q_rad"])
     for sample in q:
         arm.check_joints(sample)
     computed = np.array([arm.fk(sample)[:3, 3] for sample in q])
     np.testing.assert_allclose(computed, trajectory["tcp_m"], atol=1e-9)
-    metrics = json.loads((ROOT / "results/trajectories/pick_place_metrics.json").read_text())
-    if (
-        max(metrics["max_velocity_limit_fraction"], metrics["max_acceleration_limit_fraction"])
-        > 1.0001
+    metrics = read_json(ROOT / "results/trajectories/pick_place_metrics.json")
+    if any(
+        not 0 <= metrics[name] <= 1.0001
+        for name in ("max_velocity_limit_fraction", "max_acceleration_limit_fraction")
     ):
         raise ValueError("Task samples violate configured motion limits")
-    mesh = json.loads((ROOT / "cad/exports/meshes/assembly_meshes.json").read_text())
+    mesh = read_json(ROOT / "cad/exports/meshes/assembly_meshes.json")
     if len(mesh["components"]) != cad["component_count"] or mesh["length_unit"] != "mm":
         raise ValueError("CAD twin mesh count or units inconsistent")
-    viewer = json.loads((ROOT / "results/validation/viewer_validation.json").read_text())
+    viewer = read_json(ROOT / "results/validation/viewer_validation.json")
     html_hash = hashlib.sha256(
         (ROOT / "simulations/aster6_twin.html").read_text(encoding="utf-8").encode("utf-8")
     ).hexdigest()
     if (
         viewer["html_sha256"] != html_hash
         or viewer["page_errors"]
-        or viewer["maximum_js_python_matrix_difference"] > 1e-9
+        or not 0 <= viewer["maximum_js_python_matrix_difference"] <= 1e-9
     ):
         raise ValueError("Retained browser evidence does not match current twin artifact")
+    native_review = read_json(ROOT / "results/validation/cad_release_consistency.json")
+    if native_review.get("status") != "PASS":
+        raise ValueError("Native CAD consistency review did not pass")
+    native_sources = native_review.get("source_sha256", {})
+    required_sources = {
+        "config/robot.yaml",
+        "cad/build123d/geometry.py",
+        "cad/build123d/assembly.py",
+        "cad/build123d/export_all.py",
+        "cad/freecad/inspect_step.py",
+        "cad/build123d/render_blender.py",
+        "cad/build123d/inspect_blender.py",
+        "scripts/review_cad.py",
+    }
+    if not required_sources.issubset(native_sources) or not native_review.get("checked_artifacts"):
+        raise ValueError("Native CAD evidence is incomplete")
+    for name, expected in native_sources.items():
+        if sha256(ROOT / name) != expected:
+            raise ValueError(f"Native CAD source evidence is stale: {name}")
+    for artifact in native_review["checked_artifacts"]:
+        if sha256(ROOT / artifact["file"]) != artifact["sha256"]:
+            raise ValueError(f"Native CAD evidence is stale: {artifact['file']}")
     grip = metrics["gripper"]
     if not np.isclose(grip["opening_m"], c["gripper"]["max_opening"]):
         raise ValueError("Gripper report and configuration inconsistent")
-    torque = json.loads((ROOT / "results/mechanical/joint_torque.json").read_text())
+    torque = read_json(ROOT / "results/mechanical/joint_torque.json")
     from analysis.joint_torque_analysis import gravity_torques
 
     np.testing.assert_allclose(
@@ -217,11 +267,21 @@ def run() -> int:
         "--full", action="store_true", help="Regenerate CAD, all demos and analyses first"
     )
     parser.add_argument("--kicad-cli")
+    parser.add_argument(
+        "--freecad-cmd", help="FreeCAD console executable for --full native refresh"
+    )
+    parser.add_argument("--blender", help="Blender executable for --full CAD render/native refresh")
     parser.add_argument("--skip-electronics", action="store_true")
+    parser.add_argument(
+        "--skip-pcb-render",
+        action="store_true",
+        help="Retain PCB preview images while executing fresh native electrical/fabrication checks",
+    )
     args = parser.parse_args()
     out = ROOT / "results/validation"
     out.mkdir(parents=True, exist_ok=True)
     report = {
+        "executed_utc": datetime.now(timezone.utc).isoformat(),
         "project_version": tomllib.loads((ROOT / "pyproject.toml").read_text())["project"][
             "version"
         ],
@@ -234,6 +294,7 @@ def run() -> int:
             "The conceptual PCB has no physical thermal, EMC, ESD or functional-safety validation",
         ],
     }
+    initial_sources = validation_sources(ROOT)
 
     def check(name, action):
         try:
@@ -241,7 +302,7 @@ def run() -> int:
             report["checks"].append({"name": name, "result": "PASS", "evidence": evidence})
             print(f"{name:.<42}PASS", flush=True)
         except Exception as exc:
-            reason = str(exc).replace(str(ROOT), "<repo>")
+            reason = public_output(str(exc))
             report["checks"].append({"name": name, "result": "FAIL", "reason": reason})
             print(f"{name:.<42}FAIL: {reason}", flush=True)
 
@@ -253,7 +314,7 @@ def run() -> int:
             raise RuntimeError(result.stdout + result.stderr)
         return {
             "exit_code": result.returncode,
-            "output": (result.stdout + result.stderr).replace(str(ROOT), "<repo>")[-3000:],
+            "output": public_output(result.stdout + result.stderr)[-3000:],
         }
 
     if args.full:
@@ -261,11 +322,30 @@ def run() -> int:
         check(
             "Results regeneration", lambda: command([sys.executable, "scripts/generate_results.py"])
         )
-        check(
-            "CAD trajectory clearance regeneration",
-            lambda: command([sys.executable, "cad/build123d/check_motion.py"]),
+        refresh = [sys.executable, "scripts/refresh_cad.py"]
+        if args.freecad_cmd:
+            refresh += ["--freecad-cmd", args.freecad_cmd]
+        if args.blender:
+            refresh += ["--blender", args.blender]
+        check("Native CAD/render/clearance refresh", lambda: command(refresh))
+    # Refresh native evidence before tests/offline gates inspect its source hashes.
+    if args.skip_electronics:
+        report["checks"].append(
+            {
+                "name": "KiCad ERC / PCB DRC / connectivity",
+                "result": "NOT VERIFIED in this run",
+                "reason": "Explicitly skipped; retained evidence is in electronics/",
+            }
         )
+    else:
+        argv = [sys.executable, "electronics/run_checks.py"]
+        if args.kicad_cli:
+            argv += ["--kicad-cli", args.kicad_cli]
+        if args.skip_pcb_render:
+            argv += ["--skip-pcb-render"]
+        check("KiCad ERC / PCB DRC / connectivity", lambda: command(argv))
     with tempfile.TemporaryDirectory(prefix="aster-qa-") as temp:
+        (out / "pytest.xml").unlink(missing_ok=True)
         check(
             "Automated numerical/CAD tests",
             lambda: command(
@@ -309,19 +389,6 @@ def run() -> int:
             ]
         ),
     )
-    if args.skip_electronics:
-        report["checks"].append(
-            {
-                "name": "KiCad ERC / PCB DRC / connectivity",
-                "result": "NOT VERIFIED in this run",
-                "reason": "Explicitly skipped; retained evidence is in electronics/",
-            }
-        )
-    else:
-        argv = [sys.executable, "electronics/run_checks.py"]
-        if args.kicad_cli:
-            argv += ["--kicad-cli", args.kicad_cli]
-        check("KiCad ERC / PCB DRC / connectivity", lambda: command(argv))
     # The report is itself a linked deliverable. Write current executed evidence
     # before auditing links, including on the first run without existing outputs.
     (out / "validation_report.md").write_text(
@@ -331,6 +398,15 @@ def run() -> int:
         encoding="utf-8",
     )
     check("Documentation links and coverage", documentation_check)
+
+    def source_consistency():
+        current_sources = validation_sources(ROOT)
+        if current_sources != initial_sources:
+            raise ValueError("Engineering sources changed during validation; rerun on one revision")
+        return {"files_bound": len(current_sources)}
+
+    check("Validation source revision consistency", source_consistency)
+    report["source_sha256"] = initial_sources
     if (out / "pytest.xml").exists():
         junit = ET.parse(out / "pytest.xml")
         suites = junit.getroot()
@@ -342,6 +418,23 @@ def run() -> int:
             for name in ("tests", "failures", "errors", "skipped")
         }
         report["test_totals"] = totals
+        if not totals["tests"] or any(totals[name] for name in ("failures", "errors", "skipped")):
+            report["checks"].append(
+                {
+                    "name": "Complete test-suite execution",
+                    "result": "FAIL",
+                    "reason": "All project tests must execute without failures, errors or skips",
+                    "evidence": totals,
+                }
+            )
+    else:
+        report["checks"].append(
+            {
+                "name": "Complete test-suite execution",
+                "result": "FAIL",
+                "reason": "No JUnit evidence was produced by this run",
+            }
+        )
     report["configuration_sha256"] = sha256(ROOT / "config/robot.yaml")
     report["project_status"] = (
         "DIGITAL SCOPE COMPLETE"

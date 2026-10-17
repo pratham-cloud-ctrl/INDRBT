@@ -1,9 +1,10 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>README</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="aster-6-industrial-robot-arm-digital-twin">ASTER-6 · Industrial robot arm digital twin</h1>
 <p>An original six-axis robot with parametric CAD, numerical kinematics and a reproducible pick-and-place simulation.</p>
 <p><img alt="ASTER-6 actual CAD assembly" src="../../06_Complete_Project_Source/cad/renders/hero.png" /></p>
-<p><strong>Digital only · v1.1.0 · DIGITAL SCOPE COMPLETE</strong></p>
+<p><strong>Digital only · v1.2.0 · DIGITAL SCOPE COMPLETE</strong></p>
 <p>Designed for robotics education and portfolio review. Every result is generated from source; no physical robot was built. Payload and repeatability remain design targets. The conceptual electronics include a routed PCB, manufacturing exports and native DRC; collision evidence is representative and sampled.</p>
 <h2 id="see-it-move">See it move</h2>
+<p>Read <a href="project_alignment.html">the project purpose and original goals</a> for the engineering question, intended demonstration and relationship between the subsystems.</p>
 <p>Open <strong><a href="../../06_Complete_Project_Source/simulations/aster6_twin.html">the offline interactive CAD twin</a></strong> locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.</p>
 <p>The <strong>CAD component</strong> selector isolates and frames any of the 54 actual parts. Use the <a href="component_catalog.html">component catalog</a> to match part names, native objects, materials and STEP/STL files. The <a href="theory_guide.html">theory guide</a> connects the model equations to evidence, and the <a href="electronics_components.html">electronics component guide</a> explains references, selections and BOM population.</p>
 <p><img alt="FK pick-and-place animation" src="../../06_Complete_Project_Source/results/trajectories/pick_place_fk.gif" /></p>
@@ -35,7 +36,7 @@
 </tr>
 <tr>
 <td>Mass basis</td>
-<td>23.65 kg assumed; separate 19.952 kg CAD envelope sum with stated limitations</td>
+<td>23.65 kg assumed; separate 19.908 kg CAD envelope sum with stated limitations</td>
 </tr>
 <tr>
 <td>Gripper</td>
@@ -55,7 +56,7 @@
 </tr>
 <tr>
 <td>Tests</td>
-<td>34 tests; 0 failures; 0 errors</td>
+<td>91 tests; 0 failures; 0 errors</td>
 </tr>
 </tbody>
 </table>
@@ -150,7 +151,7 @@ python scripts/run_validation.py
 </tr>
 <tr>
 <td>Sampled CAD task clearance</td>
-<td>75 poses / 5935 exact BRep checks; maximum prohibited overlap 0 mm³</td>
+<td>75 poses / 6126 exact BRep checks; maximum prohibited overlap 0 mm³</td>
 <td>All component pairs classified; continuous motion not verified</td>
 </tr>
 </tbody>
@@ -159,7 +160,7 @@ python scripts/run_validation.py
 <h2 id="conceptual-electronics">Conceptual electronics</h2>
 <p>The native <a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_sch">KiCad schematic</a>, <a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_pcb">PCB</a> and <a href="../../06_Complete_Project_Source/electronics/exports/joint_interface.pdf">schematic PDF</a> cover regulated logic power, encoder/limit inputs, external-drive commands and RS-485. All 44 assigned footprint files were found (43 stock and 1 project-local), and 118 exported pin assignments were verified. Native ERC reports 0 violations under the enabled default rules. The <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">PCB verification</a> retains actual DRC and schematic-board checks. <a href="05_electronics.html">Electronics scope</a> documents fabrication outputs, rules, circuit calculations and assumptions. No physical hardware or manufacturing suitability is claimed.</p>
 <h2 id="verification-report-and-limitations">Verification, report and limitations</h2>
-<p>Read the <a href="engineering_report.html">engineering report</a>, <a href="validation_matrix.html">validation matrix</a>, <a href="../../06_Complete_Project_Source/results/validation/validation_report.md">executed check report</a>, <a href="design_decisions.html">decision log</a> and <a href="project_journal.html">authentic journal</a>.</p>
+<p>Read the <a href="engineering_report.html">engineering report</a>, <a href="validation_matrix.html">validation matrix</a>, <a href="validation_report.html">executed check report</a>, <a href="design_decisions.html">decision log</a> and <a href="project_journal.html">authentic journal</a>.</p>
 <p>This is a geometric digital twin with simplified educational control. Repeatability and payload ratings have no physical verification. Full CAD structural FEA, fatigue assessment, functional safety, coupled dynamics, frictional contact, manufacturing tolerances and real drive firmware are outside the implemented educational model. Workspace sampling and IK do not enforce collision avoidance. Collision checks are representative and sampled; manual slider poses may collide. The executed status is <strong>DIGITAL SCOPE COMPLETE</strong> for the <a href="digital_scope_audit.html">documented digital scope</a>.</p>
 <h2 id="best-portfolio-material">Best portfolio material</h2>
 <ol>

@@ -159,6 +159,12 @@ branch jumps, estimates derivatives by finite differences, and uniformly lengthe
 time to obey their sampled limits. This does not establish derivative bounds
 between samples. Joint bounds and IK success also do not establish collision
 clearance.</p>
+<p>The default MOVE L regularity guard requires the smallest scaled Jacobian
+singular value to exceed 0.001 at the start and solved samples, with translation
+rows divided by reach. Singular continuation raises a useful error and suggests
+another path or MOVE J. Cartesian quintic endpoints alone do not establish finite
+joint acceleration at full extension; the inverse map can be singular. This is
+a sampled numerical guard with a configurable threshold, not a safety claim.</p>
 <p><a href="../../06_Complete_Project_Source/results/trajectories/trajectory_metrics.json">Trajectory evidence</a> and the
 <a href="../../06_Complete_Project_Source/results/trajectories/pick_place_samples.json">recorded task</a> expose the actual
 samples. The object follows a scripted attachment between close/open events;
@@ -177,14 +183,28 @@ gradient supplies an independent check on the sign and magnitude. Full extension
 also permits hand calculations using horizontal lever lengths. Centred lumps
 give zero gravity moment around the base yaw and tool roll axes; they still need
 torque for acceleration and damping.</p>
-<p>Conceptual sizing adds a conservative lever-length gravity bound to assumed
-diagonal inertia/damping allowances:</p>
-<pre><code class="language-text">tau_output = safety_factor · (gravity_bound + I_joint·amax + b·vmax)
+<p>The controller's inertia is an independent educational plant assumption. It must
+not automatically become the actuator-sizing inertia: a point payload alone has
+rotational inertia <code>m · r_perpendicular²</code>, which can exceed that assumption.
+For each joint, the load analysis bounds the perpendicular lever to every
+downstream COM point using the actual link lengths. It then calculates:</p>
+<pre><code class="language-text">I_point_bound_i = sum over downstream COM points of (m · lever_bound_i²)
+I_sizing_i = max(I_control_i, I_point_bound_i)
+</code></pre>
+<p>Roll-axis offsets along the same axis contribute no perpendicular lever. The
+point-mass bound covers every joint angle under the midpoint COM model. An
+independent test differentiates COM positions at unit joint speed and checks
+<code>2 · kinetic_energy = I_ii</code> against these bounds. The configured control plants
+remain unchanged. Conceptual sizing adds the gravity bound to this equivalent
+diagonal inertia allowance and the assumed damping allowance:</p>
+<pre><code class="language-text">tau_output = safety_factor · (gravity_bound + I_sizing·amax + b·vmax)
 tau_motor = tau_output / (gear_ratio · efficiency)
 </code></pre>
-<p>The simultaneous maxima define a sizing envelope, rather than the torque history
-of a coupled robot. Continuous heating, brakes, reflected inertia, gear/bearing
-loads, backlash and commercial part ratings require further engineering.
+<p>The simultaneous maxima define an envelope for this independent-axis point-mass
+model. They do not bound a coupled robot's complete dynamic torque: centroidal
+body rotation tensors, off-diagonal inertia, Coriolis/centrifugal terms and
+reflected drive inertia are absent. Continuous heating, brakes, gear/bearing
+loads, backlash and commercial part ratings also require further engineering.
 <a href="../../06_Complete_Project_Source/results/mechanical/joint_torque.json">Load results</a> and
 <a href="03_mechanical_analysis.html">mechanical analysis</a> retain the assumptions, sampled
 maxima and all-angle bounds separately.</p>
