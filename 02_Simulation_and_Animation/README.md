@@ -1,10 +1,30 @@
-# Simulation and animation
+# Simulation · Motion, workspace and feedback
 
-- [Interactive CAD viewer](Interactive_3D_Viewer.html) — download the project and open locally in a browser
-- [Recorded FK animation](Trajectories/pick_place_fk.gif)
-- [Joint/TCP trajectory data](Trajectories) and [pick/place metrics](Trajectories/pick_place_metrics.json)
-- [Workspace cloud](Workspace/workspace_3d.png), [projections](Workspace/workspace_projections.png) and [singularities](Workspace/singularity_analysis.png)
-- [PID tracking](Control/pid_tracking.png), [step response](Control/pid_step_response.png) and [metrics](Control/metrics.json)
-- [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md)
+[← Project home](../README.md) · [Mechanical tour](../06_Complete_Project_Source/docs/cad_tour.md) · [Theory walkthrough](../06_Complete_Project_Source/docs/engineering_walkthrough.md)
 
-The viewer isolates individual CAD parts and animates the planner's recorded joints. Object attachment is ideal, controller plants are independent assumed inertias/damping, and manual joint settings can collide. These are documented digital models.
+![Recorded FK pick-and-place task](Trajectories/pick_place_fk.gif)
+
+## Move and inspect the actual CAD
+
+Download and extract the project, then open **OPEN_3D_VIEWER.cmd** in the parent folder on Windows. On any system, open [Interactive_3D_Viewer.html](Interactive_3D_Viewer.html) locally in a browser. It needs no server or internet. GitHub displays the HTML source.
+
+Drag to orbit, scroll to zoom, select a named pose, adjust six joints and the gripper, or play the recorded task. The **CAD component** selector isolates and frames each of the 54 parts.
+
+## Understand the recorded task
+
+| Inspect | Evidence |
+|---|---|
+| Tool path through the task | [Pick/place TCP plot](Trajectories/pick_place_tcp.png) |
+| Joint angles, speeds and accelerations | [Pick/place joint plots](Trajectories/pick_place_joints.png) |
+| Reproduce the samples | [Task CSV](Trajectories/pick_place.csv) · [Task metrics](Trajectories/pick_place_metrics.json) |
+| Compare joint interpolation and Cartesian moves | [Interpolation curves](Trajectories/interpolation_comparison.png) · [MOVE J](Trajectories/move_j_tcp.png) · [MOVE L](Trajectories/move_l_tcp.png) |
+
+## Workspace and feedback
+
+| Topic | Plot | Explanation |
+|---|---|---|
+| Reachable samples | [3D workspace](Workspace/workspace_3d.png) · [Projections](Workspace/workspace_projections.png) | 6,000 seeded joint configurations; the convex hull is an envelope, not collision-free reachable volume |
+| Frames and singularities | [Coordinate frames](Workspace/coordinate_frames.png) · [Singularity analysis](Workspace/singularity_analysis.png) | [Kinematic formulation](../06_Complete_Project_Source/docs/02_kinematics.md) |
+| Simplified PID | [Tracking](Control/pid_tracking.png) · [Step response](Control/pid_step_response.png) · [Metrics](Control/metrics.json) | [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md) |
+
+The grasp is an ideal attachment and controller plants use independent assumed inertias/damping. Manual joint settings can collide. [Sampled CAD clearance evidence](../03_Reports_and_Results/Validation/cad_motion_clearance.json) is separate from viewer playback.

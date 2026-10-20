@@ -1,12 +1,31 @@
-# Reports, theory and verification
+# Theory, calculations and engineering evidence
 
-For browser reading, open the [project guide](../START_HERE.html) and [readable reports](Readable_Reports). Document links within readable reports stay in readable HTML.
+[← Project home](../README.md) · [CAD](../01_CAD_Models/README.md) · [Electronics & KiCad](../04_Electronics/README.md)
 
-- [Engineering report](../06_Complete_Project_Source/docs/engineering_report.md)
-- [Project purpose and original goals](../06_Complete_Project_Source/docs/project_alignment.md)
-- [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md)
-- [Mechanical calculations](Mechanical) and [research experiments](Research)
-- [Executed validation](Validation/validation_report.md), [numerical checks](Validation/numerical_validation.json) and [requirements matrix](../06_Complete_Project_Source/docs/validation_matrix.md)
-- [CAD review](Validation/final_cad_review.json), [electronics review](Validation/final_electronics_review.json) and [theory review](Validation/final_theory_review.json)
+**Start with the [illustrated engineering walkthrough](../06_Complete_Project_Source/docs/engineering_walkthrough.md).** Follow the reasoning from robot geometry through a useful motion, assumed loads, gripper mechanics, feedback control and the interface board.
 
-Results distinguish assumptions, design targets, calculations and digitally verified behavior. Source documents and generation scripts remain authoritative in 06_Complete_Project_Source.
+![Coordinate frames from the implemented robot model](../02_Simulation_and_Animation/Workspace/coordinate_frames.png)
+
+## Choose a reading route
+
+| Your goal | Start here | Continue with |
+|---|---|---|
+| Understand the whole idea | [Project purpose and goals](../06_Complete_Project_Source/docs/project_alignment.md) | [Illustrated walkthrough](../06_Complete_Project_Source/docs/engineering_walkthrough.md) |
+| Learn the equations | [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md) | [Kinematics](../06_Complete_Project_Source/docs/02_kinematics.md) · [Mechanics](../06_Complete_Project_Source/docs/03_mechanical_analysis.md) |
+| Assess the design | [Engineering report](../06_Complete_Project_Source/docs/engineering_report.md) | [Requirements matrix](../06_Complete_Project_Source/docs/validation_matrix.md) · [Design decisions](../06_Complete_Project_Source/docs/design_decisions.md) |
+| Reproduce a result | [Complete documentation index](../06_Complete_Project_Source/docs/README.md) | [Source installation and commands](../06_Complete_Project_Source/README.md#run) |
+
+## Inspect the evidence behind each chapter
+
+| Topic | Readable result | Underlying data |
+|---|---|---|
+| Workspace and singularities | [Workspace plots](../02_Simulation_and_Animation/README.md#workspace-and-feedback) | [Workspace result files](../02_Simulation_and_Animation/Workspace) |
+| Motion planning | [Pick/place path](../02_Simulation_and_Animation/Trajectories/pick_place_tcp.png) · [Joint curves](../02_Simulation_and_Animation/Trajectories/pick_place_joints.png) | [Recorded task CSV](../02_Simulation_and_Animation/Trajectories/pick_place.csv) |
+| Feedback control | [PID tracking](../02_Simulation_and_Animation/Control/pid_tracking.png) | [Control metrics](../02_Simulation_and_Animation/Control/metrics.json) |
+| Mechanical sizing and gripper | [Analysis chapter](../06_Complete_Project_Source/docs/03_mechanical_analysis.md) | [Mechanical results](Mechanical) |
+| Design trade-offs | [Five research experiments](../06_Complete_Project_Source/docs/engineering_report.md) | [Experiment results and plots](Research) |
+| Verification | [Executed validation report](Validation/validation_report.md) | [CAD review](Validation/final_cad_review.json) · [Electronics review](Validation/final_electronics_review.json) · [Theory review](Validation/final_theory_review.json) |
+
+Markdown chapters render directly on GitHub. After downloading, **OPEN_PROJECT_HOME.cmd** opens the local guide; [Readable_Reports](Readable_Reports) contains matching HTML chapters for offline browser reading.
+
+Results distinguish assumptions, targets, calculations, simulations and digital checks. Payload and repeatability remain physical design targets. The [scope audit](../06_Complete_Project_Source/docs/digital_scope_audit.md) explains what the models establish.

@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mechanical design tour</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="mechanical-design-tour">Mechanical design tour</h1>
+<p><a href="../../START_HERE.html">Project home</a> · <a href="CAD_Source_Index.html">CAD files</a> · <a href="component_catalog.html">All 54 components</a> · <a href="04_cad.html">Detailed CAD method</a></p>
+<p>ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The model has <strong>54 solid components</strong>, <strong>six saved poses</strong> and <strong>90 mm of clear jaw opening</strong>. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.</p>
+<p><img alt="ASTER-6 home assembly, showing the fixed base, two arm links, wrist and parallel gripper" src="../../06_Complete_Project_Source/cad/renders/hero.png" /></p>
+<h2 id="choose-how-to-explore">Choose how to explore</h2>
+<table>
+<thead>
+<tr>
+<th>You want to inspect</th>
+<th>View directly on GitHub</th>
+<th>Download and open locally</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The complete robot</td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/hero.png">Assembly image</a> · <a href="../../06_Complete_Project_Source/cad/renders/poses.png">six poses</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/aster6_home.FCStd">FreeCAD assembly</a> · <a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">home STEP</a></td>
+</tr>
+<tr>
+<td>The gripping mechanism</td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/gripper.png">Gripper close-up</a> · <a href="../../06_Complete_Project_Source/docs/drawings/03_gripper_layout.svg">dimensioned layout</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/gripper_pocketed_body.step">Gripper body STEP</a> · <a href="component_catalog.html#find-an-individual-component">part catalog</a></td>
+</tr>
+<tr>
+<td>Dimensions and interfaces</td>
+<td><a href="../../06_Complete_Project_Source/docs/drawings/01_base_tool_interfaces.svg">Base and flange</a> · <a href="../../06_Complete_Project_Source/docs/drawings/02_link_sections.svg">link sections</a></td>
+<td><a href="../../06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf">Three-page drawing PDF</a></td>
+</tr>
+<tr>
+<td>Joint motion or one isolated part</td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/poses.png">Six-pose sheet</a></td>
+<td><a href="../../06_Complete_Project_Source/simulations/aster6_twin.html">Interactive viewer</a>: pose selector, joint controls and component selector</td>
+</tr>
+</tbody>
+</table>
+<p>GitHub shows the HTML viewer's source. Download the complete project or clone the repository, then use <a href="../../OPEN_3D_VIEWER.cmd">OPEN_3D_VIEWER.cmd</a> or <a href="../../OPEN_FREECAD_MODEL.cmd">OPEN_FREECAD_MODEL.cmd</a> on Windows. The launchers open the appropriate application. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD.</p>
+<h2 id="follow-the-mechanical-chain">Follow the mechanical chain</h2>
+<p>The fixed mounting plate and hollow riser support a rotating turret. Shoulder and elbow joints position the two hollow arm links; three wrist rotations orient the tool. The joint-axis sequence is <strong>Z–Y–Y–X–Y–X</strong>. The configured upper-arm and forearm centre spacings are 320 and 280 mm.</p>
+<table>
+<thead>
+<tr>
+<th>Base and tool interfaces</th>
+<th>Arm structure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Dimensioned base mounting plate and interchangeable tool flange" src="../../06_Complete_Project_Source/docs/drawings/01_base_tool_interfaces.svg" /></td>
+<td><img alt="Upper-arm and forearm sections, spacing and access openings" src="../../06_Complete_Project_Source/docs/drawings/02_link_sections.svg" /></td>
+</tr>
+<tr>
+<td>The Ø220 base plate has eight mounting holes with 7 mm counterbores. A hollow route passes through the base and joint envelopes.</td>
+<td>Hollow link sections, external elbow cheeks and removable service covers provide a visible structural layout and access route. The covers are not assumed to restore the cut sections' stiffness.</td>
+</tr>
+</tbody>
+</table>
+<p>The wrist finishes at a six-hole tool flange. Its <strong>Ø30 × 4 mm locating spigot</strong> enters the adapter's Ø30.2 bore; the <strong>Ø60 adapter</strong> retains 4.25 mm of material outside each bolt hole. Matching bolt passages continue through the gripper rear wall. The rear cable opening reaches the gripper pocket. These details connect the tool to the arm geometrically; final fasteners, tolerance stacks and cable bends remain concept work.</p>
+<h2 id="how-the-gripper-works">How the gripper works</h2>
+<p><img alt="Actual CAD close-up of the two guides, screw envelope, carriages, fingers and contact pads" src="../../06_Complete_Project_Source/cad/renders/gripper.png" /></p>
+<p>An opposite-hand screw concept moves two carriages equally in opposite directions along two steel guide rods. Each jaw travels 45 mm, producing <strong>0–90 mm clearance between the contact pads</strong>. The fingers extend along tool X; opening and closing occurs along tool ±Y. The configured screw lead is 4 mm per revolution.</p>
+<p><img alt="Dimensioned gripper layout with guide rods, nut bosses, fingers and service hatch" src="../../06_Complete_Project_Source/docs/drawings/03_gripper_layout.svg" /></p>
+<p>The carriages include connected nut bosses and finger support tabs. The two finger fastener holes align with the tabs, replaceable pads define the contact surfaces, and a top hatch provides access without intersecting the adapter. The modeled screw and smooth nut bores locate the drive concept; they do not represent engaged threads, preload or simulated contact force. The <a href="03_mechanical_analysis.html">mechanical calculations</a> explain the separate grip-force and screw-torque model.</p>
+<h2 id="compare-six-configurations">Compare six configurations</h2>
+<p><img alt="The six CAD configurations: home, extended, folded, vertical, pick and place" src="../../06_Complete_Project_Source/cad/renders/poses.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Home</th>
+<th>Extended</th>
+<th>Folded</th>
+<th>Vertical</th>
+<th>Pick</th>
+<th>Place</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_extended.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_folded.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_vertical.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_pick.step">STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_place.step">STEP</a></td>
+</tr>
+</tbody>
+</table>
+<p>Individual STEP/STL parts use their <strong>local assembly-group frames</strong> and millimetres. Opening every part at a common origin will not assemble the robot. Use a complete pose file, the FreeCAD home assembly or the viewer; the <a href="02_kinematics.html">kinematics guide</a> defines the transforms.</p>
+<h2 id="where-the-design-lives">Where the design lives</h2>
+<p><a href="../../06_Complete_Project_Source/config/robot.yaml">robot.yaml</a> supplies the SI dimensions. <a href="../../06_Complete_Project_Source/cad/build123d/geometry.py">Build123d geometry</a> constructs the solids, and <a href="../../06_Complete_Project_Source/cad/build123d/assembly.py">assembly.py</a> places them using the robot's joint frames. This Python source is the reproducible parametric design. The FreeCAD file contains the exported home-pose solids with descriptive labels and material/group metadata; it is an inspection assembly rather than a sketch-based feature tree.</p>
+<p>The <a href="../../06_Complete_Project_Source/results/validation/final_cad_review.json">CAD audit</a> checks exported solids, native visibility, interfaces, five jaw openings and source bindings. Named-pose and sampled-task clearance evidence accompanies it. These checks support the digital model; they do not establish physical payload, repeatability or production readiness. For reproduction and the exact validation scope, continue to the <a href="04_cad.html">CAD method</a> and <a href="CAD_Source_Index.html">source CAD guide</a>.</p></main></html>

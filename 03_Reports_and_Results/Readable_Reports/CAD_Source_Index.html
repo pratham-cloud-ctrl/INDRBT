@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CAD source and models</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="cad-source-and-models">CAD source and models</h1>
+<p><a href="../../START_HERE.html">Project home</a> · <a href="cad_tour.html">Illustrated mechanical tour</a> · <a href="component_catalog.html">54-part catalog</a> · <a href="04_cad.html">CAD method and validation</a></p>
+<p>This folder contains ASTER-6's reproducible mechanical design and generated models: <strong>54 components and six complete pose assemblies</strong>.</p>
+<p><img alt="The ASTER-6 solid model in its home configuration" src="../../06_Complete_Project_Source/cad/renders/hero.png" /></p>
+<h2 id="open-the-right-file">Open the right file</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>File or folder</th>
+<th>What it contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inspect the complete solid assembly</td>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/aster6_home.FCStd">freecad/aster6_home.FCStd</a></td>
+<td>FreeCAD home pose; 54 visible solids with descriptive labels, rigid groups and assumed materials</td>
+</tr>
+<tr>
+<td>Exchange exact solid geometry</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">Home STEP</a> · <a href="../../06_Complete_Project_Source/cad/exports/STEP">all STEP files</a></td>
+<td>Six positioned assemblies and 54 individual parts</td>
+</tr>
+<tr>
+<td>Use triangle meshes</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL">All STL files</a></td>
+<td>Six assembly meshes and 54 individual part meshes; assembly meshes retain separate contacting bodies</td>
+</tr>
+<tr>
+<td>Read the mechanism on GitHub</td>
+<td><a href="cad_tour.html">Mechanical tour</a> · <a href="../../06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf">drawings</a></td>
+<td>Rendered assembly, gripper, six poses and dimensioned interface drawings</td>
+</tr>
+<tr>
+<td>Inspect the render scene</td>
+<td><a href="../../06_Complete_Project_Source/cad/renders/aster6_home.blend">renders/aster6_home.blend</a></td>
+<td>Blender scene using the exported CAD meshes</td>
+</tr>
+<tr>
+<td>Move the robot and isolate a part</td>
+<td><a href="../../06_Complete_Project_Source/simulations/aster6_twin.html">Offline interactive viewer</a></td>
+<td>Browser viewer; download the project to run it</td>
+</tr>
+</tbody>
+</table>
+<p>STEP, STL and FCStd links lead to engineering files for download. Use FreeCAD for the native model or STEP solids. On Windows, the root <a href="../../OPEN_FREECAD_MODEL.cmd">OPEN_FREECAD_MODEL.cmd</a> and <a href="../../OPEN_3D_VIEWER.cmd">OPEN_3D_VIEWER.cmd</a> launch the appropriate application. PNG/SVG previews display directly on GitHub.</p>
+<h2 id="edit-and-regenerate">Edit and regenerate</h2>
+<table>
+<thead>
+<tr>
+<th>Authoritative source</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../06_Complete_Project_Source/config/robot.yaml">config/robot.yaml</a></td>
+<td>Shared SI configuration for dimensions, joint poses and engineering assumptions</td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/cad/build123d/parameters.py">build123d/parameters.py</a></td>
+<td>Converts configured lengths from metres to CAD millimetres</td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/cad/build123d/geometry.py">build123d/geometry.py</a></td>
+<td>Constructs the component solids and their interfaces</td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/cad/build123d/assembly.py">build123d/assembly.py</a></td>
+<td>Applies the six joint-frame transforms</td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/cad/build123d/export_all.py">build123d/export_all.py</a></td>
+<td>Exports STEP/STL, local meshes and CAD measurements</td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/inspect_step.py">freecad/inspect_step.py</a></td>
+<td>Independently imports assembly STEP files and generates the native FreeCAD inspection assembly</td>
+</tr>
+</tbody>
+</table>
+<p>The Python geometry is parametric. The saved FreeCAD model is a solid export with inspection metadata, not the construction feature tree. For reproducible changes, edit the shared configuration or geometry source and regenerate. Save intentional manual FreeCAD edits under a separate filename; close older views without saving before replacing their generated file.</p>
+<p>From <code>06_Complete_Project_Source</code>, with the project's CAD dependencies, FreeCAD and Blender installed:</p>
+<pre><code class="language-bash">python scripts/generate_cad.py
+python -m robotarm.demo --all
+python scripts/refresh_cad.py
+</code></pre>
+<p>The final command refreshes native inspection, renders and CAD evidence. To audit saved outputs without regenerating them, run <code>python scripts/review_cad.py</code>. See <a href="04_cad.html#refresh-native-cad-evidence">the full workflow</a> for tool discovery and overrides.</p>
+<h2 id="coordinates-and-evidence">Coordinates and evidence</h2>
+<p>CAD lengths are <strong>millimetres</strong>; numerical kinematics use <strong>metres</strong>. Individual part files are authored in local groups <code>base</code>, <code>j1</code> through <code>j6</code>. Open a complete assembly for positioned parts; <a href="../../06_Complete_Project_Source/cad/exports/meshes/assembly_meshes.json">assembly_meshes.json</a> records local meshes and pose transforms. Motor, gearbox and bearing <strong>envelopes</strong> are simplified spatial representations with assumed materials.</p>
+<p><a href="../../06_Complete_Project_Source/results/validation/final_cad_review.json">CAD inspection</a>, <a href="../../06_Complete_Project_Source/results/validation/cad_assembly_clearance.json">named-pose clearance</a> and <a href="../../06_Complete_Project_Source/results/validation/cad_motion_clearance.json">sampled-task clearance</a> state what was checked. Drawings are concept interfaces rather than production drawings; geometric validity and sampled clearance do not establish hardware performance.</p>
+<p>The numbered <a href="../../01_CAD_Models">01_CAD_Models</a> folder contains organized copies for browsing. Regenerate here, then use the source project's presentation sync to refresh those copies.</p></main></html>

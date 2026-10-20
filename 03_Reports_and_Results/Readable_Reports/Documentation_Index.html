@@ -1,0 +1,143 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ASTER-6 · Engineering and theory</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="aster-6-engineering-and-theory">ASTER-6 · Engineering and theory</h1>
+<p><strong>Understand the design. Follow the evidence. Reproduce the results.</strong></p>
+<p>ASTER-6 is an original six-axis digital robot with a parallel-jaw gripper. This library connects its CAD, mathematics, motion, load calculations, feedback control and conceptual electronics. The design's 790 mm reach is calculated; 4 kg payload and ±0.1 mm repeatability remain targets. No physical robot was built.</p>
+<p><a href="../../START_HERE.html">Project home</a> · <a href="engineering_walkthrough.html">Engineering walkthrough</a> · <a href="theory_guide.html">Full theory guide</a> · <a href="engineering_report.html">Engineering report</a></p>
+<p><img alt="Six representative CAD configurations of the ASTER-6 robot" src="../../06_Complete_Project_Source/cad/renders/poses.png" /></p>
+<h2 id="start-with-one-connected-story">Start with one connected story</h2>
+<ol>
+<li><strong><a href="project_alignment.html">Purpose and original goals</a></strong> — what the project sets out to demonstrate and how its parts connect.</li>
+<li><strong><a href="engineering_walkthrough.html">How ASTER-6 works</a></strong> — a visual introduction following one task from geometry to electronics; each plot explains what its evidence means.</li>
+<li><strong><a href="theory_guide.html">Understanding the theory</a></strong> — units, transforms, IK, Jacobian, planning, loads, gripper work balance and control, with equations and interpretation.</li>
+<li><strong><a href="engineering_report.html">Engineering report</a></strong> — the complete design argument, results, research findings and stated limitations.</li>
+<li><strong><a href="validation_matrix.html">Validation matrix</a></strong> — trace each requirement to an executed check, then inspect the <a href="validation_report.html">recorded validation</a>.</li>
+</ol>
+<h2 id="find-a-subject">Find a subject</h2>
+<table>
+<thead>
+<tr>
+<th>Subject</th>
+<th>Read first</th>
+<th>Inspect the actual work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose and requirements</td>
+<td><a href="project_alignment.html">Project alignment</a>, <a href="01_requirements.html">requirements</a></td>
+<td><a href="../../06_Complete_Project_Source/config/robot.yaml">Central SI parameters</a>, <a href="digital_scope_audit.html">scope audit</a></td>
+</tr>
+<tr>
+<td>System architecture</td>
+<td><a href="architecture.html">Architecture</a></td>
+<td><a href="../../06_Complete_Project_Source/docs/diagrams/system_architecture.svg">Control/data-flow diagram</a>, <a href="../../06_Complete_Project_Source/docs/diagrams/electronics_architecture.svg">electronics diagram</a></td>
+</tr>
+<tr>
+<td>Mechanical design and CAD</td>
+<td><a href="04_cad.html">CAD methodology and reproduction</a>, <a href="component_catalog.html">component catalog</a></td>
+<td><a href="../../06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf">Dimensioned interfaces</a>, <a href="../../06_Complete_Project_Source/cad/build123d">CAD source</a>, <a href="../../06_Complete_Project_Source/cad/exports/STEP">STEP files</a></td>
+</tr>
+<tr>
+<td>Frames, FK, IK and Jacobian</td>
+<td><a href="02_kinematics.html">Kinematic formulation</a></td>
+<td><a href="../../06_Complete_Project_Source/src/robotarm/kinematics/model.py">Kinematics source</a>, <a href="../../06_Complete_Project_Source/results/validation/numerical_validation.json">numerical verification</a></td>
+</tr>
+<tr>
+<td>Workspace and singularities</td>
+<td><a href="engineering_walkthrough.html#2-kinematics-turns-geometry-into-a-tool-pose">Walkthrough: kinematics</a></td>
+<td><a href="../../06_Complete_Project_Source/results/workspace">Workspace plots/data</a>, <a href="../../06_Complete_Project_Source/results/workspace/metrics.json">sampling metrics</a></td>
+</tr>
+<tr>
+<td>Trajectories and pick/place</td>
+<td><a href="engineering_walkthrough.html#3-give-the-tool-a-useful-job">Walkthrough: useful motion</a></td>
+<td><a href="../../06_Complete_Project_Source/src/robotarm/planning/trajectories.py">Planner</a>, <a href="../../06_Complete_Project_Source/src/robotarm/simulation/tasks.py">task code</a>, <a href="../../06_Complete_Project_Source/results/trajectories">motion results</a></td>
+</tr>
+<tr>
+<td>Loads, structure and drives</td>
+<td><a href="03_mechanical_analysis.html">Mechanical analysis</a></td>
+<td><a href="../../06_Complete_Project_Source/analysis">Calculation source</a>, <a href="../../06_Complete_Project_Source/results/mechanical">mechanical results</a></td>
+</tr>
+<tr>
+<td>Gripper force and travel</td>
+<td><a href="03_mechanical_analysis.html#gripper-mechanism">Gripper mechanism</a></td>
+<td><a href="../../06_Complete_Project_Source/src/robotarm/gripper/model.py">Gripper source</a>, <a href="../../06_Complete_Project_Source/results/research/finger_length.png">finger-length plot</a></td>
+</tr>
+<tr>
+<td>PID feedback</td>
+<td><a href="engineering_walkthrough.html#6-test-how-a-simplified-joint-follows-commands">Walkthrough: control</a></td>
+<td><a href="../../06_Complete_Project_Source/src/robotarm/control/pid.py">PID source</a>, <a href="../../06_Complete_Project_Source/results/control">response/error plots</a>, <a href="../../06_Complete_Project_Source/results/research/pid_tuning.png">gain study</a></td>
+</tr>
+<tr>
+<td>Electronics and PCB</td>
+<td><a href="05_electronics.html">Electronics chapter</a>, <a href="electronics_components.html">component/BOM guide</a></td>
+<td><a href="../../06_Complete_Project_Source/electronics/exports/joint_interface.pdf">Schematic PDF</a>, <a href="../../06_Complete_Project_Source/electronics/exports/pcb_layers.pdf">PCB layers PDF</a>, <a href="../../06_Complete_Project_Source/electronics">native project</a></td>
+</tr>
+<tr>
+<td>Numerical research</td>
+<td><a href="engineering_report.html#16-results-and-research-questions">Research discussion</a></td>
+<td><a href="../../06_Complete_Project_Source/results/research">Five parameter sweeps and plots</a>, <a href="../../06_Complete_Project_Source/analysis/research_experiments.py">experiment source</a></td>
+</tr>
+<tr>
+<td>Verification and reproducibility</td>
+<td><a href="validation_matrix.html">Validation matrix</a>, <a href="Project_Readme.html#run">project setup</a></td>
+<td><a href="../../06_Complete_Project_Source/tests">Tests</a>, <a href="../../06_Complete_Project_Source/results/validation">executed checks</a>, <a href="../../06_Complete_Project_Source/results/validation/packaging_validation.json">isolated package evidence</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="browse-the-evidence-visually">Browse the evidence visually</h2>
+<table>
+<thead>
+<tr>
+<th>Geometry and motion</th>
+<th>Mechanics and control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../06_Complete_Project_Source/results/workspace/coordinate_frames.png">Coordinate frames</a> · <a href="../../06_Complete_Project_Source/results/workspace/workspace_projections.png">Workspace</a></td>
+<td><a href="../../06_Complete_Project_Source/results/mechanical/joint_torque.png">Joint torque envelope</a> · <a href="../../06_Complete_Project_Source/results/research/payload.png">Payload sensitivity</a></td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/results/trajectories/pick_place_fk.gif">Pick/place animation</a> · <a href="../../06_Complete_Project_Source/results/trajectories/pick_place_tcp.png">TCP path</a></td>
+<td><a href="../../06_Complete_Project_Source/results/control/pid_step_response.png">PID step response</a> · <a href="../../06_Complete_Project_Source/results/control/pid_tracking.png">PID tracking</a></td>
+</tr>
+<tr>
+<td><a href="../../06_Complete_Project_Source/results/trajectories/pick_place_joints.png">Joint motion and derivatives</a> · <a href="../../06_Complete_Project_Source/cad/renders/gripper.png">Gripper render</a></td>
+<td><a href="../../06_Complete_Project_Source/results/research/duration.png">Motion-duration study</a> · <a href="../../06_Complete_Project_Source/results/research/finger_length.png">Finger stiffness</a></td>
+</tr>
+</tbody>
+</table>
+<p>For the interactive CAD viewer and native applications, use the <a href="../../START_HERE.html">project download and launch instructions</a>. GitHub previews images, Markdown and PDFs; it shows the viewer's HTML source rather than executing it. Download the organized project bundle for its offline launchers.</p>
+<h2 id="read-the-claims-with-their-evidence-class">Read the claims with their evidence class</h2>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>Meaning here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TARGET</strong></td>
+<td>Desired performance, including payload and repeatability; no physical measurement.</td>
+</tr>
+<tr>
+<td><strong>ASSUMED</strong></td>
+<td>Chosen model input, such as material properties, lumped masses, friction or controller inertia.</td>
+</tr>
+<tr>
+<td><strong>CALCULATED</strong></td>
+<td>An equation evaluated with stated inputs and simplifications.</td>
+</tr>
+<tr>
+<td><strong>SIMULATED</strong></td>
+<td>Output of a numerical model, such as task motion or PID tracking.</td>
+</tr>
+<tr>
+<td><strong>VERIFIED DIGITALLY</strong></td>
+<td>An executed test or native application check within its recorded rules and scope.</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="kpis.html">KPI table</a> supplies values and their evidence classes. The <a href="digital_scope_audit.html">scope audit</a> explains why analytical beams, simplified PID plants, representative collision screening and conceptual electronics satisfy this digital brief, while physical performance remains unverified.</p>
+<h2 id="review-the-engineering-process">Review the engineering process</h2>
+<p><a href="design_decisions.html">Design decisions</a> record choices and tradeoffs. The <a href="project_journal.html">project journal</a> records actual iterations and corrections. The <a href="final_review.html">final review</a>, <a href="completion_checklist.html">completion checklist</a> and <a href="release_notes.html">release notes</a> describe the resulting project. The <a href="00_environment.html">environment report</a> records the toolchain used during development.</p></main></html>

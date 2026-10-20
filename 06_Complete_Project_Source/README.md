@@ -8,6 +8,12 @@ An original six-axis robot with parametric CAD, numerical kinematics and a repro
 
 Designed for robotics education and portfolio review. Every result is generated from source; no physical robot was built. Payload and repeatability remain design targets. The conceptual electronics include a routed PCB, manufacturing exports and native DRC; collision evidence is representative and sampled.
 
+## Explore the project
+
+[Repository home](../README.md) · [CAD tour](docs/cad_tour.md) · [Circuit and PCB tour](docs/electronics_tour.md) · [Engineering walkthrough](docs/engineering_walkthrough.md) · [Documentation index](docs/README.md)
+
+For a visual introduction, start with these guides. This source README contains the installation, reproduction commands and detailed evidence map.
+
 ## See it move
 
 Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.

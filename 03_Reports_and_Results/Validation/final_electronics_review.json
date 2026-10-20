@@ -87,7 +87,7 @@
   },
   "file_hash_mismatches": 0,
   "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
-  "pcb_verification_sha256": "5aec73eafda991b85f92b887bd9ff6d0e42f808c82261a69e8852a0850c89956",
+  "pcb_verification_sha256": "bb62ea4ce366b30ac11c24940293f2bd742a8953a7301cfc7c12673de9ce1e82",
   "component_guide": "docs/electronics_components.md",
   "component_guide_sha256": "4013c4937ad751a026072f841d3369796dbf5791c9c51e1186981eb113049d18",
   "power_calculations": {

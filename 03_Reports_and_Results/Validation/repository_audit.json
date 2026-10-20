@@ -1,8 +1,8 @@
 {
   "status": "PASS",
   "scope": "Tracked-file pattern scan and size/junk audit; not an exhaustive security proof",
-  "tracked_files": 631,
-  "tracked_bytes": 125230468,
+  "tracked_files": 648,
+  "tracked_bytes": 125359459,
   "issues": [],
   "largest_files": [
     {

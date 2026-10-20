@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ASTER-6 · KiCad electronics source</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="aster-6-kicad-electronics-source">ASTER-6 · KiCad electronics source</h1>
+<p><a href="electronics_tour.html">Illustrated electronics tour</a> · <a href="../../START_HERE.html">Project home</a> · <a href="05_electronics.html">Engineering design chapter</a></p>
+<p>This is the authoritative source for the <strong>100 × 100 mm, four-layer joint/sensor interface</strong>: 44 schematic components and 48 PCB footprints, including four mounting holes. An external 3.3 V controller connects to encoder/limit inputs, a separate motor drive and RS-485. The PCB implements logic interfacing; the controller, motor power stage and embedded firmware are external to this design.</p>
+<p><img alt="Native KiCad 3D board export" src="../../06_Complete_Project_Source/electronics/exports/pcb_3d.png" /></p>
+<table>
+<thead>
+<tr>
+<th>Browse without KiCad</th>
+<th>Open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circuit</td>
+<td><a href="../../06_Complete_Project_Source/electronics/exports/joint_interface.pdf">Schematic PDF</a></td>
+</tr>
+<tr>
+<td>Layout</td>
+<td><a href="../../06_Complete_Project_Source/electronics/exports/pcb_top.png">Top view</a> and <a href="../../06_Complete_Project_Source/electronics/exports/pcb_layers.pdf">six-page layer PDF</a></td>
+</tr>
+<tr>
+<td>Parts</td>
+<td><a href="../../06_Complete_Project_Source/electronics/bom.csv">BOM CSV</a> and <a href="electronics_components.html">component guide</a></td>
+</tr>
+<tr>
+<td>Manufacturing package</td>
+<td><a href="../../06_Complete_Project_Source/electronics/fabrication/joint_interface_fabrication.zip">Gerber/drill/assembly ZIP</a></td>
+</tr>
+<tr>
+<td>Checked evidence</td>
+<td><a href="../../06_Complete_Project_Source/results/validation/final_electronics_review.json">Independent review</a>, <a href="../../06_Complete_Project_Source/electronics/erc_report.json">ERC</a>, <a href="../../06_Complete_Project_Source/electronics/pcb_drc_report.json">DRC</a> and <a href="../../06_Complete_Project_Source/electronics/pcb_verification.json">source/export hashes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-the-editable-project">Open the editable project</h2>
+<p>Download and extract the <strong>complete repository</strong> using <strong>Code → Download ZIP</strong>, or clone it. With KiCad 10 and its standard libraries installed, open <a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_pro">joint_interface.kicad_pro</a>, then its <a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_sch">schematic</a> or <a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_pcb">PCB</a>. GitHub shows native files as source; PDF/PNG links above provide readable previews.</p>
+<p>Keep this folder intact. <a href="../../06_Complete_Project_Source/electronics/fp-lib-table">fp-lib-table</a> resolves the project-local <a href="../../06_Complete_Project_Source/electronics/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod">F1 footprint</a> through <code>${KIPRJMOD}</code>; <a href="../../06_Complete_Project_Source/electronics/sym-lib-table">sym-lib-table</a> resolves stock symbols. Downloading a single native file omits this library context. On Windows, <a href="../../OPEN_PCB_LAYOUT.cmd">OPEN_PCB_LAYOUT.cmd</a> at the repository root opens the downloaded layout.</p>
+<p>Supply regulated <strong>5 V</strong>, with 3.3 V GPIO and a shared 150 mA logic-load design budget. Read the <a href="electronics_tour.html">tour</a> for connector roles and the <a href="05_electronics.html">design chapter</a> for complete pin contracts, calculations, assumptions and reproduction commands. Saved native rules/connectivity checks pass within their documented scope; no physical board was built or qualified.</p></main></html>

@@ -1,5 +1,5 @@
 {
-  "executed_utc": "2026-10-17T18:36:33.122445+00:00",
+  "executed_utc": "2026-10-20T13:32:04.793112+00:00",
   "project_version": "1.2.0",
   "project_status": "DIGITAL SCOPE COMPLETE",
   "checks": [
@@ -8,7 +8,7 @@
       "result": "PASS",
       "evidence": {
         "exit_code": 0,
-        "output": "Found 0 violations\nSaved ERC Report to erc_report.json\n\nPlotted to '<electronics>\\exports\\joint_interface.svg'.\nDone.\nPlotted to 'exports\\joint_interface.pdf'.\nDone.\nPASS: 44 components, 28 nets, 118 pin assignments, 22 topology checks, 0 ERC violations\nFound 0 violations\nFound 0 unconnected items\nFound 0 schematic parity issues\nSaved DRC Report to pcb_drc_report.json\nSaved board\nPlotted to 'fabrication\\joint_interface-F_Cu.gtl'.\nPlotted to 'fabrication\\joint_interface-In1_Cu.g1'.\nPlotted to 'fabrication\\joint_interface-In2_Cu.g2'.\nPlotted to 'fabrication\\joint_interface-B_Cu.gbl'.\nPlotted to 'fabrication\\joint_interface-F_Paste.gtp'.\nPlotted to 'fabrication\\joint_interface-F_Silkscreen.gto'.\nPlotted to 'fabrication\\joint_interface-B_Silkscreen.gbo'.\nPlotted to 'fabrication\\joint_interface-F_Mask.gts'.\nPlotted to 'fabrication\\joint_interface-B_Mask.gbs'.\nPlotted to 'fabrication\\joint_interface-Edge_Cuts.gm1'.\nCreated file 'fabrication\\joint_interface-PTH.drl'\nCreated file 'fabrication\\joint_interface-NPTH.drl'\nCreated file 'fabrication\\joint_interface-PTH-drl_map.pdf'.\nCreated file 'fabrication\\joint_interface-NPTH-drl_map.pdf'.\nDone.\nWrote position data to 'fabrication\\assembly_positions.csv'.\nSuccessfully created IPC-D-356 file\nPlotted to 'exports\\pcb_top.svg'.\nDone.\nPlotted to 'exports\\pcb_bottom.svg'.\nDone.\nPlotted to 'exports\\pcb_ground_plane.svg'.\nDone.\nPlotted to 'exports\\pcb_power_plane.svg'.\nDone.\nPlotted to 'exports\\pcb_assembly.svg'.\nDone.\nPlotted to 'exports\\pcb_layers.pdf'.\nDone.\nPASS: 44 schematic footprints + 4 mechanical, 28 connected nets, 265 tracks, 32 vias; 0 DRC violations, 0 unconnected items, 0 schematic parity issues\n"
+        "output": "Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.164 s\nRendering: 11 \nRendering: 20 \nRendering: 26 \nRendering: 30 \nRendering: 31 \nRendering: 32 \nRendering: 33 \nRendering: 36 \nRendering: 40 \nRendering: 43 \nRendering: 45 \nRendering: 49 \nRendering: 52 \nRendering: 54 \nRendering: 55 \nRendering: 57 \nRendering: 58 \nRendering: 59 \nRendering: 60 \nRendering: 63 \nRendering: 66 \nRendering: 69 \nRendering: 73 \nRendering: 77 \nRendering: 78 \nRendering: 79 \nRendering: 81 \nRendering: 82 \nRendering: 83 \nRendering: 84 \nRendering: 86 \nRendering: 88 \nRendering: 90 \nRendering: 94 \nRendering: 98 \nRendering: 100 \nRendering: Post processing shader\nRendering time 29.016 s\nSuccessfully created 3D render image\nLoading\u2026\nBuild board outline\n\nCreate layers\nCreate tracks and vias\nCreate zones\nBuild Tech layers\nBuild Tech layer 11\nBuild Tech layer 9\nBuild Tech layer 15\nBuild Tech layer 13\nBuild Tech layer 7\nBuild Tech layer 5\nBuild Tech layer 3\nBuild Tech layer 1\nBuild Tech layer 17\nBuild Tech layer 19\nBuild Tech layer 21\nBuild Tech layer 23\nBuild Tech layer 39\nBuild Tech layer 41\nBuild Tech layer 43\nBuild Tech layer 45\nBuild Tech layer 47\nBuild Tech layer 49\nBuild Tech layer 51\nBuild Tech layer 53\nBuild Tech layer 55\nBuild Tech layer 57\nBuild Tech layer 59\nBuild Tech layer 61\nBuild Tech layer 63\nBuild Tech layer 65\nBuild Tech layer 67\nBuild Tech layer 69\nBuild Tech layer 71\nBuild Tech layer 73\nBuild Tech layer 75\nBuild Tech layer 77\nBuild Tech layer 79\nBuild Tech layer 81\nBuild Tech layer 83\nBuild Tech layer 85\nBuild Tech layer 87\nBuild Tech layer 89\nBuild Tech layer 91\nBuild Tech layer 93\nBuild Tech layer 95\nBuild Tech layer 97\nBuild Tech layer 99\nBuild Tech layer 101\nBuild Tech layer 103\nBuild Tech layer 105\nBuild Tech layer 107\nBuild Tech layer 109\nBuild Tech layer 111\nBuild Tech layer 113\nBuild Tech layer 115\nBuild Tech layer 117\nBuild Tech layer 119\nBuild Tech layer 121\nBuild Tech layer 123\nBuild Tech layer 125\nBuild Tech layer 127\nSimplifying copper layer polygons\nCalculating plated copper\nSimplify holes contours\nBuild BVH for holes and vias\nLoad Raytracing: board\nLoad Raytracing: layers\nLoading 3D models...\nReload time 0.170 s\nRendering: 100 \nRendering time 0.677 s\nSuccessfully created 3D render image\nPASS: 44 schematic footprints + 4 mechanical, 28 connected nets, 265 tracks, 32 vias; 0 DRC violations, 0 unconnected items, 0 schematic parity issues\n"
       }
     },
     {
@@ -16,7 +16,7 @@
       "result": "PASS",
       "evidence": {
         "exit_code": 0,
-        "output": "........................................................................ [ 79%]\n...................                                                      [100%]\n91 passed in 51.41s\n"
+        "output": "........................................................................ [ 79%]\n...................                                                      [100%]\n91 passed in 53.46s\n"
       }
     },
     {
@@ -71,7 +71,7 @@
       "name": "Documentation links and coverage",
       "result": "PASS",
       "evidence": {
-        "required_documents": 17,
+        "required_documents": 23,
         "broken_local_links": []
       }
     },
@@ -134,9 +134,9 @@
     "scripts/refresh_cad.py": "41c7d03c6a7536e6ea39e891841f22b96662e6ade6701cdf8505b8dab04f85ea",
     "scripts/review_cad.py": "d6da1c9ebae3e354cd92e4a355f278bce622831e173b83378c2ac688f81a2cdf",
     "scripts/review_theory.py": "a9d653050edc926727931d32449e874e99ed09af42223b6899d4c3ca8788acdc",
-    "scripts/run_validation.py": "2c7835e61dc50a2a2b970f7b11d54b6f9a24f564edd960f2b46a1ee2b931410f",
-    "scripts/sync_presentation.py": "9d5a89653826f8a2174c14ababea1b252d28e56c18c2b03faa86de0945b57dd5",
-    "scripts/update_report.py": "d9a51e3e43a508461f4d02aa1184a2e7c35fbe7e072152432b943c1cbed03b79",
+    "scripts/run_validation.py": "a6532a7b4bad317ac7bfabf12decfeb73797c801685875e39297b85933b37af1",
+    "scripts/sync_presentation.py": "5c28f0c700ee52fc0924ffe48ab88f7e98f47cb70241d120d842c1b7f49ba174",
+    "scripts/update_report.py": "5bcfa12c8c9d7b1d22d550713fd045713482ab56b80eefa68e644e13b1ac40fc",
     "scripts/verify_presentation.py": "a0fdc5a2a8779c8909a99a17317541d1cb7ca7172766e84c5fb3b19e8fafcd4a",
     "scripts/verify_viewer.cjs": "dbed5cbcef9139f427b8990576d329b131be698c416e0ab6e21653424c26631b",
     "scripts/verify_wheel_install.py": "83939c621266f045d42d708664d1ad4bf0f06e90df0f2124adc46a9960ce6583",

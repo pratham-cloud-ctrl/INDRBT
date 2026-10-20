@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — 2026-10-20 — repository presentation and reading guides
+
+- Added illustrated mechanical, circuit/PCB and engineering walkthroughs with direct previews, native-file access and clear reading routes.
+- Rebuilt the repository landing page and CAD, electronics, theory and simulation folder guides around GitHub viewing. Added source-folder maps and a documentation index.
+- Kept the local browser guide in sync with the GitHub guides, including distinct index pages and working chapter links. Presentation templates are versioned and verified during synchronization.
+- The v1.2.0 engineering models, board, configuration and packaged release retain their existing design revision.
+
 ## 1.2.0 — 2026-10-18 — mechanical interfaces and rigorous review gates
 
 - Repaired the gripper adapter edge ligaments, mating fastening pattern, locating pilot, carriage/nut bridges, finger attachment and service-cover interference. Corrected base counterbore depth; refreshed actual solids, drawings, native models and renders.

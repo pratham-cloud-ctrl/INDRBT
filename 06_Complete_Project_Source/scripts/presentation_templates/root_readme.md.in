@@ -1,0 +1,71 @@
+# ASTER-6 · Six-axis robot arm and parallel gripper
+
+An original digital robotics project connecting mechanical design, robot mathematics, motion, feedback control and a routed KiCad interface board.
+
+**[CAD & mechanical design](01_CAD_Models/README.md) · [Electronics & KiCad](04_Electronics/README.md) · [Theory & calculations](03_Reports_and_Results/README.md)**
+
+![ASTER-6 actual CAD assembly with its interchangeable parallel-jaw gripper](01_CAD_Models/Preview_Images/hero.png)
+
+**6 revolute joints · 54 CAD components · 790 mm nominal reach · 90 mm jaw opening**
+
+Digital engineering model · v{{VERSION}} · {{STATUS}}
+
+## Explore the project on GitHub
+
+You can inspect the design, drawings, circuit and calculations here without installing engineering software. Each tour starts with actual project images, then links to the native files and supporting evidence.
+
+| Explore | Illustrated tour | Inspect the details |
+|---|---|---|
+| **Mechanical design** | [Arm, joints, tool interface and gripper](06_Complete_Project_Source/docs/cad_tour.md) | [Dimensioned drawings](01_CAD_Models/Drawings/engineering_interfaces.pdf) · [54-part catalog](06_Complete_Project_Source/docs/component_catalog.md) · [FreeCAD / STEP / STL](01_CAD_Models/README.md#download-and-edit) |
+| **Electronics & KiCad** | [Follow power and signals through the board](06_Complete_Project_Source/docs/electronics_tour.md) | [Schematic PDF](04_Electronics/exports/joint_interface.pdf) · [PCB layers](04_Electronics/exports/pcb_layers.pdf) · [BOM](04_Electronics/bom.csv) · [Native KiCad project](04_Electronics/README.md#open-the-kicad-project) |
+| **Theory & simulation** | [From geometry to a working digital task](06_Complete_Project_Source/docs/engineering_walkthrough.md) | [Equation guide](06_Complete_Project_Source/docs/theory_guide.md) · [Chapters and results](06_Complete_Project_Source/docs/README.md) · [Engineering report](06_Complete_Project_Source/docs/engineering_report.md) |
+
+[Project purpose and original goals](06_Complete_Project_Source/docs/project_alignment.md) · [Complete documentation index](06_Complete_Project_Source/docs/README.md) · [Requirements and evidence](06_Complete_Project_Source/docs/validation_matrix.md)
+
+## Watch the task, then inspect the design
+
+![Recorded forward-kinematics pick-and-place task](02_Simulation_and_Animation/Trajectories/pick_place_fk.gif)
+
+The 9.24 s demonstration approaches, grasps, transfers and releases an object. The browser viewer animates the actual CAD meshes and can isolate every part. The GIF above is a forward-kinematics line view; object attachment is idealized in the simulation.
+
+**Quick 3D inspection on GitHub:** [open the home-assembly STL preview](01_CAD_Models/STL/Assemblies/assembly_home.stl). GitHub's [built-in STL viewer](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files#3d-file-viewer) supports rotating and zooming the fixed assembly in a WebGL-enabled browser.
+
+**For joint controls, part isolation and playback:** [download the current repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/archive/refs/heads/main.zip), extract it and open **OPEN_3D_VIEWER.cmd** on Windows. On any system, open `02_Simulation_and_Animation/Interactive_3D_Viewer.html` in a browser. It works offline. GitHub shows HTML source rather than running this articulated viewer.
+
+| Gripper and interchangeable tool interface | Routed joint / sensor interface |
+|---|---|
+| ![Actual CAD gripper mechanism](01_CAD_Models/Preview_Images/gripper.png) | ![Native KiCad view of the populated interface board](04_Electronics/exports/pcb_3d.png) |
+| [Explore the mechanical design](06_Complete_Project_Source/docs/cad_tour.md) | [Explore the circuit and PCB](06_Complete_Project_Source/docs/electronics_tour.md) |
+
+## Follow the engineering argument
+
+The [engineering walkthrough](06_Complete_Project_Source/docs/engineering_walkthrough.md) follows one question: can the chosen geometry move a tool through a useful task, carry the assumed load in the analytical model, and track its commanded motion?
+
+1. **Geometry → tool pose:** [Coordinate frames, FK, IK and the Jacobian](06_Complete_Project_Source/docs/02_kinematics.md).
+2. **Pose → useful motion:** [Recorded task and motion limits](02_Simulation_and_Animation/README.md).
+3. **Load → mechanical decisions:** [Gravity torque, drive sizing, stiffness and gripper calculations](06_Complete_Project_Source/docs/03_mechanical_analysis.md).
+4. **Command → feedback:** [PID model and actual simulation curves](06_Complete_Project_Source/docs/theory_guide.md#8-understand-the-controller-experiment).
+5. **Signals → interface hardware:** [Encoder, limit, external-drive and RS-485 circuit](06_Complete_Project_Source/docs/electronics_tour.md).
+
+## What is verified
+
+The [executed validation](06_Complete_Project_Source/results/validation/validation_report.md) records **91 tests with zero failures or errors**, native CAD inspection, sampled clearance, numerical checks and native KiCad ERC/DRC/connectivity checks. The [requirements matrix](06_Complete_Project_Source/docs/validation_matrix.md) maps each claim to its evidence; the [project journal](06_Complete_Project_Source/docs/project_journal.md) records actual faults and corrections.
+
+Payload **4 kg** and repeatability **±0.1 mm** are targets. The project is entirely digital: analytical structure, simplified independent-axis control and sampled collision checks do not establish physical performance, manufacturing qualification, EMC or functional safety. The [scope audit](06_Complete_Project_Source/docs/digital_scope_audit.md) explains these boundaries.
+
+## Find files or reproduce the work
+
+| Folder | Start here |
+|---|---|
+| [01 · CAD models](01_CAD_Models/README.md) | Visual mechanical guide, native FreeCAD/Blender, six STEP/STL assemblies and 54 parts |
+| [02 · Simulation and animation](02_Simulation_and_Animation/README.md) | Offline 3D viewer, recorded motion, workspace and PID plots |
+| [03 · Theory, reports and results](03_Reports_and_Results/README.md) | Reading route, equations, calculations, experiments and verification |
+| [04 · Electronics and KiCad](04_Electronics/README.md) | Schematic, board previews, native project, components and fabrication exports |
+| [05 · Reference and project notes](05_Reference_and_Project_Notes/README.md) | Requirements, architecture, decisions and development journal |
+| [06 · Complete source](06_Complete_Project_Source/README.md) | Installation, reproduction commands, scripts, tests and authoritative configuration |
+
+After downloading, **OPEN_PROJECT_HOME.cmd** opens the local guide; **OPEN_FREECAD_MODEL.cmd** opens the solid assembly; **OPEN_PCB_LAYOUT.cmd** opens the board. Native CAD/KiCad files require their applications. PDF, PNG, SVG, CSV and Markdown provide immediate previews on GitHub.
+
+The complete source is authoritative; numbered presentation folders contain verified copies. The [reproduction guide](06_Complete_Project_Source/README.md#run) and [contribution guide](CONTRIBUTING.md) explain regeneration. The last packaged engineering release is [v{{VERSION}}](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v{{VERSION}}); the current repository includes the latest reading guides.
+
+MIT-licensed original source · [License](LICENSE) · [Citation](CITATION.cff) · [Software checks](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml)

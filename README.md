@@ -1,79 +1,71 @@
 # ASTER-6 · Six-axis robot arm and parallel gripper
 
-**Version 1.2.0 · DIGITAL SCOPE COMPLETE · Digital engineering design**
+An original digital robotics project connecting mechanical design, robot mathematics, motion, feedback control and a routed KiCad interface board.
 
-An educational mechatronics project connecting original parametric CAD, robot kinematics, motion planning, PID control, analytical mechanics and a routed KiCad joint/sensor interface. The models, results and engineering decisions are reproducible from versioned source.
+**[CAD & mechanical design](01_CAD_Models/README.md) · [Electronics & KiCad](04_Electronics/README.md) · [Theory & calculations](03_Reports_and_Results/README.md)**
 
-![Actual ASTER-6 CAD assembly](01_CAD_Models/Preview_Images/hero.png)
+![ASTER-6 actual CAD assembly with its interchangeable parallel-jaw gripper](01_CAD_Models/Preview_Images/hero.png)
 
-## Start here
+**6 revolute joints · 54 CAD components · 790 mm nominal reach · 90 mm jaw opening**
 
-[The project purpose and original goals](06_Complete_Project_Source/docs/project_alignment.md) explain how the mechanics, mathematics, motion, control and electronics connect into one digital engineering project.
+Digital engineering model · v1.2.0 · DIGITAL SCOPE COMPLETE
 
-[Download the complete v1.2.0 release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.2.0) or clone this repository. Double-click **OPEN_PROJECT_HOME.cmd** for the project guide or **OPEN_3D_VIEWER.cmd** to view and move the robot. The viewer can isolate any of the 54 components and automatically fit it on screen. Use **OPEN_FREECAD_MODEL.cmd** for CAD editing and **OPEN_PCB_LAYOUT.cmd** for the KiCad board. These Windows launchers locate installed Chrome/Edge, FreeCAD and KiCad; they avoid incorrect file associations. On other systems, open [START_HERE.html](START_HERE.html) or [the interactive viewer](02_Simulation_and_Animation/Interactive_3D_Viewer.html) in a browser.
+## Explore the project on GitHub
 
-GitHub displays HTML source. Download the project to run its offline viewer.
+You can inspect the design, drawings, circuit and calculations here without installing engineering software. Each tour starts with actual project images, then links to the native files and supporting evidence.
 
-## Review the project in five minutes
-
-| Inspect | Start with | Continue with |
+| Explore | Illustrated tour | Inspect the details |
 |---|---|---|
-| Mechanical design | [Dimensioned drawings](01_CAD_Models/Drawings/engineering_interfaces.pdf) and [six poses](01_CAD_Models/Preview_Images/poses.png) | [54-part component catalog](06_Complete_Project_Source/docs/component_catalog.md) and [CAD methodology](06_Complete_Project_Source/docs/04_cad.md) |
-| Robot theory | [Theory guide](06_Complete_Project_Source/docs/theory_guide.md) | [Kinematics](06_Complete_Project_Source/docs/02_kinematics.md), [mechanics](06_Complete_Project_Source/docs/03_mechanical_analysis.md) and [engineering report](06_Complete_Project_Source/docs/engineering_report.md) |
-| Motion and control | [Workspace](02_Simulation_and_Animation/Workspace/workspace_3d.png), animation below and [PID tracking](02_Simulation_and_Animation/Control/pid_tracking.png) | [Recorded trajectories](02_Simulation_and_Animation/Trajectories) and [numerical software](06_Complete_Project_Source/src/robotarm) |
-| Electronics | [Schematic PDF](04_Electronics/exports/joint_interface.pdf), [board layers](04_Electronics/exports/pcb_layers.pdf) and [component guide](06_Complete_Project_Source/docs/electronics_components.md) | [Electronics design](06_Complete_Project_Source/docs/05_electronics.md), [BOM](04_Electronics/bom.csv) and [fabrication files](04_Electronics/fabrication) |
-| Verification | [Executed validation](06_Complete_Project_Source/results/validation/validation_report.md) and [requirements matrix](06_Complete_Project_Source/docs/validation_matrix.md) | [Independent review evidence](03_Reports_and_Results/Validation) and [software checks on GitHub](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml) |
+| **Mechanical design** | [Arm, joints, tool interface and gripper](06_Complete_Project_Source/docs/cad_tour.md) | [Dimensioned drawings](01_CAD_Models/Drawings/engineering_interfaces.pdf) · [54-part catalog](06_Complete_Project_Source/docs/component_catalog.md) · [FreeCAD / STEP / STL](01_CAD_Models/README.md#download-and-edit) |
+| **Electronics & KiCad** | [Follow power and signals through the board](06_Complete_Project_Source/docs/electronics_tour.md) | [Schematic PDF](04_Electronics/exports/joint_interface.pdf) · [PCB layers](04_Electronics/exports/pcb_layers.pdf) · [BOM](04_Electronics/bom.csv) · [Native KiCad project](04_Electronics/README.md#open-the-kicad-project) |
+| **Theory & simulation** | [From geometry to a working digital task](06_Complete_Project_Source/docs/engineering_walkthrough.md) | [Equation guide](06_Complete_Project_Source/docs/theory_guide.md) · [Chapters and results](06_Complete_Project_Source/docs/README.md) · [Engineering report](06_Complete_Project_Source/docs/engineering_report.md) |
 
-Native STEP/STL/FCStd and KiCad files are editable engineering data. Use the supplied app launchers or open them inside the appropriate application; PDF/PNG previews provide immediate viewing.
+[Project purpose and original goals](06_Complete_Project_Source/docs/project_alignment.md) · [Complete documentation index](06_Complete_Project_Source/docs/README.md) · [Requirements and evidence](06_Complete_Project_Source/docs/validation_matrix.md)
 
-![Forward-kinematics line-model pick-and-place animation](02_Simulation_and_Animation/Trajectories/pick_place_fk.gif)
+## Watch the task, then inspect the design
 
-## Organized project folders
+![Recorded forward-kinematics pick-and-place task](02_Simulation_and_Animation/Trajectories/pick_place_fk.gif)
 
-| Folder | Contents |
+The 9.24 s demonstration approaches, grasps, transfers and releases an object. The browser viewer animates the actual CAD meshes and can isolate every part. The GIF above is a forward-kinematics line view; object attachment is idealized in the simulation.
+
+**Quick 3D inspection on GitHub:** [open the home-assembly STL preview](01_CAD_Models/STL/Assemblies/assembly_home.stl). GitHub's [built-in STL viewer](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files#3d-file-viewer) supports rotating and zooming the fixed assembly in a WebGL-enabled browser.
+
+**For joint controls, part isolation and playback:** [download the current repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/archive/refs/heads/main.zip), extract it and open **OPEN_3D_VIEWER.cmd** on Windows. On any system, open `02_Simulation_and_Animation/Interactive_3D_Viewer.html` in a browser. It works offline. GitHub shows HTML source rather than running this articulated viewer.
+
+| Gripper and interchangeable tool interface | Routed joint / sensor interface |
 |---|---|
-| [01_CAD_Models](01_CAD_Models) | FreeCAD and Blender models, STEP/STL assemblies and individual parts, drawings and renders |
-| [02_Simulation_and_Animation](02_Simulation_and_Animation) | Offline interactive 3D viewer, pick/place data, workspace and PID results |
-| [03_Reports_and_Results](03_Reports_and_Results) | Browser-readable engineering reports, mechanical/research data and validation evidence |
-| [04_Electronics](04_Electronics) | Native KiCad schematic/PCB, BOM, board views, Gerbers/drill and verification reports |
-| [05_Reference_and_Project_Notes](05_Reference_and_Project_Notes) | Index to original source documents and browser-readable reports |
-| [06_Complete_Project_Source](06_Complete_Project_Source) | Reproducible CAD, analysis, software, tests, electronics generators and authoritative configuration |
-| [07_Releases](07_Releases) | Versioned complete download and Python wheel information |
+| ![Actual CAD gripper mechanism](01_CAD_Models/Preview_Images/gripper.png) | ![Native KiCad view of the populated interface board](04_Electronics/exports/pcb_3d.png) |
+| [Explore the mechanical design](06_Complete_Project_Source/docs/cad_tour.md) | [Explore the circuit and PCB](06_Complete_Project_Source/docs/electronics_tour.md) |
 
-Presentation folders contain verified copies. The complete source folder is authoritative; regenerate outputs there and run `python scripts/sync_presentation.py` to refresh the organized copies. The copy hashes are in [ORGANIZATION_MANIFEST.json](ORGANIZATION_MANIFEST.json).
+## Follow the engineering argument
 
-## Engineering and verification
+The [engineering walkthrough](06_Complete_Project_Source/docs/engineering_walkthrough.md) follows one question: can the chosen geometry move a tool through a useful task, carry the assumed load in the analytical model, and track its commanded motion?
 
-Read the [engineering report](06_Complete_Project_Source/docs/engineering_report.md), [scope audit](06_Complete_Project_Source/docs/digital_scope_audit.md), [requirements matrix](06_Complete_Project_Source/docs/validation_matrix.md), [executed validation](06_Complete_Project_Source/results/validation/validation_report.md) and [detailed source README](06_Complete_Project_Source/README.md).
+1. **Geometry → tool pose:** [Coordinate frames, FK, IK and the Jacobian](06_Complete_Project_Source/docs/02_kinematics.md).
+2. **Pose → useful motion:** [Recorded task and motion limits](02_Simulation_and_Animation/README.md).
+3. **Load → mechanical decisions:** [Gravity torque, drive sizing, stiffness and gripper calculations](06_Complete_Project_Source/docs/03_mechanical_analysis.md).
+4. **Command → feedback:** [PID model and actual simulation curves](06_Complete_Project_Source/docs/theory_guide.md#8-understand-the-controller-experiment).
+5. **Signals → interface hardware:** [Encoder, limit, external-drive and RS-485 circuit](06_Complete_Project_Source/docs/electronics_tour.md).
 
-The robot has six revolute joints, 790 mm nominal shoulder-centred reach and a 90 mm parallel-jaw opening. Payload 4 kg and repeatability ±0.1 mm are design targets. No physical robot or electronics were built. Analytical stiffness, independent-axis PID, sampled clearance and conceptual PCB checks establish their stated digital scope; they do not establish certified hardware performance, EMC, production suitability or functional safety.
+## What is verified
 
-![Native KiCad view of the joint and sensor PCB](04_Electronics/exports/pcb_3d.png)
+The [executed validation](06_Complete_Project_Source/results/validation/validation_report.md) records **91 tests with zero failures or errors**, native CAD inspection, sampled clearance, numerical checks and native KiCad ERC/DRC/connectivity checks. The [requirements matrix](06_Complete_Project_Source/docs/validation_matrix.md) maps each claim to its evidence; the [project journal](06_Complete_Project_Source/docs/project_journal.md) records actual faults and corrections.
 
-## Engineering process
+Payload **4 kg** and repeatability **±0.1 mm** are targets. The project is entirely digital: analytical structure, simplified independent-axis control and sampled collision checks do not establish physical performance, manufacturing qualification, EMC or functional safety. The [scope audit](06_Complete_Project_Source/docs/digital_scope_audit.md) explains these boundaries.
 
-Start from [requirements](06_Complete_Project_Source/docs/01_requirements.md), follow [architecture](06_Complete_Project_Source/docs/architecture.md) and [design decisions](06_Complete_Project_Source/docs/design_decisions.md), then compare calculations with the generated evidence. The [project journal](06_Complete_Project_Source/docs/project_journal.md) records actual faults, corrections and tool checks. CAD clearance is checked at named poses and sampled task configurations; the scope and limitations are recorded alongside the results.
+## Find files or reproduce the work
 
-The GitHub workflow checks numerical software, analytical regressions, lint, documentation, copied artifacts and saved electronics connectivity. Native KiCad ERC/DRC and full CAD checks are executed locally with the required engineering applications. [Reproduce the full validation](06_Complete_Project_Source/README.md#run) for those checks.
+| Folder | Start here |
+|---|---|
+| [01 · CAD models](01_CAD_Models/README.md) | Visual mechanical guide, native FreeCAD/Blender, six STEP/STL assemblies and 54 parts |
+| [02 · Simulation and animation](02_Simulation_and_Animation/README.md) | Offline 3D viewer, recorded motion, workspace and PID plots |
+| [03 · Theory, reports and results](03_Reports_and_Results/README.md) | Reading route, equations, calculations, experiments and verification |
+| [04 · Electronics and KiCad](04_Electronics/README.md) | Schematic, board previews, native project, components and fabrication exports |
+| [05 · Reference and project notes](05_Reference_and_Project_Notes/README.md) | Requirements, architecture, decisions and development journal |
+| [06 · Complete source](06_Complete_Project_Source/README.md) | Installation, reproduction commands, scripts, tests and authoritative configuration |
 
-## Reproduce
+After downloading, **OPEN_PROJECT_HOME.cmd** opens the local guide; **OPEN_FREECAD_MODEL.cmd** opens the solid assembly; **OPEN_PCB_LAYOUT.cmd** opens the board. Native CAD/KiCad files require their applications. PDF, PNG, SVG, CSV and Markdown provide immediate previews on GitHub.
 
-From the cloned repository:
+The complete source is authoritative; numbered presentation folders contain verified copies. The [reproduction guide](06_Complete_Project_Source/README.md#run) and [contribution guide](CONTRIBUTING.md) explain regeneration. The last packaged engineering release is [v1.2.0](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v1.2.0); the current repository includes the latest reading guides.
 
-```bash
-cd 06_Complete_Project_Source
-python -m venv .venv
-```
-
-Activate the environment, then:
-
-```bash
-python -m pip install -e ".[cad,dev]"
-python -m robotarm.demo --all
-python scripts/run_validation.py --full
-python scripts/sync_presentation.py
-```
-
-KiCad 10 is required for native electronics checks. Build123d and the numerical libraries are installed by the CAD/development extras. FreeCAD and Blender support independent CAD inspection and rendering. Detailed tool commands and engineering assumptions are in the source documentation.
-
-MIT-licensed original source. Third-party software and libraries retain their licenses.
+MIT-licensed original source · [License](LICENSE) · [Citation](CITATION.cff) · [Software checks](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml)

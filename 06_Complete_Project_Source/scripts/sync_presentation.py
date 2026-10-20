@@ -102,22 +102,31 @@ reports = []
 report_sources = [
     SOURCE / "README.md",
     *(SOURCE / "docs").glob("*.md"),
+    SOURCE / "cad/README.md",
+    SOURCE / "electronics/README.md",
     SOURCE / "results/validation/validation_report.md",
 ]
+index_names = {
+    SOURCE / "README.md": "Project_Readme.html",
+    SOURCE / "docs/README.md": "Documentation_Index.html",
+    SOURCE / "cad/README.md": "CAD_Source_Index.html",
+    SOURCE / "electronics/README.md": "Electronics_Source_Index.html",
+}
 report_targets = {
-    p.resolve(): (
-        DEST
-        / "03_Reports_and_Results/Readable_Reports"
-        / ("Project_Readme.html" if p.name == "README.md" else p.with_suffix(".html").name)
+    p.resolve(): DEST / "03_Reports_and_Results/Readable_Reports" / index_names.get(
+        p, p.with_suffix(".html").name
     )
     for p in report_sources
 }
 for p in report_sources:
     target = report_targets[p.resolve()]
     target.parent.mkdir(parents=True, exist_ok=True)
-    rendered = markdown.markdown(
-        p.read_text(encoding="utf-8"), extensions=["tables", "fenced_code", "toc"]
+    source_text = p.read_text(encoding="utf-8")
+    title = next(
+        (line[2:].strip() for line in source_text.splitlines() if line.startswith("# ")),
+        p.stem,
     )
+    rendered = markdown.markdown(source_text, extensions=["tables", "fenced_code", "toc"])
 
     def rewrite(m):
         url = html.unescape(m.group(2))
@@ -125,11 +134,14 @@ for p in report_sources:
             return m.group(0)
         filepart, sep, fragment = url.partition("#")
         resolved = (p.parent / unquote(filepart)).resolve()
-        try:
-            rel = resolved.relative_to(SOURCE)
-        except ValueError:
-            return m.group(0)
-        mapped = report_targets.get(resolved, PROJECT / rel)
+        if resolved == (DEST / "README.md").resolve():
+            mapped = DEST / "START_HERE.html"
+        else:
+            try:
+                rel = resolved.relative_to(SOURCE)
+            except ValueError:
+                return m.group(0)
+            mapped = report_targets.get(resolved, PROJECT / rel)
         link = quote(os.path.relpath(mapped, target.parent).replace("\\", "/"), safe="/") + (
             sep + fragment if sep else ""
         )
@@ -137,10 +149,10 @@ for p in report_sources:
 
     rendered = re.sub(r'(href|src)="([^"]*)"', rewrite, rendered)
     target.write_text(
-        page(p.stem, '<a href="../../START_HERE.html">← Project home</a>' + rendered),
+        page(title, '<a href="../../START_HERE.html">← Project home</a>' + rendered),
         encoding="utf-8",
     )
-    reports.append((p.stem, str(target.relative_to(DEST)).replace("\\", "/")))
+    reports.append((title, target.relative_to(DEST).as_posix()))
     derived.append(
         {
             "source": p.relative_to(SOURCE).as_posix(),
@@ -187,9 +199,19 @@ cards = [
         "Project source guide",
     ),
 ]
-body = """<header><div><div class="tag">ASTER-6 · DIGITAL ENGINEERING PROJECT</div><h1>Your robot project,<br>all in one place.</h1><p>Start with the interactive 3D viewer. It opens in a browser and displays the actual CAD meshes without needing a CAD application.</p><a class="button" href="02_Simulation_and_Animation/Interactive_3D_Viewer.html">View the robot in 3D</a><a href="03_Reports_and_Results/Readable_Reports/engineering_report.html">Engineering report</a><p class="tag">VERSION_PLACEHOLDER · Digital only · STATUS_PLACEHOLDER</p></div><img src="01_CAD_Models/Preview_Images/hero.png" alt="ASTER-6 actual CAD assembly"></header><h2 id="open-cad">Open the CAD models</h2><ol><li><b>For viewing:</b> double-click <b>OPEN_3D_VIEWER.cmd</b> in this folder. It explicitly opens an installed browser, avoiding Windows file-association problems. Drag to orbit; use the wheel to zoom.</li><li><b>For CAD editing:</b> double-click <b>OPEN_FREECAD_MODEL.cmd</b>. It explicitly opens the assembled robot in the installed FreeCAD application. STEP and STL files are CAD/mesh data, rather than ordinary documents.</li><li><b>For individual parts:</b> use FreeCAD’s File → Open and select a file from <b>01_CAD_Models/STEP/Individual_Parts</b>. Complete poses are under <b>STEP/Assemblies</b>.</li></ol><h2>Project folders</h2><section class="cards">"""
+body = """<header><div><div class="tag">ASTER-6 · DIGITAL ENGINEERING PROJECT</div><h1>ASTER-6:<br>mechanics, motion &amp; electronics.</h1><p>Start with the interactive 3D viewer. It opens in a browser and displays the actual CAD meshes without needing a CAD application.</p><a class="button" href="02_Simulation_and_Animation/Interactive_3D_Viewer.html">View the robot in 3D</a><a href="03_Reports_and_Results/Readable_Reports/engineering_report.html">Engineering report</a><p class="tag">VERSION_PLACEHOLDER · Digital only · STATUS_PLACEHOLDER</p></div><img src="01_CAD_Models/Preview_Images/hero.png" alt="ASTER-6 actual CAD assembly"></header><h2 id="open-cad">Open the CAD models</h2><ol><li><b>For viewing:</b> double-click <b>OPEN_3D_VIEWER.cmd</b> in this folder. It explicitly opens an installed browser, avoiding Windows file-association problems. Drag to orbit; use the wheel to zoom.</li><li><b>For CAD editing:</b> double-click <b>OPEN_FREECAD_MODEL.cmd</b>. It explicitly opens the assembled robot in the installed FreeCAD application. STEP and STL files are CAD/mesh data, rather than ordinary documents.</li><li><b>For individual parts:</b> use FreeCAD’s File → Open and select a file from <b>01_CAD_Models/STEP/Individual_Parts</b>. Complete poses are under <b>STEP/Assemblies</b>.</li></ol><h2>Project folders</h2><section class="cards">"""
 for title, desc, url, label in cards:
     body += f'<div class="card"><h3>{title}</h3><p>{desc}</p><a href="{url}">{label} →</a></div>'
+body = body.replace(
+    '<h2 id="open-cad">',
+    '<section aria-label="Illustrated project tours"><h2>Explore the engineering</h2>'
+    '<p>Follow the original design from components and circuits to equations and evidence.</p>'
+    '<a class="button" href="03_Reports_and_Results/Readable_Reports/cad_tour.html">Mechanical design tour</a>'
+    '<a class="button" href="03_Reports_and_Results/Readable_Reports/electronics_tour.html">Circuit and PCB tour</a>'
+    '<a class="button" href="03_Reports_and_Results/Readable_Reports/engineering_walkthrough.html">Engineering walkthrough</a>'
+    '<p><a href="03_Reports_and_Results/Readable_Reports/Documentation_Index.html">Complete documentation index</a></p>'
+    '</section><h2 id="open-cad">',
+)
 body = body.replace(
     '<h2 id="open-cad">',
     '<nav aria-label="Engineering guides"><p><a class="button" href="03_Reports_and_Results/Readable_Reports/project_alignment.html">Project purpose and goals</a>'
@@ -224,86 +246,16 @@ for filename, view in (
 )
 for name in ("LICENSE", "NOTICE.md", "CITATION.cff", "CONTRIBUTING.md", "CHANGELOG.md"):
     copy(name, name)
-readme = f"""# ASTER-6 · Six-axis robot arm and parallel gripper
+TEMPLATES = SOURCE / "scripts/presentation_templates"
 
-**Version {version} · {status} · Digital engineering design**
 
-An educational mechatronics project connecting original parametric CAD, robot kinematics, motion planning, PID control, analytical mechanics and a routed KiCad joint/sensor interface. The models, results and engineering decisions are reproducible from versioned source.
+def read_template(name):
+    return (TEMPLATES / name).read_text(encoding="utf-8").replace(
+        "{{VERSION}}", version
+    ).replace("{{STATUS}}", status)
 
-![Actual ASTER-6 CAD assembly](01_CAD_Models/Preview_Images/hero.png)
 
-## Start here
-
-[The project purpose and original goals](06_Complete_Project_Source/docs/project_alignment.md) explain how the mechanics, mathematics, motion, control and electronics connect into one digital engineering project.
-
-[Download the complete v{version} release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/v{version}) or clone this repository. Double-click **OPEN_PROJECT_HOME.cmd** for the project guide or **OPEN_3D_VIEWER.cmd** to view and move the robot. The viewer can isolate any of the 54 components and automatically fit it on screen. Use **OPEN_FREECAD_MODEL.cmd** for CAD editing and **OPEN_PCB_LAYOUT.cmd** for the KiCad board. These Windows launchers locate installed Chrome/Edge, FreeCAD and KiCad; they avoid incorrect file associations. On other systems, open [START_HERE.html](START_HERE.html) or [the interactive viewer](02_Simulation_and_Animation/Interactive_3D_Viewer.html) in a browser.
-
-GitHub displays HTML source. Download the project to run its offline viewer.
-
-## Review the project in five minutes
-
-| Inspect | Start with | Continue with |
-|---|---|---|
-| Mechanical design | [Dimensioned drawings](01_CAD_Models/Drawings/engineering_interfaces.pdf) and [six poses](01_CAD_Models/Preview_Images/poses.png) | [54-part component catalog](06_Complete_Project_Source/docs/component_catalog.md) and [CAD methodology](06_Complete_Project_Source/docs/04_cad.md) |
-| Robot theory | [Theory guide](06_Complete_Project_Source/docs/theory_guide.md) | [Kinematics](06_Complete_Project_Source/docs/02_kinematics.md), [mechanics](06_Complete_Project_Source/docs/03_mechanical_analysis.md) and [engineering report](06_Complete_Project_Source/docs/engineering_report.md) |
-| Motion and control | [Workspace](02_Simulation_and_Animation/Workspace/workspace_3d.png), animation below and [PID tracking](02_Simulation_and_Animation/Control/pid_tracking.png) | [Recorded trajectories](02_Simulation_and_Animation/Trajectories) and [numerical software](06_Complete_Project_Source/src/robotarm) |
-| Electronics | [Schematic PDF](04_Electronics/exports/joint_interface.pdf), [board layers](04_Electronics/exports/pcb_layers.pdf) and [component guide](06_Complete_Project_Source/docs/electronics_components.md) | [Electronics design](06_Complete_Project_Source/docs/05_electronics.md), [BOM](04_Electronics/bom.csv) and [fabrication files](04_Electronics/fabrication) |
-| Verification | [Executed validation](06_Complete_Project_Source/results/validation/validation_report.md) and [requirements matrix](06_Complete_Project_Source/docs/validation_matrix.md) | [Independent review evidence](03_Reports_and_Results/Validation) and [software checks on GitHub](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml) |
-
-Native STEP/STL/FCStd and KiCad files are editable engineering data. Use the supplied app launchers or open them inside the appropriate application; PDF/PNG previews provide immediate viewing.
-
-![Forward-kinematics line-model pick-and-place animation](02_Simulation_and_Animation/Trajectories/pick_place_fk.gif)
-
-## Organized project folders
-
-| Folder | Contents |
-|---|---|
-| [01_CAD_Models](01_CAD_Models) | FreeCAD and Blender models, STEP/STL assemblies and individual parts, drawings and renders |
-| [02_Simulation_and_Animation](02_Simulation_and_Animation) | Offline interactive 3D viewer, pick/place data, workspace and PID results |
-| [03_Reports_and_Results](03_Reports_and_Results) | Browser-readable engineering reports, mechanical/research data and validation evidence |
-| [04_Electronics](04_Electronics) | Native KiCad schematic/PCB, BOM, board views, Gerbers/drill and verification reports |
-| [05_Reference_and_Project_Notes](05_Reference_and_Project_Notes) | Index to original source documents and browser-readable reports |
-| [06_Complete_Project_Source](06_Complete_Project_Source) | Reproducible CAD, analysis, software, tests, electronics generators and authoritative configuration |
-| [07_Releases](07_Releases) | Versioned complete download and Python wheel information |
-
-Presentation folders contain verified copies. The complete source folder is authoritative; regenerate outputs there and run `python scripts/sync_presentation.py` to refresh the organized copies. The copy hashes are in [ORGANIZATION_MANIFEST.json](ORGANIZATION_MANIFEST.json).
-
-## Engineering and verification
-
-Read the [engineering report](06_Complete_Project_Source/docs/engineering_report.md), [scope audit](06_Complete_Project_Source/docs/digital_scope_audit.md), [requirements matrix](06_Complete_Project_Source/docs/validation_matrix.md), [executed validation](06_Complete_Project_Source/results/validation/validation_report.md) and [detailed source README](06_Complete_Project_Source/README.md).
-
-The robot has six revolute joints, 790 mm nominal shoulder-centred reach and a 90 mm parallel-jaw opening. Payload 4 kg and repeatability ±0.1 mm are design targets. No physical robot or electronics were built. Analytical stiffness, independent-axis PID, sampled clearance and conceptual PCB checks establish their stated digital scope; they do not establish certified hardware performance, EMC, production suitability or functional safety.
-
-![Native KiCad view of the joint and sensor PCB](04_Electronics/exports/pcb_3d.png)
-
-## Engineering process
-
-Start from [requirements](06_Complete_Project_Source/docs/01_requirements.md), follow [architecture](06_Complete_Project_Source/docs/architecture.md) and [design decisions](06_Complete_Project_Source/docs/design_decisions.md), then compare calculations with the generated evidence. The [project journal](06_Complete_Project_Source/docs/project_journal.md) records actual faults, corrections and tool checks. CAD clearance is checked at named poses and sampled task configurations; the scope and limitations are recorded alongside the results.
-
-The GitHub workflow checks numerical software, analytical regressions, lint, documentation, copied artifacts and saved electronics connectivity. Native KiCad ERC/DRC and full CAD checks are executed locally with the required engineering applications. [Reproduce the full validation](06_Complete_Project_Source/README.md#run) for those checks.
-
-## Reproduce
-
-From the cloned repository:
-
-```bash
-cd 06_Complete_Project_Source
-python -m venv .venv
-```
-
-Activate the environment, then:
-
-```bash
-python -m pip install -e ".[cad,dev]"
-python -m robotarm.demo --all
-python scripts/run_validation.py --full
-python scripts/sync_presentation.py
-```
-
-KiCad 10 is required for native electronics checks. Build123d and the numerical libraries are installed by the CAD/development extras. FreeCAD and Blender support independent CAD inspection and rendering. Detailed tool commands and engineering assumptions are in the source documentation.
-
-MIT-licensed original source. Third-party software and libraries retain their licenses.
-"""
+readme = read_template("root_readme.md.in")
 (DEST / "README.md").write_text(readme, encoding="utf-8")
 notes = DEST / "05_Reference_and_Project_Notes/README.md"
 notes.parent.mkdir(parents=True, exist_ok=True)
@@ -311,61 +263,13 @@ notes.write_text(
     "# Reference and project notes\n\nRead [the source documentation](../06_Complete_Project_Source/docs) or [the browser-readable reports](../03_Reports_and_Results/Readable_Reports).\n\n- [Requirements](../03_Reports_and_Results/Readable_Reports/01_requirements.html)\n- [Design decisions](../03_Reports_and_Results/Readable_Reports/design_decisions.html)\n- [Project journal](../03_Reports_and_Results/Readable_Reports/project_journal.html)\n- [Release notes](../03_Reports_and_Results/Readable_Reports/release_notes.html)\n\nCanonical Markdown stays in its source-relative layout so its links remain valid.\n",
     encoding="utf-8",
 )
-folder_indexes = {
-    "01_CAD_Models/README.md": """# CAD models and mechanical components
-
-Start with **OPEN_3D_VIEWER.cmd** in the parent folder. Choose **CAD component** in the viewer to inspect any of the 54 parts, or select a complete named pose. Use **OPEN_FREECAD_MODEL.cmd** for the editable assembly.
-
-- [Part roles, materials and STEP/STL links](../06_Complete_Project_Source/docs/component_catalog.md)
-- [Native FreeCAD assembly](FreeCAD/aster6_home.FCStd) — open inside FreeCAD
-- [Blender scene](Blender/aster6_home.blend) — open inside Blender
-- [STEP assemblies](STEP/Assemblies) and [individual STEP parts](STEP/Individual_Parts)
-- [STL assemblies](STL/Assemblies) and [individual STL parts](STL/Individual_Parts)
-- [Dimensioned drawing PDF](Drawings/engineering_interfaces.pdf)
-- [Assembly render](Preview_Images/hero.png), [gripper](Preview_Images/gripper.png) and [six poses](Preview_Images/poses.png)
-- [CAD methodology and clearance scope](../06_Complete_Project_Source/docs/04_cad.md)
-
-STEP/STL links are engineering data. Open them through FreeCAD's File > Open rather than an ordinary text/document application.
-""",
-    "02_Simulation_and_Animation/README.md": """# Simulation and animation
-
-- [Interactive CAD viewer](Interactive_3D_Viewer.html) — download the project and open locally in a browser
-- [Recorded FK animation](Trajectories/pick_place_fk.gif)
-- [Joint/TCP trajectory data](Trajectories) and [pick/place metrics](Trajectories/pick_place_metrics.json)
-- [Workspace cloud](Workspace/workspace_3d.png), [projections](Workspace/workspace_projections.png) and [singularities](Workspace/singularity_analysis.png)
-- [PID tracking](Control/pid_tracking.png), [step response](Control/pid_step_response.png) and [metrics](Control/metrics.json)
-- [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md)
-
-The viewer isolates individual CAD parts and animates the planner's recorded joints. Object attachment is ideal, controller plants are independent assumed inertias/damping, and manual joint settings can collide. These are documented digital models.
-""",
-    "03_Reports_and_Results/README.md": """# Reports, theory and verification
-
-For browser reading, open the [project guide](../START_HERE.html) and [readable reports](Readable_Reports). Document links within readable reports stay in readable HTML.
-
-- [Engineering report](../06_Complete_Project_Source/docs/engineering_report.md)
-- [Project purpose and original goals](../06_Complete_Project_Source/docs/project_alignment.md)
-- [Theory guide](../06_Complete_Project_Source/docs/theory_guide.md)
-- [Mechanical calculations](Mechanical) and [research experiments](Research)
-- [Executed validation](Validation/validation_report.md), [numerical checks](Validation/numerical_validation.json) and [requirements matrix](../06_Complete_Project_Source/docs/validation_matrix.md)
-- [CAD review](Validation/final_cad_review.json), [electronics review](Validation/final_electronics_review.json) and [theory review](Validation/final_theory_review.json)
-
-Results distinguish assumptions, design targets, calculations and digitally verified behavior. Source documents and generation scripts remain authoritative in 06_Complete_Project_Source.
-""",
-    "04_Electronics/README.md": """# Electronics, components and PCB
-
-Double-click **OPEN_PCB_LAYOUT.cmd** in the parent folder to edit the board in KiCad. For immediate viewing, use the PDF and PNG links below.
-
-- [Schematic PDF](exports/joint_interface.pdf)
-- [PCB 3D view](exports/pcb_3d.png), [top view](exports/pcb_top.png) and [six-page layer PDF](exports/pcb_layers.pdf)
-- [Component functions and selection guide](../06_Complete_Project_Source/docs/electronics_components.md), [BOM](bom.csv) and [electrical calculations](interface_calculations.json)
-- [Native schematic](joint_interface.kicad_sch), [native PCB](joint_interface.kicad_pcb) and [KiCad project](joint_interface.kicad_pro) — open inside KiCad
-- [Portable project libraries](fp-lib-table) and [local fuse footprint](ASTER_Interface.pretty)
-- [Native ERC evidence](erc_report.json), [native DRC evidence](pcb_drc_report.json) and [independent PCB verification](pcb_verification.json)
-- [Fabrication ZIP](fabrication/joint_interface_fabrication.zip), [Gerbers/drills/positions](fabrication) and [fabrication review](../06_Complete_Project_Source/docs/05_electronics.md)
-
-This is a conceptual low-voltage joint/sensor interface, not a motor power stage or safety controller. Native layout/connectivity checks and manufacturer footprint dimensions are documented; physical qualification and manufacturer CAM approval have not been performed.
-""",
+folder_templates = {
+    "01_CAD_Models/README.md": "cad_readme.md.in",
+    "02_Simulation_and_Animation/README.md": "simulation_readme.md.in",
+    "03_Reports_and_Results/README.md": "reports_readme.md.in",
+    "04_Electronics/README.md": "electronics_readme.md.in",
 }
+folder_indexes = {name: read_template(template) for name, template in folder_templates.items()}
 for name, contents in folder_indexes.items():
     (DEST / name).write_text(contents, encoding="utf-8")
 generated_names = [
@@ -413,6 +317,7 @@ manifest = {
             "scripts/sync_presentation.py",
             "pyproject.toml",
             "results/validation/validation_report.json",
+            *[p.relative_to(SOURCE).as_posix() for p in sorted(TEMPLATES.glob("*.md.in"))],
         ]
     ],
     "source_repository": "06_Complete_Project_Source",

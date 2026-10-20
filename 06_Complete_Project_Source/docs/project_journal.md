@@ -95,3 +95,10 @@ The single --full workflow regenerated primary CAD and numerical results, refres
 The final repository audit found a local user-profile path in an installed FreeCAD add-on startup diagnostic captured by the full native refresh. A log-redaction helper and regression now retain the error details without publishing the account path. The full regeneration report retains its original executed source revision; the final integrated run verifies this small logging change and the enlarged suite before publication.
 
 Final acceptance on 18 October 2026 passed all 91 tests with zero failures, errors or skips, fresh native electronics checks and all source/configuration/numerical/artifact gates. The source revision was frozen throughout this successful run.
+
+
+## Repository presentation review - 20 October 2026
+
+A GitHub visitor review found that useful CAD, PCB and theory material needed clearer entry points. Three illustrated tours now connect actual renders, drawings, schematics, component references, equations, plots and editable source. The repository landing page and numbered folder guides distinguish immediate GitHub previews from native downloads, and a documentation index provides a reading route.
+
+The presentation builder now reads versioned Markdown templates. Distinct HTML filenames keep the documentation, CAD and electronics indexes separate, and local navigation follows the same guides. Fresh validation passed all 91 tests with zero failures, errors or skips, native KiCad checks and numerical, artifact, lint and documentation gates. The CAD geometry, board design, SI specification and software package retain the v1.2.0 design revision; refreshed native exports record the new check execution. The packaged engineering release remains historical.
