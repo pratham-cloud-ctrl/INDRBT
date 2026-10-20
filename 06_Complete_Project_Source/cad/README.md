@@ -4,6 +4,8 @@
 
 This folder contains ASTER-6's reproducible mechanical design and generated models: **54 components and six complete pose assemblies**.
 
+[Inspect the robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) to orbit, move joints, adjust the gripper, isolate parts and play the task without downloading files. Native files and reproduction steps below are optional for offline inspection or editing.
+
 ![The ASTER-6 solid model in its home configuration](renders/hero.png)
 
 ## Open the right file
@@ -15,9 +17,9 @@ This folder contains ASTER-6's reproducible mechanical design and generated mode
 | Use triangle meshes | [All STL files](exports/STL) | Six assembly meshes and 54 individual part meshes; assembly meshes retain separate contacting bodies |
 | Read the mechanism on GitHub | [Mechanical tour](../docs/cad_tour.md) · [drawings](../docs/drawings/engineering_interfaces.pdf) | Rendered assembly, gripper, six poses and dimensioned interface drawings |
 | Inspect the render scene | [renders/aster6_home.blend](renders/aster6_home.blend) | Blender scene using the exported CAD meshes |
-| Move the robot and isolate a part | [Offline interactive viewer](../simulations/aster6_twin.html) | Browser viewer; download the project to run it |
+| Move the robot and isolate a part | [Public interactive viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) · [optional offline copy](../simulations/aster6_twin.html) | Online joint controls and playback; download only for offline use |
 
-STEP, STL and FCStd links lead to engineering files for download. Use FreeCAD for the native model or STEP solids. On Windows, the root [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) and [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) launch the appropriate application. PNG/SVG previews display directly on GitHub.
+STEP, STL and FCStd links provide optional downloads for native inspection or editing. Use FreeCAD for the native model or STEP solids. After downloading on Windows, [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) opens the native assembly and [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) opens the offline browser viewer. PNG/SVG previews also display directly on GitHub.
 
 ## Edit and regenerate
 

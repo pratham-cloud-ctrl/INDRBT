@@ -1,5 +1,7 @@
 # Electronics tour · ASTER-6 joint and sensor interface
 
+**[Inspect the board and components online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb)** — no CAD application or GitHub access required.
+
 [Project home](../../README.md) · [Schematic PDF](../electronics/exports/joint_interface.pdf) · [Component guide](electronics_components.md) · [Detailed design](05_electronics.md)
 
 This board connects an **external 3.3 V controller** to a joint encoder, limit contact, separate motor drive and RS-485 bus. It gives the robot project a concrete electrical interface with a schematic, routed PCB and checked manufacturing exports. One interface is designed; repeating it across the arm and gripper is the system architecture.
@@ -38,7 +40,7 @@ PDFs and images provide immediate viewing; GitHub renders the BOM CSV as a table
 | Examine manufacturing outputs | [Fabrication ZIP](../electronics/fabrication/joint_interface_fabrication.zip): ten Gerber layers, plated/nonplated drills, maps, positions, IPC-D-356 and BOM |
 | Check the evidence | [Independent electronics review](../results/validation/final_electronics_review.json), [native ERC](../electronics/erc_report.json), [native DRC](../electronics/pcb_drc_report.json) and [source/export verification](../electronics/pcb_verification.json) |
 
-From the [repository home](../../README.md), choose **Code → Download ZIP** and extract it, or clone the repository. Keep the complete `electronics` folder together, including `fp-lib-table`, `sym-lib-table` and [ASTER_Interface.pretty](../electronics/ASTER_Interface.pretty). The local F1 footprint uses a relative project path, so downloading only the PCB loses its editable library context. Install KiCad 10 with its standard symbol and footprint libraries, then open the `.kicad_pro` file. The repository's Windows [OPEN_PCB_LAYOUT.cmd](../../OPEN_PCB_LAYOUT.cmd) also opens the board after download.
+For optional offline editing, choose **Code → Download ZIP** from the [repository home](../../README.md) and extract it, or clone the repository. Keep the complete `electronics` folder together, including `fp-lib-table`, `sym-lib-table` and [ASTER_Interface.pretty](../electronics/ASTER_Interface.pretty). The local F1 footprint uses a relative project path, so downloading only the PCB loses its editable library context. Install KiCad 10 with its standard symbol and footprint libraries, then open the `.kicad_pro` file. The repository's Windows [OPEN_PCB_LAYOUT.cmd](../../OPEN_PCB_LAYOUT.cmd) also opens the board after download.
 
 ## What has been checked
 

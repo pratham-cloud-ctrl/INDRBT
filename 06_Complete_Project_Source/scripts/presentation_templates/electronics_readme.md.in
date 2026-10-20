@@ -2,6 +2,10 @@
 
 [← Project home](../README.md) · [CAD](../01_CAD_Models/README.md) · [Theory](../03_Reports_and_Results/README.md)
 
+**[Inspect the interactive PCB](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb) · [Rotate the 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d) · [Zoom the schematic](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#schematic)**
+
+Search components, cross-highlight the BOM, follow connected nets and inspect the actual board without installing KiCad.
+
 **Start with the [illustrated circuit and PCB tour](../06_Complete_Project_Source/docs/electronics_tour.md).** Follow the regulated supply, encoder/limit inputs, external-drive commands and RS-485 interface, then match each block to the schematic and board.
 
 ![Actual KiCad 3D view of the joint-interface board](exports/pcb_3d.png)
@@ -23,7 +27,7 @@ References such as **U1**, **R5** or **J3** identify the same part in the schema
 
 ## Open the KiCad project
 
-1. Download and extract the **complete repository**, keeping this folder together.
+1. For optional offline editing, download and extract the **complete repository**, keeping this folder together.
 2. Open [joint_interface.kicad_pro](joint_interface.kicad_pro) in **KiCad 10**, then choose the schematic or PCB editor.
 3. On Windows, **OPEN_PCB_LAYOUT.cmd** in the parent folder opens the routed board directly.
 

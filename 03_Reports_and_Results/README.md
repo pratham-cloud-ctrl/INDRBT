@@ -2,6 +2,8 @@
 
 [← Project home](../README.md) · [CAD](../01_CAD_Models/README.md) · [Electronics & KiCad](../04_Electronics/README.md)
 
+**[Read the public engineering walkthrough](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#theory) · [Open the browser design library](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#guides)** — the included chapters and figures are accessible without a GitHub account.
+
 **Start with the [illustrated engineering walkthrough](../06_Complete_Project_Source/docs/engineering_walkthrough.md).** Follow the reasoning from robot geometry through a useful motion, assumed loads, gripper mechanics, feedback control and the interface board.
 
 ![Coordinate frames from the implemented robot model](../02_Simulation_and_Animation/Workspace/coordinate_frames.png)
@@ -26,6 +28,6 @@
 | Design trade-offs | [Five research experiments](../06_Complete_Project_Source/docs/engineering_report.md) | [Experiment results and plots](Research) |
 | Verification | [Executed validation report](Validation/validation_report.md) | [CAD review](Validation/final_cad_review.json) · [Electronics review](Validation/final_electronics_review.json) · [Theory review](Validation/final_theory_review.json) |
 
-Markdown chapters render directly on GitHub. After downloading, **OPEN_PROJECT_HOME.cmd** opens the local guide; [Readable_Reports](Readable_Reports) contains matching HTML chapters for offline browser reading.
+Markdown chapters also render directly on GitHub. For optional offline reading, download the project and open **OPEN_PROJECT_HOME.cmd**; [Readable_Reports](Readable_Reports) contains the matching local HTML chapters.
 
 Results distinguish assumptions, targets, calculations, simulations and digital checks. Payload and repeatability remain physical design targets. The [scope audit](../06_Complete_Project_Source/docs/digital_scope_audit.md) explains what the models establish.

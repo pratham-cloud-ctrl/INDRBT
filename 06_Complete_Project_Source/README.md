@@ -18,7 +18,9 @@ For a visual introduction, start with these guides. This source README contains 
 
 Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
 
-Open **[the offline interactive CAD twin](simulations/aster6_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
+Open **[the public interactive CAD twin](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot)** to orbit, change all six joints, adjust the gripper, select poses and play the recorded task directly in your browser. No download or CAD application is needed.
+
+For optional offline use, download the project and open [the local viewer](simulations/aster6_twin.html) in a browser. The single HTML file needs no server or internet; GitHub displays its source rather than executing it.
 
 The **CAD component** selector isolates and frames any of the 54 actual parts. Use the [component catalog](docs/component_catalog.md) to match part names, native objects, materials and STEP/STL files. The [theory guide](docs/theory_guide.md) connects the model equations to evidence, and the [electronics component guide](docs/electronics_components.md) explains references, selections and BOM population.
 

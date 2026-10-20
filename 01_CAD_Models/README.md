@@ -2,6 +2,8 @@
 
 [← Project home](../README.md) · [Electronics](../04_Electronics/README.md) · [Theory](../03_Reports_and_Results/README.md)
 
+**[Open the interactive 3D robot](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot)** — orbit, move joints, adjust the gripper and inspect all 54 parts directly in your browser. No download or CAD software is required.
+
 **Start with the [illustrated mechanical tour](../06_Complete_Project_Source/docs/cad_tour.md).** It explains the structure, joint groups, flange and gripper using the actual models and dimensioned drawings.
 
 ![Six actual CAD poses of ASTER-6](Preview_Images/poses.png)
@@ -10,18 +12,18 @@
 
 | What you want to see | GitHub preview |
 |---|---|
-| Rotate and zoom the fixed assembly in 3D | [Home assembly STL preview](STL/Assemblies/assembly_home.stl) |
+| Rotate, move joints and isolate parts in 3D | [Public interactive robot viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) |
 | Complete arm and six configurations | [Assembly image](Preview_Images/hero.png) · [Pose sheet](Preview_Images/poses.png) |
 | Jaw mechanism, guide rods and tool interface | [Gripper close-up](Preview_Images/gripper.png) · [Mechanical tour](../06_Complete_Project_Source/docs/cad_tour.md) |
 | Base, flange, link and gripper dimensions | [Three-page drawing PDF](Drawings/engineering_interfaces.pdf) |
 | Every part's function, material and filename | [54-part component catalog](../06_Complete_Project_Source/docs/component_catalog.md) |
 | Model construction and clearance evidence | [CAD methodology](../06_Complete_Project_Source/docs/04_cad.md) · [Independent CAD review](../03_Reports_and_Results/Validation/final_cad_review.json) |
 
-GitHub's [built-in STL viewer](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files#3d-file-viewer) displays the fixed mesh with orbit and zoom controls. For joint motion, gripper adjustment and part isolation, use the downloaded interactive viewer.
+[The online viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) is the main inspection route. GitHub may decline the STL preview; [the STL assembly](STL/Assemblies/assembly_home.stl) remains available as engineering data for download.
 
 ## Download and edit
 
-Download the repository and extract it before opening native files. **OPEN_FREECAD_MODEL.cmd** in the parent folder opens the solid assembly on Windows. On other systems use FreeCAD **File → Open**.
+For optional native inspection or editing, download and extract the repository. **OPEN_FREECAD_MODEL.cmd** in the parent folder opens the solid assembly on Windows. On other systems use FreeCAD **File → Open**.
 
 | Format | Direct file / folder | Intended use |
 |---|---|---|
@@ -31,6 +33,6 @@ Download the repository and extract it before opening native files. **OPEN_FREEC
 | **Blender `.blend`** | [Saved scene](Blender/aster6_home.blend) | Inspect the named scene and render setup |
 | **Parametric source** | [Geometry construction](../06_Complete_Project_Source/cad/build123d/geometry.py) · [SI configuration](../06_Complete_Project_Source/config/robot.yaml) | Change the design and regenerate the exports |
 
-GitHub's native-file pages provide a **Download raw file** control. These files open inside their CAD applications. For immediate browser inspection, use the image/PDF previews above or download and open **OPEN_3D_VIEWER.cmd** to orbit and isolate every component.
+For immediate browser inspection, [open the public robot viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) to orbit, move joints and isolate every component; the image/PDF previews above are also available. GitHub's native-file pages provide a **Download raw file** control for optional CAD inspection or editing. After downloading the complete project, **OPEN_3D_VIEWER.cmd** opens the optional offline viewer.
 
 The saved FreeCAD model contains exported solids. Its reproducible parametric construction lives in Python/Build123d. Exported lengths are **millimetres**; individual components retain their local assembly-group frame. Complete pose assemblies already place the parts together. See the [CAD source map](../06_Complete_Project_Source/cad/README.md) for reproduction.

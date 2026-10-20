@@ -1,5 +1,7 @@
 # How ASTER-6 works
 
+**[Read this walkthrough in the browser showcase](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#theory)** — no CAD application or GitHub access required.
+
 [Documentation home](README.md) · [Project purpose](project_alignment.md) · [Full theory guide](theory_guide.md)
 
 ASTER-6 asks one connected question: **can an original six-axis arm move a tool through a useful task, support an assumed load and follow commands in a defined digital model?** Follow the same pick-and-place demonstration from geometry to evidence below. No physical robot was built.
@@ -51,7 +53,7 @@ The task starts at home, approaches an object, descends, closes the gripper, lif
 
 The simulated task takes **9.24398 s**, records **1,041 samples** and travels **1.32360 m**. The largest speed and acceleration fractions are **95.17%** and **99.80%** of the assumed limits. The object attaches to the tool through an ideal kinematic constraint, rather than friction/contact physics.
 
-See the [recorded metrics and phase timings](../results/trajectories/pick_place_metrics.json), [planner](../src/robotarm/planning/trajectories.py), [task sequence](../src/robotarm/simulation/tasks.py) and [FK animation](../results/trajectories/pick_place_fk.gif). To operate the interactive CAD twin, follow the [project launch instructions](../README.md#run); GitHub displays its HTML source rather than running the viewer.
+See the [recorded metrics and phase timings](../results/trajectories/pick_place_metrics.json), [planner](../src/robotarm/planning/trajectories.py), [task sequence](../src/robotarm/simulation/tasks.py) and [FK animation](../results/trajectories/pick_place_fk.gif). [Operate the interactive CAD twin online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) with no download. The [source setup and run instructions](../README.md#run) describe optional local reproduction and offline use.
 
 ## 4. Check loads before choosing a drive
 

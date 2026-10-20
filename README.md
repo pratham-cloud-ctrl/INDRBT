@@ -2,6 +2,8 @@
 
 An original digital robotics project connecting mechanical design, robot mathematics, motion, feedback control and a routed KiCad interface board.
 
+**[OPEN THE INTERACTIVE ENGINEERING SHOWCASE](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site)** — inspect the 3D robot, 3D PCB, components, schematics and theory in your browser. No CAD application or GitHub sign-in is needed.
+
 **[CAD & mechanical design](01_CAD_Models/README.md) · [Electronics & KiCad](04_Electronics/README.md) · [Theory & calculations](03_Reports_and_Results/README.md)**
 
 ![ASTER-6 actual CAD assembly with its interchangeable parallel-jaw gripper](01_CAD_Models/Preview_Images/hero.png)
@@ -28,9 +30,9 @@ You can inspect the design, drawings, circuit and calculations here without inst
 
 The 9.24 s demonstration approaches, grasps, transfers and releases an object. The browser viewer animates the actual CAD meshes and can isolate every part. The GIF above is a forward-kinematics line view; object attachment is idealized in the simulation.
 
-**Quick 3D inspection on GitHub:** [open the home-assembly STL preview](01_CAD_Models/STL/Assemblies/assembly_home.stl). GitHub's [built-in STL viewer](https://docs.github.com/en/repositories/working-with-files/using-files/working-with-non-code-files#3d-file-viewer) supports rotating and zooming the fixed assembly in a WebGL-enabled browser.
+**Inspect online:** [move and isolate the robot](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot), [search the PCB and highlight nets](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb), or [rotate the native 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d). GitHub can decline previews of CAD files; the public showcase serves the actual display assets directly.
 
-**For joint controls, part isolation and playback:** [download the current repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/archive/refs/heads/main.zip), extract it and open **OPEN_3D_VIEWER.cmd** on Windows. On any system, open `02_Simulation_and_Animation/Interactive_3D_Viewer.html` in a browser. It works offline. GitHub shows HTML source rather than running this articulated viewer.
+**For optional offline use:** [download the current repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/archive/refs/heads/main.zip), extract it and open **OPEN_3D_VIEWER.cmd** on Windows. On any system, open `02_Simulation_and_Animation/Interactive_3D_Viewer.html` in a browser. It provides a local copy of the joint controls, part isolation and playback available online. GitHub shows this HTML source rather than executing it.
 
 | Gripper and interchangeable tool interface | Routed joint / sensor interface |
 |---|---|

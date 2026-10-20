@@ -6,7 +6,9 @@
 
 ## Move and inspect the actual CAD
 
-Download and extract the project, then open **OPEN_3D_VIEWER.cmd** in the parent folder on Windows. On any system, open [Interactive_3D_Viewer.html](Interactive_3D_Viewer.html) locally in a browser. It needs no server or internet. GitHub displays the HTML source.
+**[Launch the public robot viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot)** for joint controls, gripper motion, component isolation and playback without downloading files.
+
+**Optional offline use:** download and extract the project, then open **OPEN_3D_VIEWER.cmd** in the parent folder on Windows. On any system, open [Interactive_3D_Viewer.html](Interactive_3D_Viewer.html) locally in a browser. This local copy needs no server or internet; GitHub displays its HTML source rather than executing it.
 
 Drag to orbit, scroll to zoom, select a named pose, adjust six joints and the gripper, or play the recorded task. The **CAD component** selector isolates and frames each of the 54 parts.
 
