@@ -23,6 +23,8 @@
 
 ## Download and edit
 
+**[Open the actual STEP/FreeCAD models and local packs](../06_Complete_Project_Source/docs/cad_downloads.md)** for precise application instructions, millimetre units and format/history distinctions. The guide states the pending public ZIP status; the online viewer above is already available.
+
 For optional native inspection or editing, download and extract the repository. **OPEN_FREECAD_MODEL.cmd** in the parent folder opens the solid assembly on Windows. On other systems use FreeCAD **File → Open**.
 
 | Format | Direct file / folder | Intended use |

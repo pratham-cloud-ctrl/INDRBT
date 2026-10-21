@@ -8,6 +8,8 @@
 
 ![Coordinate frames from the implemented robot model](../02_Simulation_and_Animation/Workspace/coordinate_frames.png)
 
+For optional native application inspection, use the [CAD/KiCad opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). It links actual engineering files and local packs, with accurate format and download-status notes.
+
 ## Choose a reading route
 
 | Your goal | Start here | Continue with |

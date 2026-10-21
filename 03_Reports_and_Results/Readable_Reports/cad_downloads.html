@@ -1,0 +1,130 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Open the engineering files</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="open-the-engineering-files">Open the engineering files</h1>
+<p><a href="https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot">Inspect the robot online</a> · <a href="https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb">Inspect the PCB online</a> · <a href="Documentation_Index.html">Documentation index</a></p>
+<p>The public browser showcase is the quickest viewing route. For optional inspection in a CAD or electronics application, use the actual engineering files below. Repository links require access to the private GitHub repository; a local project copy opens directly from disk.</p>
+<p><strong>Download status — 21 October 2026:</strong> the consolidated public download page and focused inspection packs are prepared, but that page has not been published because the Sites connection cannot currently access the project. No public ZIP download is claimed here. The existing browser showcase remains available.</p>
+<h2 id="choose-a-model-format">Choose a model format</h2>
+<table>
+<thead>
+<tr>
+<th>What you want</th>
+<th>Actual file or folder</th>
+<th>Open it with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete solid assembly</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">Home STEP</a></td>
+<td>FreeCAD or another CAD application supporting STEP</td>
+</tr>
+<tr>
+<td>Another complete configuration</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STEP">Six STEP assemblies</a> — files named <code>assembly_home</code>, <code>assembly_extended</code>, <code>assembly_folded</code>, <code>assembly_vertical</code>, <code>assembly_pick</code> and <code>assembly_place</code></td>
+<td>CAD application, <strong>File → Open</strong> or <strong>File → Import</strong></td>
+</tr>
+<tr>
+<td>One component</td>
+<td><a href="../../01_CAD_Models/STEP/Individual_Parts">Individual STEP files</a></td>
+<td>CAD application, <strong>File → Open</strong> or <strong>File → Import</strong></td>
+</tr>
+<tr>
+<td>Native FreeCAD inspection assembly</td>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/aster6_home.FCStd">aster6_home.FCStd</a></td>
+<td>FreeCAD, <strong>File → Open</strong></td>
+</tr>
+<tr>
+<td>Triangle meshes</td>
+<td><a href="../../06_Complete_Project_Source/cad/exports/STL">STL exports</a></td>
+<td>Mesh viewer or a CAD application supporting STL</td>
+</tr>
+<tr>
+<td>Dimensioned interfaces</td>
+<td><a href="../../06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf">Engineering drawings PDF</a></td>
+<td>Any PDF viewer</td>
+</tr>
+</tbody>
+</table>
+<p><strong>STEP is standard solid-geometry exchange without construction history.</strong> Its geometry can be inspected or modified using the receiving application's tools; it does not include the original parametric feature sequence. The native FreeCAD file contains 54 named, saved solids and inspection metadata, rather than a sketch-based construction tree.</p>
+<p>The reproducible parametric design lives in <a href="../../06_Complete_Project_Source/cad/build123d/geometry.py">Build123d geometry</a>, <a href="../../06_Complete_Project_Source/cad/build123d/assembly.py">assembly transforms</a> and the <a href="../../06_Complete_Project_Source/config/robot.yaml">shared SI configuration</a>. Read <a href="04_cad.html#refresh-native-cad-evidence">CAD reproduction</a> before changing the design or regenerating its exports.</p>
+<h3 id="open-or-import-safely">Open or import safely</h3>
+<ol>
+<li>Save or extract the chosen file to a normal folder. On GitHub, use the file page's <strong>Download raw file</strong> control when available; do not copy its displayed text into another application.</li>
+<li>Start FreeCAD or your CAD application, then choose <strong>File → Open</strong> for a new document, or <strong>File → Import</strong> when deliberately adding geometry to an existing document. Select the <code>.step</code> or <code>.FCStd</code> file using the file-type filter.</li>
+<li>Use <strong>Fit all</strong> if the model is outside the current view. Open an <code>assembly_*.step</code> file to see positioned parts together.</li>
+<li>Save intentional edits as a <strong>new filename</strong>. Generated files are refreshed by the project scripts; an older open document should not overwrite a newer generated file.</li>
+</ol>
+<p>CAD exports use <strong>millimetres</strong>; numerical calculations use <strong>metres</strong>. Individual parts retain local group frames, so opening all part files at a common origin does not assemble the robot. Use a complete assembly or the native FreeCAD home model for that purpose.</p>
+<h2 id="open-the-kicad-project">Open the KiCad project</h2>
+<table>
+<thead>
+<tr>
+<th>Native item</th>
+<th>Actual file or folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project entry point</td>
+<td><a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_pro">joint_interface.kicad_pro</a></td>
+</tr>
+<tr>
+<td>Schematic</td>
+<td><a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_sch">joint_interface.kicad_sch</a></td>
+</tr>
+<tr>
+<td>Routed PCB</td>
+<td><a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_pcb">joint_interface.kicad_pcb</a></td>
+</tr>
+<tr>
+<td>Project-local footprint resolution</td>
+<td><a href="../../06_Complete_Project_Source/electronics/fp-lib-table">fp-lib-table</a> and <a href="../../06_Complete_Project_Source/electronics/ASTER_Interface.pretty">ASTER_Interface.pretty</a></td>
+</tr>
+<tr>
+<td>Symbol resolution and rules</td>
+<td><a href="../../06_Complete_Project_Source/electronics/sym-lib-table">sym-lib-table</a> and <a href="../../06_Complete_Project_Source/electronics/joint_interface.kicad_dru">joint_interface.kicad_dru</a></td>
+</tr>
+<tr>
+<td>Readable circuit and layers</td>
+<td><a href="../../06_Complete_Project_Source/electronics/exports/joint_interface.pdf">Schematic PDF</a> and <a href="../../06_Complete_Project_Source/electronics/exports/pcb_layers.pdf">PCB layer PDF</a></td>
+</tr>
+</tbody>
+</table>
+<p>With <strong>KiCad 10</strong> and its standard libraries installed, keep the project, schematic, PCB, rule files, library tables and local footprint folder together. Open the <code>.kicad_pro</code> file in KiCad, then open the schematic or PCB editor. Open the <code>.kicad_sch</code> or <code>.kicad_pcb</code> directly only when their surrounding project context is retained. The custom F1 footprint resolves through <code>${KIPRJMOD}</code>; downloading the board alone omits that editable library context.</p>
+<p>For component roles, supply assumptions and verification scope, read the <a href="electronics_tour.html">circuit tour</a>, <a href="electronics_components.html">component guide</a> and <a href="05_electronics.html">electronics chapter</a>. Native files and rule checks remain digital design evidence, without physical qualification.</p>
+<h2 id="focused-inspection-zips-on-this-computer">Focused inspection ZIPs on this computer</h2>
+<p>These archives exist in the local <code>07_Releases</code> folder. They are ignored by Git and are <strong>not downloads hosted in the GitHub file tree</strong>. Open that local folder to use them; when reading on GitHub, use the tracked engineering files above instead.</p>
+<table>
+<thead>
+<tr>
+<th>Local archive</th>
+<th>Intended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ASTER-6_STEP_STL_CAD.zip</code></td>
+<td>Extract the CAD exchange files, then open a complete STEP assembly</td>
+</tr>
+<tr>
+<td><code>ASTER-6_FreeCAD_Model.zip</code></td>
+<td>Extract and open the native saved-solid FreeCAD model</td>
+</tr>
+<tr>
+<td><code>ASTER-6_KiCad_Project.zip</code></td>
+<td>Extract the project with its local library context, then open the <code>.kicad_pro</code> file</td>
+</tr>
+<tr>
+<td><code>ASTER-6_PCB_STEP.zip</code></td>
+<td>Import the native board STEP into mechanical CAD; 100 × 100 × 11.54 mm, with fitted component and copper geometry</td>
+</tr>
+<tr>
+<td><code>ASTER-6_Browser_Inspection.zip</code></td>
+<td>Extract the self-contained browser inspection pack for offline viewing</td>
+</tr>
+<tr>
+<td><code>ASTER-6_Inspection_With_CAD.zip</code></td>
+<td>Extract the browser viewers together with the selected CAD and KiCad downloads for combined offline inspection</td>
+</tr>
+</tbody>
+</table>
+<p>Downloading or opening these files is optional. The online viewers remain the immediate inspection route, and the <a href="Project_Readme.html">source project guide</a> covers local reproduction.</p></main></html>

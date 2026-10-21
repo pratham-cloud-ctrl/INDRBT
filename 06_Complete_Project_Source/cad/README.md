@@ -6,6 +6,8 @@ This folder contains ASTER-6's reproducible mechanical design and generated mode
 
 [Inspect the robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) to orbit, move joints, adjust the gripper, isolate parts and play the task without downloading files. Native files and reproduction steps below are optional for offline inspection or editing.
 
+**[Native-file and local-pack guide](../docs/cad_downloads.md)** — open the actual STEP assembly, individual parts or FreeCAD model, understand their units/history and find the local inspection ZIPs. Consolidated public ZIP hosting is still pending; the guide states its status.
+
 ![The ASTER-6 solid model in its home configuration](renders/hero.png)
 
 ## Open the right file

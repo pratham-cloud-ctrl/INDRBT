@@ -4,6 +4,8 @@
 
 [Documentation home](README.md) · [Project purpose](project_alignment.md) · [Full theory guide](theory_guide.md)
 
+For optional application inspection, the [native-file guide](cad_downloads.md) links actual STEP/FreeCAD/KiCad files and local packs, distinguishes geometry exchange from construction history and states the pending public-download status.
+
 ASTER-6 asks one connected question: **can an original six-axis arm move a tool through a useful task, support an assumed load and follow commands in a defined digital model?** Follow the same pick-and-place demonstration from geometry to evidence below. No physical robot was built.
 
 **Reading key:** TARGET is a desired specification; ASSUMED is a model input; CALCULATED and SIMULATED are model outputs; VERIFIED DIGITALLY identifies an executed check. The 4 kg payload and ±0.1 mm repeatability remain targets.

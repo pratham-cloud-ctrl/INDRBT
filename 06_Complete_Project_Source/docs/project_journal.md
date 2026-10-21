@@ -111,3 +111,9 @@ A real visitor could not preview the 2.37 MB STL on GitHub. The repository's bui
 The owner explicitly approved making only this showcase public while keeping the engineering repository private. The source CAD, schematic, PCB, configuration and numerical software remain unchanged. Browser checks covered component selection, kinematics, PCB search/net highlighting, 3D board views, drawings, core guide routes and phone layout. An offline inspection pack was also verified with HTTP requests blocked.
 
 Public viewer: https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site
+
+## Native inspection packs and hosting boundary - 21 October 2026
+
+Focused STEP/STL, native FreeCAD, KiCad and offline-browser inspection ZIPs were prepared in the local `07_Releases` folder. The new native-file guide links existing tracked assemblies, individual parts, the FreeCAD saved-solid model and the KiCad project/library context, with application-opening instructions. These archives are ignored by Git and are not claimed as GitHub-hosted downloads.
+
+The consolidated public download page remains prepared but unpublished: the Sites connection currently returns no accessible project. The live browser showcase remains the immediate inspection route. Documentation avoids unpublished download URLs and states this boundary while access is restored. No CAD, board or software-model changes are part of this documentation update.

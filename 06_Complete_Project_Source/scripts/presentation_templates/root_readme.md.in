@@ -4,6 +4,8 @@ An original digital robotics project connecting mechanical design, robot mathema
 
 **[OPEN THE INTERACTIVE ENGINEERING SHOWCASE](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site)** — inspect the 3D robot, 3D PCB, components, schematics and theory in your browser. No CAD application or GitHub sign-in is needed.
 
+**[Open the actual CAD and KiCad files](06_Complete_Project_Source/docs/cad_downloads.md)** — STEP assembly/parts, native FreeCAD and the KiCad project, with application-opening instructions and local inspection packs. Consolidated public ZIP hosting is pending; the browser showcase above remains available.
+
 **[CAD & mechanical design](01_CAD_Models/README.md) · [Electronics & KiCad](04_Electronics/README.md) · [Theory & calculations](03_Reports_and_Results/README.md)**
 
 ![ASTER-6 actual CAD assembly with its interchangeable parallel-jaw gripper](01_CAD_Models/Preview_Images/hero.png)

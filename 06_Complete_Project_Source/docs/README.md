@@ -2,6 +2,8 @@
 
 **[Open the public design library](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#guides)** — no CAD application or GitHub access required.
 
+**[Open CAD and KiCad files in their applications](cad_downloads.md)** — actual files, local inspection packs, format differences and the current download status.
+
 **Understand the design. Follow the evidence. Reproduce the results.**
 
 ASTER-6 is an original six-axis digital robot with a parallel-jaw gripper. This library connects its CAD, mathematics, motion, load calculations, feedback control and conceptual electronics. The design's 790 mm reach is calculated; 4 kg payload and ±0.1 mm repeatability remain targets. No physical robot was built.

@@ -6,6 +6,8 @@ This is the authoritative source for the **100 × 100 mm, four-layer joint/senso
 
 [Inspect the PCB online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb), [rotate the 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d) or [zoom the schematic](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#schematic) without installing KiCad or downloading files. The native project steps below are optional for offline editing.
 
+**[Native-file and local-pack guide](../docs/cad_downloads.md#open-the-kicad-project)** — open the actual KiCad project with its schematic, board and custom library context, or use the focused pack already present in the local project. Consolidated public ZIP hosting remains pending.
+
 ![Native KiCad 3D board export](exports/pcb_3d.png)
 
 | Browse without KiCad | Open |

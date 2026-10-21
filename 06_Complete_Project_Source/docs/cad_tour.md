@@ -4,6 +4,8 @@
 
 [Project home](../../README.md) · [CAD files](../cad/README.md) · [All 54 components](component_catalog.md) · [Detailed CAD method](04_cad.md)
 
+**[Open the native models and local inspection packs](cad_downloads.md)** — direct STEP and FreeCAD files, millimetre units and application-opening instructions. Public ZIP hosting is pending; online inspection above remains available.
+
 ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The model has **54 solid components**, **six saved poses** and **90 mm of clear jaw opening**. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.
 
 ![ASTER-6 home assembly, showing the fixed base, two arm links, wrist and parallel gripper](../cad/renders/hero.png)

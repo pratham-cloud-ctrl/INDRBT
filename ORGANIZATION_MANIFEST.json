@@ -932,7 +932,7 @@
     {
       "source": "results/validation/repository_audit.json",
       "file": "03_Reports_and_Results/Validation/repository_audit.json",
-      "sha256": "dda7c03e820476842e15af417ef5e632f66ede01013ef45a1306828aa24fe62e"
+      "sha256": "c66538be91c3f4c5fe2987f4a9b5e590fddde54dd479ef36fa01445e95a5243f"
     },
     {
       "source": "results/validation/software_boundary_review.json",
@@ -1228,9 +1228,9 @@
   "derived_documents": [
     {
       "source": "README.md",
-      "source_sha256": "2c458dca3bf6d46c19dc59ff2437c7634a7ca4dd00fdbe55ca94cf684c9d722b",
+      "source_sha256": "4f01d81a4170f077ebdb0965c9c95a800cef669e5ad2eb663ec169e6b59ebbd9",
       "file": "03_Reports_and_Results/Readable_Reports/Project_Readme.html",
-      "sha256": "0911dc9b354c8a34cf79a5a5a07f93ce3e9da964fb8a5a45083f12e9e08fea60"
+      "sha256": "ecbe146b69840208ae77f34c68e60577fccb1897950f0503a0560292b4806644"
     },
     {
       "source": "docs/00_environment.md",
@@ -1275,10 +1275,16 @@
       "sha256": "081e84070433a7a8eda5b9eab06386de3907249bbd77f18ab5ee42fbe5386e92"
     },
     {
+      "source": "docs/cad_downloads.md",
+      "source_sha256": "c5f1b03ce4b8ea759712a3e6d43ebc6629ddf18c4f80e9e42f38c5a2a312741a",
+      "file": "03_Reports_and_Results/Readable_Reports/cad_downloads.html",
+      "sha256": "f9c328cfea6e0ea0ae4bacc8d8299b44d7fc0a4b2a7f8a5a530d994a9a1cd0dd"
+    },
+    {
       "source": "docs/cad_tour.md",
-      "source_sha256": "82f05c10e3de9c9db65dfc2793dbab01ef06d93b7d9b87897c7def6a13f64e74",
+      "source_sha256": "800fc7e183959fee51a67e1e7b13dce634f81fd35c26a743b3cb7e013d85b52a",
       "file": "03_Reports_and_Results/Readable_Reports/cad_tour.html",
-      "sha256": "b94742eec3b5f90316bc7324acbe495180ae84ed93d047e472af41750e50e9e3"
+      "sha256": "61ef3e99c5fcd711c27143fd3e4a2e6135e87b96443498576c7dfdc0710d4fca"
     },
     {
       "source": "docs/completion_checklist.md",
@@ -1312,9 +1318,9 @@
     },
     {
       "source": "docs/electronics_tour.md",
-      "source_sha256": "5ad341f1bd514c655e0ff06626c7fc3a1af0fa95f10c402968020b9e863306c6",
+      "source_sha256": "4d1585c27baa33ed619ad2a6e11ffbe8a25e33957a11dd1b755477310701011e",
       "file": "03_Reports_and_Results/Readable_Reports/electronics_tour.html",
-      "sha256": "62115fb95b929ba41c2989e5d1978e962149d3b2cdfc516ac04d31d070f0738c"
+      "sha256": "aead1eb25e6b13d21cad9c7aa8d1ab65c32ee1f6f43400ff5a12667c235b41e8"
     },
     {
       "source": "docs/engineering_report.md",
@@ -1324,9 +1330,9 @@
     },
     {
       "source": "docs/engineering_walkthrough.md",
-      "source_sha256": "6f6e524843763ab19c1a3d56ff7234f602b6828fb4372ac79e921016289bad81",
+      "source_sha256": "ccacfc2e7d8e62cef95d4a3474f05b4b18f8b072e6480f8f7dcf5e0f96e862a7",
       "file": "03_Reports_and_Results/Readable_Reports/engineering_walkthrough.html",
-      "sha256": "dcee23da8c6b82b8ee73aef5ef35fb01c51187d49e2d53996be5aacd4fa2f347"
+      "sha256": "032a15e54bfdd9efb3926efc6fbb57e969f2fb4ea1431e8b1b284a2d76ecf54c"
     },
     {
       "source": "docs/final_review.md",
@@ -1348,15 +1354,15 @@
     },
     {
       "source": "docs/project_journal.md",
-      "source_sha256": "1faf01380aaecc242c86748a87b26aa4ca1ede4c4955ae645207aa5a82ecd4b7",
+      "source_sha256": "8bd1409679f4dc603c72b2f730189fccc5d037ea10d624421aeea8af876ef606",
       "file": "03_Reports_and_Results/Readable_Reports/project_journal.html",
-      "sha256": "ee1409c4c0c080a59dd05f68119982721ca7b5ecd34d6da146f164ae35a79862"
+      "sha256": "b47601c78a20a8217026dead54798e64cc82c7ffc80d9b2f463f4c4a90c1b33b"
     },
     {
       "source": "docs/README.md",
-      "source_sha256": "dd6bc807f35f3da992bfc35ac5a984fa2d1cad99be079ac399bd83daffdcb9c3",
+      "source_sha256": "c4fc1747c185d773d023726eea7e518cc1a38b7223e3f4744791a34bdd7d64fa",
       "file": "03_Reports_and_Results/Readable_Reports/Documentation_Index.html",
-      "sha256": "1c0d1eb55f480145f3a6d26a2a8755a90cb12b2e6e835ef02bbfbbc77beaa576"
+      "sha256": "56636bc16b87fb10339f2502cf80736f65a0203cf836156964e3b5e09f32bf19"
     },
     {
       "source": "docs/release_notes.md",
@@ -1366,9 +1372,9 @@
     },
     {
       "source": "docs/theory_guide.md",
-      "source_sha256": "7bc22f5b4a2b9ea8e006a8749c59f80ef5c1388bb4aa7cecc1bf865d17783c68",
+      "source_sha256": "ef280750aeb5d77d304efa66a82f9f1b78108f718cce06bdeb27712ab942df5d",
       "file": "03_Reports_and_Results/Readable_Reports/theory_guide.html",
-      "sha256": "edd561085f165bfdd02882f5d3a868bbb755903d23c872e1438cf4d07d803839"
+      "sha256": "75ae0979163b9ffbf5a85bb6da5468bec8ee3e987043c4fd03c03770cf9de21b"
     },
     {
       "source": "docs/validation_matrix.md",
@@ -1378,15 +1384,15 @@
     },
     {
       "source": "cad/README.md",
-      "source_sha256": "03a0dd63254520776f0d78afcf6418f730bf5fb6dd10023a9a3e51f42ad1764f",
+      "source_sha256": "8b00d2df650e60e5a43864bb378ccd7704fed7b27c0b21a808f70d5f8bc84b5c",
       "file": "03_Reports_and_Results/Readable_Reports/CAD_Source_Index.html",
-      "sha256": "d65bb208246d65176ecee6ef266e8022b53e31442e9b7469a33cf658ac4f4ee2"
+      "sha256": "71d1b8d196adf6f991514db80e8e1f8c766aac64af8664d34a6e4de259ed3ce6"
     },
     {
       "source": "electronics/README.md",
-      "source_sha256": "7c105f85e4a641ead1266b3ab6047a6f25baec43afc3bcc946db2cb9201c7f97",
+      "source_sha256": "63b09ff84532f53d49da572228c173bf6f5a0e6e50263d0d6a5d8fa8d4cff64a",
       "file": "03_Reports_and_Results/Readable_Reports/Electronics_Source_Index.html",
-      "sha256": "c89a46d0f554705aaf1811ecbd74a3ea5aff7f4af1231b0f7230ec33800ca3f9"
+      "sha256": "f421a1a720cf4d7348531191f762d1832768a023fbd197809839a0791b6208c9"
     },
     {
       "source": "results/validation/validation_report.md",
@@ -1398,7 +1404,7 @@
   "generated_files": [
     {
       "file": "START_HERE.html",
-      "sha256": "f873d6222c87b1b61c841d974d11d620d54449c2d1f46a24b348cbbb0c1204bb"
+      "sha256": "0b20d7d07bf45d6917b456f6b1888242d8f7f1772f8618929f15fff2182b6329"
     },
     {
       "file": "START_HERE.txt",
@@ -1406,7 +1412,7 @@
     },
     {
       "file": "README.md",
-      "sha256": "fbb3cfa3bc0a33eec85103989757248eab433d88f5ef4a67189f1a33655992e5"
+      "sha256": "708126ce13474531d2ed8e271c690a72d79e1072a292d7760aaef794d644d16f"
     },
     {
       "file": "OPEN_PROJECT_HOME.cmd",
@@ -1430,19 +1436,19 @@
     },
     {
       "file": "01_CAD_Models/README.md",
-      "sha256": "269674f551fab11ba7e6cff13ec84599056ae44c7054296a7fde3c8c0968893d"
+      "sha256": "d8e862715e7621dac5b11b64490509229c6aed218ab4e04ee7e8f00c24b82ce7"
     },
     {
       "file": "02_Simulation_and_Animation/README.md",
-      "sha256": "2fba398139b0388c692589ef8143dc3ae02678ec5682749ac7788098d5a91adf"
+      "sha256": "ad117af0e1ebb212611e5faea0a5852c83fc06cf178ce70eb1a4b17bac354377"
     },
     {
       "file": "03_Reports_and_Results/README.md",
-      "sha256": "d555768d622952d94de9db72df5b22d304a08a2446ca2ce84f7ae32eb6b68550"
+      "sha256": "0d1385d56eadfbb64969944f4c0407947d839fc50a269a825053b207bc934824"
     },
     {
       "file": "04_Electronics/README.md",
-      "sha256": "83425e85039e10085ab9397d0b29945f0a8a586166519f0d895b7f4e16016857"
+      "sha256": "280462ae9a84ececd76a84868b81b85df70e2f3f4b7c5156da6ac8a03b76abb6"
     }
   ],
   "generation_inputs": [
@@ -1460,23 +1466,23 @@
     },
     {
       "source": "scripts/presentation_templates/cad_readme.md.in",
-      "sha256": "e6d059b0f64e4ba3357dc5e1ac9e13d57aa6727c93e1365b1f47ac2419b426e5"
+      "sha256": "103b8641594cdd765dff50fab4406148568413ee53ad57ef039f0a5a6ada7310"
     },
     {
       "source": "scripts/presentation_templates/electronics_readme.md.in",
-      "sha256": "f05efc8df23ae772d35b06d5b0186c5ac540d23af9ee91f6101941b3dc14f094"
+      "sha256": "41c488d66592f5bbaa9e3661c463b2d2da8b3c14371c43e0d8f926972a05da3b"
     },
     {
       "source": "scripts/presentation_templates/reports_readme.md.in",
-      "sha256": "4bc94a451db1f983c1146ed6e948ff2f4e9f0e9a5ad70be4ed56cd4f71be776e"
+      "sha256": "6800c62e7a71137051b82ffcc3a53228c4b8b7aaff0b9d457c1783d5578e3b7a"
     },
     {
       "source": "scripts/presentation_templates/root_readme.md.in",
-      "sha256": "fc092aeb951dbbe369ab629471873e476dd076c33256795c703b56af2a4d7faf"
+      "sha256": "c486a367a03499ba7be835ce2b54cdcc26e8df24706e8aa69a10f6a986c548de"
     },
     {
       "source": "scripts/presentation_templates/simulation_readme.md.in",
-      "sha256": "3757fd5207c460dfc8f5f3f20ae3432dc7fb90f3d99bda45a12aca8925ecac01"
+      "sha256": "c99a1d91669b06a3dfc9656085789d81edb6bf657253ca9bab67b13a0a5c3d55"
     }
   ],
   "source_repository": "06_Complete_Project_Source",

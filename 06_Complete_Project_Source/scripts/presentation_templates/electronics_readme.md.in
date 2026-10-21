@@ -27,6 +27,8 @@ References such as **U1**, **R5** or **J3** identify the same part in the schema
 
 ## Open the KiCad project
 
+**[Native KiCad and local-pack opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project)** — actual project, schematic, board and custom library context. Focused ZIPs exist in the local project; consolidated public ZIP hosting remains pending.
+
 1. For optional offline editing, download and extract the **complete repository**, keeping this folder together.
 2. Open [joint_interface.kicad_pro](joint_interface.kicad_pro) in **KiCad 10**, then choose the schematic or PCB editor.
 3. On Windows, **OPEN_PCB_LAYOUT.cmd** in the parent folder opens the routed board directly.

@@ -8,6 +8,8 @@ and [engineering report](engineering_report.md). The current numerical values li
 in the linked result files and [KPI table](kpis.md), so this guide concentrates on
 the equations and how to interpret their evidence.
 
+For optional inspection in a CAD or electronics application, follow the [native-file and local-pack guide](cad_downloads.md). It links the actual files and explains the current hosting status; ordinary browser inspection remains available through the showcase.
+
 ## 1. Start with units and assumptions
 
 [The configuration](../config/robot.yaml) is the common source for geometry,

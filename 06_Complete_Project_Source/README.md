@@ -14,6 +14,8 @@ Designed for robotics education and portfolio review. Every result is generated 
 
 For a visual introduction, start with these guides. This source README contains the installation, reproduction commands and detailed evidence map.
 
+**[Open the actual CAD and KiCad files](docs/cad_downloads.md)** — STEP assemblies and parts, native FreeCAD, the KiCad project and local inspection packs, with application-opening instructions and the current download status.
+
 ## See it move
 
 Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
