@@ -1,0 +1,114 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>How ASTER-6 works · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#how-aster-6-works">How ASTER-6 works</a><ul>
+<li><a href="#1-geometry-gives-the-tool-somewhere-to-go">1. Geometry gives the tool somewhere to go</a></li>
+<li><a href="#2-kinematics-turns-geometry-into-a-tool-pose">2. Kinematics turns geometry into a tool pose</a></li>
+<li><a href="#3-give-the-tool-a-useful-job">3. Give the tool a useful job</a></li>
+<li><a href="#4-check-loads-before-choosing-a-drive">4. Check loads before choosing a drive</a></li>
+<li><a href="#5-make-the-gripper-calculation-match-its-mechanism">5. Make the gripper calculation match its mechanism</a></li>
+<li><a href="#6-test-how-a-simplified-joint-follows-commands">6. Test how a simplified joint follows commands</a></li>
+<li><a href="#7-connect-the-model-to-meaningful-conceptual-electronics">7. Connect the model to meaningful conceptual electronics</a></li>
+<li><a href="#continue-from-the-question-that-interests-you">Continue from the question that interests you</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="how-aster-6-works">How ASTER-6 works</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#how-aster-6-works">How ASTER-6 works</a><ul>
+<li><a href="#1-geometry-gives-the-tool-somewhere-to-go">1. Geometry gives the tool somewhere to go</a></li>
+<li><a href="#2-kinematics-turns-geometry-into-a-tool-pose">2. Kinematics turns geometry into a tool pose</a></li>
+<li><a href="#3-give-the-tool-a-useful-job">3. Give the tool a useful job</a></li>
+<li><a href="#4-check-loads-before-choosing-a-drive">4. Check loads before choosing a drive</a></li>
+<li><a href="#5-make-the-gripper-calculation-match-its-mechanism">5. Make the gripper calculation match its mechanism</a></li>
+<li><a href="#6-test-how-a-simplified-joint-follows-commands">6. Test how a simplified joint follows commands</a></li>
+<li><a href="#7-connect-the-model-to-meaningful-conceptual-electronics">7. Connect the model to meaningful conceptual electronics</a></li>
+<li><a href="#continue-from-the-question-that-interests-you">Continue from the question that interests you</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p><a href="index.html">Documentation home</a> · <a href="project_alignment.html">Project purpose</a> · <a href="theory_guide.html">Full theory guide</a></p>
+<p>ASTER-6 asks one connected question: <strong>can an original six-axis arm move a tool through a useful task, support an assumed load and follow commands in a defined digital model?</strong> Follow the same pick-and-place demonstration from geometry to evidence below. No physical robot was built.</p>
+<p><strong>Reading key:</strong> TARGET is a desired specification; ASSUMED is a model input; CALCULATED and SIMULATED are model outputs; VERIFIED DIGITALLY identifies an executed check. The 4 kg payload and ±0.1 mm repeatability remain targets.</p>
+<h2 id="1-geometry-gives-the-tool-somewhere-to-go">1. Geometry gives the tool somewhere to go</h2>
+<p>Six revolute joints turn about local <strong>Z–Y–Y–X–Y–X</strong> axes. The shoulder and elbow position the wrist; the three wrist joints change tool orientation. The upper arm is 320 mm, the forearm 280 mm and the wrist/tool offsets total 190 mm. Their sum gives a <strong>790 mm shoulder-centred radial reach bound</strong>. The shoulder is 190 mm above the base plane, giving a 980 mm TCP height in the straight-up pose. TCP means tool centre point.</p>
+<p><img alt="The calculated home pose and local coordinate frames" src="assets/results/workspace/coordinate_frames.png" /></p>
+<p><strong>Read the figure:</strong> each red/green/blue triad shows a local X/Y/Z frame after a joint rotation. These same frames place the CAD parts. It establishes the coordinate convention; it does not establish structural stiffness or collision clearance.</p>
+<p>Geometry, limits and assumptions live in the <a href="data/config--robot.html">central SI configuration</a>. The <a href="04_cad.html">CAD chapter</a>, <a href="component_catalog.html">component catalog</a> and <a href="assets/docs/drawings/engineering_interfaces.pdf">drawings</a> connect the dimensions to the modeled interfaces.</p>
+<h2 id="2-kinematics-turns-geometry-into-a-tool-pose">2. Kinematics turns geometry into a tool pose</h2>
+<p><strong>Forward kinematics (FK)</strong> answers “where is the tool for these six angles?” A transform carries both position and orientation. Multiplying joint rotations and link translations follows the arm from base to tool:</p>
+<pre><code class="language-text">T = Tz(h) Rz(q1) Ry(q2) Tx(L1) Ry(q3) Tx(L2)
+    Rx(q4) Tx(lr) Ry(q5) Tx(lp) Rx(q6) Tx(lt)
+</code></pre>
+<p><code>Tz</code>/<code>Tx</code> are translations; <code>Rx</code>/<code>Ry</code>/<code>Rz</code> are rotations. Distances use metres and angles use radians internally. At zero angles, FK must return <code>(0.790, 0, 0.190)</code> metres with identity orientation: a useful hand check.</p>
+<p><strong>Inverse kinematics (IK)</strong> works backward from a requested tool pose. ASTER-6 uses bounded numerical least squares and deterministic restart seeds, then checks the returned pose. The retained 60 perturbed-seed trials have a maximum position residual of <strong>2.70 × 10⁻¹¹ m</strong>. That checks numerical reconstruction; it is unrelated to physical repeatability. A failed local search does not prove that every branch is unreachable.</p>
+<p>The <strong>Jacobian</strong> relates small joint motions to tool velocity: <code>[linear velocity; angular velocity] = J(q) × joint velocity</code>. Near a singular pose, some tool motions become difficult or impossible without large joint speeds. MOVE L therefore rejects sampled poses whose smallest scaled singular value is at or below 0.001; this is a numerical guard, not a safety threshold.</p>
+<p><img alt="Six thousand joint-limit samples projected into Cartesian space" src="assets/results/workspace/workspace_projections.png" /></p>
+<p><strong>Read the plot:</strong> the points show where FK places the TCP for 6,000 seeded joint samples; colour indicates Jacobian conditioning. The envelope includes below-floor and self-colliding possibilities. Its convex hull fills holes and is not a certified reachable or safe volume.</p>
+<p>Continue with <a href="02_kinematics.html">frames, IK and Jacobian derivations</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/src/robotarm/kinematics/model.py" target="_blank" rel="noopener noreferrer" class="private-link">implementation<span class="badge">Source file</span></a> and <a href="data/results--validation--numerical_validation.html">numerical checks</a>.</p>
+<h2 id="3-give-the-tool-a-useful-job">3. Give the tool a useful job</h2>
+<p>The task starts at home, approaches an object, descends, closes the gripper, lifts, transfers, lowers, releases and returns home. <strong>MOVE J</strong> interpolates joint angles for transfers. <strong>MOVE L</strong> follows an approximately straight tool path using successive IK solutions for approach and retreat.</p>
+<p><img alt="TCP path and coordinates during the recorded pick-and-place task" src="assets/results/trajectories/pick_place_tcp.png" /></p>
+<p><strong>Read the plot:</strong> vertical approaches appear where X/Y stay constant while Z changes; the transfer curves because it uses joint-space motion. Dwell intervals allow the scripted gripper events. This shows the requested geometric path, not contact or payload dynamics.</p>
+<p><img alt="Joint angles, speeds and accelerations during the same task" src="assets/results/trajectories/pick_place_joints.png" /></p>
+<p><strong>Read the plot:</strong> the derivatives show what each joint must do to follow that path. Quintic MOVE J segments have zero endpoint speed and acceleration. MOVE L derivatives use finite differences and time scaling; their limits are checked at samples. Continuous collision freedom and between-sample derivative bounds are not certified.</p>
+<p>The simulated task takes <strong>9.24398 s</strong>, records <strong>1,041 samples</strong> and travels <strong>1.32360 m</strong>. The largest speed and acceleration fractions are <strong>95.17%</strong> and <strong>99.80%</strong> of the assumed limits. The object attaches to the tool through an ideal kinematic constraint, rather than friction/contact physics.</p>
+<p>See the <a href="data/results--trajectories--pick_place_metrics.html">recorded metrics and phase timings</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/src/robotarm/planning/trajectories.py" target="_blank" rel="noopener noreferrer" class="private-link">planner<span class="badge">Source file</span></a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/src/robotarm/simulation/tasks.py" target="_blank" rel="noopener noreferrer" class="private-link">task sequence<span class="badge">Source file</span></a> and <a href="assets/results/trajectories/pick_place_fk.gif">FK animation</a>. To operate the interactive CAD twin, follow the <a href="reproduction.html#run">project launch instructions</a>; GitHub displays its HTML source rather than running the viewer.</p>
+<h2 id="4-check-loads-before-choosing-a-drive">4. Check loads before choosing a drive</h2>
+<p>A long reach increases leverage. Using ASSUMED link masses and midpoint centres of mass, the 4 kg load at full extension gives <strong>70.165 N·m shoulder</strong> and <strong>31.880 N·m elbow</strong> static holding-torque magnitudes. The load model totals 23.65 kg; the separately calculated 19.908 kg CAD envelope sum uses simplified component interiors and overlaps, so the two quantities serve different purposes.</p>
+<p><img alt="Effect of assumed payload on extended-pose shoulder and elbow torque" src="assets/results/research/payload.png" /></p>
+<p><strong>Read the plot:</strong> each added kilogram increases torque in proportion to its lever arm. It is a sensitivity study for the assumed mass/geometry model, not a measured payload rating.</p>
+<p>The conceptual drive calculation adds diagonal inertia and damping allowances, then applies safety factor 2:</p>
+<pre><code class="language-text">output torque = 2 × (gravity bound + sizing inertia × acceleration limit
+                    + damping × velocity limit)
+motor torque  = output torque / (gear ratio × assumed efficiency)
+</code></pre>
+<p>The shoulder result is <strong>165.425 N·m output</strong>, or <strong>1.969 N·m motor torque</strong> with a 120:1 ratio and 0.70 efficiency. Sizing inertia uses the larger of the educational plant inertia and the corresponding point-mass inertia bound. Coupled dynamics, reflected drive inertia and continuous-duty heating remain outside this calculation.</p>
+<p>An ideal beam model estimates <strong>0.10408 mm serial TCP deflection</strong>. Holes, contacts, bearings and gearbox compliance are omitted; this does not establish full assembly stiffness or ±0.1 mm repeatability. Follow the <a href="03_mechanical_analysis.html">mechanical chapter</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/analysis/joint_torque_analysis.py" target="_blank" rel="noopener noreferrer" class="private-link">torque source<span class="badge">Source file</span></a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/analysis/structural_analysis.py" target="_blank" rel="noopener noreferrer" class="private-link">beam source<span class="badge">Source file</span></a> and <a href="data/results--mechanical--joint_torque.html">load results</a>.</p>
+<h2 id="5-make-the-gripper-calculation-match-its-mechanism">5. Make the gripper calculation match its mechanism</h2>
+<p>An opposed-hand lead screw moves two guided jaws symmetrically. A <strong>90 mm opening</strong> requires <strong>45 mm travel per jaw</strong>. Each nut travels 4 mm per revolution, so the full gap changes by 8 mm and the full stroke needs <strong>11.25 revolutions</strong>.</p>
+<p>For the <strong>200 N total normal-force target</strong> (100 N per jaw), work balance gives <code>torque = total normal force × lead / (2π × efficiency)</code>. At assumed efficiency 0.35, the required screw torque is <strong>0.363783 N·m</strong>. With assumed friction coefficient 0.5 and safety factor 2, the ideal static friction-only capacity is <strong>5.099 kg</strong>. It is not a physical load rating; acceleration, guide friction and object contact are omitted.</p>
+<p>Explore the <a href="assets/cad/renders/gripper.png">gripper render</a>, <a href="03_mechanical_analysis.html#gripper-mechanism">mechanism and finger-stiffness discussion</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/src/robotarm/gripper/model.py" target="_blank" rel="noopener noreferrer" class="private-link">gripper code<span class="badge">Source file</span></a> and <a href="assets/results/research/finger_length.png">finger-length study</a>. Screw threads and preload remain conceptual in the CAD.</p>
+<h2 id="6-test-how-a-simplified-joint-follows-commands">6. Test how a simplified joint follows commands</h2>
+<p>The planner supplies desired angles. A PID controller uses position error, accumulated error and velocity error to command torque. Torque saturation and conditional integration limit the command and reduce integrator windup. Each virtual joint follows <code>I × acceleration + b × velocity = commanded torque</code>.</p>
+<p><img alt="Desired and simulated joint motion, errors and commanded torques" src="assets/results/control/pid_tracking.png" /></p>
+<p><strong>Read the plot:</strong> dashed and solid curves compare desired and simulated angles; the middle panel exposes tracking error, and the bottom panel shows the torque command. The overall task tracking RMSE is <strong>0.006383 rad</strong> across all joint samples. It is an aggregate angular metric, not TCP accuracy. Gravity, coupling, backlash, noise and drive delay are absent from these independent-axis plants.</p>
+<p>Read the <a href="architecture.html">architecture</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/src/robotarm/control/pid.py" target="_blank" rel="noopener noreferrer" class="private-link">PID source<span class="badge">Source file</span></a>, <a href="assets/results/control/pid_step_response.png">step response</a>, <a href="data/results--control--metrics.html">control metrics</a> and <a href="assets/results/research/pid_tuning.png">gain-sensitivity study</a>.</p>
+<h2 id="7-connect-the-model-to-meaningful-conceptual-electronics">7. Connect the model to meaningful conceptual electronics</h2>
+<p>The KiCad design covers a <strong>low-voltage joint/sensor interface</strong>: an external 3.3 V controller, encoder and limit inputs, external-drive commands, regulated power and RS-485 communication. It is a concrete subsection of the proposed controller architecture; the Python simulation does not run through the PCB.</p>
+<p><img alt="The routed four-layer joint/sensor interface PCB" src="assets/electronics/exports/pcb_top.png" /></p>
+<p><strong>Read the image:</strong> connector placement, power distribution and routing are inspectable against the schematic and manufacturing exports. The board has 48 footprints and four copper layers. Retained native checks report <strong>zero ERC violations and zero DRC errors, warnings or unconnected items</strong> under the documented enabled rules. These checks do not establish EMC, thermal, functional-safety or hardware performance.</p>
+<p>Follow the <a href="05_electronics.html">electronics chapter</a>, <a href="electronics_components.html">component/BOM guide</a>, <a href="assets/electronics/exports/joint_interface.pdf">schematic PDF</a>, <a href="assets/electronics/exports/pcb_layers.pdf">PCB layers PDF</a> and <a href="data/electronics--pcb_verification.html">native check evidence</a>.</p>
+<h2 id="continue-from-the-question-that-interests-you">Continue from the question that interests you</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Next stop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>How are the equations derived?</td>
+<td><a href="theory_guide.html">Full theory guide</a> and <a href="02_kinematics.html">kinematics</a></td>
+</tr>
+<tr>
+<td>Why these engineering choices?</td>
+<td><a href="01_requirements.html">Requirements</a>, <a href="design_decisions.html">decisions</a> and <a href="project_journal.html">journal</a></td>
+</tr>
+<tr>
+<td>What changed when parameters varied?</td>
+<td><a href="data/results--research--experiments.html">Five actual research sweeps</a> and <a href="engineering_report.html#16-results-and-research-questions">their interpretation</a></td>
+</tr>
+<tr>
+<td>What was actually checked?</td>
+<td><a href="validation_matrix.html">Validation matrix</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">executed report<span class="badge">Source file</span></a> and <a href="digital_scope_audit.html">scope audit</a></td>
+</tr>
+<tr>
+<td>How do I reproduce the demonstration?</td>
+<td><a href="reproduction.html#run">Setup and run commands</a>, then <a href="04_cad.html#refresh-native-cad-evidence">CAD reproduction</a> for native outputs</td>
+</tr>
+</tbody>
+</table></div><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

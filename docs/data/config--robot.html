@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Robot · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Robot</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · config/robot.yaml · SHA-256 bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>name: ASTER-6
+units: {length: m, angle: rad, mass: kg, time: s, torque: N*m}
+geometry:
+  base_diameter: 0.220
+  shoulder_height: 0.190
+  upper_arm_length: 0.320
+  forearm_length: 0.280
+  wrist_roll_length: 0.045
+  wrist_pitch_length: 0.035
+  tool_length: 0.110
+  tool_flange_diameter: 0.060
+  upper_arm_width: 0.080
+  upper_arm_depth: 0.100
+  forearm_width: 0.065
+  forearm_depth: 0.080
+  wall_thickness: 0.004
+joint_limits_deg:
+  - [-170, 170]
+  - [-120, 75]
+  - [-135, 135]
+  - [-180, 180]
+  - [-110, 110]
+  - [-180, 180]
+velocity_limits_deg_s: [90, 60, 75, 120, 120, 150]
+acceleration_limits_deg_s2: [180, 120, 150, 240, 240, 300]
+home_deg: [0, -50, 90, 0, -40, 0]
+poses_deg:
+  home: [0, -50, 90, 0, -40, 0]
+  extended: [0, 0, 0, 0, 0, 0]
+  folded: [0, -110, 130, 0, -20, 0]
+  vertical: [0, -90, 0, 0, 0, 0]
+  pick: [-25, -45, 95, 0, 40, 0]
+  place: [25, -45, 95, 0, 40, 0]
+mass:
+  status: ASSUMED
+  base: 8.5
+  turret: 4.2
+  upper_arm: 5.5
+  forearm: 2.7
+  wrist_roll: 0.9
+  wrist_pitch: 0.65
+  flange_gripper: 1.2
+  payload: 4.0
+materials:
+  aluminum: {density: 2700, young_modulus: 69000000000, yield_strength: 240000000}
+  steel: {density: 7850, young_modulus: 200000000000, yield_strength: 250000000}
+  polymer: {density: 1200}
+gripper:
+  max_opening: 0.090
+  finger_length: 0.060
+  finger_width: 0.018
+  finger_thickness: 0.010
+  screw_lead: 0.004
+  screw_efficiency: 0.35
+  total_normal_force_target: 200.0
+  friction_coefficient: 0.5
+  motor_torque: 0.45
+  grip_safety_factor: 2.0
+actuators:
+  gear_ratios: [80, 120, 100, 60, 60, 50]
+  efficiencies: [0.75, 0.70, 0.72, 0.75, 0.75, 0.78]
+  safety_factor: 2.0
+control:
+  inertia: [1.2, 1.8, 0.8, 0.08, 0.05, 0.03]
+  viscous_damping: [2.0, 3.0, 1.5, 0.15, 0.10, 0.08]
+  kp: [160, 230, 120, 12, 8, 6]
+  ki: [15, 20, 10, 1, 0.8, 0.5]
+  kd: [26, 36, 18, 1.8, 1.1, 0.8]
+  torque_limits: [70, 180, 90, 18, 18, 8]
+  dt: 0.002
+targets:
+  repeatability_m: 0.0001
+  payload_kg: 4.0
+  gravity: 9.80665
+  ik_position_tolerance_m: 0.00001
+  ik_orientation_tolerance_rad: 0.0001
+demo:
+  approach_clearance: 0.070
+  gripper_dwell_s: 0.5
+  object_width: 0.028
+  workspace_samples: 6000
+  workspace_seed: 260105
+  workspace_voxel_pitch: 0.025
+  trajectory_duration_s: 4.0
+  control_step_duration_s: 5.0
+  control_step_deg: [5, 5, -5, 5, 5, 5]
+</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

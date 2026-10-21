@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Structural · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Structural</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/mechanical/structural.json · SHA-256 e154259f6e835f55347676ebec23f77bf524f8b53a704c831320f36e41e6382d</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;status&quot;: &quot;CALCULATED linear-elastic cantilever model, not FEA&quot;,
+  &quot;upper_arm&quot;: {
+    &quot;root_moment_nm&quot;: 70.16535491875,
+    &quot;bending_stress_mpa&quot;: 1.7589369434489934,
+    &quot;elastic_deflection_mm&quot;: 0.020820801602241836,
+    &quot;tip_slope_rad&quot;: 0.00011529329817975597,
+    &quot;yield_safety_factor&quot;: 136.44605106161364,
+    &quot;second_moment_m4&quot;: 1.9945386666666683e-06
+  },
+  &quot;forearm&quot;: {
+    &quot;root_moment_nm&quot;: 31.88019331875,
+    &quot;bending_stress_mpa&quot;: 1.274691057974501,
+    &quot;elastic_deflection_mm&quot;: 0.013543250196427629,
+    &quot;tip_slope_rad&quot;: 8.170104783107624e-05,
+    &quot;yield_safety_factor&quot;: 188.28091599023438,
+    &quot;second_moment_m4&quot;: 1.0004053333333333e-06
+  },
+  &quot;finger&quot;: {
+    &quot;root_moment_nm&quot;: 6.0,
+    &quot;bending_stress_mpa&quot;: 19.999999999999996,
+    &quot;elastic_deflection_mm&quot;: 0.06956521739130433,
+    &quot;tip_slope_rad&quot;: 0.0017391304347826083,
+    &quot;yield_safety_factor&quot;: 12.000000000000002,
+    &quot;second_moment_m4&quot;: 1.5000000000000002e-09
+  },
+  &quot;serial_tcp_beam_deflection_mm&quot;: 0.10407510103105926,
+  &quot;serial_tcp_deflection_terms_mm&quot;: {
+    &quot;upper_arm_local&quot;: 0.020820801602241836,
+    &quot;forearm_local&quot;: 0.013543250196427629,
+    &quot;upper_arm_rotation&quot;: 0.05418785014448531,
+    &quot;forearm_rotation&quot;: 0.015523199087904484
+  },
+  &quot;serial_tcp_formula&quot;: &quot;delta_upper + delta_forearm + theta_upper*(L2+lr+lp+lt) + theta_forearm*(lr+lp+lt); metres internally&quot;,
+  &quot;limitations&quot;: &quot;Ideal clamped rectangular beams; no holes, welds, fastener contact, bearing/gear compliance, local stress, fatigue, shear deformation, transverse coupling or physical confirmation. Static deflection is not repeatability.&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

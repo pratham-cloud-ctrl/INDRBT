@@ -1,0 +1,213 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>ASTER-6 · Industrial robot arm digital twin · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#aster-6-industrial-robot-arm-digital-twin">ASTER-6 · Industrial robot arm digital twin</a><ul>
+<li><a href="#explore-the-project">Explore the project</a></li>
+<li><a href="#see-it-move">See it move</a></li>
+<li><a href="#features-and-specifications">Features and specifications</a></li>
+<li><a href="#run">Run</a></li>
+<li><a href="#architecture-and-cad">Architecture and CAD</a></li>
+<li><a href="#generated-results">Generated results</a></li>
+<li><a href="#conceptual-electronics">Conceptual electronics</a></li>
+<li><a href="#verification-report-and-limitations">Verification, report and limitations</a></li>
+<li><a href="#best-portfolio-material">Best portfolio material</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="aster-6-industrial-robot-arm-digital-twin">ASTER-6 · Industrial robot arm digital twin</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#aster-6-industrial-robot-arm-digital-twin">ASTER-6 · Industrial robot arm digital twin</a><ul>
+<li><a href="#explore-the-project">Explore the project</a></li>
+<li><a href="#see-it-move">See it move</a></li>
+<li><a href="#features-and-specifications">Features and specifications</a></li>
+<li><a href="#run">Run</a></li>
+<li><a href="#architecture-and-cad">Architecture and CAD</a></li>
+<li><a href="#generated-results">Generated results</a></li>
+<li><a href="#conceptual-electronics">Conceptual electronics</a></li>
+<li><a href="#verification-report-and-limitations">Verification, report and limitations</a></li>
+<li><a href="#best-portfolio-material">Best portfolio material</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>An original six-axis robot with parametric CAD, numerical kinematics and a reproducible pick-and-place simulation.</p>
+<p><img alt="ASTER-6 actual CAD assembly" src="assets/cad/renders/hero.png" /></p>
+<p><strong>Digital only · v1.2.0 · DIGITAL SCOPE COMPLETE</strong></p>
+<p>Designed for robotics education and portfolio review. Every result is generated from source; no physical robot was built. Payload and repeatability remain design targets. The conceptual electronics include a routed PCB, manufacturing exports and native DRC; collision evidence is representative and sampled.</p>
+<h2 id="explore-the-project">Explore the project</h2>
+<p><a href="../index.html">Repository home</a> · <a href="cad_tour.html">CAD tour</a> · <a href="electronics_tour.html">Circuit and PCB tour</a> · <a href="engineering_walkthrough.html">Engineering walkthrough</a> · <a href="index.html">Documentation index</a></p>
+<p>For a visual introduction, start with these guides. This source README contains the installation, reproduction commands and detailed evidence map.</p>
+<h2 id="see-it-move">See it move</h2>
+<p>Read <a href="project_alignment.html">the project purpose and original goals</a> for the engineering question, intended demonstration and relationship between the subsystems.</p>
+<p>Open <strong><a href="../robot/index.html">the offline interactive CAD twin</a></strong> locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.</p>
+<p>The <strong>CAD component</strong> selector isolates and frames any of the 54 actual parts. Use the <a href="component_catalog.html">component catalog</a> to match part names, native objects, materials and STEP/STL files. The <a href="theory_guide.html">theory guide</a> connects the model equations to evidence, and the <a href="electronics_components.html">electronics component guide</a> explains references, selections and BOM population.</p>
+<p><img alt="FK pick-and-place animation" src="assets/results/trajectories/pick_place_fk.gif" /></p>
+<p>The 9.24 s task follows MOVE J and MOVE L segments: approach, grasp, lift, transport, release and return home. CAD meshes and animation use the actual transform chain. The grasp is an ideal attachment; contact physics is not simulated.</p>
+<h2 id="features-and-specifications">Features and specifications</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value / evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original geometry</td>
+<td>54 valid BRep components; 6 STEP/STL assemblies</td>
+</tr>
+<tr>
+<td>DOF / link lengths</td>
+<td>Six revolute joints / 320 mm upper arm + 280 mm forearm</td>
+</tr>
+<tr>
+<td>Nominal reach</td>
+<td>790 mm from shoulder; nominal straight-up TCP height 980 mm above base</td>
+</tr>
+<tr>
+<td>Payload / repeatability</td>
+<td>4 kg / ±0.1 mm <strong>TARGET</strong>, physically unverified</td>
+</tr>
+<tr>
+<td>Mass basis</td>
+<td>23.65 kg assumed; separate 19.908 kg CAD envelope sum with stated limitations</td>
+</tr>
+<tr>
+<td>Gripper</td>
+<td>90 mm opening; 200 N total force target; calculated screw torque 0.364 N·m</td>
+</tr>
+<tr>
+<td>FK / IK / Jacobian</td>
+<td>Bounded numerical IK; 60 perturbed-seed pose trials</td>
+</tr>
+<tr>
+<td>Motion / control</td>
+<td>Linear/cubic/quintic MOVE J, sampled MOVE L and saturated PID</td>
+</tr>
+<tr>
+<td>Electronics</td>
+<td>Native 44-component KiCad interface; 0 ERC violations under enabled default rules; routed PCB/native DRC and connectivity evidence</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td>91 tests; 0 failures; 0 errors</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="run">Run</h2>
+<p>Python 3.12+ is required. From the organized repository root, enter the source folder (skip the <code>cd</code> if already there):</p>
+<pre><code class="language-bash">cd 06_Complete_Project_Source
+python -m venv .venv
+</code></pre>
+<p>Activate <code>.venv</code> (<code>.venv\Scripts\Activate.ps1</code> on Windows; <code>source .venv/bin/activate</code> on Linux/macOS), then:</p>
+<pre><code class="language-bash">python -m pip install -e &quot;.[cad,dev]&quot;
+python -m robotarm.demo --all
+python scripts/run_validation.py
+</code></pre>
+<p>A fresh isolated environment validated the built wheel, its bundled configuration and a detached CLI demonstration. <code>requirements-lock.txt</code> records the dependency versions used for the generated results.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Generated evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python scripts/generate_cad.py</code></td>
+<td>STEP/STL, mesh manifest, CAD checks and dimension sheets</td>
+</tr>
+<tr>
+<td><code>python -m robotarm.demo --workspace</code></td>
+<td>Workspace projections, 3D cloud and singularity plots</td>
+</tr>
+<tr>
+<td><code>python -m robotarm.demo --trajectory</code></td>
+<td>MOVE J/MOVE L and interpolation comparisons</td>
+</tr>
+<tr>
+<td><code>python -m robotarm.demo --pick-place</code></td>
+<td>Recorded joint data, TCP path and FK GIF</td>
+</tr>
+<tr>
+<td><code>python -m robotarm.demo --control</code></td>
+<td>PID step/tracking curves and errors</td>
+</tr>
+<tr>
+<td><code>python scripts/generate_results.py</code></td>
+<td>All numerical analyses/research and offline twin</td>
+</tr>
+<tr>
+<td><code>python electronics/run_checks.py</code></td>
+<td>Native KiCad ERC, PCB DRC, schematic-board/net checks and manufacturing exports</td>
+</tr>
+<tr>
+<td><code>python scripts/run_validation.py --full</code></td>
+<td>CAD/results regeneration followed by digital checks</td>
+</tr>
+</tbody>
+</table></div>
+<p>KiCad 10 is needed for native ERC and PCB DRC. Its CLI is discovered from PATH or Windows installation records; <code>electronics/run_checks.py</code> also accepts <code>--kicad-cli</code>. The validation workflow accepts <code>--skip-electronics</code> when KiCad is unavailable and records electronics as NOT VERIFIED in that run. FreeCAD and Blender support independent inspection and rendering; see <a href="04_cad.html">CAD methodology</a> for their commands.</p>
+<h2 id="architecture-and-cad">Architecture and CAD</h2>
+<p><img alt="System architecture" src="assets/docs/diagrams/system_architecture.svg" /></p>
+<p>The <a href="data/config--robot.html">single SI configuration</a> drives the CAD/model/planner/analysis. Six Z-Y-Y-X-Y-X rotations orient hollow links, realistic clevis joints, access panels, cable bores, bearings and actuator envelopes. <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_home.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP assembly<span class="badge">Source file</span></a>, <a href="assets/docs/drawings/engineering_interfaces.pdf">drawings</a>, <a href="assets/cad/renders/gripper.png">gripper render</a> and <a href="04_cad.html">CAD methodology</a> support close inspection.</p>
+<h2 id="generated-results">Generated results</h2>
+<p><img alt="Workspace cloud" src="assets/results/workspace/workspace_3d.png" /></p>
+<p>The workspace plot comes from 6000 seeded FK samples. Its 1.9025 m³ convex hull fills inaccessible regions, so it represents an envelope rather than a collision-free reachable volume. Full extension and wrist alignment produce singularities. <a href="02_kinematics.html">Kinematics</a> defines the frames, equations and solver limitations.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Generated value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Maximum IK position residual</td>
+<td>2.700e-11 m</td>
+<td>Numerical reconstruction only</td>
+</tr>
+<tr>
+<td>Shoulder / elbow gravity holding torque</td>
+<td>70.17 / 31.88 N·m</td>
+<td>Calculated with assumed masses and 4 kg payload</td>
+</tr>
+<tr>
+<td>Task peak velocity / acceleration fractions</td>
+<td>0.9517 / 0.9980</td>
+<td>Fractions of configured limits at tested samples</td>
+</tr>
+<tr>
+<td>PID tracking RMSE</td>
+<td>0.006383 rad</td>
+<td>Independent inertia/damping plant simulation</td>
+</tr>
+<tr>
+<td>Sampled CAD task clearance</td>
+<td>75 poses / 6126 exact BRep checks; maximum prohibited overlap 0 mm³</td>
+<td>All component pairs classified; continuous motion not verified</td>
+</tr>
+</tbody>
+</table></div>
+<p>Five <a href="data/results--research--experiments.html">research experiments</a> vary link ratio, payload, motion duration, PID gains and finger length. <a href="03_mechanical_analysis.html">Mechanical calculations</a>, <a href="assets/results/control/pid_tracking.png">control curves</a> and <a href="kpis.html">complete KPIs</a> keep assumed/target/calculated/simulated/verified claims separate.</p>
+<h2 id="conceptual-electronics">Conceptual electronics</h2>
+<p>The native <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_sch" target="_blank" rel="noopener noreferrer" class="private-link">KiCad schematic<span class="badge">Source file</span></a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_pcb" target="_blank" rel="noopener noreferrer" class="private-link">PCB<span class="badge">Source file</span></a> and <a href="assets/electronics/exports/joint_interface.pdf">schematic PDF</a> cover regulated logic power, encoder/limit inputs, external-drive commands and RS-485. All 44 assigned footprint files were found (43 stock and 1 project-local), and 118 exported pin assignments were verified. Native ERC reports 0 violations under the enabled default rules. The <a href="data/electronics--pcb_verification.html">PCB verification</a> retains actual DRC and schematic-board checks. <a href="05_electronics.html">Electronics scope</a> documents fabrication outputs, rules, circuit calculations and assumptions. No physical hardware or manufacturing suitability is claimed.</p>
+<h2 id="verification-report-and-limitations">Verification, report and limitations</h2>
+<p>Read the <a href="engineering_report.html">engineering report</a>, <a href="validation_matrix.html">validation matrix</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">executed check report<span class="badge">Source file</span></a>, <a href="design_decisions.html">decision log</a> and <a href="project_journal.html">authentic journal</a>.</p>
+<p>This is a geometric digital twin with simplified educational control. Repeatability and payload ratings have no physical verification. Full CAD structural FEA, fatigue assessment, functional safety, coupled dynamics, frictional contact, manufacturing tolerances and real drive firmware are outside the implemented educational model. Workspace sampling and IK do not enforce collision avoidance. Collision checks are representative and sampled; manual slider poses may collide. The executed status is <strong>DIGITAL SCOPE COMPLETE</strong> for the <a href="digital_scope_audit.html">documented digital scope</a>.</p>
+<h2 id="best-portfolio-material">Best portfolio material</h2>
+<ol>
+<li><a href="assets/cad/renders/hero.png">Hero CAD render</a> — original overall mechanical design.</li>
+<li><a href="../robot/index.html">Interactive CAD twin</a> — model-driven motion and joint controls.</li>
+<li><a href="assets/cad/renders/gripper.png">Gripper render</a> — guides, jaws and interchangeable tool interface.</li>
+<li><a href="assets/docs/drawings/engineering_interfaces.pdf">Engineering interface drawings</a> — meaningful dimensions.</li>
+<li><a href="assets/results/workspace/coordinate_frames.png">Coordinate frames</a> — explain the mathematics.</li>
+<li><a href="assets/results/trajectories/pick_place_joints.png">Pick/place joint curves</a> — motion constraints and derivatives.</li>
+<li><a href="assets/results/control/pid_tracking.png">PID tracking</a> — feedback model and measured simulation error.</li>
+<li><a href="assets/results/research/payload.png">Payload experiment</a> — connect engineering decisions to calculations.</li>
+<li><a href="assets/electronics/exports/joint_interface.pdf">Native schematic PDF</a> — real connectivity and ERC evidence.</li>
+<li><a href="engineering_report.html">Engineering report</a> — results, verification and honest limitations.</li>
+</ol>
+<p>MIT-licensed project source. Third-party tool/library licenses remain their own; citation metadata is in CITATION.cff.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

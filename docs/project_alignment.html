@@ -1,0 +1,130 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Project purpose and alignment with the original brief · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#project-purpose-and-alignment-with-the-original-brief">Project purpose and alignment with the original brief</a><ul>
+<li><a href="#follow-one-demonstration-through-the-engineering">Follow one demonstration through the engineering</a></li>
+<li><a href="#original-goals-and-their-concrete-project-form">Original goals and their concrete project form</a></li>
+<li><a href="#completion-means-the-documented-digital-brief">Completion means the documented digital brief</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="project-purpose-and-alignment-with-the-original-brief">Project purpose and alignment with the original brief</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#project-purpose-and-alignment-with-the-original-brief">Project purpose and alignment with the original brief</a><ul>
+<li><a href="#follow-one-demonstration-through-the-engineering">Follow one demonstration through the engineering</a></li>
+<li><a href="#original-goals-and-their-concrete-project-form">Original goals and their concrete project form</a></li>
+<li><a href="#completion-means-the-documented-digital-brief">Completion means the documented digital brief</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>ASTER-6 explores one connected engineering problem: choose an original robot
+geometry, use the same geometry to plan a useful tool motion, estimate its loads
+and gripper requirements, and demonstrate feedback control in a reproducible
+digital model. The intended result is a credible student engineering project
+that a professor or reviewer can inspect, run and question.</p>
+<p>The design is a six-revolute-axis arm with an interchangeable parallel gripper.
+Its nominal shoulder-centred reach is 790 mm, its assumed payload target is
+4 kg, its repeatability target is ±0.1 mm and its jaw opening is 90 mm. These
+choices sit within the ranges in the original brief. The design is original;
+commercial robot compatibility and physically measured performance are not
+claimed.</p>
+<h2 id="follow-one-demonstration-through-the-engineering">Follow one demonstration through the engineering</h2>
+<ol>
+<li>Inspect the <a href="component_catalog.html">CAD component catalog</a>,
+   <a href="assets/docs/drawings/engineering_interfaces.pdf">dimensioned interfaces</a> and six poses.
+   The mounting, joint, tool and gripper interfaces explain how the geometry
+   supports the proposed mechanism.</li>
+<li>Read the <a href="02_kinematics.html">frame and kinematic formulation</a>. The central
+   <a href="data/config--robot.html">SI parameters</a> drive the transform chain and CAD
+   dimensions. The browser viewer uses meshes from those actual solids.</li>
+<li>Run the <a href="../robot/index.html">pick-and-place task</a>. MOVE J handles
+   joint transfers, regular approximate MOVE L segments handle approach and
+   retreat, and the gripper sequences a rigid ideal attachment. Position and
+   orientation follow the mathematical tool pose.</li>
+<li>Compare <a href="03_mechanical_analysis.html">loads, structure and actuator sizing</a>
+   with the <a href="architecture.html">PID model</a> and the <a href="data/results--research--experiments.html">five parameter studies</a>.
+   The studies explain effects and tradeoffs using generated data.</li>
+<li>Inspect the <a href="05_electronics.html">electronics architecture</a>,
+   <a href="electronics_components.html">component/BOM guide</a>, native schematic, routed
+   PCB and actual check reports. This is the low-voltage joint/sensor interface
+   portion of the hypothetical controller architecture.</li>
+<li>Read the <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">executed validation<span class="badge">Source file</span></a>
+   and <a href="validation_matrix.html">requirements matrix</a>. Their scope, source
+   bindings and failure conditions matter as much as the illustrations.</li>
+</ol>
+<h2 id="original-goals-and-their-concrete-project-form">Original goals and their concrete project form</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Original brief</th>
+<th>Project form</th>
+<th>Where to assess it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Original, realistic six-axis mechanical design and interchangeable gripper</td>
+<td>Reproducible Build123d solids, native FreeCAD assembly, STEP/STL parts, joint frames, guides, mounting and service interfaces</td>
+<td><a href="04_cad.html">CAD methodology</a>, <a href="component_catalog.html">catalog</a>, drawings and native model</td>
+</tr>
+<tr>
+<td>Engineering reasons for dimensions and choices</td>
+<td>Central specification, original flange, lumped mass assumptions, opposed-screw gripper and explicit tradeoffs</td>
+<td><a href="01_requirements.html">Requirements</a>, <a href="design_decisions.html">decisions</a>, <a href="03_mechanical_analysis.html">mechanics</a></td>
+</tr>
+<tr>
+<td>Correct mathematics and model-driven motion</td>
+<td>FK, bounded numerical IK, Jacobian, seeded workspace, constrained planning and recorded task</td>
+<td><a href="theory_guide.html">Theory guide</a>, kinematics, trajectory data and browser checks</td>
+</tr>
+<tr>
+<td>Simplified digital feedback control</td>
+<td>Saturated PID with antiwindup and independent inertia/damping plants; step and tracking errors</td>
+<td><a href="architecture.html">Architecture</a>, <a href="data/results--control--metrics.html">control evidence</a></td>
+</tr>
+<tr>
+<td>Meaningful conceptual electronics</td>
+<td>Regulated logic supply, encoder/limit inputs, external-drive command interface, RS-485, native PCB and manufacturing exports</td>
+<td><a href="05_electronics.html">Electrical chapter</a>, <a href="data/electronics--pcb_verification.html">native PCB evidence</a></td>
+</tr>
+<tr>
+<td>Educational/research value</td>
+<td>Link-ratio, payload, duration, controller-gain and finger-length sweeps</td>
+<td><a href="data/results--research--experiments.html">Experiments</a>, <a href="kpis.html">KPIs</a>, engineering report</td>
+</tr>
+<tr>
+<td>Reproducible, tested and organized delivery</td>
+<td>Installable package, regression tests, native checks, source-bound reports, numbered folders and offline viewing</td>
+<td><a href="reproduction.html#run">Setup</a>, <a href="completion_checklist.html">completion checklist</a>, validation and organization manifests</td>
+</tr>
+<tr>
+<td>A credible engineering portfolio with an authentic process</td>
+<td>Clear README, drawings, actual CAD renders, demonstrations, assumptions, decisions and recorded corrections</td>
+<td><a href="engineering_report.html">Engineering report</a>, <a href="project_journal.html">journal</a>, Git history and releases</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="completion-means-the-documented-digital-brief">Completion means the documented digital brief</h2>
+<p>For the ordinary demonstration, follow the <a href="reproduction.html#run">source README</a>.
+<code>python scripts/run_validation.py --full</code> additionally rebuilds the primary
+CAD and numerical outputs, then refreshes native FreeCAD, Blender, drawings/render
+composition and sampled clearance before checking the full project. It requires
+installed FreeCADCmd, Blender and KiCad alongside the Python dependencies.
+Tool-path overrides are documented in <a href="04_cad.html#refresh-native-cad-evidence">CAD reproduction</a>
+and <a href="05_electronics.html#reproduce-the-evidence">electronics reproduction</a>.
+Fresh browser and isolated-wheel evidence are required whenever their bound
+artifact or package sources change; the validator rejects stale evidence.</p>
+<p>The original request explicitly excludes physical construction. It permits
+analytical beams and simplified joint plants, and asks for representative
+interference screening and a meaningful conceptual controller subsection.
+Accordingly, the implemented scope includes these models with stated limits.
+Hardware payload/repeatability, fatigue, EMC, functional safety, complete
+manufacturing tolerances, production firmware, frictional grasp physics and
+continuous swept collision certification remain unverified.</p>
+<p>The current status must come from <a href="data/results--validation--validation_report.html">executed checks</a>
+that match the current sources. The <a href="final_review.html">final review</a> records
+defects found and corrected, while the <a href="digital_scope_audit.html">scope audit</a>
+maps the detailed brief to evidence. A declaration of completion does not replace
+those checks or turn assumptions into measured performance.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Experiments · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Experiments</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/research/experiments.json · SHA-256 4713ee57cd533a569dfd001d36d3a6cd52b22f3b673a023c3051d39ba6d4208a</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;seed&quot;: 504,
+  &quot;status&quot;: &quot;CALCULATED / SIMULATED; no physical experiments&quot;,
+  &quot;RQ1&quot;: {
+    &quot;samples_per_ratio&quot;: 2200,
+    &quot;values&quot;: [
+      {
+        &quot;ratio&quot;: 0.75,
+        &quot;upper_arm_m&quot;: 0.2571428571428572,
+        &quot;forearm_m&quot;: 0.3428571428571429,
+        &quot;sample_min_shoulder_radius_m&quot;: 0.18295758859911695,
+        &quot;sample_max_shoulder_radius_m&quot;: 0.7898657186924772,
+        &quot;above_floor_sample_count&quot;: 1526,
+        &quot;occupied_40mm_voxels&quot;: 1431
+      },
+      {
+        &quot;ratio&quot;: 1.0,
+        &quot;upper_arm_m&quot;: 0.30000000000000004,
+        &quot;forearm_m&quot;: 0.30000000000000004,
+        &quot;sample_min_shoulder_radius_m&quot;: 0.1369411487646478,
+        &quot;sample_max_shoulder_radius_m&quot;: 0.7898548333725504,
+        &quot;above_floor_sample_count&quot;: 1555,
+        &quot;occupied_40mm_voxels&quot;: 1464
+      },
+      {
+        &quot;ratio&quot;: 1.1428571428571428,
+        &quot;upper_arm_m&quot;: 0.32000000000000006,
+        &quot;forearm_m&quot;: 0.28,
+        &quot;sample_min_shoulder_radius_m&quot;: 0.1270581673300877,
+        &quot;sample_max_shoulder_radius_m&quot;: 0.7898507972478014,
+        &quot;above_floor_sample_count&quot;: 1562,
+        &quot;occupied_40mm_voxels&quot;: 1476
+      },
+      {
+        &quot;ratio&quot;: 1.5,
+        &quot;upper_arm_m&quot;: 0.36000000000000004,
+        &quot;forearm_m&quot;: 0.24000000000000005,
+        &quot;sample_min_shoulder_radius_m&quot;: 0.13805536831976623,
+        &quot;sample_max_shoulder_radius_m&quot;: 0.7898447175523883,
+        &quot;above_floor_sample_count&quot;: 1581,
+        &quot;occupied_40mm_voxels&quot;: 1485
+      },
+      {
+        &quot;ratio&quot;: 2.0,
+        &quot;upper_arm_m&quot;: 0.4000000000000001,
+        &quot;forearm_m&quot;: 0.20000000000000004,
+        &quot;sample_min_shoulder_radius_m&quot;: 0.15480608894750855,
+        &quot;sample_max_shoulder_radius_m&quot;: 0.7898467875031759,
+        &quot;above_floor_sample_count&quot;: 1600,
+        &quot;occupied_40mm_voxels&quot;: 1512
+      }
+    ],
+    &quot;interpretation&quot;: &quot;Outer geometric reach fixed. Voxel counts are a finite-sample index, not reachable volume or collision-free workspace.&quot;
+  },
+  &quot;RQ2&quot;: {
+    &quot;payload_kg&quot;: [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    &quot;shoulder_nm&quot;: [
+      39.17634091875,
+      46.92359441875,
+      54.67084791875,
+      62.418101418750005,
+      70.16535491875001,
+      77.91260841875001,
+      85.65986191875001
+    ],
+    &quot;elbow_nm&quot;: [
+      13.443691318750005,
+      18.052816818750006,
+      22.661942318750008,
+      27.27106781875001,
+      31.88019331875001,
+      36.48931881875001,
+      41.09844431875001
+    ]
+  },
+  &quot;RQ3&quot;: [
+    {
+      &quot;duration_s&quot;: 2.0,
+      &quot;max_velocity_rad_s&quot;: 0.4908738521234051,
+      &quot;max_acceleration_rad_s2&quot;: 0.7557496588457366
+    },
+    {
+      &quot;duration_s&quot;: 4.0,
+      &quot;max_velocity_rad_s&quot;: 0.24543692606170256,
+      &quot;max_acceleration_rad_s2&quot;: 0.18893741471143416
+    },
+    {
+      &quot;duration_s&quot;: 8.0,
+      &quot;max_velocity_rad_s&quot;: 0.12271846303085128,
+      &quot;max_acceleration_rad_s2&quot;: 0.04723435367785854
+    }
+  ],
+  &quot;RQ4&quot;: [
+    {
+      &quot;gain_scale&quot;: 0.5,
+      &quot;joint2_rmse_rad&quot;: 0.04285118711227711,
+      &quot;settling_time_2percent_s&quot;: 0.9,
+      &quot;overshoot_percent&quot;: 4.9635462382620155,
+      &quot;peak_torque_nm&quot;: 30.11216558465817
+    },
+    {
+      &quot;gain_scale&quot;: 1.0,
+      &quot;joint2_rmse_rad&quot;: 0.0383305941402165,
+      &quot;settling_time_2percent_s&quot;: 0.436,
+      &quot;overshoot_percent&quot;: 1.4087637825724768,
+      &quot;peak_torque_nm&quot;: 60.22433116931634
+    },
+    {
+      &quot;gain_scale&quot;: 2.0,
+      &quot;joint2_rmse_rad&quot;: 0.03563839415994216,
+      &quot;settling_time_2percent_s&quot;: 0.496,
+      &quot;overshoot_percent&quot;: 1.3092508625414752,
+      &quot;peak_torque_nm&quot;: 120.44866233863269
+    }
+  ],
+  &quot;RQ5&quot;: {
+    &quot;finger_length_m&quot;: [
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.07,
+      0.08,
+      0.09
+    ],
+    &quot;stress_mpa&quot;: [
+      9.999999999999998,
+      13.333333333333332,
+      16.666666666666664,
+      19.999999999999996,
+      23.333333333333332,
+      26.666666666666664,
+      29.999999999999996
+    ],
+    &quot;deflection_mm&quot;: [
+      0.008695652173913042,
+      0.02061191626409018,
+      0.040257648953301126,
+      0.06956521739130433,
+      0.11046698872785832,
+      0.16489533011272145,
+      0.23478260869565212
+    ],
+    &quot;fixed_total_normal_force_N&quot;: 200.0,
+    &quot;required_screw_torque_nm&quot;: 0.3637827270671894,
+    &quot;interpretation&quot;: &quot;Finger length raises bending moment and cubic elastic deflection. Ideal lead-screw force and torque do not depend on finger length; guide moments and flexibility do.&quot;
+  }
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

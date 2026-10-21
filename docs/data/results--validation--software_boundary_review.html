@@ -1,0 +1,206 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Software boundary review · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Software boundary review</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/validation/software_boundary_review.json · SHA-256 2709ef0e53e70f67b9e5d20ee6f50a7b3048668ad7ff412cc20668b5697570d4</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;status&quot;: &quot;PASS&quot;,
+  &quot;review_date&quot;: &quot;2026-10-17&quot;,
+  &quot;scope&quot;: &quot;Re-review original numerical/control/engineering requirements and fix demonstrated software/analytical defects; no CAD/PCB/physical qualification claim&quot;,
+  &quot;issues_found_and_corrected&quot;: [
+    {
+      &quot;id&quot;: &quot;SW-001&quot;,
+      &quot;brief_sections&quot;: [
+        10,
+        30,
+        35,
+        57,
+        58
+      ],
+      &quot;problem&quot;: &quot;NaN named poses, invalid SI declarations and nonphysical model/control/gripper parameters could pass configuration loading or explicit-config construction.&quot;,
+      &quot;correction&quot;: &quot;Shared finite/domain/shape/unit validation now covers file loading and model constructors; runtime controller edits are checked before integration.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;SW-002&quot;,
+      &quot;brief_sections&quot;: [
+        14,
+        16,
+        20
+      ],
+      &quot;problem&quot;: &quot;Default relative allclose tolerance admitted nonrigid last-row/rotation scaling errors.&quot;,
+      &quot;correction&quot;: &quot;Rigid-transform checks use absolute tolerances with rtol=0 before IK and SLERP.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;SW-003&quot;,
+      &quot;brief_sections&quot;: [
+        19,
+        20
+      ],
+      &quot;problem&quot;: &quot;Trajectory concatenation admitted position/velocity/acceleration jumps larger than its stated absolute tolerance.&quot;,
+      &quot;correction&quot;: &quot;Continuity checks use rtol=0; all trajectory records require finite (samples,6) arrays and strictly increasing finite times.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;SW-004&quot;,
+      &quot;brief_sections&quot;: [
+        17,
+        19,
+        20
+      ],
+      &quot;problem&quot;: &quot;A radial quintic TCP approach to full extension can require divergent joint acceleration, although sampled output forced the endpoint acceleration to zero.&quot;,
+      &quot;correction&quot;: &quot;MOVE L requires scaled sigma_min &gt; 1e-3 by default at its start and every solved sample; failure recommends another path or MOVE J. The guard is a conservative numerical policy, not a continuous-motion certificate.&quot;,
+      &quot;before_fixed_one_second_peak_acceleration_rad_s2&quot;: [
+        11.08796218108545,
+        18.086644078177677,
+        28.95629929979359
+      ],
+      &quot;tested_resolutions&quot;: [
+        41,
+        81,
+        161
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;SW-005&quot;,
+      &quot;brief_sections&quot;: [
+        26,
+        27,
+        35
+      ],
+      &quot;problem&quot;: &quot;Nonfinite gain scaling or out-of-limit/malformed references entered the controller, and disabled integral modes accumulated an unused integrator.&quot;,
+      &quot;correction&quot;: &quot;Reject inadmissible inputs and leave the integral state zero when integral action is disabled.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;AN-001&quot;,
+      &quot;brief_sections&quot;: [
+        24,
+        35,
+        58
+      ],
+      &quot;problem&quot;: &quot;A valid unloaded beam divided by zero in its yield ratio; reversing the load produced a negative strength ratio.&quot;,
+      &quot;correction&quot;: &quot;Keep signed deflection, use absolute nominal root stress and positive strength ratios, represent zero-stress ratio as JSON null; reject nonphysical section/material/load inputs.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;AN-002&quot;,
+      &quot;brief_sections&quot;: [
+        23,
+        25,
+        35
+      ],
+      &quot;problem&quot;: &quot;Negative or nonfinite payload override was accepted by gravity loading.&quot;,
+      &quot;correction&quot;: &quot;Validate payload override as finite nonnegative kg.&quot;
+    },
+    {
+      &quot;id&quot;: &quot;AN-003&quot;,
+      &quot;brief_sections&quot;: [
+        13,
+        23,
+        25,
+        57,
+        58
+      ],
+      &quot;problem&quot;: &quot;Conceptual drive sizing reused control inertia assumptions below the same assumed COM point-mass inertia, undermining its conservative-model wording.&quot;,
+      &quot;correction&quot;: &quot;Use max(control inertia, all-angle sum(m*lever_bound^2)) for sizing while keeping the educational controller unchanged; test via independently differentiated COM kinetic energy.&quot;,
+      &quot;point_mass_inertia_bound_kg_m2&quot;: [
+        4.490834687500001,
+        4.490834687500001,
+        1.3017946875,
+        0.09401906250000001,
+        0.09401906250000001,
+        0.0
+      ],
+      &quot;sizing_inertia_kg_m2&quot;: [
+        4.490834687500001,
+        4.490834687500001,
+        1.3017946875,
+        0.09401906250000001,
+        0.09401906250000001,
+        0.03
+      ]
+    }
+  ],
+  &quot;focused_regression_runs&quot;: [
+    {
+      &quot;report&quot;: &quot;motion-tests.xml&quot;,
+      &quot;tests&quot;: 60,
+      &quot;failures&quot;: 0,
+      &quot;errors&quot;: 0,
+      &quot;skipped&quot;: 0,
+      &quot;sha256&quot;: &quot;aeb6014d085ce329fba0adae06c095fa7554090412262d70fd13bcdbc3d65cd5&quot;
+    },
+    {
+      &quot;report&quot;: &quot;mechanical-edge-tests.xml&quot;,
+      &quot;tests&quot;: 10,
+      &quot;failures&quot;: 0,
+      &quot;errors&quot;: 0,
+      &quot;skipped&quot;: 0,
+      &quot;sha256&quot;: &quot;8170635006c7fa7e504fbd01ee8c225f649466f338a29c4f20375353ea9dfb79&quot;
+    },
+    {
+      &quot;report&quot;: &quot;inertia-tests.xml&quot;,
+      &quot;tests&quot;: 10,
+      &quot;failures&quot;: 0,
+      &quot;errors&quot;: 0,
+      &quot;skipped&quot;: 0,
+      &quot;sha256&quot;: &quot;47829acc2ff10cf878234d0aa3c6bbcc6adf2ec1af773e8fb8accd200dab69d7&quot;
+    }
+  ],
+  &quot;unique_focused_test_cases&quot;: 71,
+  &quot;nominal_comparison&quot;: {
+    &quot;status&quot;: &quot;PASS&quot;,
+    &quot;task_payload_exactly_unchanged&quot;: true,
+    &quot;task_file_bytes_exactly_unchanged&quot;: true,
+    &quot;task_file_sha256_before&quot;: &quot;5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c&quot;,
+    &quot;task_file_sha256_preview&quot;: &quot;5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c&quot;,
+    &quot;task_samples&quot;: 1041,
+    &quot;task_duration_s&quot;: 9.243979567042027,
+    &quot;max_velocity_limit_fraction&quot;: 0.9516936720540675,
+    &quot;max_acceleration_limit_fraction&quot;: 0.9979714160318779,
+    &quot;structure_results_exactly_unchanged&quot;: true,
+    &quot;configuration_sha256&quot;: &quot;bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96&quot;
+  },
+  &quot;default_discrete_unsaturated_pid_spectral_radii&quot;: [
+    0.9998093683413861,
+    0.9998234863734055,
+    0.9998310499283998,
+    0.9998310499283997,
+    0.999796961204562,
+    0.999831279555964
+  ],
+  &quot;boundary_ik_trials&quot;: [
+    {
+      &quot;pose&quot;: &quot;all_lower_bounds&quot;,
+      &quot;position_error_m&quot;: 2.7312351047262694e-07,
+      &quot;orientation_error_rad&quot;: 4.633477915335753e-07,
+      &quot;attempts&quot;: 1
+    },
+    {
+      &quot;pose&quot;: &quot;all_upper_bounds&quot;,
+      &quot;position_error_m&quot;: 4.744435991680738e-10,
+      &quot;orientation_error_rad&quot;: 5.984324557505072e-10,
+      &quot;attempts&quot;: 1
+    },
+    {
+      &quot;pose&quot;: &quot;full_extension&quot;,
+      &quot;position_error_m&quot;: 1.5549083598962904e-13,
+      &quot;orientation_error_rad&quot;: 9.76159133774881e-13,
+      &quot;attempts&quot;: 1
+    }
+  ],
+  &quot;source_sha256&quot;: {
+    &quot;src/robotarm/config.py&quot;: &quot;0ef8974921d8cdfb4fbd822c5cd0d4002496cf0d5e3d136c848b75733ee3ae51&quot;,
+    &quot;src/robotarm/kinematics/model.py&quot;: &quot;6a8d563ef7230e96ed517df15bd8ce59358417b1bbfe5653f7fdefff49e3e1f3&quot;,
+    &quot;src/robotarm/planning/trajectories.py&quot;: &quot;986cd32bf077d8deba937a2cbbc77f266da6044c9a84b1e53d278e8e6d64642c&quot;,
+    &quot;src/robotarm/control/pid.py&quot;: &quot;e379778f8ca9161877d42fb637baf1b4b26de0fb98118ef15de53c917178fa6c&quot;,
+    &quot;src/robotarm/gripper/model.py&quot;: &quot;4152eb1ea321ec2a6ce6a8cca6941ec8c32afceecfcba61a1f15b0164409b160&quot;,
+    &quot;analysis/joint_torque_analysis.py&quot;: &quot;374b6361c028d2b96d508c32b2cfc918f2138d3e57fc28694516a3c10997ef7e&quot;,
+    &quot;analysis/structural_analysis.py&quot;: &quot;d276cbad4885a10c1850a1f3b2bbf646f40e3425c2b53835ac2c7dfc390779f8&quot;,
+    &quot;scripts/review_theory.py&quot;: &quot;a9d653050edc926727931d32449e874e99ed09af42223b6899d4c3ca8788acdc&quot;,
+    &quot;tests/test_config.py&quot;: &quot;3104f66c14a44c61bf4a7f4f33bf6d8724d12aaebb7feb3e9b0984c8ce8f0e00&quot;,
+    &quot;tests/test_kinematics.py&quot;: &quot;35575c0b826f4b54be97a050e8eec206b73b9bc72e8b8fae35151bc7f0e438f2&quot;,
+    &quot;tests/test_planning.py&quot;: &quot;29f4397aaeaa9513ff58b6644221cc0b483a2dab3645d23134c0fddd6d0e42e4&quot;,
+    &quot;tests/test_control.py&quot;: &quot;cb5c1930e1ca74680868a9a7a9809952a934e7ad549e4353ed1c8c189f24df44&quot;,
+    &quot;tests/test_mechanical.py&quot;: &quot;2fc6c83978b9940772180b4d6056e9e4cb3eed4a71acc1950c88aefed1c162c7&quot;
+  },
+  &quot;remaining_model_limits&quot;: [
+    &quot;Local numerical IK exhaustion is not a complete reachability proof.&quot;,
+    &quot;MOVE L singularity/derivative checks are sampled; no continuous collision or derivative certificate.&quot;,
+    &quot;Control is an independent inertia/damping model, with no coupled rigid-body, gravity, drive-delay or contact dynamics.&quot;,
+    &quot;Actuator diagonal inertia bounds cover assumed COM point masses; centroidal rotation tensors, coupling, Coriolis/centrifugal and reflected-drive inertias remain outside that model.&quot;,
+    &quot;Payload and repeatability remain targets without physical hardware tests.&quot;
+  ]
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

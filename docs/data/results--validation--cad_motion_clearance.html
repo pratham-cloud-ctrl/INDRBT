@@ -1,0 +1,696 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Cad motion clearance · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Cad motion clearance</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/validation/cad_motion_clearance.json · SHA-256 216d83c9d970c9df9af4b008fdcd7a5c6ce26c090218e1266561f8ca45ddeb46</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;status&quot;: &quot;PASS&quot;,
+  &quot;trajectory_sha256&quot;: &quot;5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c&quot;,
+  &quot;source_sha256&quot;: {
+    &quot;robot.yaml&quot;: &quot;bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96&quot;,
+    &quot;geometry.py&quot;: &quot;f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250&quot;
+  },
+  &quot;samples_checked&quot;: 75,
+  &quot;trajectory_samples&quot;: 1041,
+  &quot;all_component_pair_classifications&quot;: 107325,
+  &quot;aabb_disjoint_pairs&quot;: 87099,
+  &quot;same_rigid_family_pairs_excluded&quot;: 14100,
+  &quot;exact_brep_pair_checks&quot;: 6126,
+  &quot;minimum_moving_geometry_height_mm&quot;: 22.3097259665834,
+  &quot;max_selected_pair_overlap_mm3&quot;: 0.0,
+  &quot;max_all_pair_overlap_mm3&quot;: 0.0,
+  &quot;failures&quot;: [],
+  &quot;samples&quot;: [
+    {
+      &quot;sample&quot;: 0,
+      &quot;time_s&quot;: 0.0,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 39,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 16,
+      &quot;time_s&quot;: 0.11745281459254825,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 43,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 32,
+      &quot;time_s&quot;: 0.2349056291850965,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 45,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 49,
+      &quot;time_s&quot;: 0.359699244689679,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 62,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 65,
+      &quot;time_s&quot;: 0.47715205928222726,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 75,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 81,
+      &quot;time_s&quot;: 0.5946048738747756,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 98,
+      &quot;time_s&quot;: 0.719398489379358,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 104,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 114,
+      &quot;time_s&quot;: 0.8368513039719063,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 107.26011955841913,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 108,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 130,
+      &quot;time_s&quot;: 0.9543041185644545,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 96.34159316380196,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 104,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 146,
+      &quot;time_s&quot;: 1.0717569331570027,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.0340488770073,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 98,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 162,
+      &quot;time_s&quot;: 1.1892097477495511,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 91.52111113843972,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 179,
+      &quot;time_s&quot;: 1.3140033632541335,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.08489431875743,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 92,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 195,
+      &quot;time_s&quot;: 1.4314561778466819,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30602504321257,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 92,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 200,
+      &quot;time_s&quot;: 1.468160182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596597215,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 211,
+      &quot;time_s&quot;: 1.579260182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 91.52499232397037,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 228,
+      &quot;time_s&quot;: 1.7509601824068532,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 82.67437850866952,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 244,
+      &quot;time_s&quot;: 1.9125601824068532,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 65.1094525579936,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 260,
+      &quot;time_s&quot;: 2.074160182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 44.53052596600991,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 89,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 276,
+      &quot;time_s&quot;: 2.235760182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 28.837308173137767,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 88,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 292,
+      &quot;time_s&quot;: 2.397360182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.626494222025904,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 87,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 300,
+      &quot;time_s&quot;: 2.478160182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.3097259665834,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 87,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 309,
+      &quot;time_s&quot;: 2.703160182406853,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.3097259665834,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 87,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 310,
+      &quot;time_s&quot;: 2.728160182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.309725966583514,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 88,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 320,
+      &quot;time_s&quot;: 2.978160182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.309725966583514,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 88,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 325,
+      &quot;time_s&quot;: 3.028660182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.390794716582793,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 88,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 341,
+      &quot;time_s&quot;: 3.190260182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 26.921907707197512,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 89,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 358,
+      &quot;time_s&quot;: 3.361960182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 42.15407502242583,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 374,
+      &quot;time_s&quot;: 3.523560182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 62.537368974263764,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 390,
+      &quot;time_s&quot;: 3.685160182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 80.89412595848181,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 406,
+      &quot;time_s&quot;: 3.846760182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 90.76970535794223,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 420,
+      &quot;time_s&quot;: 3.988160182406853,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596533292,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 422,
+      &quot;time_s&quot;: 4.00083677442914,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596533292,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 91,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 439,
+      &quot;time_s&quot;: 4.108587806618584,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596533769,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 455,
+      &quot;time_s&quot;: 4.210000542796884,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596535884,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 89,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 471,
+      &quot;time_s&quot;: 4.311413278975183,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596540238,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 87,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 488,
+      &quot;time_s&quot;: 4.419164311164628,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596547305,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 81,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 504,
+      &quot;time_s&quot;: 4.520577047342927,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596555758,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 67,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 520,
+      &quot;time_s&quot;: 4.621989783521227,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.3097259656517,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 41,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 536,
+      &quot;time_s&quot;: 4.723402519699527,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596574551,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 65,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 552,
+      &quot;time_s&quot;: 4.824815255877827,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596583024,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 75,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 569,
+      &quot;time_s&quot;: 4.93256628806727,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596590095,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 79,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 585,
+      &quot;time_s&quot;: 5.03397902424557,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596594448,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 81,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 601,
+      &quot;time_s&quot;: 5.13539176042387,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596596561,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 618,
+      &quot;time_s&quot;: 5.243142792613313,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.3097259659703,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 620,
+      &quot;time_s&quot;: 5.255819384635601,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596597032,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 634,
+      &quot;time_s&quot;: 5.397219384635601,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 90.76970535795573,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 650,
+      &quot;time_s&quot;: 5.558819384635601,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 80.89412596597953,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 666,
+      &quot;time_s&quot;: 5.720419384635601,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 62.53736897399442,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 682,
+      &quot;time_s&quot;: 5.882019384635601,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 42.154075022011114,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 84,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 699,
+      &quot;time_s&quot;: 6.053719384635602,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 26.921907707605612,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 715,
+      &quot;time_s&quot;: 6.215319384635602,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.39079471602753,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 720,
+      &quot;time_s&quot;: 6.265819384635601,
+      &quot;gripper_opening_mm&quot;: 28.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.30972596658367,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 730,
+      &quot;time_s&quot;: 6.515819384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.309725966583557,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 81,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 731,
+      &quot;time_s&quot;: 6.5408193846356015,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.309725966583557,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 81,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 740,
+      &quot;time_s&quot;: 6.765819384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.309725966583557,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 81,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 748,
+      &quot;time_s&quot;: 6.846619384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 22.626494222579908,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 81,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 764,
+      &quot;time_s&quot;: 7.008219384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 28.83730817160599,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 780,
+      &quot;time_s&quot;: 7.169819384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 44.53052596640693,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 796,
+      &quot;time_s&quot;: 7.331419384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 65.10945255824345,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 812,
+      &quot;time_s&quot;: 7.493019384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 82.67437850462714,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 829,
+      &quot;time_s&quot;: 7.664719384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 91.52499232401456,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 840,
+      &quot;time_s&quot;: 7.775819384635601,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30972596532149,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 82,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 845,
+      &quot;time_s&quot;: 7.8125233891957615,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.30602504256555,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 84,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 861,
+      &quot;time_s&quot;: 7.929976203788276,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.08489431811593,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 84,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 878,
+      &quot;time_s&quot;: 8.054769819292822,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 91.52111113782139,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 83,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 894,
+      &quot;time_s&quot;: 8.172222633885337,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 92.03404887643234,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 90,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 910,
+      &quot;time_s&quot;: 8.28967544847785,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 96.34159316329189,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 96,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 926,
+      &quot;time_s&quot;: 8.407128263070364,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 107.26011955799254,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 100,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 942,
+      &quot;time_s&quot;: 8.524581077662878,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 98,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 959,
+      &quot;time_s&quot;: 8.649374693167424,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 89,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 975,
+      &quot;time_s&quot;: 8.766827507759938,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 73,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 991,
+      &quot;time_s&quot;: 8.884280322352453,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 62,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 1008,
+      &quot;time_s&quot;: 9.009073937856998,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 45,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 1024,
+      &quot;time_s&quot;: 9.126526752449513,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 43,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;sample&quot;: 1040,
+      &quot;time_s&quot;: 9.243979567042027,
+      &quot;gripper_opening_mm&quot;: 90.0,
+      &quot;moving_geometry_min_z_mm&quot;: 110.0,
+      &quot;component_pairs_classified&quot;: 1431,
+      &quot;exact_brep_pair_checks&quot;: 39,
+      &quot;max_selected_pair_overlap_mm3&quot;: 0.0
+    }
+  ],
+  &quot;scope&quot;: &quot;65 uniform samples plus every phase boundary and gripper event; every component pair is classified. Adjacent joints are included, and each moving jaw is distinct from the gripper body. Disjoint AABBs reject impossible intersections; all remaining pairs use exact BRep common volume. Ground height uses transformed BRep bounding boxes. Gripper event openings are checked, with additional closed/mid/open checks in cad_assembly_clearance.json. This finite task screening is not a continuous swept proof, validation of every joint-limit combination, or physical safety certification.&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

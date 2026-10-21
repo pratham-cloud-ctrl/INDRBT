@@ -1,0 +1,139 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Requirement traceability · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#requirement-traceability">Requirement traceability</a></li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="requirement-traceability">Requirement traceability</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#requirement-traceability">Requirement traceability</a></li>
+</ul>
+</div>
+</details>
+<p>Results refer to executed digital evidence, not physical performance. The exact command report is <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">validation report<span class="badge">Source file</span></a>; <a href="data/results--validation--numerical_validation.html">numerical trials</a> and <a href="data/results--validation--cad_validation.html">CAD manifest</a> retain details.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Result</th>
+<th>Evidence and scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MECH-001</td>
+<td>PASS</td>
+<td>54 valid BRep components; 6 assemblies, STEP reimport and actual mesh renders</td>
+</tr>
+<tr>
+<td>MECH-002</td>
+<td>PASS</td>
+<td>790 mm nominal reach; independent FK and CAD match</td>
+</tr>
+<tr>
+<td>MECH-003</td>
+<td>PASS for calculation / TARGET for payload</td>
+<td>Static gravity and conceptual actuator envelope; no load rating</td>
+</tr>
+<tr>
+<td>MECH-004</td>
+<td>PASS for digital range / TARGET for force</td>
+<td>90 mm maximum jaw opening; closure tests and gripper energy calculation</td>
+</tr>
+<tr>
+<td>MECH-005</td>
+<td>PASS for concept</td>
+<td>Volumes, material assumptions, covers and cable bores; no production tolerances</td>
+</tr>
+<tr>
+<td>KIN-001</td>
+<td>PASS</td>
+<td>SE(3), known poses, independent planar discrepancy 2.544e-16 m</td>
+</tr>
+<tr>
+<td>KIN-002</td>
+<td>PASS for tested cases</td>
+<td>60 perturbed-seed FK–IK–FK trials, max position 2.700e-11 m; unreachable and malformed targets tested</td>
+</tr>
+<tr>
+<td>KIN-003</td>
+<td>PASS</td>
+<td>Finite-difference max discrepancy 2.517e-10</td>
+</tr>
+<tr>
+<td>KIN-004</td>
+<td>PASS</td>
+<td>Configuration/planning tests and every task joint sample</td>
+</tr>
+<tr>
+<td>CTRL-001</td>
+<td>PASS with interpolation caveat</td>
+<td>Analytic cubic/quintic limits; linear interior only, unbounded instantaneous start/stop acceleration</td>
+</tr>
+<tr>
+<td>CTRL-002</td>
+<td>PASS at samples</td>
+<td>MOVE J and MOVE L reconstruction, branch continuity and sampled derivatives</td>
+</tr>
+<tr>
+<td>CTRL-003</td>
+<td>PASS for model</td>
+<td>PID response/tracking saturation and antiwindup; independent inertia/damping plant only</td>
+</tr>
+<tr>
+<td>ELEC-001</td>
+<td>PASS for schematic concept</td>
+<td>44 components, 28 connected nets, 118 pin assignments and 22 topology checks</td>
+</tr>
+<tr>
+<td>ELEC-002</td>
+<td>PASS for digital design</td>
+<td>Native ERC: 0 violations under enabled default rules; routed PCB, actual DRC and schematic-board connectivity checks in <a href="data/electronics--pcb_verification.html">PCB verification</a></td>
+</tr>
+<tr>
+<td>SIM-001</td>
+<td>PASS for geometric sampling</td>
+<td>6000 seeded FK samples; hull/voxel limitations explicit</td>
+</tr>
+<tr>
+<td>SIM-002</td>
+<td>PASS for ideal task</td>
+<td>9.24398 s, close/open events, home return; no contact dynamics</td>
+</tr>
+<tr>
+<td>SIM-003</td>
+<td>PASS for required representative screening</td>
+<td>Every component pair classified across representative CAD poses and 75 task samples, including 6126 exact BRep intersections; continuous swept collision proof is outside this evidence</td>
+</tr>
+<tr>
+<td>VAL-001</td>
+<td>PASS</td>
+<td>91 tests; 0 failures; 0 errors; details in pytest.xml</td>
+</tr>
+<tr>
+<td>VAL-002</td>
+<td>PASS</td>
+<td>Single executed validation workflow and artifact consistency audit</td>
+</tr>
+<tr>
+<td>DOC-001</td>
+<td>PASS</td>
+<td>Setup, decisions, architecture, report, figures and portable commands</td>
+</tr>
+<tr>
+<td>DOC-002</td>
+<td>PASS</td>
+<td>Claims vocabulary and limitations audited throughout</td>
+</tr>
+<tr>
+<td>RESEARCH-001</td>
+<td>PASS</td>
+<td>Five actual numerical sweeps with data/plots</td>
+</tr>
+<tr>
+<td>PERF-001</td>
+<td>NOT VERIFIED</td>
+<td>±0.1 mm repeatability remains TARGET</td>
+</tr>
+</tbody>
+</table></div>
+<p>Version 1.2.0: <strong>DIGITAL SCOPE COMPLETE</strong> within the documented digital engineering brief. See the <a href="digital_scope_audit.html">scope audit</a>. Physical repeatability remains a target as requested; numerical IK residuals do not establish it.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

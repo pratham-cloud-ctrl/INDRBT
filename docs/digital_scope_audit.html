@@ -1,0 +1,169 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Audit of the requested digital scope · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#audit-of-the-requested-digital-scope">Audit of the requested digital scope</a><ul>
+<li><a href="#numerical-and-software-deliverables">Numerical and software deliverables</a></li>
+<li><a href="#executed-integration-gates-and-publication-evidence">Executed integration gates and publication evidence</a></li>
+<li><a href="#limits-that-do-not-imply-an-unfinished-digital-brief">Limits that do not imply an unfinished digital brief</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="audit-of-the-requested-digital-scope">Audit of the requested digital scope</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#audit-of-the-requested-digital-scope">Audit of the requested digital scope</a><ul>
+<li><a href="#numerical-and-software-deliverables">Numerical and software deliverables</a></li>
+<li><a href="#executed-integration-gates-and-publication-evidence">Executed integration gates and publication evidence</a></li>
+<li><a href="#limits-that-do-not-imply-an-unfinished-digital-brief">Limits that do not imply an unfinished digital brief</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>This audit compares the supplied master brief with the implemented project. It
+separates required digital deliverables from optional extensions and performance
+claims that the brief explicitly excludes. The final integrated workflow reports
+<strong>DIGITAL SCOPE COMPLETE</strong> only after its recorded tests, executed native schematic/PCB
+checks and a freshly verified versioned wheel pass on the current source revision. The subsequently requested PCB layout
+and native DRC are completed and documented. Repository and release publication
+are verified separately through the <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin" target="_blank" rel="noopener noreferrer" class="private-link">private GitHub repository<span class="badge">Source file</span></a>
+and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest" target="_blank" rel="noopener noreferrer" class="private-link">latest versioned release<span class="badge">Source file</span></a>. The <a href="project_alignment.html">project-purpose guide</a> connects the artifacts to the original goals.</p>
+<h2 id="numerical-and-software-deliverables">Numerical and software deliverables</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Master sections</th>
+<th>Requested deliverable</th>
+<th>Implemented evidence</th>
+<th>Scope conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14–17, 35–36</td>
+<td>Six-axis FK, bounded numerical IK, Jacobian, singularities, joint limits, tests and measured reconstruction errors</td>
+<td><a href="02_kinematics.html">Kinematic formulation</a>, <code>src/robotarm/kinematics</code>, <a href="data/results--validation--numerical_validation.html">60 perturbed-seed trials</a>, <code>tests/test_kinematics.py</code></td>
+<td>Required digital work is present. IK is local numerical search, not exhaustive solution enumeration.</td>
+</tr>
+<tr>
+<td>18, 32</td>
+<td>Seeded workspace sampling, projections, 3D view and conditioning plots</td>
+<td><a href="data/results--workspace--metrics.html">Workspace metrics</a>, samples and workspace/frame figures</td>
+<td>Required outputs are present. Hull and voxel values are labelled envelope/sampling proxies, not certified reachable volume.</td>
+</tr>
+<tr>
+<td>19–21, 33</td>
+<td>Linear/cubic/quintic planning, MOVE J, approximate MOVE L, pick/place task and model-driven animation</td>
+<td><code>src/robotarm/planning</code>, <code>src/robotarm/simulation</code>, <a href="data/results--trajectories--trajectory_metrics.html">trajectory metrics</a>, <a href="data/results--trajectories--pick_place_samples.html">task data</a>, <a href="assets/results/trajectories/pick_place_fk.gif">FK GIF</a>, <a href="../robot/index.html">CAD twin</a></td>
+<td>Required motion demonstration is present. Linear interpolation is a constant-speed interior; rest-to-rest task segments use quintic laws. MOVE L bounds are checked at samples.</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Symmetric gripper range, travel, force and actuator torque calculations</td>
+<td><code>src/robotarm/gripper</code>, <code>tests/test_gripper.py</code>, <a href="03_mechanical_analysis.html">mechanical analysis</a></td>
+<td>Required digital mechanism and calculations are present. Force is calculated from assumed efficiency and friction, not measured.</td>
+</tr>
+<tr>
+<td>23–25, 44–45</td>
+<td>Static load/torque, structure calculations, conceptual actuator sizing, numerical experiments and KPIs</td>
+<td><code>analysis/</code>, <a href="data/results--mechanical--joint_torque.html">mechanical results</a>, <a href="data/results--research--experiments.html">five research sweeps</a>, <a href="kpis.html">KPIs</a></td>
+<td>Required analyses are present. Simplified analytical beams are an expressly permitted alternative to full FEA.</td>
+</tr>
+<tr>
+<td>26–27</td>
+<td>PID step response, tracking, error curves and optional controller comparison</td>
+<td><code>src/robotarm/control</code>, <code>tests/test_control.py</code>, <a href="data/results--control--metrics.html">step/tracking metrics</a>, two control figures</td>
+<td>Required PID work is present, including saturation and antiwindup. P/PI/PD/PID modes exist; a comparative controller study is optional.</td>
+</tr>
+<tr>
+<td>30–31, 34–35, 57–60</td>
+<td>Organized Python package, central SI parameters, commands, meaningful tests and one validation workflow</td>
+<td><code>src/robotarm</code>, <a href="data/config--robot.html">SI configuration</a>, <code>python -m robotarm.demo</code>, <code>scripts/run_validation.py</code>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">executed report<span class="badge">Source file</span></a></td>
+<td>The report records actual totals without failures, errors or skips. Current source and authoritative-input hashes bind its revision. Full regeneration refreshes CAD, numerical results, native CAD/render/clearance proof and native ERC/DRC/connectivity before acceptance.</td>
+</tr>
+<tr>
+<td>56, 59</td>
+<td>Reproducible setup, clean installation and portable execution</td>
+<td><a href="reproduction.html">Installation instructions</a>, <code>setup.py</code>, <code>MANIFEST.in</code>, <code>requirements-lock.txt</code>, <code>scripts/verify_wheel_install.py</code>, <a href="data/results--validation--packaging_validation.html">isolated wheel evidence</a></td>
+<td>The versioned wheel is installed in a new isolated environment and executed outside the source tree. Every installed/wheel module and the bundled configuration are compared with source; FK/IK, planner/gripper, fresh CLI outputs and dependencies are checked.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="executed-integration-gates-and-publication-evidence">Executed integration gates and publication evidence</h2>
+<p>The numerical/control/software audit found no additional missing required
+deliverable. The routed PCB, fabrication exports, updated descriptions and
+traceability, integrated validation and fresh versioned installation checks now
+have executed evidence. The <a href="data/electronics--pcb_verification.html">PCB audit</a>
+records 44 schematic footprints plus four mechanical additions, all 119 physical
+pad-net assignments checked, and zero native DRC violations, unconnected items or
+schematic parity issues. Hashes bind the source board and exported files.</p>
+<p>Sections 51–52 require the coherent repository, tag and release assets. Their
+publication evidence is the live repository and versioned release, including the
+complete organized ZIP and installable wheel. Local digital acceptance covers
+the executed engineering checks; it cannot substitute for live publication
+verification. Passing checks retain their exact enabled-rule and sampling scope;
+changing status text cannot replace evidence.</p>
+<p>The original section 11 asks to check <strong>obvious interference throughout
+representative configurations</strong>; the project's
+<a href="01_requirements.html">SIM-003 requirement</a> also specifies representative screening.
+The initial selected-pair checks missed genuine adjacent-joint overlaps. Those
+interfaces were repaired and the representative audit was expanded: six named
+poses classify 8,586 component pairs, and 75 task configurations classify 107,325
+pairs; exact BRep intersection counts are retained in the current <a href="data/results--validation--cad_motion_clearance.html">clearance report</a>. Rigid-family contacts are explicitly
+classified, and open/mid/closed gripper states are checked separately. This verifies
+the stated representative screening, not every possible joint combination or the
+continuous sweep between samples. Its limitations remain explicit. A
+stronger collision-certification requirement would need to come from an additional
+user instruction or newly adopted requirement.</p>
+<h2 id="limits-that-do-not-imply-an-unfinished-digital-brief">Limits that do not imply an unfinished digital brief</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Limitation</th>
+<th>Master brief treatment</th>
+<th>Accurate completion treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No physical robot, measured payload rating or measured repeatability</td>
+<td>Sections 1, 4, 45 and 62 explicitly make this a digital project and distinguish targets from physical measurements</td>
+<td>Keep payload/force/repeatability as TARGET or assumption-based calculation. Do not require a physical build to complete the digital project.</td>
+</tr>
+<tr>
+<td>Analytical beam models instead of full CAD FEA</td>
+<td>Section 24 explicitly permits analytical calculations when full FEA is impractical</td>
+<td>Retain stress/deflection simplifications and omitted joint/cutout/compliance effects. Full FEA remains future work.</td>
+</tr>
+<tr>
+<td>Independent inertia/damping PID plants instead of coupled rigid-body dynamics</td>
+<td>Section 26 requires a simplified digital joint-control model</td>
+<td>The implemented model satisfies this scope; coupling, gravity, backlash and drive delays remain declared extensions.</td>
+</tr>
+<tr>
+<td>Scripted object attachment instead of friction/contact physics</td>
+<td>Sections 21 and 33 require a simulated task and motion corresponding to the kinematic model</td>
+<td>Describe the demonstration as ideal kinematic pick/place. Do not claim contact or gripping validation.</td>
+</tr>
+<tr>
+<td>Sampled approximate Cartesian motion and a geometric workspace</td>
+<td>Sections 18 and 20 request numerical sampling and basic approximately linear TCP motion</td>
+<td>Preserve sample/solver limitations; do not imply a collision-free operating envelope or continuous-time certificate.</td>
+</tr>
+<tr>
+<td>No production firmware, manufacturing tolerances, EMC/thermal certification or functional-safety certification</td>
+<td>Sections 28–29 define conceptual digital electronics; no hardware is built</td>
+<td>Retain these as engineering limitations, separate from completion of the requested digital artifacts.</td>
+</tr>
+<tr>
+<td>Extra controller comparisons or circular Cartesian motion</td>
+<td>Sections 20 and 27 make these conditional enhancements</td>
+<td>Their absence is not a missing required deliverable.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The executed local status is <strong>DIGITAL SCOPE COMPLETE — digital educational
+engineering project</strong>. The current release records coherent, reproducible completion of
+that documented digital scope. The repository, tag and assets provide separate
+publication evidence. This status does not imply a manufactured,
+hardware-ready or safety-certified robot; intentionally excluded physical
+validation remains outside the completed digital brief.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

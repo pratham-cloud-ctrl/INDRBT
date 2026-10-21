@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Design decisions · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#design-decisions">Design decisions</a></li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="design-decisions">Design decisions</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#design-decisions">Design decisions</a></li>
+</ul>
+</div>
+</details>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Reason</th>
+<th>Alternative / tradeoff</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python and Build123d primary CAD</td>
+<td>Same language as analysis; explicit parametric BRep export</td>
+<td>Manual CAD harder to regenerate; OpenSCAD duplicates geometry</td>
+</tr>
+<tr>
+<td>Original Z-Y-Y-X-Y-X chain</td>
+<td>Two positioning links and three wrist rotations; all transforms inspectable</td>
+<td>Offset wrist gives orientation-dependent reach and numerical IK complexity</td>
+</tr>
+<tr>
+<td>320/280 mm link lengths</td>
+<td>Near-balanced position workspace with reduced distal span</td>
+<td>Longer forearm increases elbow torque and inertia</td>
+</tr>
+<tr>
+<td>Hollow aluminum links and service covers</td>
+<td>Lower structural mass with accessible cabling and actuator interfaces</td>
+<td>Simplified exterior does not specify complete manufacturing tolerances</td>
+</tr>
+<tr>
+<td>Numerical bounded IK with SO(3) residual</td>
+<td>Handles this non-spherical offset wrist and joint limits</td>
+<td>Local convergence; multiple starts improve robustness without completeness proof</td>
+</tr>
+<tr>
+<td>Quintic default joint motion</td>
+<td>Rest-to-rest velocity and acceleration endpoints</td>
+<td>Linear interpolation has endpoint velocity discontinuity; educational comparison only</td>
+</tr>
+<tr>
+<td>Opposed lead-screw nuts for gripper</td>
+<td>Symmetric positive jaw travel, simple force/lead calculation</td>
+<td>Backlash, efficiency, wear and actual threads remain conceptual</td>
+</tr>
+<tr>
+<td>Explicit lumped drive masses</td>
+<td>Exterior CAD does not model copper, magnet, bearing and gear internals</td>
+<td>CAD material volume is reported separately, not silently substituted</td>
+</tr>
+<tr>
+<td>Analytical beam model</td>
+<td>Transparent calculations reproducible without pretending FEA</td>
+<td>Does not resolve contact, holes, bearings, fasteners or fatigue</td>
+</tr>
+<tr>
+<td>Diagonal inertia/damping PID model</td>
+<td>Clear feedback and saturation experiment</td>
+<td>No claim of full manipulator dynamics or physically tuned gains</td>
+</tr>
+<tr>
+<td>Low-voltage joint/sensor interface</td>
+<td>Useful meaningful electronics scope without fictional power inverter</td>
+<td>External controller and certified drive still required</td>
+</tr>
+<tr>
+<td>Four-layer conceptual interface PCB</td>
+<td>Separate inner ground/3.3 V planes and outer signal layers simplify returns and routing</td>
+<td>Greater fabrication complexity than a two-layer board; no EMC or physical qualification claim</td>
+</tr>
+<tr>
+<td>Full-pair representative CAD screening</td>
+<td>Selected pairs missed adjacent shoulder/wrist interfaces; broader classifications and exact intersections found the real defects</td>
+<td>Sampled configurations still do not certify every continuous joint motion</td>
+</tr>
+<tr>
+<td>Numbered presentation folders and retained source subtree</td>
+<td>User can find models, reports and electronics together while reproduction scripts retain their source-relative paths</td>
+<td>Presentation copies must be refreshed and hash-checked after regeneration</td>
+</tr>
+<tr>
+<td>Private GitHub publication</td>
+<td>Publication authorized; public visibility not specified</td>
+<td>User may later choose public visibility</td>
+</tr>
+</tbody>
+</table></div>
+<p>The journal records actual iterations and failures. The validation matrix marks partial evidence explicitly.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

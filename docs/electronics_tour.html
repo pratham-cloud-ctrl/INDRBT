@@ -1,0 +1,118 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Electronics tour · ASTER-6 joint and sensor interface · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#electronics-tour-aster-6-joint-and-sensor-interface">Electronics tour · ASTER-6 joint and sensor interface</a><ul>
+<li><a href="#follow-the-signal-path">Follow the signal path</a></li>
+<li><a href="#inspect-download-or-edit">Inspect, download or edit</a></li>
+<li><a href="#what-has-been-checked">What has been checked</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="electronics-tour-aster-6-joint-and-sensor-interface">Electronics tour · ASTER-6 joint and sensor interface</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#electronics-tour-aster-6-joint-and-sensor-interface">Electronics tour · ASTER-6 joint and sensor interface</a><ul>
+<li><a href="#follow-the-signal-path">Follow the signal path</a></li>
+<li><a href="#inspect-download-or-edit">Inspect, download or edit</a></li>
+<li><a href="#what-has-been-checked">What has been checked</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p><a href="../index.html">Project home</a> · <a href="assets/electronics/exports/joint_interface.pdf">Schematic PDF</a> · <a href="electronics_components.html">Component guide</a> · <a href="05_electronics.html">Detailed design</a></p>
+<p>This board connects an <strong>external 3.3 V controller</strong> to a joint encoder, limit contact, separate motor drive and RS-485 bus. It gives the robot project a concrete electrical interface with a schematic, routed PCB and checked manufacturing exports. One interface is designed; repeating it across the arm and gripper is the system architecture.</p>
+<p><img alt="Actual native KiCad 3D export of the ASTER-6 interface PCB" src="assets/electronics/exports/pcb_3d.png" /></p>
+<p><strong>100 × 100 mm · four copper layers · 44 schematic components · 48 PCB footprints, including four mounting holes.</strong> The 41-body placement file omits the two optional bias resistors, bare copper solder jumper and mounting holes. F1's custom copper lands are present; a fitted fuse body model is not supplied.</p>
+<h2 id="follow-the-signal-path">Follow the signal path</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Block</th>
+<th>Find it on the board</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 V input and protection</td>
+<td><strong>J1 → F1 → D1</strong>, upper left</td>
+<td>A resettable fuse and reverse-polarity diode feed the protected logic supply. Input is regulated <strong>5 V</strong>.</td>
+</tr>
+<tr>
+<td>3.3 V supply</td>
+<td><strong>U1, C1, C2</strong>, beside the input; <strong>R1/D2</strong> indicator</td>
+<td>The AP2112 regulator supplies the logic rail. The shared controller, encoder and interface load budget is <strong>150 mA</strong>, a design assumption.</td>
+</tr>
+<tr>
+<td>Controller connection</td>
+<td><strong>J2</strong>, left edge</td>
+<td>The external controller receives feedback and supplies step, direction, enable and communication signals. No microcontroller or embedded firmware is implemented on this PCB.</td>
+</tr>
+<tr>
+<td>Encoder and travel feedback</td>
+<td><strong>J3, R2–R4, C3–C5, D3–D8</strong>; <strong>J4, R5/R6, C6, D9/D10</strong></td>
+<td>Three encoder channels have RC filters and rail clamps. The normally closed limit contact reads low when closed and high when opened or disconnected.</td>
+</tr>
+<tr>
+<td>External drive</td>
+<td><strong>J5, R8–R12</strong>, right edge</td>
+<td>Series resistors carry 3.3 V STEP/DIR/ENABLE commands; a pull-down defaults enable to off. The separate drive handles motor power.</td>
+</tr>
+<tr>
+<td>RS-485 communication</td>
+<td><strong>U2, C7, R13, J6</strong>, lower right</td>
+<td>The LTC2850 translates controller UART signals to the A/B bus. <strong>R14/R15</strong> are optional, unpopulated bias parts; <strong>R16/JP1</strong> provide selectable endpoint termination.</td>
+</tr>
+<tr>
+<td>E-stop auxiliary state</td>
+<td><strong>J7/R7</strong>, lower left</td>
+<td>Reports contact state to the controller. Actuator torque interruption belongs to independent external safety hardware.</td>
+</tr>
+</tbody>
+</table></div>
+<p><img alt="Top view with connector and component references for tracing the circuit" src="assets/electronics/exports/pcb_top.png" /></p>
+<p>The references above match the <strong>same parts</strong> in the <a href="assets/electronics/exports/joint_interface.pdf">schematic</a>, <a href="data/electronics--bom.html">BOM</a> and <a href="electronics_components.html">component guide</a>. For example, locate <strong>U2</strong> on this image, find U2 in the schematic and read its value and footprint in the BOM. The <a href="assets/docs/diagrams/electronics_architecture.png">system architecture diagram</a> shows how the interface fits between motion software, feedback and external drives.</p>
+<h2 id="inspect-download-or-edit">Inspect, download or edit</h2>
+<p>PDFs and images provide immediate viewing; GitHub renders the BOM CSV as a table. Native KiCad links lead to engineering source files: download the complete repository to open and edit them in KiCad.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>I want to…</th>
+<th>Open this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read the circuit</td>
+<td><a href="assets/electronics/exports/joint_interface.pdf">Schematic PDF</a> or <a href="assets/electronics/exports/joint_interface.svg">zoomable schematic SVG</a></td>
+</tr>
+<tr>
+<td>Inspect copper and board layers</td>
+<td><a href="assets/electronics/exports/pcb_layers.pdf">Six-page layer PDF</a>, <a href="assets/electronics/exports/pcb_assembly.svg">assembly SVG</a>, <a href="assets/electronics/exports/pcb_ground_plane.svg">ground plane</a> or <a href="assets/electronics/exports/pcb_power_plane.svg">3.3 V plane</a></td>
+</tr>
+<tr>
+<td>Open the native project</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_pro" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_pro<span class="badge">Source file</span></a> in <strong>KiCad 10</strong></td>
+</tr>
+<tr>
+<td>Edit the schematic / layout</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_sch" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_sch<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_pcb" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_pcb<span class="badge">Source file</span></a></td>
+</tr>
+<tr>
+<td>Review components and population</td>
+<td><a href="data/electronics--bom.html">BOM CSV</a>, <a href="electronics_components.html">component guide</a> and <a href="data/electronics--fabrication--assembly_positions.html">placement CSV</a></td>
+</tr>
+<tr>
+<td>Examine manufacturing outputs</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/electronics/fabrication/joint_interface_fabrication.zip" target="_blank" rel="noopener noreferrer" class="private-link">Fabrication ZIP<span class="badge">Source file</span></a>: ten Gerber layers, plated/nonplated drills, maps, positions, IPC-D-356 and BOM</td>
+</tr>
+<tr>
+<td>Check the evidence</td>
+<td><a href="data/results--validation--final_electronics_review.html">Independent electronics review</a>, <a href="data/electronics--erc_report.html">native ERC</a>, <a href="data/electronics--pcb_drc_report.html">native DRC</a> and <a href="data/electronics--pcb_verification.html">source/export verification</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>From the <a href="../index.html">repository home</a>, choose <strong>Code → Download ZIP</strong> and extract it, or clone the repository. Keep the complete <code>electronics</code> folder together, including <code>fp-lib-table</code>, <code>sym-lib-table</code> and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/tree/main/06_Complete_Project_Source/electronics/ASTER_Interface.pretty" target="_blank" rel="noopener noreferrer" class="private-link">ASTER_Interface.pretty<span class="badge">Source file</span></a>. The local F1 footprint uses a relative project path, so downloading only the PCB loses its editable library context. Install KiCad 10 with its standard symbol and footprint libraries, then open the <code>.kicad_pro</code> file. The repository's Windows <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/OPEN_PCB_LAYOUT.cmd" target="_blank" rel="noopener noreferrer" class="private-link">OPEN_PCB_LAYOUT.cmd<span class="badge">Source file</span></a> also opens the board after download.</p>
+<h2 id="what-has-been-checked">What has been checked</h2>
+<p>The saved native evidence records <strong>zero enabled-rule ERC/DRC findings, zero unconnected items and zero schematic-parity issues</strong>. Independent checks cover 118 connected pin assignments, 22 circuit topology statements, the BOM, exported files and their source hashes. These results describe the saved digital design. The <a href="05_electronics.html">design chapter</a> explains factory-disabled rule scope, assumptions, calculations and how to rerun the checks.</p>
+<p>The controller and drive must match the documented 3.3 V interfaces. Thermal behaviour, cable noise, component purchasing choices and physical safety remain build-stage work; no hardware performance is claimed.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

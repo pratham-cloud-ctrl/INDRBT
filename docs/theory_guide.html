@@ -1,0 +1,369 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Understanding the ASTER-6 digital robot · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#understanding-the-aster-6-digital-robot">Understanding the ASTER-6 digital robot</a><ul>
+<li><a href="#1-start-with-units-and-assumptions">1. Start with units and assumptions</a></li>
+<li><a href="#2-turn-joint-angles-into-the-tool-pose">2. Turn joint angles into the tool pose</a></li>
+<li><a href="#3-solve-a-target-pose-and-understand-singularities">3. Solve a target pose and understand singularities</a></li>
+<li><a href="#4-plan-smooth-motion">4. Plan smooth motion</a></li>
+<li><a href="#5-calculate-gravity-and-choose-a-conceptual-drive-envelope">5. Calculate gravity and choose a conceptual drive envelope</a></li>
+<li><a href="#6-check-the-opposed-screw-gripper">6. Check the opposed-screw gripper</a></li>
+<li><a href="#7-estimate-beam-stiffness-and-nominal-stress">7. Estimate beam stiffness and nominal stress</a></li>
+<li><a href="#8-understand-the-controller-experiment">8. Understand the controller experiment</a></li>
+<li><a href="#9-read-the-research-plots-as-controlled-numerical-experiments">9. Read the research plots as controlled numerical experiments</a></li>
+<li><a href="#10-follow-each-claim-to-its-evidence">10. Follow each claim to its evidence</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="understanding-the-aster-6-digital-robot">Understanding the ASTER-6 digital robot</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#understanding-the-aster-6-digital-robot">Understanding the ASTER-6 digital robot</a><ul>
+<li><a href="#1-start-with-units-and-assumptions">1. Start with units and assumptions</a></li>
+<li><a href="#2-turn-joint-angles-into-the-tool-pose">2. Turn joint angles into the tool pose</a></li>
+<li><a href="#3-solve-a-target-pose-and-understand-singularities">3. Solve a target pose and understand singularities</a></li>
+<li><a href="#4-plan-smooth-motion">4. Plan smooth motion</a></li>
+<li><a href="#5-calculate-gravity-and-choose-a-conceptual-drive-envelope">5. Calculate gravity and choose a conceptual drive envelope</a></li>
+<li><a href="#6-check-the-opposed-screw-gripper">6. Check the opposed-screw gripper</a></li>
+<li><a href="#7-estimate-beam-stiffness-and-nominal-stress">7. Estimate beam stiffness and nominal stress</a></li>
+<li><a href="#8-understand-the-controller-experiment">8. Understand the controller experiment</a></li>
+<li><a href="#9-read-the-research-plots-as-controlled-numerical-experiments">9. Read the research plots as controlled numerical experiments</a></li>
+<li><a href="#10-follow-each-claim-to-its-evidence">10. Follow each claim to its evidence</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>This guide follows one engineering question through the project: can the chosen
+geometry move a tool through a useful task, support an assumed load, and be
+controlled in a clearly defined digital model? Read it alongside the
+<a href="01_requirements.html">requirements</a>, <a href="../robot/index.html">interactive CAD twin</a>
+and <a href="engineering_report.html">engineering report</a>. The current numerical values live
+in the linked result files and <a href="kpis.html">KPI table</a>, so this guide concentrates on
+the equations and how to interpret their evidence.</p>
+<h2 id="1-start-with-units-and-assumptions">1. Start with units and assumptions</h2>
+<p><a href="data/config--robot.html">The configuration</a> is the common source for geometry,
+joint bounds, assumed masses, motion limits, gripper parameters and controller
+gains. Calculations use metres, radians, kilograms, seconds and newtons. CAD
+converts metres to millimetres at its export boundary. Degree-valued input fields
+are converted to radians when the software loads them.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Joint angle, speed, acceleration</td>
+<td>q, qdot, qddot</td>
+<td>rad, rad/s, rad/s²</td>
+</tr>
+<tr>
+<td>Position, length, screw lead</td>
+<td>p, L, lead</td>
+<td>m</td>
+</tr>
+<tr>
+<td>Force, joint torque</td>
+<td>F, tau</td>
+<td>N, N·m</td>
+</tr>
+<tr>
+<td>Joint rotational inertia</td>
+<td>I_joint</td>
+<td>kg·m²</td>
+</tr>
+<tr>
+<td>Beam second moment of area</td>
+<td>I_beam</td>
+<td>m⁴</td>
+</tr>
+<tr>
+<td>Young's modulus, stress</td>
+<td>E, sigma</td>
+<td>Pa = N/m²</td>
+</tr>
+<tr>
+<td>Viscous rotational damping</td>
+<td>b</td>
+<td>N·m·s/rad</td>
+</tr>
+</tbody>
+</table></div>
+<p>Joint inertia and beam second moment are different physical quantities despite
+often sharing the letter I. The former describes resistance to angular
+acceleration; the latter describes a section's resistance to bending.</p>
+<p>Payload, material properties, COM locations, friction, inertia and damping are
+design inputs or assumptions. FK reconstruction and native CAD/PCB checks are
+digital evidence. Physical payload and repeatability remain targets. These
+categories are carried through the <a href="digital_scope_audit.html">scope audit</a>.</p>
+<h2 id="2-turn-joint-angles-into-the-tool-pose">2. Turn joint angles into the tool pose</h2>
+<p>The base frame has Z upward and X along the extended arm. Positive rotations use
+the right-hand rule; positive Y rotation tips an initially horizontal link
+downward. A homogeneous transform maps a local point into the base frame using
+column vectors. Its rotation block gives orientation and its final column gives
+position.</p>
+<p>The serial chain is:</p>
+<pre><code class="language-text">T_base_tcp = Tz(h) Rz(q1) Ry(q2) Tx(L1) Ry(q3) Tx(L2)
+             Rx(q4) Tx(lr) Ry(q5) Tx(lp) Rx(q6) Tx(lt)
+</code></pre>
+<p>The local joint axes are Z, Y, Y, X, Y, X. Each CAD component belongs to the frame
+after its joint rotation and before the next translation. This convention makes
+the CAD assembly and the mathematical arm share the same joint origins.</p>
+<p>With every angle zero, the TCP lies at <code>(R, 0, h)</code>, where
+<code>R = L1 + L2 + lr + lp + lt</code>. With only q2 at −π/2, it lies at <code>(0, 0, h+R)</code>.
+These are useful hand checks for signs, units and translation order. R is a
+shoulder-centred radial bound; h+R is a vertical height from the base plane.
+<a href="02_kinematics.html">The kinematic formulation</a> explains every frame and the exact
+software interface.</p>
+<h2 id="3-solve-a-target-pose-and-understand-singularities">3. Solve a target pose and understand singularities</h2>
+<p>Inverse kinematics asks for joint angles that reconstruct a requested position
+and orientation. The bounded numerical solver minimizes:</p>
+<pre><code class="language-text">r(q) = [(p(q) − p_target)/R,
+        log_SO3(R_target R(q)^T)]
+</code></pre>
+<p>The SO(3) logarithm is a three-component axis-angle rotation vector. Scaling
+position by R balances dimensionless position and orientation residuals. Joint
+bounds constrain the search, and separate configured position/orientation
+tolerances decide whether a candidate is accepted. Deterministic restarts improve
+the chance of finding a branch. A failed local search inside the radial bound
+does not prove that every possible branch is inaccessible.</p>
+<p>The geometric Jacobian maps joint speed into world-frame TCP linear and angular
+velocity. For joint axis a_i through origin o_i, its column is:</p>
+<pre><code class="language-text">J_i = [a_i × (p_tcp − o_i); a_i]
+[v_tcp; omega_tcp] = J(q) qdot
+</code></pre>
+<p>A singularity removes an instantaneous motion direction. Near one, a modest tool
+motion may need large joint speeds or cause an IK branch jump. The plotted
+singular values use translational rows divided by R; their numerical threshold
+is a diagnostic for this chosen scaling. It is not a safety limit.
+<a href="data/results--validation--numerical_validation.html">Numerical validation</a> records
+perturbed-seed reconstruction and central-difference Jacobian checks. An IK
+residual measures agreement between two mathematical poses; it does not measure
+physical accuracy or repeatability.</p>
+<h2 id="4-plan-smooth-motion">4. Plan smooth motion</h2>
+<p>For a joint move, every joint uses <code>q(t) = q_start + delta_q s(u)</code>, with
+<code>u = t/T</code>. The three interpolation laws are:</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Law</th>
+<th>s(u)</th>
+<th>Peak first-derivative magnitude</th>
+<th>Peak second-derivative magnitude</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linear interior</td>
+<td>u</td>
+<td>1</td>
+<td>0 inside the interval; start/stop acceleration unbounded</td>
+</tr>
+<tr>
+<td>Cubic</td>
+<td>3u² − 2u³</td>
+<td>3/2</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Quintic</td>
+<td>10u³ − 15u⁴ + 6u⁵</td>
+<td>15/8</td>
+<td>10/√3</td>
+</tr>
+</tbody>
+</table></div>
+<p>For positive speed/acceleration limits, the minimum duration follows directly:</p>
+<pre><code class="language-text">T &gt;= max over joints of {
+     velocity_factor · |delta_q| / velocity_limit,
+     sqrt(acceleration_factor · |delta_q| / acceleration_limit)
+     }
+</code></pre>
+<p>Cubic motion has zero endpoint velocity. Quintic motion also has zero endpoint
+acceleration, making it suitable for joining rest-to-rest moves and dwells. Linear
+interpolation is used for a comparison of the constant-speed interior; it does
+not meet finite start/stop acceleration requirements.</p>
+<p>MOVE J applies these laws in joint space, so its TCP path generally curves. MOVE L
+uses a straight position line, shortest-path orientation SLERP and a quintic time
+law. It solves IK successively from the preceding joint solution, rejects large
+branch jumps, estimates derivatives by finite differences, and uniformly lengthens
+time to obey their sampled limits. This does not establish derivative bounds
+between samples. Joint bounds and IK success also do not establish collision
+clearance.</p>
+<p>The default MOVE L regularity guard requires the smallest scaled Jacobian
+singular value to exceed 0.001 at the start and solved samples, with translation
+rows divided by reach. Singular continuation raises a useful error and suggests
+another path or MOVE J. Cartesian quintic endpoints alone do not establish finite
+joint acceleration at full extension; the inverse map can be singular. This is
+a sampled numerical guard with a configurable threshold, not a safety claim.</p>
+<p><a href="data/results--trajectories--trajectory_metrics.html">Trajectory evidence</a> and the
+<a href="data/results--trajectories--pick_place_samples.html">recorded task</a> expose the actual
+samples. The object follows a scripted attachment between close/open events;
+grasp contact and friction are not simulated. Separate
+<a href="data/results--validation--cad_motion_clearance.html">CAD clearance evidence</a> screens
+all component pairs at representative task configurations, with its finite
+sampling scope stated explicitly.</p>
+<h2 id="5-calculate-gravity-and-choose-a-conceptual-drive-envelope">5. Calculate gravity and choose a conceptual drive envelope</h2>
+<p>Each moving group has an assumed midpoint COM, and the payload acts at the TCP.
+For mass m, gravity force is <code>[0, 0, −m g]</code>. Its external joint moment is:</p>
+<pre><code class="language-text">tau_gravity_i = a_i · [(p_COM − o_i) × F_gravity]
+tau_holding_i = −tau_gravity_i
+</code></pre>
+<p>Only downstream masses contribute to a joint. The negative potential-energy
+gradient supplies an independent check on the sign and magnitude. Full extension
+also permits hand calculations using horizontal lever lengths. Centred lumps
+give zero gravity moment around the base yaw and tool roll axes; they still need
+torque for acceleration and damping.</p>
+<p>The controller's inertia is an independent educational plant assumption. It must
+not automatically become the actuator-sizing inertia: a point payload alone has
+rotational inertia <code>m · r_perpendicular²</code>, which can exceed that assumption.
+For each joint, the load analysis bounds the perpendicular lever to every
+downstream COM point using the actual link lengths. It then calculates:</p>
+<pre><code class="language-text">I_point_bound_i = sum over downstream COM points of (m · lever_bound_i²)
+I_sizing_i = max(I_control_i, I_point_bound_i)
+</code></pre>
+<p>Roll-axis offsets along the same axis contribute no perpendicular lever. The
+point-mass bound covers every joint angle under the midpoint COM model. An
+independent test differentiates COM positions at unit joint speed and checks
+<code>2 · kinetic_energy = I_ii</code> against these bounds. The configured control plants
+remain unchanged. Conceptual sizing adds the gravity bound to this equivalent
+diagonal inertia allowance and the assumed damping allowance:</p>
+<pre><code class="language-text">tau_output = safety_factor · (gravity_bound + I_sizing·amax + b·vmax)
+tau_motor = tau_output / (gear_ratio · efficiency)
+</code></pre>
+<p>The simultaneous maxima define an envelope for this independent-axis point-mass
+model. They do not bound a coupled robot's complete dynamic torque: centroidal
+body rotation tensors, off-diagonal inertia, Coriolis/centrifugal terms and
+reflected drive inertia are absent. Continuous heating, brakes, gear/bearing
+loads, backlash and commercial part ratings also require further engineering.
+<a href="data/results--mechanical--joint_torque.html">Load results</a> and
+<a href="03_mechanical_analysis.html">mechanical analysis</a> retain the assumptions, sampled
+maxima and all-angle bounds separately.</p>
+<h2 id="6-check-the-opposed-screw-gripper">6. Check the opposed-screw gripper</h2>
+<p>The inner jaw faces lie at <code>±opening/2</code>. Both nuts travel one screw lead per
+revolution in opposite directions, so a revolution changes the full gap by twice
+the lead. For the sum N_total of both contact normal forces:</p>
+<pre><code class="language-text">gap_change = 2 · lead · screw_revolutions
+input_work_per_revolution = 2π · torque
+output_work_per_revolution = N_total · lead
+required_torque = N_total · lead / (2π · efficiency)
+friction_payload_bound = mu · N_total / (grip_safety_factor · g)
+</code></pre>
+<p>Summing both jaws' work avoids a factor-of-two error. The friction bound assumes
+a vertical, static load, the stated coefficient and shared contacts; acceleration,
+contact pressure, object damage and guide friction remain unmodelled. Screw
+efficiency is an assumption and does not establish self-locking or brake holding.
+The rotary-to-linear torque convention agrees with the
+<a href="https://www.thomsonlinear.com/downloads/screws/Lead_Screws_cten.pdf" target="_blank" rel="noopener noreferrer">Thomson engineering catalogue</a>,
+page 49. Current calculations are in the gripper section of the
+<a href="03_mechanical_analysis.html">mechanical analysis</a>.</p>
+<h2 id="7-estimate-beam-stiffness-and-nominal-stress">7. Estimate beam stiffness and nominal stress</h2>
+<p>The links are ideal clamped hollow rectangular beams. For width B, bending depth
+H and wall t, the section model is:</p>
+<pre><code class="language-text">I_beam = [B H³ − (B−2t)(H−2t)³] / 12
+M_root = F L + M_tip + w L²/2
+sigma_root = M_root H / (2 I_beam)
+delta_tip = [F L³/3 + M_tip L²/2 + w L⁴/8] / (E I_beam)
+theta_tip = [F L²/2 + M_tip L + w L³/6] / (E I_beam)
+</code></pre>
+<p>F is an end force, M_tip an end couple and w a distributed load in N/m.
+Superposition follows the small-deflection moment-curvature relation taught in
+<a href="https://www.ocw.mit.edu/courses/6-152j-micro-nano-processing-technology-fall-2005/4e555db93fbd2b7473f14100fbaadcc8_lecture13.pdf" target="_blank" rel="noopener noreferrer">MIT's cantilever lecture</a>.
+The complete extended-pose TCP estimate must carry both beam-end rotations across
+their downstream rigid offsets:</p>
+<pre><code class="language-text">delta_TCP = delta_upper + delta_forearm
+          + theta_upper   · (L2 + lr + lp + lt)
+          + theta_forearm · (lr + lp + lt)
+</code></pre>
+<p>The final theory audit added the forearm-rotation term omitted from the earlier
+estimate. An independent regression integrates the load moment multiplied by the
+unit-TCP-load moment over both flexible sections. It agrees with the corrected
+four-term expression. <a href="data/results--mechanical--structural.html">Structural results</a>
+record each contribution, slope and the total, making the correction inspectable.</p>
+<p>Wrist/tool sections are rigid in this calculation. Holes, the terminal clevis,
+contacts, gears, bearings, shear deformation and fatigue are omitted. Yield divided
+by nominal section stress describes this ideal section alone. Static deflection
+describes a load-dependent pose bias. Repeatability describes the spread of
+repeated returns under defined conditions; this project supplies no physical
+repeatability test.</p>
+<h2 id="8-understand-the-controller-experiment">8. Understand the controller experiment</h2>
+<p>Each joint follows an independent assumed plant and a saturated feedback command:</p>
+<pre><code class="language-text">I_joint qddot + b qdot = tau_command
+error = q_reference − q_actual
+tau_unsaturated = Kp·error + Ki·integral(error) + Kd·(qdot_reference − qdot_actual)
+tau_command = clip(tau_unsaturated, −torque_limit, +torque_limit)
+</code></pre>
+<p>Kp has units N·m/rad, Ki N·m/(rad·s), and Kd N·m·s/rad. Conditional integration
+freezes the integrator when saturation would be pushed further and permits
+integration that helps unwind it. Optional feedforward adds
+<code>I_joint qddot_reference + b qdot_reference</code>; the retained main control experiment
+uses feedback alone.</p>
+<p>Semi-implicit Euler first updates velocity and then position, using a timestep
+no greater than the configured integration interval. Positions clip at joint
+bounds and clipped joints reset velocity; that simple boundary rule is not contact
+or impact dynamics. Gravity, cross-axis coupling, sensor noise, backlash and drive
+delay are absent. The planned CAD animation and the feedback tracking experiment
+are separate outputs.</p>
+<p><a href="data/results--control--metrics.html">Control results</a> report joint-space RMSE, final
+error, command peaks and step settling. The two-percent settling time is the
+first sample after the last excursion outside the band, rather than the first
+crossing. These metrics describe the assumed plant; they do not measure physical
+bandwidth or TCP repeatability.</p>
+<h2 id="9-read-the-research-plots-as-controlled-numerical-experiments">9. Read the research plots as controlled numerical experiments</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>What is varied and held fixed</th>
+<th>What the result can establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Link ratio</td>
+<td>Change L1/L2 at fixed L1+L2; reuse joint samples and grid pitch</td>
+<td>Sensitivity of minimum sampled radius and occupancy; outer reach remains fixed</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>Change payload at full extension; retain the link/COM model</td>
+<td>Linear gravity-torque growth from a longer loaded lever</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>Change T for the same quintic joint displacement</td>
+<td>Velocity scales as 1/T and acceleration as 1/T²</td>
+</tr>
+<tr>
+<td>PID gains</td>
+<td>Scale all three gains for the same joint step and plant</td>
+<td>A tuning tradeoff among error, settling, overshoot and command torque</td>
+</tr>
+<tr>
+<td>Finger length</td>
+<td>Change L with force and section fixed</td>
+<td>Stress grows with L and deflection with L³; ideal screw torque stays fixed</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="data/results--research--experiments.html">Experiment data</a> records the samples and
+interpretations used to generate every plot. Workspace hulls fill inaccessible
+holes, and occupied voxels depend on sampling density and pitch. Neither is a
+certified reachable or collision-free volume. Higher PID gain can reduce RMSE
+without improving the two-percent settling time; the measured criterion matters.</p>
+<h2 id="10-follow-each-claim-to-its-evidence">10. Follow each claim to its evidence</h2>
+<p>Use the <a href="kpis.html">KPI table</a> for current values, the
+<a href="validation_matrix.html">requirements matrix</a> for acceptance, the
+<a href="completion_checklist.html">completion checklist</a> for deliverables and publication,
+and the <a href="data/results--validation--final_theory_review.html">final theory review</a> for
+the independent cross-checks. The <a href="05_electronics.html">electronics guide</a> covers
+the native schematic/PCB, power calculations and enabled-rule checks. Digital
+ERC/DRC verifies specified rules and connectivity; it does not establish thermal,
+EMC, ESD or functional-safety performance.</p>
+<p>From the source root, <code>python scripts/run_validation.py --help</code> describes the full
+validation workflow. <code>python scripts/review_theory.py --help</code> describes the
+focused theory checks. Passing evidence applies to the documented models and
+samples. It should always be read together with their assumptions and limits.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

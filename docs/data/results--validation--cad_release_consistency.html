@@ -1,0 +1,1913 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Cad release consistency · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Cad release consistency</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/validation/cad_release_consistency.json · SHA-256 b224c5fc185ec9a8d3ccb2e41daa9a058a91448474865d9566072fb2d382d232</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;schema_version&quot;: 2,
+  &quot;status&quot;: &quot;PASS&quot;,
+  &quot;recorded_utc&quot;: &quot;2026-10-17T11:22:29.751776+00:00&quot;,
+  &quot;issues&quot;: [],
+  &quot;source_sha256&quot;: {
+    &quot;config/robot.yaml&quot;: &quot;bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96&quot;,
+    &quot;cad/build123d/geometry.py&quot;: &quot;f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250&quot;,
+    &quot;cad/build123d/assembly.py&quot;: &quot;ab331015a96668f5c9eb73fdccd46cc386fd6b050448eed1cc2901cc0866f84f&quot;,
+    &quot;cad/build123d/parameters.py&quot;: &quot;78db1770d9ed6471f7226bf11b3b180eaca02c2740a672997efa137453a3ccbe&quot;,
+    &quot;cad/build123d/export_all.py&quot;: &quot;d29e0471cd2822c09003df9b2ad74bba482068acda58268e0ae059c55e535d97&quot;,
+    &quot;cad/build123d/drawings.py&quot;: &quot;14f0980e103e54a895ce121c24fa8d982fd6c6c7253e9318b959cc0bbb10f513&quot;,
+    &quot;cad/build123d/render_blender.py&quot;: &quot;bf84f37edbc38beb844a402a91c8dafaf4ca72d409f777eca4fd781eeab3491a&quot;,
+    &quot;cad/build123d/inspect_blender.py&quot;: &quot;f26cb3e95b5f8a86ec76e2837ad583214211a29cf67571403019030e2354fe54&quot;,
+    &quot;cad/freecad/inspect_step.py&quot;: &quot;31d8b3b5bc1f24abb53e8e0f61fa0c52622519aea601fc85946f2d5a9755c8ee&quot;,
+    &quot;cad/build123d/check_assembly.py&quot;: &quot;16aad10d458771f8787ae8b28494dcd62169b18a0643d2107e0eb1d5eb166ae6&quot;,
+    &quot;cad/build123d/check_motion.py&quot;: &quot;513d7217ba978a62ff2bb44506814af85be71d05e59e2ea1b90693d4696cc17d&quot;,
+    &quot;scripts/review_cad.py&quot;: &quot;d6da1c9ebae3e354cd92e4a355f278bce622831e173b83378c2ac688f81a2cdf&quot;,
+    &quot;scripts/refresh_cad.py&quot;: &quot;41c7d03c6a7536e6ea39e891841f22b96662e6ade6701cdf8505b8dab04f85ea&quot;,
+    &quot;tests/test_cad.py&quot;: &quot;c800a999a61ff3ea0a02472802f8badda1d5833b81a32aafaab6eaa605022bdc&quot;
+  },
+  &quot;checked_artifacts&quot;: [
+    {
+      &quot;file&quot;: &quot;cad/exports/meshes/assembly_meshes.json&quot;,
+      &quot;sha256&quot;: &quot;604539d0a4cb2578d351a1b7de666498aac3018c10c57520082c3ccc9a1e3991&quot;,
+      &quot;bytes&quot;: 1967735
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/assembly_extended.step&quot;,
+      &quot;sha256&quot;: &quot;c2ec4369332e349ff0ae33909484e52a702ece28a54cf3cfd210a4601f94a75b&quot;,
+      &quot;bytes&quot;: 2484079
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/assembly_folded.step&quot;,
+      &quot;sha256&quot;: &quot;e11311ac44df3c3552737e027151e3f8749b1f53564fdf27af1159cbdfbfc06c&quot;,
+      &quot;bytes&quot;: 2485997
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/assembly_home.step&quot;,
+      &quot;sha256&quot;: &quot;5ba464523d92164682b233a14a36a52155f7721e10a4f5dddb2ec0253015777b&quot;,
+      &quot;bytes&quot;: 2485945
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/assembly_pick.step&quot;,
+      &quot;sha256&quot;: &quot;2c720f279a93f33de82fb357cbc660481c9aba2b9346b9c3ed9ed8322923d7e7&quot;,
+      &quot;bytes&quot;: 2488822
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/assembly_place.step&quot;,
+      &quot;sha256&quot;: &quot;c055ba5586d0e14a282ff7e7c8bb1df06213cffbe90cf7c78549cebada129b29&quot;,
+      &quot;bytes&quot;: 2488788
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/assembly_vertical.step&quot;,
+      &quot;sha256&quot;: &quot;d1254a6ac8e9e96db8936cb9dde709beba82018ef21f378ce61ddd7af963cabc&quot;,
+      &quot;bytes&quot;: 2485792
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/base_electronics_cover.step&quot;,
+      &quot;sha256&quot;: &quot;e8e97e3e916b7e21ac2f0e5ee169541acb9801e3e8c3b67b96b0ac29a32d8ee3&quot;,
+      &quot;bytes&quot;: 9278
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/base_mounting_plate.step&quot;,
+      &quot;sha256&quot;: &quot;446c31a78928056674056e20bff740c956e29ab98376569a07c0364fb95497a3&quot;,
+      &quot;bytes&quot;: 72285
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_bearing_+1.step&quot;,
+      &quot;sha256&quot;: &quot;6f9e7721e025fb028d29cdfce805b744fe109773946937dc8ea11eb8b1d76bee&quot;,
+      &quot;bytes&quot;: 9289
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_bearing_-1.step&quot;,
+      &quot;sha256&quot;: &quot;3686fe391ec7d8e99433534202f951e397f41e175fe637d26c3a5dec8d8de8da&quot;,
+      &quot;bytes&quot;: 9303
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_fork_+1.step&quot;,
+      &quot;sha256&quot;: &quot;319970ab7bfa8345072aac77ea4738420d3fce4ebf53b48494a16a017fcf1a9a&quot;,
+      &quot;bytes&quot;: 39245
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_fork_-1.step&quot;,
+      &quot;sha256&quot;: &quot;ad21691ae1061b0ec68047cc7174ad6078374c2df52521de125bc3305623298a&quot;,
+      &quot;bytes&quot;: 39307
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_fork_bridge_+1.step&quot;,
+      &quot;sha256&quot;: &quot;3fedf5244a0e3e49244cb3bf0c7179226493ad95324db91435d8e26234781156&quot;,
+      &quot;bytes&quot;: 33280
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_fork_bridge_-1.step&quot;,
+      &quot;sha256&quot;: &quot;16cde305de85b111fc7c2432f39728dc7e976a19cf8c735cb485fff2f5126f58&quot;,
+      &quot;bytes&quot;: 33281
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_output_shaft.step&quot;,
+      &quot;sha256&quot;: &quot;9d6b63088ef2bd7ecbd5471f93596ab7eef7cacc00daa2e488a802cdb195d2fc&quot;,
+      &quot;bytes&quot;: 9280
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/elbow_rotor.step&quot;,
+      &quot;sha256&quot;: &quot;a98afc4d277c5eac9d57fb772fefaac8871913aa2d364c87124a7f5b3405b514&quot;,
+      &quot;bytes&quot;: 9269
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/fixed_base_riser.step&quot;,
+      &quot;sha256&quot;: &quot;80bfb7ad6a84994f60b1a4f3604f7580ed4bd1651fc4608953693271d73cd5d3&quot;,
+      &quot;bytes&quot;: 31600
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/forearm_hollow_link.step&quot;,
+      &quot;sha256&quot;: &quot;12ea21d7b8ad2ab0fe93cea4519e51f9bd641b88a671d67c4ad69d4f4cb27808&quot;,
+      &quot;bytes&quot;: 134501
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/forearm_service_cover_+1.step&quot;,
+      &quot;sha256&quot;: &quot;656ed911fab1082e911e3ff7a74c75f327833d99fe18118fddf60e575d979d61&quot;,
+      &quot;bytes&quot;: 33481
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/forearm_service_cover_-1.step&quot;,
+      &quot;sha256&quot;: &quot;e6f8d0e0f07fdcf3070fab76ae89c518b2504bed2d4e9aa6dfef1748a9f66f2b&quot;,
+      &quot;bytes&quot;: 33482
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_actuator_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;da255f84bcb8c2f951aba9e163a5f4f18b5b5a89a1c13bb4df4a7d109dfa1109&quot;,
+      &quot;bytes&quot;: 33320
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_contact_pad_+1.step&quot;,
+      &quot;sha256&quot;: &quot;91106a0c386ae12e52e7f967656714d2a2312f5f9522861411b86b6eafd8163c&quot;,
+      &quot;bytes&quot;: 33450
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_contact_pad_-1.step&quot;,
+      &quot;sha256&quot;: &quot;5e7c6b570692e2cd6829c35c519efd3433faf72bdab593dc63c5be3a79e49685&quot;,
+      &quot;bytes&quot;: 33451
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_finger_+1.step&quot;,
+      &quot;sha256&quot;: &quot;f1833a13da8cbdddae5b7ca7bf83c1f9c7a50db9ec0b5d94daf694f6decccc30&quot;,
+      &quot;bytes&quot;: 39042
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_finger_-1.step&quot;,
+      &quot;sha256&quot;: &quot;9e1cb3e666976e3ca7a194ee3b830e43b66516d9ac2cdeea336bb66017492884&quot;,
+      &quot;bytes&quot;: 39104
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_guide_rod_+14.step&quot;,
+      &quot;sha256&quot;: &quot;cf813e845b49b33bfd7cc196479dd0f199f500a9665a47077d09fe77c8a42872&quot;,
+      &quot;bytes&quot;: 7174
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_guide_rod_-14.step&quot;,
+      &quot;sha256&quot;: &quot;2055f65e4d8997dec4fa406a44418a9f3d6d0602cedb222341a8a7fc26a866ac&quot;,
+      &quot;bytes&quot;: 7175
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_jaw_carriage_+1.step&quot;,
+      &quot;sha256&quot;: &quot;68901fcc7a14b550a10661fb1602645befdfdf58b20c6943438bb4b2d842ad3d&quot;,
+      &quot;bytes&quot;: 97270
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_jaw_carriage_-1.step&quot;,
+      &quot;sha256&quot;: &quot;a524848a2dd0311b7971a028c42d5906fdff537669028d106c0de323cb78cae5&quot;,
+      &quot;bytes&quot;: 97416
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_pocketed_body.step&quot;,
+      &quot;sha256&quot;: &quot;aebb332fb19cc5133f4d086079dc180231e2ed44f22778b2653e0ec6f3da575b&quot;,
+      &quot;bytes&quot;: 749238
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/gripper_top_service_cover.step&quot;,
+      &quot;sha256&quot;: &quot;ba6f4e7da4b8c62290d1984977539716b7afef5b87548bb58229ac98352c3b31&quot;,
+      &quot;bytes&quot;: 46269
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/interchangeable_gripper_adapter.step&quot;,
+      &quot;sha256&quot;: &quot;2d4c8811d007f9751144f6f02d09de6bb3c291e4b2e0ab33c07c531d8e1daae1&quot;,
+      &quot;bytes&quot;: 31529
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j1_slew_bearing_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;3c7aba63b06a14b9128e8f386aa3f23566d3383c5db6de1d1408dcc8f2797c22&quot;,
+      &quot;bytes&quot;: 9276
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j2_gearbox_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;b295f5cd1dd82cb19c0712182020742e7e3b6e329d909529200ebeb6b6578bd4&quot;,
+      &quot;bytes&quot;: 7164
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j2_motor_endcap.step&quot;,
+      &quot;sha256&quot;: &quot;356c831d4a8cd06968d388c583d4a7844d61a231f430e9567bd1e3d032b80afa&quot;,
+      &quot;bytes&quot;: 7173
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j2_motor_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;e457073c24f22e7020dd28abcbfb9ec076f4fa6cd9b00c41bf3bc1603a6782e4&quot;,
+      &quot;bytes&quot;: 33438
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j3_gearbox_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;20db905bf42253a086d812c5e73a3ecb3785f82ffb9860a43f4c6c2d0337819f&quot;,
+      &quot;bytes&quot;: 7163
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j3_motor_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;5153184fd014dccc5172a6673ecd1e745e0850105985c38b78023f5a0772aef6&quot;,
+      &quot;bytes&quot;: 33483
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j4_bearing_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;627ca7b64c5b164106a04af80ec867178bf2d2278a61dd1c1e87b11f63807e92&quot;,
+      &quot;bytes&quot;: 9287
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/j6_stator_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;0a310813777219362d50db2624deffa4f35610b6f77c7894d0232f2448364b99&quot;,
+      &quot;bytes&quot;: 9273
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/opposite_hand_screw_envelope.step&quot;,
+      &quot;sha256&quot;: &quot;069dfbc8c3b3de23643d1c0a4cb36866a735f5fcd6db909f27afe458b6ead2ca&quot;,
+      &quot;bytes&quot;: 7165
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/shoulder_bearing_+1.step&quot;,
+      &quot;sha256&quot;: &quot;b641e50a3c1843305b28ac4339cf149aa70447e435555334bf464e641b674b63&quot;,
+      &quot;bytes&quot;: 9264
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/shoulder_bearing_-1.step&quot;,
+      &quot;sha256&quot;: &quot;13cc1fb26ecae848203280401b6f51ef9e3b5af5f4b122d1faf5f637448bda63&quot;,
+      &quot;bytes&quot;: 9278
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/shoulder_fork_+1.step&quot;,
+      &quot;sha256&quot;: &quot;3dafb64618c274054c652624a2805f23575d4ce633cf8a5328c8d71744126676&quot;,
+      &quot;bytes&quot;: 39355
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/shoulder_fork_-1.step&quot;,
+      &quot;sha256&quot;: &quot;6ee9b815f9fd761253f634967fe9773ae07dd100dad350f87ab52864f9f505c7&quot;,
+      &quot;bytes&quot;: 39417
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/shoulder_output_shaft.step&quot;,
+      &quot;sha256&quot;: &quot;2f530cf2b9d8742b0aea19da6f29879061d7081f505d585ec925000d243fcc0f&quot;,
+      &quot;bytes&quot;: 9274
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/shoulder_rotor.step&quot;,
+      &quot;sha256&quot;: &quot;63adf19aecf7c3f2ca51c68929d6218cf2be3aeba6ccaf5591c68985112a2c4a&quot;,
+      &quot;bytes&quot;: 9280
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/tool_flange_6xM5_PCD46.step&quot;,
+      &quot;sha256&quot;: &quot;06f842cd5ab77e82748248fe670a4a91c9f73c95ba15832953623825d9036423&quot;,
+      &quot;bytes&quot;: 35398
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/turret_bridge.step&quot;,
+      &quot;sha256&quot;: &quot;6d5e4fa0ffb34b20c1a543e1032b52c08bf2e29d97a37825c0d8f1f480295aea&quot;,
+      &quot;bytes&quot;: 33325
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/turret_neck.step&quot;,
+      &quot;sha256&quot;: &quot;51d291f8896ce204b2bad710c42a31b509e2cb9ba5180a5d78459ba3178474fc&quot;,
+      &quot;bytes&quot;: 9279
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/upper_arm_hollow_link.step&quot;,
+      &quot;sha256&quot;: &quot;9113b5c9b1d3049d0dc314093ade339310aea6fa1391531aa9dfefa0410c1cf8&quot;,
+      &quot;bytes&quot;: 134397
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/upper_service_cover_+1.step&quot;,
+      &quot;sha256&quot;: &quot;82f0f8eff8fe466ff0f5601f44807687d95adccdea5cdec7da709068b0777db4&quot;,
+      &quot;bytes&quot;: 33384
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/upper_service_cover_-1.step&quot;,
+      &quot;sha256&quot;: &quot;0ea53a79b06c7f0f1c2aff1550d9de24f5ca347598f117e541c12618f22e4dd4&quot;,
+      &quot;bytes&quot;: 33385
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_pitch_fork_+1.step&quot;,
+      &quot;sha256&quot;: &quot;3bce912402cae144dd97bd99f49bae146976016ca6a640eddbafda12147550ab&quot;,
+      &quot;bytes&quot;: 31576
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_pitch_fork_-1.step&quot;,
+      &quot;sha256&quot;: &quot;48f5229682b4cfc4dbadca7ff17f5e065dfc24e1c9b3c673580c9a00c3f55d83&quot;,
+      &quot;bytes&quot;: 31626
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_pitch_neck.step&quot;,
+      &quot;sha256&quot;: &quot;41b45cd891863651892339bab037b243f62613cd532b848b24b00121468b9c71&quot;,
+      &quot;bytes&quot;: 9270
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_pitch_rotor.step&quot;,
+      &quot;sha256&quot;: &quot;c3fed8e57f7814b136859044b38f6d436f586a965e7b38356b8ff83617ec6a52&quot;,
+      &quot;bytes&quot;: 9272
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_roll_cover.step&quot;,
+      &quot;sha256&quot;: &quot;71b14c5accff3981f81a5b35439fa1abdc06f209ba87fc41fb7caf92bfd18f1e&quot;,
+      &quot;bytes&quot;: 9295
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_roll_rotor.step&quot;,
+      &quot;sha256&quot;: &quot;81606c0751285302578beef8679a57f30ec943848cc0ef6ac2e222448163021b&quot;,
+      &quot;bytes&quot;: 13161
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STEP/wrist_roll_stator.step&quot;,
+      &quot;sha256&quot;: &quot;e1af48dbdd4a3dbc2333fdcfaf50779605972566aab8d3d5d0f1b75e18401ff8&quot;,
+      &quot;bytes&quot;: 31519
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/assembly_extended.stl&quot;,
+      &quot;sha256&quot;: &quot;78b6d86111594c7d3660138467273cb1c28f8321f9fcea06cf9612526157dec5&quot;,
+      &quot;bytes&quot;: 2416084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/assembly_folded.stl&quot;,
+      &quot;sha256&quot;: &quot;eca2487da875743d6b474edf12ae263c63bb65d17853bdb9ed532a5ea36a0d56&quot;,
+      &quot;bytes&quot;: 2416084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/assembly_home.stl&quot;,
+      &quot;sha256&quot;: &quot;086596acf4841f5e69ad2c6afd0fa21f1bcc618ec635c9a2d8118411e555c603&quot;,
+      &quot;bytes&quot;: 2416084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/assembly_pick.stl&quot;,
+      &quot;sha256&quot;: &quot;b4181b2b4390bcf7e8ee6a039582805b5265a6e739a8506a600856ce08e9412b&quot;,
+      &quot;bytes&quot;: 2416084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/assembly_place.stl&quot;,
+      &quot;sha256&quot;: &quot;169aad2bb93d51b301189a4d19181c6656c13c9e7f3f7c1437c585c759870e32&quot;,
+      &quot;bytes&quot;: 2416084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/assembly_vertical.stl&quot;,
+      &quot;sha256&quot;: &quot;70f32068e4b890d26b421e627c9894ab3edb4e164491d7496a656e4312f021c0&quot;,
+      &quot;bytes&quot;: 2416084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/base_electronics_cover.stl&quot;,
+      &quot;sha256&quot;: &quot;eaa6dbce4c08be37bd0f3f9764166352899d6f0607dbdf09cf539e5789ca2266&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/base_mounting_plate.stl&quot;,
+      &quot;sha256&quot;: &quot;90ae5ed6c4e458c720cd46a919ce4ab936499baa21681af04082551b5ed1efad&quot;,
+      &quot;bytes&quot;: 228484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_bearing_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;c5d14ea54c6b73e80655b950131ec01276c4481354f6d23c9d400d77eaab7e07&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_bearing_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;c161f4df9b133b31dfb31930255b3588a0253bfc1c9f515e2f1e5631aa2b2fe1&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_fork_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;aba834df20657032a4bd2e5f9d9e1d5a7722bda6a74bd18ae15bb3e0b4d84900&quot;,
+      &quot;bytes&quot;: 127684
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_fork_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;89e4b662e69ff378f5b8deb3dde24c7ef98159618afaad0c6951c54713b17376&quot;,
+      &quot;bytes&quot;: 127684
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_fork_bridge_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;4d895114c7b6b79464bf5b8dee890e910b1d986c064191c529b7c7d619854e0d&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_fork_bridge_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;2a5f02f52ae751d5b5aef17c3af6a36d91f7e6aafa20ae59baafa2659e8381be&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_output_shaft.stl&quot;,
+      &quot;sha256&quot;: &quot;02c8817b8eb1717032f018ea336de7f56d011ad5cd8d6b1ca1dba353793e0de7&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/elbow_rotor.stl&quot;,
+      &quot;sha256&quot;: &quot;347b523676fe12feb163901737c1e3d415830101b8848ff261ee97135d5c056d&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/fixed_base_riser.stl&quot;,
+      &quot;sha256&quot;: &quot;8785cbb0ba78242dd179b3922ddf1b6cd1cd4869b9f5344a14c6c8bff8b3fe04&quot;,
+      &quot;bytes&quot;: 102084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/forearm_hollow_link.stl&quot;,
+      &quot;sha256&quot;: &quot;5429d1f363be10a0ae15f94afee2b584671b5a7cb969cc5868f587cf87cb0481&quot;,
+      &quot;bytes&quot;: 138884
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/forearm_service_cover_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;960fe86725d7614ac1f4a820e3b17343dff5a339315eec2a8681d313bb04c351&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/forearm_service_cover_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;65a67ae27073a26a8b1736db50bf8e5836d8803ceeceb2cc9c6dde9f170c3feb&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_actuator_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;f25d488d223543f314e3ffae5f5ec6a1d389e0c757c436ca89b8f88be975b584&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_contact_pad_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;58aaf29790b9105b9d90104cce3fc6df69791535120d7a4e1ed7be1da8fd44f4&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_contact_pad_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;45d463c26c2aa1da11f4bc0f0ced3271d4a536f6ca39cff641ff14f826e93800&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_finger_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;aaa8d4683719a8523b12ff9292763d02631bdd428a5bc46d6cde4a165ffd2e48&quot;,
+      &quot;bytes&quot;: 39084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_finger_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;f42c1d20ccb788c3efc2a215964ab8492c13d9a1fddef352e41d1eff035c37a1&quot;,
+      &quot;bytes&quot;: 39084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_guide_rod_+14.stl&quot;,
+      &quot;sha256&quot;: &quot;ed71f55d9f49244d56c3f8b48e4e753e4deb359f64ac788e7078a9587b2ecaf1&quot;,
+      &quot;bytes&quot;: 12484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_guide_rod_-14.stl&quot;,
+      &quot;sha256&quot;: &quot;1ea9ec01c6a34fd6b4b5abe8772f301921a4e6df83643a2fa3746fd9dfe4668b&quot;,
+      &quot;bytes&quot;: 12484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_jaw_carriage_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;0a145a147f228d8710f13bb6eafef8a6f816e46f82a1ff5f90b2b87d572801e8&quot;,
+      &quot;bytes&quot;: 93084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_jaw_carriage_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;8d1764a77fde171980ba142cadbf24b969c5e99708b3899e33ea28e191ae55e4&quot;,
+      &quot;bytes&quot;: 93084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_pocketed_body.stl&quot;,
+      &quot;sha256&quot;: &quot;d9f6d32a03cdb580de2b92364a3b95d646df8a05f04af68083962ea468ec6ff5&quot;,
+      &quot;bytes&quot;: 322784
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/gripper_top_service_cover.stl&quot;,
+      &quot;sha256&quot;: &quot;a67e58d2ff629c1cb9965fab80a1cf3cb8f42aa567903261d99cee984626d490&quot;,
+      &quot;bytes&quot;: 64684
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/interchangeable_gripper_adapter.stl&quot;,
+      &quot;sha256&quot;: &quot;c476241283475bb39d631efa0964ecfde0049803b53fe034a05bffee59cf762d&quot;,
+      &quot;bytes&quot;: 102084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j1_slew_bearing_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;08e111063af211f5942578963789be71f0e48e733619f443518add94f7818000&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j2_gearbox_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;5d60727a33cf17b705a1e6c4a012ccc091e67f36c8c50f1b8e366ddd85f6f5d8&quot;,
+      &quot;bytes&quot;: 12484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j2_motor_endcap.stl&quot;,
+      &quot;sha256&quot;: &quot;5d1bfce24b790d49c99a5c1b27e4efd236560e6f774f9e9f4ff88cc4138a3d14&quot;,
+      &quot;bytes&quot;: 12484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j2_motor_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;268004718e8e3a817dd1a8a6f06e168f9ce049a394261726ef7879ad09e87fef&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j3_gearbox_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;2dc2f7e71371cbb84fdf626bd82bd72941a34b335bfd9cab433d73f13c3f27fa&quot;,
+      &quot;bytes&quot;: 12484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j3_motor_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;1cc037b29784b2817047c24e4a7493f656f41a431d7f1ac77839e0da725c9149&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j4_bearing_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;09b3aa304eda96fca6552831adfcf66e49bf0b5bc32940ac5c9669dc8d5bfc5c&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/j6_stator_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;3029cab25407ceba9419e093010c9767e622a943cd4198710ccaacf26f077539&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/opposite_hand_screw_envelope.stl&quot;,
+      &quot;sha256&quot;: &quot;356a3bb2c174ce92ffc72d6c21d19b6b351bb5f1117b074fe363665f2257a7e5&quot;,
+      &quot;bytes&quot;: 12484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/shoulder_bearing_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;ca26332ae5969560edf2c3c0328ad5440cd99df4cdc5150565f0ea29f209bfa8&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/shoulder_bearing_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;f519a3303f088391b0b3f54840a3c8c45b4f78f3f716fa8eb52a456516f66645&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/shoulder_fork_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;88c441ba8b4f005cae234bd19eac574e5e7f6c43fcdb388a15e7bb8e3c3d5389&quot;,
+      &quot;bytes&quot;: 127684
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/shoulder_fork_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;ab35e42dde2007bc26ba8e1eab0aa0b22700f346f65bd2cc0cf63a645b20ab85&quot;,
+      &quot;bytes&quot;: 127684
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/shoulder_output_shaft.stl&quot;,
+      &quot;sha256&quot;: &quot;397c2507424e1dfc4c1b04d703bd7ece007e64b7bba54fac8cc796aad22b74de&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/shoulder_rotor.stl&quot;,
+      &quot;sha256&quot;: &quot;c077b98e32efd412445876852e9dbcc051f5810a9f755d8033d722483fc9023a&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/tool_flange_6xM5_PCD46.stl&quot;,
+      &quot;sha256&quot;: &quot;99cffaf0ac61af2f82ef775f1a9a7f2b3c58240dbaeeff03f1ef1cc22dd0fd60&quot;,
+      &quot;bytes&quot;: 114684
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/turret_bridge.stl&quot;,
+      &quot;sha256&quot;: &quot;547d2ef4c13a00d0f4fab155cd835cdc52a4fa449693a3bf549c23bd108122f2&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/turret_neck.stl&quot;,
+      &quot;sha256&quot;: &quot;aaffd7acc9bb2cac4359b25bae9762a7e3f1c8adefd7f946e32d67488bc83709&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/upper_arm_hollow_link.stl&quot;,
+      &quot;sha256&quot;: &quot;d4eed65640b5b89201fe996b2ca260312fcd04ae0d95de8daef2c90e4fecd2ce&quot;,
+      &quot;bytes&quot;: 138884
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/upper_service_cover_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;5b8b9c13ae08f7cbdc6d56b87a8f64963e2a957bd629eaeda62b78e70df236dd&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/upper_service_cover_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;606cb96bead653c110b48a8c6c0718cc4a4927b3ed5b5e1ef518c14e1879ff21&quot;,
+      &quot;bytes&quot;: 13484
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_pitch_fork_+1.stl&quot;,
+      &quot;sha256&quot;: &quot;2fc676a568abc3f6b502b4841c6c8115e5bfe07fe9613e1e63ad207b906a27ac&quot;,
+      &quot;bytes&quot;: 102084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_pitch_fork_-1.stl&quot;,
+      &quot;sha256&quot;: &quot;1348d70c614e63e91bd21a47a61465f6db6250393b24cbe4bd5d6d92f87d06ec&quot;,
+      &quot;bytes&quot;: 102084
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_pitch_neck.stl&quot;,
+      &quot;sha256&quot;: &quot;922ffc38cb214bf263db3e221cfaa3012180acb43fad623b63ec7b9044d4eb56&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_pitch_rotor.stl&quot;,
+      &quot;sha256&quot;: &quot;c87c80ae24e637d2472567b7de711ca6ee0ffe62cea0955c88ac02d03103a606&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_roll_cover.stl&quot;,
+      &quot;sha256&quot;: &quot;03f92ff647312ddc4c131e78ed4db421026b2ded5a61d5c98f8c210a0fa5d217&quot;,
+      &quot;bytes&quot;: 25284
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_roll_rotor.stl&quot;,
+      &quot;sha256&quot;: &quot;a549609c113f2b2531586dae004dcd438493ce5e1bf440928ac712a2bb7fb3c5&quot;,
+      &quot;bytes&quot;: 37884
+    },
+    {
+      &quot;file&quot;: &quot;cad/exports/STL/wrist_roll_stator.stl&quot;,
+      &quot;sha256&quot;: &quot;e35bdf77180493caf1ec956fe1c88c7333eaf87d304b8b6208b16f3a232039c5&quot;,
+      &quot;bytes&quot;: 102084
+    },
+    {
+      &quot;file&quot;: &quot;cad/freecad/aster6_home.FCStd&quot;,
+      &quot;sha256&quot;: &quot;b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4&quot;,
+      &quot;bytes&quot;: 197161
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/aster6_home.blend&quot;,
+      &quot;sha256&quot;: &quot;e7d3fac2846ca6f5b3863797169b3caaa53515b5dc9cfe88459efa5931357ab5&quot;,
+      &quot;bytes&quot;: 756890
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/gripper.png&quot;,
+      &quot;sha256&quot;: &quot;42ed92a3665e71f529071b860d1377d6955efbb3390fe9ca8d1db1b4a1be88b3&quot;,
+      &quot;bytes&quot;: 1026461
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/hero.png&quot;,
+      &quot;sha256&quot;: &quot;126f2d594a27690e827db1cd89a0752bba431b3297343a65121ed3c5ba1b2443&quot;,
+      &quot;bytes&quot;: 1737364
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/pose_extended.png&quot;,
+      &quot;sha256&quot;: &quot;739f1e72050a1806f6219bd3736a38ab9a2eef7036cce60568c32efd57657686&quot;,
+      &quot;bytes&quot;: 491551
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/pose_folded.png&quot;,
+      &quot;sha256&quot;: &quot;805bcc6ac5726ef6004abb93e85167c3bddc54dfcd1ed96fcc7ebaaf896e8843&quot;,
+      &quot;bytes&quot;: 532976
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/pose_home.png&quot;,
+      &quot;sha256&quot;: &quot;ee396bf8063eff63fa5564daf944e3ec82bab3b377714866f92f81661e45f902&quot;,
+      &quot;bytes&quot;: 527130
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/pose_pick.png&quot;,
+      &quot;sha256&quot;: &quot;ede709bd6489fb94c280fb344ba3536dbe470b973f97df1e9b4c102badc97181&quot;,
+      &quot;bytes&quot;: 528833
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/pose_place.png&quot;,
+      &quot;sha256&quot;: &quot;71f30c24dde8d80aa48889a06246770b67bcae74cc89b999c122317b0b2ccf0a&quot;,
+      &quot;bytes&quot;: 530834
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/pose_vertical.png&quot;,
+      &quot;sha256&quot;: &quot;cca7f380fae3d14881d1f73291d23eaed303597a154954d914b1c6a9f8e9493e&quot;,
+      &quot;bytes&quot;: 476168
+    },
+    {
+      &quot;file&quot;: &quot;cad/renders/poses.png&quot;,
+      &quot;sha256&quot;: &quot;7deec980dca23fe4a30aca844b4fe2a8c0d60417ad3eb7a92ed8264f62903ceb&quot;,
+      &quot;bytes&quot;: 2017532
+    },
+    {
+      &quot;file&quot;: &quot;docs/drawings/01_base_tool_interfaces.svg&quot;,
+      &quot;sha256&quot;: &quot;d34f0cd0850c609bd8e6b2d6fbf3a46b4e84088cc01664f579acf55ed4d33089&quot;,
+      &quot;bytes&quot;: 95239
+    },
+    {
+      &quot;file&quot;: &quot;docs/drawings/02_link_sections.svg&quot;,
+      &quot;sha256&quot;: &quot;66f62bdbf1dbab38c0f7179b5149f674c36b9af21c481232d6f676f58c9bc375&quot;,
+      &quot;bytes&quot;: 84432
+    },
+    {
+      &quot;file&quot;: &quot;docs/drawings/03_gripper_layout.svg&quot;,
+      &quot;sha256&quot;: &quot;132b9ffaa1fbb665768e4e8d38626987db8e327bf92712a9e954d3674c3398db&quot;,
+      &quot;bytes&quot;: 85906
+    },
+    {
+      &quot;file&quot;: &quot;docs/drawings/engineering_interfaces.pdf&quot;,
+      &quot;sha256&quot;: &quot;1eb6ebe41d21a271f5bb80b3a778834f021a0398218987daf2ba033b78e9e09d&quot;,
+      &quot;bytes&quot;: 45165
+    },
+    {
+      &quot;file&quot;: &quot;results/validation/cad_assembly_clearance.json&quot;,
+      &quot;sha256&quot;: &quot;01ac229b42ea8d8e18f2f5408bcb9b3a6442c16c221aaae1ddaf075d0e5275f6&quot;,
+      &quot;bytes&quot;: 3321
+    },
+    {
+      &quot;file&quot;: &quot;results/validation/cad_blender_inspection.json&quot;,
+      &quot;sha256&quot;: &quot;d02dae43662bdcbac94f1827840c48e1263857b103d4b66a28c5e8f679a46d19&quot;,
+      &quot;bytes&quot;: 13438
+    },
+    {
+      &quot;file&quot;: &quot;results/validation/cad_freecad_inspection.json&quot;,
+      &quot;sha256&quot;: &quot;5a5ac1963988bee5ba0baa8cd2dd2d42fd1a5b42b16c0b37e374a55d86d262fe&quot;,
+      &quot;bytes&quot;: 9832
+    },
+    {
+      &quot;file&quot;: &quot;results/validation/cad_motion_clearance.json&quot;,
+      &quot;sha256&quot;: &quot;216d83c9d970c9df9af4b008fdcd7a5c6ce26c090218e1266561f8ca45ddeb46&quot;,
+      &quot;bytes&quot;: 22596
+    },
+    {
+      &quot;file&quot;: &quot;results/validation/cad_validation.json&quot;,
+      &quot;sha256&quot;: &quot;2bc5b355000b654d7440af1bde5146e61f987e68739a242c692b31ac53f1a4ee&quot;,
+      &quot;bytes&quot;: 55177
+    }
+  ],
+  &quot;component_count&quot;: 54,
+  &quot;configuration_dimensions&quot;: [
+    {
+      &quot;dimension&quot;: &quot;base_diameter&quot;,
+      &quot;configured_mm&quot;: 220.0,
+      &quot;exported_mm&quot;: 220.0
+    },
+    {
+      &quot;dimension&quot;: &quot;tool_flange_diameter&quot;,
+      &quot;configured_mm&quot;: 60.0,
+      &quot;exported_mm&quot;: 60.0
+    },
+    {
+      &quot;dimension&quot;: &quot;upper_arm_width&quot;,
+      &quot;configured_mm&quot;: 80.0,
+      &quot;exported_mm&quot;: 80.0
+    },
+    {
+      &quot;dimension&quot;: &quot;upper_arm_depth&quot;,
+      &quot;configured_mm&quot;: 100.0,
+      &quot;exported_mm&quot;: 100.0
+    },
+    {
+      &quot;dimension&quot;: &quot;forearm_width&quot;,
+      &quot;configured_mm&quot;: 65.0,
+      &quot;exported_mm&quot;: 65.0
+    },
+    {
+      &quot;dimension&quot;: &quot;forearm_depth&quot;,
+      &quot;configured_mm&quot;: 80.0,
+      &quot;exported_mm&quot;: 80.0
+    },
+    {
+      &quot;dimension&quot;: &quot;finger_length&quot;,
+      &quot;configured_mm&quot;: 60.0,
+      &quot;exported_mm&quot;: 60.0
+    },
+    {
+      &quot;dimension&quot;: &quot;finger_thickness&quot;,
+      &quot;configured_mm&quot;: 10.0,
+      &quot;exported_mm&quot;: 10.0
+    },
+    {
+      &quot;dimension&quot;: &quot;finger_width&quot;,
+      &quot;configured_mm&quot;: 18.0,
+      &quot;exported_mm&quot;: 18.0
+    }
+  ],
+  &quot;drawing_annotations&quot;: [
+    {
+      &quot;sheet&quot;: &quot;01_base_tool_interfaces.svg&quot;,
+      &quot;annotation&quot;: &quot;Ø220&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;01_base_tool_interfaces.svg&quot;,
+      &quot;annotation&quot;: &quot;Ø17 counterbore, 7 deep&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;01_base_tool_interfaces.svg&quot;,
+      &quot;annotation&quot;: &quot;Adapter Ø60 × 8 / bore Ø30.2&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;02_link_sections.svg&quot;,
+      &quot;annotation&quot;: &quot;320 joint-center spacing&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;02_link_sections.svg&quot;,
+      &quot;annotation&quot;: &quot;FOREARM: 280 center spacing&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;03_gripper_layout.svg&quot;,
+      &quot;annotation&quot;: &quot;90 max clear opening&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;03_gripper_layout.svg&quot;,
+      &quot;annotation&quot;: &quot;60 finger&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;sheet&quot;: &quot;03_gripper_layout.svg&quot;,
+      &quot;annotation&quot;: &quot;Ø12 nut boss / Ø8.4 bore&quot;,
+      &quot;matches&quot;: true
+    }
+  ],
+  &quot;component_correspondence&quot;: [
+    {
+      &quot;name&quot;: &quot;base_mounting_plate&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.175664763398897e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.13674163818359375,
+      &quot;triangles&quot;: 4568
+    },
+    {
+      &quot;name&quot;: &quot;fixed_base_riser&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.446228741637211e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.09447479248046875,
+      &quot;triangles&quot;: 2040
+    },
+    {
+      &quot;name&quot;: &quot;j1_slew_bearing_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.213999720228919e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.08452606201171875,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;base_electronics_cover&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.378781568803325e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.09820556640625,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;turret_neck&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.2130754960466418e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.06837081909179688,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;turret_bridge&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.2641670655607385e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;shoulder_fork_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.323095964522139e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0745849609375,
+      &quot;triangles&quot;: 2552
+    },
+    {
+      &quot;name&quot;: &quot;shoulder_bearing_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.2269319615853954e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.045993804931640625,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;shoulder_fork_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.323095964522139e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0745849609375,
+      &quot;triangles&quot;: 2552
+    },
+    {
+      &quot;name&quot;: &quot;shoulder_bearing_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.2269319615853954e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.045993804931640625,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;j2_gearbox_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 0.0,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.05718231201171875,
+      &quot;triangles&quot;: 248
+    },
+    {
+      &quot;name&quot;: &quot;j2_motor_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 7.905417784567644e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;j2_motor_endcap&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 0.0,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.03604888916015625,
+      &quot;triangles&quot;: 248
+    },
+    {
+      &quot;name&quot;: &quot;shoulder_rotor&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.211726342977426e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.05718231201171875,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;shoulder_output_shaft&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.2078118386828948e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0348052978515625,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;upper_arm_hollow_link&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.69470381509937e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 2776
+    },
+    {
+      &quot;name&quot;: &quot;elbow_fork_bridge_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 3.949984894433015e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;elbow_fork_bridge_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 3.949984894433015e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;upper_service_cover_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.5210592207886553e-15,
+      &quot;bbox_error_mm&quot;: 3.552713678800501e-15,
+      &quot;stl_bbox_error_mm&quot;: 3.552713678800501e-15,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;elbow_fork_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.252982521413114e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.06463623046875,
+      &quot;triangles&quot;: 2552
+    },
+    {
+      &quot;name&quot;: &quot;elbow_bearing_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.218852389842682e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.036041259765625,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;upper_service_cover_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.5210592207886553e-15,
+      &quot;bbox_error_mm&quot;: 3.552713678800501e-15,
+      &quot;stl_bbox_error_mm&quot;: 3.552713678800501e-15,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;elbow_fork_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.252982521413114e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.06463623046875,
+      &quot;triangles&quot;: 2552
+    },
+    {
+      &quot;name&quot;: &quot;elbow_bearing_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.218852389842682e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.036041259765625,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;j3_gearbox_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.0048556440865748e-16,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0472412109375,
+      &quot;triangles&quot;: 248
+    },
+    {
+      &quot;name&quot;: &quot;j3_motor_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 8.119107794142991e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;elbow_rotor&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.204534657374048e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.047237396240234375,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;elbow_output_shaft&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.2239746190686856e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.024613189697266336,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;forearm_hollow_link&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 5.291547342937763e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 2776
+    },
+    {
+      &quot;name&quot;: &quot;forearm_service_cover_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.4739490836340552e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 3.8146972514141453e-07,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;forearm_service_cover_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.4739490836340552e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 3.8146972514141453e-07,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;wrist_roll_stator&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.582126358984638e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.047237396240234375,
+      &quot;triangles&quot;: 2040
+    },
+    {
+      &quot;name&quot;: &quot;j4_bearing_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.1129169265151204e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.03356361389160156,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;wrist_roll_rotor&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.7447599410551694e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.043506622314453125,
+      &quot;triangles&quot;: 756
+    },
+    {
+      &quot;name&quot;: &quot;wrist_roll_cover&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.4288652905152056e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.049724578857421875,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;wrist_pitch_fork_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.245423151798515e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.03729248046875,
+      &quot;triangles&quot;: 2040
+    },
+    {
+      &quot;name&quot;: &quot;wrist_pitch_fork_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.245423151798515e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.03729248046875,
+      &quot;triangles&quot;: 2040
+    },
+    {
+      &quot;name&quot;: &quot;wrist_pitch_rotor&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.211467156296608e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.029834747314453125,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;wrist_pitch_neck&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.1798187916501387e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.023618698120117188,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;j6_stator_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.185692480815296e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.029834747314453125,
+      &quot;triangles&quot;: 504
+    },
+    {
+      &quot;name&quot;: &quot;tool_flange_6xM5_PCD46&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.05442857348192e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.03729248046875,
+      &quot;triangles&quot;: 2292
+    },
+    {
+      &quot;name&quot;: &quot;interchangeable_gripper_adapter&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 4.469927586610646e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.03729248046875,
+      &quot;triangles&quot;: 2040
+    },
+    {
+      &quot;name&quot;: &quot;gripper_pocketed_body&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 9.229189280680814e-08,
+      &quot;bbox_error_mm&quot;: 2.3732127374387346e-12,
+      &quot;stl_bbox_error_mm&quot;: 1.0000005090660125e-07,
+      &quot;triangles&quot;: 6454
+    },
+    {
+      &quot;name&quot;: &quot;gripper_top_service_cover&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 8.015097375239019e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 1292
+    },
+    {
+      &quot;name&quot;: &quot;gripper_guide_rod_-14&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.737702010840945e-16,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.004352569580078125,
+      &quot;triangles&quot;: 248
+    },
+    {
+      &quot;name&quot;: &quot;gripper_guide_rod_+14&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 1.737702010840945e-16,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.004352569580078125,
+      &quot;triangles&quot;: 248
+    },
+    {
+      &quot;name&quot;: &quot;opposite_hand_screw_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.3498470373871876e-16,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0049724578857421875,
+      &quot;triangles&quot;: 248
+    },
+    {
+      &quot;name&quot;: &quot;gripper_actuator_envelope&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 9.235892041355074e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;gripper_jaw_carriage_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 7.280724080555606e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 1860
+    },
+    {
+      &quot;name&quot;: &quot;gripper_finger_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.247993777174473e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 780
+    },
+    {
+      &quot;name&quot;: &quot;gripper_contact_pad_-1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.759494317047814e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    },
+    {
+      &quot;name&quot;: &quot;gripper_jaw_carriage_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 7.280724080555606e-15,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 1860
+    },
+    {
+      &quot;name&quot;: &quot;gripper_finger_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.247993777174473e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 780
+    },
+    {
+      &quot;name&quot;: &quot;gripper_contact_pad_+1&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 1,
+      &quot;volume_relative_error&quot;: 2.759494317047814e-14,
+      &quot;bbox_error_mm&quot;: 0.0,
+      &quot;stl_bbox_error_mm&quot;: 0.0,
+      &quot;triangles&quot;: 268
+    }
+  ],
+  &quot;assembly_correspondence&quot;: [
+    {
+      &quot;pose&quot;: &quot;home&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 54,
+      &quot;bbox_error_mm&quot;: 6.969003152335063e-11
+    },
+    {
+      &quot;pose&quot;: &quot;extended&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 54,
+      &quot;bbox_error_mm&quot;: 0.0
+    },
+    {
+      &quot;pose&quot;: &quot;folded&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 54,
+      &quot;bbox_error_mm&quot;: 7.80460140958894e-11
+    },
+    {
+      &quot;pose&quot;: &quot;vertical&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 54,
+      &quot;bbox_error_mm&quot;: 0.0
+    },
+    {
+      &quot;pose&quot;: &quot;pick&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 54,
+      &quot;bbox_error_mm&quot;: 4.990852175978944e-11
+    },
+    {
+      &quot;pose&quot;: &quot;place&quot;,
+      &quot;valid&quot;: true,
+      &quot;solids&quot;: 54,
+      &quot;bbox_error_mm&quot;: 4.990852175978944e-11
+    }
+  ],
+  &quot;native_components&quot;: [
+    {
+      &quot;component&quot;: &quot;base_mounting_plate&quot;,
+      &quot;object&quot;: &quot;Component01&quot;,
+      &quot;center_error_mm&quot;: 2.8720784372533583e-12,
+      &quot;volume_relative_error&quot;: 4.175664763398897e-14
+    },
+    {
+      &quot;component&quot;: &quot;fixed_base_riser&quot;,
+      &quot;object&quot;: &quot;Component02&quot;,
+      &quot;center_error_mm&quot;: 2.4133347678571465e-12,
+      &quot;volume_relative_error&quot;: 4.446228741637211e-14
+    },
+    {
+      &quot;component&quot;: &quot;j1_slew_bearing_envelope&quot;,
+      &quot;object&quot;: &quot;Component03&quot;,
+      &quot;center_error_mm&quot;: 1.3824901409715227e-12,
+      &quot;volume_relative_error&quot;: 2.213999720228919e-14
+    },
+    {
+      &quot;component&quot;: &quot;base_electronics_cover&quot;,
+      &quot;object&quot;: &quot;Component04&quot;,
+      &quot;center_error_mm&quot;: 1.8473787544795585e-12,
+      &quot;volume_relative_error&quot;: 2.378781568803325e-14
+    },
+    {
+      &quot;component&quot;: &quot;turret_neck&quot;,
+      &quot;object&quot;: &quot;Component05&quot;,
+      &quot;center_error_mm&quot;: 9.791575205540238e-13,
+      &quot;volume_relative_error&quot;: 2.2130754960466418e-14
+    },
+    {
+      &quot;component&quot;: &quot;turret_bridge&quot;,
+      &quot;object&quot;: &quot;Component06&quot;,
+      &quot;center_error_mm&quot;: 3.773611775934563e-16,
+      &quot;volume_relative_error&quot;: 2.2641670655607385e-15
+    },
+    {
+      &quot;component&quot;: &quot;shoulder_fork_-1&quot;,
+      &quot;object&quot;: &quot;Component07&quot;,
+      &quot;center_error_mm&quot;: 1.8363026986567186e-12,
+      &quot;volume_relative_error&quot;: 4.3467841615880136e-14
+    },
+    {
+      &quot;component&quot;: &quot;shoulder_bearing_-1&quot;,
+      &quot;object&quot;: &quot;Component08&quot;,
+      &quot;center_error_mm&quot;: 7.112985643226669e-13,
+      &quot;volume_relative_error&quot;: 2.2269319615853954e-14
+    },
+    {
+      &quot;component&quot;: &quot;shoulder_fork_+1&quot;,
+      &quot;object&quot;: &quot;Component09&quot;,
+      &quot;center_error_mm&quot;: 1.8363026986567186e-12,
+      &quot;volume_relative_error&quot;: 4.3467841615880136e-14
+    },
+    {
+      &quot;component&quot;: &quot;shoulder_bearing_+1&quot;,
+      &quot;object&quot;: &quot;Component10&quot;,
+      &quot;center_error_mm&quot;: 7.112985643226669e-13,
+      &quot;volume_relative_error&quot;: 2.2269319615853954e-14
+    },
+    {
+      &quot;component&quot;: &quot;j2_gearbox_envelope&quot;,
+      &quot;object&quot;: &quot;Component11&quot;,
+      &quot;center_error_mm&quot;: 0.0,
+      &quot;volume_relative_error&quot;: 0.0
+    },
+    {
+      &quot;component&quot;: &quot;j2_motor_envelope&quot;,
+      &quot;object&quot;: &quot;Component12&quot;,
+      &quot;center_error_mm&quot;: 1.2352215288387095e-16,
+      &quot;volume_relative_error&quot;: 7.905417784567644e-15
+    },
+    {
+      &quot;component&quot;: &quot;j2_motor_endcap&quot;,
+      &quot;object&quot;: &quot;Component13&quot;,
+      &quot;center_error_mm&quot;: 9.087788932415073e-15,
+      &quot;volume_relative_error&quot;: 1.376937717032587e-16
+    },
+    {
+      &quot;component&quot;: &quot;shoulder_rotor&quot;,
+      &quot;object&quot;: &quot;Component14&quot;,
+      &quot;center_error_mm&quot;: 8.463435721496161e-13,
+      &quot;volume_relative_error&quot;: 2.211726342977426e-14
+    },
+    {
+      &quot;component&quot;: &quot;shoulder_output_shaft&quot;,
+      &quot;object&quot;: &quot;Component15&quot;,
+      &quot;center_error_mm&quot;: 5.156231646009151e-13,
+      &quot;volume_relative_error&quot;: 2.1785692977731874e-14
+    },
+    {
+      &quot;component&quot;: &quot;upper_arm_hollow_link&quot;,
+      &quot;object&quot;: &quot;Component16&quot;,
+      &quot;center_error_mm&quot;: 4.10487129656739e-11,
+      &quot;volume_relative_error&quot;: 4.960737031288335e-14
+    },
+    {
+      &quot;component&quot;: &quot;elbow_fork_bridge_-1&quot;,
+      &quot;object&quot;: &quot;Component17&quot;,
+      &quot;center_error_mm&quot;: 9.215166776853877e-12,
+      &quot;volume_relative_error&quot;: 3.949984894433015e-15
+    },
+    {
+      &quot;component&quot;: &quot;elbow_fork_bridge_+1&quot;,
+      &quot;object&quot;: &quot;Component18&quot;,
+      &quot;center_error_mm&quot;: 9.215166776853877e-12,
+      &quot;volume_relative_error&quot;: 3.949984894433015e-15
+    },
+    {
+      &quot;component&quot;: &quot;upper_service_cover_-1&quot;,
+      &quot;object&quot;: &quot;Component19&quot;,
+      &quot;center_error_mm&quot;: 6.3715995867616324e-12,
+      &quot;volume_relative_error&quot;: 1.3520526407010268e-15
+    },
+    {
+      &quot;component&quot;: &quot;elbow_fork_-1&quot;,
+      &quot;object&quot;: &quot;Component20&quot;,
+      &quot;center_error_mm&quot;: 1.0852501776772429e-10,
+      &quot;volume_relative_error&quot;: 4.2106642873692024e-14
+    },
+    {
+      &quot;component&quot;: &quot;elbow_bearing_-1&quot;,
+      &quot;object&quot;: &quot;Component21&quot;,
+      &quot;center_error_mm&quot;: 1.0846500469432766e-10,
+      &quot;volume_relative_error&quot;: 2.2319816939245913e-14
+    },
+    {
+      &quot;component&quot;: &quot;upper_service_cover_+1&quot;,
+      &quot;object&quot;: &quot;Component22&quot;,
+      &quot;center_error_mm&quot;: 6.3715995867616324e-12,
+      &quot;volume_relative_error&quot;: 1.3520526407010268e-15
+    },
+    {
+      &quot;component&quot;: &quot;elbow_fork_+1&quot;,
+      &quot;object&quot;: &quot;Component23&quot;,
+      &quot;center_error_mm&quot;: 1.0852501776772429e-10,
+      &quot;volume_relative_error&quot;: 4.2106642873692024e-14
+    },
+    {
+      &quot;component&quot;: &quot;elbow_bearing_+1&quot;,
+      &quot;object&quot;: &quot;Component24&quot;,
+      &quot;center_error_mm&quot;: 1.0846500376338965e-10,
+      &quot;volume_relative_error&quot;: 2.2319816939245913e-14
+    },
+    {
+      &quot;component&quot;: &quot;j3_gearbox_envelope&quot;,
+      &quot;object&quot;: &quot;Component25&quot;,
+      &quot;center_error_mm&quot;: 3.970605375266e-12,
+      &quot;volume_relative_error&quot;: 2.0048556440865748e-16
+    },
+    {
+      &quot;component&quot;: &quot;j3_motor_envelope&quot;,
+      &quot;object&quot;: &quot;Component26&quot;,
+      &quot;center_error_mm&quot;: 3.970605375266e-12,
+      &quot;volume_relative_error&quot;: 8.119107794142991e-15
+    },
+    {
+      &quot;component&quot;: &quot;elbow_rotor&quot;,
+      &quot;object&quot;: &quot;Component27&quot;,
+      &quot;center_error_mm&quot;: 4.040783709054463e-12,
+      &quot;volume_relative_error&quot;: 2.1768046616838084e-14
+    },
+    {
+      &quot;component&quot;: &quot;elbow_output_shaft&quot;,
+      &quot;object&quot;: &quot;Component28&quot;,
+      &quot;center_error_mm&quot;: 3.991201638199379e-12,
+      &quot;volume_relative_error&quot;: 2.1894943924164578e-14
+    },
+    {
+      &quot;component&quot;: &quot;forearm_hollow_link&quot;,
+      &quot;object&quot;: &quot;Component29&quot;,
+      &quot;center_error_mm&quot;: 5.1878706357486344e-11,
+      &quot;volume_relative_error&quot;: 5.4008123323199593e-14
+    },
+    {
+      &quot;component&quot;: &quot;forearm_service_cover_-1&quot;,
+      &quot;object&quot;: &quot;Component30&quot;,
+      &quot;center_error_mm&quot;: 8.574882018880578e-12,
+      &quot;volume_relative_error&quot;: 1.3101769632302713e-15
+    },
+    {
+      &quot;component&quot;: &quot;forearm_service_cover_+1&quot;,
+      &quot;object&quot;: &quot;Component31&quot;,
+      &quot;center_error_mm&quot;: 8.574882018880578e-12,
+      &quot;volume_relative_error&quot;: 1.3101769632302713e-15
+    },
+    {
+      &quot;component&quot;: &quot;wrist_roll_stator&quot;,
+      &quot;object&quot;: &quot;Component32&quot;,
+      &quot;center_error_mm&quot;: 9.763591493721584e-11,
+      &quot;volume_relative_error&quot;: 4.5499710862900086e-14
+    },
+    {
+      &quot;component&quot;: &quot;j4_bearing_envelope&quot;,
+      &quot;object&quot;: &quot;Component33&quot;,
+      &quot;center_error_mm&quot;: 1.0139127665962255e-10,
+      &quot;volume_relative_error&quot;: 2.1759890735752733e-14
+    },
+    {
+      &quot;component&quot;: &quot;wrist_roll_rotor&quot;,
+      &quot;object&quot;: &quot;Component34&quot;,
+      &quot;center_error_mm&quot;: 1.0477130389850534e-11,
+      &quot;volume_relative_error&quot;: 1.7447599410551694e-14
+    },
+    {
+      &quot;component&quot;: &quot;wrist_roll_cover&quot;,
+      &quot;object&quot;: &quot;Component35&quot;,
+      &quot;center_error_mm&quot;: 9.740230808792039e-11,
+      &quot;volume_relative_error&quot;: 1.9587623310606497e-14
+    },
+    {
+      &quot;component&quot;: &quot;wrist_pitch_fork_-1&quot;,
+      &quot;object&quot;: &quot;Component36&quot;,
+      &quot;center_error_mm&quot;: 2.11414946374124e-11,
+      &quot;volume_relative_error&quot;: 4.1842499075362886e-14
+    },
+    {
+      &quot;component&quot;: &quot;wrist_pitch_fork_+1&quot;,
+      &quot;object&quot;: &quot;Component37&quot;,
+      &quot;center_error_mm&quot;: 2.114149941352621e-11,
+      &quot;volume_relative_error&quot;: 4.1842499075362886e-14
+    },
+    {
+      &quot;component&quot;: &quot;wrist_pitch_rotor&quot;,
+      &quot;object&quot;: &quot;Component38&quot;,
+      &quot;center_error_mm&quot;: 7.674072097847674e-12,
+      &quot;volume_relative_error&quot;: 2.200298130254706e-14
+    },
+    {
+      &quot;component&quot;: &quot;wrist_pitch_neck&quot;,
+      &quot;object&quot;: &quot;Component39&quot;,
+      &quot;center_error_mm&quot;: 8.027812336269863e-12,
+      &quot;volume_relative_error&quot;: 2.1798187916501387e-14
+    },
+    {
+      &quot;component&quot;: &quot;j6_stator_envelope&quot;,
+      &quot;object&quot;: &quot;Component40&quot;,
+      &quot;center_error_mm&quot;: 8.141319165674358e-12,
+      &quot;volume_relative_error&quot;: 2.240678455175429e-14
+    },
+    {
+      &quot;component&quot;: &quot;tool_flange_6xM5_PCD46&quot;,
+      &quot;object&quot;: &quot;Component41&quot;,
+      &quot;center_error_mm&quot;: 8.425107514357251e-12,
+      &quot;volume_relative_error&quot;: 4.0378120629348634e-14
+    },
+    {
+      &quot;component&quot;: &quot;interchangeable_gripper_adapter&quot;,
+      &quot;object&quot;: &quot;Component42&quot;,
+      &quot;center_error_mm&quot;: 8.567012349256135e-12,
+      &quot;volume_relative_error&quot;: 4.493027987575042e-14
+    },
+    {
+      &quot;component&quot;: &quot;gripper_pocketed_body&quot;,
+      &quot;object&quot;: &quot;Component43&quot;,
+      &quot;center_error_mm&quot;: 2.4684040350906777e-06,
+      &quot;volume_relative_error&quot;: 9.229189280680814e-08
+    },
+    {
+      &quot;component&quot;: &quot;gripper_top_service_cover&quot;,
+      &quot;object&quot;: &quot;Component44&quot;,
+      &quot;center_error_mm&quot;: 7.687323821896002e-12,
+      &quot;volume_relative_error&quot;: 7.869368332052855e-15
+    },
+    {
+      &quot;component&quot;: &quot;gripper_guide_rod_-14&quot;,
+      &quot;object&quot;: &quot;Component45&quot;,
+      &quot;center_error_mm&quot;: 7.687323733492996e-12,
+      &quot;volume_relative_error&quot;: 6.95080804336378e-16
+    },
+    {
+      &quot;component&quot;: &quot;gripper_guide_rod_+14&quot;,
+      &quot;object&quot;: &quot;Component46&quot;,
+      &quot;center_error_mm&quot;: 7.687323733492996e-12,
+      &quot;volume_relative_error&quot;: 6.95080804336378e-16
+    },
+    {
+      &quot;component&quot;: &quot;opposite_hand_screw_envelope&quot;,
+      &quot;object&quot;: &quot;Component47&quot;,
+      &quot;center_error_mm&quot;: 7.687323963348013e-12,
+      &quot;volume_relative_error&quot;: 2.467339389256547e-15
+    },
+    {
+      &quot;component&quot;: &quot;gripper_actuator_envelope&quot;,
+      &quot;object&quot;: &quot;Component48&quot;,
+      &quot;center_error_mm&quot;: 7.687323733492996e-12,
+      &quot;volume_relative_error&quot;: 9.235892041355074e-15
+    },
+    {
+      &quot;component&quot;: &quot;gripper_jaw_carriage_-1&quot;,
+      &quot;object&quot;: &quot;Component49&quot;,
+      &quot;center_error_mm&quot;: 7.590888037938154e-12,
+      &quot;volume_relative_error&quot;: 7.42931028628123e-15
+    },
+    {
+      &quot;component&quot;: &quot;gripper_finger_-1&quot;,
+      &quot;object&quot;: &quot;Component50&quot;,
+      &quot;center_error_mm&quot;: 7.70411838726194e-12,
+      &quot;volume_relative_error&quot;: 2.247993777174473e-14
+    },
+    {
+      &quot;component&quot;: &quot;gripper_contact_pad_-1&quot;,
+      &quot;object&quot;: &quot;Component51&quot;,
+      &quot;center_error_mm&quot;: 7.687323733492996e-12,
+      &quot;volume_relative_error&quot;: 2.759494317047814e-14
+    },
+    {
+      &quot;component&quot;: &quot;gripper_jaw_carriage_+1&quot;,
+      &quot;object&quot;: &quot;Component52&quot;,
+      &quot;center_error_mm&quot;: 7.590888037938154e-12,
+      &quot;volume_relative_error&quot;: 7.42931028628123e-15
+    },
+    {
+      &quot;component&quot;: &quot;gripper_finger_+1&quot;,
+      &quot;object&quot;: &quot;Component53&quot;,
+      &quot;center_error_mm&quot;: 7.70411838726194e-12,
+      &quot;volume_relative_error&quot;: 2.247993777174473e-14
+    },
+    {
+      &quot;component&quot;: &quot;gripper_contact_pad_+1&quot;,
+      &quot;object&quot;: &quot;Component54&quot;,
+      &quot;center_error_mm&quot;: 7.687323733492996e-12,
+      &quot;volume_relative_error&quot;: 2.759494317047814e-14
+    }
+  ],
+  &quot;saved_visible_components&quot;: 54,
+  &quot;mechanical_interface_checks&quot;: [
+    {
+      &quot;check&quot;: &quot;tool_flange_6xM5_PCD46: bolt 1 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;interchangeable_gripper_adapter: bolt 1 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_pocketed_body: bolt 1 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Adapter bolt 1 outer ligament&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;tool_flange_6xM5_PCD46: bolt 2 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;interchangeable_gripper_adapter: bolt 2 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_pocketed_body: bolt 2 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Adapter bolt 2 outer ligament&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;tool_flange_6xM5_PCD46: bolt 3 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;interchangeable_gripper_adapter: bolt 3 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_pocketed_body: bolt 3 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Adapter bolt 3 outer ligament&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;tool_flange_6xM5_PCD46: bolt 4 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;interchangeable_gripper_adapter: bolt 4 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_pocketed_body: bolt 4 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Adapter bolt 4 outer ligament&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;tool_flange_6xM5_PCD46: bolt 5 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;interchangeable_gripper_adapter: bolt 5 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_pocketed_body: bolt 5 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Adapter bolt 5 outer ligament&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;tool_flange_6xM5_PCD46: bolt 6 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;interchangeable_gripper_adapter: bolt 6 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_pocketed_body: bolt 6 clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Adapter bolt 6 outer ligament&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Counterbore bottom below Z13&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Counterbore depth reaches 7 mm&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Real OD30 pilot spigot&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Rear cable entrance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Upper nominal wall material&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Upper nominal inner wall&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Forearm nominal wall material&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;Forearm nominal inner wall&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_-1: nut boss&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_-1: connected bridge&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_-1: nut screw clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_-1: finger support tab&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_+1: nut boss&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_+1: connected bridge&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_+1: nut screw clearance&quot;,
+      &quot;matches&quot;: true
+    },
+    {
+      &quot;check&quot;: &quot;gripper_jaw_carriage_+1: finger support tab&quot;,
+      &quot;matches&quot;: true
+    }
+  ],
+  &quot;gripper_range&quot;: [
+    {
+      &quot;opening_mm&quot;: 0,
+      &quot;actual_pad_gap_mm&quot;: 0.0,
+      &quot;exact_pair_checks&quot;: 7,
+      &quot;maximum_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;opening_mm&quot;: 22.5,
+      &quot;actual_pad_gap_mm&quot;: 22.5,
+      &quot;exact_pair_checks&quot;: 7,
+      &quot;maximum_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;opening_mm&quot;: 45.0,
+      &quot;actual_pad_gap_mm&quot;: 45.0,
+      &quot;exact_pair_checks&quot;: 7,
+      &quot;maximum_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;opening_mm&quot;: 67.5,
+      &quot;actual_pad_gap_mm&quot;: 67.5,
+      &quot;exact_pair_checks&quot;: 7,
+      &quot;maximum_overlap_mm3&quot;: 0.0
+    },
+    {
+      &quot;opening_mm&quot;: 90.0,
+      &quot;actual_pad_gap_mm&quot;: 90.0,
+      &quot;exact_pair_checks&quot;: 7,
+      &quot;maximum_overlap_mm3&quot;: 0.0
+    }
+  ],
+  &quot;render_dimensions&quot;: {
+    &quot;gripper.png&quot;: [
+      1200,
+      850
+    ],
+    &quot;hero.png&quot;: [
+      1600,
+      1050
+    ],
+    &quot;pose_extended.png&quot;: [
+      700,
+      650
+    ],
+    &quot;pose_folded.png&quot;: [
+      700,
+      650
+    ],
+    &quot;pose_home.png&quot;: [
+      700,
+      650
+    ],
+    &quot;pose_pick.png&quot;: [
+      700,
+      650
+    ],
+    &quot;pose_place.png&quot;: [
+      700,
+      650
+    ],
+    &quot;pose_vertical.png&quot;: [
+      700,
+      650
+    ],
+    &quot;poses.png&quot;: [
+      2100,
+      1470
+    ]
+  },
+  &quot;clearance_summary&quot;: {
+    &quot;named_poses_exact_checks&quot;: 312,
+    &quot;motion_samples&quot;: 75,
+    &quot;motion_exact_checks&quot;: 6126,
+    &quot;maximum_motion_overlap_mm3&quot;: 0.0
+  },
+  &quot;geometric_envelope_mass_kg&quot;: 19.90794868776893,
+  &quot;scope&quot;: &quot;Current exported STEP/STL correspondence, all native FreeCAD solids and saved visibility, hash-bound native Blender/FreeCAD inspection, actual exported fastening/nut/finger/hatch interfaces, five gripper gaps and 35 exact selected jaw/body intersections, retained all-pair named/task clearance and drawing/render readability. No source geometry is regenerated by this audit.&quot;,
+  &quot;limitations&quot;: &quot;Digital concept: no continuous collision guarantee, all-configuration validation, thread/contact/preload simulation, production tolerances, cable bend qualification or physical performance certification.&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

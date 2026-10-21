@@ -1,0 +1,132 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Joint torque · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Joint torque</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/mechanical/joint_torque.json · SHA-256 57a4e6914728597d97f611d896e04b7a47652d3554a1d720341176b82a45ad8a</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;status&quot;: &quot;CALCULATED with ASSUMED lumped masses and mass-consistent equivalent diagonal sizing inertia&quot;,
+  &quot;sample_count&quot;: 6001,
+  &quot;seed&quot;: 412,
+  &quot;extended_gravity_torque_nm&quot;: [
+    0.0,
+    70.16535491875001,
+    31.88019331875001,
+    0.0,
+    6.858525843750001,
+    0.0
+  ],
+  &quot;sampled_absolute_gravity_max_nm&quot;: [
+    0.0,
+    70.16535491875001,
+    31.88019331875001,
+    6.843040435007883,
+    6.858525843750001,
+    2.886579864025407e-15
+  ],
+  &quot;sampled_worst_q_deg&quot;: [
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      -161.87554537548823,
+      -51.40074961450616,
+      -131.9419623299013,
+      -91.89060466695646,
+      -89.70722496355404,
+      -110.38082324313405
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      134.10440146597608,
+      -21.33319913046363,
+      44.96780259277912,
+      113.8526042856932,
+      -0.5643277597660307,
+      133.23945036082307
+    ]
+  ],
+  &quot;conservative_gravity_bound_nm&quot;: [
+    0.0,
+    70.16535491875,
+    31.880193318749996,
+    6.858525843750001,
+    6.858525843750001,
+    0.0
+  ],
+  &quot;point_mass_inertia_bound_kg_m2&quot;: [
+    4.490834687500001,
+    4.490834687500001,
+    1.3017946875,
+    0.09401906250000001,
+    0.09401906250000001,
+    0.0
+  ],
+  &quot;configured_control_inertia_kg_m2&quot;: [
+    1.2,
+    1.8,
+    0.8,
+    0.08,
+    0.05,
+    0.03
+  ],
+  &quot;sizing_inertia_kg_m2&quot;: [
+    4.490834687500001,
+    4.490834687500001,
+    1.3017946875,
+    0.09401906250000001,
+    0.09401906250000001,
+    0.03
+  ],
+  &quot;sizing_inertia_policy&quot;: &quot;Per joint max(configured independent-axis plant inertia, all-angle point-COM lever bound). This preserves the educational control plant while preventing actuator sizing below the same assumed point-mass model.&quot;,
+  &quot;dynamic_allowance_nm&quot;: [
+    17.249965916326012,
+    12.547174828747272,
+    5.371585930770471,
+    0.7079853934221787,
+    0.603265638302519,
+    0.3665191429188092
+  ],
+  &quot;safety_factor&quot;: 2.0,
+  &quot;concept_output_torque_nm&quot;: [
+    34.499931832652024,
+    165.42505949499454,
+    74.50355849904093,
+    15.133022474344358,
+    14.923582964105039,
+    0.7330382858376184
+  ],
+  &quot;concept_motor_torque_nm&quot;: [
+    0.5749988638775337,
+    1.9693459463689829,
+    1.034771645820013,
+    0.3362893883187635,
+    0.33163517698011197,
+    0.018795853483015858
+  ],
+  &quot;assumed_total_manipulator_mass_kg&quot;: 23.65,
+  &quot;moving_mass_kg&quot;: 15.15,
+  &quot;limitations&quot;: &quot;COM midpoint point masses; no centroidal body rotation tensors, inertia coupling, Coriolis/centrifugal torque, reflected drive inertia, friction/backlash/cable/thermal/fatigue modelling. Gravity and diagonal point-mass bounds cover their stated model only, not full manipulator dynamics; sampling is not proof of a maximum.&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

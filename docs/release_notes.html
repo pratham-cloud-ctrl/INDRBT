@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>ASTER-6 v1.2.0 — original goals, repaired mechanics and rigorous validation · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#aster-6-v120-original-goals-repaired-mechanics-and-rigorous-validation">ASTER-6 v1.2.0 — original goals, repaired mechanics and rigorous validation</a><ul>
+<li><a href="#executed-verification">Executed verification</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="aster-6-v120-original-goals-repaired-mechanics-and-rigorous-validation">ASTER-6 v1.2.0 — original goals, repaired mechanics and rigorous validation</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#aster-6-v120-original-goals-repaired-mechanics-and-rigorous-validation">ASTER-6 v1.2.0 — original goals, repaired mechanics and rigorous validation</a><ul>
+<li><a href="#executed-verification">Executed verification</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>ASTER-6 connects an original six-axis arm and interchangeable parallel gripper
+to kinematics, motion planning, analytical mechanics, simplified feedback control
+and a routed conceptual joint/sensor interface. The 17 October review revisited
+the original digital brief and fixed defects beyond the earlier passing checks.
+No physical robot or electronics were built.</p>
+<ul>
+<li>Mechanical interfaces: wider tool adapter with retained bolt ligaments, a real locating pilot and matching rear fasteners; connected nut/carriage bridges and finger supports; a nonintersecting top service hatch; actual 7 mm counterbores. The design still contains 54 parts and retains the original SI dimensions and 90 mm opening.</li>
+<li>Native CAD access: all 54 named FreeCAD solids open visibly. STEP/STL, native FreeCAD/Blender, actual renders and three drawing pages were regenerated. New refresh/review scripts execute native applications and require current source/artifact proof.</li>
+<li>Numerical behavior: reject nonfinite/nonphysical inputs, malformed rigid poses and trajectories, segment discontinuities and singular MOVE L continuation. PID, beam zero/signed-load and payload edge cases have explicit regressions.</li>
+<li>Actuator sizing: distinguish educational controller inertia from mass-consistent sizing inertia. A separate kinetic-energy regression checks the point-COM bounds. Coupled rigid-body dynamics remain outside this model.</li>
+<li>Demonstration: ideal grasp attachment now follows the complete TCP position and orientation. All 54 components remain individually inspectable in the offline browser viewer.</li>
+<li>Electronics: include quiescent-current heat in the regulator estimate and reject stale native PCB reports after routing/design changes. The original board/schematic geometry is unchanged. Current native ERC/DRC/connectivity/parity and manufacturing export audits pass within their enabled-rule scope.</li>
+<li>Reproducibility: enforce measured numerical acceptance limits, reject nonfinite saved evidence, bind validation to 76 current source/input files, compare all 15 wheel modules with source and use fresh CLI output directories. The new project-purpose guide explains how each subsystem answers the original engineering question.</li>
+</ul>
+<h2 id="executed-verification">Executed verification</h2>
+<p>The complete CAD/results/native regeneration passed. The latest integrated
+validation passed <strong>91 automated tests</strong>,
+with zero failures, errors or skips, and all named integration gates.
+All 54 STEP/STL component pairs and six assemblies agree with native data; all saved
+FreeCAD parts are visible. Six named poses and closed/mid/open gripper checks use
+312 exact intersections. The task review screens 75 configurations with 107,325
+pair classifications and 6,126 exact intersections, with zero prohibited overlap.
+The CAD geometric envelope/material sum is 19.907949 kg;
+the separate assumed load model is 23.65 kg.</p>
+<p>The unchanged nominal task contains 1,041 samples and lasts 9.243979567 s.
+Its peak velocity/acceleration fractions are 0.951694 and 0.997971.
+The ideal serial beam estimate remains 0.104075 mm. These are generated digital
+results, rather than physical performance measurements.</p>
+<p>See the <a href="project_alignment.html">original goals</a>, <a href="final_review.html">current independent review</a>,
+<a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">executed validation<span class="badge">Source file</span></a>,
+<a href="data/results--validation--cad_release_consistency.html">CAD proof</a>,
+<a href="data/results--validation--final_theory_review.html">theory review</a> and
+<a href="data/electronics--pcb_verification.html">electronics evidence</a>.</p>
+<p>Physical payload/repeatability, production tolerances, EMC, thermal qualification,
+functional safety, detailed thread/preload/contact physics, complete coupled
+dynamics and continuous swept collision certification remain unverified. Five
+KiCad factory-disabled DRC checks remain disclosed; no custom suppression or
+exclusions were added. This is a completed digital educational engineering project
+within the <a href="digital_scope_audit.html">documented scope</a>.</p>
+<p>Release assets are the complete organized ZIP and installable Python wheel.
+The repository remains private and retains the authentic earlier history.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

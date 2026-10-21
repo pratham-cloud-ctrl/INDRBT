@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Trajectory metrics · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Trajectory metrics</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/trajectories/trajectory_metrics.json · SHA-256 03d12f728aa9c44376e1108a30444b9576810432aaff6544921de096f84863c5</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;MOVE_J&quot;: {
+    &quot;duration_s&quot;: 4.0,
+    &quot;peak_velocity_rad_s&quot;: [
+      0.20453077171808548,
+      0.04090615434361711,
+      0.040906154343617156,
+      0.0,
+      0.6544984694978736,
+      0.0
+    ],
+    &quot;peak_acceleration_rad_s2&quot;: [
+      0.15744287933006132,
+      0.03148857586601227,
+      0.03148857586601231,
+      0.0,
+      0.5038172138561962,
+      0.0
+    ],
+    &quot;max_velocity_limit_fraction&quot;: 0.31250000000000006,
+    &quot;max_acceleration_limit_fraction&quot;: 0.12027750000000026
+  },
+  &quot;MOVE_L&quot;: {
+    &quot;duration_s&quot;: 1.01,
+    &quot;peak_velocity_rad_s&quot;: [
+      4.31250195070239e-12,
+      0.2912707587211496,
+      0.032307819176330466,
+      1.4077900660799662e-12,
+      0.30640157186859013,
+      4.96958099525201e-12
+    ],
+    &quot;peak_acceleration_rad_s2&quot;: [
+      3.3608162925619843e-10,
+      0.9288644672248921,
+      0.1654698687426125,
+      1.139872002771625e-10,
+      0.9686478284727674,
+      3.908575219364839e-10
+    ],
+    &quot;max_velocity_limit_fraction&quot;: 0.2781430861715865,
+    &quot;max_acceleration_limit_fraction&quot;: 0.4435001142637842
+  },
+  &quot;move_l_max_xy_drift_m&quot;: 5.9423850372475314e-12,
+  &quot;linear_caveat&quot;: &quot;Constant-velocity interior only; instantaneous boundary acceleration unbounded.&quot;,
+  &quot;move_l_caveat&quot;: &quot;Derivative limits verified at sampled points; no continuous-path or collision certificate.&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

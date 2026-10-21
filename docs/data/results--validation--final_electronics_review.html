@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Final electronics review · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Final electronics review</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/validation/final_electronics_review.json · SHA-256 19c471c366c8c284ca41e5bc804ecce4234ba422a2b9f7b115732c9facb45fb8</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;status&quot;: &quot;PASS&quot;,
+  &quot;scope&quot;: &quot;Saved native KiCad evidence plus an independent file/content audit for the low-voltage external-drive interface. This script does not run fresh native checks or certify a physical product.&quot;,
+  &quot;native_kicad_version&quot;: &quot;10.0.6&quot;,
+  &quot;native_erc_violations&quot;: 0,
+  &quot;native_drc_errors&quot;: 0,
+  &quot;native_drc_warnings&quot;: 0,
+  &quot;native_unconnected_items&quot;: 0,
+  &quot;native_schematic_parity_issues&quot;: 0,
+  &quot;native_pcb_commands_reviewed&quot;: 13,
+  &quot;native_pcb_command_exit_codes&quot;: [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  &quot;component_count&quot;: 44,
+  &quot;connected_nets&quot;: 28,
+  &quot;physical_pad_nets_checked_including_nc&quot;: 119,
+  &quot;stock_footprints&quot;: 43,
+  &quot;local_manufacturer_footprints&quot;: 1,
+  &quot;fuse_correction&quot;: {
+    &quot;status&quot;: &quot;PASS&quot;,
+    &quot;manufacturer_part_number&quot;: &quot;MF-NSMF025X-2&quot;,
+    &quot;footprint&quot;: &quot;ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206&quot;,
+    &quot;actual_pad_size_mm&quot;: [
+      1.0,
+      1.6
+    ],
+    &quot;actual_inner_pad_gap_mm&quot;: 2.0,
+    &quot;actual_pad_centres_mm&quot;: [
+      [
+        -1.5,
+        0.0
+      ],
+      [
+        1.5,
+        0.0
+      ]
+    ],
+    &quot;library_and_board_dimensions_agree&quot;: true,
+    &quot;courtyard_covers_maximum_body_and_pads&quot;: true,
+    &quot;source&quot;: &quot;https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf&quot;,
+    &quot;drawing_page_one_based&quot;: 8,
+    &quot;scope&quot;: &quot;Selected digital-design part and manufacturer nominal copper land pattern. No measured trip, inrush, solder-process, temperature, sourcing or production qualification. No manufacturer-specific 3D body model is supplied.&quot;
+  },
+  &quot;footprint_wildcard_matches&quot;: 44,
+  &quot;bom_values_and_footprints_match_native_design&quot;: true,
+  &quot;assembly_position_count&quot;: 41,
+  &quot;assembly_exclusions&quot;: {
+    &quot;R14&quot;: &quot;DNP optional bias&quot;,
+    &quot;R15&quot;: &quot;DNP optional bias&quot;,
+    &quot;JP1&quot;: &quot;bare copper solder jumper, no body&quot;,
+    &quot;H1-H4&quot;: &quot;board-only mechanical holes&quot;
+  },
+  &quot;gerber_layer_functions&quot;: [
+    &quot;Copper,L1,Top&quot;,
+    &quot;Copper,L2,Inr&quot;,
+    &quot;Copper,L3,Inr&quot;,
+    &quot;Copper,L4,Bot&quot;,
+    &quot;Legend,Bot&quot;,
+    &quot;Legend,Top&quot;,
+    &quot;Profile&quot;,
+    &quot;SolderMask,Bot&quot;,
+    &quot;SolderMask,Top&quot;,
+    &quot;SolderPaste,Top&quot;
+  ],
+  &quot;drill_counts&quot;: {
+    &quot;joint_interface-PTH.drl&quot;: 68,
+    &quot;joint_interface-NPTH.drl&quot;: 4
+  },
+  &quot;ipc_d356_testpoint_count&quot;: 151,
+  &quot;fabrication_zip_entries_checked&quot;: 19,
+  &quot;file_hashes_recomputed&quot;: {
+    &quot;source&quot;: 12,
+    &quot;fabrication&quot;: 19,
+    &quot;review_exports&quot;: 8
+  },
+  &quot;file_hash_mismatches&quot;: 0,
+  &quot;board_sha256&quot;: &quot;a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e&quot;,
+  &quot;pcb_verification_sha256&quot;: &quot;bb62ea4ce366b30ac11c24940293f2bd742a8953a7301cfc7c12673de9ce1e82&quot;,
+  &quot;component_guide&quot;: &quot;docs/electronics_components.md&quot;,
+  &quot;component_guide_sha256&quot;: &quot;4013c4937ad751a026072f841d3369796dbf5791c9c51e1186981eb113049d18&quot;,
+  &quot;power_calculations&quot;: {
+    &quot;status&quot;: &quot;CALCULATED&quot;,
+    &quot;no_measurements&quot;: true,
+    &quot;limit_closed_v&quot;: 0.3,
+    &quot;limit_release_tau_s&quot;: 0.001,
+    &quot;limit_closure_tau_s&quot;: 9.09090909090909e-05,
+    &quot;encoder_nominal_tau_s&quot;: {
+      &quot;A&quot;: 1.0000000000000001e-07,
+      &quot;B&quot;: 1.0000000000000001e-07,
+      &quot;Z&quot;: 1.0000000000000001e-07
+    },
+    &quot;optional_rs485_bias_nominal_v_two_terminators&quot;: 0.275,
+    &quot;optional_rs485_bias_worst_v_1pct_resistors_3v_supply&quot;: 0.24545454545454543,
+    &quot;optional_rs485_bias_idle_current_a&quot;: 0.004583333333333333,
+    &quot;optional_bias_threshold_check&quot;: &quot;PASS; ideal DC network, excludes leakage/cable effects&quot;,
+    &quot;ldo_conservative_dissipation_bound_w&quot;: 0.29292,
+    &quot;ldo_load_path_dissipation_bound_w&quot;: 0.29250000000000004,
+    &quot;ldo_quiescent_power_allowance_w&quot;: 0.00042,
+    &quot;ldo_conditional_junction_estimate_c&quot;: 93.89728,
+    &quot;selected_fuse&quot;: &quot;MF-NSMF025X-2&quot;,
+    &quot;selected_fuse_hold_current_at_40c_a&quot;: 0.23,
+    &quot;fuse_input_current_budget_including_ldo_iq_a&quot;: 0.15008,
+    &quot;fuse_hold_current_margin_at_40c_a&quot;: 0.07992000000000002,
+    &quot;fuse_resistance_drop_check_v&quot;: 0.34518399999999994,
+    &quot;fuse_resistance_power_check_w&quot;: 0.05180521471999999,
+    &quot;conditional_ldo_input_at_low_source_v&quot;: 3.9048160000000003,
+    &quot;power_path_claim_boundary&quot;: &quot;Conditional calculation using post-reflow 23 C fuse resistance and 25 C diode drop limit. It does not bound cold/hot resistance, diode drop, startup inrush or measured regulation over temperature.&quot;,
+    &quot;thermal_claim_boundary&quot;: &quot;Conditional estimate using nominal output, configured load and datasheet reference IQ/theta_ja. Input fuse/diode drops are neglected and regulator quiescent power is included. This is not a full temperature/tolerance bound; PCB copper/airflow and temperature are unverified.&quot;,
+    &quot;pcb_status&quot;: &quot;ROUTED PCB; actual DRC/parity/export evidence is recorded separately in pcb_verification.json&quot;
+  },
+  &quot;factory_disabled_erc_checks&quot;: [
+    &quot;single_global_label&quot;,
+    &quot;four_way_junction&quot;,
+    &quot;simulation_model_issue&quot;,
+    &quot;footprint_filter&quot;
+  ],
+  &quot;factory_disabled_drc_checks&quot;: [
+    &quot;missing_courtyard&quot;,
+    &quot;track_not_centered_on_via&quot;,
+    &quot;tuning_profile_track_geometries&quot;,
+    &quot;footprint_filters_mismatch&quot;,
+    &quot;footprint_type_mismatch&quot;
+  ],
+  &quot;custom_rule_severity_overrides&quot;: {},
+  &quot;drc_exclusions&quot;: [],
+  &quot;remaining_physical_review&quot;: [
+    &quot;Generic stock land patterns are package-compatible design selections, not a complete manufacturer soldering-process approval&quot;,
+    &quot;Passive/LED/connector purchasing codes and effective capacitance under DC bias&quot;,
+    &quot;Controller and encoder currents within the shared 150 mA budget, including terminated-bus loading&quot;,
+    &quot;Fuse trip/inrush and cold/hot voltage-drop behaviour&quot;,
+    &quot;Measured thermal, EMC, ESD, timing, cable grounding/isolation and safety qualification&quot;
+  ],
+  &quot;references&quot;: {
+    &quot;fuse&quot;: &quot;https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf&quot;,
+    &quot;regulator&quot;: &quot;https://www.diodes.com/assets/Datasheets/AP2112.pdf&quot;,
+    &quot;reverse_polarity_diode&quot;: &quot;https://www.vishay.com/docs/88746/ss12.pdf&quot;,
+    &quot;input_clamps&quot;: &quot;https://assets.nexperia.com/documents/data-sheet/BAT54H.pdf&quot;,
+    &quot;rs485_transceiver&quot;: &quot;https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf&quot;
+  }
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

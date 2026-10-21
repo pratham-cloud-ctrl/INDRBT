@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>CAD source and models · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#cad-source-and-models">CAD source and models</a><ul>
+<li><a href="#open-the-right-file">Open the right file</a></li>
+<li><a href="#edit-and-regenerate">Edit and regenerate</a></li>
+<li><a href="#coordinates-and-evidence">Coordinates and evidence</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="cad-source-and-models">CAD source and models</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#cad-source-and-models">CAD source and models</a><ul>
+<li><a href="#open-the-right-file">Open the right file</a></li>
+<li><a href="#edit-and-regenerate">Edit and regenerate</a></li>
+<li><a href="#coordinates-and-evidence">Coordinates and evidence</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p><a href="../index.html">Project home</a> · <a href="cad_tour.html">Illustrated mechanical tour</a> · <a href="component_catalog.html">54-part catalog</a> · <a href="04_cad.html">CAD method and validation</a></p>
+<p>This folder contains ASTER-6's reproducible mechanical design and generated models: <strong>54 components and six complete pose assemblies</strong>.</p>
+<p><img alt="The ASTER-6 solid model in its home configuration" src="assets/cad/renders/hero.png" /></p>
+<h2 id="open-the-right-file">Open the right file</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>File or folder</th>
+<th>What it contains</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inspect the complete solid assembly</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/freecad/aster6_home.FCStd" target="_blank" rel="noopener noreferrer" class="private-link">freecad/aster6_home.FCStd<span class="badge">Source file</span></a></td>
+<td>FreeCAD home pose; 54 visible solids with descriptive labels, rigid groups and assumed materials</td>
+</tr>
+<tr>
+<td>Exchange exact solid geometry</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_home.step" target="_blank" rel="noopener noreferrer" class="private-link">Home STEP<span class="badge">Source file</span></a> · <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/tree/main/06_Complete_Project_Source/cad/exports/STEP" target="_blank" rel="noopener noreferrer" class="private-link">all STEP files<span class="badge">Source file</span></a></td>
+<td>Six positioned assemblies and 54 individual parts</td>
+</tr>
+<tr>
+<td>Use triangle meshes</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/tree/main/06_Complete_Project_Source/cad/exports/STL" target="_blank" rel="noopener noreferrer" class="private-link">All STL files<span class="badge">Source file</span></a></td>
+<td>Six assembly meshes and 54 individual part meshes; assembly meshes retain separate contacting bodies</td>
+</tr>
+<tr>
+<td>Read the mechanism on GitHub</td>
+<td><a href="cad_tour.html">Mechanical tour</a> · <a href="assets/docs/drawings/engineering_interfaces.pdf">drawings</a></td>
+<td>Rendered assembly, gripper, six poses and dimensioned interface drawings</td>
+</tr>
+<tr>
+<td>Inspect the render scene</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/renders/aster6_home.blend" target="_blank" rel="noopener noreferrer" class="private-link">renders/aster6_home.blend<span class="badge">Source file</span></a></td>
+<td>Blender scene using the exported CAD meshes</td>
+</tr>
+<tr>
+<td>Move the robot and isolate a part</td>
+<td><a href="../robot/index.html">Offline interactive viewer</a></td>
+<td>Browser viewer; download the project to run it</td>
+</tr>
+</tbody>
+</table></div>
+<p>STEP, STL and FCStd links lead to engineering files for download. Use FreeCAD for the native model or STEP solids. On Windows, the root <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/OPEN_FREECAD_MODEL.cmd" target="_blank" rel="noopener noreferrer" class="private-link">OPEN_FREECAD_MODEL.cmd<span class="badge">Source file</span></a> and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/OPEN_3D_VIEWER.cmd" target="_blank" rel="noopener noreferrer" class="private-link">OPEN_3D_VIEWER.cmd<span class="badge">Source file</span></a> launch the appropriate application. PNG/SVG previews display directly on GitHub.</p>
+<h2 id="edit-and-regenerate">Edit and regenerate</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Authoritative source</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="data/config--robot.html">config/robot.yaml</a></td>
+<td>Shared SI configuration for dimensions, joint poses and engineering assumptions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/build123d/parameters.py" target="_blank" rel="noopener noreferrer" class="private-link">build123d/parameters.py<span class="badge">Source file</span></a></td>
+<td>Converts configured lengths from metres to CAD millimetres</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/build123d/geometry.py" target="_blank" rel="noopener noreferrer" class="private-link">build123d/geometry.py<span class="badge">Source file</span></a></td>
+<td>Constructs the component solids and their interfaces</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/build123d/assembly.py" target="_blank" rel="noopener noreferrer" class="private-link">build123d/assembly.py<span class="badge">Source file</span></a></td>
+<td>Applies the six joint-frame transforms</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/build123d/export_all.py" target="_blank" rel="noopener noreferrer" class="private-link">build123d/export_all.py<span class="badge">Source file</span></a></td>
+<td>Exports STEP/STL, local meshes and CAD measurements</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/freecad/inspect_step.py" target="_blank" rel="noopener noreferrer" class="private-link">freecad/inspect_step.py<span class="badge">Source file</span></a></td>
+<td>Independently imports assembly STEP files and generates the native FreeCAD inspection assembly</td>
+</tr>
+</tbody>
+</table></div>
+<p>The Python geometry is parametric. The saved FreeCAD model is a solid export with inspection metadata, not the construction feature tree. For reproducible changes, edit the shared configuration or geometry source and regenerate. Save intentional manual FreeCAD edits under a separate filename; close older views without saving before replacing their generated file.</p>
+<p>From <code>06_Complete_Project_Source</code>, with the project's CAD dependencies, FreeCAD and Blender installed:</p>
+<pre><code class="language-bash">python scripts/generate_cad.py
+python -m robotarm.demo --all
+python scripts/refresh_cad.py
+</code></pre>
+<p>The final command refreshes native inspection, renders and CAD evidence. To audit saved outputs without regenerating them, run <code>python scripts/review_cad.py</code>. See <a href="04_cad.html#refresh-native-cad-evidence">the full workflow</a> for tool discovery and overrides.</p>
+<h2 id="coordinates-and-evidence">Coordinates and evidence</h2>
+<p>CAD lengths are <strong>millimetres</strong>; numerical kinematics use <strong>metres</strong>. Individual part files are authored in local groups <code>base</code>, <code>j1</code> through <code>j6</code>. Open a complete assembly for positioned parts; <a href="data/cad--exports--meshes--assembly_meshes.html">assembly_meshes.json</a> records local meshes and pose transforms. Motor, gearbox and bearing <strong>envelopes</strong> are simplified spatial representations with assumed materials.</p>
+<p><a href="data/results--validation--final_cad_review.html">CAD inspection</a>, <a href="data/results--validation--cad_assembly_clearance.html">named-pose clearance</a> and <a href="data/results--validation--cad_motion_clearance.html">sampled-task clearance</a> state what was checked. Drawings are concept interfaces rather than production drawings; geometric validity and sampled clearance do not establish hardware performance.</p>
+<p>The numbered <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/tree/main/01_CAD_Models" target="_blank" rel="noopener noreferrer" class="private-link">01_CAD_Models<span class="badge">Source file</span></a> folder contains organized copies for browsing. Regenerate here, then use the source project's presentation sync to refresh those copies.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

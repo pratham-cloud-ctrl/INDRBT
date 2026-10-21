@@ -1,0 +1,199 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Pcb verification · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Pcb verification</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · electronics/pcb_verification.json · SHA-256 bb62ea4ce366b30ac11c24940293f2bd742a8953a7301cfc7c12673de9ce1e82</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;status&quot;: &quot;PASS&quot;,
+  &quot;kicad_version&quot;: &quot;10.0.6&quot;,
+  &quot;footprint_count&quot;: 48,
+  &quot;schematic_footprint_count&quot;: 44,
+  &quot;mechanical_footprint_count&quot;: 4,
+  &quot;net_count&quot;: 28,
+  &quot;total_net_count_including_nc&quot;: 29,
+  &quot;pin_assignments_checked&quot;: 118,
+  &quot;physical_pad_nets_checked_including_nc&quot;: 119,
+  &quot;track_count&quot;: 265,
+  &quot;via_count&quot;: 32,
+  &quot;board_dimensions_mm&quot;: [
+    100.0,
+    100.0
+  ],
+  &quot;copper_layers&quot;: 4,
+  &quot;copper_layer_names&quot;: [
+    &quot;F.Cu&quot;,
+    &quot;In1.Cu&quot;,
+    &quot;In2.Cu&quot;,
+    &quot;B.Cu&quot;
+  ],
+  &quot;filled_plane_count&quot;: 2,
+  &quot;footprints_with_courtyard&quot;: 48,
+  &quot;native_drc_errors&quot;: 0,
+  &quot;native_drc_warnings&quot;: 0,
+  &quot;native_drc_violations&quot;: 0,
+  &quot;unconnected_items&quot;: 0,
+  &quot;schematic_parity&quot;: &quot;PASS&quot;,
+  &quot;schematic_parity_issues&quot;: 0,
+  &quot;native_drc_included_severities&quot;: [
+    &quot;error&quot;,
+    &quot;warning&quot;,
+    &quot;exclusion&quot;
+  ],
+  &quot;native_drc_factory_ignored_checks&quot;: [
+    {
+      &quot;description&quot;: &quot;Footprint has no courtyard defined&quot;,
+      &quot;key&quot;: &quot;missing_courtyard&quot;
+    },
+    {
+      &quot;description&quot;: &quot;Track endpoint not centered on via&quot;,
+      &quot;key&quot;: &quot;track_not_centered_on_via&quot;
+    },
+    {
+      &quot;description&quot;: &quot;Tuning profile track geometries&quot;,
+      &quot;key&quot;: &quot;tuning_profile_track_geometries&quot;
+    },
+    {
+      &quot;description&quot;: &quot;Footprint doesn&#x27;t match symbol&#x27;s footprint filters&quot;,
+      &quot;key&quot;: &quot;footprint_filters_mismatch&quot;
+    },
+    {
+      &quot;description&quot;: &quot;Footprint component type doesn&#x27;t match footprint pads&quot;,
+      &quot;key&quot;: &quot;footprint_type_mismatch&quot;
+    }
+  ],
+  &quot;drc_exclusions&quot;: [],
+  &quot;rule_severity_overrides&quot;: {},
+  &quot;fabrication_rules_mm&quot;: {
+    &quot;max_error&quot;: 0.005,
+    &quot;min_clearance&quot;: 0.2,
+    &quot;min_connection&quot;: 0.0,
+    &quot;min_copper_edge_clearance&quot;: 0.5,
+    &quot;min_groove_width&quot;: 0.0,
+    &quot;min_hole_clearance&quot;: 0.25,
+    &quot;min_hole_to_hole&quot;: 0.25,
+    &quot;min_microvia_diameter&quot;: 0.2,
+    &quot;min_microvia_drill&quot;: 0.1,
+    &quot;min_resolved_spokes&quot;: 2,
+    &quot;min_silk_clearance&quot;: 0.15,
+    &quot;min_text_height&quot;: 0.8,
+    &quot;min_text_thickness&quot;: 0.12,
+    &quot;min_through_hole_diameter&quot;: 0.3,
+    &quot;min_track_width&quot;: 0.2,
+    &quot;min_via_annular_width&quot;: 0.15,
+    &quot;min_via_diameter&quot;: 0.6,
+    &quot;solder_mask_to_copper_clearance&quot;: 0.0,
+    &quot;use_height_for_length_calcs&quot;: true
+  },
+  &quot;independent_footprint_filter_review&quot;: {
+    &quot;wildcard_matches&quot;: 44,
+    &quot;lexical_mismatches&quot;: [],
+    &quot;review&quot;: &quot;All 44 assigned footprints match their stock symbol wildcards. F1 uses a project-local PTC land pattern independently compared against the manufacturer nominal pad drawing; wildcard matching alone does not prove physical suitability.&quot;
+  },
+  &quot;fuse_manufacturer_land_pattern_review&quot;: {
+    &quot;status&quot;: &quot;PASS&quot;,
+    &quot;manufacturer_part_number&quot;: &quot;MF-NSMF025X-2&quot;,
+    &quot;footprint&quot;: &quot;ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206&quot;,
+    &quot;actual_pad_size_mm&quot;: [
+      1.0,
+      1.6
+    ],
+    &quot;actual_inner_pad_gap_mm&quot;: 2.0,
+    &quot;actual_pad_centres_mm&quot;: [
+      [
+        -1.5,
+        0.0
+      ],
+      [
+        1.5,
+        0.0
+      ]
+    ],
+    &quot;library_and_board_dimensions_agree&quot;: true,
+    &quot;courtyard_covers_maximum_body_and_pads&quot;: true,
+    &quot;source&quot;: &quot;https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf&quot;,
+    &quot;drawing_page_one_based&quot;: 8,
+    &quot;scope&quot;: &quot;Selected digital-design part and manufacturer nominal copper land pattern. No measured trip, inrush, solder-process, temperature, sourcing or production qualification. No manufacturer-specific 3D body model is supplied.&quot;
+  },
+  &quot;local_front_copper_paths&quot;: {
+    &quot;U2_supply_to_C7_mm&quot;: 3.5624479758950356,
+    &quot;RS485_A_main_mm&quot;: 28.961067811865476,
+    &quot;RS485_B_main_mm&quot;: 31.417901140947343,
+    &quot;RS485_main_length_difference_mm&quot;: 2.456833329081867
+  },
+  &quot;source_sha256&quot;: {
+    &quot;joint_interface.kicad_pcb&quot;: &quot;a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e&quot;,
+    &quot;joint_interface.kicad_sch&quot;: &quot;89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6&quot;,
+    &quot;joint_interface.kicad_pro&quot;: &quot;1cbe4d95a46fe4c8e8a28a635cd5d81d293c97451c79740726e6cffe839bdd1a&quot;,
+    &quot;joint_interface.kicad_dru&quot;: &quot;72afecaf275113ea1933885f575e19720a433f4028c2282d8bdac265d51b80cd&quot;,
+    &quot;joint_interface.net.xml&quot;: &quot;27c898016cd98c0ed190938945213d1b9cf0714c5c611af5d4397484384021c0&quot;,
+    &quot;pin_contract.json&quot;: &quot;f964f42f6c746b9edde86030eaaf766f3679cf2e9fab22e903129eb435d2d81d&quot;,
+    &quot;pcb_routing_manifest.json&quot;: &quot;0f5af7738b954cc1467f1ca2649273eb3ca8f05d7876155465d694a09fe9cada&quot;,
+    &quot;pcb_drc_report.json&quot;: &quot;ad5683ce8d041c96a3162b22cc37737dd577add83948db2abe096d27c355d4bb&quot;,
+    &quot;fp-lib-table&quot;: &quot;ea0ff7a7a8fe778f9398c1d644beee9d99ae59331c1402ae7729d85883aad122&quot;,
+    &quot;bom.csv&quot;: &quot;07e79e1d037dc712426b3bb279007320098e67cf5da2837da92cce6058ba7865&quot;,
+    &quot;fuse_selection.json&quot;: &quot;ce41aa3e09b473d2f89efe06adc6acb6d9b2b5db99cf0cd0da4a2fe8d03399d6&quot;,
+    &quot;ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod&quot;: &quot;9acc77d33b95c382fade04f49c573996e7b85eb81b4c761ceacf350d77f2757b&quot;
+  },
+  &quot;scope&quot;: &quot;Native PCB geometry, enabled default DRC plus explicit fabrication constraints, schematic parity and independent pad/net audit. No fabricated board, measured EMC/thermal/timing/ESD performance or functional-safety qualification.&quot;,
+  &quot;native_drc_exit_code&quot;: 0,
+  &quot;drc_command&quot;: [
+    &quot;&lt;kicad-cli&gt;&quot;,
+    &quot;pcb&quot;,
+    &quot;drc&quot;,
+    &quot;joint_interface.kicad_pcb&quot;,
+    &quot;--format&quot;,
+    &quot;json&quot;,
+    &quot;--all-track-errors&quot;,
+    &quot;--schematic-parity&quot;,
+    &quot;--severity-all&quot;,
+    &quot;--exit-code-violations&quot;,
+    &quot;--refill-zones&quot;,
+    &quot;--save-board&quot;,
+    &quot;-o&quot;,
+    &quot;pcb_drc_report.json&quot;
+  ],
+  &quot;fabrication_exports&quot;: {
+    &quot;status&quot;: &quot;PASS&quot;,
+    &quot;gerber_layer_file_count&quot;: 10,
+    &quot;excellon_file_count&quot;: 2,
+    &quot;file_sha256&quot;: {
+      &quot;fabrication/assembly_positions.csv&quot;: &quot;4474350f610f47511e688de694c2a746be250cebd0a619ad89e567350b4d344c&quot;,
+      &quot;fabrication/drill_report.txt&quot;: &quot;45df5baf4a72a40020f2a919524439b59f47e9b4acc459bf21afd0a225b0963c&quot;,
+      &quot;fabrication/joint_interface-B_Cu.gbl&quot;: &quot;b35035e34b8514922821cf027e0e01c711f35bade48eb10bd3ca525d356a7eb9&quot;,
+      &quot;fabrication/joint_interface-B_Mask.gbs&quot;: &quot;e3d4382e7168b435dccb2c76bef7d7271753ee1494d636b125aafc231238f071&quot;,
+      &quot;fabrication/joint_interface-B_Silkscreen.gbo&quot;: &quot;55a5c6f864d4cd741738627d0425be58108c748330180ba3e2e9492b7c0e926e&quot;,
+      &quot;fabrication/joint_interface-Edge_Cuts.gm1&quot;: &quot;b77244ff3895361098dff6fa33a9759faa14e8d3c9c2a1aab1b74ad68747c41e&quot;,
+      &quot;fabrication/joint_interface-F_Cu.gtl&quot;: &quot;73c233dcb3caf289c0c8a2df7261fcda88a32fab363c4f3601447f84e49e8ed9&quot;,
+      &quot;fabrication/joint_interface-F_Mask.gts&quot;: &quot;c20fcb41b449421c2b926f6a5008c005cd20adfedf109011e27bf6df383c7158&quot;,
+      &quot;fabrication/joint_interface-F_Paste.gtp&quot;: &quot;d0be3d4eb6779eb478f1f26f37bbaf7542d69b2daf6a100facd8a5e4409f009e&quot;,
+      &quot;fabrication/joint_interface-F_Silkscreen.gto&quot;: &quot;5285517ac37ed11c6c654ea9b21228f6fd0c86f530ff6ef1c878c9631027d552&quot;,
+      &quot;fabrication/joint_interface-In1_Cu.g1&quot;: &quot;8e26f0283aebe5735ba5f11cbddb9f105a530d70b1ee48d0c1f2bddfda212722&quot;,
+      &quot;fabrication/joint_interface-In2_Cu.g2&quot;: &quot;7236616f840bfb030ac2f990efc0dc8201393129449771c14e2cc4eb92439ef3&quot;,
+      &quot;fabrication/joint_interface-job.gbrjob&quot;: &quot;242f064ac0900770d918033622b4d192596652683efcd46cef5407ca38f79685&quot;,
+      &quot;fabrication/joint_interface-NPTH-drl_map.pdf&quot;: &quot;2d279b24ca57571094883ff0950ac01dff3cc789950dfec19ac7c7d02715c3c9&quot;,
+      &quot;fabrication/joint_interface-NPTH.drl&quot;: &quot;6608cac19e1743a775cadd3c07b4a10054ebea1715a7dd70e2a73d08ee6a810a&quot;,
+      &quot;fabrication/joint_interface-PTH-drl_map.pdf&quot;: &quot;f58b59b705e514f4cb9eaa5295bdd4ee4120eb5257e7409eeb57008942bd3402&quot;,
+      &quot;fabrication/joint_interface-PTH.drl&quot;: &quot;1cac916b291e807938ccd17a95bffb9a78c2510f3ad06d93f8ff037454fc7055&quot;,
+      &quot;fabrication/joint_interface.d356&quot;: &quot;6705e64e52da536e9d8c6a1fd50a762e4fdf6a7e7ecdd2dc87f19dc359f26c36&quot;,
+      &quot;fabrication/joint_interface_fabrication.zip&quot;: &quot;0a5af25ced495a405bd997ca27491b3ba94444808e058ea8214da932788555d2&quot;
+    },
+    &quot;scope&quot;: &quot;Native export success and nonempty layer/drill checks; manufacturer CAM approval and assembly qualification are not performed.&quot;
+  },
+  &quot;review_exports&quot;: [
+    &quot;exports/pcb_3d.png&quot;,
+    &quot;exports/pcb_assembly.svg&quot;,
+    &quot;exports/pcb_bottom.svg&quot;,
+    &quot;exports/pcb_ground_plane.svg&quot;,
+    &quot;exports/pcb_layers.pdf&quot;,
+    &quot;exports/pcb_power_plane.svg&quot;,
+    &quot;exports/pcb_top.png&quot;,
+    &quot;exports/pcb_top.svg&quot;
+  ],
+  &quot;review_export_sha256&quot;: {
+    &quot;exports/pcb_3d.png&quot;: &quot;d8225f735327a4cbbf6914616b045aa40517f260e8b5552df962b3e0ec9f4983&quot;,
+    &quot;exports/pcb_assembly.svg&quot;: &quot;88b53a0e2b369f6b103e2a8a1aa191b023cc30b78141d63052eb3bf56f4a0da2&quot;,
+    &quot;exports/pcb_bottom.svg&quot;: &quot;0f0420bfbc57329469b9bcdb3c1497a893e56e0ec08d4e5b2ef46d7432f60e15&quot;,
+    &quot;exports/pcb_ground_plane.svg&quot;: &quot;1a4cb098a69670a5dbdd796d1e25976fb3e0f86ba20dc53fa299aae5bc7bbf79&quot;,
+    &quot;exports/pcb_layers.pdf&quot;: &quot;593897d9337e9eeb19d9696b5ced25acc7788beb86eb03064e26b03108d75278&quot;,
+    &quot;exports/pcb_power_plane.svg&quot;: &quot;74c1a871c6e2733f42409d73120ee3f2dd59c65ff759a2338d98b2692803b0ee&quot;,
+    &quot;exports/pcb_top.png&quot;: &quot;db12db82e1bcf6b89fe313aaf457e78f24a47c41f3d6c3d60c14c1e1b6b7fd9b&quot;,
+    &quot;exports/pcb_top.svg&quot;: &quot;b80e26103f61ceb3b06eeeb372b5277ceac60343b1cb197de6f9e17bd24401c8&quot;
+  },
+  &quot;review_render_refreshed&quot;: true,
+  &quot;export_source_board_sha256&quot;: &quot;a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

@@ -1,0 +1,193 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Project KPIs · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#project-kpis">Project KPIs</a></li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="project-kpis">Project KPIs</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#project-kpis">Project KPIs</a></li>
+</ul>
+</div>
+</details>
+<p>All figures are digital. Reconstruction error is an algorithm residual, not physical accuracy or repeatability.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+<th>Evidence class</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revolute DOF</td>
+<td>6</td>
+<td>VERIFIED DIGITALLY</td>
+<td>Transform model and tests</td>
+</tr>
+<tr>
+<td>Nominal shoulder-centred reach</td>
+<td>790 mm</td>
+<td>CALCULATED</td>
+<td>Geometry/FK</td>
+</tr>
+<tr>
+<td>Nominal TCP height at straight-up pose</td>
+<td>980 mm</td>
+<td>CALCULATED</td>
+<td>Geometry/FK; agrees with vertical CAD assembly</td>
+</tr>
+<tr>
+<td>Payload</td>
+<td>4.0 kg</td>
+<td>TARGET</td>
+<td>Design load assumption</td>
+</tr>
+<tr>
+<td>Repeatability</td>
+<td>±0.1 mm</td>
+<td>TARGET — NOT VERIFIED</td>
+<td>No physical measurement/no compliance model</td>
+</tr>
+<tr>
+<td>Manipulator mass</td>
+<td>23.65 kg</td>
+<td>ASSUMED</td>
+<td>Lumped load model</td>
+</tr>
+<tr>
+<td>Sum of CAD envelope material volumes × density</td>
+<td>19.908 kg</td>
+<td>CALCULATED</td>
+<td>Exterior geometry, overlaps/placeholder internals caveat</td>
+</tr>
+<tr>
+<td>Maximum FK closed-form discrepancy</td>
+<td>2.544e-16 m</td>
+<td>VERIFIED DIGITALLY</td>
+<td>60 independent planar trials</td>
+</tr>
+<tr>
+<td>Maximum FK–IK–FK position error</td>
+<td>2.700e-11 m</td>
+<td>VERIFIED DIGITALLY</td>
+<td>60 perturbed-seed trials</td>
+</tr>
+<tr>
+<td>Maximum IK orientation error</td>
+<td>6.504e-12 rad</td>
+<td>VERIFIED DIGITALLY</td>
+<td>SO(3) residual</td>
+</tr>
+<tr>
+<td>Maximum Jacobian finite-difference discrepancy</td>
+<td>2.517e-10</td>
+<td>VERIFIED DIGITALLY</td>
+<td>World linear/angular Jacobian; units by block</td>
+</tr>
+<tr>
+<td>Workspace samples</td>
+<td>6000</td>
+<td>SIMULATED</td>
+<td>Seed 260105</td>
+</tr>
+<tr>
+<td>Convex-hull envelope volume</td>
+<td>1.902506 m³</td>
+<td>SIMULATED — ENVELOPE ONLY</td>
+<td>Fills inaccessible holes; not reachable volume</td>
+</tr>
+<tr>
+<td>Pick/place duration</td>
+<td>9.24398 s</td>
+<td>SIMULATED</td>
+<td>1041 samples</td>
+</tr>
+<tr>
+<td>TCP path length</td>
+<td>1.32360 m</td>
+<td>SIMULATED</td>
+<td>Sum of sampled segments</td>
+</tr>
+<tr>
+<td>Peak task speed / assumed limit</td>
+<td>0.951694</td>
+<td>VERIFIED DIGITALLY AT SAMPLES</td>
+<td>Motion report</td>
+</tr>
+<tr>
+<td>Peak task acceleration / assumed limit</td>
+<td>0.997971</td>
+<td>VERIFIED DIGITALLY AT SAMPLES</td>
+<td>Motion report</td>
+</tr>
+<tr>
+<td>PID joint tracking overall RMSE</td>
+<td>0.006383 rad</td>
+<td>SIMULATED</td>
+<td>Independent inertia/damping plants</td>
+</tr>
+<tr>
+<td>Shoulder static holding torque at full extension, 4.0 kg payload</td>
+<td>70.165 N·m</td>
+<td>CALCULATED</td>
+<td>Assumed masses/COM</td>
+</tr>
+<tr>
+<td>Elbow static holding torque at full extension, 4.0 kg payload</td>
+<td>31.880 N·m</td>
+<td>CALCULATED</td>
+<td>Assumed masses/COM</td>
+</tr>
+<tr>
+<td>Serial TCP beam deflection estimate</td>
+<td>0.10408 mm</td>
+<td>CALCULATED</td>
+<td>Idealized closed-section cantilevers only</td>
+</tr>
+<tr>
+<td>Gripper opening / each jaw travel</td>
+<td>90 / 45 mm</td>
+<td>VERIFIED DIGITALLY / CALCULATED</td>
+<td>CAD gap and model</td>
+</tr>
+<tr>
+<td>Gripper total normal force</td>
+<td>200 N</td>
+<td>TARGET</td>
+<td>100 N per jaw</td>
+</tr>
+<tr>
+<td>Screw torque at force target</td>
+<td>0.363783 N·m</td>
+<td>CALCULATED</td>
+<td>Assumed efficiency 0.35</td>
+</tr>
+<tr>
+<td>Native schematic ERC violations</td>
+<td>0</td>
+<td>VERIFIED DIGITALLY</td>
+<td>All report severities under enabled KiCad default rules; see electronics scope</td>
+</tr>
+<tr>
+<td>Native PCB DRC errors / warnings / unconnected</td>
+<td>0 / 0 / 0</td>
+<td>VERIFIED DIGITALLY</td>
+<td>Executed KiCad DRC and schematic-board checks</td>
+</tr>
+<tr>
+<td>PCB footprints / copper layers</td>
+<td>48 / 4</td>
+<td>VERIFIED DIGITALLY</td>
+<td>Native board and manufacturing exports</td>
+</tr>
+<tr>
+<td>Automated tests</td>
+<td>91 tests; 0 failures; 0 errors</td>
+<td>VERIFIED DIGITALLY</td>
+<td>results/validation/pytest.xml</td>
+</tr>
+</tbody>
+</table></div>
+<p>PCB results are retained in <a href="data/electronics--pcb_verification.html">PCB verification</a>. Continuous collision freedom, hardware performance and functional safety are outside the verified scope.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

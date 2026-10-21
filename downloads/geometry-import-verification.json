@@ -1,0 +1,884 @@
+{
+  "status": "PASS",
+  "scope": "Actual contents extracted/read from the produced ZIP archives:55STEPimports and54nativeFreeCADBReps checked with Build123d/OpenCascade against the original measured geometry manifest. No geometry regeneration or canonical edits.",
+  "step_imports": [
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/base_mounting_plate.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.175664763398897e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/fixed_base_riser.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.446228741637211e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j1_slew_bearing_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.213999720228919e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/base_electronics_cover.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.378781568803325e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/turret_neck.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.2130754960466418e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/turret_bridge.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.2641670655607385e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_fork_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.323095964522139e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_bearing_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.2269319615853954e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_fork_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.323095964522139e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_bearing_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.2269319615853954e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j2_gearbox_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j2_motor_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 7.905417784567644e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j2_motor_endcap.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_rotor.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.211726342977426e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_output_shaft.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.2078118386828948e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/upper_arm_hollow_link.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.69470381509937e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_bridge_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 3.949984894433015e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_bridge_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 3.949984894433015e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/upper_service_cover_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 3.552713678800501e-15,
+      "volume_relative_error": 1.5210592207886553e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.252982521413114e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_bearing_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.218852389842682e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/upper_service_cover_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 3.552713678800501e-15,
+      "volume_relative_error": 1.5210592207886553e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.252982521413114e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_bearing_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.218852389842682e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j3_gearbox_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.0048556440865748e-16,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j3_motor_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 8.119107794142991e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_rotor.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.204534657374048e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_output_shaft.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.2239746190686856e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/forearm_hollow_link.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 5.291547342937763e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/forearm_service_cover_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 1.4739490836340552e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/forearm_service_cover_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 1.4739490836340552e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_stator.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.582126358984638e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j4_bearing_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.1129169265151204e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_rotor.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 1.7447599410551694e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_cover.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.4288652905152056e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_fork_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.245423151798515e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_fork_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.245423151798515e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_rotor.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.211467156296608e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_neck.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.1798187916501387e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j6_stator_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.185692480815296e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/tool_flange_6xM5_PCD46.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.05442857348192e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/interchangeable_gripper_adapter.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 4.469927586610646e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_pocketed_body.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 2.3732127374387346e-12,
+      "volume_relative_error": 9.229189280680814e-08,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_top_service_cover.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 8.015097375239019e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_guide_rod_-14.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 1.737702010840945e-16,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_guide_rod_+14.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 1.737702010840945e-16,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/opposite_hand_screw_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.3498470373871876e-16,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_actuator_envelope.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 9.235892041355074e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_jaw_carriage_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 7.280724080555606e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_finger_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.247993777174473e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_contact_pad_-1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.759494317047814e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_jaw_carriage_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 7.280724080555606e-15,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_finger_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.247993777174473e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_contact_pad_+1.step",
+      "valid": true,
+      "solids": 1,
+      "bbox_max_error_mm": 0.0,
+      "volume_relative_error": 2.759494317047814e-14,
+      "status": "PASS"
+    },
+    {
+      "file": "ASTER-6_STEP_STL_CAD/STEP/Assemblies/assembly_home.step",
+      "valid": true,
+      "solids": 54,
+      "bbox_max_error_mm": 6.969003152335063e-11,
+      "bbox_size_mm": [
+        709.65647911336,
+        264.0,
+        487.1342217980033
+      ],
+      "status": "PASS"
+    }
+  ],
+  "freecad_breps": [
+    {
+      "component": "base_mounting_plate",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 2.8720784372533583e-12,
+      "volume_relative_error": 4.175664763398897e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "fixed_base_riser",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 2.4133347678571465e-12,
+      "volume_relative_error": 4.446228741637211e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "j1_slew_bearing_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.3824901409715227e-12,
+      "volume_relative_error": 2.213999720228919e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "base_electronics_cover",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.8473787544795585e-12,
+      "volume_relative_error": 2.378781568803325e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "turret_neck",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 9.791575205540238e-13,
+      "volume_relative_error": 2.2130754960466418e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "turret_bridge",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 3.773611775934563e-16,
+      "volume_relative_error": 2.2641670655607385e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "shoulder_fork_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.8363026986567186e-12,
+      "volume_relative_error": 4.3467841615880136e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "shoulder_bearing_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.112985643226669e-13,
+      "volume_relative_error": 2.2269319615853954e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "shoulder_fork_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.8363026986567186e-12,
+      "volume_relative_error": 4.3467841615880136e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "shoulder_bearing_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.112985643226669e-13,
+      "volume_relative_error": 2.2269319615853954e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "j2_gearbox_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 0.0,
+      "volume_relative_error": 0.0,
+      "status": "PASS"
+    },
+    {
+      "component": "j2_motor_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.2352215288387095e-16,
+      "volume_relative_error": 7.905417784567644e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "j2_motor_endcap",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 9.087788932415073e-15,
+      "volume_relative_error": 1.376937717032587e-16,
+      "status": "PASS"
+    },
+    {
+      "component": "shoulder_rotor",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.463435721496161e-13,
+      "volume_relative_error": 2.211726342977426e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "shoulder_output_shaft",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 5.156231646009151e-13,
+      "volume_relative_error": 2.1785692977731874e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "upper_arm_hollow_link",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 4.10487129656739e-11,
+      "volume_relative_error": 4.960737031288335e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_fork_bridge_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 9.215166776853877e-12,
+      "volume_relative_error": 3.949984894433015e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_fork_bridge_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 9.215166776853877e-12,
+      "volume_relative_error": 3.949984894433015e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "upper_service_cover_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 6.3715995867616324e-12,
+      "volume_relative_error": 1.3520526407010268e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_fork_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.0852501776772429e-10,
+      "volume_relative_error": 4.2106642873692024e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_bearing_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.0846500469432766e-10,
+      "volume_relative_error": 2.2319816939245913e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "upper_service_cover_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 6.3715995867616324e-12,
+      "volume_relative_error": 1.3520526407010268e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_fork_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.0852501776772429e-10,
+      "volume_relative_error": 4.2106642873692024e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_bearing_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.0846500376338965e-10,
+      "volume_relative_error": 2.2319816939245913e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "j3_gearbox_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 3.970605375266e-12,
+      "volume_relative_error": 2.0048556440865748e-16,
+      "status": "PASS"
+    },
+    {
+      "component": "j3_motor_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 3.970605375266e-12,
+      "volume_relative_error": 8.119107794142991e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_rotor",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 4.040783709054463e-12,
+      "volume_relative_error": 2.1768046616838084e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "elbow_output_shaft",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 3.991201638199379e-12,
+      "volume_relative_error": 2.1894943924164578e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "forearm_hollow_link",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 5.1878706357486344e-11,
+      "volume_relative_error": 5.4008123323199593e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "forearm_service_cover_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.574882018880578e-12,
+      "volume_relative_error": 1.3101769632302713e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "forearm_service_cover_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.574882018880578e-12,
+      "volume_relative_error": 1.3101769632302713e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_roll_stator",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 9.763591493721584e-11,
+      "volume_relative_error": 4.5499710862900086e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "j4_bearing_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.0139127665962255e-10,
+      "volume_relative_error": 2.1759890735752733e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_roll_rotor",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 1.0477130389850534e-11,
+      "volume_relative_error": 1.7447599410551694e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_roll_cover",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 9.740230808792039e-11,
+      "volume_relative_error": 1.9587623310606497e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_pitch_fork_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 2.11414946374124e-11,
+      "volume_relative_error": 4.1842499075362886e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_pitch_fork_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 2.114149941352621e-11,
+      "volume_relative_error": 4.1842499075362886e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_pitch_rotor",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.674072097847674e-12,
+      "volume_relative_error": 2.200298130254706e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "wrist_pitch_neck",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.027812336269863e-12,
+      "volume_relative_error": 2.1798187916501387e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "j6_stator_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.141319165674358e-12,
+      "volume_relative_error": 2.240678455175429e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "tool_flange_6xM5_PCD46",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.425107514357251e-12,
+      "volume_relative_error": 4.0378120629348634e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "interchangeable_gripper_adapter",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 8.567012349256135e-12,
+      "volume_relative_error": 4.493027987575042e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_pocketed_body",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 2.4684040350906777e-06,
+      "volume_relative_error": 9.229189280680814e-08,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_top_service_cover",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323821896002e-12,
+      "volume_relative_error": 7.869368332052855e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_guide_rod_-14",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323733492996e-12,
+      "volume_relative_error": 6.95080804336378e-16,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_guide_rod_+14",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323733492996e-12,
+      "volume_relative_error": 6.95080804336378e-16,
+      "status": "PASS"
+    },
+    {
+      "component": "opposite_hand_screw_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323963348013e-12,
+      "volume_relative_error": 2.467339389256547e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_actuator_envelope",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323733492996e-12,
+      "volume_relative_error": 9.235892041355074e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_jaw_carriage_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.590888037938154e-12,
+      "volume_relative_error": 7.42931028628123e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_finger_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.70411838726194e-12,
+      "volume_relative_error": 2.247993777174473e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_contact_pad_-1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323733492996e-12,
+      "volume_relative_error": 2.759494317047814e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_jaw_carriage_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.590888037938154e-12,
+      "volume_relative_error": 7.42931028628123e-15,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_finger_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.70411838726194e-12,
+      "volume_relative_error": 2.247993777174473e-14,
+      "status": "PASS"
+    },
+    {
+      "component": "gripper_contact_pad_+1",
+      "valid": true,
+      "solids": 1,
+      "center_error_mm": 7.687323733492996e-12,
+      "volume_relative_error": 2.759494317047814e-14,
+      "status": "PASS"
+    }
+  ]
+}

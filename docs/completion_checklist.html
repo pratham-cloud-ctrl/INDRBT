@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Digital project completion checklist · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#digital-project-completion-checklist">Digital project completion checklist</a></li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="digital-project-completion-checklist">Digital project completion checklist</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#digital-project-completion-checklist">Digital project completion checklist</a></li>
+</ul>
+</div>
+</details>
+<p>This maps the master brief's definition of done to the retained source and actual
+evidence. The executed <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">validation report<span class="badge">Source file</span></a>
+records <strong>DIGITAL SCOPE COMPLETE</strong>: the numerical/CAD tests passed with no failures,
+errors or skips, native schematic ERC/PCB DRC/connectivity passed, and the versioned
+wheel passed detached installation checks. The private repository and its versioned
+releases provide publication evidence, checked separately from local engineering
+acceptance. The current published release is linked below.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Deliverable</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Requirements and architecture</td>
+<td><a href="01_requirements.html">Requirements</a>, <a href="architecture.html">architecture</a>, diagrams</td>
+</tr>
+<tr>
+<td>Student-readable theory and assumptions</td>
+<td><a href="theory_guide.html">Theory guide</a>, linked equations/models and independent <a href="data/results--validation--final_theory_review.html">final theory review</a></td>
+</tr>
+<tr>
+<td>Original six-axis arm, parametric CAD and assembly</td>
+<td><code>cad/build123d</code>, valid component manifest and six STEP/STL assemblies</td>
+</tr>
+<tr>
+<td>Parallel gripper and interchangeable tool</td>
+<td>CAD body/guides/jaws, opening checks and mechanical calculations</td>
+</tr>
+<tr>
+<td>STEP/STL, useful drawings and representative renders</td>
+<td><code>cad/exports</code>, <code>docs/drawings</code>, <code>cad/renders</code>, independent FreeCAD inspection</td>
+</tr>
+<tr>
+<td>Frames, FK, IK and Jacobian</td>
+<td><a href="02_kinematics.html">Kinematics</a>, software tests and independent numerical reconstruction</td>
+</tr>
+<tr>
+<td>Workspace and singularities</td>
+<td>Seeded FK sample data and labelled projections/3D figures</td>
+</tr>
+<tr>
+<td>Joint/Cartesian trajectories and pick/place</td>
+<td>Linear/cubic/quintic laws, MOVE J/MOVE L, recorded task data, plots and model-driven viewer</td>
+</tr>
+<tr>
+<td>Joint torque, analytical structure and conceptual actuator sizing</td>
+<td><a href="03_mechanical_analysis.html">Mechanical analysis</a>, load/beam results and independent torque test</td>
+</tr>
+<tr>
+<td>PID control simulation</td>
+<td>Step/tracking/saturation/antiwindup evidence under the stated independent-axis plant</td>
+</tr>
+<tr>
+<td>KiCad architecture, schematic, PCB and actual native checks</td>
+<td><a href="05_electronics.html">Electronics</a>, BOM/net contract, native ERC/DRC, routed board and fabrication files; zero DRC violations, unconnected items or schematic parity issues in the <a href="data/electronics--pcb_verification.html">PCB audit</a></td>
+</tr>
+<tr>
+<td>Organized reproducible software and central parameters</td>
+<td><code>src/robotarm</code>, authoritative SI YAML, commands and tests</td>
+</tr>
+<tr>
+<td>Automated tests and numerical validation</td>
+<td>Passing suite in the executed validation report plus Jacobian/IK/FK/configuration/trajectory/gripper/CAD checks; the <a href="data/results--validation--final_theory_review.html">final theory review</a> includes the independent beam-regression audit</td>
+</tr>
+<tr>
+<td>Validation matrix and one workflow</td>
+<td><a href="validation_matrix.html">Traceability</a>, <code>scripts/run_validation.py</code></td>
+</tr>
+<tr>
+<td>Research experiments, plots and KPIs</td>
+<td>Five real parameter sweeps, figure files and <a href="kpis.html">KPIs</a></td>
+</tr>
+<tr>
+<td>Engineering report and decisions</td>
+<td><a href="engineering_report.html">Report</a>, <a href="design_decisions.html">decision log</a>, real failure/fix journal</td>
+</tr>
+<tr>
+<td>Polished README and tested installation</td>
+<td>Root/source guides, browser reports and fresh detached <a href="data/results--validation--packaging_validation.html">versioned wheel validation</a></td>
+</tr>
+<tr>
+<td>Clean repository, secrets scan and meaningful history</td>
+<td>Repository audit, retained commits and original private GitHub repository</td>
+</tr>
+<tr>
+<td>Complete organized publication and coherent release</td>
+<td>Numbered repository folders and exact-copy manifest; <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin" target="_blank" rel="noopener noreferrer" class="private-link">private repository<span class="badge">Source file</span></a> and <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest" target="_blank" rel="noopener noreferrer" class="private-link">latest versioned release<span class="badge">Source file</span></a> with complete project ZIP and installable wheel. Live publication is checked separately from local engineering acceptance.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Physical construction and physically measured payload/repeatability were excluded
+by the master brief. The allowed analytical structure and simplified PID models
+are implemented. Full FEA, coupled dynamics, contact physics, production firmware,
+manufacturing qualification and continuous swept collision certification are
+declared extensions, not substituted pass claims. The <a href="digital_scope_audit.html">scope audit</a>
+explains this boundary against the actual requested sections.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

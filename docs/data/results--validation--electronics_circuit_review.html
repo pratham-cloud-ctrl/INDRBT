@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Electronics circuit review · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Electronics circuit review</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/validation/electronics_circuit_review.json · SHA-256 8346a8fa8b4a0dbfb55daf23e67682c20ace02992a8931ab428cf97500b8bd59</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;scope&quot;: &quot;17 October read-only native MCP inspection of the exact saved ASTER-6 joint-interface source; no KiCad editor/IPC listener was running. Native reports operate on saved files and do not prove physical performance.&quot;,
+  &quot;source_revision&quot;: &quot;9feee7ce62f2ca74bd6c4bc27d77c9de391e7020&quot;,
+  &quot;board_sha256&quot;: &quot;a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e&quot;,
+  &quot;schematic_sha256&quot;: &quot;89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6&quot;,
+  &quot;power_audit_dispositions&quot;: [
+    {
+      &quot;finding&quot;: &quot;No &gt;=10 uF bulk on +3V3&quot;,
+      &quot;disposition&quot;: &quot;Advisory heuristic, not a circuit failure: AP2112 minimum effective output requirement is 1 uF; C2 is 4.7 uF nominal and C7 adds 100 nF. Effective capacitance/load transient performance remain physical selection checks.&quot;
+    },
+    {
+      &quot;finding&quot;: &quot;No bypass capacitor on +5V_IN / +5V_FUSED&quot;,
+      &quot;disposition&quot;: &quot;These are the short source/fuse segments before the reverse-polarity diode; they feed no IC. C1 provides 10 uF at U1 VIN on the protected rail. Duplicating caps ahead of reverse protection is not required by this architecture.&quot;
+    },
+    {
+      &quot;finding&quot;: &quot;No dedicated test points on four supply rails&quot;,
+      &quot;disposition&quot;: &quot;Optional physical-debug recommendation. J1/J2/J3 expose input/logic supply and ground, and intermediate pad lands can be probed. Dedicated production fixtures/test points were not part of the digital interface brief.&quot;
+    }
+  ],
+  &quot;circuit_review&quot;: [
+    {
+      &quot;area&quot;: &quot;Power path&quot;,
+      &quot;result&quot;: &quot;No required circuit edit found&quot;,
+      &quot;evidence&quot;: &quot;Fuse then correctly oriented SS14 then U1 input and EN; 10 uF input and 4.7 uF output. Shared 150 mA budget explicit. LDO heat calculation corrected separately to include quiescent current; temperature/headroom claims remain conditional.&quot;
+    },
+    {
+      &quot;area&quot;: &quot;Input conditioning&quot;,
+      &quot;result&quot;: &quot;Matches declared low-voltage short-cable contract&quot;,
+      &quot;evidence&quot;: &quot;3 channels with 1 kOhm / 100 pF and correctly oriented upper/lower BAT54H clamps; 1 kOhm / 10 kOhm / 100 nF NC limit filter. External Schmitt inputs and power sequencing are required; no field transient or 5 V immunity claim.&quot;
+    },
+    {
+      &quot;area&quot;: &quot;External drive&quot;,
+      &quot;result&quot;: &quot;Matches external-drive interface scope&quot;,
+      &quot;evidence&quot;: &quot;330 Ohm STEP/DIR/ENABLE paths, pull-down disabling ENABLE when disconnected, 10 kOhm pull-up for a 3.3 V open-drain fault. No motor current/power stage implemented.&quot;
+    },
+    {
+      &quot;area&quot;: &quot;RS485&quot;,
+      &quot;result&quot;: &quot;Pinout and declared topology coherent&quot;,
+      &quot;evidence&quot;: &quot;LTC2850IS8 /RE and DE tied to pulled-low direction input; 100 nF decoupling has 3.562 mm local copper path. Switchable 120 Ohm endpoint termination and optional single-node 330/330 Ohm bias. Manufacturer confirms internal failsafe for open, shorted and terminated-undriven input. No cable EMC/isolation qualification.&quot;
+    },
+    {
+      &quot;area&quot;: &quot;F1 land pattern&quot;,
+      &quot;result&quot;: &quot;Manufacturer nominal drawing agrees&quot;,
+      &quot;evidence&quot;: &quot;Native MCP saved-board pad readback shows 1.0 x 1.6 mm pads at board x=33.5/36.5 mm, giving 2.0 mm inner gap. MF-NSMF025X-2 selected; no manufacturer-specific 3D body or solder-process approval asserted.&quot;
+    }
+  ],
+  &quot;primary_sources&quot;: {
+    &quot;regulator&quot;: &quot;https://www.diodes.com/assets/Datasheets/AP2112.pdf&quot;,
+    &quot;rs485&quot;: &quot;https://www.analog.com/media/en/technical-documentation/data-sheets/285012fe.pdf&quot;,
+    &quot;fuse&quot;: &quot;https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf&quot;
+  },
+  &quot;library_comparison_summary&quot;: {
+    &quot;footprint_pad_contracts&quot;: 48,
+    &quot;embedded_symbol_pin_contracts&quot;: 14,
+    &quot;mismatches&quot;: 0
+  }
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

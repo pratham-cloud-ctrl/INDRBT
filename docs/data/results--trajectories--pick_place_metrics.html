@@ -1,0 +1,274 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Pick place metrics · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Pick place metrics</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/trajectories/pick_place_metrics.json · SHA-256 29a3698a1cca9f906cc8d278413e1709b6b06a742f92801db2825f5058710412</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;duration_s&quot;: 9.243979567042027,
+  &quot;peak_velocity_rad_s&quot;: [
+    1.2907618789560489,
+    0.29127075872082603,
+    0.10083072450682226,
+    1.6189737234197258e-12,
+    1.9932225657286347,
+    3.705164929668832e-12
+  ],
+  &quot;peak_acceleration_rad_s2&quot;: [
+    3.1352196690983507,
+    0.9288644712850359,
+    0.21146758430873894,
+    1.2909671411571257e-10,
+    4.180292892131128,
+    3.510733465506763e-10
+  ],
+  &quot;max_velocity_limit_fraction&quot;: 0.9516936720540675,
+  &quot;max_acceleration_limit_fraction&quot;: 0.9979714160318779,
+  &quot;path_length_m&quot;: 1.323599790764895,
+  &quot;samples&quot;: 1041,
+  &quot;events&quot;: [
+    {
+      &quot;time_s&quot;: 2.728160182406853,
+      &quot;action&quot;: &quot;close&quot;,
+      &quot;opening_m&quot;: 0.028,
+      &quot;tcp_m&quot;: [
+        0.3944071524804676,
+        -0.1839150756327483,
+        0.022309725966027386
+      ]
+    },
+    {
+      &quot;time_s&quot;: 6.515819384635601,
+      &quot;action&quot;: &quot;open&quot;,
+      &quot;opening_m&quot;: 0.09,
+      &quot;tcp_m&quot;: [
+        0.3944071524804676,
+        0.1839150756327483,
+        0.022309725966027386
+      ]
+    }
+  ],
+  &quot;phases&quot;: [
+    {
+      &quot;name&quot;: &quot;MOVE J home to above object&quot;,
+      &quot;start_s&quot;: 0.0,
+      &quot;end_s&quot;: 1.468160182406853,
+      &quot;duration_s&quot;: 1.468160182406853,
+      &quot;peak_velocity_rad_s&quot;: [
+        0.5572437508359215,
+        0.08797578722613408,
+        0.10083072450682226,
+        1.6241440060471271e-15,
+        1.9932225657286347,
+        7.999156435464587e-16
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        1.1686813760069739,
+        0.18450752281474908,
+        0.21146758430873894,
+        3.406241611455104e-15,
+        4.180292892131128,
+        1.6776258389385543e-15
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.9516936720540675,
+      &quot;max_acceleration_limit_fraction&quot;: 0.9979714160318764
+    },
+    {
+      &quot;name&quot;: &quot;MOVE L descend to object&quot;,
+      &quot;start_s&quot;: 1.468160182406853,
+      &quot;end_s&quot;: 2.478160182406853,
+      &quot;duration_s&quot;: 1.01,
+      &quot;peak_velocity_rad_s&quot;: [
+        2.9054866323655583e-12,
+        0.29127075872082603,
+        0.03230781804985993,
+        1.6189737234197258e-12,
+        0.3064015718684846,
+        3.041480632606732e-12
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        2.4326737620254367e-10,
+        0.9288644712850359,
+        0.16546986873912944,
+        1.2909671411571257e-10,
+        0.968647828817905,
+        2.4519165746506914e-10
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.2781430861712775,
+      &quot;max_acceleration_limit_fraction&quot;: 0.4435001162023601
+    },
+    {
+      &quot;name&quot;: &quot;gripper close dwell&quot;,
+      &quot;start_s&quot;: 2.478160182406853,
+      &quot;end_s&quot;: 2.978160182406853,
+      &quot;duration_s&quot;: 0.5,
+      &quot;peak_velocity_rad_s&quot;: [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.0,
+      &quot;max_acceleration_limit_fraction&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;MOVE L lift object&quot;,
+      &quot;start_s&quot;: 2.978160182406853,
+      &quot;end_s&quot;: 3.988160182406853,
+      &quot;duration_s&quot;: 1.01,
+      &quot;peak_velocity_rad_s&quot;: [
+        2.3884085028767725e-12,
+        0.29127075871425523,
+        0.0323078191817334,
+        9.09762207044069e-13,
+        0.3064015718712846,
+        2.69088755905365e-12
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        2.107040266321244e-10,
+        0.9288644673175322,
+        0.16546986874330902,
+        7.089937150349992e-11,
+        0.9686478285114256,
+        2.6205888471665245e-10
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.27814308616500283,
+      &quot;max_acceleration_limit_fraction&quot;: 0.4435001143080166
+    },
+    {
+      &quot;name&quot;: &quot;MOVE J transfer above destination&quot;,
+      &quot;start_s&quot;: 3.988160182406853,
+      &quot;end_s&quot;: 5.255819384635601,
+      &quot;duration_s&quot;: 1.2676592022287483,
+      &quot;peak_velocity_rad_s&quot;: [
+        1.2907618789560489,
+        2.82036771215979e-12,
+        1.1616466489559449e-12,
+        4.521982327044937e-15,
+        1.4319421513847667e-12,
+        2.1601993765701768e-14
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        3.1352196690983507,
+        6.850583728429416e-12,
+        2.8216028701548583e-12,
+        1.0983751663422933e-14,
+        3.478142073473334e-12,
+        5.247055777688819e-14
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.8217245335617515,
+      &quot;max_acceleration_limit_fraction&quot;: 0.9979714160318779
+    },
+    {
+      &quot;name&quot;: &quot;MOVE L lower object&quot;,
+      &quot;start_s&quot;: 5.255819384635601,
+      &quot;end_s&quot;: 6.265819384635601,
+      &quot;duration_s&quot;: 1.01,
+      &quot;peak_velocity_rad_s&quot;: [
+        3.0039777046491365e-12,
+        0.29127075872082603,
+        0.03230781804984586,
+        9.640020192163664e-13,
+        0.3064015718685057,
+        3.04223268656484e-12
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        2.636412366289553e-10,
+        0.9288644710297532,
+        0.1654698687433087,
+        9.137907020551517e-11,
+        0.9686478289492032,
+        2.5451388972061157e-10
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.2781430861712775,
+      &quot;max_acceleration_limit_fraction&quot;: 0.4435001160804716
+    },
+    {
+      &quot;name&quot;: &quot;gripper open dwell&quot;,
+      &quot;start_s&quot;: 6.265819384635601,
+      &quot;end_s&quot;: 6.765819384635601,
+      &quot;duration_s&quot;: 0.5,
+      &quot;peak_velocity_rad_s&quot;: [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.0,
+      &quot;max_acceleration_limit_fraction&quot;: 0.0
+    },
+    {
+      &quot;name&quot;: &quot;MOVE L retreat&quot;,
+      &quot;start_s&quot;: 6.765819384635601,
+      &quot;end_s&quot;: 7.775819384635601,
+      &quot;duration_s&quot;: 1.01,
+      &quot;peak_velocity_rad_s&quot;: [
+        4.8014397738244395e-12,
+        0.2912707587142763,
+        0.03230781918664389,
+        9.84346910959495e-13,
+        0.3064015718712494,
+        3.705164929668832e-12
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        3.696897921818182e-10,
+        0.9288644672026027,
+        0.16546986874052286,
+        9.863505028675637e-11,
+        0.9686478284759019,
+        3.510733465506763e-10
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.278143086165023,
+      &quot;max_acceleration_limit_fraction&quot;: 0.4435001142531418
+    },
+    {
+      &quot;name&quot;: &quot;MOVE J return home&quot;,
+      &quot;start_s&quot;: 7.775819384635601,
+      &quot;end_s&quot;: 9.243979567042027,
+      &quot;duration_s&quot;: 1.4681601824064259,
+      &quot;peak_velocity_rad_s&quot;: [
+        0.5572437508360604,
+        0.08797578722361601,
+        0.10083072450572411,
+        1.3195407035561219e-15,
+        1.9932225657280547,
+        1.7713877318485876e-14
+      ],
+      &quot;peak_acceleration_rad_s2&quot;: [
+        1.168681376007605,
+        0.1845075228095217,
+        0.21146758430649734,
+        2.7674112860239153e-15,
+        4.180292892131127,
+        3.715049022611367e-14
+      ],
+      &quot;max_velocity_limit_fraction&quot;: 0.9516936720537905,
+      &quot;max_acceleration_limit_fraction&quot;: 0.9979714160318762
+    }
+  ],
+  &quot;gripper&quot;: {
+    &quot;opening_m&quot;: 0.09,
+    &quot;travel_per_jaw_m&quot;: 0.045,
+    &quot;full_stroke_screw_revolutions&quot;: 11.25,
+    &quot;target_total_normal_force_N&quot;: 200.0,
+    &quot;required_motor_torque_Nm&quot;: 0.3637827270671894,
+    &quot;ideal_force_at_assumed_motor_torque_N&quot;: 247.40042147019622,
+    &quot;friction_limited_payload_kg_with_safety_factor&quot;: 5.0985810648896415,
+    &quot;status&quot;: &quot;CALCULATED from assumed screw efficiency and friction; no contact simulation&quot;
+  },
+  &quot;status&quot;: &quot;SIMULATED ideal kinematics with scripted object attachment; no contact or collision physics&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

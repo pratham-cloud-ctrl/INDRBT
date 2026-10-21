@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Metrics · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Metrics</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · results/control/metrics.json · SHA-256 f404b9ab3f5c8f645c8ba62e8efd07b2169d8e4d143e626eef3d39430fb336f8</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;step&quot;: {
+    &quot;rmse_rad&quot;: [
+      0.012837975505691433,
+      0.012776864713405523,
+      0.012406253399621441,
+      0.012406253399621444,
+      0.012044297365406562,
+      0.011687252778710506
+    ],
+    &quot;max_abs_error_rad&quot;: [
+      0.08726646259971647,
+      0.08726646259971649,
+      0.08726646259971638,
+      0.08726646259971647,
+      0.08726646259971649,
+      0.08726646259971647
+    ],
+    &quot;final_error_rad&quot;: [
+      -0.0009309445460597421,
+      -0.0008622103688472604,
+      0.0008044499855901499,
+      -0.0008044499855910797,
+      -0.0008213464071017418,
+      -0.0007239370333022715
+    ],
+    &quot;peak_command_torque_Nm&quot;: [
+      13.965252009832628,
+      20.07477705643878,
+      10.47372084121796,
+      1.047372084121797,
+      0.6982713271378914,
+      0.5236860420608985
+    ],
+    &quot;settling_time_2percent_s&quot;: [
+      0.464,
+      0.436,
+      0.434,
+      0.434,
+      0.382,
+      0.406
+    ]
+  },
+  &quot;tracking&quot;: {
+    &quot;rmse_rad&quot;: [
+      0.007597503848975161,
+      0.0031843665639559524,
+      0.0007404689098196083,
+      2.094451920850236e-15,
+      0.013269152040709411,
+      4.965026304555328e-15
+    ],
+    &quot;max_abs_error_rad&quot;: [
+      0.028307514215073687,
+      0.007666283479160874,
+      0.001963598014411927,
+      1.8150391419079118e-14,
+      0.038089103144521796,
+      4.909153375012755e-14
+    ],
+    &quot;final_error_rad&quot;: [
+      0.004537997656690109,
+      -0.000762688857393834,
+      0.000734516896518489,
+      -9.669672628375775e-17,
+      0.013817301366873869,
+      -2.281085839845759e-17
+    ],
+    &quot;peak_command_torque_Nm&quot;: [
+      5.4375056945237485,
+      2.2713710152724285,
+      0.26611381015163516,
+      2.6813249798171588e-12,
+      0.3366223171149307,
+      2.777916003728019e-12
+    ],
+    &quot;overall_rmse_rad&quot;: 0.006383323915154572
+  },
+  &quot;status&quot;: &quot;SIMULATED simplified independent second-order joints; not full manipulator dynamics or physical performance&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

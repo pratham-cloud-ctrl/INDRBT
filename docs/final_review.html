@@ -1,0 +1,117 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Independent engineering review — current revision · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#independent-engineering-review-current-revision">Independent engineering review — current revision</a><ul>
+<li><a href="#additional-corrections-in-version-120">Additional corrections in version 1.2.0</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="independent-engineering-review-current-revision">Independent engineering review — current revision</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#independent-engineering-review-current-revision">Independent engineering review — current revision</a><ul>
+<li><a href="#additional-corrections-in-version-120">Additional corrections in version 1.2.0</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>The final review checks the project against its digital engineering brief and
+asks whether another student can inspect the models, understand the theory and
+reproduce the evidence. The result is supported by executed checks, rather than
+an assurance that every possible use has been proved. The 17–18 October 2026 review
+revisited the original goals and deliberately probed beyond the earlier passing
+file/hash tests. <a href="project_alignment.html">Project purpose and goals</a> explains the
+intended connected demonstration; the <a href="project_journal.html">journal</a> preserves
+the findings in context.</p>
+<h2 id="additional-corrections-in-version-120">Additional corrections in version 1.2.0</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Demonstrated issue and resulting behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Native CAD access</td>
+<td>The saved assembly opened with all 54 parts hidden. Visible named parts, camera state and a native GUI check now make the model inspectable immediately. Material colours are shown in the browser and Blender renders.</td>
+</tr>
+<tr>
+<td>Mechanical interfaces</td>
+<td>Adapter holes broke the outer edge; the rear cover overlapped the adapter; screw/carriage and removable-finger attachments lacked coherent support. The revised 54-part geometry includes a wider adapter, locating pilot, matching rear fasteners, nut bridges, supported finger holes and a top service hatch. Counterbore depth now matches the drawing.</td>
+</tr>
+<tr>
+<td>Motion and model inputs</td>
+<td>NaN/nonphysical configurations, small invalid transform/segment errors and malformed trajectories could pass. Domain/finite checks and explicit absolute tolerances reject them. Sampled singular MOVE L continuation now raises a useful error instead of reporting misleading endpoint accelerations.</td>
+</tr>
+<tr>
+<td>Loads and control</td>
+<td>Actuator sizing reused control inertia below the same assumed mass model. Separate mass-derived point-inertia bounds now inform sizing; default PID plants are unchanged. Zero-load/signed beam and invalid controller/payload cases have explicit behavior and regressions.</td>
+</tr>
+<tr>
+<td>Electronics and proof freshness</td>
+<td>Regulator heat omitted a small quiescent allowance. A scratch disconnected board could reuse old clean DRC evidence. The heat balance and source binding are corrected; fresh native checks of the design remain clean.</td>
+</tr>
+<tr>
+<td>Browser demonstration</td>
+<td>The attached object translated with the TCP but did not rotate. Its ideal attachment now follows the complete tool pose, checked in the actual browser.</td>
+</tr>
+<tr>
+<td>Acceptance and reproduction</td>
+<td>Residual limits, nonfinite saved values, native CAD source/artifact freshness, complete wheel module comparison, fresh CLI output directories and source/input revision binding now prevent the reproduced false passes.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The current <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">executed report<span class="badge">Source file</span></a>,
+<a href="data/results--validation--final_cad_review.html">native CAD review</a>,
+<a href="data/results--validation--final_theory_review.html">theory audit</a> and
+<a href="data/results--validation--final_electronics_review.html">electronics audit</a>
+record the actual results and exact revision. Earlier beam and fuse corrections
+remain part of the engineering history and are summarized below.</p>
+<p>The <a href="data/results--validation--software_boundary_review.html">software boundary review</a>
+retains reproduced failure cases, focused regression evidence and an unchanged
+nominal-task comparison. The <a href="data/results--validation--electronics_circuit_review.html">circuit review</a>
+records native/library inspection and explains generic power-audit notices
+without concealing them or treating heuristics as native rule violations.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Finding and correction</th>
+<th>Retained evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CAD and mechanical components</td>
+<td>All 54 components and six assemblies agree across STEP/STL/native data. Five jaw openings, drawing dimensions and hole patterns were checked. A role/material/native-object catalog makes every part traceable.</td>
+<td><a href="data/results--validation--final_cad_review.html">CAD review</a>, <a href="component_catalog.html">component catalog</a></td>
+</tr>
+<tr>
+<td>Structural theory</td>
+<td>The earlier serial TCP estimate omitted forearm slope acting over the rigid wrist/tool offset. Both link displacements and both downstream rotation terms are now included. A separate whole-arm unit-load/virtual-work integration checks the result.</td>
+<td><a href="data/results--validation--final_theory_review.html">Theory review</a>, <a href="03_mechanical_analysis.html">mechanical model</a>, <a href="data/results--mechanical--structural.html">structural data</a></td>
+</tr>
+<tr>
+<td>Electronics and PCB</td>
+<td>The generic fuse footprint differed from the manufacturer drawing. The exact Bourns MF-NSMF025X-2 selection now has project-local 1.0 × 1.6 mm pads with a 2.0 mm gap. Native schematic/board checks and fabrication exports were rerun; footprint assignments, BOM, physical pads and export hashes are audited.</td>
+<td><a href="data/results--validation--final_electronics_review.html">Electronics review</a>, <a href="data/electronics--pcb_verification.html">PCB evidence</a>, <a href="electronics_components.html">component guide</a></td>
+</tr>
+<tr>
+<td>Viewing and navigation</td>
+<td>All 54 components can be isolated and automatically framed in the offline viewer. Browser documents link to readable HTML counterparts. Native CAD/PCB data has explicit application launchers, and folder README indexes separate viewing from editing.</td>
+<td><a href="data/results--validation--viewer_validation.html">Executed browser checks</a>, project guide and organization manifest at the repository root</td>
+</tr>
+<tr>
+<td>Software and reproducibility</td>
+<td>Central parameters, numerical/analytical regressions, native checks, saved artifact consistency and a detached wheel installation establish their recorded scope. GitHub automation covers the software and saved-artifact subset; full CAD/native KiCad checks use local engineering tools.</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/results/validation/validation_report.md" target="_blank" rel="noopener noreferrer" class="private-link">Executed validation<span class="badge">Source file</span></a>, <a href="data/results--validation--packaging_validation.html">wheel evidence</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/actions/workflows/validation.yml" target="_blank" rel="noopener noreferrer" class="private-link">GitHub workflow<span class="badge">Source file</span></a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The readable <a href="theory_guide.html">theory guide</a> explains the equations, units and
+assumptions. The <a href="engineering_report.html">engineering report</a>, <a href="validation_matrix.html">requirements
+matrix</a> and <a href="project_journal.html">journal</a> expose design
+choices, actual corrections and limitations. Physical payload/repeatability,
+production qualification and continuous swept collision certification remain
+outside this digital brief. Assumed values are not certified component ratings.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

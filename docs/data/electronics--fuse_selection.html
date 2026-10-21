@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Fuse selection · ASTER-6</title><link rel="stylesheet" href="../docs.css"></head><body><header class="top"><a class="brand" href="../../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../../robot/index.html" target="_top">3D robot</a><a href="../../pcb/index.html" target="_top">Electronics</a><a href="../index.html">Guides</a><a href="../engineering_walkthrough.html">Walkthrough</a><a href="../evidence.html">Evidence</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1>Fuse selection</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.</div><details class="mobile-toc"><summary>On this page</summary><ul><li><a href="../engineering_walkthrough.html">Engineering walkthrough</a></li><li><a href="../cad_tour.html">Mechanical design</a></li><li><a href="../electronics_tour.html">Circuit and PCB</a></li><li><a href="../theory_guide.html">Theory guide</a></li></ul></details><p class="data-label">Retained digital evidence · electronics/fuse_selection.json · SHA-256 ce41aa3e09b473d2f89efe06adc6acb6d9b2b5db99cf0cd0da4a2fe8d03399d6</p><p>This readable record comes from the engineering project. Its assumptions, sampling and rule scope remain part of the result.</p><pre><code>{
+  &quot;reference&quot;: &quot;F1&quot;,
+  &quot;manufacturer&quot;: &quot;Bourns&quot;,
+  &quot;manufacturer_part_number&quot;: &quot;MF-NSMF025X-2&quot;,
+  &quot;footprint&quot;: &quot;ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206&quot;,
+  &quot;datasheet_url&quot;: &quot;https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf&quot;,
+  &quot;datasheet_pages_one_based&quot;: {
+    &quot;electrical&quot;: 1,
+    &quot;temperature_derating&quot;: 3,
+    &quot;ordering&quot;: 7,
+    &quot;land_pattern&quot;: 8
+  },
+  &quot;maximum_voltage_v&quot;: 16.0,
+  &quot;hold_current_at_23c_a&quot;: 0.25,
+  &quot;hold_current_at_40c_a&quot;: 0.23,
+  &quot;trip_current_at_23c_a&quot;: 0.5,
+  &quot;minimum_initial_resistance_ohm&quot;: 0.45,
+  &quot;maximum_post_reflow_resistance_ohm&quot;: 2.3,
+  &quot;recommended_pad_size_mm&quot;: [
+    1.0,
+    1.6
+  ],
+  &quot;recommended_pad_centres_mm&quot;: [
+    [
+      -1.5,
+      0.0
+    ],
+    [
+      1.5,
+      0.0
+    ]
+  ],
+  &quot;recommended_inner_pad_gap_mm&quot;: 2.0,
+  &quot;body_size_nominal_mm&quot;: [
+    3.2,
+    1.6
+  ],
+  &quot;body_size_maximum_mm&quot;: [
+    3.4,
+    1.8
+  ],
+  &quot;body_height_maximum_mm&quot;: 0.85,
+  &quot;courtyard_margin_mm&quot;: 0.25,
+  &quot;claim_boundary&quot;: &quot;Selected digital-design part and manufacturer nominal copper land pattern. No measured trip, inrush, solder-process, temperature, sourcing or production qualification. No manufacturer-specific 3D body model is supplied.&quot;
+}</code></pre><footer class="doc-footer"><a href="../index.html">Guide index</a><a href="../digital_scope_audit.html">Scope and limitations</a><a href="../evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="../docs.js" defer></script></body></html>

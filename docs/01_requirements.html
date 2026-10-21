@@ -1,0 +1,148 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>ASTER-6 requirements · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#aster-6-requirements">ASTER-6 requirements</a><ul>
+<li><a href="#operating-assumptions-and-limitations">Operating assumptions and limitations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="aster-6-requirements">ASTER-6 requirements</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#aster-6-requirements">ASTER-6 requirements</a><ul>
+<li><a href="#operating-assumptions-and-limitations">Operating assumptions and limitations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p>ASTER-6 is an original, digital-only six-revolute-axis manipulator for an educational pick-and-place cell. Dimensions, joint conventions, masses, motion limits and control gains are authoritative in <code>config/robot.yaml</code>. Algorithms use metres, radians, kilograms and seconds. CAD converts metres to millimetres at the export boundary.</p>
+<p>The 320/280 mm upper-arm/forearm pair balances a 790 mm geometric radial reach against distal mass. A Z-Y-Y-X-Y-X joint sequence gives shoulder/elbow positioning and three-axis wrist orientation. The 190 mm shoulder height makes low bench tasks possible. A 90 mm opening gripper uses opposed lead-screw nuts for symmetric jaw travel. The tool flange is an original 60 mm interface; compatibility with an industry flange standard is not claimed.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+<th>Acceptance evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MECH-001</td>
+<td>Six moving joints, realistic housings, hollow links, mount and original tool interface</td>
+<td>CAD manifest, STEP assembly and renders</td>
+</tr>
+<tr>
+<td>MECH-002</td>
+<td>600–800 mm nominal radial reach</td>
+<td>Geometry sum and FK at extension</td>
+</tr>
+<tr>
+<td>MECH-003</td>
+<td>4 kg payload design target, conservative torque sizing</td>
+<td>Static load analysis; no physical rating</td>
+</tr>
+<tr>
+<td>MECH-004</td>
+<td>90 mm gripper opening, opposed moving fingers, 200 N total normal-force target</td>
+<td>CAD and gripper calculations/tests</td>
+</tr>
+<tr>
+<td>MECH-005</td>
+<td>Materials, mass assumptions, access and cable-routing concepts documented</td>
+<td>CAD/mass report and mechanical analysis</td>
+</tr>
+<tr>
+<td>KIN-001</td>
+<td>Correct six-axis FK and coordinate frames</td>
+<td>Known poses, SO(3)/SE(3) tests</td>
+</tr>
+<tr>
+<td>KIN-002</td>
+<td>Numerical IK with limits, pose residual checks and unreachable errors</td>
+<td>FK–IK–FK trials and pytest</td>
+</tr>
+<tr>
+<td>KIN-003</td>
+<td>Geometric Jacobian verified against finite differences</td>
+<td>Numerical Jacobian tests</td>
+</tr>
+<tr>
+<td>KIN-004</td>
+<td>Joint ranges obey configured limits</td>
+<td>Configuration and planner tests</td>
+</tr>
+<tr>
+<td>CTRL-001</td>
+<td>Linear, cubic and quintic joint interpolation obey speed/acceleration limits</td>
+<td>Planner tests and plotted derivatives</td>
+</tr>
+<tr>
+<td>CTRL-002</td>
+<td>MOVE J and continuous approximate MOVE L</td>
+<td>TCP straightness and reconstruction metrics</td>
+</tr>
+<tr>
+<td>CTRL-003</td>
+<td>PID feedback drives inertia/damping model; tracking error is measured</td>
+<td>Step/tracking results; no physical bandwidth claim</td>
+</tr>
+<tr>
+<td>ELEC-001</td>
+<td>Conceptual joint/sensor interface with power, encoders, limit input and drive commands</td>
+<td>Native KiCad schematic, BOM and net checks</td>
+</tr>
+<tr>
+<td>ELEC-002</td>
+<td>Record ERC and available DRC, including unresolved exceptions</td>
+<td>Actual KiCad reports</td>
+</tr>
+<tr>
+<td>SIM-001</td>
+<td>Workspace samples derive from FK; projections and 3D plot include limitations</td>
+<td>Seeded sampling results</td>
+</tr>
+<tr>
+<td>SIM-002</td>
+<td>Pick, grip, lift, transport, release and return are demonstrated</td>
+<td>Recorded trajectory and animation from FK</td>
+</tr>
+<tr>
+<td>SIM-003</td>
+<td>Representative poses and collision/interference screening</td>
+<td>CAD checks; report scope of sampled evidence</td>
+</tr>
+<tr>
+<td>VAL-001</td>
+<td>Automated FK/IK/limits/trajectory/gripper/configuration tests</td>
+<td>Executed pytest report</td>
+</tr>
+<tr>
+<td>VAL-002</td>
+<td>One reproducible validation entry point, evidence-linked traceability</td>
+<td>Validation report and matrix</td>
+</tr>
+<tr>
+<td>DOC-001</td>
+<td>Setup, architecture, decisions, engineering report and reproducible results</td>
+<td>Documentation audit</td>
+</tr>
+<tr>
+<td>DOC-002</td>
+<td>All claims distinguished as ASSUMED, TARGET, CALCULATED, SIMULATED or VERIFIED DIGITALLY</td>
+<td>Final claims audit</td>
+</tr>
+<tr>
+<td>RESEARCH-001</td>
+<td>Numerical experiments vary link ratio, payload, duration, PID gains and fingers</td>
+<td>Generated experiment data and plots</td>
+</tr>
+<tr>
+<td>PERF-001</td>
+<td>±0.1 mm repeatability TARGET</td>
+<td>Explicitly unverified; kinematic reconstruction is not repeatability</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="operating-assumptions-and-limitations">Operating assumptions and limitations</h2>
+<p>Configured ranges in degrees are J1 ±170, J2 −120…75, J3 ±135, J4 ±180, J5 ±110 and J6 ±180. Speeds are 90/60/75/120/120/150 deg/s; accelerations are 180/120/150/240/240/300 deg/s². These are design assumptions. Only collision-screened task poses are suitable for the supplied demo; joint limits alone do not imply collision-free motion. Workspace sampling is geometric and must not be interpreted as a certified safe operating envelope.</p>
+<p>Safety concepts include hardware emergency-stop power removal, limit inputs, current/torque limiting and encoder feedback. This project does not implement or certify functional safety, protective separation, physical collaborative operation, structural fatigue, EMC, thermal limits or actual drive firmware. No hardware will be built. The software model separates planning, kinematics, virtual drive/control and visualization; a symmetric gripper state is sequenced alongside the arm.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>
