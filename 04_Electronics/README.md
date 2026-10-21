@@ -2,7 +2,7 @@
 
 [← Project home](../README.md) · [CAD](../01_CAD_Models/README.md) · [Theory](../03_Reports_and_Results/README.md)
 
-**[Inspect the interactive PCB](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb) · [Rotate the 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d) · [Zoom the schematic](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#schematic)**
+**[Inspect the interactive PCB](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb) · [Rotate the 3D board](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb3d) · [Zoom the schematic](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#schematic)**
 
 Search components, cross-highlight the BOM, follow connected nets and inspect the actual board without installing KiCad.
 
@@ -27,7 +27,7 @@ References such as **U1**, **R5** or **J3** identify the same part in the schema
 
 ## Open the KiCad project
 
-**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — the editable project with schematic, board and custom library context, plus board geometry for mechanical CAD. Follow the [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project). GitHub downloads are public; Sites download-button updates remain separately pending.
+**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — the editable project with schematic, board and custom library context, plus board geometry for mechanical CAD. Follow the [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project). GitHub downloads are public. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 1. For optional offline editing, download and extract the **complete repository**, keeping this folder together.
 2. Open [joint_interface.kicad_pro](joint_interface.kicad_pro) in **KiCad 10**, then choose the schematic or PCB editor.

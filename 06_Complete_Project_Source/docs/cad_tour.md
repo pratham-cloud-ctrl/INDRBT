@@ -1,10 +1,10 @@
 # Mechanical design tour
 
-**[Open the interactive robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot)** — no CAD application or GitHub access required.
+**[Open the interactive robot online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot)** — no CAD application or GitHub access required.
 
 [Project home](../../README.md) · [CAD files](../cad/README.md) · [All 54 components](component_catalog.md) · [Detailed CAD method](04_cad.md)
 
-**[Download the public CAD inspection packs](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The [native-file guide](cad_downloads.md) explains millimetre units and opening/importing each format. The online viewer above remains available; Sites download buttons are a separate pending update.
+**[Download the public CAD inspection packs](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The [native-file guide](cad_downloads.md) explains millimetre units and opening/importing each format. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The model has **54 solid components**, **six saved poses** and **90 mm of clear jaw opening**. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.
 
@@ -19,7 +19,7 @@ ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The mode
 | Dimensions and interfaces | [Base and flange](drawings/01_base_tool_interfaces.svg) · [link sections](drawings/02_link_sections.svg) | [Three-page drawing PDF](drawings/engineering_interfaces.pdf) |
 | Joint motion or one isolated part | [Six-pose sheet](../cad/renders/poses.png) | [Interactive viewer](../simulations/aster6_twin.html): pose selector, joint controls and component selector |
 
-[Use the public robot viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) for online inspection, joint controls and playback. For an optional offline copy, download or clone the complete project, then use [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) on Windows. [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) opens the native model for optional CAD inspection or editing. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD. GitHub displays the repository HTML source rather than running it.
+[Use the public robot viewer](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) for online inspection, joint controls and playback. For an optional offline copy, download or clone the complete project, then use [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) on Windows. [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) opens the native model for optional CAD inspection or editing. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD. GitHub displays the repository HTML source rather than running it.
 
 ## Follow the mechanical chain
 

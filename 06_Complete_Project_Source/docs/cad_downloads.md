@@ -1,10 +1,10 @@
 # Open the engineering files
 
-[Inspect the robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) · [Inspect the PCB online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb) · [Documentation index](README.md)
+[Inspect the robot online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) · [Inspect the PCB online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb) · [Documentation index](README.md)
 
-The [public browser showcase](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) is the quickest viewing route. For optional CAD/electronics application inspection or offline browsing, use the [public GitHub inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and the actual engineering files below. The repository and its release assets are public; no private repository access is needed.
+The [public browser showcase](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) is the quickest viewing route. For optional CAD/electronics application inspection or offline browsing, use the [public GitHub inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and the actual engineering files below. The repository and its release assets are public; no private repository access is needed.
 
-**Download status — 21 October 2026:** public downloads are distributed through the GitHub inspection release below. The separate download-button update inside the Sites showcase remains prepared but unpublished because its connection cannot currently access the project. The existing browser showcase remains available; this does not claim that the Site has been updated.
+**Hosting status — 21 October 2026:** the browser showcase and its download controls are published through GitHub Pages at the address above. Public downloads are also distributed through the GitHub inspection release below. The original Sites management record remains inaccessible; publication on GitHub Pages does not claim to repair that server record.
 
 ## Choose a model format
 

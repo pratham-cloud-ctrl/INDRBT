@@ -4,9 +4,9 @@
 
 This is the authoritative source for the **100 × 100 mm, four-layer joint/sensor interface**: 44 schematic components and 48 PCB footprints, including four mounting holes. An external 3.3 V controller connects to encoder/limit inputs, a separate motor drive and RS-485. The PCB implements logic interfacing; the controller, motor power stage and embedded firmware are external to this design.
 
-[Inspect the PCB online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb), [rotate the 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d) or [zoom the schematic](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#schematic) without installing KiCad or downloading files. The native project steps below are optional for offline editing.
+[Inspect the PCB online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb), [rotate the 3D board](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb3d) or [zoom the schematic](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#schematic) without installing KiCad or downloading files. The native project steps below are optional for offline editing.
 
-**[Public electronics download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — download the KiCad project with its schematic, board and local footprint context, or choose the PCB STEP pack for mechanical CAD. The [native-file guide](../docs/cad_downloads.md#open-the-kicad-project) explains opening the project. These public GitHub downloads work independently of the separately pending Sites download buttons.
+**[Public electronics download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — download the KiCad project with its schematic, board and local footprint context, or choose the PCB STEP pack for mechanical CAD. The [native-file guide](../docs/cad_downloads.md#open-the-kicad-project) explains opening the project. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ![Native KiCad 3D board export](exports/pcb_3d.png)
 

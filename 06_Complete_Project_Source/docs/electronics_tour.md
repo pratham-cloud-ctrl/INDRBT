@@ -1,6 +1,6 @@
 # Electronics tour · ASTER-6 joint and sensor interface
 
-**[Inspect the board and components online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb)** — no CAD application or GitHub access required.
+**[Inspect the board and components online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb)** — no CAD application or GitHub access required.
 
 [Project home](../../README.md) · [Schematic PDF](../electronics/exports/joint_interface.pdf) · [Component guide](electronics_components.md) · [Detailed design](05_electronics.md)
 
@@ -28,7 +28,7 @@ The references above match the **same parts** in the [schematic](../electronics/
 
 ## Inspect, download or edit
 
-**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** provide the editable project/library context and mechanical board geometry. The [native-file guide](cad_downloads.md#open-the-kicad-project) explains opening them. GitHub downloads are public; adding download buttons to the Sites showcase remains separately pending.
+**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** provide the editable project/library context and mechanical board geometry. The [native-file guide](cad_downloads.md#open-the-kicad-project) explains opening them. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 PDFs and images provide immediate viewing; GitHub renders the BOM CSV as a table. Native KiCad links lead to engineering source files: download the complete repository to open and edit them in KiCad.
 

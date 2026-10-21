@@ -6,13 +6,13 @@
 
 ## Move and inspect the actual CAD
 
-**[Launch the public robot viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot)** for joint controls, gripper motion, component isolation and playback without downloading files.
+**[Launch the public robot viewer](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot)** for joint controls, gripper motion, component isolation and playback without downloading files.
 
 **Optional offline use:** download and extract the project, then open **OPEN_3D_VIEWER.cmd** in the parent folder on Windows. On any system, open [Interactive_3D_Viewer.html](Interactive_3D_Viewer.html) locally in a browser. This local copy needs no server or internet; GitHub displays its HTML source rather than executing it.
 
 Drag to orbit, scroll to zoom, select a named pose, adjust six joints and the gripper, or play the recorded task. The **CAD component** selector isolates and frames each of the 54 parts.
 
-For optional native CAD/PCB or offline inspection, use the [public engineering download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). The release includes a combined offline viewer/CAD pack; Sites download-button updates remain separately pending.
+For optional native CAD/PCB or offline inspection, use the [public engineering download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). The release includes a combined offline viewer/CAD pack. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ## Understand the recorded task
 

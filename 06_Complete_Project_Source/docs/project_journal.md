@@ -110,16 +110,22 @@ A real visitor could not preview the 2.37 MB STL on GitHub. The repository's bui
 
 At this stage, the owner explicitly approved making only this showcase public while keeping the engineering repository private; the later public-repository instruction is recorded below. The source CAD, schematic, PCB, configuration and numerical software remain unchanged. Browser checks covered component selection, kinematics, PCB search/net highlighting, 3D board views, drawings, core guide routes and phone layout. An offline inspection pack was also verified with HTTP requests blocked.
 
-Public viewer: https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site
+Original Sites deployment URL (historical): https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site
 
 ## Native inspection packs and hosting boundary - 21 October 2026
 
 Focused STEP/STL, native FreeCAD, KiCad and offline-browser inspection ZIPs were prepared in the local `07_Releases` folder. The new native-file guide links existing tracked assemblies, individual parts, the FreeCAD saved-solid model and the KiCad project/library context, with application-opening instructions. At this stage, these archives were local and ignored by Git; public release assets had not yet been published.
 
-The consolidated public download page remains prepared but unpublished: the Sites connection currently returns no accessible project. The live browser showcase remains the immediate inspection route. Documentation avoids unpublished download URLs and states this boundary while access is restored. No CAD, board or software-model changes are part of this documentation update.
+At this stage, the consolidated public download page remained prepared but unpublished: the Sites connection currently returns no accessible project. The live browser showcase remains the immediate inspection route. Documentation avoids unpublished download URLs and states this boundary while access is restored. No CAD, board or software-model changes are part of this documentation update.
 
 ## Public repository and GitHub inspection release - 21 October 2026
 
 The owner subsequently explicitly requested that the industrial-arm repository be public. Public GitHub distribution now uses the [inspection-2026-10-21 release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) for STEP/STL CAD, the native FreeCAD saved-solid model, the complete KiCad project context, PCB STEP and the combined offline viewer/CAD pack. These release assets provide a download route independent of the Sites connection. The original v1.2.0 engineering release and authentic earlier history are preserved.
 
-The existing public browser showcase remains available. Adding its new download buttons is a separate prepared, unpublished Site update while the connector cannot access the project; the GitHub visibility/release work does not imply a Site redeployment. This distribution change does not alter the robot geometry, schematic, PCB or numerical software models.
+At this stage, the existing public browser showcase remained available. Adding its new download buttons was a separate prepared, unpublished Site update while the connector cannot access the project; the GitHub visibility/release work does not imply a Site redeployment. This distribution change does not alter the robot geometry, schematic, PCB or numerical software models.
+
+## Hosting recovery through GitHub Pages - 21 October 2026
+
+The original Sites deployment remains part of the project history, but both the management interface and native connector no longer expose its management record. Matching local source manifests ruled out a project-ID mismatch. This investigation did not repair or recreate the Sites server record.
+
+The same verified browser showcase, including its download controls, was published through [GitHub Pages](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/) from the dedicated `gh-pages` branch. The Pages API reported HTTPS enabled and a completed build. Production browser/download checks are recorded separately from that deployment result. The public GitHub inspection release remains available throughout this hosting change. The robot geometry, PCB and numerical models are unchanged.

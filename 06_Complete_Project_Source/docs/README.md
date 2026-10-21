@@ -1,8 +1,8 @@
 # ASTER-6 · Engineering and theory
 
-**[Open the public design library](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#guides)** — no CAD application or GitHub access required.
+**[Open the public design library](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#guides)** — no CAD application or GitHub access required.
 
-**[Public CAD and electronics downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — four focused format packs and the combined offline viewer/CAD pack. The [native-file guide](cad_downloads.md) explains format differences and application-opening instructions. The repository and release are public; Sites download-button updates remain separately pending.
+**[Public CAD and electronics downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — four focused format packs and the combined offline viewer/CAD pack. The [native-file guide](cad_downloads.md) explains format differences and application-opening instructions. The repository and release are public. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 **Understand the design. Follow the evidence. Reproduce the results.**
 
@@ -45,7 +45,7 @@ ASTER-6 is an original six-axis digital robot with a parallel-jaw gripper. This 
 | [Pick/place animation](../results/trajectories/pick_place_fk.gif) · [TCP path](../results/trajectories/pick_place_tcp.png) | [PID step response](../results/control/pid_step_response.png) · [PID tracking](../results/control/pid_tracking.png) |
 | [Joint motion and derivatives](../results/trajectories/pick_place_joints.png) · [Gripper render](../cad/renders/gripper.png) | [Motion-duration study](../results/research/duration.png) · [Finger stiffness](../results/research/finger_length.png) |
 
-[Open the interactive robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) for browser inspection, joint controls and playback without downloading files. The [project download and launch instructions](../../README.md) describe optional offline viewing and native CAD/KiCad editing. GitHub also previews images, Markdown and PDFs; its repository HTML links show source rather than executing the viewer.
+[Open the interactive robot online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) for browser inspection, joint controls and playback without downloading files. The [project download and launch instructions](../../README.md) describe optional offline viewing and native CAD/KiCad editing. GitHub also previews images, Markdown and PDFs; its repository HTML links show source rather than executing the viewer.
 
 ## Read the claims with their evidence class
 

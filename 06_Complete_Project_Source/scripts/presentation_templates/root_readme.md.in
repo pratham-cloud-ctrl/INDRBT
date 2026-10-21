@@ -2,9 +2,9 @@
 
 An original digital robotics project connecting mechanical design, robot mathematics, motion, feedback control and a routed KiCad interface board.
 
-**[OPEN THE INTERACTIVE ENGINEERING SHOWCASE](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site)** — inspect the 3D robot, 3D PCB, components, schematics and theory in your browser. No CAD application or GitHub sign-in is needed.
+**[OPEN THE INTERACTIVE ENGINEERING SHOWCASE](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/)** — inspect the 3D robot, 3D PCB, components, schematics and theory in your browser. No CAD application or GitHub sign-in is needed.
 
-**[DOWNLOAD THE PUBLIC ENGINEERING PACKS](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL CAD, native FreeCAD, the KiCad project, PCB STEP and a combined offline viewer/CAD pack. The repository and release are public; no private access is required. [Choose a format and open it](06_Complete_Project_Source/docs/cad_downloads.md). Download buttons inside the Sites showcase are a separate pending update.
+**[DOWNLOAD THE PUBLIC ENGINEERING PACKS](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL CAD, native FreeCAD, the KiCad project, PCB STEP and a combined offline viewer/CAD pack. The repository and release are public; no private access is required. [Choose a format and open it](06_Complete_Project_Source/docs/cad_downloads.md). The published GitHub Pages showcase includes the browser viewers and download controls.
 
 **[CAD & mechanical design](01_CAD_Models/README.md) · [Electronics & KiCad](04_Electronics/README.md) · [Theory & calculations](03_Reports_and_Results/README.md)**
 
@@ -32,7 +32,7 @@ You can inspect the design, drawings, circuit and calculations here without inst
 
 The 9.24 s demonstration approaches, grasps, transfers and releases an object. The browser viewer animates the actual CAD meshes and can isolate every part. The GIF above is a forward-kinematics line view; object attachment is idealized in the simulation.
 
-**Inspect online:** [move and isolate the robot](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot), [search the PCB and highlight nets](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb), or [rotate the native 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d). GitHub can decline previews of CAD files; the public showcase serves the actual display assets directly.
+**Inspect online:** [move and isolate the robot](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot), [search the PCB and highlight nets](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb), or [rotate the native 3D board](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb3d). GitHub can decline previews of CAD files; the public showcase serves the actual display assets directly.
 
 **For optional offline use:** [download the current repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/archive/refs/heads/main.zip), extract it and open **OPEN_3D_VIEWER.cmd** on Windows. On any system, open `02_Simulation_and_Animation/Interactive_3D_Viewer.html` in a browser. It provides a local copy of the joint controls, part isolation and playback available online. GitHub shows this HTML source rather than executing it.
 

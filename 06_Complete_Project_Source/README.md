@@ -20,7 +20,7 @@ For a visual introduction, start with these guides. This source README contains 
 
 Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
 
-Open **[the public interactive CAD twin](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot)** to orbit, change all six joints, adjust the gripper, select poses and play the recorded task directly in your browser. No download or CAD application is needed.
+Open **[the public interactive CAD twin](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot)** to orbit, change all six joints, adjust the gripper, select poses and play the recorded task directly in your browser. No download or CAD application is needed.
 
 For optional offline use, download the project and open [the local viewer](simulations/aster6_twin.html) in a browser. The single HTML file needs no server or internet; GitHub displays its source rather than executing it.
 

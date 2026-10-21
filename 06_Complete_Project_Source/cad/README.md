@@ -4,9 +4,9 @@
 
 This folder contains ASTER-6's reproducible mechanical design and generated models: **54 components and six complete pose assemblies**.
 
-[Inspect the robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) to orbit, move joints, adjust the gripper, isolate parts and play the task without downloading files. Native files and reproduction steps below are optional for offline inspection or editing.
+[Inspect the robot online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) to orbit, move joints, adjust the gripper, isolate parts and play the task without downloading files. Native files and reproduction steps below are optional for offline inspection or editing.
 
-**[Public CAD download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — choose the STEP/STL exchange pack or native FreeCAD saved-solid model; the same release includes PCB STEP and a combined offline inspection pack. The [native-file guide](../docs/cad_downloads.md) explains units, geometry/history differences and application-opening instructions. GitHub downloads are public; adding download buttons to the Sites showcase remains separately pending.
+**[Public CAD download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — choose the STEP/STL exchange pack or native FreeCAD saved-solid model; the same release includes PCB STEP and a combined offline inspection pack. The [native-file guide](../docs/cad_downloads.md) explains units, geometry/history differences and application-opening instructions. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ![The ASTER-6 solid model in its home configuration](renders/hero.png)
 
@@ -19,7 +19,7 @@ This folder contains ASTER-6's reproducible mechanical design and generated mode
 | Use triangle meshes | [All STL files](exports/STL) | Six assembly meshes and 54 individual part meshes; assembly meshes retain separate contacting bodies |
 | Read the mechanism on GitHub | [Mechanical tour](../docs/cad_tour.md) · [drawings](../docs/drawings/engineering_interfaces.pdf) | Rendered assembly, gripper, six poses and dimensioned interface drawings |
 | Inspect the render scene | [renders/aster6_home.blend](renders/aster6_home.blend) | Blender scene using the exported CAD meshes |
-| Move the robot and isolate a part | [Public interactive viewer](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) · [optional offline copy](../simulations/aster6_twin.html) | Online joint controls and playback; download only for offline use |
+| Move the robot and isolate a part | [Public interactive viewer](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) · [optional offline copy](../simulations/aster6_twin.html) | Online joint controls and playback; download only for offline use |
 
 STEP, STL and FCStd links provide optional downloads for native inspection or editing. Use FreeCAD for the native model or STEP solids. After downloading on Windows, [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) opens the native assembly and [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) opens the offline browser viewer. PNG/SVG previews also display directly on GitHub.
 
