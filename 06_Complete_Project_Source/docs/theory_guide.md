@@ -8,7 +8,7 @@ and [engineering report](engineering_report.md). The current numerical values li
 in the linked result files and [KPI table](kpis.md), so this guide concentrates on
 the equations and how to interpret their evidence.
 
-For optional inspection in a CAD or electronics application, follow the [native-file and local-pack guide](cad_downloads.md). It links the actual files and explains the current hosting status; ordinary browser inspection remains available through the showcase.
+For optional inspection in a CAD or electronics application, use the [public inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [native-file opening guide](cad_downloads.md). Ordinary browser inspection remains available through the showcase; Sites download-button changes are separately pending.
 
 ## 1. Start with units and assumptions
 

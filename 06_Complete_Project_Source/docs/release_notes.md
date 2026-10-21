@@ -45,4 +45,4 @@ exclusions were added. This is a completed digital educational engineering proje
 within the [documented scope](digital_scope_audit.md).
 
 Release assets are the complete organized ZIP and installable Python wheel.
-The repository remains private and retains the authentic earlier history.
+At the v1.2.0 publication the repository was private and retained the authentic earlier history. On 21 October 2026 the owner explicitly requested public repository access; the separate inspection release distributes public CAD/PCB packs while preserving this engineering release.

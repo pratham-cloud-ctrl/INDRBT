@@ -4,7 +4,7 @@
 
 [Project home](../../README.md) · [CAD files](../cad/README.md) · [All 54 components](component_catalog.md) · [Detailed CAD method](04_cad.md)
 
-**[Open the native models and local inspection packs](cad_downloads.md)** — direct STEP and FreeCAD files, millimetre units and application-opening instructions. Public ZIP hosting is pending; online inspection above remains available.
+**[Download the public CAD inspection packs](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The [native-file guide](cad_downloads.md) explains millimetre units and opening/importing each format. The online viewer above remains available; Sites download buttons are a separate pending update.
 
 ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The model has **54 solid components**, **six saved poses** and **90 mm of clear jaw opening**. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.
 

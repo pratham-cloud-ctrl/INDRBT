@@ -14,7 +14,7 @@ Designed for robotics education and portfolio review. Every result is generated 
 
 For a visual introduction, start with these guides. This source README contains the installation, reproduction commands and detailed evidence map.
 
-**[Open the actual CAD and KiCad files](docs/cad_downloads.md)** — STEP assemblies and parts, native FreeCAD, the KiCad project and local inspection packs, with application-opening instructions and the current download status.
+**[Download the public inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL CAD, the native FreeCAD model, the KiCad project, PCB STEP and a combined offline pack. No private repository access is needed. The [native-file guide](docs/cad_downloads.md) explains which format to choose and how to open it.
 
 ## See it move
 

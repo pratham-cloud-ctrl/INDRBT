@@ -6,7 +6,7 @@ claims that the brief explicitly excludes. The final integrated workflow reports
 **DIGITAL SCOPE COMPLETE** only after its recorded tests, executed native schematic/PCB
 checks and a freshly verified versioned wheel pass on the current source revision. The subsequently requested PCB layout
 and native DRC are completed and documented. Repository and release publication
-are verified separately through the [private GitHub repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin)
+are verified separately through the [public GitHub repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin)
 and [latest versioned release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest). The [project-purpose guide](project_alignment.md) connects the artifacts to the original goals.
 
 ## Numerical and software deliverables

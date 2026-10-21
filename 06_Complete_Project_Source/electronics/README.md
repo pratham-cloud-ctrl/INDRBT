@@ -6,7 +6,7 @@ This is the authoritative source for the **100 × 100 mm, four-layer joint/senso
 
 [Inspect the PCB online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb), [rotate the 3D board](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb3d) or [zoom the schematic](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#schematic) without installing KiCad or downloading files. The native project steps below are optional for offline editing.
 
-**[Native-file and local-pack guide](../docs/cad_downloads.md#open-the-kicad-project)** — open the actual KiCad project with its schematic, board and custom library context, or use the focused pack already present in the local project. Consolidated public ZIP hosting remains pending.
+**[Public electronics download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — download the KiCad project with its schematic, board and local footprint context, or choose the PCB STEP pack for mechanical CAD. The [native-file guide](../docs/cad_downloads.md#open-the-kicad-project) explains opening the project. These public GitHub downloads work independently of the separately pending Sites download buttons.
 
 ![Native KiCad 3D board export](exports/pcb_3d.png)
 

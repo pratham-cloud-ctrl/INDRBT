@@ -8,7 +8,7 @@
 
 ![Coordinate frames from the implemented robot model](../02_Simulation_and_Animation/Workspace/coordinate_frames.png)
 
-For optional native application inspection, use the [CAD/KiCad opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). It links actual engineering files and local packs, with accurate format and download-status notes.
+For optional native application inspection, use the [public engineering download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [CAD/KiCad opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). Four focused packs and the combined offline viewer/CAD pack are available publicly through GitHub; Sites download-button updates remain separately pending.
 
 ## Choose a reading route
 

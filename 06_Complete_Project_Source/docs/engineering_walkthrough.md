@@ -4,7 +4,7 @@
 
 [Documentation home](README.md) · [Project purpose](project_alignment.md) · [Full theory guide](theory_guide.md)
 
-For optional application inspection, the [native-file guide](cad_downloads.md) links actual STEP/FreeCAD/KiCad files and local packs, distinguishes geometry exchange from construction history and states the pending public-download status.
+For optional application inspection, [download the public engineering packs](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and follow the [native-file guide](cad_downloads.md). It distinguishes STEP exchange geometry, the FreeCAD saved-solid model and the KiCad project context; a combined offline viewer/CAD pack is also available. Sites download-button updates remain separately pending.
 
 ASTER-6 asks one connected question: **can an original six-axis arm move a tool through a useful task, support an assumed load and follow commands in a defined digital model?** Follow the same pick-and-place demonstration from geometry to evidence below. No physical robot was built.
 

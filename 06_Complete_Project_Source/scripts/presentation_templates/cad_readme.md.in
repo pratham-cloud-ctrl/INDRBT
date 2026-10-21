@@ -23,7 +23,7 @@
 
 ## Download and edit
 
-**[Open the actual STEP/FreeCAD models and local packs](../06_Complete_Project_Source/docs/cad_downloads.md)** for precise application instructions, millimetre units and format/history distinctions. The guide states the pending public ZIP status; the online viewer above is already available.
+**[Public CAD download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL exchange geometry, the native FreeCAD saved-solid model and a combined offline inspection pack. The [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md) explains millimetre units and format/history differences. These GitHub downloads are public; Sites download-button updates remain separately pending.
 
 For optional native inspection or editing, download and extract the repository. **OPEN_FREECAD_MODEL.cmd** in the parent folder opens the solid assembly on Windows. On other systems use FreeCAD **File → Open**.
 

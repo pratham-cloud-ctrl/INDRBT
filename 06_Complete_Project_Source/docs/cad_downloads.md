@@ -2,9 +2,9 @@
 
 [Inspect the robot online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) · [Inspect the PCB online](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#pcb) · [Documentation index](README.md)
 
-The public browser showcase is the quickest viewing route. For optional inspection in a CAD or electronics application, use the actual engineering files below. Repository links require access to the private GitHub repository; a local project copy opens directly from disk.
+The [public browser showcase](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#robot) is the quickest viewing route. For optional CAD/electronics application inspection or offline browsing, use the [public GitHub inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and the actual engineering files below. The repository and its release assets are public; no private repository access is needed.
 
-**Download status — 21 October 2026:** the consolidated public download page and focused inspection packs are prepared, but that page has not been published because the Sites connection cannot currently access the project. No public ZIP download is claimed here. The existing browser showcase remains available.
+**Download status — 21 October 2026:** public downloads are distributed through the GitHub inspection release below. The separate download-button update inside the Sites showcase remains prepared but unpublished because its connection cannot currently access the project. The existing browser showcase remains available; this does not claim that the Site has been updated.
 
 ## Choose a model format
 
@@ -45,17 +45,18 @@ With **KiCad 10** and its standard libraries installed, keep the project, schema
 
 For component roles, supply assumptions and verification scope, read the [circuit tour](electronics_tour.md), [component guide](electronics_components.md) and [electronics chapter](05_electronics.md). Native files and rule checks remain digital design evidence, without physical qualification.
 
-## Focused inspection ZIPs on this computer
+## Public inspection download release
 
-These archives exist in the local `07_Releases` folder. They are ignored by Git and are **not downloads hosted in the GitHub file tree**. Open that local folder to use them; when reading on GitHub, use the tracked engineering files above instead.
+[Open the inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) for the four focused format packs and the combined offline pack. These are GitHub **release assets**; they do not need to be stored in the repository file tree. Local copies are also retained in `07_Releases`.
 
-| Local archive | Intended use |
+| Public release asset | Intended use |
 |---|---|
-| `ASTER-6_STEP_STL_CAD.zip` | Extract the CAD exchange files, then open a complete STEP assembly |
-| `ASTER-6_FreeCAD_Model.zip` | Extract and open the native saved-solid FreeCAD model |
-| `ASTER-6_KiCad_Project.zip` | Extract the project with its local library context, then open the `.kicad_pro` file |
-| `ASTER-6_PCB_STEP.zip` | Import the native board STEP into mechanical CAD; 100 × 100 × 11.54 mm, with fitted component and copper geometry |
-| `ASTER-6_Browser_Inspection.zip` | Extract the self-contained browser inspection pack for offline viewing |
-| `ASTER-6_Inspection_With_CAD.zip` | Extract the browser viewers together with the selected CAD and KiCad downloads for combined offline inspection |
+| [ASTER-6_STEP_STL_CAD.zip](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_STEP_STL_CAD.zip) | Extract the exchange solids/meshes, then open a complete STEP assembly; STEP has no construction history |
+| [ASTER-6_FreeCAD_Model.zip](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_FreeCAD_Model.zip) | Extract and open the native saved-solid FreeCAD inspection model |
+| [ASTER-6_KiCad_Project.zip](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_KiCad_Project.zip) | Extract the project with its local library context, then open the `.kicad_pro` file |
+| [ASTER-6_PCB_STEP.zip](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_PCB_STEP.zip) | Import the native board STEP into mechanical CAD; 100 × 100 × 11.54 mm, with fitted component and copper geometry |
+| [ASTER-6_Inspection_With_CAD.zip](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_Inspection_With_CAD.zip) | Extract the browser viewers with the selected CAD and KiCad downloads for combined offline inspection |
+
+The earlier `ASTER-6_Browser_Inspection.zip` remains a local historical pack in `07_Releases`; the public combined pack is the current offline download. The engineering v1.2.0 release is preserved separately from this inspection distribution.
 
 Downloading or opening these files is optional. The online viewers remain the immediate inspection route, and the [source project guide](../README.md) covers local reproduction.

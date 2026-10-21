@@ -108,12 +108,18 @@ The presentation builder now reads versioned Markdown templates. Distinct HTML f
 
 A real visitor could not preview the 2.37 MB STL on GitHub. The repository's built-in file preview was therefore insufficient as the main inspection route. A separate browser showcase now displays the actual 54-part robot with joint and gripper controls, the native KiCad board as an interactive GLB, an InteractiveHtmlBom component/net inspector, native zoomable drawings and self-contained engineering chapters.
 
-The owner explicitly approved making only this showcase public while keeping the engineering repository private. The source CAD, schematic, PCB, configuration and numerical software remain unchanged. Browser checks covered component selection, kinematics, PCB search/net highlighting, 3D board views, drawings, core guide routes and phone layout. An offline inspection pack was also verified with HTTP requests blocked.
+At this stage, the owner explicitly approved making only this showcase public while keeping the engineering repository private; the later public-repository instruction is recorded below. The source CAD, schematic, PCB, configuration and numerical software remain unchanged. Browser checks covered component selection, kinematics, PCB search/net highlighting, 3D board views, drawings, core guide routes and phone layout. An offline inspection pack was also verified with HTTP requests blocked.
 
 Public viewer: https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site
 
 ## Native inspection packs and hosting boundary - 21 October 2026
 
-Focused STEP/STL, native FreeCAD, KiCad and offline-browser inspection ZIPs were prepared in the local `07_Releases` folder. The new native-file guide links existing tracked assemblies, individual parts, the FreeCAD saved-solid model and the KiCad project/library context, with application-opening instructions. These archives are ignored by Git and are not claimed as GitHub-hosted downloads.
+Focused STEP/STL, native FreeCAD, KiCad and offline-browser inspection ZIPs were prepared in the local `07_Releases` folder. The new native-file guide links existing tracked assemblies, individual parts, the FreeCAD saved-solid model and the KiCad project/library context, with application-opening instructions. At this stage, these archives were local and ignored by Git; public release assets had not yet been published.
 
 The consolidated public download page remains prepared but unpublished: the Sites connection currently returns no accessible project. The live browser showcase remains the immediate inspection route. Documentation avoids unpublished download URLs and states this boundary while access is restored. No CAD, board or software-model changes are part of this documentation update.
+
+## Public repository and GitHub inspection release - 21 October 2026
+
+The owner subsequently explicitly requested that the industrial-arm repository be public. Public GitHub distribution now uses the [inspection-2026-10-21 release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) for STEP/STL CAD, the native FreeCAD saved-solid model, the complete KiCad project context, PCB STEP and the combined offline viewer/CAD pack. These release assets provide a download route independent of the Sites connection. The original v1.2.0 engineering release and authentic earlier history are preserved.
+
+The existing public browser showcase remains available. Adding its new download buttons is a separate prepared, unpublished Site update while the connector cannot access the project; the GitHub visibility/release work does not imply a Site redeployment. This distribution change does not alter the robot geometry, schematic, PCB or numerical software models.

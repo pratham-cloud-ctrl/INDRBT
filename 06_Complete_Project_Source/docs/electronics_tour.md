@@ -28,7 +28,7 @@ The references above match the **same parts** in the [schematic](../electronics/
 
 ## Inspect, download or edit
 
-**[Native KiCad and local-pack opening guide](cad_downloads.md#open-the-kicad-project)** links the actual project, schematic, board and custom footprint context. The local inspection ZIP is available on this computer; consolidated public ZIP hosting remains pending.
+**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** provide the editable project/library context and mechanical board geometry. The [native-file guide](cad_downloads.md#open-the-kicad-project) explains opening them. GitHub downloads are public; adding download buttons to the Sites showcase remains separately pending.
 
 PDFs and images provide immediate viewing; GitHub renders the BOM CSV as a table. Native KiCad links lead to engineering source files: download the complete repository to open and edit them in KiCad.
 

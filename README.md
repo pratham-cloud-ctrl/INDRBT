@@ -4,7 +4,7 @@ An original digital robotics project connecting mechanical design, robot mathema
 
 **[OPEN THE INTERACTIVE ENGINEERING SHOWCASE](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site)** — inspect the 3D robot, 3D PCB, components, schematics and theory in your browser. No CAD application or GitHub sign-in is needed.
 
-**[Open the actual CAD and KiCad files](06_Complete_Project_Source/docs/cad_downloads.md)** — STEP assembly/parts, native FreeCAD and the KiCad project, with application-opening instructions and local inspection packs. Consolidated public ZIP hosting is pending; the browser showcase above remains available.
+**[DOWNLOAD THE PUBLIC ENGINEERING PACKS](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL CAD, native FreeCAD, the KiCad project, PCB STEP and a combined offline viewer/CAD pack. The repository and release are public; no private access is required. [Choose a format and open it](06_Complete_Project_Source/docs/cad_downloads.md). Download buttons inside the Sites showcase are a separate pending update.
 
 **[CAD & mechanical design](01_CAD_Models/README.md) · [Electronics & KiCad](04_Electronics/README.md) · [Theory & calculations](03_Reports_and_Results/README.md)**
 

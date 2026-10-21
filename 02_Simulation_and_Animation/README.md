@@ -12,7 +12,7 @@
 
 Drag to orbit, scroll to zoom, select a named pose, adjust six joints and the gripper, or play the recorded task. The **CAD component** selector isolates and frames each of the 54 parts.
 
-For optional native CAD/PCB inspection, the [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md) links actual engineering files and local packs. Consolidated public ZIP hosting remains pending.
+For optional native CAD/PCB or offline inspection, use the [public engineering download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). The release includes a combined offline viewer/CAD pack; Sites download-button updates remain separately pending.
 
 ## Understand the recorded task
 

@@ -4,7 +4,7 @@ This maps the master brief's definition of done to the retained source and actua
 evidence. The executed [validation report](../results/validation/validation_report.md)
 records **DIGITAL SCOPE COMPLETE**: the numerical/CAD tests passed with no failures,
 errors or skips, native schematic ERC/PCB DRC/connectivity passed, and the versioned
-wheel passed detached installation checks. The private repository and its versioned
+wheel passed detached installation checks. The public repository and its versioned
 releases provide publication evidence, checked separately from local engineering
 acceptance. The current published release is linked below.
 
@@ -27,8 +27,8 @@ acceptance. The current published release is linked below.
 | Research experiments, plots and KPIs | Five real parameter sweeps, figure files and [KPIs](kpis.md) |
 | Engineering report and decisions | [Report](engineering_report.md), [decision log](design_decisions.md), real failure/fix journal |
 | Polished README and tested installation | Root/source guides, browser reports and fresh detached [versioned wheel validation](../results/validation/packaging_validation.json) |
-| Clean repository, secrets scan and meaningful history | Repository audit, retained commits and original private GitHub repository |
-| Complete organized publication and coherent release | Numbered repository folders and exact-copy manifest; [private repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin) and [latest versioned release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest) with complete project ZIP and installable wheel. Live publication is checked separately from local engineering acceptance. |
+| Clean repository, secrets scan and meaningful history | Repository audit and retained commits; repository made public by the owner's explicit instruction on 21 October 2026 |
+| Complete organized publication and coherent release | Numbered repository folders and exact-copy manifest; [public repository](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin) and [latest versioned release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/latest) with complete project ZIP and installable wheel. Live publication is checked separately from local engineering acceptance. |
 
 Physical construction and physically measured payload/repeatability were excluded
 by the master brief. The allowed analytical structure and simplified PID models

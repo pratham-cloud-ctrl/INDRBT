@@ -27,7 +27,7 @@ References such as **U1**, **R5** or **J3** identify the same part in the schema
 
 ## Open the KiCad project
 
-**[Native KiCad and local-pack opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project)** — actual project, schematic, board and custom library context. Focused ZIPs exist in the local project; consolidated public ZIP hosting remains pending.
+**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — the editable project with schematic, board and custom library context, plus board geometry for mechanical CAD. Follow the [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project). GitHub downloads are public; Sites download-button updates remain separately pending.
 
 1. For optional offline editing, download and extract the **complete repository**, keeping this folder together.
 2. Open [joint_interface.kicad_pro](joint_interface.kicad_pro) in **KiCad 10**, then choose the schematic or PCB editor.

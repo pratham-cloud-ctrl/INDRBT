@@ -2,7 +2,7 @@
 
 **[Open the public design library](https://aster-six-engineering-showcase.warmkiwi64.chatgpt.site/#guides)** — no CAD application or GitHub access required.
 
-**[Open CAD and KiCad files in their applications](cad_downloads.md)** — actual files, local inspection packs, format differences and the current download status.
+**[Public CAD and electronics downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — four focused format packs and the combined offline viewer/CAD pack. The [native-file guide](cad_downloads.md) explains format differences and application-opening instructions. The repository and release are public; Sites download-button updates remain separately pending.
 
 **Understand the design. Follow the evidence. Reproduce the results.**
 

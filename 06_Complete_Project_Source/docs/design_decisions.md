@@ -16,6 +16,6 @@
 | Four-layer conceptual interface PCB | Separate inner ground/3.3 V planes and outer signal layers simplify returns and routing | Greater fabrication complexity than a two-layer board; no EMC or physical qualification claim |
 | Full-pair representative CAD screening | Selected pairs missed adjacent shoulder/wrist interfaces; broader classifications and exact intersections found the real defects | Sampled configurations still do not certify every continuous joint motion |
 | Numbered presentation folders and retained source subtree | User can find models, reports and electronics together while reproduction scripts retain their source-relative paths | Presentation copies must be refreshed and hash-checked after regeneration |
-| Private GitHub publication | Publication authorized; public visibility not specified | User may later choose public visibility |
+| Repository visibility | Initially private because public visibility was not specified; owner explicitly requested public visibility on 21 October 2026 | Current repository and inspection release are public; original history and the v1.2.0 engineering release are retained |
 
 The journal records actual iterations and failures. The validation matrix marks partial evidence explicitly.

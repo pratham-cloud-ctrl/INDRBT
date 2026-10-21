@@ -6,7 +6,7 @@ Audit performed before geometry implementation. No system CAD application was in
 |---|---|---|
 | Python | 3.12.14, working isolated virtual environment | Numerical software, analyses and Build123d |
 | Git | 2.53.0.windows.3 | Coherent development milestones |
-| GitHub CLI | Authenticated account; repository scope available | Private project publication |
+| GitHub CLI | Authenticated account; repository scope available | Initial private publication; repository made public by explicit owner instruction on 21 October 2026 |
 | Build123d | Initially absent from discovered Python environments; 0.13.0 installed in project environment | Reproducible BRep, STEP and STL |
 | OpenSCAD | 2021.01 command line verified | Available; unnecessary duplicate geometry avoided |
 | FreeCAD | 1.1.4 installation found, command-line executable available | Independent STEP inspection |
