@@ -3,7 +3,7 @@
   "scope": "Actual contents extracted/read from the produced ZIP archives:55STEPimports and54nativeFreeCADBReps checked with Build123d/OpenCascade against the original measured geometry manifest. No geometry regeneration or canonical edits.",
   "step_imports": [
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/base_mounting_plate.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/base_mounting_plate.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -11,7 +11,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/fixed_base_riser.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/fixed_base_riser.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -19,7 +19,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j1_slew_bearing_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j1_slew_bearing_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -27,7 +27,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/base_electronics_cover.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/base_electronics_cover.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -35,7 +35,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/turret_neck.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/turret_neck.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -43,7 +43,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/turret_bridge.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/turret_bridge.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -51,7 +51,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_fork_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/shoulder_fork_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -59,7 +59,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_bearing_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/shoulder_bearing_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -67,7 +67,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_fork_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/shoulder_fork_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -75,7 +75,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_bearing_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/shoulder_bearing_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -83,7 +83,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j2_gearbox_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j2_gearbox_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -91,7 +91,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j2_motor_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j2_motor_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -99,7 +99,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j2_motor_endcap.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j2_motor_endcap.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -107,7 +107,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_rotor.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/shoulder_rotor.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -115,7 +115,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/shoulder_output_shaft.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/shoulder_output_shaft.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -123,7 +123,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/upper_arm_hollow_link.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/upper_arm_hollow_link.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -131,7 +131,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_bridge_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_bridge_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -139,7 +139,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_bridge_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_bridge_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -147,7 +147,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/upper_service_cover_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/upper_service_cover_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 3.552713678800501e-15,
@@ -155,7 +155,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -163,7 +163,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_bearing_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_bearing_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -171,7 +171,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/upper_service_cover_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/upper_service_cover_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 3.552713678800501e-15,
@@ -179,7 +179,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_fork_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -187,7 +187,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_bearing_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_bearing_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -195,7 +195,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j3_gearbox_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j3_gearbox_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -203,7 +203,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j3_motor_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j3_motor_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -211,7 +211,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_rotor.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_rotor.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -219,7 +219,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/elbow_output_shaft.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/elbow_output_shaft.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -227,7 +227,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/forearm_hollow_link.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/forearm_hollow_link.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -235,7 +235,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/forearm_service_cover_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/forearm_service_cover_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -243,7 +243,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/forearm_service_cover_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/forearm_service_cover_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -251,7 +251,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_stator.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_stator.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -259,7 +259,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j4_bearing_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j4_bearing_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -267,7 +267,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_rotor.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_rotor.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -275,7 +275,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_cover.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_roll_cover.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -283,7 +283,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_fork_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_fork_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -291,7 +291,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_fork_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_fork_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -299,7 +299,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_rotor.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_rotor.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -307,7 +307,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_neck.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/wrist_pitch_neck.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -315,7 +315,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/j6_stator_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/j6_stator_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -323,7 +323,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/tool_flange_6xM5_PCD46.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/tool_flange_6xM5_PCD46.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -331,7 +331,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/interchangeable_gripper_adapter.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/interchangeable_gripper_adapter.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -339,7 +339,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_pocketed_body.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_pocketed_body.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 2.3732127374387346e-12,
@@ -347,7 +347,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_top_service_cover.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_top_service_cover.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -355,7 +355,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_guide_rod_-14.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_guide_rod_-14.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -363,7 +363,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_guide_rod_+14.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_guide_rod_+14.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -371,7 +371,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/opposite_hand_screw_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/opposite_hand_screw_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -379,7 +379,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_actuator_envelope.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_actuator_envelope.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -387,7 +387,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_jaw_carriage_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_jaw_carriage_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -395,7 +395,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_finger_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_finger_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -403,7 +403,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_contact_pad_-1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_contact_pad_-1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -411,7 +411,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_jaw_carriage_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_jaw_carriage_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -419,7 +419,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_finger_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_finger_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -427,7 +427,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Individual_Parts/gripper_contact_pad_+1.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Individual_Parts/gripper_contact_pad_+1.step",
       "valid": true,
       "solids": 1,
       "bbox_max_error_mm": 0.0,
@@ -435,7 +435,7 @@
       "status": "PASS"
     },
     {
-      "file": "ASTER-6_STEP_STL_CAD/STEP/Assemblies/assembly_home.step",
+      "file": "INDRBT_STEP_STL_CAD/STEP/Assemblies/assembly_home.step",
       "valid": true,
       "solids": 54,
       "bbox_max_error_mm": 6.969003152335063e-11,

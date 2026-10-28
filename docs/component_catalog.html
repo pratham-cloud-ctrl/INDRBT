@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ASTER-6 robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>CAD component catalog · ASTER-6</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">ASTER-6 / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="INDRBT robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>CAD component catalog · INDRBT</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">INDRBT / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
 <ul>
 <li><a href="#cad-component-catalog">CAD component catalog</a><ul>
 <li><a href="#open-the-robot">Open the robot</a></li>
@@ -18,7 +18,7 @@
 </li>
 </ul>
 </div>
-</aside><article><p class="eyebrow">ASTER-6 / Reading room</p><h1 id="cad-component-catalog">CAD component catalog</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+</aside><article><p class="eyebrow">INDRBT / Reading room</p><h1 id="cad-component-catalog">CAD component catalog</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
 <ul>
 <li><a href="#cad-component-catalog">CAD component catalog</a><ul>
 <li><a href="#open-the-robot">Open the robot</a></li>
@@ -39,7 +39,7 @@
 </ul>
 </div>
 </details>
-<p>ASTER-6 has 54 original modeled components and six complete pose assemblies. This catalog connects each part to its assembly role, assumed material, individual models and saved FreeCAD object. All CAD lengths are in millimetres.</p>
+<p>INDRBT has 54 original modeled components and six complete pose assemblies. This catalog connects each part to its assembly role, assumed material, individual models and saved FreeCAD object. All CAD lengths are in millimetres.</p>
 <h2 id="open-the-robot">Open the robot</h2>
 <div class="table-scroll"><table>
 <thead>
@@ -57,12 +57,12 @@
 </tr>
 <tr>
 <td>Inspect the solid home assembly</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/freecad/aster6_home.FCStd" target="_blank" rel="noopener noreferrer" class="private-link">FreeCAD native assembly<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd" target="_blank" rel="noopener noreferrer" class="private-link">FreeCAD native assembly<span class="badge">Source file</span></a></td>
 <td>Open with FreeCAD. Its 54 saved solid objects are cross-referenced below.</td>
 </tr>
 <tr>
 <td>Inspect the rendering scene</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/renders/aster6_home.blend" target="_blank" rel="noopener noreferrer" class="private-link">Blender native scene<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/renders/indrbt_home.blend" target="_blank" rel="noopener noreferrer" class="private-link">Blender native scene<span class="badge">Source file</span></a></td>
 <td>Open with Blender. Robot object names match the component filenames.</td>
 </tr>
 <tr>
@@ -77,7 +77,7 @@
 </tr>
 <tr>
 <td>Change the design parameters</td>
-<td><a href="data/config--robot.html">SI configuration</a>, <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/build123d/geometry.py" target="_blank" rel="noopener noreferrer" class="private-link">parametric geometry source<span class="badge">Source file</span></a>, <a href="04_cad.html">CAD methodology</a></td>
+<td><a href="data/config--robot.html">SI configuration</a>, <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/build123d/geometry.py" target="_blank" rel="noopener noreferrer" class="private-link">parametric geometry source<span class="badge">Source file</span></a>, <a href="04_cad.html">CAD methodology</a></td>
 <td>Regenerate from the Python source after changing parameters. The saved FreeCAD assembly contains solid geometry; the Python source defines the parametric construction.</td>
 </tr>
 </tbody>
@@ -99,43 +99,43 @@
 <tr>
 <td>Home</td>
 <td>0, -50, 90, 0, -40, 0</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_home.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_home.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_home.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_home.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 <td><a href="assets/cad/renders/pose_home.png">Image</a></td>
 </tr>
 <tr>
 <td>Extended</td>
 <td>0, 0, 0, 0, 0, 0</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_extended.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_extended.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_extended.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_extended.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 <td><a href="assets/cad/renders/pose_extended.png">Image</a></td>
 </tr>
 <tr>
 <td>Folded</td>
 <td>0, -110, 130, 0, -20, 0</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_folded.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_folded.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_folded.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_folded.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 <td><a href="assets/cad/renders/pose_folded.png">Image</a></td>
 </tr>
 <tr>
 <td>Vertical</td>
 <td>0, -90, 0, 0, 0, 0</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_vertical.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_vertical.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_vertical.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_vertical.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 <td><a href="assets/cad/renders/pose_vertical.png">Image</a></td>
 </tr>
 <tr>
 <td>Pick</td>
 <td>-25, -45, 95, 0, 40, 0</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_pick.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_pick.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_pick.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_pick.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 <td><a href="assets/cad/renders/pose_pick.png">Image</a></td>
 </tr>
 <tr>
 <td>Place</td>
 <td>25, -45, 95, 0, 40, 0</td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_place.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_place.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_place.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/assembly_place.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 <td><a href="assets/cad/renders/pose_place.png">Image</a></td>
 </tr>
 </tbody>
@@ -162,28 +162,28 @@
 <td>Structure</td>
 <td>Steel</td>
 <td><code>Component01</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/base_mounting_plate.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/base_mounting_plate.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/base_mounting_plate.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/base_mounting_plate.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>fixed_base_riser</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component02</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/fixed_base_riser.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/fixed_base_riser.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/fixed_base_riser.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/fixed_base_riser.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j1_slew_bearing_envelope</code></td>
 <td>Bearing envelope</td>
 <td>Steel</td>
 <td><code>Component03</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j1_slew_bearing_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j1_slew_bearing_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j1_slew_bearing_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j1_slew_bearing_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>base_electronics_cover</code></td>
 <td>Removable cover</td>
 <td>Polymer</td>
 <td><code>Component04</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/base_electronics_cover.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/base_electronics_cover.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/base_electronics_cover.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/base_electronics_cover.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
@@ -205,63 +205,63 @@
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component05</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/turret_neck.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/turret_neck.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/turret_neck.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/turret_neck.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>turret_bridge</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component06</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/turret_bridge.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/turret_bridge.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/turret_bridge.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/turret_bridge.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>shoulder_fork_-1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component07</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_fork_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_fork_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_fork_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_fork_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>shoulder_bearing_-1</code></td>
 <td>Bearing envelope</td>
 <td>Steel</td>
 <td><code>Component08</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_bearing_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_bearing_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_bearing_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_bearing_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>shoulder_fork_+1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component09</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_fork_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_fork_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_fork_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_fork_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>shoulder_bearing_+1</code></td>
 <td>Bearing envelope</td>
 <td>Steel</td>
 <td><code>Component10</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_bearing_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_bearing_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_bearing_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_bearing_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j2_gearbox_envelope</code></td>
 <td>Gearbox envelope</td>
 <td>Steel</td>
 <td><code>Component11</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j2_gearbox_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j2_gearbox_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j2_gearbox_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j2_gearbox_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j2_motor_envelope</code></td>
 <td>Motor envelope</td>
 <td>Polymer</td>
 <td><code>Component12</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j2_motor_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j2_motor_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j2_motor_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j2_motor_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j2_motor_endcap</code></td>
 <td>Motor end cap</td>
 <td>Steel</td>
 <td><code>Component13</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j2_motor_endcap.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j2_motor_endcap.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j2_motor_endcap.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j2_motor_endcap.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
@@ -283,91 +283,91 @@
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component14</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>shoulder_output_shaft</code></td>
 <td>Hollow output shaft</td>
 <td>Steel</td>
 <td><code>Component15</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_output_shaft.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_output_shaft.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/shoulder_output_shaft.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/shoulder_output_shaft.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>upper_arm_hollow_link</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component16</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/upper_arm_hollow_link.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/upper_arm_hollow_link.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/upper_arm_hollow_link.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/upper_arm_hollow_link.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_fork_bridge_-1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component17</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_bridge_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_bridge_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_bridge_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_bridge_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_fork_bridge_+1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component18</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_bridge_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_bridge_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_bridge_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_bridge_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>upper_service_cover_-1</code></td>
 <td>Service cover</td>
 <td>Polymer</td>
 <td><code>Component19</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/upper_service_cover_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/upper_service_cover_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/upper_service_cover_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/upper_service_cover_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_fork_-1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component20</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_bearing_-1</code></td>
 <td>Bearing envelope</td>
 <td>Steel</td>
 <td><code>Component21</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_bearing_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_bearing_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_bearing_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_bearing_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>upper_service_cover_+1</code></td>
 <td>Service cover</td>
 <td>Polymer</td>
 <td><code>Component22</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/upper_service_cover_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/upper_service_cover_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/upper_service_cover_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/upper_service_cover_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_fork_+1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component23</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_fork_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_fork_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_bearing_+1</code></td>
 <td>Bearing envelope</td>
 <td>Steel</td>
 <td><code>Component24</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_bearing_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_bearing_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_bearing_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_bearing_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j3_gearbox_envelope</code></td>
 <td>Gearbox envelope</td>
 <td>Steel</td>
 <td><code>Component25</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j3_gearbox_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j3_gearbox_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j3_gearbox_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j3_gearbox_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j3_motor_envelope</code></td>
 <td>Motor envelope</td>
 <td>Polymer</td>
 <td><code>Component26</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j3_motor_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j3_motor_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j3_motor_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j3_motor_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
@@ -389,56 +389,56 @@
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component27</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>elbow_output_shaft</code></td>
 <td>Hollow output shaft</td>
 <td>Steel</td>
 <td><code>Component28</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_output_shaft.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_output_shaft.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/elbow_output_shaft.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/elbow_output_shaft.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>forearm_hollow_link</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component29</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/forearm_hollow_link.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/forearm_hollow_link.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/forearm_hollow_link.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/forearm_hollow_link.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>forearm_service_cover_-1</code></td>
 <td>Service cover</td>
 <td>Polymer</td>
 <td><code>Component30</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/forearm_service_cover_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/forearm_service_cover_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/forearm_service_cover_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/forearm_service_cover_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>forearm_service_cover_+1</code></td>
 <td>Service cover</td>
 <td>Polymer</td>
 <td><code>Component31</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/forearm_service_cover_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/forearm_service_cover_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/forearm_service_cover_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/forearm_service_cover_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>wrist_roll_stator</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component32</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_roll_stator.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_roll_stator.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_roll_stator.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_roll_stator.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j4_bearing_envelope</code></td>
 <td>Bearing envelope</td>
 <td>Steel</td>
 <td><code>Component33</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j4_bearing_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j4_bearing_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j4_bearing_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j4_bearing_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>wrist_roll_cover</code></td>
 <td>Cover</td>
 <td>Polymer</td>
 <td><code>Component35</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_roll_cover.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_roll_cover.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_roll_cover.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_roll_cover.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
@@ -460,21 +460,21 @@
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component34</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_roll_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_roll_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_roll_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_roll_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>wrist_pitch_fork_-1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component36</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_fork_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_fork_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_fork_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_fork_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>wrist_pitch_fork_+1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component37</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_fork_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_fork_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_fork_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_fork_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
@@ -496,21 +496,21 @@
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component38</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_rotor.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_rotor.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>wrist_pitch_neck</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component39</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_neck.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_neck.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/wrist_pitch_neck.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/wrist_pitch_neck.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>j6_stator_envelope</code></td>
 <td>Gearbox envelope</td>
 <td>Steel</td>
 <td><code>Component40</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/j6_stator_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/j6_stator_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/j6_stator_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/j6_stator_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
@@ -532,102 +532,102 @@
 <td>Structure</td>
 <td>Steel</td>
 <td><code>Component41</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/tool_flange_6xM5_PCD46.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/tool_flange_6xM5_PCD46.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/tool_flange_6xM5_PCD46.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/tool_flange_6xM5_PCD46.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>interchangeable_gripper_adapter</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component42</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/interchangeable_gripper_adapter.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/interchangeable_gripper_adapter.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/interchangeable_gripper_adapter.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/interchangeable_gripper_adapter.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_pocketed_body</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component43</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_pocketed_body.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_pocketed_body.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_pocketed_body.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_pocketed_body.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_top_service_cover</code></td>
 <td>Service cover</td>
 <td>Polymer</td>
 <td><code>Component44</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_top_service_cover.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_top_service_cover.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_top_service_cover.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_top_service_cover.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_guide_rod_-14</code></td>
 <td>Linear guide</td>
 <td>Steel</td>
 <td><code>Component45</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_guide_rod_-14.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_guide_rod_-14.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_guide_rod_-14.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_guide_rod_-14.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_guide_rod_+14</code></td>
 <td>Linear guide</td>
 <td>Steel</td>
 <td><code>Component46</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_guide_rod_%2B14.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_guide_rod_%2B14.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_guide_rod_%2B14.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_guide_rod_%2B14.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>opposite_hand_screw_envelope</code></td>
 <td>Opposite hand screw envelope</td>
 <td>Steel</td>
 <td><code>Component47</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/opposite_hand_screw_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/opposite_hand_screw_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/opposite_hand_screw_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/opposite_hand_screw_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_actuator_envelope</code></td>
 <td>Motor envelope</td>
 <td>Polymer</td>
 <td><code>Component48</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_actuator_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_actuator_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_actuator_envelope.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_actuator_envelope.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_jaw_carriage_-1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component49</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_jaw_carriage_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_jaw_carriage_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_jaw_carriage_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_jaw_carriage_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_finger_-1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component50</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_finger_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_finger_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_finger_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_finger_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_contact_pad_-1</code></td>
 <td>Replaceable contact pad</td>
 <td>Polymer</td>
 <td><code>Component51</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_contact_pad_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_contact_pad_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_contact_pad_-1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_contact_pad_-1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_jaw_carriage_+1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component52</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_jaw_carriage_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_jaw_carriage_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_jaw_carriage_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_jaw_carriage_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_finger_+1</code></td>
 <td>Structure</td>
 <td>Aluminum</td>
 <td><code>Component53</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_finger_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_finger_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_finger_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_finger_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 <tr>
 <td><code>gripper_contact_pad_+1</code></td>
 <td>Replaceable contact pad</td>
 <td>Polymer</td>
 <td><code>Component54</code></td>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_contact_pad_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_contact_pad_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/gripper_contact_pad_%2B1.step" target="_blank" rel="noopener noreferrer" class="private-link">STEP<span class="badge">Source file</span></a> / <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STL/gripper_contact_pad_%2B1.stl" target="_blank" rel="noopener noreferrer" class="private-link">STL<span class="badge">Source file</span></a></td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="gripper-motion-and-checked-scope">Gripper motion and checked scope</h2>
 <p>The two contact pads have 90 mm clear separation at maximum opening and touch at zero opening. Each jaw moves 45 mm; its carriage, finger and contact pad move together along local Y. The guide rods, body, screw envelope and actuator remain fixed in the tool frame. The saved component files show maximum opening; the interactive viewer applies the symmetric jaw translation.</p>
 <p>The final review checked the pad gaps and jaw/body intersections at 0, 22.5, 45, 67.5 and 90 mm openings. The retained assembly screen checks every component pair at six poses and the closed/mid/open gripper. The trajectory screen checks 75 representative configurations. These finite digital checks do not certify every joint-angle combination or continuous physical motion.</p>
-<p>See <a href="data/results--validation--final_cad_review.html">final component review</a>, <a href="data/results--validation--cad_release_consistency.html">native release consistency</a>, <a href="data/results--validation--cad_validation.html">CAD properties</a>, <a href="data/results--validation--cad_assembly_clearance.html">assembly clearance</a> and <a href="data/results--validation--cad_motion_clearance.html">trajectory clearance</a> for the executed evidence. Drawings are concept interfaces without production tolerances.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>ASTER-6 · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>
+<p>See <a href="data/results--validation--final_cad_review.html">final component review</a>, <a href="data/results--validation--cad_release_consistency.html">native release consistency</a>, <a href="data/results--validation--cad_validation.html">CAD properties</a>, <a href="data/results--validation--cad_assembly_clearance.html">assembly clearance</a> and <a href="data/results--validation--cad_motion_clearance.html">trajectory clearance</a> for the executed evidence. Drawings are concept interfaces without production tolerances.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>INDRBT · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>

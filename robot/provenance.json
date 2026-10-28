@@ -1,16 +1,15 @@
 {
-  "project": "ASTER-6",
+  "project": "INDRBT",
   "project_version": "1.2.0",
   "design_author": "Pratham",
   "representation": "Original Build123d BRep tessellation, 54 components and six saved poses. Geometry is shown in millimetres; transforms and numerical kinematics use metres internally.",
-  "source_file": "06_Complete_Project_Source/simulations/aster6_twin.html",
-  "source_sha256": "c4e7d035f88a8e9e4b32ab4f4e71481f413013a867620abff9dd1542bf3c875d",
-  "hosted_viewer_sha256": "13b3d7d076617e3b39064f86203e3832a681a7ef46bbbb43aa114af15cbf131d",
-  "unchanged_engine_sha256": "b36a8d00600ebdc6296128a051074d3a4b3b59f019ad0ed416c3ec85014b67f3",
+  "source_file": "06_Complete_Project_Source/simulations/indrbt_twin.html",
+  "source_sha256": "2c13826135803d3ecc56c0ce7c8c7d704dbd5a519a28013075443bde87eac56f",
+  "hosted_viewer_sha256": "1513950feb927625802f65c66fa17d4fbf89f498566d8de8f4708fb741f93a55",
   "embedded_engineering_data_unchanged": true,
   "mesh_payload_sha256": "6eefd5d7ac99fedf7eca71b8253624649e1b90d4257c99d528dec91794d71385",
   "trajectory_payload_sha256": "c86eef4eeed8f23c2853ec6f45f03241b594f91460614a0758453e8779e1bdbd",
-  "configuration_payload_sha256": "e3d67dbfc52e460ea0b39e19eaaf11502cb6026577bc8f38cde7a39e6cbfee09",
+  "configuration_payload_sha256": "aef492bcb33d33320acdccd8c6a4ed6087408d0a29e9d04e1b1bd7e94dd859c9",
   "component_count": 54,
   "trajectory_samples": 1041,
   "poses": [
@@ -35,5 +34,6 @@
     "Sampled project clearance evidence is not a continuous collision guarantee.",
     "A browser view does not establish physical payload, repeatability, manufacturing suitability or functional safety."
   ],
-  "external_runtime_dependencies": []
+  "external_runtime_dependencies": [],
+  "data_comparison_scope": "Hosted mesh, trajectory and configuration equal the current committed source viewer payload."
 }

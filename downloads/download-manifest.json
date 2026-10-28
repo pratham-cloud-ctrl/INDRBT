@@ -1,23 +1,23 @@
 {
-  "project": "ASTER-6",
+  "project": "INDRBT",
   "owner": "Pratham",
   "project_version": "1.2.0",
-  "source_commit": "40911c2f5608a622512f2a9e8a2ddf8d22fab599",
+  "source_commit": "a9a66c76a564c7ac15fa361cb3b0e706db2c42c3",
   "status": "PASS",
   "source_files_modified": false,
   "source_files_verified_against_commit": 131,
   "source_files": [
     {
       "source": "LICENSE",
-      "sha256": "73c7042665f956bf31168dcdc657a334c571723dc93eafae519a0841aee51557",
-      "bytes": 1106,
-      "committed_blob": "b3da2b05f1e35ad4813d99028debecc211fe12b0"
+      "sha256": "a30a75fc55cfb8a7d94525d65d7fabeba5a1a5a56153972fa5a176f8aa3bfc63",
+      "bytes": 1105,
+      "committed_blob": "1b200c19daac2e4e9949077498939ddbfe1eb5e7"
     },
     {
       "source": "NOTICE.md",
-      "sha256": "19f8cb2914ed9511f3f8bff85cbfa48e32ce1e74dc8e8ae71f7785a0ab99483f",
-      "bytes": 658,
-      "committed_blob": "d9a398d57745279fe493abfa78a5319fb3bd6479"
+      "sha256": "da2e2924b88ad28bf4968c262deea044c724801ed8506d6103dc37cc4ed1894d",
+      "bytes": 657,
+      "committed_blob": "c1dc0d84d22aaa9a1fa4c4826a7a5a2bf759f549"
     },
     {
       "source": "06_Complete_Project_Source/cad/exports/STEP/base_electronics_cover.step",
@@ -681,33 +681,33 @@
     },
     {
       "source": "06_Complete_Project_Source/docs/drawings/01_base_tool_interfaces.svg",
-      "sha256": "d34f0cd0850c609bd8e6b2d6fbf3a46b4e84088cc01664f579acf55ed4d33089",
-      "bytes": 95239,
-      "committed_blob": "3396d0d0d787c5cc6d1425dd1036bee53ed625e2"
+      "sha256": "b1f406197707b3315b2d9e282b20229c364f93a6002e340e7af89e7f95c77c06",
+      "bytes": 94781,
+      "committed_blob": "a93e2c2bb756e51987debe0d46987dfd3d2593d3"
     },
     {
       "source": "06_Complete_Project_Source/docs/drawings/02_link_sections.svg",
-      "sha256": "66f62bdbf1dbab38c0f7179b5149f674c36b9af21c481232d6f676f58c9bc375",
-      "bytes": 84432,
-      "committed_blob": "fad8bf1afd7b2f9c7bca512e9e425ede63b55ece"
+      "sha256": "b96a38e27061fa0afebb8182b77d93b0472ddbb74796d6b0ce82c688ea19a367",
+      "bytes": 84341,
+      "committed_blob": "9149b7a7da501fdc51cfa5df3264c3f0c21f175e"
     },
     {
       "source": "06_Complete_Project_Source/docs/drawings/03_gripper_layout.svg",
-      "sha256": "132b9ffaa1fbb665768e4e8d38626987db8e327bf92712a9e954d3674c3398db",
-      "bytes": 85906,
-      "committed_blob": "a4e2b0ab222572d85e4b1ce0641b884c1179fe36"
+      "sha256": "8011791d92ae4230d597d0d704ef3f79f1adac0582724732370125301cfd40de",
+      "bytes": 86307,
+      "committed_blob": "f0964fb608ca19021bf95d0ad5dedc680388eb8e"
     },
     {
       "source": "06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf",
-      "sha256": "1eb6ebe41d21a271f5bb80b3a778834f021a0398218987daf2ba033b78e9e09d",
-      "bytes": 45165,
-      "committed_blob": "a992dc80a4d40847cdd3395ea219ae3b8c11f0fa"
+      "sha256": "b267251142ea5177424bb32a09f4a9ed97a94d794060a93c696b18168ded9973",
+      "bytes": 44854,
+      "committed_blob": "667c91311a881ed38bcc3e95b9b25ce5472c69fc"
     },
     {
-      "source": "06_Complete_Project_Source/cad/freecad/aster6_home.FCStd",
-      "sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4",
-      "bytes": 197161,
-      "committed_blob": "9decb667bc779480f965372c0305986cb0554645"
+      "source": "06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd",
+      "sha256": "5a2bbf35bd9fe3265aaf7b38a0617e8b9b3e11b284844d5eea2a4abc3e42fae0",
+      "bytes": 197163,
+      "committed_blob": "ac69cb027d6704fa35d66fc0151a60efa3f6fcba"
     },
     {
       "source": "06_Complete_Project_Source/electronics/joint_interface.kicad_pro",
@@ -717,15 +717,15 @@
     },
     {
       "source": "06_Complete_Project_Source/electronics/joint_interface.kicad_sch",
-      "sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
+      "sha256": "17d7f75f067bb735ad2a5a8c1007acfb8115b868c983112e39b75b617fe1129e",
       "bytes": 106524,
-      "committed_blob": "166731017a96b97a2c5bcbfc9db841f27f18caf7"
+      "committed_blob": "b13a6e852bb5ec0053eb35508ecd4c3c4be03964"
     },
     {
       "source": "06_Complete_Project_Source/electronics/joint_interface.kicad_pcb",
-      "sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
+      "sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba",
       "bytes": 382272,
-      "committed_blob": "62cd6821eb4e5af06aaaf32ed800013b565ed5cd"
+      "committed_blob": "d0cfea57049e482532c874b66bddf5a3ee2b4650"
     },
     {
       "source": "06_Complete_Project_Source/electronics/joint_interface.kicad_dru",
@@ -735,9 +735,9 @@
     },
     {
       "source": "06_Complete_Project_Source/electronics/fp-lib-table",
-      "sha256": "ea0ff7a7a8fe778f9398c1d644beee9d99ae59331c1402ae7729d85883aad122",
-      "bytes": 1642,
-      "committed_blob": "e2f543d9848edf474ecd477ba23b156bbd8b5c0f"
+      "sha256": "8706529c4bffd1ff95ca451dc6eb37b535753379b2e98f465347d15e4ec123f0",
+      "bytes": 1644,
+      "committed_blob": "6f14a15ff4b92f6fc526fc6e8b9cd5864c83a39a"
     },
     {
       "source": "06_Complete_Project_Source/electronics/sym-lib-table",
@@ -746,34 +746,34 @@
       "committed_blob": "c827f531ca71588e5075c5e2d0b8fb26e5d4000c"
     },
     {
-      "source": "06_Complete_Project_Source/electronics/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
+      "source": "06_Complete_Project_Source/electronics/INDRBT_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
       "sha256": "9acc77d33b95c382fade04f49c573996e7b85eb81b4c761ceacf350d77f2757b",
       "bytes": 1274,
       "committed_blob": "d913987b624694cb39401627bca3a95864fef9ff"
     },
     {
       "source": "06_Complete_Project_Source/electronics/bom.csv",
-      "sha256": "07e79e1d037dc712426b3bb279007320098e67cf5da2837da92cce6058ba7865",
-      "bytes": 4514,
-      "committed_blob": "00f2853087859c2a93e793e45cf841539a0194f3"
+      "sha256": "ec671a33171359cc8ea30326da1bce16b14f887e49c89a561f893ede81e215ad",
+      "bytes": 4515,
+      "committed_blob": "fb77f94b1cc862977265f7c4ae627198e53dc3ff"
     },
     {
       "source": "06_Complete_Project_Source/electronics/exports/joint_interface.pdf",
-      "sha256": "f165669a69392067bdb86dce8ed404daf678bfcf21a02eeea69bce093fa6923f",
-      "bytes": 127153,
-      "committed_blob": "b11cd2c6caddd7e9744e962d3a60588d6c46989d"
+      "sha256": "448e81bc62c323472fd00cc78493287fcfbb91428a08f8bed1256c97cc0b3458",
+      "bytes": 127152,
+      "committed_blob": "c02e8010bf379619df9f83131b955a48b5c3fb96"
     },
     {
       "source": "06_Complete_Project_Source/electronics/exports/pcb_layers.pdf",
-      "sha256": "593897d9337e9eeb19d9696b5ced25acc7788beb86eb03064e26b03108d75278",
-      "bytes": 116301,
-      "committed_blob": "56c9f051eae93e2f78eb315a7a23455cf316c636"
+      "sha256": "605b982c84d257225739f7a1ae9679c7c54262e9de9c38b02d66e554c24012e8",
+      "bytes": 116356,
+      "committed_blob": "a621adabef4e5bea56857337f6c44850e48595a6"
     },
     {
       "source": "06_Complete_Project_Source/electronics/exports/pcb_3d.png",
-      "sha256": "d8225f735327a4cbbf6914616b045aa40517f260e8b5552df962b3e0ec9f4983",
-      "bytes": 671866,
-      "committed_blob": "1c1f096d0626928e96ccfd3e043f5c8b5cbf3c97"
+      "sha256": "867b52624cb3f8fc48bd46c8d17a8c2a012df8bcce379361e4068f776cbaaa77",
+      "bytes": 671976,
+      "committed_blob": "e489b817d3594fb1659c29a4b7b92325de86bf6b"
     },
     {
       "source": "06_Complete_Project_Source/electronics/electrical_assumptions.json",
@@ -789,17 +789,17 @@
     },
     {
       "source": "06_Complete_Project_Source/electronics/fuse_selection.json",
-      "sha256": "ce41aa3e09b473d2f89efe06adc6acb6d9b2b5db99cf0cd0da4a2fe8d03399d6",
-      "bytes": 1091,
-      "committed_blob": "2d631306d5ded14d9e49b6f93549d04cd37b48c3"
+      "sha256": "d7307e63b43cddd03fb902a2b001f3feb4cad1ad048f4b07752ae3dd67d95abf",
+      "bytes": 1092,
+      "committed_blob": "48741dc512596b00f2731fb8d89e15ffc34313b3"
     }
   ],
   "packages": [
     {
-      "filename": "ASTER-6_STEP_STL_CAD.zip",
+      "filename": "INDRBT_STEP_STL_CAD.zip",
       "title": "STEP and STL mechanical CAD",
-      "bytes": 2154531,
-      "sha256": "3359c5a46bc92b35ce038ce770dfb38356c4d7ee21a7fce3e18ae78600dee8e7",
+      "bytes": 2153949,
+      "sha256": "db8876c0d2508ef242003de6df3a72806e0e4f19d78d455d6b3e83e380c27645",
       "archive_crc": "PASS",
       "safe_relative_paths": true,
       "file_count": 118,
@@ -809,38 +809,38 @@
         {
           "file": "Drawings/01_base_tool_interfaces.svg",
           "source": "06_Complete_Project_Source/docs/drawings/01_base_tool_interfaces.svg",
-          "bytes": 95239,
-          "sha256": "d34f0cd0850c609bd8e6b2d6fbf3a46b4e84088cc01664f579acf55ed4d33089"
+          "bytes": 94781,
+          "sha256": "b1f406197707b3315b2d9e282b20229c364f93a6002e340e7af89e7f95c77c06"
         },
         {
           "file": "Drawings/02_link_sections.svg",
           "source": "06_Complete_Project_Source/docs/drawings/02_link_sections.svg",
-          "bytes": 84432,
-          "sha256": "66f62bdbf1dbab38c0f7179b5149f674c36b9af21c481232d6f676f58c9bc375"
+          "bytes": 84341,
+          "sha256": "b96a38e27061fa0afebb8182b77d93b0472ddbb74796d6b0ce82c688ea19a367"
         },
         {
           "file": "Drawings/03_gripper_layout.svg",
           "source": "06_Complete_Project_Source/docs/drawings/03_gripper_layout.svg",
-          "bytes": 85906,
-          "sha256": "132b9ffaa1fbb665768e4e8d38626987db8e327bf92712a9e954d3674c3398db"
+          "bytes": 86307,
+          "sha256": "8011791d92ae4230d597d0d704ef3f79f1adac0582724732370125301cfd40de"
         },
         {
           "file": "Drawings/engineering_interfaces.pdf",
           "source": "06_Complete_Project_Source/docs/drawings/engineering_interfaces.pdf",
-          "bytes": 45165,
-          "sha256": "1eb6ebe41d21a271f5bb80b3a778834f021a0398218987daf2ba033b78e9e09d"
+          "bytes": 44854,
+          "sha256": "b267251142ea5177424bb32a09f4a9ed97a94d794060a93c696b18168ded9973"
         },
         {
           "file": "LICENSE",
           "source": "LICENSE",
-          "bytes": 1106,
-          "sha256": "73c7042665f956bf31168dcdc657a334c571723dc93eafae519a0841aee51557"
+          "bytes": 1105,
+          "sha256": "a30a75fc55cfb8a7d94525d65d7fabeba5a1a5a56153972fa5a176f8aa3bfc63"
         },
         {
           "file": "NOTICE.md",
           "source": "NOTICE.md",
-          "bytes": 658,
-          "sha256": "19f8cb2914ed9511f3f8bff85cbfa48e32ce1e74dc8e8ae71f7785a0ab99483f"
+          "bytes": 657,
+          "sha256": "da2e2924b88ad28bf4968c262deea044c724801ed8506d6103dc37cc4ed1894d"
         },
         {
           "file": "STEP/Assemblies/assembly_home.step",
@@ -1505,10 +1505,10 @@
       ]
     },
     {
-      "filename": "ASTER-6_FreeCAD_Model.zip",
+      "filename": "INDRBT_FreeCAD_Model.zip",
       "title": "Native FreeCAD solid assembly",
-      "bytes": 193927,
-      "sha256": "6d0cd27882984d43444062d74c6de838b750cfa38dbec1172d1b08e1980321e2",
+      "bytes": 193892,
+      "sha256": "26d3b2b5d6550f9bd2362a6fda56e7691b4a6849bd6bc3fd6ea66d4c734ac4a7",
       "archive_crc": "PASS",
       "safe_relative_paths": true,
       "file_count": 5,
@@ -1518,28 +1518,28 @@
         {
           "file": "LICENSE",
           "source": "LICENSE",
-          "bytes": 1106,
-          "sha256": "73c7042665f956bf31168dcdc657a334c571723dc93eafae519a0841aee51557"
+          "bytes": 1105,
+          "sha256": "a30a75fc55cfb8a7d94525d65d7fabeba5a1a5a56153972fa5a176f8aa3bfc63"
         },
         {
-          "file": "Model/aster6_home.FCStd",
-          "source": "06_Complete_Project_Source/cad/freecad/aster6_home.FCStd",
-          "bytes": 197161,
-          "sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4"
+          "file": "Model/indrbt_home.FCStd",
+          "source": "06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd",
+          "bytes": 197163,
+          "sha256": "5a2bbf35bd9fe3265aaf7b38a0617e8b9b3e11b284844d5eea2a4abc3e42fae0"
         },
         {
           "file": "NOTICE.md",
           "source": "NOTICE.md",
-          "bytes": 658,
-          "sha256": "19f8cb2914ed9511f3f8bff85cbfa48e32ce1e74dc8e8ae71f7785a0ab99483f"
+          "bytes": 657,
+          "sha256": "da2e2924b88ad28bf4968c262deea044c724801ed8506d6103dc37cc4ed1894d"
         }
       ]
     },
     {
-      "filename": "ASTER-6_KiCad_Project.zip",
+      "filename": "INDRBT_KiCad_Project.zip",
       "title": "Editable KiCad project and references",
-      "bytes": 1589316,
-      "sha256": "4e0febc7da8d8e0282891849b82501d8ed0447dfa57dd7fc13bbd94da3dcec1c",
+      "bytes": 1588245,
+      "sha256": "20e43628e43816f4be3f2a4e1293dc39d354919fb5b142c8ad1a155d5b935481",
       "archive_crc": "PASS",
       "safe_relative_paths": true,
       "file_count": 20,
@@ -1549,8 +1549,8 @@
         {
           "file": "BOM/bom.csv",
           "source": "06_Complete_Project_Source/electronics/bom.csv",
-          "bytes": 4514,
-          "sha256": "07e79e1d037dc712426b3bb279007320098e67cf5da2837da92cce6058ba7865"
+          "bytes": 4515,
+          "sha256": "ec671a33171359cc8ea30326da1bce16b14f887e49c89a561f893ede81e215ad"
         },
         {
           "file": "Design_Notes/electrical_assumptions.json",
@@ -1561,8 +1561,8 @@
         {
           "file": "Design_Notes/fuse_selection.json",
           "source": "06_Complete_Project_Source/electronics/fuse_selection.json",
-          "bytes": 1091,
-          "sha256": "ce41aa3e09b473d2f89efe06adc6acb6d9b2b5db99cf0cd0da4a2fe8d03399d6"
+          "bytes": 1092,
+          "sha256": "d7307e63b43cddd03fb902a2b001f3feb4cad1ad048f4b07752ae3dd67d95abf"
         },
         {
           "file": "Design_Notes/pin_contract.json",
@@ -1571,16 +1571,16 @@
           "sha256": "f964f42f6c746b9edde86030eaaf766f3679cf2e9fab22e903129eb435d2d81d"
         },
         {
-          "file": "KiCad/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
-          "source": "06_Complete_Project_Source/electronics/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
+          "file": "KiCad/INDRBT_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
+          "source": "06_Complete_Project_Source/electronics/INDRBT_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
           "bytes": 1274,
           "sha256": "9acc77d33b95c382fade04f49c573996e7b85eb81b4c761ceacf350d77f2757b"
         },
         {
           "file": "KiCad/fp-lib-table",
           "source": "06_Complete_Project_Source/electronics/fp-lib-table",
-          "bytes": 1642,
-          "sha256": "ea0ff7a7a8fe778f9398c1d644beee9d99ae59331c1402ae7729d85883aad122"
+          "bytes": 1644,
+          "sha256": "8706529c4bffd1ff95ca451dc6eb37b535753379b2e98f465347d15e4ec123f0"
         },
         {
           "file": "KiCad/joint_interface.kicad_dru",
@@ -1592,7 +1592,7 @@
           "file": "KiCad/joint_interface.kicad_pcb",
           "source": "06_Complete_Project_Source/electronics/joint_interface.kicad_pcb",
           "bytes": 382272,
-          "sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e"
+          "sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba"
         },
         {
           "file": "KiCad/joint_interface.kicad_pro",
@@ -1604,7 +1604,7 @@
           "file": "KiCad/joint_interface.kicad_sch",
           "source": "06_Complete_Project_Source/electronics/joint_interface.kicad_sch",
           "bytes": 106524,
-          "sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6"
+          "sha256": "17d7f75f067bb735ad2a5a8c1007acfb8115b868c983112e39b75b617fe1129e"
         },
         {
           "file": "KiCad/sym-lib-table",
@@ -1615,82 +1615,82 @@
         {
           "file": "LICENSE",
           "source": "LICENSE",
-          "bytes": 1106,
-          "sha256": "73c7042665f956bf31168dcdc657a334c571723dc93eafae519a0841aee51557"
+          "bytes": 1105,
+          "sha256": "a30a75fc55cfb8a7d94525d65d7fabeba5a1a5a56153972fa5a176f8aa3bfc63"
         },
         {
           "file": "NOTICE.md",
           "source": "NOTICE.md",
-          "bytes": 658,
-          "sha256": "19f8cb2914ed9511f3f8bff85cbfa48e32ce1e74dc8e8ae71f7785a0ab99483f"
+          "bytes": 657,
+          "sha256": "da2e2924b88ad28bf4968c262deea044c724801ed8506d6103dc37cc4ed1894d"
         },
         {
           "file": "Reference/THIRD_PARTY_NOTICES.txt",
           "source": "showcase/pcb/THIRD_PARTY_NOTICES.txt",
-          "bytes": 1366,
-          "sha256": "0005786e73428bc01b415a6d85e61ebcc935572f129aa60827583ddba1b47477"
+          "bytes": 1364,
+          "sha256": "f0bed19384fb2beb379d548051f232fdd2d4100b7373f0834ccec26f848d0abf"
         },
         {
-          "file": "Reference/aster-joint-interface.glb",
-          "source": "showcase/pcb/aster-joint-interface.glb",
-          "bytes": 6135044,
-          "sha256": "ee32884e9179d1d6680a6c5e3b0c7d7f3fa14d072484d5ae33b4219265800f92"
+          "file": "Reference/indrbt-joint-interface.glb",
+          "source": "showcase/pcb/indrbt-joint-interface.glb",
+          "bytes": 6131800,
+          "sha256": "c486b3861d245c3c908851037b8b21ca58078b12c92e45d99a30ca2e0064fa34"
         },
         {
           "file": "Reference/joint_interface.pdf",
           "source": "06_Complete_Project_Source/electronics/exports/joint_interface.pdf",
-          "bytes": 127153,
-          "sha256": "f165669a69392067bdb86dce8ed404daf678bfcf21a02eeea69bce093fa6923f"
+          "bytes": 127152,
+          "sha256": "448e81bc62c323472fd00cc78493287fcfbb91428a08f8bed1256c97cc0b3458"
         },
         {
           "file": "Reference/pcb_3d.png",
           "source": "06_Complete_Project_Source/electronics/exports/pcb_3d.png",
-          "bytes": 671866,
-          "sha256": "d8225f735327a4cbbf6914616b045aa40517f260e8b5552df962b3e0ec9f4983"
+          "bytes": 671976,
+          "sha256": "867b52624cb3f8fc48bd46c8d17a8c2a012df8bcce379361e4068f776cbaaa77"
         },
         {
           "file": "Reference/pcb_layers.pdf",
           "source": "06_Complete_Project_Source/electronics/exports/pcb_layers.pdf",
-          "bytes": 116301,
-          "sha256": "593897d9337e9eeb19d9696b5ced25acc7788beb86eb03064e26b03108d75278"
+          "bytes": 116356,
+          "sha256": "605b982c84d257225739f7a1ae9679c7c54262e9de9c38b02d66e554c24012e8"
         }
       ]
     },
     {
-      "filename": "ASTER-6_PCB_STEP.zip",
+      "filename": "INDRBT_PCB_STEP.zip",
       "title": "Native PCB STEP for mechanical inspection",
-      "bytes": 1788097,
-      "sha256": "ab37f1f5380635885e7bfaff42ba8ff7fa04dbfe770d68c724e59e43a6e5f9a5",
+      "bytes": 1787203,
+      "sha256": "7596cc1581a8f99dae49a53c0365b4a8af18145112fa35c5306509131d2f5f75",
       "archive_crc": "PASS",
       "safe_relative_paths": true,
-      "file_count": 6,
+      "file_count": 7,
       "scope": "Native KiCad-generated board and fitted-component STEP geometry; electrical editing remains in the KiCad project.",
       "generated_from": "06_Complete_Project_Source/electronics/joint_interface.kicad_pcb",
       "files": [
         {
-          "file": "aster_joint_interface.step",
-          "bytes": 9877868,
-          "sha256": "5131c1f315bd9fc553781267436b6eb80b1fb79be8c0a8c4374f7e32731d6d38"
+          "file": "LICENSE.INDRBT.txt",
+          "bytes": 1105,
+          "sha256": "a30a75fc55cfb8a7d94525d65d7fabeba5a1a5a56153972fa5a176f8aa3bfc63"
         },
         {
           "file": "README.txt",
-          "bytes": 993,
-          "sha256": "19b5105eb5ea3abefe922e4e80cff402595b56a4ecfba4c18a94cce260a622ba"
-        },
-        {
-          "file": "LICENSE.ASTER-6.txt",
-          "bytes": 1106,
-          "sha256": "73c7042665f956bf31168dcdc657a334c571723dc93eafae519a0841aee51557"
+          "bytes": 959,
+          "sha256": "da964dd51de83e30b71a4bea85aab7ddeac55bf4e77a21f1e156fa60a8072381"
         },
         {
           "file": "THIRD_PARTY_NOTICES.txt",
-          "bytes": 977,
-          "sha256": "635a81b29f2bc95de36255ade65a8559f4b06cc1c9e351132f751f762ccbaf90"
+          "bytes": 1364,
+          "sha256": "f0bed19384fb2beb379d548051f232fdd2d4100b7373f0834ccec26f848d0abf"
+        },
+        {
+          "file": "indrbt_joint_interface.step",
+          "bytes": 9868564,
+          "sha256": "1a9a18e45ed2bdc849c66305550356b1dbea008d13816664aee2ee4e2fe0239e"
         },
         {
           "file": "provenance.json",
-          "bytes": 3467,
-          "sha256": "267ed3676f00f5b2b31ed3d86b4e16b430f9d977c07ba29b9701a9e857a0cca2"
+          "bytes": 3468,
+          "sha256": "d836ac3bf56c45e33419e2c3b9b11963625c74a52c9090c9ab9da8ba4846f8f0"
         },
         {
           "file": "solid-import-checks.json",
@@ -2316,11 +2316,11 @@
       "solid_entries": 54,
       "object_count": 54,
       "visible_count": 54,
-      "sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4"
+      "sha256": "5a2bbf35bd9fe3265aaf7b38a0617e8b9b3e11b284844d5eea2a4abc3e42fae0"
     },
     "kicad": {
-      "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
-      "schematic_sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
+      "board_sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba",
+      "schematic_sha256": "17d7f75f067bb735ad2a5a8c1007acfb8115b868c983112e39b75b617fe1129e",
       "local_f1_footprint_included": true,
       "library_tables_portable": true,
       "project_settings_json": true,
@@ -2331,7 +2331,7 @@
       "header": "PASS",
       "self_contained": true,
       "source_board_sha256_matches": true,
-      "sha256": "ee32884e9179d1d6680a6c5e3b0c7d7f3fa14d072484d5ae33b4219265800f92",
+      "sha256": "c486b3861d245c3c908851037b8b21ca58078b12c92e45d99a30ca2e0064fa34",
       "nodes": 88,
       "meshes": 47,
       "materials": 17

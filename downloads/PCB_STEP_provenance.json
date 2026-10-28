@@ -1,9 +1,9 @@
 {
   "status": "PASS",
-  "checked_at_utc": "2026-10-21T00:12:43.995229+00:00",
+  "checked_at_utc": "2026-10-28T13:00:01.239265+00:00",
   "source": {
     "board": "06_Complete_Project_Source/electronics/joint_interface.kicad_pcb",
-    "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
+    "board_sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba",
     "source_state": "Exact saved board read only; no re-save or DRC/source change"
   },
   "native_export": {
@@ -22,9 +22,9 @@
       "--subst-models"
     ],
     "stock_models": "Installed KiCad 10 stock 3D model library resolved using KICAD10_3DMODEL_DIR",
-    "output": "aster_joint_interface.step",
-    "bytes": 9877868,
-    "sha256": "5131c1f315bd9fc553781267436b6eb80b1fb79be8c0a8c4374f7e32731d6d38",
+    "output": "indrbt_joint_interface.step",
+    "bytes": 9868564,
+    "sha256": "1a9a18e45ed2bdc849c66305550356b1dbea008d13816664aee2ee4e2fe0239e",
     "format": "STEP AP214 (AUTOMOTIVE_DESIGN), ISO 10303-21",
     "units": "millimetres",
     "native_coordinate_convention": "Board in XY; +Z component side. Browser GLB reorients its top normal to +Y."
@@ -37,8 +37,8 @@
     "whole_shape_valid": true,
     "counts": {
       "solid": 463,
-      "shell": 815,
-      "face": 6134
+      "shell": 814,
+      "face": 6133
     },
     "solid_validity_failures": 0,
     "all_solid_volumes_positive": true,
@@ -74,7 +74,7 @@
     ],
     "findings": [],
     "metadata_sanitization_required": false,
-    "header": "ISO-10303-21;\nHEADER;\nFILE_DESCRIPTION(('KiCad electronic assembly'),'2;1');\nFILE_NAME('aster_joint_interface.step','2026-10-21T05:39:46',('Pcbnew'),\n  ('Kicad'),'Open CASCADE STEP processor 7.9','KiCad to STEP converter',\n  'Unknown');\nFILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));\nENDSEC;"
+    "header": "ISO-10303-21;\nHEADER;\nFILE_DESCRIPTION(('KiCad electronic assembly'),'2;1');\nFILE_NAME('indrbt_joint_interface.step','2026-10-28T18:27:29',('Pcbnew')\n  ,('Kicad'),'Open CASCADE STEP processor 7.9','KiCad to STEP converter'\n  ,'Unknown');\nFILE_SCHEMA(('AUTOMOTIVE_DESIGN { 1 0 10303 214 1 1 1 1 }'));\nENDSEC;"
   },
   "scope": "Cross-CAD mechanical inspection of the saved board, fitted stock component bodies and exported conductor/mask/silkscreen shapes. This is not the editable electrical design or manufacturing approval.",
   "component_body_limits": [
@@ -86,7 +86,7 @@
   "licenses": {
     "stock_3d_models": "KiCad libraries CC-BY-SA 4.0 with design/generated-file exception",
     "official_notice": "https://www.kicad.org/libraries/license/",
-    "design": "Original ASTER-6 design; repository MIT terms",
+    "design": "Original INDRBT design; repository MIT terms",
     "notice_file": "THIRD_PARTY_NOTICES.txt"
   }
 }

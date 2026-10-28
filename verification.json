@@ -1,7 +1,7 @@
 {
-  "project": "ASTER-6",
+  "project": "INDRBT",
   "engineering_version": "1.2.0",
-  "source_commit": "af61aa78652985ffcceed423d18444261c319e6d",
+  "source_commit": "a9a66c76a564c7ac15fa361cb3b0e706db2c42c3",
   "engineering_validation_utc": "2026-10-20T13:32:04.793112+00:00",
   "project_status": "DIGITAL SCOPE COMPLETE",
   "test_totals": {
@@ -16,8 +16,9 @@
     "Analytical structure and independent-axis control are the documented educational models",
     "The conceptual PCB has no physical thermal, EMC, ESD or functional-safety validation"
   ],
-  "native_board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
-  "native_schematic_sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
-  "native_assembly_sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4",
-  "note": "Retained engineering verification of the source project. Browser interface checks are recorded separately; no physical validation is claimed."
+  "native_board_sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba",
+  "native_schematic_sha256": "17d7f75f067bb735ad2a5a8c1007acfb8115b868c983112e39b75b617fe1129e",
+  "native_assembly_sha256": "5a2bbf35bd9fe3265aaf7b38a0617e8b9b3e11b284844d5eea2a4abc3e42fae0",
+  "note": "Retained engineering validation totals identify the design scope. The INDRBT identity refresh has separate native, packaging and browser evidence; no physical validation is claimed.",
+  "identity_refresh_date": "2026-10-28"
 }

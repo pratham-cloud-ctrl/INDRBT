@@ -3,3 +3,6 @@
 .view-tools{display:flex;align-items:center;gap:10px}.pcb-modes{display:flex;border:1px solid #334655;border-radius:5px;overflow:hidden}.pcb-modes[hidden]{display:none}.pcb-modes a{font-size:10px;text-decoration:none;padding:8px 10px;color:#9bb5c5;white-space:nowrap}.pcb-modes a[aria-pressed=true]{background:#22404c;color:#a3e8df}@media(max-width:1050px){.view-tools{flex-direction:column;gap:6px;align-items:flex-end}.pcb-modes a{padding:5px 7px;font-size:9px}}
 
 .download-view{border-color:#377376;color:#9ce2dc;background:#16313b}.download-view[hidden]{display:none}@media(max-width:1050px){.view-tools{gap:5px}.download-view{padding:6px 8px}}
+
+/* INDRBT wordmark replaces the previous monogram. */
+.mark{width:61px;font:700 10px/1 Arial;letter-spacing:1px}.mark span{display:none}@media(max-width:800px){.mark{width:53px;height:32px;font-size:9px;letter-spacing:.8px}}

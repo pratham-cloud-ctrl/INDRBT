@@ -1,10 +1,12 @@
-# ASTER-6 public engineering showcase
+# INDRBT public engineering showcase
 
-This branch hosts the browser robot, PCB, drawings, engineering chapters and CAD downloads.
-The engineering source remains on main in the same public repository.
+This branch hosts the browser robot, PCB, drawings, engineering chapters and
+standard/native CAD downloads. Engineering source remains on main in the same
+public repository. The project uses GitHub Pages with HTTPS and relative paths.
 
-The original Sites management lookup returned project-not-found despite a live deployment
-and consistent local identity. The verified display source is published here so updates and
-engineering files share one repository. No CAD geometry or circuit changes were made.
+Main website: https://pratham-cloud-ctrl.github.io/INDRBT/
+Engineering source: https://github.com/pratham-cloud-ctrl/INDRBT
 
-The existing selected download packs and their original licences are retained.
+The project identity was refreshed on 28 October 2026. The engineering design
+revision remains 1.2.0; previous tagged releases remain historical records.
+Applicable original and third-party licences remain included.

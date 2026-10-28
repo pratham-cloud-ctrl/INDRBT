@@ -1,11 +1,12 @@
 {
   "status": "PASS",
-  "html_pages": 57,
-  "local_references_checked": 1554,
+  "html_pages": 58,
+  "local_references_checked": 1659,
   "copied_media_files": 35,
   "readable_data_pages": 30,
-  "optional_private_source_link_targets": 149,
+  "optional_private_source_link_targets": 151,
   "parent_navigation_routes": [
+    "downloads\\index.html",
     "index.html",
     "pcb\\index.html",
     "robot\\index.html"

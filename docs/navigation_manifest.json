@@ -1,6 +1,6 @@
 {
-  "format": "ASTER-6 self-contained browser reading bundle",
-  "generated_utc": "2026-10-20T22:01:36.110613+00:00",
+  "format": "INDRBT self-contained browser reading bundle",
+  "generated_utc": "2026-10-28T13:13:07.382004+00:00",
   "source_project_version": "1.2.0",
   "routes": [
     {
@@ -8,16 +8,16 @@
       "route": "index.html"
     },
     {
-      "title": "ASTER-6 requirements",
+      "title": "INDRBT requirements",
       "route": "01_requirements.html",
       "source": "docs/01_requirements.md",
-      "sha256": "029d7d3e972dca7a8386bb070294b4394bf63e70d0bdbb7e12ba81914a70986f"
+      "sha256": "c440f0f5504c1535bfdcbacc0b25b478adb70022931c5c180ac97be1b209ec22"
     },
     {
       "title": "Kinematic formulation",
       "route": "02_kinematics.html",
       "source": "docs/02_kinematics.md",
-      "sha256": "2de7bc8e70cb69979967bb81b1f4244aaa0213959d31e8345160495e5c535855"
+      "sha256": "ab98c86330b55622e3c74d3a0826f8fe829acc2f853c6a2379d4ba2af8c8d396"
     },
     {
       "title": "Mechanical calculations and actuator concept",
@@ -29,13 +29,13 @@
       "title": "Parametric mechanical design and CAD evidence",
       "route": "04_cad.html",
       "source": "docs/04_cad.md",
-      "sha256": "4b51741264cc6878adb21e8e28e6f7186654d6e84e94457096417427090ed60b"
+      "sha256": "68645b5849e7754054949e8f835ff802c3d42af4f256caf064d0228a1db71c44"
     },
     {
       "title": "Electrical architecture, schematic and routed PCB",
       "route": "05_electronics.html",
       "source": "docs/05_electronics.md",
-      "sha256": "7d9e965876e8d28e6bf33a06eb9cf3d3d578f3f8a8511153fe13c2ff6a750027"
+      "sha256": "e2be45918a54e6eb133a62573c8da17d3ad88fc2ea219cce969909740434fe3e"
     },
     {
       "title": "System architecture",
@@ -44,34 +44,40 @@
       "sha256": "be65d3c9209507288cd8ab4246ee63256c03d4cfd2691bd39c7945f81e85cd0e"
     },
     {
+      "title": "Open the engineering files",
+      "route": "cad_downloads.html",
+      "source": "docs/cad_downloads.md",
+      "sha256": "042c9f70c69cb81470e247fab2d14c0f66ccf086c55d22adb108f277337c68e5"
+    },
+    {
       "title": "Mechanical design tour",
       "route": "cad_tour.html",
       "source": "docs/cad_tour.md",
-      "sha256": "ec360ffeb59adab7b418110dc6d5e000695fd0b54e69e04134256e65910db99d"
+      "sha256": "8014cc7ec4e4abdcde8134370e3273305acb7b3c03d0357ac0b7b0e92255259b"
     },
     {
       "title": "Digital project completion checklist",
       "route": "completion_checklist.html",
       "source": "docs/completion_checklist.md",
-      "sha256": "eaef1c2b5e01c12d2fb0c28d7f34faca0817313fe5c2f54ce1df512d53fa71db"
+      "sha256": "20c7d318134d375c77bebd5db3ad7bbb6fcb17718cc79c32c4335b49438a703e"
     },
     {
       "title": "CAD component catalog",
       "route": "component_catalog.html",
       "source": "docs/component_catalog.md",
-      "sha256": "97bfa9b5bd19297c763c4fdfc8d5b94823073f95718907c6d0ddbe9799408e19"
+      "sha256": "b4ef76ce1a33662fcd47e1c53881e9f8467a29b5b838a518c871c477ef5e029b"
     },
     {
       "title": "Design decisions",
       "route": "design_decisions.html",
       "source": "docs/design_decisions.md",
-      "sha256": "3e95c3428e72daf524192f38b30727a32aea8869c6b83979c1350d78338ed8c5"
+      "sha256": "64d341536e687f0e3f8d513db5bc2cab77b752f9194f97323ea492abb1905698"
     },
     {
       "title": "Audit of the requested digital scope",
       "route": "digital_scope_audit.html",
       "source": "docs/digital_scope_audit.md",
-      "sha256": "d5b93a7443e61d50cb580e8aa0d8f8c091ed77a01111eaa02fc07789b8a61b37"
+      "sha256": "9cf4cbc56925cd2f1965cf8860cdf9217632d4036b47ada4ece04502143302d7"
     },
     {
       "title": "Understand the joint-interface components",
@@ -80,28 +86,28 @@
       "sha256": "4013c4937ad751a026072f841d3369796dbf5791c9c51e1186981eb113049d18"
     },
     {
-      "title": "Electronics tour \u00b7 ASTER-6 joint and sensor interface",
+      "title": "Electronics tour \u00b7 INDRBT joint and sensor interface",
       "route": "electronics_tour.html",
       "source": "docs/electronics_tour.md",
-      "sha256": "2fe2468477723311dfd8f9f34ba63d262c5d0abc518279b4b8da58cab3330157"
+      "sha256": "177947154757cb759ee58b6ddced9bd7be86d11e73d84b0bf85bd01a76821f7e"
     },
     {
-      "title": "ASTER-6 engineering report",
+      "title": "INDRBT engineering report",
       "route": "engineering_report.html",
       "source": "docs/engineering_report.md",
-      "sha256": "f6c24829714f7af0075fc890e1814a440be168f0dbc9d2a661ea5a888429d7dc"
+      "sha256": "67bb4d8093887d89173d128ba340bbbd6c2c98dd3ea2189f0586e9f2f4df760d"
     },
     {
-      "title": "How ASTER-6 works",
+      "title": "How INDRBT works",
       "route": "engineering_walkthrough.html",
       "source": "docs/engineering_walkthrough.md",
-      "sha256": "088ab24b98b69379f66babe7cff92c0f733451d62a9519f81ce8ada86451dd4d"
+      "sha256": "d1d7327e46ed820e9bb93c92c5687e65efdd1fbd0db3cee62ef03c2f7d9f3a24"
     },
     {
       "title": "Independent engineering review \u2014 current revision",
       "route": "final_review.html",
       "source": "docs/final_review.md",
-      "sha256": "bd462a694b797cf20038f5f88710b15323c80ed7c6cc2685af948caa3ca71f7b"
+      "sha256": "89d24f487eedec43e0614e00f674973857685a4095f841356ee1b570dcdd6d07"
     },
     {
       "title": "Project KPIs",
@@ -113,25 +119,25 @@
       "title": "Project purpose and alignment with the original brief",
       "route": "project_alignment.html",
       "source": "docs/project_alignment.md",
-      "sha256": "7d1c6202a293ec4e8ce965e70702102691bce52ddf2fb715013b5fd6f8d4f7f7"
+      "sha256": "6bff277e4781be2072125f8d799ac6742cc38b7541150cad03c3ee5952ad027b"
     },
     {
       "title": "Project journal",
       "route": "project_journal.html",
       "source": "docs/project_journal.md",
-      "sha256": "538be05d9a08b802c33b1f6147953100762bcf2710bdb77e9814e62a3e341045"
+      "sha256": "338d54e7ea5b8cf4078673347e199fc586ef9a96103f3ed221acb8ecd42fab77"
     },
     {
-      "title": "ASTER-6 v1.2.0 \u2014 original goals, repaired mechanics and rigorous validation",
+      "title": "INDRBT v1.2.0 \u2014 original goals, repaired mechanics and rigorous validation",
       "route": "release_notes.html",
       "source": "docs/release_notes.md",
-      "sha256": "a8835465a47185dad07fb8e2c16dc1a751e234fec194088b55a080bc870d7ff0"
+      "sha256": "43cc887b74327ae9fa94391a26f90e813ae0b7192c60669a1aee74c843430f7f"
     },
     {
-      "title": "Understanding the ASTER-6 digital robot",
+      "title": "Understanding the INDRBT digital robot",
       "route": "theory_guide.html",
       "source": "docs/theory_guide.md",
-      "sha256": "7bc22f5b4a2b9ea8e006a8749c59f80ef5c1388bb4aa7cecc1bf865d17783c68"
+      "sha256": "c6b5ec397f525c004ac68406205016714d90c092a4f72343c7d0be48f4b87fe0"
     },
     {
       "title": "Requirement traceability",
@@ -140,22 +146,22 @@
       "sha256": "ac46e29698d3f58fac03b75d698abb5806ab4323dc1097259417ed4a36b723a8"
     },
     {
-      "title": "ASTER-6 \u00b7 Industrial robot arm digital twin",
+      "title": "INDRBT \u00b7 Industrial robot arm digital twin",
       "route": "reproduction.html",
       "source": "README.md",
-      "sha256": "95f9e35d4c2eaed5d878d4e4b0797459c1b909ab38b681777a604c0deb129301"
+      "sha256": "82caf310395f88566b46fa4b14270f2d30b02edbc52f2c802e7f4fc208762582"
     },
     {
       "title": "CAD source and models",
       "route": "cad_source_guide.html",
       "source": "cad/README.md",
-      "sha256": "a68c61ddf43ba13a046ef09218abd7fbd972db82da4046b7768ada56e3089858"
+      "sha256": "edfa30e26ec83ff8c1bebecb356ebc0a080b1ced44917c39381ce070ed34426b"
     },
     {
-      "title": "ASTER-6 \u00b7 KiCad electronics source",
+      "title": "INDRBT \u00b7 KiCad electronics source",
       "route": "electronics_source_guide.html",
       "source": "electronics/README.md",
-      "sha256": "422c79d842c6ddbfd15d42115886b52d94070182618b6d660e0cde86f9b5e5c2"
+      "sha256": "fba1ca4c801911c009da0df421dfca9603cb210b4d08f1f591270fc617ebda4a"
     },
     {
       "title": "Evidence index",
@@ -285,122 +291,133 @@
     }
   ],
   "source_sha256": {
-    "docs/01_requirements.md": "029d7d3e972dca7a8386bb070294b4394bf63e70d0bdbb7e12ba81914a70986f",
-    "docs/02_kinematics.md": "2de7bc8e70cb69979967bb81b1f4244aaa0213959d31e8345160495e5c535855",
+    "docs/01_requirements.md": "c440f0f5504c1535bfdcbacc0b25b478adb70022931c5c180ac97be1b209ec22",
+    "docs/02_kinematics.md": "ab98c86330b55622e3c74d3a0826f8fe829acc2f853c6a2379d4ba2af8c8d396",
     "docs/03_mechanical_analysis.md": "8f00e92fafbd952185efca8092edcdc7ab6d8324a43568af46a038a0163059e4",
-    "docs/04_cad.md": "4b51741264cc6878adb21e8e28e6f7186654d6e84e94457096417427090ed60b",
-    "docs/05_electronics.md": "7d9e965876e8d28e6bf33a06eb9cf3d3d578f3f8a8511153fe13c2ff6a750027",
-    "electronics/bom.csv": "07e79e1d037dc712426b3bb279007320098e67cf5da2837da92cce6058ba7865",
+    "docs/04_cad.md": "68645b5849e7754054949e8f835ff802c3d42af4f256caf064d0228a1db71c44",
+    "docs/05_electronics.md": "e2be45918a54e6eb133a62573c8da17d3ad88fc2ea219cce969909740434fe3e",
+    "electronics/bom.csv": "ec671a33171359cc8ea30326da1bce16b14f887e49c89a561f893ede81e215ad",
     "electronics/interface_calculations.json": "15eab567dde71fbc13c11d0e544290ac57e69bf88d1de0976c1764c47345103b",
-    "electronics/fuse_selection.json": "ce41aa3e09b473d2f89efe06adc6acb6d9b2b5db99cf0cd0da4a2fe8d03399d6",
-    "electronics/exports/pcb_layers.pdf": "593897d9337e9eeb19d9696b5ced25acc7788beb86eb03064e26b03108d75278",
-    "electronics/exports/pcb_3d.png": "d8225f735327a4cbbf6914616b045aa40517f260e8b5552df962b3e0ec9f4983",
-    "results/validation/final_electronics_review.json": "19c471c366c8c284ca41e5bc804ecce4234ba422a2b9f7b115732c9facb45fb8",
-    "results/validation/electronics_circuit_review.json": "8346a8fa8b4a0dbfb55daf23e67682c20ace02992a8931ab428cf97500b8bd59",
-    "docs/diagrams/electronics_architecture.svg": "fc0a96eff975dd446b8d44b036deb24482ff2c9c3b5a7869bf4ce48d17467632",
-    "electronics/exports/pcb_top.png": "db12db82e1bcf6b89fe313aaf457e78f24a47c41f3d6c3d60c14c1e1b6b7fd9b",
+    "electronics/fuse_selection.json": "d7307e63b43cddd03fb902a2b001f3feb4cad1ad048f4b07752ae3dd67d95abf",
+    "electronics/exports/pcb_layers.pdf": "605b982c84d257225739f7a1ae9679c7c54262e9de9c38b02d66e554c24012e8",
+    "electronics/exports/pcb_3d.png": "867b52624cb3f8fc48bd46c8d17a8c2a012df8bcce379361e4068f776cbaaa77",
+    "results/validation/final_electronics_review.json": "d283f65f7b569af698681ecc6a5f1e45efbba0a3a37f921fc1f7a7abb94837ae",
+    "results/validation/electronics_circuit_review.json": "02ab20807deb1e75184fc98df15dface1f1c91e30511e9bee200038c0ebb52c0",
+    "docs/diagrams/electronics_architecture.svg": "53447de96b0e30403f767e448717c94222cef18a47122ed1c7bd51d24010e608",
+    "electronics/exports/pcb_top.png": "ed44e2825037beecdcb14281dfcab27a09dc4a617d97919278cd75b916f48ed3",
     "docs/architecture.md": "be65d3c9209507288cd8ab4246ee63256c03d4cfd2691bd39c7945f81e85cd0e",
-    "docs/diagrams/system_architecture.svg": "271a8e4ea4bc367b93c4f33bdcae02976b94debc0f5e940d8a6d1bf4d4907216",
-    "docs/cad_tour.md": "ec360ffeb59adab7b418110dc6d5e000695fd0b54e69e04134256e65910db99d",
+    "docs/diagrams/system_architecture.svg": "b568244506514d69a4188bf5d81825317b155203b12a99b7ae03c6ffedf70de9",
+    "docs/cad_downloads.md": "042c9f70c69cb81470e247fab2d14c0f66ccf086c55d22adb108f277337c68e5",
+    "docs/drawings/engineering_interfaces.pdf": "b267251142ea5177424bb32a09f4a9ed97a94d794060a93c696b18168ded9973",
+    "config/robot.yaml": "fde183861589ceaa492879da6e6114c80fdd659dcff6adcf46fc734b3a50934f",
+    "electronics/exports/joint_interface.pdf": "448e81bc62c323472fd00cc78493287fcfbb91428a08f8bed1256c97cc0b3458",
+    "docs/cad_tour.md": "8014cc7ec4e4abdcde8134370e3273305acb7b3c03d0357ac0b7b0e92255259b",
     "cad/renders/hero.png": "126f2d594a27690e827db1cd89a0752bba431b3297343a65121ed3c5ba1b2443",
-    "cad/renders/poses.png": "7deec980dca23fe4a30aca844b4fe2a8c0d60417ad3eb7a92ed8264f62903ceb",
-    "cad/renders/gripper.png": "42ed92a3665e71f529071b860d1377d6955efbb3390fe9ca8d1db1b4a1be88b3",
-    "docs/drawings/03_gripper_layout.svg": "132b9ffaa1fbb665768e4e8d38626987db8e327bf92712a9e954d3674c3398db",
-    "docs/drawings/01_base_tool_interfaces.svg": "d34f0cd0850c609bd8e6b2d6fbf3a46b4e84088cc01664f579acf55ed4d33089",
-    "docs/drawings/02_link_sections.svg": "66f62bdbf1dbab38c0f7179b5149f674c36b9af21c481232d6f676f58c9bc375",
-    "docs/drawings/engineering_interfaces.pdf": "1eb6ebe41d21a271f5bb80b3a778834f021a0398218987daf2ba033b78e9e09d",
-    "config/robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-    "results/validation/final_cad_review.json": "b224c5fc185ec9a8d3ccb2e41daa9a058a91448474865d9566072fb2d382d232",
-    "docs/completion_checklist.md": "eaef1c2b5e01c12d2fb0c28d7f34faca0817313fe5c2f54ce1df512d53fa71db",
-    "results/validation/final_theory_review.json": "4b5b9e748c1b6b84fdd775e29069a6d3e0b97d690160ca52e6c34f0f10082d49",
-    "electronics/pcb_verification.json": "bb62ea4ce366b30ac11c24940293f2bd742a8953a7301cfc7c12673de9ce1e82",
-    "results/validation/packaging_validation.json": "296995f143cc0995340fdc7dea035afd74d1390d76aa79fd1f6622ccc7905cbc",
-    "docs/component_catalog.md": "97bfa9b5bd19297c763c4fdfc8d5b94823073f95718907c6d0ddbe9799408e19",
-    "cad/renders/pose_home.png": "ee396bf8063eff63fa5564daf944e3ec82bab3b377714866f92f81661e45f902",
-    "cad/renders/pose_extended.png": "739f1e72050a1806f6219bd3736a38ab9a2eef7036cce60568c32efd57657686",
-    "cad/renders/pose_folded.png": "805bcc6ac5726ef6004abb93e85167c3bddc54dfcd1ed96fcc7ebaaf896e8843",
-    "cad/renders/pose_vertical.png": "cca7f380fae3d14881d1f73291d23eaed303597a154954d914b1c6a9f8e9493e",
-    "cad/renders/pose_pick.png": "ede709bd6489fb94c280fb344ba3536dbe470b973f97df1e9b4c102badc97181",
-    "cad/renders/pose_place.png": "71f30c24dde8d80aa48889a06246770b67bcae74cc89b999c122317b0b2ccf0a",
-    "results/validation/cad_release_consistency.json": "b224c5fc185ec9a8d3ccb2e41daa9a058a91448474865d9566072fb2d382d232",
-    "results/validation/cad_validation.json": "2bc5b355000b654d7440af1bde5146e61f987e68739a242c692b31ac53f1a4ee",
-    "results/validation/cad_assembly_clearance.json": "01ac229b42ea8d8e18f2f5408bcb9b3a6442c16c221aaae1ddaf075d0e5275f6",
-    "results/validation/cad_motion_clearance.json": "216d83c9d970c9df9af4b008fdcd7a5c6ce26c090218e1266561f8ca45ddeb46",
-    "docs/design_decisions.md": "3e95c3428e72daf524192f38b30727a32aea8869c6b83979c1350d78338ed8c5",
-    "docs/digital_scope_audit.md": "d5b93a7443e61d50cb580e8aa0d8f8c091ed77a01111eaa02fc07789b8a61b37",
+    "cad/renders/poses.png": "bc5a4908cdc7e34467c0ef228d90c200089ae6251ac6b9eafb258815090c9749",
+    "cad/renders/gripper.png": "7659a348bd3e8141904bdc350d8a66a5a99630d0e4e5ccd660eb8763d4aed90e",
+    "docs/drawings/03_gripper_layout.svg": "8011791d92ae4230d597d0d704ef3f79f1adac0582724732370125301cfd40de",
+    "docs/drawings/01_base_tool_interfaces.svg": "b1f406197707b3315b2d9e282b20229c364f93a6002e340e7af89e7f95c77c06",
+    "docs/drawings/02_link_sections.svg": "b96a38e27061fa0afebb8182b77d93b0472ddbb74796d6b0ce82c688ea19a367",
+    "results/validation/final_cad_review.json": "a2f56afe226e80a6614eb747de8854c9cf4a00fc498845226b4009f75b057714",
+    "docs/completion_checklist.md": "20c7d318134d375c77bebd5db3ad7bbb6fcb17718cc79c32c4335b49438a703e",
+    "results/validation/final_theory_review.json": "f6533feb7af9757b5961e97e6dbeb07008bf65b3988648e95149e950cfcfd367",
+    "electronics/pcb_verification.json": "2f4763645c1bc934e1e92fa58b5a4877024c85e5b88b1a8abf9d13b2fbcdc792",
+    "results/validation/packaging_validation.json": "1894aae20d81bf635db6248f8d7be9822c1ce72617c4f153618121e86c289c3d",
+    "docs/component_catalog.md": "b4ef76ce1a33662fcd47e1c53881e9f8467a29b5b838a518c871c477ef5e029b",
+    "cad/renders/pose_home.png": "3cebb3932545392905c999cf91e0c36a529b4f8ce86413c1a66c93faed717963",
+    "cad/renders/pose_extended.png": "3aac5d12bc85c1e172494fad1ff16c713cef8ccc93e1eb0452f600a67e46aa2d",
+    "cad/renders/pose_folded.png": "cb5a7b7e265e4a8802a2cf1668ebd6c3d9b9e878e44bfcb458452675e426e836",
+    "cad/renders/pose_vertical.png": "009b464bbe7f6fac979f1ce4cb020c1ccc21ae105cf605a750b48e6c8f46f762",
+    "cad/renders/pose_pick.png": "92ad1aeb8e8541eea10de406b4a12799f60561a76062f66a69d80d5a30cab060",
+    "cad/renders/pose_place.png": "146bcc3dbb4f304876d7e70a1f239051033572ede45c05ad549f7a2f0ea6b340",
+    "results/validation/cad_release_consistency.json": "a2f56afe226e80a6614eb747de8854c9cf4a00fc498845226b4009f75b057714",
+    "results/validation/cad_validation.json": "7f1f08b5ed86a88ce64c72ce559b34dc87bace006278ef234f138481d49c3252",
+    "results/validation/cad_assembly_clearance.json": "6eabb220cf6d676665bd772beecefb893d443c2c4684074b9e3d529f275fc006",
+    "results/validation/cad_motion_clearance.json": "5c52076a1d313f541decebb334e56c14187ccb3efc906d5f78f2ec378225354d",
+    "docs/design_decisions.md": "64d341536e687f0e3f8d513db5bc2cab77b752f9194f97323ea492abb1905698",
+    "docs/digital_scope_audit.md": "9cf4cbc56925cd2f1965cf8860cdf9217632d4036b47ada4ece04502143302d7",
     "results/validation/numerical_validation.json": "4df122cec6b988a0fe7c4295cc3d9292a0f862450470ca2a0300cc24cb6bdf99",
     "results/workspace/metrics.json": "c4a01ed8047b94e12feda4dde961a4abc2e1c3ebfc4ed4e3f9c63a2c2e5a3ad6",
     "results/trajectories/trajectory_metrics.json": "03d12f728aa9c44376e1108a30444b9576810432aaff6544921de096f84863c5",
     "results/trajectories/pick_place_samples.json": "5bc53cc15870ebeb08160e06aa6fc225ccfbb9c041c8a56e1ea47968763e8d1c",
-    "results/trajectories/pick_place_fk.gif": "4fc7505665ef5088db67556647b209936cd2927c8135fd988663d4326bdc6a75",
+    "results/trajectories/pick_place_fk.gif": "62a0c8e97676af68fbce42b7d8fb003b91d41d52381eb05c19bab97881d9e43c",
     "results/mechanical/joint_torque.json": "57a4e6914728597d97f611d896e04b7a47652d3554a1d720341176b82a45ad8a",
     "results/research/experiments.json": "4713ee57cd533a569dfd001d36d3a6cd52b22f3b673a023c3051d39ba6d4208a",
     "results/control/metrics.json": "f404b9ab3f5c8f645c8ba62e8efd07b2169d8e4d143e626eef3d39430fb336f8",
     "docs/electronics_components.md": "4013c4937ad751a026072f841d3369796dbf5791c9c51e1186981eb113049d18",
-    "electronics/exports/joint_interface.pdf": "f165669a69392067bdb86dce8ed404daf678bfcf21a02eeea69bce093fa6923f",
-    "docs/electronics_tour.md": "2fe2468477723311dfd8f9f34ba63d262c5d0abc518279b4b8da58cab3330157",
-    "docs/diagrams/electronics_architecture.png": "d770d5ebe17758d5ed4c9c9759aa281e98d7686a83ca6e09e39ee3a6ee4fbb41",
-    "electronics/exports/joint_interface.svg": "6e7f73ec79a45906fdb3639b5d357b37844a229b70b45ffafeb0e227d05816fc",
-    "electronics/exports/pcb_assembly.svg": "88b53a0e2b369f6b103e2a8a1aa191b023cc30b78141d63052eb3bf56f4a0da2",
-    "electronics/exports/pcb_ground_plane.svg": "1a4cb098a69670a5dbdd796d1e25976fb3e0f86ba20dc53fa299aae5bc7bbf79",
-    "electronics/exports/pcb_power_plane.svg": "74c1a871c6e2733f42409d73120ee3f2dd59c65ff759a2338d98b2692803b0ee",
+    "docs/electronics_tour.md": "177947154757cb759ee58b6ddced9bd7be86d11e73d84b0bf85bd01a76821f7e",
+    "docs/diagrams/electronics_architecture.png": "b9db3d2547729aeb2927f406c29e47b30d8394a78885580181cadad0ea230f43",
+    "electronics/exports/joint_interface.svg": "a991f8bbc9a5410bf99d2bcba2acc3857b612487af66376bcdc9e6a3f382091d",
+    "electronics/exports/pcb_assembly.svg": "f1cb878577919ff146df28ce9abb0087245cc92a38621ae14cf1fe419b7ea40d",
+    "electronics/exports/pcb_ground_plane.svg": "69402a1772fe6a160865972a95d155c0c6754504ed14e78d2ebcc225af79c489",
+    "electronics/exports/pcb_power_plane.svg": "0f08b551b29bd0d4432aa6c8d0b3723bc66eaa28424f957157b1a02a6b9a8b7f",
     "electronics/fabrication/assembly_positions.csv": "4474350f610f47511e688de694c2a746be250cebd0a619ad89e567350b4d344c",
-    "electronics/erc_report.json": "a5c7f5495e67fb2e4ba66980e7783e9cfe30b344ec0c2baced1a74af969249c6",
-    "electronics/pcb_drc_report.json": "ad5683ce8d041c96a3162b22cc37737dd577add83948db2abe096d27c355d4bb",
-    "docs/engineering_report.md": "f6c24829714f7af0075fc890e1814a440be168f0dbc9d2a661ea5a888429d7dc",
-    "results/workspace/workspace_3d.png": "1b155b88dff09cb4d52d1dd50ba6b29ee112a94fdf2f3b7f9cde66c65d579137",
-    "docs/engineering_walkthrough.md": "088ab24b98b69379f66babe7cff92c0f733451d62a9519f81ce8ada86451dd4d",
+    "electronics/erc_report.json": "a7f6c2dd4d7e062b2de1de08a4e61e3d3f1a85033fd3810ea75fb4b6a88b3aac",
+    "electronics/pcb_drc_report.json": "295e527e505e5ccad630e0fcfa63394753e84208e8afa102a1d0dd06c1f3e010",
+    "docs/engineering_report.md": "67bb4d8093887d89173d128ba340bbbd6c2c98dd3ea2189f0586e9f2f4df760d",
+    "results/workspace/workspace_3d.png": "770dea60c37ecbea333c55d3c0d33aa94fdcd0f357696775cdfbacccea1cbdb2",
+    "docs/engineering_walkthrough.md": "d1d7327e46ed820e9bb93c92c5687e65efdd1fbd0db3cee62ef03c2f7d9f3a24",
     "results/trajectories/pick_place_metrics.json": "29a3698a1cca9f906cc8d278413e1709b6b06a742f92801db2825f5058710412",
     "results/research/finger_length.png": "2c44b4ee31a4c06775e958f29d9a259e152d54a648a5245b29b81729bf52e035",
     "results/control/pid_step_response.png": "1be33e2e999286e92b3f6aaf59380216f5bb739159d861e01ef9246f90b8447f",
     "results/research/pid_tuning.png": "e487888a6cdae9547deac4520aa1944b5bf89976fdc49d5b278276b9661fbba7",
     "results/workspace/coordinate_frames.png": "6bf48effab02b10d4bfaed2a2155a68f26870684d3ac9bc1d72284180dc86a4d",
-    "results/workspace/workspace_projections.png": "d51715a2cfb46b5d1e532c755c1db3e3a80de5480d12899d61b517c933768472",
-    "results/trajectories/pick_place_tcp.png": "2debadea953c3bd5d22e1dad06e5f5ffc23724056e969a0057167e97760456d9",
-    "results/trajectories/pick_place_joints.png": "4ba35f8ba743655b27701ad4e7d4cd07be8f32c0e810f7b8f3372bff40283ae0",
+    "results/workspace/workspace_projections.png": "7925ed9c8bbc8002147668d63b59141de689b6ce6477dd46c2e9f74ba671ab5a",
+    "results/trajectories/pick_place_tcp.png": "1669e4dd7a4a15794d918cb5a016856e0b8560f5a8bff46d44484b8bd3c67eb0",
+    "results/trajectories/pick_place_joints.png": "daae60819e82421f198bbd047f8101f776f04124dd191d7da9d58116f148afe6",
     "results/research/payload.png": "c411ef682374aa628c33b6c92da26f8861617bb4d2eb1c548cc68cca190551bc",
     "results/control/pid_tracking.png": "0c839ddf7ebcec58afc3d3b7fc454121c626136fd46f28b598cdfcc12b55a476",
-    "docs/final_review.md": "bd462a694b797cf20038f5f88710b15323c80ed7c6cc2685af948caa3ca71f7b",
+    "docs/final_review.md": "89d24f487eedec43e0614e00f674973857685a4095f841356ee1b570dcdd6d07",
     "results/validation/software_boundary_review.json": "2709ef0e53e70f67b9e5d20ee6f50a7b3048668ad7ff412cc20668b5697570d4",
     "results/mechanical/structural.json": "e154259f6e835f55347676ebec23f77bf524f8b53a704c831320f36e41e6382d",
-    "results/validation/viewer_validation.json": "5e01a46a55dbfd7e5cbca7520e4069470f5154817451fe35ba8093646b514d8c",
+    "results/validation/viewer_validation.json": "49995bb6e4ab488e6d19cc30cc5c5c3f7296675965e642e7fd8ed6a3d6896cdc",
     "docs/kpis.md": "6a68d01823adb9a1bd7388b91e68f7420210a35fbadf91cee2ea0e35367bc0cd",
-    "docs/project_alignment.md": "7d1c6202a293ec4e8ce965e70702102691bce52ddf2fb715013b5fd6f8d4f7f7",
-    "results/validation/validation_report.json": "fd495bc1912b3acf1a600804d91e2678a40bd02d048403e530ae4d0d259f39ca",
-    "docs/project_journal.md": "538be05d9a08b802c33b1f6147953100762bcf2710bdb77e9814e62a3e341045",
-    "docs/release_notes.md": "a8835465a47185dad07fb8e2c16dc1a751e234fec194088b55a080bc870d7ff0",
-    "docs/theory_guide.md": "7bc22f5b4a2b9ea8e006a8749c59f80ef5c1388bb4aa7cecc1bf865d17783c68",
+    "docs/project_alignment.md": "6bff277e4781be2072125f8d799ac6742cc38b7541150cad03c3ee5952ad027b",
+    "results/validation/validation_report.json": "45a2228a42fcecdc712e66acd1afd16c42188586946f683bf2f0dfed062101cb",
+    "docs/project_journal.md": "338d54e7ea5b8cf4078673347e199fc586ef9a96103f3ed221acb8ecd42fab77",
+    "docs/release_notes.md": "43cc887b74327ae9fa94391a26f90e813ae0b7192c60669a1aee74c843430f7f",
+    "docs/theory_guide.md": "c6b5ec397f525c004ac68406205016714d90c092a4f72343c7d0be48f4b87fe0",
     "docs/validation_matrix.md": "ac46e29698d3f58fac03b75d698abb5806ab4323dc1097259417ed4a36b723a8",
-    "README.md": "95f9e35d4c2eaed5d878d4e4b0797459c1b909ab38b681777a604c0deb129301",
-    "cad/README.md": "a68c61ddf43ba13a046ef09218abd7fbd972db82da4046b7768ada56e3089858",
+    "README.md": "82caf310395f88566b46fa4b14270f2d30b02edbc52f2c802e7f4fc208762582",
+    "cad/README.md": "edfa30e26ec83ff8c1bebecb356ebc0a080b1ced44917c39381ce070ed34426b",
     "cad/exports/meshes/assembly_meshes.json": "604539d0a4cb2578d351a1b7de666498aac3018c10c57520082c3ccc9a1e3991",
-    "electronics/README.md": "422c79d842c6ddbfd15d42115886b52d94070182618b6d660e0cde86f9b5e5c2"
+    "electronics/README.md": "fba1ca4c801911c009da0df421dfca9603cb210b4d08f1f591270fc617ebda4a"
   },
   "copied_assets": [
     {
       "file": "assets/electronics/exports/pcb_layers.pdf",
-      "sha256": "593897d9337e9eeb19d9696b5ced25acc7788beb86eb03064e26b03108d75278",
-      "bytes": 116301
+      "sha256": "605b982c84d257225739f7a1ae9679c7c54262e9de9c38b02d66e554c24012e8",
+      "bytes": 116356
     },
     {
       "file": "assets/electronics/exports/pcb_3d.png",
-      "sha256": "d8225f735327a4cbbf6914616b045aa40517f260e8b5552df962b3e0ec9f4983",
-      "bytes": 671866
+      "sha256": "867b52624cb3f8fc48bd46c8d17a8c2a012df8bcce379361e4068f776cbaaa77",
+      "bytes": 671976
     },
     {
       "file": "assets/docs/diagrams/electronics_architecture.svg",
-      "sha256": "fc0a96eff975dd446b8d44b036deb24482ff2c9c3b5a7869bf4ce48d17467632",
-      "bytes": 6536
+      "sha256": "53447de96b0e30403f767e448717c94222cef18a47122ed1c7bd51d24010e608",
+      "bytes": 6534
     },
     {
       "file": "assets/electronics/exports/pcb_top.png",
-      "sha256": "db12db82e1bcf6b89fe313aaf457e78f24a47c41f3d6c3d60c14c1e1b6b7fd9b",
-      "bytes": 108224
+      "sha256": "ed44e2825037beecdcb14281dfcab27a09dc4a617d97919278cd75b916f48ed3",
+      "bytes": 108034
     },
     {
       "file": "assets/docs/diagrams/system_architecture.svg",
-      "sha256": "271a8e4ea4bc367b93c4f33bdcae02976b94debc0f5e940d8a6d1bf4d4907216",
-      "bytes": 2628
+      "sha256": "b568244506514d69a4188bf5d81825317b155203b12a99b7ae03c6ffedf70de9",
+      "bytes": 2627
+    },
+    {
+      "file": "assets/docs/drawings/engineering_interfaces.pdf",
+      "sha256": "b267251142ea5177424bb32a09f4a9ed97a94d794060a93c696b18168ded9973",
+      "bytes": 44854
+    },
+    {
+      "file": "assets/electronics/exports/joint_interface.pdf",
+      "sha256": "448e81bc62c323472fd00cc78493287fcfbb91428a08f8bed1256c97cc0b3458",
+      "bytes": 127152
     },
     {
       "file": "assets/cad/renders/hero.png",
@@ -409,103 +426,93 @@
     },
     {
       "file": "assets/cad/renders/poses.png",
-      "sha256": "7deec980dca23fe4a30aca844b4fe2a8c0d60417ad3eb7a92ed8264f62903ceb",
-      "bytes": 2017532
+      "sha256": "bc5a4908cdc7e34467c0ef228d90c200089ae6251ac6b9eafb258815090c9749",
+      "bytes": 2017235
     },
     {
       "file": "assets/cad/renders/gripper.png",
-      "sha256": "42ed92a3665e71f529071b860d1377d6955efbb3390fe9ca8d1db1b4a1be88b3",
+      "sha256": "7659a348bd3e8141904bdc350d8a66a5a99630d0e4e5ccd660eb8763d4aed90e",
       "bytes": 1026461
     },
     {
       "file": "assets/docs/drawings/03_gripper_layout.svg",
-      "sha256": "132b9ffaa1fbb665768e4e8d38626987db8e327bf92712a9e954d3674c3398db",
-      "bytes": 85906
+      "sha256": "8011791d92ae4230d597d0d704ef3f79f1adac0582724732370125301cfd40de",
+      "bytes": 86307
     },
     {
       "file": "assets/docs/drawings/01_base_tool_interfaces.svg",
-      "sha256": "d34f0cd0850c609bd8e6b2d6fbf3a46b4e84088cc01664f579acf55ed4d33089",
-      "bytes": 95239
+      "sha256": "b1f406197707b3315b2d9e282b20229c364f93a6002e340e7af89e7f95c77c06",
+      "bytes": 94781
     },
     {
       "file": "assets/docs/drawings/02_link_sections.svg",
-      "sha256": "66f62bdbf1dbab38c0f7179b5149f674c36b9af21c481232d6f676f58c9bc375",
-      "bytes": 84432
-    },
-    {
-      "file": "assets/docs/drawings/engineering_interfaces.pdf",
-      "sha256": "1eb6ebe41d21a271f5bb80b3a778834f021a0398218987daf2ba033b78e9e09d",
-      "bytes": 45165
+      "sha256": "b96a38e27061fa0afebb8182b77d93b0472ddbb74796d6b0ce82c688ea19a367",
+      "bytes": 84341
     },
     {
       "file": "assets/cad/renders/pose_home.png",
-      "sha256": "ee396bf8063eff63fa5564daf944e3ec82bab3b377714866f92f81661e45f902",
+      "sha256": "3cebb3932545392905c999cf91e0c36a529b4f8ce86413c1a66c93faed717963",
       "bytes": 527130
     },
     {
       "file": "assets/cad/renders/pose_extended.png",
-      "sha256": "739f1e72050a1806f6219bd3736a38ab9a2eef7036cce60568c32efd57657686",
+      "sha256": "3aac5d12bc85c1e172494fad1ff16c713cef8ccc93e1eb0452f600a67e46aa2d",
       "bytes": 491551
     },
     {
       "file": "assets/cad/renders/pose_folded.png",
-      "sha256": "805bcc6ac5726ef6004abb93e85167c3bddc54dfcd1ed96fcc7ebaaf896e8843",
+      "sha256": "cb5a7b7e265e4a8802a2cf1668ebd6c3d9b9e878e44bfcb458452675e426e836",
       "bytes": 532976
     },
     {
       "file": "assets/cad/renders/pose_vertical.png",
-      "sha256": "cca7f380fae3d14881d1f73291d23eaed303597a154954d914b1c6a9f8e9493e",
+      "sha256": "009b464bbe7f6fac979f1ce4cb020c1ccc21ae105cf605a750b48e6c8f46f762",
       "bytes": 476168
     },
     {
       "file": "assets/cad/renders/pose_pick.png",
-      "sha256": "ede709bd6489fb94c280fb344ba3536dbe470b973f97df1e9b4c102badc97181",
+      "sha256": "92ad1aeb8e8541eea10de406b4a12799f60561a76062f66a69d80d5a30cab060",
       "bytes": 528833
     },
     {
       "file": "assets/cad/renders/pose_place.png",
-      "sha256": "71f30c24dde8d80aa48889a06246770b67bcae74cc89b999c122317b0b2ccf0a",
+      "sha256": "146bcc3dbb4f304876d7e70a1f239051033572ede45c05ad549f7a2f0ea6b340",
       "bytes": 530834
     },
     {
       "file": "assets/results/trajectories/pick_place_fk.gif",
-      "sha256": "4fc7505665ef5088db67556647b209936cd2927c8135fd988663d4326bdc6a75",
-      "bytes": 1488646
-    },
-    {
-      "file": "assets/electronics/exports/joint_interface.pdf",
-      "sha256": "f165669a69392067bdb86dce8ed404daf678bfcf21a02eeea69bce093fa6923f",
-      "bytes": 127153
+      "sha256": "62a0c8e97676af68fbce42b7d8fb003b91d41d52381eb05c19bab97881d9e43c",
+      "bytes": 1235489
     },
     {
       "file": "assets/docs/diagrams/electronics_architecture.png",
-      "sha256": "d770d5ebe17758d5ed4c9c9759aa281e98d7686a83ca6e09e39ee3a6ee4fbb41",
-      "bytes": 203452
+      "sha256": "b9db3d2547729aeb2927f406c29e47b30d8394a78885580181cadad0ea230f43",
+      "bytes": 152071
     },
     {
       "file": "assets/electronics/exports/joint_interface.svg",
-      "sha256": "6e7f73ec79a45906fdb3639b5d357b37844a229b70b45ffafeb0e227d05816fc",
+      "sha256": "a991f8bbc9a5410bf99d2bcba2acc3857b612487af66376bcdc9e6a3f382091d",
       "bytes": 1283269
     },
     {
       "file": "assets/electronics/exports/pcb_assembly.svg",
-      "sha256": "88b53a0e2b369f6b103e2a8a1aa191b023cc30b78141d63052eb3bf56f4a0da2",
-      "bytes": 221701
+      "sha256": "f1cb878577919ff146df28ce9abb0087245cc92a38621ae14cf1fe419b7ea40d",
+      "bytes": 221013
     },
     {
       "file": "assets/electronics/exports/pcb_ground_plane.svg",
-      "sha256": "1a4cb098a69670a5dbdd796d1e25976fb3e0f86ba20dc53fa299aae5bc7bbf79",
+      "sha256": "69402a1772fe6a160865972a95d155c0c6754504ed14e78d2ebcc225af79c489",
       "bytes": 55478
     },
     {
       "file": "assets/electronics/exports/pcb_power_plane.svg",
-      "sha256": "74c1a871c6e2733f42409d73120ee3f2dd59c65ff759a2338d98b2692803b0ee",
+      "sha256": "0f08b551b29bd0d4432aa6c8d0b3723bc66eaa28424f957157b1a02a6b9a8b7f",
       "bytes": 55610
     },
     {
       "file": "assets/results/workspace/workspace_3d.png",
-      "sha256": "1b155b88dff09cb4d52d1dd50ba6b29ee112a94fdf2f3b7f9cde66c65d579137",
-      "bytes": 716907
+      "sha256": "770dea60c37ecbea333c55d3c0d33aa94fdcd0f357696775cdfbacccea1cbdb2",
+      "bytes": 716324
     },
     {
       "file": "assets/results/research/finger_length.png",
@@ -529,18 +536,18 @@
     },
     {
       "file": "assets/results/workspace/workspace_projections.png",
-      "sha256": "d51715a2cfb46b5d1e532c755c1db3e3a80de5480d12899d61b517c933768472",
-      "bytes": 1343384
+      "sha256": "7925ed9c8bbc8002147668d63b59141de689b6ce6477dd46c2e9f74ba671ab5a",
+      "bytes": 1343232
     },
     {
       "file": "assets/results/trajectories/pick_place_tcp.png",
-      "sha256": "2debadea953c3bd5d22e1dad06e5f5ffc23724056e969a0057167e97760456d9",
-      "bytes": 241070
+      "sha256": "1669e4dd7a4a15794d918cb5a016856e0b8560f5a8bff46d44484b8bd3c67eb0",
+      "bytes": 240563
     },
     {
       "file": "assets/results/trajectories/pick_place_joints.png",
-      "sha256": "4ba35f8ba743655b27701ad4e7d4cd07be8f32c0e810f7b8f3372bff40283ae0",
-      "bytes": 235918
+      "sha256": "daae60819e82421f198bbd047f8101f776f04124dd191d7da9d58116f148afe6",
+      "bytes": 235349
     },
     {
       "file": "assets/results/research/payload.png",
@@ -555,6 +562,7 @@
   ],
   "optional_private_source_targets": [
     "01_CAD_Models",
+    "01_CAD_Models/STEP/Individual_Parts",
     "06_Complete_Project_Source/analysis/joint_torque_analysis.py",
     "06_Complete_Project_Source/analysis/structural_analysis.py",
     "06_Complete_Project_Source/cad/build123d/assembly.py",
@@ -683,13 +691,14 @@
     "06_Complete_Project_Source/cad/exports/STL/wrist_roll_cover.stl",
     "06_Complete_Project_Source/cad/exports/STL/wrist_roll_rotor.stl",
     "06_Complete_Project_Source/cad/exports/STL/wrist_roll_stator.stl",
-    "06_Complete_Project_Source/cad/freecad/aster6_home.FCStd",
+    "06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd",
     "06_Complete_Project_Source/cad/freecad/inspect_step.py",
-    "06_Complete_Project_Source/cad/renders/aster6_home.blend",
-    "06_Complete_Project_Source/electronics/ASTER_Interface.pretty",
-    "06_Complete_Project_Source/electronics/ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
+    "06_Complete_Project_Source/cad/renders/indrbt_home.blend",
+    "06_Complete_Project_Source/electronics/INDRBT_Interface.pretty",
+    "06_Complete_Project_Source/electronics/INDRBT_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
     "06_Complete_Project_Source/electronics/fabrication/joint_interface_fabrication.zip",
     "06_Complete_Project_Source/electronics/fp-lib-table",
+    "06_Complete_Project_Source/electronics/joint_interface.kicad_dru",
     "06_Complete_Project_Source/electronics/joint_interface.kicad_pcb",
     "06_Complete_Project_Source/electronics/joint_interface.kicad_pro",
     "06_Complete_Project_Source/electronics/joint_interface.kicad_sch",

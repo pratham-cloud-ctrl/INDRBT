@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ASTER-6 · Engineering explorer</title>
-<meta name="description" content="Explore the original ASTER-6 robot, its circuit board, schematics and engineering explanations directly in your browser.">
-<link rel="stylesheet" href="explorer.css?v=20261021-3"><script src="explorer.js?v=20261021-3" defer></script>
+<title>INDRBT · Engineering explorer</title>
+<meta name="description" content="Explore the original INDRBT robot, its circuit board, schematics and engineering explanations directly in your browser.">
+<link rel="stylesheet" href="explorer.css?v=20261028-1"><script src="explorer.js?v=20261028-1" defer></script>
 </head>
 <body>
 <a class="skip" href="#inspection">Skip to inspection</a>
 <header class="masthead">
- <a class="brand" href="#robot" aria-label="ASTER-6 explorer home"><span class="mark" aria-hidden="true">A<span>6</span></span><span>ASTER-6<small>ENGINEERING EXPLORER</small></span></a>
+ <a class="brand" href="#robot" aria-label="INDRBT explorer home"><span class="mark" aria-hidden="true">INDRBT</span><span>INDRBT<small>ENGINEERING EXPLORER</small></span></a>
  <div class="mast-actions"><span class="browser-note"><i></i> Explore in your browser</span><button class="quiet" id="about-button" aria-haspopup="dialog">About this build <span aria-hidden="true">↗</span></button></div>
 </header>
 <div class="workspace">
@@ -24,7 +24,7 @@
    <a class="nav-item" href="#downloads" data-view="downloads"><span class="nav-icon" aria-hidden="true">↓</span><span>Download files<small>Open the design in your CAD app.</small></span></a>
   </nav>
   <div class="project-facts"><span class="nav-label">THE DIGITAL MODEL</span><dl><div><dt>Revolute joints</dt><dd>6</dd></div><div><dt>CAD components</dt><dd>54</dd></div><div><dt>Nominal reach</dt><dd>790 <small>mm</small></dd></div><div><dt>Jaw opening</dt><dd>90 <small>mm</small></dd></div></dl><p>Original design. Actual project geometry and saved circuit data.</p></div>
-  <a class="source-link" href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin" target="_blank" rel="noopener">Engineering source <span>GitHub · public repository ↗</span></a>
+  <a class="source-link" href="https://github.com/pratham-cloud-ctrl/INDRBT" target="_blank" rel="noopener">Engineering source <span>GitHub · public repository ↗</span></a>
  </aside>
  <main id="inspection" tabindex="-1">
   <div class="view-heading"><div><span class="eyebrow" id="view-kind">MECHANICAL DESIGN</span><h1 id="view-title">Inspect the robot</h1><p id="view-help">Orbit the actual CAD, move the joints, or select a single component.</p></div><div class="view-tools"><a class="open-view download-view" id="download-view" href="downloads/index.html" target="_blank" rel="noopener">Download CAD <span aria-hidden="true">↓</span></a><div id="pcb-modes" class="pcb-modes" role="group" aria-label="PCB inspection modes" hidden><a href="#pcb" data-pcb-mode="pcb">Layout & parts</a><a href="#pcb3d" data-pcb-mode="pcb3d">3D board</a></div><a class="open-view" id="open-view" href="robot/index.html" target="_blank" rel="noopener">Open full screen <span aria-hidden="true">↗</span></a></div></div>
@@ -32,6 +32,6 @@
   <footer class="view-footer"><span><i></i> No CAD application required</span><button class="text-button" id="scope-button">Model assumptions & scope</button></footer>
  </main>
 </div>
-<dialog id="about"><div class="dialog-heading"><span class="eyebrow">ASTER-6 / ORIGINAL DIGITAL PROJECT</span><button class="close" id="close-about" aria-label="Close project details">×</button></div><h2>Inspect the engineering,<br>not just a picture.</h2><p>ASTER-6 connects an original six-axis arm and parallel-jaw gripper to its mathematics, motion studies, analytical load model and a concrete low-voltage interface board.</p><div class="scope-notes"><p><b>What you can inspect.</b> All 54 modeled parts, six poses, joint and gripper motion; actual saved PCB components, copper and connections; native schematic drawings; and illustrated explanations of the equations and results.</p><p><b>What the evidence means.</b> This is an entirely digital student engineering project. Payload of 4 kg and repeatability of ±0.1 mm are design targets. Motion, control and mechanical calculations use the stated models; physical performance and manufacturing qualification are unverified.</p><p><b>Viewer limits.</b> The gripped object is ideally attached. Manual robot poses may collide. The interface PCB relies on an external controller and motor drive; its E-stop input monitors an auxiliary contact.</p></div><div class="dialog-links"><a href="docs/index.html" target="_blank" rel="noopener">Read the design library ↗</a><a href="credits.html">Source & viewer credits</a></div></dialog>
+<dialog id="about"><div class="dialog-heading"><span class="eyebrow">INDRBT / ORIGINAL DIGITAL PROJECT</span><button class="close" id="close-about" aria-label="Close project details">×</button></div><h2>Inspect the engineering,<br>not just a picture.</h2><p>INDRBT connects an original six-axis arm and parallel-jaw gripper to its mathematics, motion studies, analytical load model and a concrete low-voltage interface board.</p><div class="scope-notes"><p><b>What you can inspect.</b> All 54 modeled parts, six poses, joint and gripper motion; actual saved PCB components, copper and connections; native schematic drawings; and illustrated explanations of the equations and results.</p><p><b>What the evidence means.</b> This is an entirely digital student engineering project. Payload of 4 kg and repeatability of ±0.1 mm are design targets. Motion, control and mechanical calculations use the stated models; physical performance and manufacturing qualification are unverified.</p><p><b>Viewer limits.</b> The gripped object is ideally attached. Manual robot poses may collide. The interface PCB relies on an external controller and motor drive; its E-stop input monitors an auxiliary contact.</p></div><div class="dialog-links"><a href="docs/index.html" target="_blank" rel="noopener">Read the design library ↗</a><a href="credits.html">Source & viewer credits</a></div></dialog>
 <noscript><p class="noscript">Enable JavaScript for the explorer controls, or open the <a href="docs/index.html">illustrated design library</a> directly.</p></noscript>
 </body></html>

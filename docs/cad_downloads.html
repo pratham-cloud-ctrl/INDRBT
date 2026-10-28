@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="INDRBT robot engineering: geometry, motion, mechanics, control and conceptual electronics."><meta name="robots" content="noindex,nofollow"><title>Open the engineering files · INDRBT</title><link rel="stylesheet" href="docs.css"></head><body><header class="top"><a class="brand" href="../index.html" target="_top">INDRBT / ENGINEERING</a><nav aria-label="Project navigation"><a href="../robot/index.html" target="_top">3D robot</a><a href="../pcb/index.html" target="_top">Electronics</a><a href="index.html">Guides</a><a href="engineering_walkthrough.html">Walkthrough</a><a href="evidence.html">Evidence</a><a href="../downloads/index.html" target="_top">Download files</a></nav></header><div class="shell"><aside class="rail" aria-label="On this page"><b>On this page</b><div class="toc">
+<ul>
+<li><a href="#open-the-engineering-files">Open the engineering files</a><ul>
+<li><a href="#choose-a-model-format">Choose a model format</a><ul>
+<li><a href="#open-or-import-safely">Open or import safely</a></li>
+</ul>
+</li>
+<li><a href="#open-the-kicad-project">Open the KiCad project</a></li>
+<li><a href="#public-inspection-download-release">Public inspection download release</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</aside><article><p class="eyebrow">INDRBT / Reading room</p><h1 id="open-the-engineering-files">Open the engineering files</h1><div class="notice"><strong>Digital engineering model.</strong> Payload and repeatability are design targets. All ordinary guide reading, figures and PDFs work here. Links marked <span class="badge">Source file</span> lead to the public engineering repository.<p>Adapted for browser reading from the project’s illustrated documentation. Numeric results and engineering scope are unchanged. Reproduction notes are optional; the robot and board viewers run from the navigation above.</p></div><details class="mobile-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#open-the-engineering-files">Open the engineering files</a><ul>
+<li><a href="#choose-a-model-format">Choose a model format</a><ul>
+<li><a href="#open-or-import-safely">Open or import safely</a></li>
+</ul>
+</li>
+<li><a href="#open-the-kicad-project">Open the KiCad project</a></li>
+<li><a href="#public-inspection-download-release">Public inspection download release</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details>
+<p><a href="https://pratham-cloud-ctrl.github.io/INDRBT/#robot" target="_blank" rel="noopener noreferrer">Inspect the robot online</a> · <a href="https://pratham-cloud-ctrl.github.io/INDRBT/#pcb" target="_blank" rel="noopener noreferrer">Inspect the PCB online</a> · <a href="index.html">Documentation index</a></p>
+<p>The <a href="https://pratham-cloud-ctrl.github.io/INDRBT/#robot" target="_blank" rel="noopener noreferrer">public browser showcase</a> is the quickest viewing route. For optional CAD/electronics application inspection or offline browsing, use the <a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28" target="_blank" rel="noopener noreferrer" class="private-link">public GitHub inspection release<span class="badge">Source file</span></a> and the actual engineering files below. The repository and its release assets are public; no private repository access is needed.</p>
+<p><strong>Hosting status — 28 October 2026:</strong> the browser showcase and its download controls are published through GitHub Pages at the address above. Public downloads are also distributed through the GitHub inspection release below. The original Sites management record remains inaccessible; publication on GitHub Pages does not claim to repair that server record.</p>
+<h2 id="choose-a-model-format">Choose a model format</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>What you want</th>
+<th>Actual file or folder</th>
+<th>Open it with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete solid assembly</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/exports/STEP/assembly_home.step" target="_blank" rel="noopener noreferrer" class="private-link">Home STEP<span class="badge">Source file</span></a></td>
+<td>FreeCAD or another CAD application supporting STEP</td>
+</tr>
+<tr>
+<td>Another complete configuration</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/tree/main/06_Complete_Project_Source/cad/exports/STEP" target="_blank" rel="noopener noreferrer" class="private-link">Six STEP assemblies<span class="badge">Source file</span></a> — files named <code>assembly_home</code>, <code>assembly_extended</code>, <code>assembly_folded</code>, <code>assembly_vertical</code>, <code>assembly_pick</code> and <code>assembly_place</code></td>
+<td>CAD application, <strong>File → Open</strong> or <strong>File → Import</strong></td>
+</tr>
+<tr>
+<td>One component</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/tree/main/01_CAD_Models/STEP/Individual_Parts" target="_blank" rel="noopener noreferrer" class="private-link">Individual STEP files<span class="badge">Source file</span></a></td>
+<td>CAD application, <strong>File → Open</strong> or <strong>File → Import</strong></td>
+</tr>
+<tr>
+<td>Native FreeCAD inspection assembly</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd" target="_blank" rel="noopener noreferrer" class="private-link">indrbt_home.FCStd<span class="badge">Source file</span></a></td>
+<td>FreeCAD, <strong>File → Open</strong></td>
+</tr>
+<tr>
+<td>Triangle meshes</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/tree/main/06_Complete_Project_Source/cad/exports/STL" target="_blank" rel="noopener noreferrer" class="private-link">STL exports<span class="badge">Source file</span></a></td>
+<td>Mesh viewer or a CAD application supporting STL</td>
+</tr>
+<tr>
+<td>Dimensioned interfaces</td>
+<td><a href="assets/docs/drawings/engineering_interfaces.pdf">Engineering drawings PDF</a></td>
+<td>Any PDF viewer</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>STEP is standard solid-geometry exchange without construction history.</strong> Its geometry can be inspected or modified using the receiving application's tools; it does not include the original parametric feature sequence. The native FreeCAD file contains 54 named, saved solids and inspection metadata, rather than a sketch-based construction tree.</p>
+<p>The reproducible parametric design lives in <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/build123d/geometry.py" target="_blank" rel="noopener noreferrer" class="private-link">Build123d geometry<span class="badge">Source file</span></a>, <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/cad/build123d/assembly.py" target="_blank" rel="noopener noreferrer" class="private-link">assembly transforms<span class="badge">Source file</span></a> and the <a href="data/config--robot.html">shared SI configuration</a>. Read <a href="04_cad.html#refresh-native-cad-evidence">CAD reproduction</a> before changing the design or regenerating its exports.</p>
+<h3 id="open-or-import-safely">Open or import safely</h3>
+<ol>
+<li>Save or extract the chosen file to a normal folder. On GitHub, use the file page's <strong>Download raw file</strong> control when available; do not copy its displayed text into another application.</li>
+<li>Start FreeCAD or your CAD application, then choose <strong>File → Open</strong> for a new document, or <strong>File → Import</strong> when deliberately adding geometry to an existing document. Select the <code>.step</code> or <code>.FCStd</code> file using the file-type filter.</li>
+<li>Use <strong>Fit all</strong> if the model is outside the current view. Open an <code>assembly_*.step</code> file to see positioned parts together.</li>
+<li>Save intentional edits as a <strong>new filename</strong>. Generated files are refreshed by the project scripts; an older open document should not overwrite a newer generated file.</li>
+</ol>
+<p>CAD exports use <strong>millimetres</strong>; numerical calculations use <strong>metres</strong>. Individual parts retain local group frames, so opening all part files at a common origin does not assemble the robot. Use a complete assembly or the native FreeCAD home model for that purpose.</p>
+<h2 id="open-the-kicad-project">Open the KiCad project</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Native item</th>
+<th>Actual file or folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project entry point</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_pro" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_pro<span class="badge">Source file</span></a></td>
+</tr>
+<tr>
+<td>Schematic</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_sch" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_sch<span class="badge">Source file</span></a></td>
+</tr>
+<tr>
+<td>Routed PCB</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_pcb" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_pcb<span class="badge">Source file</span></a></td>
+</tr>
+<tr>
+<td>Project-local footprint resolution</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/electronics/fp-lib-table" target="_blank" rel="noopener noreferrer" class="private-link">fp-lib-table<span class="badge">Source file</span></a> and <a href="https://github.com/pratham-cloud-ctrl/INDRBT/tree/main/06_Complete_Project_Source/electronics/INDRBT_Interface.pretty" target="_blank" rel="noopener noreferrer" class="private-link">INDRBT_Interface.pretty<span class="badge">Source file</span></a></td>
+</tr>
+<tr>
+<td>Symbol resolution and rules</td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/electronics/sym-lib-table" target="_blank" rel="noopener noreferrer" class="private-link">sym-lib-table<span class="badge">Source file</span></a> and <a href="https://github.com/pratham-cloud-ctrl/INDRBT/blob/main/06_Complete_Project_Source/electronics/joint_interface.kicad_dru" target="_blank" rel="noopener noreferrer" class="private-link">joint_interface.kicad_dru<span class="badge">Source file</span></a></td>
+</tr>
+<tr>
+<td>Readable circuit and layers</td>
+<td><a href="assets/electronics/exports/joint_interface.pdf">Schematic PDF</a> and <a href="assets/electronics/exports/pcb_layers.pdf">PCB layer PDF</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>With <strong>KiCad 10</strong> and its standard libraries installed, keep the project, schematic, PCB, rule files, library tables and local footprint folder together. Open the <code>.kicad_pro</code> file in KiCad, then open the schematic or PCB editor. Open the <code>.kicad_sch</code> or <code>.kicad_pcb</code> directly only when their surrounding project context is retained. The custom F1 footprint resolves through <code>${KIPRJMOD}</code>; downloading the board alone omits that editable library context.</p>
+<p>For component roles, supply assumptions and verification scope, read the <a href="electronics_tour.html">circuit tour</a>, <a href="electronics_components.html">component guide</a> and <a href="05_electronics.html">electronics chapter</a>. Native files and rule checks remain digital design evidence, without physical qualification.</p>
+<h2 id="public-inspection-download-release">Public inspection download release</h2>
+<p><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28" target="_blank" rel="noopener noreferrer" class="private-link">Open the inspection release<span class="badge">Source file</span></a> for the four focused format packs and the combined offline pack. These are GitHub <strong>release assets</strong>; they do not need to be stored in the repository file tree. Local copies are also retained in <code>07_Releases</code>.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Public release asset</th>
+<th>Intended use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_STEP_STL_CAD.zip" target="_blank" rel="noopener noreferrer" class="private-link">INDRBT_STEP_STL_CAD.zip<span class="badge">Source file</span></a></td>
+<td>Extract the exchange solids/meshes, then open a complete STEP assembly; STEP has no construction history</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_FreeCAD_Model.zip" target="_blank" rel="noopener noreferrer" class="private-link">INDRBT_FreeCAD_Model.zip<span class="badge">Source file</span></a></td>
+<td>Extract and open the native saved-solid FreeCAD inspection model</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_KiCad_Project.zip" target="_blank" rel="noopener noreferrer" class="private-link">INDRBT_KiCad_Project.zip<span class="badge">Source file</span></a></td>
+<td>Extract the project with its local library context, then open the <code>.kicad_pro</code> file</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_PCB_STEP.zip" target="_blank" rel="noopener noreferrer" class="private-link">INDRBT_PCB_STEP.zip<span class="badge">Source file</span></a></td>
+<td>Import the native board STEP into mechanical CAD; 100 × 100 × 11.54 mm, with fitted component and copper geometry</td>
+</tr>
+<tr>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_Inspection_With_CAD.zip" target="_blank" rel="noopener noreferrer" class="private-link">INDRBT_Inspection_With_CAD.zip<span class="badge">Source file</span></a></td>
+<td>Extract the browser viewers with the selected CAD and KiCad downloads for combined offline inspection</td>
+</tr>
+</tbody>
+</table></div>
+<p>The earlier <code>INDRBT_Browser_Inspection.zip</code> remains a local historical pack in <code>07_Releases</code>; the public combined pack is the current offline download. The engineering v1.2.0 release is preserved separately from this inspection distribution.</p>
+<p>Downloading or opening these files is optional. The online viewers remain the immediate inspection route, and the <a href="reproduction.html">source project guide</a> covers local reproduction.</p><footer class="doc-footer"><a href="index.html">Guide index</a><a href="digital_scope_audit.html">Scope and limitations</a><a href="evidence.html">Evidence index</a><p>INDRBT · Original digital engineering project · No physical construction or hardware qualification.</p></footer></article></div><dialog id="image-view" class="image-view" aria-label="Enlarged engineering figure"><button class="close-lightbox" aria-label="Close enlarged figure">×</button><img alt=""><p></p></dialog><script src="docs.js" defer></script></body></html>
