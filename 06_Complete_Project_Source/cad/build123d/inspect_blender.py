@@ -20,7 +20,7 @@ def digest(path):
 def main():
     mesh_path = ROOT / "cad/exports/meshes/assembly_meshes.json"
     data = json.loads(mesh_path.read_text())
-    native = ROOT / "cad/renders/aster6_home.blend"
+    native = ROOT / "cad/renders/indrbt_home.blend"
     bpy.ops.wm.open_mainfile(filepath=str(native))
     errors = []
     rows = []

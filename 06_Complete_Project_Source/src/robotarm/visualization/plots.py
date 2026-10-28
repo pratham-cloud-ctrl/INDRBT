@@ -94,7 +94,7 @@ def representative_poses(robot: RobotArm, path: Path) -> None:
             title=name.title(),
         )
         axis.set_box_aspect((1, 1, 0.8))
-    figure.suptitle("ASTER-6 | representative poses from the actual FK chain", weight="bold")
+    figure.suptitle("INDRBT | representative poses from the actual FK chain", weight="bold")
     save(figure, path)
 
 
@@ -149,7 +149,7 @@ def animate_fk(
     axis.set_box_aspect((1, 1, 1))
     axis.view_init(elev=23, azim=-55)
     axis.set_title(
-        "ASTER-6 | FK-driven pick-and-place\nProxy geometry · ideal kinematic playback",
+        "INDRBT | FK-driven pick-and-place\nProxy geometry · ideal kinematic playback",
         weight="bold",
     )
     all_xyz = np.array([robot.fk(q)[:3, 3] for q in trajectory.q])

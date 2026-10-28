@@ -1,14 +1,14 @@
 # CAD component catalog
 
-ASTER-6 has 54 original modeled components and six complete pose assemblies. This catalog connects each part to its assembly role, assumed material, individual models and saved FreeCAD object. All CAD lengths are in millimetres.
+INDRBT has 54 original modeled components and six complete pose assemblies. This catalog connects each part to its assembly role, assumed material, individual models and saved FreeCAD object. All CAD lengths are in millimetres.
 
 ## Open the robot
 
 | What you want | Open this | How to use it |
 |---|---|---|
-| Move the assembled robot | [Interactive 3D viewer](../simulations/aster6_twin.html) | Download the repository and open the HTML in a browser; use the pose selector, joint controls, gripper slider and play button. GitHub displays HTML source. |
-| Inspect the solid home assembly | [FreeCAD native assembly](../cad/freecad/aster6_home.FCStd) | Open with FreeCAD. Its 54 saved solid objects are cross-referenced below. |
-| Inspect the rendering scene | [Blender native scene](../cad/renders/aster6_home.blend) | Open with Blender. Robot object names match the component filenames. |
+| Move the assembled robot | [Interactive 3D viewer](../simulations/indrbt_twin.html) | Download the repository and open the HTML in a browser; use the pose selector, joint controls, gripper slider and play button. GitHub displays HTML source. |
+| Inspect the solid home assembly | [FreeCAD native assembly](../cad/freecad/indrbt_home.FCStd) | Open with FreeCAD. Its 54 saved solid objects are cross-referenced below. |
+| Inspect the rendering scene | [Blender native scene](../cad/renders/indrbt_home.blend) | Open with Blender. Robot object names match the component filenames. |
 | See the mechanism quickly | [Home render](../cad/renders/hero.png), [gripper close-up](../cad/renders/gripper.png), [six-pose sheet](../cad/renders/poses.png) | Ordinary image previews. |
 | Read interface dimensions | [Three-page drawing PDF](drawings/engineering_interfaces.pdf) | Concept dimensions for the base/flange, link sections and gripper. |
 | Change the design parameters | [SI configuration](../config/robot.yaml), [parametric geometry source](../cad/build123d/geometry.py), [CAD methodology](04_cad.md) | Regenerate from the Python source after changing parameters. The saved FreeCAD assembly contains solid geometry; the Python source defines the parametric construction. |

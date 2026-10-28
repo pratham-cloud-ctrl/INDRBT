@@ -784,7 +784,7 @@
   "authority": "Native KiCad DRC and schematic parity, not this generation manifest",
   "footprint_refresh": {
     "reference": "F1",
-    "footprint": "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206",
+    "footprint": "INDRBT_Interface:PTC_Bourns_MF-NSMF025X_1206",
     "method": "Native pcbnew replacement preserving placement, schematic UUID and existing tracks; connectivity requires a fresh native DRC"
   }
 }

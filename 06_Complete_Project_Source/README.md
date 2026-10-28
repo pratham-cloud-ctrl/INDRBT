@@ -1,8 +1,8 @@
-# ASTER-6 · Industrial robot arm digital twin
+# INDRBT · Industrial robot arm digital twin
 
 An original six-axis robot with parametric CAD, numerical kinematics and a reproducible pick-and-place simulation.
 
-![ASTER-6 actual CAD assembly](cad/renders/hero.png)
+![INDRBT actual CAD assembly](cad/renders/hero.png)
 
 **Digital only · v1.2.0 · DIGITAL SCOPE COMPLETE**
 
@@ -14,15 +14,11 @@ Designed for robotics education and portfolio review. Every result is generated 
 
 For a visual introduction, start with these guides. This source README contains the installation, reproduction commands and detailed evidence map.
 
-**[Download the public inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL CAD, the native FreeCAD model, the KiCad project, PCB STEP and a combined offline pack. No private repository access is needed. The [native-file guide](docs/cad_downloads.md) explains which format to choose and how to open it.
-
 ## See it move
 
 Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
 
-Open **[the public interactive CAD twin](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot)** to orbit, change all six joints, adjust the gripper, select poses and play the recorded task directly in your browser. No download or CAD application is needed.
-
-For optional offline use, download the project and open [the local viewer](simulations/aster6_twin.html) in a browser. The single HTML file needs no server or internet; GitHub displays its source rather than executing it.
+Open **[the offline interactive CAD twin](simulations/indrbt_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
 
 The **CAD component** selector isolates and frames any of the 54 actual parts. Use the [component catalog](docs/component_catalog.md) to match part names, native objects, materials and STEP/STL files. The [theory guide](docs/theory_guide.md) connects the model equations to evidence, and the [electronics component guide](docs/electronics_components.md) explains references, selections and BOM population.
 
@@ -112,7 +108,7 @@ This is a geometric digital twin with simplified educational control. Repeatabil
 ## Best portfolio material
 
 1. [Hero CAD render](cad/renders/hero.png) — original overall mechanical design.
-2. [Interactive CAD twin](simulations/aster6_twin.html) — model-driven motion and joint controls.
+2. [Interactive CAD twin](simulations/indrbt_twin.html) — model-driven motion and joint controls.
 3. [Gripper render](cad/renders/gripper.png) — guides, jaws and interchangeable tool interface.
 4. [Engineering interface drawings](docs/drawings/engineering_interfaces.pdf) — meaningful dimensions.
 5. [Coordinate frames](results/workspace/coordinate_frames.png) — explain the mathematics.

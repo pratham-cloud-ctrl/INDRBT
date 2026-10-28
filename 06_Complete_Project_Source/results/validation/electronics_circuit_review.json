@@ -1,8 +1,8 @@
 {
-  "scope": "17 October read-only native MCP inspection of the exact saved ASTER-6 joint-interface source; no KiCad editor/IPC listener was running. Native reports operate on saved files and do not prove physical performance.",
-  "source_revision": "9feee7ce62f2ca74bd6c4bc27d77c9de391e7020",
-  "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
-  "schematic_sha256": "89f2da5155c7418e96643ebfc18065f5430821dd25bbb663aa5c4ad0fc4f15f6",
+  "scope": "28 October 2026 native MCP inspection of the exact saved INDRBT joint-interface source, plus native KiCad CLI ERC/DRC/parity/export execution. No editor/IPC session was running; unsaved editor changes are excluded.",
+  "source_revision": "INDRBT branded working tree; exact saved native source SHA-256 bindings below",
+  "board_sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba",
+  "schematic_sha256": "17d7f75f067bb735ad2a5a8c1007acfb8115b868c983112e39b75b617fe1129e",
   "power_audit_dispositions": [
     {
       "finding": "No >=10 uF bulk on +3V3",
@@ -53,5 +53,83 @@
     "footprint_pad_contracts": 48,
     "embedded_symbol_pin_contracts": 14,
     "mismatches": 0
+  },
+  "status": "PASS",
+  "checked_at_utc": "2026-10-28T13:08:20.966267+00:00",
+  "native_application_version": "10.0.6",
+  "source_evidence": {
+    "board_state": "saved_file",
+    "gui_running": false,
+    "excludes_unsaved_editor_state": true
+  },
+  "native_findings": {
+    "mcp_erc_errors": 0,
+    "mcp_erc_warnings": 0,
+    "native_cli_erc_findings": 0,
+    "native_cli_drc_findings": 0,
+    "native_cli_unconnected": 0,
+    "native_cli_schematic_parity": 0
+  },
+  "mcp_tools_used": [
+    "check_kicad_ui",
+    "get_board_info",
+    "get_component_pads",
+    "run_erc",
+    "get_schematic_component",
+    "get_component_nets",
+    "audit_connections",
+    "audit_decoupling",
+    "audit_power_rails"
+  ],
+  "rename_invariance": {
+    "scope": "Complete parsed native board and schematic equal the archived original after normalizing only the project name and local library alias. All other fields and values remain unchanged.",
+    "checks": {
+      "whole_board": {
+        "expected": "c6e9ba0cee41656733b1dc1dd1427daff1fce7a97914debf46fecab2c9eb57b6",
+        "actual": "c6e9ba0cee41656733b1dc1dd1427daff1fce7a97914debf46fecab2c9eb57b6",
+        "matches": true
+      },
+      "whole_schematic": {
+        "expected": "03a8da4c963c07f6fb843ef991948deec6c000c1174271ca812dbe454cee7f2f",
+        "actual": "03a8da4c963c07f6fb843ef991948deec6c000c1174271ca812dbe454cee7f2f",
+        "matches": true
+      },
+      "copper_and_zones": {
+        "expected": "1fd8e0c557c984d57bd55a158a18c0f318995bf41bbd1a4ea56f31a6ff943d5d",
+        "actual": "1fd8e0c557c984d57bd55a158a18c0f318995bf41bbd1a4ea56f31a6ff943d5d",
+        "matches": true
+      },
+      "footprints_with_pad_geometry_and_net_assignments": {
+        "expected": "dfe5d080b5cd73fdac32ca89bfae7129eae59981e61137d33d3e085d8e5db504",
+        "actual": "dfe5d080b5cd73fdac32ca89bfae7129eae59981e61137d33d3e085d8e5db504",
+        "matches": true
+      },
+      "board_settings_and_layers": {
+        "expected": "7a4755740ecb39a7d06daab8baf1aadb93c72d40e9bb852f7bfd76c49889199d",
+        "actual": "7a4755740ecb39a7d06daab8baf1aadb93c72d40e9bb852f7bfd76c49889199d",
+        "matches": true
+      }
+    },
+    "counts": {
+      "footprint": 48,
+      "segment": 265,
+      "via": 32,
+      "zone": 2
+    },
+    "unchanged_inputs": [
+      "pin_contract.json",
+      "joint_interface.kicad_pro",
+      "joint_interface.kicad_dru",
+      "sym-lib-table",
+      "local F1 footprint geometry"
+    ]
+  },
+  "canonical_proof_sha256": {
+    "erc_report.json": "a7f6c2dd4d7e062b2de1de08a4e61e3d3f1a85033fd3810ea75fb4b6a88b3aac",
+    "pcb_drc_report.json": "295e527e505e5ccad630e0fcfa63394753e84208e8afa102a1d0dd06c1f3e010",
+    "pcb_verification.json": "2f4763645c1bc934e1e92fa58b5a4877024c85e5b88b1a8abf9d13b2fbcdc792",
+    "pin_contract.json": "f964f42f6c746b9edde86030eaaf766f3679cf2e9fab22e903129eb435d2d81d",
+    "joint_interface.kicad_pro": "1cbe4d95a46fe4c8e8a28a635cd5d81d293c97451c79740726e6cffe839bdd1a",
+    "joint_interface.kicad_dru": "72afecaf275113ea1933885f575e19720a433f4028c2282d8bdac265d51b80cd"
   }
 }

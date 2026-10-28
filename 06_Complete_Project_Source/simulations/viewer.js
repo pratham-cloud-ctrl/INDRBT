@@ -1,4 +1,4 @@
-/* ASTER-6 offline CAD twin. Matrices are row-major; gl uniforms are transposed. */
+/* INDRBT offline CAD twin. Matrices are row-major; gl uniforms are transposed. */
 (() => {
   'use strict';
   const I=()=>[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1];
@@ -61,5 +61,5 @@
     }
     document.getElementById('tcp').textContent=xyz(model.tcp).map(x=>(x*1000).toFixed(1)).join(' / ')+' mm';document.getElementById('time').textContent=clock.toFixed(2)+' / '+total.toFixed(2)+' s';if(playing){let phase=DATA.trajectory.phases.find(p=>clock>=p.start_s&&clock<=p.end_s);status.textContent=phase?.name||'Pick-and-place';}requestAnimationFrame(render);
   }
-  window.asterDebug={fk,get q(){return q;},get opening(){return opening;},get selectedComponent(){return selected?.name||null;},get renderedComponentCount(){return selected?1:meshes.length;},get objectPose(){return objectPose(fk(q).tcp).slice();},get objectModel(){return objectModel(objectPose(fk(q).tcp));},sample,meshCount:meshes.length};updateControls();requestAnimationFrame(render);
+  window.indrbtDebug={fk,get q(){return q;},get opening(){return opening;},get selectedComponent(){return selected?.name||null;},get renderedComponentCount(){return selected?1:meshes.length;},get objectPose(){return objectPose(fk(q).tcp).slice();},get objectModel(){return objectModel(objectPose(fk(q).tcp));},sample,meshCount:meshes.length};updateControls();requestAnimationFrame(render);
 })();

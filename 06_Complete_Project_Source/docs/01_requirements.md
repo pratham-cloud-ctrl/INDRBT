@@ -1,6 +1,6 @@
-# ASTER-6 requirements
+# INDRBT requirements
 
-ASTER-6 is an original, digital-only six-revolute-axis manipulator for an educational pick-and-place cell. Dimensions, joint conventions, masses, motion limits and control gains are authoritative in `config/robot.yaml`. Algorithms use metres, radians, kilograms and seconds. CAD converts metres to millimetres at the export boundary.
+INDRBT is an original, digital-only six-revolute-axis manipulator for an educational pick-and-place cell. Dimensions, joint conventions, masses, motion limits and control gains are authoritative in `config/robot.yaml`. Algorithms use metres, radians, kilograms and seconds. CAD converts metres to millimetres at the export boundary.
 
 The 320/280 mm upper-arm/forearm pair balances a 790 mm geometric radial reach against distal mass. A Z-Y-Y-X-Y-X joint sequence gives shoulder/elbow positioning and three-axis wrist orientation. The 190 mm shoulder height makes low bench tasks possible. A 90 mm opening gripper uses opposed lead-screw nuts for symmetric jaw travel. The tool flange is an original 60 mm interface; compatibility with an industry flange standard is not claimed.
 

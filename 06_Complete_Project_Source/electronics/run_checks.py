@@ -73,7 +73,7 @@ def footprint_check(directory: Path) -> int:
     with (ROOT / "bom.csv").open(encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             library, footprint = row["Footprint"].split(":")
-            library_directory = ROOT if library == "ASTER_Interface" else directory
+            library_directory = ROOT if library == "INDRBT_Interface" else directory
             assert (library_directory / f"{library}.pretty" / f"{footprint}.kicad_mod").is_file(), (
                 f"Footprint not found: {row['Footprint']}"
             )

@@ -9,6 +9,7 @@ import json
 import math
 import os
 from pathlib import Path
+import sys
 import xml.etree.ElementTree as ET
 import zipfile
 
@@ -67,7 +68,48 @@ def visible_gui_state(path, names, center):
     temp.replace(path)
 
 
-def main():
+def inspect_existing_native(cad):
+    """Validate a saved native file without rewriting its BRep or view data."""
+    path = ROOT / "cad/freecad/indrbt_home.FCStd"
+    before = digest(path)
+    opened_before = set(App.listDocuments())
+    doc = App.openDocument(str(path))
+    mapping = []
+    try:
+        doc.recompute()
+        for i, component in enumerate(cad["components"], 1):
+            obj = doc.getObject(f"Component{i:02}")
+            if obj is None or not obj.Shape.isValid() or len(obj.Shape.Solids) != 1:
+                raise ValueError(f"Invalid saved native component: {component['name']}")
+            if obj.ComponentName != component["name"] or obj.Label != component["name"]:
+                raise ValueError(f"Saved native semantic label mismatch: {component['name']}")
+            if obj.getGroupOfProperty("ComponentName") != "INDRBT":
+                raise ValueError("Saved native property group does not match project identity")
+            error = abs(obj.Shape.Volume - component["volume_mm3"]) / component["volume_mm3"]
+            if error > 1e-6:
+                raise ValueError(f"Saved native volume mismatch: {component['name']}")
+            mapping.append(
+                {"object": obj.Name, "component": component["name"], "volume_relative_error": error}
+            )
+        if doc.Label != "indrbt_home":
+            raise ValueError("Saved native document label does not match filename")
+        with zipfile.ZipFile(path) as archive:
+            gui = ET.fromstring(archive.read("GuiDocument.xml"))
+            visible = sum(
+                item.get("value") == "true"
+                for item in gui.findall(".//Property[@name='Visibility']/Bool")
+            )
+        if visible != len(cad["components"]):
+            raise ValueError("Saved native assembly has hidden components")
+    finally:
+        if doc.Name not in opened_before:
+            App.closeDocument(doc.Name)
+    if digest(path) != before:
+        raise ValueError("Read-only native inspection changed saved bytes")
+    return mapping
+
+
+def main(rebuild_native=True):
     cad = json.loads((ROOT / "results/validation/cad_validation.json").read_text())
     mesh_path = ROOT / "cad/exports/meshes/assembly_meshes.json"
     mesh = json.loads(mesh_path.read_text())
@@ -78,7 +120,7 @@ def main():
         "assemblies": {},
         "step_sha256": {},
     }
-    native_path = ROOT / "cad/freecad/aster6_home.FCStd"
+    native_path = ROOT / "cad/freecad/indrbt_home.FCStd"
     for name in cad["poses"]:
         path = ROOT / f"cad/exports/STEP/assembly_{name}.step"
         shape = Part.Shape()
@@ -95,7 +137,10 @@ def main():
             raise ValueError(f"Invalid imported assembly: {name}")
         if name != "home":
             continue
-        doc = App.newDocument("ASTER6HomeInspection")
+        if not rebuild_native:
+            out["native_components"] = inspect_existing_native(cad)
+            continue
+        doc = App.newDocument("INDRBTHomeInspection")
         candidates = list(shape.Solids)
         mapping = []
         for i, c in enumerate(cad["components"]):
@@ -125,7 +170,7 @@ def main():
                 ("AssumedMaterial", c["material"]),
                 ("RepresentationRole", c["role"]),
             ]:
-                obj.addProperty("App::PropertyString", prop, "ASTER6")
+                obj.addProperty("App::PropertyString", prop, "INDRBT")
                 setattr(obj, prop, value)
             mapping.append(
                 {"object": obj.Name, "component": c["name"], "matching_score_mm": score(solid)}
@@ -141,6 +186,7 @@ def main():
     out["native_sha256"] = digest(native_path)
     out["mesh_sha256"] = digest(mesh_path)
     out["saved_visibility_count"] = cad["component_count"]
+    out["inspection_mode"] = "rebuild_native" if rebuild_native else "verify_existing_no_save"
     out["source_sha256"] = {
         "geometry.py": digest(ROOT / "cad/build123d/geometry.py"),
         "robot.yaml": digest(ROOT / "config/robot.yaml"),
@@ -153,6 +199,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(rebuild_native="--verify-existing" not in sys.argv)
     if not getattr(App, "GuiUp", False):
         os._exit(0)

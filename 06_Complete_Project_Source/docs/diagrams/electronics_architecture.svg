@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="960" viewBox="0 0 1600 960" role="img" aria-labelledby="title desc">
-<title id="title">ASTER-6 conceptual electrical architecture</title>
+<title id="title">INDRBT conceptual electrical architecture</title>
 <desc id="desc">A host commands six joint interfaces and a gripper over RS-485. A joint interface reads encoder and limit signals, and sends low-voltage commands to a separate drive. Independent safety hardware controls actuator energy. One native interface schematic and routed PCB are checked digitally; firmware and physical qualification remain future work.</desc>
 <defs>
   <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#287d91"/></marker>
@@ -8,7 +8,7 @@
 </defs>
 <rect width="1600" height="960" fill="#f4f7f9"/>
 <rect x="0" y="0" width="16" height="960" fill="#287d91"/>
-<text x="65" y="73" class="title">ASTER-6 / Electrical architecture</text>
+<text x="65" y="73" class="title">INDRBT / Electrical architecture</text>
 <text x="65" y="108" class="sub">One meaningful joint interface • repeated six times, with a seventh gripper node</text>
 <rect x="1230" y="48" width="300" height="46" rx="23" fill="#d8ebef"/>
 <text x="1380" y="78" text-anchor="middle" font-size="18" font-weight="700" fill="#22667a">DIGITAL DESIGN • NO HARDWARE</text>

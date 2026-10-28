@@ -1,6 +1,6 @@
 # Third-party tools and library data
 
-Original ASTER-6 source is MIT-licensed. Build123d, OpenCascade, numerical Python
+Original INDRBT source is MIT-licensed. Build123d, OpenCascade, numerical Python
 libraries, FreeCAD, Blender and KiCad retain their own software licenses; their
 installed binaries and library collections are not redistributed here.
 

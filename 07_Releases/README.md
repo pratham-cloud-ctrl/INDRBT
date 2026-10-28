@@ -1,8 +1,9 @@
-# Release bundles
+# INDRBT release bundles
 
-Download the complete organized project ZIP and the installable Python wheel from
-the [GitHub releases](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases).
+Download the complete INDRBT project, installable Python package, standard CAD,
+FreeCAD and KiCad inspection packs from the [current public release](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28).
 
-ZIP files are release assets rather than duplicate blobs in Git history. The local
-`07_Original_Release_Archive` folder retains the earlier 0.9.0 preview for reference.
-That preview archive is historical, not the current release.
+The engineering design revision remains 1.2.0. The October 2026 identity update
+renames the project and refreshes its native labels, viewers, documentation and
+source-bound verification. Historical distributions and audit records are
+preserved separately; current downloads use INDRBT consistently.

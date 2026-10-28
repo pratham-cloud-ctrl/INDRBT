@@ -1,12 +1,12 @@
-# Electronics tour · ASTER-6 joint and sensor interface
+# Electronics tour · INDRBT joint and sensor interface
 
-**[Inspect the board and components online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb)** — no CAD application or GitHub access required.
+**[Inspect the board and components online](https://pratham-cloud-ctrl.github.io/INDRBT/#pcb)** — no CAD application or GitHub access required.
 
 [Project home](../../README.md) · [Schematic PDF](../electronics/exports/joint_interface.pdf) · [Component guide](electronics_components.md) · [Detailed design](05_electronics.md)
 
 This board connects an **external 3.3 V controller** to a joint encoder, limit contact, separate motor drive and RS-485 bus. It gives the robot project a concrete electrical interface with a schematic, routed PCB and checked manufacturing exports. One interface is designed; repeating it across the arm and gripper is the system architecture.
 
-![Actual native KiCad 3D export of the ASTER-6 interface PCB](../electronics/exports/pcb_3d.png)
+![Actual native KiCad 3D export of the INDRBT interface PCB](../electronics/exports/pcb_3d.png)
 
 **100 × 100 mm · four copper layers · 44 schematic components · 48 PCB footprints, including four mounting holes.** The 41-body placement file omits the two optional bias resistors, bare copper solder jumper and mounting holes. F1's custom copper lands are present; a fitted fuse body model is not supplied.
 
@@ -28,7 +28,7 @@ The references above match the **same parts** in the [schematic](../electronics/
 
 ## Inspect, download or edit
 
-**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** provide the editable project/library context and mechanical board geometry. The [native-file guide](cad_downloads.md#open-the-kicad-project) explains opening them. The published GitHub Pages showcase includes the browser viewers and download controls.
+**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28)** provide the editable project/library context and mechanical board geometry. The [native-file guide](cad_downloads.md#open-the-kicad-project) explains opening them. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 PDFs and images provide immediate viewing; GitHub renders the BOM CSV as a table. Native KiCad links lead to engineering source files: download the complete repository to open and edit them in KiCad.
 
@@ -42,7 +42,7 @@ PDFs and images provide immediate viewing; GitHub renders the BOM CSV as a table
 | Examine manufacturing outputs | [Fabrication ZIP](../electronics/fabrication/joint_interface_fabrication.zip): ten Gerber layers, plated/nonplated drills, maps, positions, IPC-D-356 and BOM |
 | Check the evidence | [Independent electronics review](../results/validation/final_electronics_review.json), [native ERC](../electronics/erc_report.json), [native DRC](../electronics/pcb_drc_report.json) and [source/export verification](../electronics/pcb_verification.json) |
 
-For optional offline editing, choose **Code → Download ZIP** from the [repository home](../../README.md) and extract it, or clone the repository. Keep the complete `electronics` folder together, including `fp-lib-table`, `sym-lib-table` and [ASTER_Interface.pretty](../electronics/ASTER_Interface.pretty). The local F1 footprint uses a relative project path, so downloading only the PCB loses its editable library context. Install KiCad 10 with its standard symbol and footprint libraries, then open the `.kicad_pro` file. The repository's Windows [OPEN_PCB_LAYOUT.cmd](../../OPEN_PCB_LAYOUT.cmd) also opens the board after download.
+For optional offline editing, choose **Code → Download ZIP** from the [repository home](../../README.md) and extract it, or clone the repository. Keep the complete `electronics` folder together, including `fp-lib-table`, `sym-lib-table` and [INDRBT_Interface.pretty](../electronics/INDRBT_Interface.pretty). The local F1 footprint uses a relative project path, so downloading only the PCB loses its editable library context. Install KiCad 10 with its standard symbol and footprint libraries, then open the `.kicad_pro` file. The repository's Windows [OPEN_PCB_LAYOUT.cmd](../../OPEN_PCB_LAYOUT.cmd) also opens the board after download.
 
 ## What has been checked
 

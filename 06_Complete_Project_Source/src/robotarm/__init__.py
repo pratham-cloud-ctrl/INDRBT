@@ -1,4 +1,4 @@
-"""ASTER-6 digital-only robotics engineering model. Internal units are SI."""
+"""INDRBT digital-only robotics engineering model. Internal units are SI."""
 
 from .config import load_config
 from .kinematics import IKError, IKResult, RobotArm

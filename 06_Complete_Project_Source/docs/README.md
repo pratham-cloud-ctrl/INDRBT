@@ -1,21 +1,21 @@
-# ASTER-6 · Engineering and theory
+# INDRBT · Engineering and theory
 
-**[Open the public design library](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#guides)** — no CAD application or GitHub access required.
+**[Open the public design library](https://pratham-cloud-ctrl.github.io/INDRBT/#guides)** — no CAD application or GitHub access required.
 
-**[Public CAD and electronics downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — four focused format packs and the combined offline viewer/CAD pack. The [native-file guide](cad_downloads.md) explains format differences and application-opening instructions. The repository and release are public. The published GitHub Pages showcase includes the browser viewers and download controls.
+**[Public CAD and electronics downloads](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28)** — four focused format packs and the combined offline viewer/CAD pack. The [native-file guide](cad_downloads.md) explains format differences and application-opening instructions. The repository and release are public. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 **Understand the design. Follow the evidence. Reproduce the results.**
 
-ASTER-6 is an original six-axis digital robot with a parallel-jaw gripper. This library connects its CAD, mathematics, motion, load calculations, feedback control and conceptual electronics. The design's 790 mm reach is calculated; 4 kg payload and ±0.1 mm repeatability remain targets. No physical robot was built.
+INDRBT is an original six-axis digital robot with a parallel-jaw gripper. This library connects its CAD, mathematics, motion, load calculations, feedback control and conceptual electronics. The design's 790 mm reach is calculated; 4 kg payload and ±0.1 mm repeatability remain targets. No physical robot was built.
 
 [Project home](../../README.md) · [Engineering walkthrough](engineering_walkthrough.md) · [Full theory guide](theory_guide.md) · [Engineering report](engineering_report.md)
 
-![Six representative CAD configurations of the ASTER-6 robot](../cad/renders/poses.png)
+![Six representative CAD configurations of the INDRBT robot](../cad/renders/poses.png)
 
 ## Start with one connected story
 
 1. **[Purpose and original goals](project_alignment.md)** — what the project sets out to demonstrate and how its parts connect.
-2. **[How ASTER-6 works](engineering_walkthrough.md)** — a visual introduction following one task from geometry to electronics; each plot explains what its evidence means.
+2. **[How INDRBT works](engineering_walkthrough.md)** — a visual introduction following one task from geometry to electronics; each plot explains what its evidence means.
 3. **[Understanding the theory](theory_guide.md)** — units, transforms, IK, Jacobian, planning, loads, gripper work balance and control, with equations and interpretation.
 4. **[Engineering report](engineering_report.md)** — the complete design argument, results, research findings and stated limitations.
 5. **[Validation matrix](validation_matrix.md)** — trace each requirement to an executed check, then inspect the [recorded validation](../results/validation/validation_report.md).
@@ -45,7 +45,7 @@ ASTER-6 is an original six-axis digital robot with a parallel-jaw gripper. This 
 | [Pick/place animation](../results/trajectories/pick_place_fk.gif) · [TCP path](../results/trajectories/pick_place_tcp.png) | [PID step response](../results/control/pid_step_response.png) · [PID tracking](../results/control/pid_tracking.png) |
 | [Joint motion and derivatives](../results/trajectories/pick_place_joints.png) · [Gripper render](../cad/renders/gripper.png) | [Motion-duration study](../results/research/duration.png) · [Finger stiffness](../results/research/finger_length.png) |
 
-[Open the interactive robot online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) for browser inspection, joint controls and playback without downloading files. The [project download and launch instructions](../../README.md) describe optional offline viewing and native CAD/KiCad editing. GitHub also previews images, Markdown and PDFs; its repository HTML links show source rather than executing the viewer.
+[Open the interactive robot online](https://pratham-cloud-ctrl.github.io/INDRBT/#robot) for browser inspection, joint controls and playback without downloading files. The [project download and launch instructions](../../README.md) describe optional offline viewing and native CAD/KiCad editing. GitHub also previews images, Markdown and PDFs; its repository HTML links show source rather than executing the viewer.
 
 ## Read the claims with their evidence class
 

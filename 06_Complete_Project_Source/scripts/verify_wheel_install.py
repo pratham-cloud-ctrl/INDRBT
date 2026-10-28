@@ -44,7 +44,7 @@ assert config["mass"]["upper_arm"] == 5.5
 assert config["demo"]["approach_clearance"] == 0.070
 assert config["demo"]["workspace_samples"] == 6000
 source_version = tomllib.loads((repo / "pyproject.toml").read_text())["project"]["version"]
-assert robotarm.__version__ == importlib.metadata.version("aster-arm") == source_version
+assert robotarm.__version__ == importlib.metadata.version("indrbt-arm") == source_version
 arm = robotarm.RobotArm()
 zero = arm.fk(np.zeros(6))
 vertical = arm.fk(config["poses"]["vertical"])
@@ -68,7 +68,7 @@ except ValueError:
 else:
     raise AssertionError("Wheel lacks invalid MOVE L target regression fix.")
 
-with TemporaryDirectory(prefix="aster-wheel-cli-") as cli_directory:
+with TemporaryDirectory(prefix="indrbt-wheel-cli-") as cli_directory:
     cli = subprocess.run(
         [
             sys.executable,

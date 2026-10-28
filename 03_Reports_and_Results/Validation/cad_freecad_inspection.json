@@ -75,279 +75,280 @@
     {
       "object": "Component01",
       "component": "base_mounting_plate",
-      "matching_score_mm": 4.462872607124233e-11
+      "volume_relative_error": 4.175664763398897e-14
     },
     {
       "object": "Component02",
       "component": "fixed_base_riser",
-      "matching_score_mm": 4.6875622184229256e-11
+      "volume_relative_error": 4.446228741637211e-14
     },
     {
       "object": "Component03",
       "component": "j1_slew_bearing_envelope",
-      "matching_score_mm": 2.3522487348314092e-11
+      "volume_relative_error": 2.213999720228919e-14
     },
     {
       "object": "Component04",
       "component": "base_electronics_cover",
-      "matching_score_mm": 2.5635193824210623e-11
+      "volume_relative_error": 2.378781568803325e-14
     },
     {
       "object": "Component05",
       "component": "turret_neck",
-      "matching_score_mm": 2.31099123957966e-11
+      "volume_relative_error": 2.2130754960466418e-14
     },
     {
       "object": "Component06",
       "component": "turret_bridge",
-      "matching_score_mm": 2.2645444267383323e-12
+      "volume_relative_error": 2.2641670655607385e-15
     },
     {
       "object": "Component07",
       "component": "shoulder_fork_-1",
-      "matching_score_mm": 4.530414431453685e-11
+      "volume_relative_error": 4.3467841615880136e-14
     },
     {
       "object": "Component08",
       "component": "shoulder_bearing_-1",
-      "matching_score_mm": 2.298061818017662e-11
+      "volume_relative_error": 2.2269319615853954e-14
     },
     {
       "object": "Component09",
       "component": "shoulder_fork_+1",
-      "matching_score_mm": 4.530414431453685e-11
+      "volume_relative_error": 4.3467841615880136e-14
     },
     {
       "object": "Component10",
       "component": "shoulder_bearing_+1",
-      "matching_score_mm": 2.298061818017662e-11
+      "volume_relative_error": 2.2269319615853954e-14
     },
     {
       "object": "Component11",
       "component": "j2_gearbox_envelope",
-      "matching_score_mm": 0.0
+      "volume_relative_error": 0.0
     },
     {
       "object": "Component12",
       "component": "j2_motor_envelope",
-      "matching_score_mm": 7.905541306720529e-12
+      "volume_relative_error": 7.905417784567644e-15
     },
     {
       "object": "Component13",
       "component": "j2_motor_endcap",
-      "matching_score_mm": 1.4678156063567376e-13
+      "volume_relative_error": 1.376937717032587e-16
     },
     {
       "object": "Component14",
       "component": "shoulder_rotor",
-      "matching_score_mm": 2.2965458621536036e-11
+      "volume_relative_error": 2.211726342977426e-14
     },
     {
       "object": "Component15",
       "component": "shoulder_output_shaft",
-      "matching_score_mm": 2.2597573503792717e-11
+      "volume_relative_error": 2.1785692977731874e-14
     },
     {
       "object": "Component16",
       "component": "upper_arm_hollow_link",
-      "matching_score_mm": 8.898255802999391e-11
+      "volume_relative_error": 4.960737031288335e-14
     },
     {
       "object": "Component17",
       "component": "elbow_fork_bridge_-1",
-      "matching_score_mm": 1.3457743144948598e-11
+      "volume_relative_error": 3.949984894433015e-15
     },
     {
       "object": "Component18",
       "component": "elbow_fork_bridge_+1",
-      "matching_score_mm": 1.3457743144948598e-11
+      "volume_relative_error": 3.949984894433015e-15
     },
     {
       "object": "Component19",
       "component": "upper_service_cover_-1",
-      "matching_score_mm": 7.892658807550288e-12
+      "volume_relative_error": 1.3520526407010268e-15
     },
     {
       "object": "Component20",
       "component": "elbow_fork_-1",
-      "matching_score_mm": 1.510053315445226e-10
+      "volume_relative_error": 4.2106642873692024e-14
     },
     {
       "object": "Component21",
       "component": "elbow_bearing_-1",
-      "matching_score_mm": 1.3035463730013543e-10
+      "volume_relative_error": 2.2319816939245913e-14
     },
     {
       "object": "Component22",
       "component": "upper_service_cover_+1",
-      "matching_score_mm": 7.892658807550288e-12
+      "volume_relative_error": 1.3520526407010268e-15
     },
     {
       "object": "Component23",
       "component": "elbow_fork_+1",
-      "matching_score_mm": 1.510053315445226e-10
+      "volume_relative_error": 4.2106642873692024e-14
     },
     {
       "object": "Component24",
       "component": "elbow_bearing_+1",
-      "matching_score_mm": 1.3035463730013543e-10
+      "volume_relative_error": 2.2319816939245913e-14
     },
     {
       "object": "Component25",
       "component": "j3_gearbox_envelope",
-      "matching_score_mm": 3.970605375266e-12
+      "volume_relative_error": 2.0048556440865748e-16
     },
     {
       "object": "Component26",
       "component": "j3_motor_envelope",
-      "matching_score_mm": 1.2303373900833804e-11
+      "volume_relative_error": 8.119107794142991e-15
     },
     {
       "object": "Component27",
       "component": "elbow_rotor",
-      "matching_score_mm": 2.6086130286527357e-11
+      "volume_relative_error": 2.1768046616838084e-14
     },
     {
       "object": "Component28",
       "component": "elbow_output_shaft",
-      "matching_score_mm": 2.6058546529491906e-11
+      "volume_relative_error": 2.1894943924164578e-14
     },
     {
       "object": "Component29",
       "component": "forearm_hollow_link",
-      "matching_score_mm": 1.0442519187746098e-10
+      "volume_relative_error": 5.4008123323199593e-14
     },
     {
       "object": "Component30",
       "component": "forearm_service_cover_-1",
-      "matching_score_mm": 1.0048831102514633e-11
+      "volume_relative_error": 1.3101769632302713e-15
     },
     {
       "object": "Component31",
       "component": "forearm_service_cover_+1",
-      "matching_score_mm": 1.0048831102514633e-11
+      "volume_relative_error": 1.3101769632302713e-15
     },
     {
       "object": "Component32",
       "component": "wrist_roll_stator",
-      "matching_score_mm": 1.4313562579192732e-10
+      "volume_relative_error": 4.5499710862900086e-14
     },
     {
       "object": "Component33",
       "component": "j4_bearing_envelope",
-      "matching_score_mm": 1.229762383123293e-10
+      "volume_relative_error": 2.1759890735752733e-14
     },
     {
       "object": "Component34",
       "component": "wrist_roll_rotor",
-      "matching_score_mm": 2.8137505386368296e-11
+      "volume_relative_error": 1.7447599410551694e-14
     },
     {
       "object": "Component35",
       "component": "wrist_roll_cover",
-      "matching_score_mm": 1.2026940825853443e-10
+      "volume_relative_error": 1.9587623310606497e-14
     },
     {
       "object": "Component36",
       "component": "wrist_pitch_fork_-1",
-      "matching_score_mm": 6.357652551643303e-11
+      "volume_relative_error": 4.1842499075362886e-14
     },
     {
       "object": "Component37",
       "component": "wrist_pitch_fork_+1",
-      "matching_score_mm": 6.357652551643303e-11
+      "volume_relative_error": 4.1842499075362886e-14
     },
     {
       "object": "Component38",
       "component": "wrist_pitch_rotor",
-      "matching_score_mm": 2.967705340039473e-11
+      "volume_relative_error": 2.200298130254706e-14
     },
     {
       "object": "Component39",
       "component": "wrist_pitch_neck",
-      "matching_score_mm": 2.9826000250576905e-11
+      "volume_relative_error": 2.1798187916501387e-14
     },
     {
       "object": "Component40",
       "component": "j6_stator_envelope",
-      "matching_score_mm": 3.054810371805754e-11
+      "volume_relative_error": 2.240678455175429e-14
     },
     {
       "object": "Component41",
       "component": "tool_flange_6xM5_PCD46",
-      "matching_score_mm": 4.8803228143705885e-11
+      "volume_relative_error": 4.0378120629348634e-14
     },
     {
       "object": "Component42",
       "component": "interchangeable_gripper_adapter",
-      "matching_score_mm": 5.349729222500656e-11
+      "volume_relative_error": 4.493027987575042e-14
     },
     {
       "object": "Component43",
       "component": "gripper_pocketed_body",
-      "matching_score_mm": 9.476029684083679e-05
+      "volume_relative_error": 9.229189280680814e-08
     },
     {
       "object": "Component44",
       "component": "gripper_top_service_cover",
-      "matching_score_mm": 1.5702421114257204e-11
+      "volume_relative_error": 7.869368332052855e-15
     },
     {
       "object": "Component45",
       "component": "gripper_guide_rod_-14",
-      "matching_score_mm": 8.382404537829375e-12
+      "volume_relative_error": 6.95080804336378e-16
     },
     {
       "object": "Component46",
       "component": "gripper_guide_rod_+14",
-      "matching_score_mm": 8.382404537829375e-12
+      "volume_relative_error": 6.95080804336378e-16
     },
     {
       "object": "Component47",
       "component": "opposite_hand_screw_envelope",
-      "matching_score_mm": 1.015466335260456e-11
+      "volume_relative_error": 2.467339389256547e-15
     },
     {
       "object": "Component48",
       "component": "gripper_actuator_envelope",
-      "matching_score_mm": 1.6923215774848068e-11
+      "volume_relative_error": 9.235892041355074e-15
     },
     {
       "object": "Component49",
       "component": "gripper_jaw_carriage_-1",
-      "matching_score_mm": 1.5020198324219385e-11
+      "volume_relative_error": 7.42931028628123e-15
     },
     {
       "object": "Component50",
       "component": "gripper_finger_-1",
-      "matching_score_mm": 3.018405615900667e-11
+      "volume_relative_error": 2.247993777174473e-14
     },
     {
       "object": "Component51",
       "component": "gripper_contact_pad_-1",
-      "matching_score_mm": 3.528226690397113e-11
+      "volume_relative_error": 2.759494317047814e-14
     },
     {
       "object": "Component52",
       "component": "gripper_jaw_carriage_+1",
-      "matching_score_mm": 1.5020198324219385e-11
+      "volume_relative_error": 7.42931028628123e-15
     },
     {
       "object": "Component53",
       "component": "gripper_finger_+1",
-      "matching_score_mm": 3.018405615900667e-11
+      "volume_relative_error": 2.247993777174473e-14
     },
     {
       "object": "Component54",
       "component": "gripper_contact_pad_+1",
-      "matching_score_mm": 3.528226690397113e-11
+      "volume_relative_error": 2.759494317047814e-14
     }
   ],
-  "native_sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4",
+  "native_sha256": "5a2bbf35bd9fe3265aaf7b38a0617e8b9b3e11b284844d5eea2a4abc3e42fae0",
   "mesh_sha256": "604539d0a4cb2578d351a1b7de666498aac3018c10c57520082c3ccc9a1e3991",
   "saved_visibility_count": 54,
+  "inspection_mode": "verify_existing_no_save",
   "source_sha256": {
-    "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250",
-    "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96"
+    "geometry.py": "efeddd26543a9a2545a3244b931579d474aa0775b80c48ab82dbaa48fd5cbb8a",
+    "robot.yaml": "fde183861589ceaa492879da6e6114c80fdd659dcff6adcf46fc734b3a50934f"
   }
 }

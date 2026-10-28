@@ -197,13 +197,13 @@ Version {version}: **{project_status}** within the documented digital engineerin
     )
     write(
         "docs/engineering_report.md",
-        f"""# ASTER-6 engineering report
+        f"""# INDRBT engineering report
 
 Version {version} · 2026-10-05 · digital engineering project
 
 ## 1. Abstract
 
-ASTER-6 is an original six-axis industrial-arm concept with reproducible BRep CAD, numerical kinematics, motion planning, a parallel gripper, load calculations and a native conceptual KiCad interface. Its nominal shoulder-centred reach is {workspace["kinematic_max_reach_from_shoulder_m"] * 1000:.0f} mm. The {c["mass"]["payload"]:.0f} kg payload and ±{c["targets"]["repeatability_m"] * 1000:.1f} mm repeatability are design targets; neither is a tested hardware rating. The project is an educational geometric digital twin whose evidence comes from executed software.
+INDRBT is an original six-axis industrial-arm concept with reproducible BRep CAD, numerical kinematics, motion planning, a parallel gripper, load calculations and a native conceptual KiCad interface. Its nominal shoulder-centred reach is {workspace["kinematic_max_reach_from_shoulder_m"] * 1000:.0f} mm. The {c["mass"]["payload"]:.0f} kg payload and ±{c["targets"]["repeatability_m"] * 1000:.1f} mm repeatability are design targets; neither is a tested hardware rating. The project is an educational geometric digital twin whose evidence comes from executed software.
 
 ## 2. Problem
 
@@ -255,7 +255,7 @@ The native joint/sensor schematic contains {net["component_count"]} components, 
 
 ## 14. Simulation
 
-The ideal pick/place cycle lasts {motion["duration_s"]:.5f} s, contains {motion["samples"]} joint samples and traces {motion["path_length_m"]:.5f} m of TCP path. Gripper close/open events occur during dwells, and the arm returns home. Peak sampled speed and acceleration fractions of their configured limits are {motion["max_velocity_limit_fraction"]:.6f} and {motion["max_acceleration_limit_fraction"]:.6f}. The offline [CAD twin](../simulations/aster6_twin.html) renders actual CAD meshes with the recorded joint transforms; the [FK animation](../results/trajectories/pick_place_fk.gif) shows the same mathematical motion. Browser interactions and JavaScript/Python transforms are checked separately. Grasp uses an ideal attachment, with no contact dynamics.
+The ideal pick/place cycle lasts {motion["duration_s"]:.5f} s, contains {motion["samples"]} joint samples and traces {motion["path_length_m"]:.5f} m of TCP path. Gripper close/open events occur during dwells, and the arm returns home. Peak sampled speed and acceleration fractions of their configured limits are {motion["max_velocity_limit_fraction"]:.6f} and {motion["max_acceleration_limit_fraction"]:.6f}. The offline [CAD twin](../simulations/indrbt_twin.html) renders actual CAD meshes with the recorded joint transforms; the [FK animation](../results/trajectories/pick_place_fk.gif) shows the same mathematical motion. Browser interactions and JavaScript/Python transforms are checked separately. Grasp uses an ideal attachment, with no contact dynamics.
 
 ## 15. Verification
 
@@ -288,11 +288,11 @@ The project provides a reproducible original robot concept with consistent geome
     )
     write(
         "README.md",
-        f"""# ASTER-6 · Industrial robot arm digital twin
+        f"""# INDRBT · Industrial robot arm digital twin
 
 An original six-axis robot with parametric CAD, numerical kinematics and a reproducible pick-and-place simulation.
 
-![ASTER-6 actual CAD assembly](cad/renders/hero.png)
+![INDRBT actual CAD assembly](cad/renders/hero.png)
 
 **Digital only · v{version} · {project_status}**
 
@@ -308,7 +308,7 @@ For a visual introduction, start with these guides. This source README contains 
 
 Read [the project purpose and original goals](docs/project_alignment.md) for the engineering question, intended demonstration and relationship between the subsystems.
 
-Open **[the offline interactive CAD twin](simulations/aster6_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
+Open **[the offline interactive CAD twin](simulations/indrbt_twin.html)** locally: orbit, change all six joints, adjust the gripper, select poses and play the recorded task. The single HTML file needs no server or internet. GitHub displays its source; download it to open it in a browser.
 
 The **CAD component** selector isolates and frames any of the 54 actual parts. Use the [component catalog](docs/component_catalog.md) to match part names, native objects, materials and STEP/STL files. The [theory guide](docs/theory_guide.md) connects the model equations to evidence, and the [electronics component guide](docs/electronics_components.md) explains references, selections and BOM population.
 
@@ -398,7 +398,7 @@ This is a geometric digital twin with simplified educational control. Repeatabil
 ## Best portfolio material
 
 1. [Hero CAD render](cad/renders/hero.png) — original overall mechanical design.
-2. [Interactive CAD twin](simulations/aster6_twin.html) — model-driven motion and joint controls.
+2. [Interactive CAD twin](simulations/indrbt_twin.html) — model-driven motion and joint controls.
 3. [Gripper render](cad/renders/gripper.png) — guides, jaws and interchangeable tool interface.
 4. [Engineering interface drawings](docs/drawings/engineering_interfaces.pdf) — meaningful dimensions.
 5. [Coordinate frames](results/workspace/coordinate_frames.png) — explain the mathematics.

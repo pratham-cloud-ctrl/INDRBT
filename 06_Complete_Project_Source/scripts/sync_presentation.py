@@ -65,14 +65,14 @@ for kind in ("STEP", "STL"):
     for p in (SOURCE / f"cad/exports/{kind}").glob("*"):
         group = "Assemblies" if p.name.startswith("assembly_") else "Individual_Parts"
         copy(p.relative_to(SOURCE), f"01_CAD_Models/{kind}/{group}/{p.name}")
-copy("cad/freecad/aster6_home.FCStd", "01_CAD_Models/FreeCAD/aster6_home.FCStd")
-copy("cad/renders/aster6_home.blend", "01_CAD_Models/Blender/aster6_home.blend")
+copy("cad/freecad/indrbt_home.FCStd", "01_CAD_Models/FreeCAD/indrbt_home.FCStd")
+copy("cad/renders/indrbt_home.blend", "01_CAD_Models/Blender/indrbt_home.blend")
 for p in (SOURCE / "docs/drawings").glob("*"):
     if p.is_file():
         copy(p.relative_to(SOURCE), f"01_CAD_Models/Drawings/{p.name}")
 for p in (SOURCE / "cad/renders").glob("*.png"):
     copy(p.relative_to(SOURCE), f"01_CAD_Models/Preview_Images/{p.name}")
-copy("simulations/aster6_twin.html", "02_Simulation_and_Animation/Interactive_3D_Viewer.html")
+copy("simulations/indrbt_twin.html", "02_Simulation_and_Animation/Interactive_3D_Viewer.html")
 copy("simulations/viewer_preview.png", "02_Simulation_and_Animation/viewer_preview.png")
 for category in ("trajectories", "control", "workspace"):
     for p in (SOURCE / f"results/{category}").glob("*"):
@@ -199,7 +199,7 @@ cards = [
         "Project source guide",
     ),
 ]
-body = """<header><div><div class="tag">ASTER-6 · DIGITAL ENGINEERING PROJECT</div><h1>ASTER-6:<br>mechanics, motion &amp; electronics.</h1><p>Start with the interactive 3D viewer. It opens in a browser and displays the actual CAD meshes without needing a CAD application.</p><a class="button" href="02_Simulation_and_Animation/Interactive_3D_Viewer.html">View the robot in 3D</a><a href="03_Reports_and_Results/Readable_Reports/engineering_report.html">Engineering report</a><p class="tag">VERSION_PLACEHOLDER · Digital only · STATUS_PLACEHOLDER</p></div><img src="01_CAD_Models/Preview_Images/hero.png" alt="ASTER-6 actual CAD assembly"></header><h2 id="open-cad">Open the CAD models</h2><ol><li><b>For viewing:</b> double-click <b>OPEN_3D_VIEWER.cmd</b> in this folder. It explicitly opens an installed browser, avoiding Windows file-association problems. Drag to orbit; use the wheel to zoom.</li><li><b>For CAD editing:</b> double-click <b>OPEN_FREECAD_MODEL.cmd</b>. It explicitly opens the assembled robot in the installed FreeCAD application. STEP and STL files are CAD/mesh data, rather than ordinary documents.</li><li><b>For individual parts:</b> use FreeCAD’s File → Open and select a file from <b>01_CAD_Models/STEP/Individual_Parts</b>. Complete poses are under <b>STEP/Assemblies</b>.</li></ol><h2>Project folders</h2><section class="cards">"""
+body = """<header><div><div class="tag">INDRBT · DIGITAL ENGINEERING PROJECT</div><h1>INDRBT:<br>mechanics, motion &amp; electronics.</h1><p>Start with the interactive 3D viewer. It opens in a browser and displays the actual CAD meshes without needing a CAD application.</p><a class="button" href="02_Simulation_and_Animation/Interactive_3D_Viewer.html">View the robot in 3D</a><a href="03_Reports_and_Results/Readable_Reports/engineering_report.html">Engineering report</a><p class="tag">VERSION_PLACEHOLDER · Digital only · STATUS_PLACEHOLDER</p></div><img src="01_CAD_Models/Preview_Images/hero.png" alt="INDRBT actual CAD assembly"></header><h2 id="open-cad">Open the CAD models</h2><ol><li><b>For viewing:</b> double-click <b>OPEN_3D_VIEWER.cmd</b> in this folder. It explicitly opens an installed browser, avoiding Windows file-association problems. Drag to orbit; use the wheel to zoom.</li><li><b>For CAD editing:</b> double-click <b>OPEN_FREECAD_MODEL.cmd</b>. It explicitly opens the assembled robot in the installed FreeCAD application. STEP and STL files are CAD/mesh data, rather than ordinary documents.</li><li><b>For individual parts:</b> use FreeCAD’s File → Open and select a file from <b>01_CAD_Models/STEP/Individual_Parts</b>. Complete poses are under <b>STEP/Assemblies</b>.</li></ol><h2>Project folders</h2><section class="cards">"""
 for title, desc, url, label in cards:
     body += f'<div class="card"><h3>{title}</h3><p>{desc}</p><a href="{url}">{label} →</a></div>'
 body = body.replace(
@@ -227,7 +227,7 @@ body += '<h2>Completed PCB layout</h2><p>Open <b>OPEN_PCB_LAYOUT.cmd</b> for edi
 body = body.replace("VERSION_PLACEHOLDER", version).replace(
     "STATUS_PLACEHOLDER", html.escape(status)
 )
-(DEST / "START_HERE.html").write_text(page("ASTER-6 | Start here", body), encoding="utf-8")
+(DEST / "START_HERE.html").write_text(page("INDRBT | Start here", body), encoding="utf-8")
 for filename, view in (
     ("OPEN_3D_VIEWER.cmd", "Viewer"),
     ("OPEN_FREECAD_MODEL.cmd", "FreeCAD"),
@@ -241,7 +241,7 @@ for filename, view in (
     )
     (DEST / filename).write_bytes(script.encode("utf-8"))
 (DEST / "START_HERE.txt").write_text(
-    "ASTER-6 PROJECT\n\nDouble-click OPEN_PROJECT_HOME.cmd for the visual project guide.\nDouble-click OPEN_3D_VIEWER.cmd to see the robot in a browser.\nDouble-click OPEN_FREECAD_MODEL.cmd to edit the assembly in FreeCAD.\nDouble-click OPEN_PCB_LAYOUT.cmd to edit the routed board in KiCad.\n\nCAD files are not Word/text documents. The launchers explicitly select the correct installed applications.\nIf you move the folder to another computer, open START_HERE.html in a web browser and open the FCStd file through FreeCAD File > Open.\n\n01_CAD_Models: assemblies, individual parts, drawings, renders and native models\n02_Simulation_and_Animation: interactive 3D viewer, trajectories, workspace and control results\n03_Reports_and_Results: readable reports, numerical data and validation\n04_Electronics: native schematic/PCB, views, fabrication exports and actual checks\n05_Reference_and_Project_Notes: index to authoritative documents and readable reports\n06_Complete_Project_Source: complete reproducible source; Git history belongs to the parent repository\n07_Releases: downloadable release ZIP; original preview retained in 07_Original_Release_Archive\n\nPresentation files are copies. Use 06_Complete_Project_Source for regeneration.\n",
+    "INDRBT PROJECT\n\nDouble-click OPEN_PROJECT_HOME.cmd for the visual project guide.\nDouble-click OPEN_3D_VIEWER.cmd to see the robot in a browser.\nDouble-click OPEN_FREECAD_MODEL.cmd to edit the assembly in FreeCAD.\nDouble-click OPEN_PCB_LAYOUT.cmd to edit the routed board in KiCad.\n\nCAD files are not Word/text documents. The launchers explicitly select the correct installed applications.\nIf you move the folder to another computer, open START_HERE.html in a web browser and open the FCStd file through FreeCAD File > Open.\n\n01_CAD_Models: assemblies, individual parts, drawings, renders and native models\n02_Simulation_and_Animation: interactive 3D viewer, trajectories, workspace and control results\n03_Reports_and_Results: readable reports, numerical data and validation\n04_Electronics: native schematic/PCB, views, fabrication exports and actual checks\n05_Reference_and_Project_Notes: index to authoritative documents and readable reports\n06_Complete_Project_Source: complete reproducible source; Git history belongs to the parent repository\n07_Releases: downloadable release ZIP; original preview retained in 07_Original_Release_Archive\n\nPresentation files are copies. Use 06_Complete_Project_Source for regeneration.\n",
     encoding="utf-8",
 )
 for name in ("LICENSE", "NOTICE.md", "CITATION.cff", "CONTRIBUTING.md", "CHANGELOG.md"):

@@ -165,10 +165,10 @@ def review():
         "connected_nets": pcb["net_count"],
         "physical_pad_nets_checked_including_nc": pcb["physical_pad_nets_checked_including_nc"],
         "stock_footprints": sum(
-            not row["Footprint"].startswith("ASTER_Interface:") for row in bom_rows
+            not row["Footprint"].startswith("INDRBT_Interface:") for row in bom_rows
         ),
         "local_manufacturer_footprints": sum(
-            row["Footprint"].startswith("ASTER_Interface:") for row in bom_rows
+            row["Footprint"].startswith("INDRBT_Interface:") for row in bom_rows
         ),
         "fuse_correction": pcb["fuse_manufacturer_land_pattern_review"],
         "footprint_wildcard_matches": pcb["independent_footprint_filter_review"][

@@ -1,12 +1,12 @@
-# How ASTER-6 works
+# How INDRBT works
 
-**[Read this walkthrough in the browser showcase](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#theory)** — no CAD application or GitHub access required.
+**[Read this walkthrough in the browser showcase](https://pratham-cloud-ctrl.github.io/INDRBT/#theory)** — no CAD application or GitHub access required.
 
 [Documentation home](README.md) · [Project purpose](project_alignment.md) · [Full theory guide](theory_guide.md)
 
-For optional application inspection, [download the public engineering packs](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and follow the [native-file guide](cad_downloads.md). It distinguishes STEP exchange geometry, the FreeCAD saved-solid model and the KiCad project context; a combined offline viewer/CAD pack is also available. The published GitHub Pages showcase includes the browser viewers and download controls.
+For optional application inspection, [download the public engineering packs](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28) and follow the [native-file guide](cad_downloads.md). It distinguishes STEP exchange geometry, the FreeCAD saved-solid model and the KiCad project context; a combined offline viewer/CAD pack is also available. The published GitHub Pages showcase includes the browser viewers and download controls.
 
-ASTER-6 asks one connected question: **can an original six-axis arm move a tool through a useful task, support an assumed load and follow commands in a defined digital model?** Follow the same pick-and-place demonstration from geometry to evidence below. No physical robot was built.
+INDRBT asks one connected question: **can an original six-axis arm move a tool through a useful task, support an assumed load and follow commands in a defined digital model?** Follow the same pick-and-place demonstration from geometry to evidence below. No physical robot was built.
 
 **Reading key:** TARGET is a desired specification; ASSUMED is a model input; CALCULATED and SIMULATED are model outputs; VERIFIED DIGITALLY identifies an executed check. The 4 kg payload and ±0.1 mm repeatability remain targets.
 
@@ -31,7 +31,7 @@ T = Tz(h) Rz(q1) Ry(q2) Tx(L1) Ry(q3) Tx(L2)
 
 `Tz`/`Tx` are translations; `Rx`/`Ry`/`Rz` are rotations. Distances use metres and angles use radians internally. At zero angles, FK must return `(0.790, 0, 0.190)` metres with identity orientation: a useful hand check.
 
-**Inverse kinematics (IK)** works backward from a requested tool pose. ASTER-6 uses bounded numerical least squares and deterministic restart seeds, then checks the returned pose. The retained 60 perturbed-seed trials have a maximum position residual of **2.70 × 10⁻¹¹ m**. That checks numerical reconstruction; it is unrelated to physical repeatability. A failed local search does not prove that every branch is unreachable.
+**Inverse kinematics (IK)** works backward from a requested tool pose. INDRBT uses bounded numerical least squares and deterministic restart seeds, then checks the returned pose. The retained 60 perturbed-seed trials have a maximum position residual of **2.70 × 10⁻¹¹ m**. That checks numerical reconstruction; it is unrelated to physical repeatability. A failed local search does not prove that every branch is unreachable.
 
 The **Jacobian** relates small joint motions to tool velocity: `[linear velocity; angular velocity] = J(q) × joint velocity`. Near a singular pose, some tool motions become difficult or impossible without large joint speeds. MOVE L therefore rejects sampled poses whose smallest scaled singular value is at or below 0.001; this is a numerical guard, not a safety threshold.
 
@@ -55,7 +55,7 @@ The task starts at home, approaches an object, descends, closes the gripper, lif
 
 The simulated task takes **9.24398 s**, records **1,041 samples** and travels **1.32360 m**. The largest speed and acceleration fractions are **95.17%** and **99.80%** of the assumed limits. The object attaches to the tool through an ideal kinematic constraint, rather than friction/contact physics.
 
-See the [recorded metrics and phase timings](../results/trajectories/pick_place_metrics.json), [planner](../src/robotarm/planning/trajectories.py), [task sequence](../src/robotarm/simulation/tasks.py) and [FK animation](../results/trajectories/pick_place_fk.gif). [Operate the interactive CAD twin online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) with no download. The [source setup and run instructions](../README.md#run) describe optional local reproduction and offline use.
+See the [recorded metrics and phase timings](../results/trajectories/pick_place_metrics.json), [planner](../src/robotarm/planning/trajectories.py), [task sequence](../src/robotarm/simulation/tasks.py) and [FK animation](../results/trajectories/pick_place_fk.gif). [Operate the interactive CAD twin online](https://pratham-cloud-ctrl.github.io/INDRBT/#robot) with no download. The [source setup and run instructions](../README.md#run) describe optional local reproduction and offline use.
 
 ## 4. Check loads before choosing a drive
 

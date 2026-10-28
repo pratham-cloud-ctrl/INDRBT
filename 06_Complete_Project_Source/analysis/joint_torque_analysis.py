@@ -224,7 +224,7 @@ def run_analysis(samples: int = 6000, seed: int = 412):
         xticks=x,
         xticklabels=[f"J{i + 1}" for i in x],
         ylabel="Torque (N·m)",
-        title="ASTER-6 | actuator envelope from assumed masses",
+        title="INDRBT | actuator envelope from assumed masses",
     )
     ax.legend()
     fig.tight_layout()

@@ -26,7 +26,7 @@ BOUND_SOURCE_FILES = (
     "fp-lib-table",
     "bom.csv",
     "fuse_selection.json",
-    "ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
+    "INDRBT_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod",
 )
 
 # KiCad 10 constructor defaults from pcbnew/board_design_settings.cpp:

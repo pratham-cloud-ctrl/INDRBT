@@ -18,7 +18,7 @@ font = ImageFont.truetype(findfont("DejaVu Sans"), 26)
 small = ImageFont.truetype(findfont("DejaVu Sans"), 17)
 canvas = Image.new("RGB", (2100, 1470), "#E9EFF2")
 d = ImageDraw.Draw(canvas)
-d.text((32, 18), "ASTER-6  |  PARAMETRIC CAD CONFIGURATIONS", font=font, fill="#243949")
+d.text((32, 18), "INDRBT  |  PARAMETRIC CAD CONFIGURATIONS", font=font, fill="#243949")
 d.text(
     (32, 59),
     "Actual CAD meshes • common six-axis transform model • dimensions in config/robot.yaml",

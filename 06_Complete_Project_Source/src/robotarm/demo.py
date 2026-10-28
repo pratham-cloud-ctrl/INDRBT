@@ -1,4 +1,4 @@
-"""Generate real ASTER-6 numerical results: python -m robotarm.demo --all."""
+"""Generate real INDRBT numerical results: python -m robotarm.demo --all."""
 
 from __future__ import annotations
 
@@ -114,7 +114,7 @@ def workspace_demo(robot: RobotArm, output: Path, sample_count: int | None = Non
         cloud, ax=axes, label="log₁₀ smallest scaled Jacobian singular value", shrink=0.75
     )
     figure.suptitle(
-        f"ASTER-6 | {sample_count:,} joint-limit workspace samples\nKinematic reach envelope; collision and ground clearance not filtered",
+        f"INDRBT | {sample_count:,} joint-limit workspace samples\nKinematic reach envelope; collision and ground clearance not filtered",
         weight="bold",
     )
     save(figure, directory / "workspace_projections.png")
@@ -126,7 +126,7 @@ def workspace_demo(robot: RobotArm, output: Path, sample_count: int | None = Non
         xlabel="X [m]",
         ylabel="Y [m]",
         zlabel="Z [m]",
-        title="ASTER-6 | sampled Cartesian position envelope",
+        title="INDRBT | sampled Cartesian position envelope",
     )
     axis.set_box_aspect((1, 1, 1))
     axis.legend()
@@ -245,10 +245,10 @@ def pick_place_demo(robot: RobotArm, output: Path, animation: bool = True) -> tu
     trajectory, events, phases = pick_and_place(robot)
     directory = output / "trajectories"
     plot_joints(
-        trajectory, directory / "pick_place_joints.png", "ASTER-6 | pick-and-place joint motion"
+        trajectory, directory / "pick_place_joints.png", "INDRBT | pick-and-place joint motion"
     )
     plot_tcp(
-        robot, trajectory, directory / "pick_place_tcp.png", "ASTER-6 | pick-and-place TCP path"
+        robot, trajectory, directory / "pick_place_tcp.png", "INDRBT | pick-and-place TCP path"
     )
     save_trajectory(directory / "pick_place.csv", trajectory)
     xyz = np.array([robot.fk(q)[:3, 3] for q in trajectory.q])

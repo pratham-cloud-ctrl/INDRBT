@@ -2594,7 +2594,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206"
+	(footprint "INDRBT_Interface:PTC_Bourns_MF-NSMF025X_1206"
 		(layer "F.Cu")
 		(uuid "39273422-da24-5137-a702-75042aa05670")
 		(at 35 32)
@@ -9657,7 +9657,7 @@
 			)
 		)
 	)
-	(gr_text "ASTER-6  JOINT / SENSOR INTERFACE"
+	(gr_text "INDRBT  JOINT / SENSOR INTERFACE"
 		(at 69 24 0)
 		(layer "F.SilkS")
 		(uuid "7f9c7b39-2641-48f5-af88-efa9db0621e2")

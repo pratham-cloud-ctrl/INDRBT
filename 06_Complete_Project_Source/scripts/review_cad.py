@@ -89,14 +89,14 @@ def audit():
         "Native evidence uses stale mesh manifest",
     )
     require(
-        fc["native_sha256"] == digest(ROOT / "cad/freecad/aster6_home.FCStd"),
+        fc["native_sha256"] == digest(ROOT / "cad/freecad/indrbt_home.FCStd"),
         "FreeCAD native evidence is stale",
     )
     require(
         blender["status"] == "PASS" and not blender["errors"], "Blender native inspection failed"
     )
     require(
-        blender["native_sha256"] == digest(ROOT / "cad/renders/aster6_home.blend"),
+        blender["native_sha256"] == digest(ROOT / "cad/renders/indrbt_home.blend"),
         "Blender native evidence is stale",
     )
     for name, expected in blender["render_sha256"].items():
@@ -197,7 +197,7 @@ def audit():
         )
 
     native_rows = []
-    with zipfile.ZipFile(ROOT / "cad/freecad/aster6_home.FCStd") as archive:
+    with zipfile.ZipFile(ROOT / "cad/freecad/indrbt_home.FCStd") as archive:
         require(archive.testzip() is None, "FreeCAD archive CRC error")
         xml = ET.fromstring(archive.read("GuiDocument.xml"))
         visible = [
@@ -370,8 +370,8 @@ def audit():
     artifacts += [
         ROOT / x
         for x in [
-            "cad/freecad/aster6_home.FCStd",
-            "cad/renders/aster6_home.blend",
+            "cad/freecad/indrbt_home.FCStd",
+            "cad/renders/indrbt_home.blend",
             "cad/exports/meshes/assembly_meshes.json",
             "results/validation/cad_validation.json",
             "results/validation/cad_assembly_clearance.json",

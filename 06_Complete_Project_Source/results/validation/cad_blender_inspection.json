@@ -387,15 +387,15 @@
     }
   ],
   "render_sha256": {
-    "gripper.png": "42ed92a3665e71f529071b860d1377d6955efbb3390fe9ca8d1db1b4a1be88b3",
+    "gripper.png": "7659a348bd3e8141904bdc350d8a66a5a99630d0e4e5ccd660eb8763d4aed90e",
     "hero.png": "126f2d594a27690e827db1cd89a0752bba431b3297343a65121ed3c5ba1b2443",
-    "pose_extended.png": "739f1e72050a1806f6219bd3736a38ab9a2eef7036cce60568c32efd57657686",
-    "pose_folded.png": "805bcc6ac5726ef6004abb93e85167c3bddc54dfcd1ed96fcc7ebaaf896e8843",
-    "pose_home.png": "ee396bf8063eff63fa5564daf944e3ec82bab3b377714866f92f81661e45f902",
-    "pose_pick.png": "ede709bd6489fb94c280fb344ba3536dbe470b973f97df1e9b4c102badc97181",
-    "pose_place.png": "71f30c24dde8d80aa48889a06246770b67bcae74cc89b999c122317b0b2ccf0a",
-    "pose_vertical.png": "cca7f380fae3d14881d1f73291d23eaed303597a154954d914b1c6a9f8e9493e",
-    "poses.png": "7deec980dca23fe4a30aca844b4fe2a8c0d60417ad3eb7a92ed8264f62903ceb"
+    "pose_extended.png": "3aac5d12bc85c1e172494fad1ff16c713cef8ccc93e1eb0452f600a67e46aa2d",
+    "pose_folded.png": "cb5a7b7e265e4a8802a2cf1668ebd6c3d9b9e878e44bfcb458452675e426e836",
+    "pose_home.png": "3cebb3932545392905c999cf91e0c36a529b4f8ce86413c1a66c93faed717963",
+    "pose_pick.png": "92ad1aeb8e8541eea10de406b4a12799f60561a76062f66a69d80d5a30cab060",
+    "pose_place.png": "146bcc3dbb4f304876d7e70a1f239051033572ede45c05ad549f7a2f0ea6b340",
+    "pose_vertical.png": "009b464bbe7f6fac979f1ce4cb020c1ccc21ae105cf605a750b48e6c8f46f762",
+    "poses.png": "bc5a4908cdc7e34467c0ef228d90c200089ae6251ac6b9eafb258815090c9749"
   },
   "errors": [],
   "scope": "Saved native object names/counts, local CAD mesh vertices and home transforms are compared directly. PNG hashes bind the outputs from the rendering workflow; readability is checked by review_cad.py."

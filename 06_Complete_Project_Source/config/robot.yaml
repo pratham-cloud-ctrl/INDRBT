@@ -1,4 +1,4 @@
-name: ASTER-6
+name: INDRBT
 units: {length: m, angle: rad, mass: kg, time: s, torque: N*m}
 geometry:
   base_diameter: 0.220

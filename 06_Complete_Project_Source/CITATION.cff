@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "Please cite this digital engineering project if you use its models or results."
-title: "ASTER-6: an original industrial robot arm digital twin"
+title: "INDRBT: an original industrial robot arm digital twin"
 version: 1.2.0
 date-released: 2026-10-18
 type: software
 authors:
-  - name: "ASTER-6 project contributors"
+  - name: "INDRBT project contributors"
 license: MIT
-repository-code: "https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin"
+repository-code: "https://github.com/pratham-cloud-ctrl/INDRBT"
 abstract: "Parametric six-axis robot CAD, bounded numerical kinematics, motion planning, educational PID simulation, analytical loads and conceptual electronics. No physical performance validation."

@@ -2392,8 +2392,8 @@
   "full_pair_screening": {
     "status": "PASS",
     "source_sha256": {
-      "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-      "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250"
+      "robot.yaml": "fde183861589ceaa492879da6e6114c80fdd659dcff6adcf46fc734b3a50934f",
+      "geometry.py": "efeddd26543a9a2545a3244b931579d474aa0775b80c48ab82dbaa48fd5cbb8a"
     },
     "component_count": 54,
     "poses": {
@@ -2487,8 +2487,8 @@
     "penetration_threshold_mm3": 0.001
   },
   "source_sha256": {
-    "robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-    "geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250"
+    "robot.yaml": "fde183861589ceaa492879da6e6114c80fdd659dcff6adcf46fc734b3a50934f",
+    "geometry.py": "efeddd26543a9a2545a3244b931579d474aa0775b80c48ab82dbaa48fd5cbb8a"
   },
   "interference_scope": "36 legacy selected structure checks plus acceptance of all component pairs at six named poses and gripper closed/mid/open. Adjacent joints are included. Same rigid-motion families are assembled interfaces. See full_pair_screening counts and exclusions; finite screening is not an exhaustive swept proof or physical certification.",
   "gripper": {
@@ -2496,5 +2496,13 @@
     "jaw_travel_each_mm": 45.0,
     "finger_length_mm": 60.0,
     "tool_length_mm": 110.0
+  },
+  "identity_migration_validation": {
+    "source_components_rebuilt_and_compared": 54,
+    "all_component_solids_valid": true,
+    "maximum_relative_volume_difference": 0.0,
+    "maximum_bbox_difference_mm": 0.0,
+    "six_pose_group_transforms_match_retained_mesh_manifest": true,
+    "step_stl_and_native_brep_identity": "Byte-for-byte comparison with verified pre-migration backup recorded in cad_identity_migration.json"
   }
 }

@@ -4,7 +4,7 @@ const path = require('path');
 const crypto = require('crypto');
 const { chromium } = require(process.argv[2] || 'playwright');
 const root = path.resolve(__dirname, '..');
-const html = path.join(root, 'simulations/aster6_twin.html');
+const html = path.join(root, 'simulations/indrbt_twin.html');
 const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation/viewer_reference.json'), 'utf8'));
 
 (async () => {
@@ -18,30 +18,30 @@ const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation
     const errors = [];
     page.on('pageerror', error => errors.push(String(error)));
     await page.goto('file:///' + html.replace(/\\/g, '/'));
-    await page.waitForFunction(() => window.asterDebug && document.querySelector('#tcp').textContent.length > 0);
+    await page.waitForFunction(() => window.indrbtDebug && document.querySelector('#tcp').textContent.length > 0);
     await page.screenshot({ path: path.join(root, 'simulations/viewer_preview.png') });
-    const baseline = await page.evaluate(() => ({ tcp: document.querySelector('#tcp').textContent, meshes: window.asterDebug.meshCount }));
+    const baseline = await page.evaluate(() => ({ tcp: document.querySelector('#tcp').textContent, meshes: window.indrbtDebug.meshCount }));
     await page.getByRole('button', { name: 'Play demo', exact: true }).click();
     await page.waitForTimeout(350);
     await page.getByRole('button', { name: 'Pause demo', exact: true }).click();
-    await page.evaluate(() => window.asterDebug.sample(3.4));
-    const closed = await page.evaluate(() => window.asterDebug.opening);
+    await page.evaluate(() => window.indrbtDebug.sample(3.4));
+    const closed = await page.evaluate(() => window.indrbtDebug.opening);
     const attachedPoseError = await page.evaluate(() => {
-      const debug=window.asterDebug, pose=debug.fk(debug.q).tcp, object=debug.objectPose;
+      const debug=window.indrbtDebug, pose=debug.fk(debug.q).tcp, object=debug.objectPose;
       return Math.max(...pose.map((value,index)=>Math.abs(value-object[index])));
     });
-    await page.evaluate(() => window.asterDebug.sample(4.8));
+    await page.evaluate(() => window.indrbtDebug.sample(4.8));
     const attachedRotationError = await page.evaluate(() => {
-      const debug=window.asterDebug, pose=debug.fk(debug.q).tcp, model=debug.objectModel, scale=[.018,.014,.018];
+      const debug=window.indrbtDebug, pose=debug.fk(debug.q).tcp, model=debug.objectModel, scale=[.018,.014,.018];
       let error=0;
       for(let row=0;row<3;row++)for(let column=0;column<3;column++)error=Math.max(error,Math.abs(model[4*row+column]/scale[column]-pose[4*row+column]));
       return error;
     });
-    await page.evaluate(() => window.asterDebug.sample(7));
-    const opened = await page.evaluate(() => window.asterDebug.opening);
+    await page.evaluate(() => window.indrbtDebug.sample(7));
+    const opened = await page.evaluate(() => window.indrbtDebug.opening);
     await page.getByRole('button', { name: 'Vertical', exact: true }).click();
-    const vertical = await page.evaluate(() => window.asterDebug.fk(window.asterDebug.q).tcp);
-    const transforms = await page.evaluate(qs => qs.map(q => window.asterDebug.fk(q).tcp), reference.q_rad);
+    const vertical = await page.evaluate(() => window.indrbtDebug.fk(window.indrbtDebug.q).tcp);
+    const transforms = await page.evaluate(qs => qs.map(q => window.indrbtDebug.fk(q).tcp), reference.q_rad);
     const components = await page.locator('#component option').evaluateAll(options => options.map(o => o.value).filter(Boolean));
     let minimumVisiblePixels = Infinity;
     for (const name of components) {
@@ -57,7 +57,7 @@ const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation
         for (let i = 0; i < pixels.length; i += 4) {
           if (Math.abs(pixels[i] - 11) + Math.abs(pixels[i+1] - 21) + Math.abs(pixels[i+2] - 31) > 8) visible++;
         }
-        return { visible, selected: window.asterDebug.selectedComponent, count: window.asterDebug.renderedComponentCount, glError: source.getContext('webgl').getError() };
+        return { visible, selected: window.indrbtDebug.selectedComponent, count: window.indrbtDebug.renderedComponentCount, glError: source.getContext('webgl').getError() };
       });
       if (inspection.selected !== name || inspection.count !== 1 || inspection.visible === 0 || inspection.glError !== 0) {
         throw Error(JSON.stringify({ name, inspection }));
@@ -88,7 +88,7 @@ const reference = JSON.parse(fs.readFileSync(path.join(root, 'results/validation
       label_encoding: 'PASS',
       individual_components_inspected: components.length,
       minimum_component_visible_pixels_in_64px_thumbnail: minimumVisiblePixels,
-      restore_complete_assembly: await page.evaluate(() => window.asterDebug.renderedComponentCount === 54),
+      restore_complete_assembly: await page.evaluate(() => window.indrbtDebug.renderedComponentCount === 54),
       gripper_closed_m: closed,
       gripper_open_m: opened,
       vertical_tcp_z_m: vertical[11],

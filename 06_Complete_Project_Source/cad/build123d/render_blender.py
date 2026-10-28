@@ -126,7 +126,7 @@ def render(pose, file, width, height, gripper=False):
 
 if "--poses-only" not in sys.argv:
     render("home", "hero.png", 1600, 1050)
-    bpy.ops.wm.save_as_mainfile(filepath=str(OUT / "aster6_home.blend"))
+    bpy.ops.wm.save_as_mainfile(filepath=str(OUT / "indrbt_home.blend"))
     render("home", "gripper.png", 1200, 850, True)
 for pose in DATA["pose_transforms"]:
     render(pose, f"pose_{pose}.png", 700, 650)

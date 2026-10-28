@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Open the engineering files</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="open-the-engineering-files">Open the engineering files</h1>
-<p><a href="https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot">Inspect the robot online</a> · <a href="https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb">Inspect the PCB online</a> · <a href="Documentation_Index.html">Documentation index</a></p>
-<p>The <a href="https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot">public browser showcase</a> is the quickest viewing route. For optional CAD/electronics application inspection or offline browsing, use the <a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21">public GitHub inspection release</a> and the actual engineering files below. The repository and its release assets are public; no private repository access is needed.</p>
-<p><strong>Hosting status — 21 October 2026:</strong> the browser showcase and its download controls are published through GitHub Pages at the address above. Public downloads are also distributed through the GitHub inspection release below. The original Sites management record remains inaccessible; publication on GitHub Pages does not claim to repair that server record.</p>
+<p><a href="https://pratham-cloud-ctrl.github.io/INDRBT/#robot">Inspect the robot online</a> · <a href="https://pratham-cloud-ctrl.github.io/INDRBT/#pcb">Inspect the PCB online</a> · <a href="Documentation_Index.html">Documentation index</a></p>
+<p>The <a href="https://pratham-cloud-ctrl.github.io/INDRBT/#robot">public browser showcase</a> is the quickest viewing route. For optional CAD/electronics application inspection or offline browsing, use the <a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28">public GitHub inspection release</a> and the actual engineering files below. The repository and its release assets are public; no private repository access is needed.</p>
+<p><strong>Hosting status — 28 October 2026:</strong> the browser showcase and its download controls are published through GitHub Pages at the address above. Public downloads are also distributed through the GitHub inspection release below. The original Sites management record remains inaccessible; publication on GitHub Pages does not claim to repair that server record.</p>
 <h2 id="choose-a-model-format">Choose a model format</h2>
 <table>
 <thead>
@@ -29,7 +29,7 @@
 </tr>
 <tr>
 <td>Native FreeCAD inspection assembly</td>
-<td><a href="../../06_Complete_Project_Source/cad/freecad/aster6_home.FCStd">aster6_home.FCStd</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd">indrbt_home.FCStd</a></td>
 <td>FreeCAD, <strong>File → Open</strong></td>
 </tr>
 <tr>
@@ -77,7 +77,7 @@
 </tr>
 <tr>
 <td>Project-local footprint resolution</td>
-<td><a href="../../06_Complete_Project_Source/electronics/fp-lib-table">fp-lib-table</a> and <a href="../../06_Complete_Project_Source/electronics/ASTER_Interface.pretty">ASTER_Interface.pretty</a></td>
+<td><a href="../../06_Complete_Project_Source/electronics/fp-lib-table">fp-lib-table</a> and <a href="../../06_Complete_Project_Source/electronics/INDRBT_Interface.pretty">INDRBT_Interface.pretty</a></td>
 </tr>
 <tr>
 <td>Symbol resolution and rules</td>
@@ -92,7 +92,7 @@
 <p>With <strong>KiCad 10</strong> and its standard libraries installed, keep the project, schematic, PCB, rule files, library tables and local footprint folder together. Open the <code>.kicad_pro</code> file in KiCad, then open the schematic or PCB editor. Open the <code>.kicad_sch</code> or <code>.kicad_pcb</code> directly only when their surrounding project context is retained. The custom F1 footprint resolves through <code>${KIPRJMOD}</code>; downloading the board alone omits that editable library context.</p>
 <p>For component roles, supply assumptions and verification scope, read the <a href="electronics_tour.html">circuit tour</a>, <a href="electronics_components.html">component guide</a> and <a href="05_electronics.html">electronics chapter</a>. Native files and rule checks remain digital design evidence, without physical qualification.</p>
 <h2 id="public-inspection-download-release">Public inspection download release</h2>
-<p><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21">Open the inspection release</a> for the four focused format packs and the combined offline pack. These are GitHub <strong>release assets</strong>; they do not need to be stored in the repository file tree. Local copies are also retained in <code>07_Releases</code>.</p>
+<p><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28">Open the inspection release</a> for the four focused format packs and the combined offline pack. These are GitHub <strong>release assets</strong>; they do not need to be stored in the repository file tree. Local copies are also retained in <code>07_Releases</code>.</p>
 <table>
 <thead>
 <tr>
@@ -102,26 +102,26 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_STEP_STL_CAD.zip">ASTER-6_STEP_STL_CAD.zip</a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_STEP_STL_CAD.zip">INDRBT_STEP_STL_CAD.zip</a></td>
 <td>Extract the exchange solids/meshes, then open a complete STEP assembly; STEP has no construction history</td>
 </tr>
 <tr>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_FreeCAD_Model.zip">ASTER-6_FreeCAD_Model.zip</a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_FreeCAD_Model.zip">INDRBT_FreeCAD_Model.zip</a></td>
 <td>Extract and open the native saved-solid FreeCAD inspection model</td>
 </tr>
 <tr>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_KiCad_Project.zip">ASTER-6_KiCad_Project.zip</a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_KiCad_Project.zip">INDRBT_KiCad_Project.zip</a></td>
 <td>Extract the project with its local library context, then open the <code>.kicad_pro</code> file</td>
 </tr>
 <tr>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_PCB_STEP.zip">ASTER-6_PCB_STEP.zip</a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_PCB_STEP.zip">INDRBT_PCB_STEP.zip</a></td>
 <td>Import the native board STEP into mechanical CAD; 100 × 100 × 11.54 mm, with fitted component and copper geometry</td>
 </tr>
 <tr>
-<td><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/download/inspection-2026-10-21/ASTER-6_Inspection_With_CAD.zip">ASTER-6_Inspection_With_CAD.zip</a></td>
+<td><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/download/indrbt-2026-10-28/INDRBT_Inspection_With_CAD.zip">INDRBT_Inspection_With_CAD.zip</a></td>
 <td>Extract the browser viewers with the selected CAD and KiCad downloads for combined offline inspection</td>
 </tr>
 </tbody>
 </table>
-<p>The earlier <code>ASTER-6_Browser_Inspection.zip</code> remains a local historical pack in <code>07_Releases</code>; the public combined pack is the current offline download. The engineering v1.2.0 release is preserved separately from this inspection distribution.</p>
+<p>The earlier <code>INDRBT_Browser_Inspection.zip</code> remains a local historical pack in <code>07_Releases</code>; the public combined pack is the current offline download. The engineering v1.2.0 release is preserved separately from this inspection distribution.</p>
 <p>Downloading or opening these files is optional. The online viewers remain the immediate inspection route, and the <a href="Project_Readme.html">source project guide</a> covers local reproduction.</p></main></html>

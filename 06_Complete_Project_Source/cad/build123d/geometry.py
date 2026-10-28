@@ -1,4 +1,4 @@
-"""Original ASTER-6 prototype geometry, in millimetres.
+"""Original INDRBT prototype geometry, in millimetres.
 
 Bearing, gearbox and motor internals are envelope representations. Hollow link
 sections, interfaces, holes, clearances and gripper parts are explicit BReps.

@@ -1,6 +1,6 @@
 # Parametric mechanical design and CAD evidence
 
-ASTER-6 uses Build123d 0.13 and OpenCascade as the primary solid modeler. The design is original and generated from Python; FreeCAD is an independent STEP inspector and native assembly viewer. No duplicate OpenSCAD model is maintained.
+INDRBT uses Build123d 0.13 and OpenCascade as the primary solid modeler. The design is original and generated from Python; FreeCAD is an independent STEP inspector and native assembly viewer. No duplicate OpenSCAD model is maintained.
 
 ## Units and rigid frames
 
@@ -38,9 +38,9 @@ Enter `06_Complete_Project_Source` from the organized repository root, then run 
 
 `cad/exports/meshes/assembly_meshes.json` contains actual BRep tessellation, local frame IDs, material colors and pose transforms. Tessellation tolerance is 0.5 mm for visualization; exact BRep intersections use the CAD solids, not these triangles. Meshes are reused by the portable digital twin and Blender, so both show the same mechanism.
 
-With Blender available, run `blender --background --python cad/build123d/render_blender.py` to regenerate the hero, gripper and six pose images. These are renderings of CAD meshes; no synthetic or AI-generated mechanism images are used. `cad/renders/aster6_home.blend` preserves the hero scene.
+With Blender available, run `blender --background --python cad/build123d/render_blender.py` to regenerate the hero, gripper and six pose images. These are renderings of CAD meshes; no synthetic or AI-generated mechanism images are used. `cad/renders/indrbt_home.blend` preserves the hero scene.
 
-The native refresh wrapper below runs FreeCAD in console mode for independent import of all six assemblies. It writes `results/validation/cad_freecad_inspection.json` and a native `cad/freecad/aster6_home.FCStd` assembly with 54 descriptive part labels, group/material/role properties and visible saved view providers. The native file opens with the solid assembly visible even when generated headlessly. The script requires an installed FreeCAD runtime; it is separate from the Python virtual environment.
+The native refresh wrapper below runs FreeCAD in console mode for independent import of all six assemblies. It writes `results/validation/cad_freecad_inspection.json` and a native `cad/freecad/indrbt_home.FCStd` assembly with 54 descriptive part labels, group/material/role properties and visible saved view providers. The native file opens with the solid assembly visible even when generated headlessly. The script requires an installed FreeCAD runtime; it is separate from the Python virtual environment.
 
 The three-page `docs/drawings/engineering_interfaces.pdf` and its three SVG source sheets show base/flange patterns, nominal link sections and the gripper mechanism. Dimensions are millimetres. These are interface concept drawings, with explicit manufacturing limitations; they are not fully toleranced production drawings.
 

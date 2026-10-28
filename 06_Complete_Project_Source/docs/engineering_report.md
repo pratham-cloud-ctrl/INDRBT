@@ -1,10 +1,10 @@
-# ASTER-6 engineering report
+# INDRBT engineering report
 
 Version 1.2.0 · 2026-10-05 · digital engineering project
 
 ## 1. Abstract
 
-ASTER-6 is an original six-axis industrial-arm concept with reproducible BRep CAD, numerical kinematics, motion planning, a parallel gripper, load calculations and a native conceptual KiCad interface. Its nominal shoulder-centred reach is 790 mm. The 4 kg payload and ±0.1 mm repeatability are design targets; neither is a tested hardware rating. The project is an educational geometric digital twin whose evidence comes from executed software.
+INDRBT is an original six-axis industrial-arm concept with reproducible BRep CAD, numerical kinematics, motion planning, a parallel gripper, load calculations and a native conceptual KiCad interface. Its nominal shoulder-centred reach is 790 mm. The 4 kg payload and ±0.1 mm repeatability are design targets; neither is a tested hardware rating. The project is an educational geometric digital twin whose evidence comes from executed software.
 
 ## 2. Problem
 
@@ -56,7 +56,7 @@ The native joint/sensor schematic contains 44 components, 28 connected nets and 
 
 ## 14. Simulation
 
-The ideal pick/place cycle lasts 9.24398 s, contains 1041 joint samples and traces 1.32360 m of TCP path. Gripper close/open events occur during dwells, and the arm returns home. Peak sampled speed and acceleration fractions of their configured limits are 0.951694 and 0.997971. The offline [CAD twin](../simulations/aster6_twin.html) renders actual CAD meshes with the recorded joint transforms; the [FK animation](../results/trajectories/pick_place_fk.gif) shows the same mathematical motion. Browser interactions and JavaScript/Python transforms are checked separately. Grasp uses an ideal attachment, with no contact dynamics.
+The ideal pick/place cycle lasts 9.24398 s, contains 1041 joint samples and traces 1.32360 m of TCP path. Gripper close/open events occur during dwells, and the arm returns home. Peak sampled speed and acceleration fractions of their configured limits are 0.951694 and 0.997971. The offline [CAD twin](../simulations/indrbt_twin.html) renders actual CAD meshes with the recorded joint transforms; the [FK animation](../results/trajectories/pick_place_fk.gif) shows the same mathematical motion. Browser interactions and JavaScript/Python transforms are checked separately. Grasp uses an ideal attachment, with no contact dynamics.
 
 ## 15. Verification
 

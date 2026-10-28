@@ -219,7 +219,7 @@ def artifacts_check() -> dict:
         raise ValueError("CAD twin mesh count or units inconsistent")
     viewer = read_json(ROOT / "results/validation/viewer_validation.json")
     html_hash = hashlib.sha256(
-        (ROOT / "simulations/aster6_twin.html").read_text(encoding="utf-8").encode("utf-8")
+        (ROOT / "simulations/indrbt_twin.html").read_text(encoding="utf-8").encode("utf-8")
     ).hexdigest()
     if (
         viewer["html_sha256"] != html_hash
@@ -350,7 +350,7 @@ def run() -> int:
         if args.skip_pcb_render:
             argv += ["--skip-pcb-render"]
         check("KiCad ERC / PCB DRC / connectivity", lambda: command(argv))
-    with tempfile.TemporaryDirectory(prefix="aster-qa-") as temp:
+    with tempfile.TemporaryDirectory(prefix="indrbt-qa-") as temp:
         (out / "pytest.xml").unlink(missing_ok=True)
         check(
             "Automated numerical/CAD tests",

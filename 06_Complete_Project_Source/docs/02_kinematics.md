@@ -1,6 +1,6 @@
 # Kinematic formulation
 
-ASTER-6 uses an explicit sequence of rigid-body transformations. All calculations
+INDRBT uses an explicit sequence of rigid-body transformations. All calculations
 use metres, radians and seconds. A column vector represents a point; transforms
 map local coordinates into the base frame. The base frame has +Z up, +X along the
 zero-position arm and +Y completing a right-handed frame. This is a numerical

@@ -28,7 +28,7 @@ function Find-FreeCAD {
             }
         }
     }
-    throw 'FreeCAD was not found. Open 01_CAD_Models\FreeCAD\aster6_home.FCStd through FreeCAD File > Open.'
+    throw 'FreeCAD was not found. Open 01_CAD_Models\FreeCAD\indrbt_home.FCStd through FreeCAD File > Open.'
 }
 
 function Find-Browser {
@@ -68,7 +68,7 @@ try {
         $document = Join-Path $projectRoot '04_Electronics\joint_interface.kicad_pcb'
     } elseif ($View -eq 'FreeCAD') {
         $application = Find-FreeCAD
-        $document = Join-Path $projectRoot '01_CAD_Models\FreeCAD\aster6_home.FCStd'
+        $document = Join-Path $projectRoot '01_CAD_Models\FreeCAD\indrbt_home.FCStd'
     } else {
         $application = Find-Browser
         $relative = if ($View -eq 'Viewer') { '02_Simulation_and_Animation\Interactive_3D_Viewer.html' } else { 'START_HERE.html' }

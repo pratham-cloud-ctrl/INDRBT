@@ -2,7 +2,7 @@
 
 [← Project home](../README.md) · [CAD](../01_CAD_Models/README.md) · [Theory](../03_Reports_and_Results/README.md)
 
-**[Inspect the interactive PCB](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb) · [Rotate the 3D board](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb3d) · [Zoom the schematic](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#schematic)**
+**[Inspect the interactive PCB](https://pratham-cloud-ctrl.github.io/INDRBT/#pcb) · [Rotate the 3D board](https://pratham-cloud-ctrl.github.io/INDRBT/#pcb3d) · [Zoom the schematic](https://pratham-cloud-ctrl.github.io/INDRBT/#schematic)**
 
 Search components, cross-highlight the BOM, follow connected nets and inspect the actual board without installing KiCad.
 
@@ -27,7 +27,7 @@ References such as **U1**, **R5** or **J3** identify the same part in the schema
 
 ## Open the KiCad project
 
-**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — the editable project with schematic, board and custom library context, plus board geometry for mechanical CAD. Follow the [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project). GitHub downloads are public. The published GitHub Pages showcase includes the browser viewers and download controls.
+**[Public KiCad and PCB STEP downloads](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28)** — the editable project with schematic, board and custom library context, plus board geometry for mechanical CAD. Follow the [opening guide](../06_Complete_Project_Source/docs/cad_downloads.md#open-the-kicad-project). GitHub downloads are public. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 1. For optional offline editing, download and extract the **complete repository**, keeping this folder together.
 2. Open [joint_interface.kicad_pro](joint_interface.kicad_pro) in **KiCad 10**, then choose the schematic or PCB editor.
@@ -39,7 +39,7 @@ References such as **U1**, **R5** or **J3** identify the same part in the schema
 | Schematic | [joint_interface.kicad_sch](joint_interface.kicad_sch) |
 | Routed PCB | [joint_interface.kicad_pcb](joint_interface.kicad_pcb) |
 | Project-local library table | [fp-lib-table](fp-lib-table) |
-| Manufacturer-specific fuse land pattern | [ASTER_Interface.pretty](ASTER_Interface.pretty) |
+| Manufacturer-specific fuse land pattern | [INDRBT_Interface.pretty](INDRBT_Interface.pretty) |
 
 Keep the library table and local footprint folder beside the project. F1 uses a Bourns MF-NSMF025X-2 land pattern stored here; downloading only the PCB omits part of the editable project. The 3D render shows F1's lands because a dedicated fuse body model is not supplied.
 

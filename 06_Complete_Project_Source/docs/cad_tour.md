@@ -1,25 +1,25 @@
 # Mechanical design tour
 
-**[Open the interactive robot online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot)** — no CAD application or GitHub access required.
+**[Open the interactive robot online](https://pratham-cloud-ctrl.github.io/INDRBT/#robot)** — no CAD application or GitHub access required.
 
 [Project home](../../README.md) · [CAD files](../cad/README.md) · [All 54 components](component_catalog.md) · [Detailed CAD method](04_cad.md)
 
-**[Download the public CAD inspection packs](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The [native-file guide](cad_downloads.md) explains millimetre units and opening/importing each format. The published GitHub Pages showcase includes the browser viewers and download controls.
+**[Download the public CAD inspection packs](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28)** — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The [native-file guide](cad_downloads.md) explains millimetre units and opening/importing each format. The published GitHub Pages showcase includes the browser viewers and download controls.
 
-ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The model has **54 solid components**, **six saved poses** and **90 mm of clear jaw opening**. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.
+INDRBT connects a six-axis arm to an interchangeable parallel gripper. The model has **54 solid components**, **six saved poses** and **90 mm of clear jaw opening**. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.
 
-![ASTER-6 home assembly, showing the fixed base, two arm links, wrist and parallel gripper](../cad/renders/hero.png)
+![INDRBT home assembly, showing the fixed base, two arm links, wrist and parallel gripper](../cad/renders/hero.png)
 
 ## Choose how to explore
 
 | You want to inspect | View directly on GitHub | Download and open locally |
 |---|---|---|
-| The complete robot | [Assembly image](../cad/renders/hero.png) · [six poses](../cad/renders/poses.png) | [FreeCAD assembly](../cad/freecad/aster6_home.FCStd) · [home STEP](../cad/exports/STEP/assembly_home.step) |
+| The complete robot | [Assembly image](../cad/renders/hero.png) · [six poses](../cad/renders/poses.png) | [FreeCAD assembly](../cad/freecad/indrbt_home.FCStd) · [home STEP](../cad/exports/STEP/assembly_home.step) |
 | The gripping mechanism | [Gripper close-up](../cad/renders/gripper.png) · [dimensioned layout](drawings/03_gripper_layout.svg) | [Gripper body STEP](../cad/exports/STEP/gripper_pocketed_body.step) · [part catalog](component_catalog.md#find-an-individual-component) |
 | Dimensions and interfaces | [Base and flange](drawings/01_base_tool_interfaces.svg) · [link sections](drawings/02_link_sections.svg) | [Three-page drawing PDF](drawings/engineering_interfaces.pdf) |
-| Joint motion or one isolated part | [Six-pose sheet](../cad/renders/poses.png) | [Interactive viewer](../simulations/aster6_twin.html): pose selector, joint controls and component selector |
+| Joint motion or one isolated part | [Six-pose sheet](../cad/renders/poses.png) | [Interactive viewer](../simulations/indrbt_twin.html): pose selector, joint controls and component selector |
 
-[Use the public robot viewer](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot) for online inspection, joint controls and playback. For an optional offline copy, download or clone the complete project, then use [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) on Windows. [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) opens the native model for optional CAD inspection or editing. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD. GitHub displays the repository HTML source rather than running it.
+[Use the public robot viewer](https://pratham-cloud-ctrl.github.io/INDRBT/#robot) for online inspection, joint controls and playback. For an optional offline copy, download or clone the complete project, then use [OPEN_3D_VIEWER.cmd](../../OPEN_3D_VIEWER.cmd) on Windows. [OPEN_FREECAD_MODEL.cmd](../../OPEN_FREECAD_MODEL.cmd) opens the native model for optional CAD inspection or editing. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD. GitHub displays the repository HTML source rather than running it.
 
 ## Follow the mechanical chain
 

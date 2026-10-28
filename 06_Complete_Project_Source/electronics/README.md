@@ -1,12 +1,12 @@
-# ASTER-6 · KiCad electronics source
+# INDRBT · KiCad electronics source
 
 [Illustrated electronics tour](../docs/electronics_tour.md) · [Project home](../../README.md) · [Engineering design chapter](../docs/05_electronics.md)
 
 This is the authoritative source for the **100 × 100 mm, four-layer joint/sensor interface**: 44 schematic components and 48 PCB footprints, including four mounting holes. An external 3.3 V controller connects to encoder/limit inputs, a separate motor drive and RS-485. The PCB implements logic interfacing; the controller, motor power stage and embedded firmware are external to this design.
 
-[Inspect the PCB online](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb), [rotate the 3D board](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#pcb3d) or [zoom the schematic](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#schematic) without installing KiCad or downloading files. The native project steps below are optional for offline editing.
+[Inspect the PCB online](https://pratham-cloud-ctrl.github.io/INDRBT/#pcb), [rotate the 3D board](https://pratham-cloud-ctrl.github.io/INDRBT/#pcb3d) or [zoom the schematic](https://pratham-cloud-ctrl.github.io/INDRBT/#schematic) without installing KiCad or downloading files. The native project steps below are optional for offline editing.
 
-**[Public electronics download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21)** — download the KiCad project with its schematic, board and local footprint context, or choose the PCB STEP pack for mechanical CAD. The [native-file guide](../docs/cad_downloads.md#open-the-kicad-project) explains opening the project. The published GitHub Pages showcase includes the browser viewers and download controls.
+**[Public electronics download release](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28)** — download the KiCad project with its schematic, board and local footprint context, or choose the PCB STEP pack for mechanical CAD. The [native-file guide](../docs/cad_downloads.md#open-the-kicad-project) explains opening the project. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ![Native KiCad 3D board export](exports/pcb_3d.png)
 
@@ -22,6 +22,6 @@ This is the authoritative source for the **100 × 100 mm, four-layer joint/senso
 
 For optional offline editing, download and extract the **complete repository** using **Code → Download ZIP**, or clone it. With KiCad 10 and its standard libraries installed, open [joint_interface.kicad_pro](joint_interface.kicad_pro), then its [schematic](joint_interface.kicad_sch) or [PCB](joint_interface.kicad_pcb). GitHub shows native files as source; PDF/PNG links above provide readable previews.
 
-Keep this folder intact. [fp-lib-table](fp-lib-table) resolves the project-local [F1 footprint](ASTER_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod) through `${KIPRJMOD}`; [sym-lib-table](sym-lib-table) resolves stock symbols. Downloading a single native file omits this library context. On Windows, [OPEN_PCB_LAYOUT.cmd](../../OPEN_PCB_LAYOUT.cmd) at the repository root opens the downloaded layout.
+Keep this folder intact. [fp-lib-table](fp-lib-table) resolves the project-local [F1 footprint](INDRBT_Interface.pretty/PTC_Bourns_MF-NSMF025X_1206.kicad_mod) through `${KIPRJMOD}`; [sym-lib-table](sym-lib-table) resolves stock symbols. Downloading a single native file omits this library context. On Windows, [OPEN_PCB_LAYOUT.cmd](../../OPEN_PCB_LAYOUT.cmd) at the repository root opens the downloaded layout.
 
 Supply regulated **5 V**, with 3.3 V GPIO and a shared 150 mA logic-load design budget. Read the [tour](../docs/electronics_tour.md) for connector roles and the [design chapter](../docs/05_electronics.md) for complete pin contracts, calculations, assumptions and reproduction commands. Saved native rules/connectivity checks pass within their documented scope; no physical board was built or qualified.

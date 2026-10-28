@@ -435,7 +435,7 @@ def build(footprint_directory):
         if ref.startswith("#"):
             continue
         lib, name = comp.findtext("footprint").split(":")
-        library_directory = ROOT if lib == "ASTER_Interface" else footprint_directory
+        library_directory = ROOT if lib == "INDRBT_Interface" else footprint_directory
         fp = p.FootprintLoad(str(library_directory / f"{lib}.pretty"), name)
         assert fp is not None, f"Missing footprint {lib}:{name}"
         fp.SetReference(ref)
@@ -579,7 +579,7 @@ def build(footprint_directory):
             keys.remove(b)
     make_plane(board, nets[net_names["/GND"]], p.In1_Cu)
     make_plane(board, nets[net_names["/+3V3"]], p.In2_Cu)
-    add_text(board, "ASTER-6  JOINT / SENSOR INTERFACE", (69, 24), 1.5)
+    add_text(board, "INDRBT  JOINT / SENSOR INTERFACE", (69, 24), 1.5)
     add_text(board, "5 V INPUT ONLY  |  3.3 V LOGIC", (68, 26), 0.9)
     add_text(board, "ENCODER", (105, 29), 1.0)
     add_text(board, "NC LIMIT", (105, 60), 1.0)

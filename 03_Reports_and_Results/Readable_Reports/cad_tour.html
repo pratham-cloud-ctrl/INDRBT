@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mechanical design tour</title><style>body{margin:0;background:#101923;color:#e2eaf2;font:17px/1.65 Segoe UI,Arial,sans-serif}main{max-width:1150px;margin:auto;padding:36px}h1,h2,h3{line-height:1.2;color:#fff}h1{font-size:42px}a{color:#7dd9f8}img{max-width:100%;border-radius:14px}header{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px}.card{padding:22px;background:#1d2b3a;border:1px solid #34465a;border-radius:14px}.button{display:inline-block;padding:12px 20px;background:#38b8d4;color:#071c25;font-weight:700;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0}.tag{font-size:13px;color:#a3bbce;letter-spacing:1px}table{border-collapse:collapse;display:block;overflow:auto}td,th{border:1px solid #47596b;padding:8px}pre{overflow:auto;background:#192839;padding:18px}code{font-size:14px}li{margin:5px 0}@media(max-width:750px){header{grid-template-columns:1fr}main{padding:20px}h1{font-size:30px}}</style><main><a href="../../START_HERE.html">← Project home</a><h1 id="mechanical-design-tour">Mechanical design tour</h1>
-<p><strong><a href="https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot">Open the interactive robot online</a></strong> — no CAD application or GitHub access required.</p>
+<p><strong><a href="https://pratham-cloud-ctrl.github.io/INDRBT/#robot">Open the interactive robot online</a></strong> — no CAD application or GitHub access required.</p>
 <p><a href="../../START_HERE.html">Project home</a> · <a href="CAD_Source_Index.html">CAD files</a> · <a href="component_catalog.html">All 54 components</a> · <a href="04_cad.html">Detailed CAD method</a></p>
-<p><strong><a href="https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21">Download the public CAD inspection packs</a></strong> — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The <a href="cad_downloads.html">native-file guide</a> explains millimetre units and opening/importing each format. The published GitHub Pages showcase includes the browser viewers and download controls.</p>
-<p>ASTER-6 connects a six-axis arm to an interchangeable parallel gripper. The model has <strong>54 solid components</strong>, <strong>six saved poses</strong> and <strong>90 mm of clear jaw opening</strong>. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.</p>
-<p><img alt="ASTER-6 home assembly, showing the fixed base, two arm links, wrist and parallel gripper" src="../../06_Complete_Project_Source/cad/renders/hero.png" /></p>
+<p><strong><a href="https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28">Download the public CAD inspection packs</a></strong> — STEP/STL exchange geometry, the native FreeCAD model, PCB STEP and the combined offline pack. The <a href="cad_downloads.html">native-file guide</a> explains millimetre units and opening/importing each format. The published GitHub Pages showcase includes the browser viewers and download controls.</p>
+<p>INDRBT connects a six-axis arm to an interchangeable parallel gripper. The model has <strong>54 solid components</strong>, <strong>six saved poses</strong> and <strong>90 mm of clear jaw opening</strong>. These images come from the project's CAD geometry; the same part meshes drive the offline interactive viewer.</p>
+<p><img alt="INDRBT home assembly, showing the fixed base, two arm links, wrist and parallel gripper" src="../../06_Complete_Project_Source/cad/renders/hero.png" /></p>
 <h2 id="choose-how-to-explore">Choose how to explore</h2>
 <table>
 <thead>
@@ -17,7 +17,7 @@
 <tr>
 <td>The complete robot</td>
 <td><a href="../../06_Complete_Project_Source/cad/renders/hero.png">Assembly image</a> · <a href="../../06_Complete_Project_Source/cad/renders/poses.png">six poses</a></td>
-<td><a href="../../06_Complete_Project_Source/cad/freecad/aster6_home.FCStd">FreeCAD assembly</a> · <a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">home STEP</a></td>
+<td><a href="../../06_Complete_Project_Source/cad/freecad/indrbt_home.FCStd">FreeCAD assembly</a> · <a href="../../06_Complete_Project_Source/cad/exports/STEP/assembly_home.step">home STEP</a></td>
 </tr>
 <tr>
 <td>The gripping mechanism</td>
@@ -32,11 +32,11 @@
 <tr>
 <td>Joint motion or one isolated part</td>
 <td><a href="../../06_Complete_Project_Source/cad/renders/poses.png">Six-pose sheet</a></td>
-<td><a href="../../06_Complete_Project_Source/simulations/aster6_twin.html">Interactive viewer</a>: pose selector, joint controls and component selector</td>
+<td><a href="../../06_Complete_Project_Source/simulations/indrbt_twin.html">Interactive viewer</a>: pose selector, joint controls and component selector</td>
 </tr>
 </tbody>
 </table>
-<p><a href="https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#robot">Use the public robot viewer</a> for online inspection, joint controls and playback. For an optional offline copy, download or clone the complete project, then use <a href="../../OPEN_3D_VIEWER.cmd">OPEN_3D_VIEWER.cmd</a> on Windows. <a href="../../OPEN_FREECAD_MODEL.cmd">OPEN_FREECAD_MODEL.cmd</a> opens the native model for optional CAD inspection or editing. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD. GitHub displays the repository HTML source rather than running it.</p>
+<p><a href="https://pratham-cloud-ctrl.github.io/INDRBT/#robot">Use the public robot viewer</a> for online inspection, joint controls and playback. For an optional offline copy, download or clone the complete project, then use <a href="../../OPEN_3D_VIEWER.cmd">OPEN_3D_VIEWER.cmd</a> on Windows. <a href="../../OPEN_FREECAD_MODEL.cmd">OPEN_FREECAD_MODEL.cmd</a> opens the native model for optional CAD inspection or editing. On other systems, open the downloaded viewer HTML in a browser or the native model in FreeCAD. GitHub displays the repository HTML source rather than running it.</p>
 <h2 id="follow-the-mechanical-chain">Follow the mechanical chain</h2>
 <p>The fixed mounting plate and hollow riser support a rotating turret. Shoulder and elbow joints position the two hollow arm links; three wrist rotations orient the tool. The joint-axis sequence is <strong>Z–Y–Y–X–Y–X</strong>. The configured upper-arm and forearm centre spacings are 320 and 280 mm.</p>
 <table>

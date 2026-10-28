@@ -1,6 +1,6 @@
-# ASTER-6 v1.2.0 — original goals, repaired mechanics and rigorous validation
+# INDRBT v1.2.0 — original goals, repaired mechanics and rigorous validation
 
-ASTER-6 connects an original six-axis arm and interchangeable parallel gripper
+INDRBT connects an original six-axis arm and interchangeable parallel gripper
 to kinematics, motion planning, analytical mechanics, simplified feedback control
 and a routed conceptual joint/sensor interface. The 17 October review revisited
 the original digital brief and fixed defects beyond the earlier passing checks.

@@ -1,21 +1,21 @@
 {
   "schema_version": 2,
   "status": "PASS",
-  "recorded_utc": "2026-10-17T11:22:29.751776+00:00",
+  "recorded_utc": "2026-10-28T13:00:55.621754+00:00",
   "issues": [],
   "source_sha256": {
-    "config/robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
-    "cad/build123d/geometry.py": "f6f1204cf01cb72f3b3f9a003f0fa8d8e1dc09e72ed562993a8ea4f9077cc250",
+    "config/robot.yaml": "fde183861589ceaa492879da6e6114c80fdd659dcff6adcf46fc734b3a50934f",
+    "cad/build123d/geometry.py": "efeddd26543a9a2545a3244b931579d474aa0775b80c48ab82dbaa48fd5cbb8a",
     "cad/build123d/assembly.py": "ab331015a96668f5c9eb73fdccd46cc386fd6b050448eed1cc2901cc0866f84f",
     "cad/build123d/parameters.py": "78db1770d9ed6471f7226bf11b3b180eaca02c2740a672997efa137453a3ccbe",
     "cad/build123d/export_all.py": "d29e0471cd2822c09003df9b2ad74bba482068acda58268e0ae059c55e535d97",
-    "cad/build123d/drawings.py": "14f0980e103e54a895ce121c24fa8d982fd6c6c7253e9318b959cc0bbb10f513",
-    "cad/build123d/render_blender.py": "bf84f37edbc38beb844a402a91c8dafaf4ca72d409f777eca4fd781eeab3491a",
-    "cad/build123d/inspect_blender.py": "f26cb3e95b5f8a86ec76e2837ad583214211a29cf67571403019030e2354fe54",
-    "cad/freecad/inspect_step.py": "31d8b3b5bc1f24abb53e8e0f61fa0c52622519aea601fc85946f2d5a9755c8ee",
+    "cad/build123d/drawings.py": "f0741684f92000069eeb6f6d3403628bd93ab657e4823b55bde578a6b2576d70",
+    "cad/build123d/render_blender.py": "d2a03a7ecc2d331eae65f9f5dfc788f9b078e39154f7aaea4fbc7ad63266afc3",
+    "cad/build123d/inspect_blender.py": "9e699e720268631b310db58eda99c93de26ef0e91f99199ee9d8d453f4cc096c",
+    "cad/freecad/inspect_step.py": "85d019b367be3e062f93ceb5b5726eed97f1b4982eea21bda1d18b0c9ccd55c3",
     "cad/build123d/check_assembly.py": "16aad10d458771f8787ae8b28494dcd62169b18a0643d2107e0eb1d5eb166ae6",
     "cad/build123d/check_motion.py": "513d7217ba978a62ff2bb44506814af85be71d05e59e2ea1b90693d4696cc17d",
-    "scripts/review_cad.py": "d6da1c9ebae3e354cd92e4a355f278bce622831e173b83378c2ac688f81a2cdf",
+    "scripts/review_cad.py": "b58e658fbfccd4be5368af54f7e23ebf7bb9bc31dc2bb02cfb6cddd00a57a405",
     "scripts/refresh_cad.py": "41c7d03c6a7536e6ea39e891841f22b96662e6ade6701cdf8505b8dab04f85ea",
     "tests/test_cad.py": "c800a999a61ff3ea0a02472802f8badda1d5833b81a32aafaab6eaa605022bdc"
   },
@@ -626,18 +626,13 @@
       "bytes": 102084
     },
     {
-      "file": "cad/freecad/aster6_home.FCStd",
-      "sha256": "b8c87d75bf1816d850a14157502b3e2025d040121f884a5189056036df6945c4",
-      "bytes": 197161
-    },
-    {
-      "file": "cad/renders/aster6_home.blend",
-      "sha256": "e7d3fac2846ca6f5b3863797169b3caaa53515b5dc9cfe88459efa5931357ab5",
-      "bytes": 756890
+      "file": "cad/freecad/indrbt_home.FCStd",
+      "sha256": "5a2bbf35bd9fe3265aaf7b38a0617e8b9b3e11b284844d5eea2a4abc3e42fae0",
+      "bytes": 197163
     },
     {
       "file": "cad/renders/gripper.png",
-      "sha256": "42ed92a3665e71f529071b860d1377d6955efbb3390fe9ca8d1db1b4a1be88b3",
+      "sha256": "7659a348bd3e8141904bdc350d8a66a5a99630d0e4e5ccd660eb8763d4aed90e",
       "bytes": 1026461
     },
     {
@@ -646,84 +641,89 @@
       "bytes": 1737364
     },
     {
+      "file": "cad/renders/indrbt_home.blend",
+      "sha256": "e7d3fac2846ca6f5b3863797169b3caaa53515b5dc9cfe88459efa5931357ab5",
+      "bytes": 756890
+    },
+    {
       "file": "cad/renders/pose_extended.png",
-      "sha256": "739f1e72050a1806f6219bd3736a38ab9a2eef7036cce60568c32efd57657686",
+      "sha256": "3aac5d12bc85c1e172494fad1ff16c713cef8ccc93e1eb0452f600a67e46aa2d",
       "bytes": 491551
     },
     {
       "file": "cad/renders/pose_folded.png",
-      "sha256": "805bcc6ac5726ef6004abb93e85167c3bddc54dfcd1ed96fcc7ebaaf896e8843",
+      "sha256": "cb5a7b7e265e4a8802a2cf1668ebd6c3d9b9e878e44bfcb458452675e426e836",
       "bytes": 532976
     },
     {
       "file": "cad/renders/pose_home.png",
-      "sha256": "ee396bf8063eff63fa5564daf944e3ec82bab3b377714866f92f81661e45f902",
+      "sha256": "3cebb3932545392905c999cf91e0c36a529b4f8ce86413c1a66c93faed717963",
       "bytes": 527130
     },
     {
       "file": "cad/renders/pose_pick.png",
-      "sha256": "ede709bd6489fb94c280fb344ba3536dbe470b973f97df1e9b4c102badc97181",
+      "sha256": "92ad1aeb8e8541eea10de406b4a12799f60561a76062f66a69d80d5a30cab060",
       "bytes": 528833
     },
     {
       "file": "cad/renders/pose_place.png",
-      "sha256": "71f30c24dde8d80aa48889a06246770b67bcae74cc89b999c122317b0b2ccf0a",
+      "sha256": "146bcc3dbb4f304876d7e70a1f239051033572ede45c05ad549f7a2f0ea6b340",
       "bytes": 530834
     },
     {
       "file": "cad/renders/pose_vertical.png",
-      "sha256": "cca7f380fae3d14881d1f73291d23eaed303597a154954d914b1c6a9f8e9493e",
+      "sha256": "009b464bbe7f6fac979f1ce4cb020c1ccc21ae105cf605a750b48e6c8f46f762",
       "bytes": 476168
     },
     {
       "file": "cad/renders/poses.png",
-      "sha256": "7deec980dca23fe4a30aca844b4fe2a8c0d60417ad3eb7a92ed8264f62903ceb",
-      "bytes": 2017532
+      "sha256": "bc5a4908cdc7e34467c0ef228d90c200089ae6251ac6b9eafb258815090c9749",
+      "bytes": 2017235
     },
     {
       "file": "docs/drawings/01_base_tool_interfaces.svg",
-      "sha256": "d34f0cd0850c609bd8e6b2d6fbf3a46b4e84088cc01664f579acf55ed4d33089",
-      "bytes": 95239
+      "sha256": "b1f406197707b3315b2d9e282b20229c364f93a6002e340e7af89e7f95c77c06",
+      "bytes": 94781
     },
     {
       "file": "docs/drawings/02_link_sections.svg",
-      "sha256": "66f62bdbf1dbab38c0f7179b5149f674c36b9af21c481232d6f676f58c9bc375",
-      "bytes": 84432
+      "sha256": "b96a38e27061fa0afebb8182b77d93b0472ddbb74796d6b0ce82c688ea19a367",
+      "bytes": 84341
     },
     {
       "file": "docs/drawings/03_gripper_layout.svg",
-      "sha256": "132b9ffaa1fbb665768e4e8d38626987db8e327bf92712a9e954d3674c3398db",
-      "bytes": 85906
+      "sha256": "8011791d92ae4230d597d0d704ef3f79f1adac0582724732370125301cfd40de",
+      "bytes": 86307
     },
     {
       "file": "docs/drawings/engineering_interfaces.pdf",
-      "sha256": "1eb6ebe41d21a271f5bb80b3a778834f021a0398218987daf2ba033b78e9e09d",
-      "bytes": 45165
+      "sha256": "b267251142ea5177424bb32a09f4a9ed97a94d794060a93c696b18168ded9973",
+      "bytes": 44854
     },
     {
       "file": "results/validation/cad_assembly_clearance.json",
-      "sha256": "01ac229b42ea8d8e18f2f5408bcb9b3a6442c16c221aaae1ddaf075d0e5275f6",
+      "sha256": "6eabb220cf6d676665bd772beecefb893d443c2c4684074b9e3d529f275fc006",
       "bytes": 3321
     },
     {
       "file": "results/validation/cad_blender_inspection.json",
-      "sha256": "d02dae43662bdcbac94f1827840c48e1263857b103d4b66a28c5e8f679a46d19",
+      "sha256": "d50f9db0951d297be676112b604055268b64e4e4c53864d01021f08226f38db0",
       "bytes": 13438
     },
     {
       "file": "results/validation/cad_freecad_inspection.json",
-      "sha256": "5a5ac1963988bee5ba0baa8cd2dd2d42fd1a5b42b16c0b37e374a55d86d262fe",
-      "bytes": 9832
+      "sha256": "e0654e9aea633c395fc8ec489162b5afab5d4d01bf71674d36b55575406b2304",
+      "bytes": 10098
     },
     {
       "file": "results/validation/cad_motion_clearance.json",
-      "sha256": "216d83c9d970c9df9af4b008fdcd7a5c6ce26c090218e1266561f8ca45ddeb46",
+      "sha256": "5c52076a1d313f541decebb334e56c14187ccb3efc906d5f78f2ec378225354d",
       "bytes": 22596
     },
     {
       "file": "results/validation/cad_validation.json",
-      "sha256": "2bc5b355000b654d7440af1bde5146e61f987e68739a242c692b31ac53f1a4ee",
-      "bytes": 55177
+      "sha256": "7f1f08b5ed86a88ce64c72ce559b34dc87bace006278ef234f138481d49c3252",
+      "bytes": 55614
     }
   ],
   "component_count": 54,

@@ -1,4 +1,4 @@
-ASTER-6 PROJECT
+INDRBT PROJECT
 
 Double-click OPEN_PROJECT_HOME.cmd for the visual project guide.
 Double-click OPEN_3D_VIEWER.cmd to see the robot in a browser.

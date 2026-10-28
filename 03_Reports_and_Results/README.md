@@ -2,13 +2,13 @@
 
 [← Project home](../README.md) · [CAD](../01_CAD_Models/README.md) · [Electronics & KiCad](../04_Electronics/README.md)
 
-**[Read the public engineering walkthrough](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#theory) · [Open the browser design library](https://pratham-cloud-ctrl.github.io/industrial-robot-arm-digital-twin/#guides)** — the included chapters and figures are accessible without a GitHub account.
+**[Read the public engineering walkthrough](https://pratham-cloud-ctrl.github.io/INDRBT/#theory) · [Open the browser design library](https://pratham-cloud-ctrl.github.io/INDRBT/#guides)** — the included chapters and figures are accessible without a GitHub account.
 
 **Start with the [illustrated engineering walkthrough](../06_Complete_Project_Source/docs/engineering_walkthrough.md).** Follow the reasoning from robot geometry through a useful motion, assumed loads, gripper mechanics, feedback control and the interface board.
 
 ![Coordinate frames from the implemented robot model](../02_Simulation_and_Animation/Workspace/coordinate_frames.png)
 
-For optional native application inspection, use the [public engineering download release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [CAD/KiCad opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). Four focused packs and the combined offline viewer/CAD pack are available publicly through GitHub. The published GitHub Pages showcase includes the browser viewers and download controls.
+For optional native application inspection, use the [public engineering download release](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28) and [CAD/KiCad opening guide](../06_Complete_Project_Source/docs/cad_downloads.md). Four focused packs and the combined offline viewer/CAD pack are available publicly through GitHub. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ## Choose a reading route
 

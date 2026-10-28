@@ -2,7 +2,7 @@
   "reference": "F1",
   "manufacturer": "Bourns",
   "manufacturer_part_number": "MF-NSMF025X-2",
-  "footprint": "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206",
+  "footprint": "INDRBT_Interface:PTC_Bourns_MF-NSMF025X_1206",
   "datasheet_url": "https://www.bourns.com/docs/product-datasheets/mf-nsmf.pdf",
   "datasheet_pages_one_based": {"electrical": 1, "temperature_derating": 3, "ordering": 7, "land_pattern": 8},
   "maximum_voltage_v": 16.0,

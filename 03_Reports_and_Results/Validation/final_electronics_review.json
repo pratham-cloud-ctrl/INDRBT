@@ -31,7 +31,7 @@
   "fuse_correction": {
     "status": "PASS",
     "manufacturer_part_number": "MF-NSMF025X-2",
-    "footprint": "ASTER_Interface:PTC_Bourns_MF-NSMF025X_1206",
+    "footprint": "INDRBT_Interface:PTC_Bourns_MF-NSMF025X_1206",
     "actual_pad_size_mm": [
       1.0,
       1.6
@@ -86,8 +86,8 @@
     "review_exports": 8
   },
   "file_hash_mismatches": 0,
-  "board_sha256": "a1552bca1bbeddbe702b4022accfda494525c6b49bd3daecd269ae9377cf060e",
-  "pcb_verification_sha256": "bb62ea4ce366b30ac11c24940293f2bd742a8953a7301cfc7c12673de9ce1e82",
+  "board_sha256": "1046bd78d82cd37f4eb656b654840edead73e625d1d94488c067a607fa495aba",
+  "pcb_verification_sha256": "2f4763645c1bc934e1e92fa58b5a4877024c85e5b88b1a8abf9d13b2fbcdc792",
   "component_guide": "docs/electronics_components.md",
   "component_guide_sha256": "4013c4937ad751a026072f841d3369796dbf5791c9c51e1186981eb113049d18",
   "power_calculations": {

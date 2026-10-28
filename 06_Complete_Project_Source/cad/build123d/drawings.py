@@ -20,7 +20,7 @@ def sheet(title, subtitle, xlim, ylim):
     ax.set_ylim(*ylim)
     ax.axis("off")
     fig.suptitle(
-        "ASTER-6  |  " + title, x=0.08, y=0.94, ha="left", fontweight="bold", fontsize=19, color=INK
+        "INDRBT  |  " + title, x=0.08, y=0.94, ha="left", fontweight="bold", fontsize=19, color=INK
     )
     fig.text(0.08, 0.89, subtitle, fontsize=10, color=INK)
     fig.text(

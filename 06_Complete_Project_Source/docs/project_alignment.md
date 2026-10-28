@@ -1,6 +1,6 @@
 # Project purpose and alignment with the original brief
 
-ASTER-6 explores one connected engineering problem: choose an original robot
+INDRBT explores one connected engineering problem: choose an original robot
 geometry, use the same geometry to plan a useful tool motion, estimate its loads
 and gripper requirements, and demonstrate feedback control in a reproducible
 digital model. The intended result is a credible student engineering project
@@ -22,7 +22,7 @@ claimed.
 2. Read the [frame and kinematic formulation](02_kinematics.md). The central
    [SI parameters](../config/robot.yaml) drive the transform chain and CAD
    dimensions. The browser viewer uses meshes from those actual solids.
-3. Run the [pick-and-place task](../simulations/aster6_twin.html). MOVE J handles
+3. Run the [pick-and-place task](../simulations/indrbt_twin.html). MOVE J handles
    joint transfers, regular approximate MOVE L segments handle approach and
    retreat, and the gripper sequences a rigid ideal attachment. Position and
    orientation follow the mathematical tool pose.

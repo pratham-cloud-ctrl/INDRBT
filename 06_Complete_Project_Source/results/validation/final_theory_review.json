@@ -106,24 +106,14 @@
       "scope": "Rechecked stored data with independent FK, lever/beam relations and replayed controller cases; numerical sensitivity, no physical experiments"
     }
   },
-  "pytest": {
-    "status": "PASS",
-    "tests": 91,
-    "failures": 0,
-    "errors": 0,
-    "skipped": 0,
-    "junit_sha256": "c24935d1eca562c99559d128d05a898b1b30b6157069b6475011f8df1e805b15",
-    "evidence_input": "Successful retained pytest JUnit supplied via --pytest-xml",
-    "note": "The JUnit hash binds the reviewed totals. Integrated execution output is retained in validation_report.json; this review does not rerun pytest."
-  },
   "source_and_evidence_sha256": {
-    "config/robot.yaml": "bef611dbe56efecd012680bc0969f051884e33c9a1a224e2e332ee1157a3ee96",
+    "config/robot.yaml": "fde183861589ceaa492879da6e6114c80fdd659dcff6adcf46fc734b3a50934f",
     "src/robotarm/config.py": "0ef8974921d8cdfb4fbd822c5cd0d4002496cf0d5e3d136c848b75733ee3ae51",
     "src/robotarm/kinematics/model.py": "6a8d563ef7230e96ed517df15bd8ce59358417b1bbfe5653f7fdefff49e3e1f3",
     "src/robotarm/planning/trajectories.py": "986cd32bf077d8deba937a2cbbc77f266da6044c9a84b1e53d278e8e6d64642c",
     "src/robotarm/control/pid.py": "e379778f8ca9161877d42fb637baf1b4b26de0fb98118ef15de53c917178fa6c",
     "src/robotarm/gripper/model.py": "4152eb1ea321ec2a6ce6a8cca6941ec8c32afceecfcba61a1f15b0164409b160",
-    "analysis/joint_torque_analysis.py": "374b6361c028d2b96d508c32b2cfc918f2138d3e57fc28694516a3c10997ef7e",
+    "analysis/joint_torque_analysis.py": "8ccad6e712becb109c60d3729b73e4fdc1854cf54ea1f1982937704a3dcb21fa",
     "analysis/structural_analysis.py": "d276cbad4885a10c1850a1f3b2bbf646f40e3425c2b53835ac2c7dfc390779f8",
     "analysis/research_experiments.py": "cc19bd4668ee7467037ae61d28e7e977e894f6a9d8c15188f3d443f408db2c93",
     "tests/test_mechanical.py": "2fc6c83978b9940772180b4d6056e9e4cb3eed4a71acc1950c88aefed1c162c7",

@@ -1,14 +1,14 @@
-# Understanding the ASTER-6 digital robot
+# Understanding the INDRBT digital robot
 
 This guide follows one engineering question through the project: can the chosen
 geometry move a tool through a useful task, support an assumed load, and be
 controlled in a clearly defined digital model? Read it alongside the
-[requirements](01_requirements.md), [interactive CAD twin](../simulations/aster6_twin.html)
+[requirements](01_requirements.md), [interactive CAD twin](../simulations/indrbt_twin.html)
 and [engineering report](engineering_report.md). The current numerical values live
 in the linked result files and [KPI table](kpis.md), so this guide concentrates on
 the equations and how to interpret their evidence.
 
-For optional inspection in a CAD or electronics application, use the [public inspection release](https://github.com/pratham-cloud-ctrl/industrial-robot-arm-digital-twin/releases/tag/inspection-2026-10-21) and [native-file opening guide](cad_downloads.md). Ordinary browser inspection remains available through the showcase. The published GitHub Pages showcase includes the browser viewers and download controls.
+For optional inspection in a CAD or electronics application, use the [public inspection release](https://github.com/pratham-cloud-ctrl/INDRBT/releases/tag/indrbt-2026-10-28) and [native-file opening guide](cad_downloads.md). Ordinary browser inspection remains available through the showcase. The published GitHub Pages showcase includes the browser viewers and download controls.
 
 ## 1. Start with units and assumptions
 
